@@ -1,0 +1,56 @@
+ body 
+    font-family: 'Gilroy' 
+    font-style: normal
+    background: $sub-color 
+
+.container
+    &--header
+        @media screen and (max-width: $first-breack-point) 
+            max-width: 720px
+            padding: 0
+        @media screen and (max-width: $second-breack-point) 
+            max-width: 360px
+            padding: 0 22px
+    &--bc
+        padding: 0
+        @media screen and (max-width: $first-breack-point) 
+            max-width: 720px
+        @media screen and (max-width: $second-breack-point) 
+            max-width: 360px
+            padding-right: var(--bs-gutter-x,.75rem)
+            padding-left: var(--bs-gutter-x,.75rem)
+
+.title
+    &--h2
+        display: block
+        margin-bottom: 16px
+        font-weight: 700
+        font-size: 36px
+        line-height: 1.25
+        color: #494949
+        text-transform: uppercase
+        text-decoration: none
+        transition: opacity .3s
+        &:hover            
+            color: #494949
+            opacity: .8            
+        @media screen and (max-width: $first-breack-point) 
+            font-size: 20px
+            line-height: 1.25
+            margin-bottom: 0
+
+main    
+    @media screen and (max-width: $first-breack-point) 
+        max-width: 720px
+        margin: 0 auto
+    @media screen and (max-width: $second-breack-point) 
+        max-width: 360px
+        padding: 0 10px
+
+
+.slider 
+    margin-bottom: 56px
+
+
+.selection
+    margin-bottom: 56px
