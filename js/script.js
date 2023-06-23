@@ -39,7 +39,7 @@ function valid(event){
 }
 
 // Carousel
-   function initCarousel(id) {
+async function initCarousel(id) {
     const myCarousel = document.getElementById(`${id}`)
     const indicatorsContainer = myCarousel.querySelector(".carousel-indicators")
     const indicators = myCarousel.querySelectorAll(".carousel-indicators button")
@@ -151,8 +151,10 @@ function valid(event){
     }
 }
 
-initCarousel('carouselMain')
-initCarousel('carouselSelection')
-
+const carousels = document.querySelectorAll(".carousel")
+for (var i=0; i<carousels.length; i++)
+{
+    initCarousel(carousels[i].id)
+}
 
 

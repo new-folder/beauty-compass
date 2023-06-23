@@ -23,6 +23,11 @@ body
             padding-left: var(--bs-gutter-x,.75rem)
 
 .title
+    &--h1
+        font-weight: 700
+        font-size: 36px
+        line-height: 1.25
+        color: #494949
     &--h2
         display: block
         margin-bottom: 16px
@@ -40,6 +45,25 @@ body
             font-size: 20px
             line-height: 1.25
             margin-bottom: 0
+    &--sub
+        font-weight: 700
+        font-size: 30px
+        line-height: 37px
+
+.btn
+    &--base
+        padding: 10px 25px
+        background: $main-color
+        border-radius: 60px
+        color: $sub-color
+        font-weight: 600
+        font-size: 18px
+        line-height: 1.22222
+        text-transform: uppercase
+        transition: background 0.3s
+        &:hover 
+            color: $sub-color
+            background: $pre-color
 
 main    
     @media screen and (max-width: $first-breack-point) 
@@ -56,3 +80,8 @@ main
 
 .selection
     margin-bottom: 56px
+
+.information
+    font-weight: 600
+    font-size: 18px
+    line-height: 22px

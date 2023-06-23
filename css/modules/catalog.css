@@ -80,4 +80,9 @@
   .catalog__img, .catalog-new__img {
     border-radius: 10px;
   }
+}
+.catalog__contacts, .catalog-new__contacts {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.25;
 }/*# sourceMappingURL=catalog.css.map */

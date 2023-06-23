@@ -249,6 +249,12 @@ body {
   }
 }
 
+.title--h1 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.25;
+  color: #494949;
+}
 .title--h2 {
   display: block;
   margin-bottom: 16px;
@@ -271,6 +277,27 @@ body {
     margin-bottom: 0;
   }
 }
+.title--sub {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 37px;
+}
+
+.btn--base {
+  padding: 10px 25px;
+  background: #1560BD;
+  border-radius: 60px;
+  color: #FAFAFA;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.22222;
+  text-transform: uppercase;
+  transition: background 0.3s;
+}
+.btn--base:hover {
+  color: #FAFAFA;
+  background: #E31E24;
+}
 
 @media screen and (max-width: 1400px) {
   main {
@@ -291,6 +318,12 @@ body {
 
 .selection {
   margin-bottom: 56px;
+}
+
+.information {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
 }
 
 .top-bar {
@@ -635,6 +668,11 @@ body {
   .catalog__img, .catalog-new__img {
     border-radius: 10px;
   }
+}
+.catalog__contacts, .catalog-new__contacts {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.25;
 }
 
 .footer {
