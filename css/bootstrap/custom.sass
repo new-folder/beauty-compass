@@ -143,3 +143,40 @@
 
 .form-check-input.is-valid, .was-validated .form-check-input:valid
     background-color: $main-color
+
+// Pagination
+.page-item
+    padding: 0 15px 
+
+.page-link
+    width: 60px
+    height: 60px
+    border-radius: 50%
+    background-color: #D9D9D9
+    color: $sub-color
+    text-align: center
+    text-edge: cap
+    font-weight: 600
+    font-size: 30px
+    transition: opacity .3s
+    &:hover
+        box-shadow: none
+        background-color: #D9D9D9
+        color: $sub-color
+        opacity: .7
+    &:focus
+        box-shadow: none
+    .page-item.active &
+        background-color: $main-color
+
+.page-item:first-child .page-link, .page-item:last-child .page-link 
+    color: $main-color
+    background: none
+    border: none
+    font-size: 30px
+    font-weight: 900
+    padding-left: 0
+    padding-right: 0
+
+.page-item.disabled .page-link
+    color: #D9D9D9

@@ -81,7 +81,62 @@ main
 .selection
     margin-bottom: 56px
 
+.section
+    &--carousel
+        margin-bottom: 56px
+
 .information
     font-weight: 600
     font-size: 18px
     line-height: 22px
+
+.brands-list
+    &__logo
+        max-width: 150px
+        margin-right: 8px
+        img
+            max-width: 150px
+            max-height: 100px
+    &__title
+        font-size: 30px
+        font-weight: 600
+        letter-spacing: 0.5px
+        color: #494949
+        text-decoration: none
+        text-transform: uppercase
+        transition: opacity .3s
+        &:hover
+            color: #494949
+            opacity: .7           
+    &__discription
+        font-size: 18px
+        font-weight: 600 
+        color: #210E22
+        max-width: 910px
+    &__sticker
+        position: relative
+        &:before
+            content: ""
+            position: absolute
+            top: 0
+            left: 30px
+            width: 53px
+            height: 749px
+            background: url(../img/brand-sticker.svg) no-repeat     
+            @media screen and (max-width: $first-breack-point)
+                display: none
+
+
+.producer
+    &__sticker
+        position: relative
+        &:before
+            content: ""
+            position: absolute
+            top: 0
+            left: 30px
+            width: 53px
+            height: 749px
+            background: url(../img/produser-sticker.svg) no-repeat     
+            @media screen and (max-width: $first-breack-point)
+                display: none
