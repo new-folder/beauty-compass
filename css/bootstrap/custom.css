@@ -175,6 +175,11 @@
 .page-item {
   padding: 0 15px;
 }
+@media screen and (max-width: 1400px) {
+  .page-item {
+    padding: 0 9px;
+  }
+}
 
 .page-link {
   width: 60px;
@@ -187,6 +192,14 @@
   font-weight: 600;
   font-size: 30px;
   transition: opacity 0.3s;
+}
+@media screen and (max-width: 1400px) {
+  .page-link {
+    width: 30px;
+    height: 30px;
+    padding: 4px;
+    font-size: 15px;
+  }
 }
 .page-link:hover {
   box-shadow: none;
@@ -209,6 +222,11 @@
   font-weight: 900;
   padding-left: 0;
   padding-right: 0;
+}
+@media screen and (max-width: 1400px) {
+  .page-item:first-child .page-link, .page-item:last-child .page-link {
+    font-size: 18px;
+  }
 }
 
 .page-item.disabled .page-link {
