@@ -649,7 +649,7 @@ body {
   display: block;
   max-width: 268px;
   margin-bottom: 68px;
-  margin-right: 46px;
+  margin-right: 186px;
 }
 .top-bar__logo img {
   width: 100%;
@@ -715,7 +715,7 @@ body {
 
 .search-form {
   position: relative;
-  width: 604px;
+  width: 510px;
   height: 43px;
   white-space: nowrap;
   box-sizing: border-box;
