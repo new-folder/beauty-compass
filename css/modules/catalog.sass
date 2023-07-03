@@ -7,16 +7,6 @@
         display: flex
         flex-wrap: wrap
         justify-content: center
-        &:before
-            content: ''
-            position: absolute
-            top: 0
-            left: 30px
-            width: 53px
-            height: 238px
-            background: url(../img/new-products.png) no-repeat
-            @media screen and (max-width: $first-breack-point) 
-                display: none
     &__item
         position: relative 
         color: $main-color
@@ -37,22 +27,6 @@
             display: none
             @media screen and (max-width: $first-breack-point) 
                 display: block
-        &:before
-            content: 'New'
-            position: absolute
-            top: 15px
-            right: 27px
-            width: 36px
-            height: 17px
-            background: $main-color
-            border-radius: 10px
-            color: $sub-color
-            font-size: 10px
-            line-height: 1.6
-            text-transform: uppercase
-            text-align: center            
-            @media screen and (max-width: $first-breack-point) 
-                display: none
     &__img
         max-width: 100%
         box-shadow: $box-shadow-sm
@@ -75,6 +49,51 @@
     &__social
         @media screen and (max-width: $first-breack-point) 
             max-width: 23px
+    &__link-all
+        color: $main-color
+        font-weight: 600
+        font-size: 20px
+        line-height: 1.25
+        text-transform: lowercase
+        text-decoration: none
+        transition: color .5s
+        &:hover
+            color: $pre-color
+        @media screen and (max-width: $first-breack-point) 
+            font-weight: 600
+            font-size: 12px
+            line-height: 1.25
+            letter-spacing: 0.5px
+
 
 
             
+.catalog-new
+    &__list
+        &:before
+            content: ''
+            position: absolute
+            top: 0
+            left: 30px
+            width: 53px
+            height: 238px
+            background: url(../img/new-products.png) no-repeat
+            @media screen and (max-width: $first-breack-point) 
+                display: none
+    &__item
+        &:before
+            content: 'New'
+            position: absolute
+            top: 15px
+            right: 27px
+            width: 36px
+            height: 17px
+            background: $main-color
+            border-radius: 10px
+            color: $sub-color
+            font-size: 10px
+            line-height: 1.6
+            text-transform: uppercase
+            text-align: center            
+            @media screen and (max-width: $first-breack-point) 
+                display: none
