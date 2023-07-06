@@ -202,8 +202,36 @@ main
             @media screen and (max-width: $first-breack-point)
                 display: none
     &__logo
+        min-height: 240px
+        display: flex
+        align-items: center
         img
             max-height: 250px
+            height: fit-content
+            @media screen and (max-width: $first-breack-point)
+                max-height: 125px
+   
+
+.series
+    &__sticker
+        position: relative
+        &:before
+            content: ""
+            position: absolute
+            top: 0
+            left: 30px
+            width: 53px
+            height: 749px
+            background: url(../img/one-series-sticker.svg) no-repeat     
+            @media screen and (max-width: $first-breack-point)
+                display: none
+    &__logo
+        min-height: 240px
+        display: flex
+        align-items: center
+        img
+            max-height: 250px
+            height: fit-content
             @media screen and (max-width: $first-breack-point)
                 max-height: 125px
                 width: auto

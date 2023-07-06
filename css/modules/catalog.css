@@ -7,6 +7,9 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+.catalog__list--full, .catalog-new__list--full {
+  justify-content: start;
+}
 .catalog__item, .catalog-new__item {
   position: relative;
   color: #1560BD;
@@ -35,6 +38,9 @@
   .catalog__item:last-child, .catalog-new__item:last-child {
     display: block;
   }
+}
+.catalog__list--full .catalog__item:last-child, .catalog__list--full .catalog-new__item:last-child {
+  display: block;
 }
 .catalog__img, .catalog-new__img {
   max-width: 100%;

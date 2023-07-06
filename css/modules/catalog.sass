@@ -7,6 +7,9 @@
         display: flex
         flex-wrap: wrap
         justify-content: center
+        &--full
+            justify-content: start
+
     &__item
         position: relative 
         color: $main-color
@@ -27,6 +30,10 @@
             display: none
             @media screen and (max-width: $first-breack-point) 
                 display: block
+        .catalog__list--full &
+            &:last-child
+                display: block
+            
     &__img
         max-width: 100%
         box-shadow: $box-shadow-sm
