@@ -94,7 +94,7 @@
                 <div class="row justify-content-center align-items-cente mb-3 ">
                     <div class="col-12 col-md-6 mb-2 mb-xxl-0 d-flex align-items-center">
                         <!-- Прослушивается клик по favorite-heart, на сердечко навешивается класс active -->
-                        <button class="me-4 favorite-heart"></button> 
+                        <button class="me-4 favorite favorite--brand"></button> 
                         <a href="#" class="btn me-2 me-xxl-3 btn--empty">Статьи о бренде</a>
                         <!-- Прослушивается клик по follow-brand, на подписку навешивается класс active -->
                         <button class="btn btn--base follow-brand">Подписаться</button> 
@@ -310,15 +310,15 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
                         <h5 class="modal-title auth__title" id="authToggleLabel">Авторизация</h5>
                     </div>
                     <div class="modal-body">
-                        <form class="needs-validation" novalidate>
+                        <form class="needs-validation auth__form" novalidate>
                             <div class="row mb-2 d-flex auth__group">
                                 <label for="headerAuthEmail" class="form-label col-3 my-0 p-0 auth__label">E-mail</label>
-                                <input type="email" class="form-control order-2" id="headerAuthEmail" required>              
+                                <input type="email" name="mail" class="form-control order-2" id="headerAuthEmail" required>              
                                 <div id="headerAuthEmailFeedback" class="invalid-feedback col-9 order-1 my-0 auth__invalid">Неверный E-mail</div>                
                             </div>
                             <div class="row mb-3 mb-md-5 d-flex auth__group">
                                 <label for="authInputPassword" class="form-label col-3 my-0 p-0 auth__label">Пароль</label>
-                                <input type="password" class="form-control order-2" id="authInputPassword" required>
+                                <input type="password" name="pass" class="form-control order-2" id="authInputPassword" required>
                                 <div id="headerAuthPassFeedback" class="invalid-feedback col-9 order-1 my-0 auth__invalid">Неверный пароль</div>
                             </div>
                             <div class="auth__sub-title">Забыли пароль?</div>
