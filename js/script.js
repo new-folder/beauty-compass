@@ -197,7 +197,42 @@ const hideTagList = (tagList, indexStartHide) => {
 
 hideTagListInit(2)
 
+// Authorization
 
+function saveUserToken() {
+    const authForm = document.querySelector('.auth__form')
+    console.log(authForm)
+    authForm.onsubmit = async function(e) {
+        // const formData = new FormData(e.target)
+        const emailValue = document.querySelector('#headerAuthEmail')
+        const passValue = document.querySelector('#authInputPassword')
+        e.preventDefault()
+        const authBody = { 
+            // username: emailValue,
+            // password: passValue,
+            username: 'kminchelle',
+            password: '0lelplR',
+        }
+        const resp = await fetch('https://dummyjson.com/auth/login',{
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(authBody)
+        })
+        const result = await resp.json()
+        localStorage.setItem('userToken', result['token'])
+    }
+}
+
+saveUserToken()
+
+
+const userToken = localStorage.getItem('userToken')
+if (userToken) {
+    console.log('User auth')
+} else {
+    console.log('Unauth')
+}
+    
 
 // Add/remove class 'active' for favorite-brand
 function toggleFavoriteBrand() {
