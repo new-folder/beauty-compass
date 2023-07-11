@@ -39,49 +39,49 @@
 
 
 // Carousel
-
-.carousel-indicators 
-    align-items: center
-    bottom: -60px
-    [data-bs-target]
-        width: 8px
-        height: 8px
-        margin-left: 11px
-        margin-right: 11px
-        border-radius: 50%
-        transition: .5s
-        background-color: #D9D9D9
-    .active 
-        width: 15px
-        height: 15px
-        background-color: $main-color
-    .near-active
-        width: 11px
-        height: 11px
-        
-
-.carousel-item
-    border-radius: $border-radius
-    overflow: hidden    
-    @media screen and (max-width: $first-breack-point) 
-        border-radius: $border-radius-mobile
-
-@media screen and (max-width: $first-breack-point) 
+. carousel--base
     .carousel-indicators 
-        bottom: -55px
+        align-items: center
+        bottom: -60px
         [data-bs-target]
-            width: 3.7px
-            height: 3.7px
-            background-color: #494949
-            margin-right: 6px
-            margin-left: 6px
+            width: 8px
+            height: 8px
+            margin-left: 11px
+            margin-right: 11px
+            border-radius: 50%
+            transition: .5s
+            background-color: #D9D9D9
         .active 
-            width: 7.5px
-            height: 7.5px
+            width: 15px
+            height: 15px
             background-color: $main-color
         .near-active
-            width: 6px
-            height: 6px
+            width: 11px
+            height: 11px
+            
+
+    .carousel-item
+        border-radius: $border-radius
+        overflow: hidden    
+        @media screen and (max-width: $first-breack-point) 
+            border-radius: $border-radius-mobile
+
+    @media screen and (max-width: $first-breack-point) 
+        .carousel-indicators 
+            bottom: -55px
+            [data-bs-target]
+                width: 3.7px
+                height: 3.7px
+                background-color: #494949
+                margin-right: 6px
+                margin-left: 6px
+            .active 
+                width: 7.5px
+                height: 7.5px
+                background-color: $main-color
+            .near-active
+                width: 6px
+                height: 6px
 
 // modal
 
