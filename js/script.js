@@ -248,24 +248,8 @@ function userInterface() {
 userInterface()
 
 
-// async function toggleFavoriteBrand() {
-//     const favoriteBrand = document.querySelector('.favorite--brand')
-//     const userToken = localStorage.getItem('userToken')
-//     let userId = '15'
-//     if (userToken) {
-//         const resp = await fetch('https://64a990b78b9afaf4844ad897.mockapi.io/favoritebrand')
-//         const result = await resp.json()
-//         userObject = result.find(elem => elem.id === userId)
-//         console.log(userObject['favorite'])
-//         if (userObject['favorite']) {
-//             favoriteBrand.classList.add('active')
-//         }
-//     } else {
-//         console.log('Unauth')
-//     }
-// }    
-// toggleFavoriteBrand()   
 
+//For demonstration
 
 // Add/remove class 'active' for favorite-product
 function toggleFavoriteProduct() {
