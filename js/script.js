@@ -152,7 +152,7 @@ async function initCarousel(id) {
     }
 }
 
-const carousels = document.querySelectorAll('.carousel')
+const carousels = document.querySelectorAll('.carousel--base')
 for (var i=0; i<carousels.length; i++)
 {
     initCarousel(carousels[i].id)

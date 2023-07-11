@@ -357,6 +357,10 @@ body {
     line-height: 1.25;
   }
 }
+.title__under {
+  font-size: 30px;
+  color: #1560BD;
+}
 
 .btn {
   height: 41px;
