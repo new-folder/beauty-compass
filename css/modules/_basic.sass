@@ -292,5 +292,254 @@ main
         z-index: 2
         border: none
         transition: .3s
+    &--product-full
+        width: fit-content
+        border: none
+        padding-left: 60px
+        transition: .3s
+        font-size: 30px
+        font-weight: 600
+        text-transform: uppercase
+        color: $pre-color
+        background-size: 47px
 
-.product
+.product-header
+    &--sticker
+        position: relative
+        &:before
+            content: ""
+            position: absolute
+            top: 118px
+            left: 30px
+            width: 53px
+            height: 500px
+            background: url(../img/product-sticker.svg) no-repeat     
+            @media screen and (max-width: $first-breack-point)
+                display: none
+    &__title
+        color: #0E0E0E
+        font-weight: 600
+        font-size: 30px
+        line-height: 1.25
+
+.splide--vertical
+    display: flex
+    flex-direction: column
+    justify-content: center
+    text-align: center
+    .splide
+        &__arrows
+            position: absolute
+            height: 100%
+            width: 100%
+            left: 0
+        &__arrow
+            position: absolute
+            left: 50%
+            background: url(../img/arrow-active.svg) no-repeat
+            border: 0    
+            &--prev
+                top: 0
+                transform: translateX(-50%)
+            &--next
+                bottom: 0
+                transform: translateX(-50%) rotate(180deg)
+            &[disabled]
+                background-image: url(../img/arrow-disabled.svg)
+    .splide__arrows:has(.splide__arrow--prev[disabled] ~ .splide__arrow--next[disabled])
+        display: none
+
+.splide--gallery
+    display: flex
+    justify-content: center
+    text-align: center
+    padding-right: calc(var(--bs-gutter-x)/ 2)
+    padding-left: calc(var(--bs-gutter-x)/ 2)
+    .splide
+        &__arrows
+            position: absolute
+            height: 100%
+            width: 100%
+            left: 0
+        &__arrow
+            width: 50px
+            height: 35px
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            background: url(../img/arrow-active.svg) no-repeat
+            background-position: bottom
+            border: 0    
+            &--prev
+                left: 60px
+                transform: translateY(-50%) rotateZ(-90deg)
+            &--next
+                right: 60px
+                transform: translateY(-50%) rotate(90deg)
+            &[disabled]
+                background-image: url(../img/arrow-disabled.svg)
+        &__slide
+            display: flex
+            text-align: center
+            justify-content: center
+            align-items: center
+            overflow: hidden
+            border-radius: $border-radius
+            img
+                object-fit: contain
+                max-width: 220px
+                max-height: 195px
+    .splide__arrows:has(.splide__arrow--prev[disabled] ~ .splide__arrow--next[disabled])
+        display: none
+
+.splide--users-feedback
+    .splide
+        &__arrows
+            position: absolute
+            height: 100%
+            width: 100%
+            left: 0
+        &__arrow
+            width: 50px
+            height: 35px
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            background: url(../img/arrow-active.svg) no-repeat
+            background-position: bottom
+            border: 0    
+            &--prev
+                left: 60px
+                transform: translateY(-50%) rotateZ(-90deg)
+            &--next
+                right: 60px
+                transform: translateY(-50%) rotate(90deg)
+            &[disabled]
+                background-image: url(../img/arrow-disabled.svg)
+        &__track
+            padding-right: calc(var(--bs-gutter-x)/ 2)!important
+            padding-left: calc(var(--bs-gutter-x)/ 2)!important
+            padding-top: 10px
+            padding-bottom: 24px
+        &__slide
+            padding: 20px
+            border-radius: $border-radius
+            box-shadow: $box-shadow-sm
+    .splide__arrows:has(.splide__arrow--prev[disabled] ~ .splide__arrow--next[disabled])
+        display: none
+
+
+.users-feedback    
+    &__header
+        font-weight: 600
+        font-size: 30px
+        color: #494949
+        a
+            color: #494949
+            text-decoration: none
+            transition: opacity .3s
+            &:hover
+                opacity: .7
+
+.user-feedback 
+    justify-content: start
+    font-size: 15px
+    font-weight: 600
+    line-height: 1.1
+    text-decoration: none
+    color: #210E22
+    transition: opacity .3s
+    &:hover
+        color: #210E22
+        opacity: .7
+    &__name
+        font-size: 20px
+        line-height: 1.2
+    &__date
+        font-size: 12px
+    &__avatar
+        width: 60px
+        height: 60px
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        border-radius: 50%
+        overflow: hidden
+        img
+            max-width: 200%
+    &__photos
+        display: flex
+        justify-content: start    
+        &:has(.user-feedback__photo:nth-child(3))
+            justify-content: space-between 
+            .user-feedback__photo
+                margin-right: 0
+
+    &__photo
+        width: 90px
+        height: 120px
+        border-radius: $border-radius
+        box-shadow: 0px 3px 5px rgba(14, 14, 14, 0.1)
+        overflow: hidden
+        margin-right: 12px
+        img
+            max-width: 200%
+            max-height: 200%
+    &__num
+        width: 90px
+        height: 120px
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        color: $main-color
+        font-size: 30px
+        font-weight: 600
+
+    p
+        margin-bottom: 10px
+    
+
+.about-product
+    &__item
+        background: $sub-color
+        border: 0
+    &__title
+        font-size: 30px
+        font-weight: 600
+        color: #494949
+        background-color: $sub-color
+        padding: 0
+        &:focus
+            border-color: none
+            box-shadow: none
+        &::after
+            width: 28px
+            height: 11px
+            background-image: url(../img/arrow-text.svg)
+            margin-left: 10px
+            margin-right: 0
+            transform: rotate(180deg)
+        &:not(.collapsed)
+            color: #494949  
+            background-color: inherit
+            box-shadow: none
+            &::after
+                background-image: url(../img/arrow-text.svg)
+                transform: rotate(0)
+                margin-left: 20px
+                margin-right: 0
+    &__information
+        padding-left: 0
+        padding-right: 0
+
+
+.gallary
+    font-weight: 600
+    font-size: 30px
+    color: #494949
+    a
+        color: #494949
+        text-decoration: none
+        transition: opacity .3s
+        &:hover
+            opacity: .7
