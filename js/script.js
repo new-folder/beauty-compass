@@ -160,16 +160,17 @@ for (var i=0; i<carousels.length; i++)
 
 // Hide tag links
 
-function hideTagListInit(indexStartHide) {
-    const wrapTagList = document.querySelector('.tag-links')
+function hideTagListInit(indexStartHide, wrapTagList) {
+    console.log(wrapTagList)
     const tagList = wrapTagList.querySelectorAll('.tag-links > .tag')
     const dots = createDots()
 
     const tagListHide = hideTagList(tagList, indexStartHide)
 
     tagListHide.forEach(item => wrapTagList.appendChild(item))
-
-    wrapTagList.appendChild(dots)
+    if (tagList.length > (indexStartHide + 1)) {
+        wrapTagList.appendChild(dots)
+    }
 
     dots.addEventListener('click', function() {
         for (let i = indexStartHide; i < tagList.length; i++) {
@@ -188,6 +189,7 @@ const createDots = () => {
 
 const hideTagList = (tagList, indexStartHide) => {
     if (tagList.length > (indexStartHide + 1)) {
+        console.log('Больше 3')
         for (let i = indexStartHide; i < tagList.length; i++) {
             tagList[i].classList.add('hide')
         }
@@ -195,7 +197,13 @@ const hideTagList = (tagList, indexStartHide) => {
     return tagList
 }
 
-hideTagListInit(2)
+const tagList = document.querySelectorAll('.tag-links')
+if(tagList) {
+    for (var i=0; i<tagList.length; i++)
+    {
+        hideTagListInit(2, tagList[i])
+    }
+}
 
 function userInterface() {
     let userId
@@ -235,7 +243,7 @@ function userInterface() {
             const resp = await fetch('https://64a990b78b9afaf4844ad897.mockapi.io/favoritebrand')
             const result = await resp.json()
             userObject = result.find(elem => elem.id === userId)
-            if (userObject['favorite']) {
+            if (userObject) {
                 favoriteBrand.classList.add('active')
             }
         } else {
@@ -247,11 +255,72 @@ function userInterface() {
 }
 userInterface()
 
+if(document.querySelector('.splide--vertical')) {
+    document.addEventListener( 'DOMContentLoaded', function() {
+        const splide = new Splide ( '.splide--vertical', {
+            direction   : 'ttb',
+            height : 484,
+            type   : 'slide',
+            perPage: 3,
+            heightRatio : 0.3,
+            pagination : false,
+            fixedHeight : 138,
+            rewind: false,
+            arrowPath : '0',
+        } );
+        splide.mount();
+    } );
+}
+
+if(document.querySelector('.splide--gallery')) {
+    document.addEventListener( 'DOMContentLoaded', function() {
+        const splide = new Splide( '.splide--gallery', {
+            height : 120,
+            type   : 'slide',
+            perPage: 9,
+            gap : 30,
+            pagination : false,
+            arrows: true,
+            arrowPath : '0',
+        } );
+        splide.mount();
+    } );
+}
+
+if(document.querySelector('.splide--users-feedback')) {
+    document.addEventListener( 'DOMContentLoaded', function() {
+        const splide = new Splide( '.splide--users-feedback', {
+            height : 364,
+            type   : 'slide',
+            perPage: 3,
+            gap : 45,
+            pagination : false,
+            arrows: true,
+            arrowPath : '0',
+        } );
+        splide.mount();
+    } );
+}
 
 
 //For demonstration
 
-// Add/remove class 'active' for favorite-product
+// Add/remove class 'active' for favorite brand
+function toggleFavoriteBrand() {
+    const favoriteList = document.querySelectorAll('.favorite--brand')
+    favoriteList.forEach(item => {
+        item.addEventListener('click', elem => {
+            elem.preventDefault()
+            if(!elem.target.classList.contains('active')) {
+                elem.target.classList.add('active')
+            } else
+            elem.target.classList.remove('active')
+        }) 
+    })
+}
+toggleFavoriteBrand()
+
+// Add/remove class 'active' for favorite product
 function toggleFavoriteProduct() {
     const favoriteList = document.querySelectorAll('.favorite--product')
     favoriteList.forEach(item => {
@@ -259,15 +328,35 @@ function toggleFavoriteProduct() {
             elem.preventDefault()
             if(!elem.target.classList.contains('active')) {
                 elem.target.classList.add('active')
-            // сюда запрос для добавления в избранное
             } else
             elem.target.classList.remove('active')
-            // сюда запрос для удаления из избранного
         }) 
     })
 }
 
 toggleFavoriteProduct()
+
+
+// Add/remove class 'active' for favorite product full
+function toggleFavoriteProductFull() {
+    const favoriteList = document.querySelectorAll('.favorite--product-full')
+    favoriteList.forEach(item => {
+        item.addEventListener('click', elem => {
+            elem.preventDefault()
+            if(!elem.target.classList.contains('active')) {
+                elem.target.classList.add('active')
+                text = 'В избранном'
+                document.querySelector('.favorite--product-full').textContent = text
+            } else {
+                elem.target.classList.remove('active')
+                text = 'Добавить в избранное'
+                document.querySelector('.favorite--product-full').textContent = text
+            }
+        }) 
+    })
+}
+
+toggleFavoriteProductFull()
 
 
 // Add/remove class 'active' for subscription
@@ -280,12 +369,10 @@ function toggleSubscription() {
                 text = 'Вы подписаны'
                 event.target.classList.add('active')
                 document.querySelector('.follow-brand').textContent = text
-            // сюда запрос для подписки
             } else{
                 text = 'Подписаться'
                 event.target.classList.remove('active')
                 document.querySelector('.follow-brand').textContent = text
-            // сюда запрос для отписки
             }
         }) 
     }

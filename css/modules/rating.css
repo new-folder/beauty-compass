@@ -1,0 +1,63 @@
+.rating {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 600;
+}
+.rating__body {
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+}
+.rating__body::before {
+  content: "";
+  width: 104px;
+  height: 18px;
+  background: url(../img/raiting-stars-empty.svg) no-repeat;
+  background-size: contain;
+  display: block;
+}
+@media screen and (max-width: 1400px) {
+  .rating__body::before {
+    width: 100px;
+  }
+}
+.rating__active {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+.rating__active::before {
+  content: "";
+  width: 104px;
+  height: 18px;
+  background: url(../img/raiting-stars-full.svg) no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+@media screen and (max-width: 1400px) {
+  .rating__active::before {
+    width: 100px;
+  }
+}
+.rating--lage .rating__active::before {
+  width: 158px;
+  height: 28px;
+}
+.rating--lage .rating__body::before {
+  width: 158px;
+  height: 28px;
+}
+.rating--sm .rating__active::before {
+  width: 93px;
+  height: 15px;
+}
+.rating--sm .rating__body::before {
+  width: 93px;
+  height: 15px;
+}/*# sourceMappingURL=rating.css.map */

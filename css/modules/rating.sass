@@ -1,4 +1,9 @@
+@import "vars.sass"
 .rating
+    display: flex
+    align-items: center
+    font-size: 30px
+    font-weight: 600
     &__body
         width: fit-content
         position: relative
@@ -29,3 +34,21 @@
             top: 0 
             @media screen and (max-width: $first-breack-point)
                 width: 100px
+    &--lage
+        .rating__active
+            &::before
+                width: 158px
+                height: 28px
+        .rating__body
+            &::before
+                width: 158px
+                height: 28px
+    &--sm
+        .rating__active
+            &::before
+                width: 93px
+                height: 15px
+        .rating__body
+            &::before
+                width: 93px
+                height: 15px

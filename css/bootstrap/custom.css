@@ -44,11 +44,11 @@
   box-shadow: none;
 }
 
-.carousel-indicators {
+.carousel--base .carousel-indicators {
   align-items: center;
   bottom: -60px;
 }
-.carousel-indicators [data-bs-target] {
+.carousel--base .carousel-indicators [data-bs-target] {
   width: 8px;
   height: 8px;
   margin-left: 11px;
@@ -57,47 +57,82 @@
   transition: 0.5s;
   background-color: #D9D9D9;
 }
-.carousel-indicators .active {
+.carousel--base .carousel-indicators .active {
   width: 15px;
   height: 15px;
   background-color: #1560BD;
 }
-.carousel-indicators .near-active {
+.carousel--base .carousel-indicators .near-active {
   width: 11px;
   height: 11px;
 }
-
-.carousel-item {
+.carousel--base .carousel-item {
   border-radius: 15px;
   overflow: hidden;
 }
 @media screen and (max-width: 1400px) {
-  .carousel-item {
+  .carousel--base .carousel-item {
     border-radius: 10px;
   }
 }
-
 @media screen and (max-width: 1400px) {
-  .carousel-indicators {
+  .carousel--base .carousel-indicators {
     bottom: -55px;
   }
-  .carousel-indicators [data-bs-target] {
+  .carousel--base .carousel-indicators [data-bs-target] {
     width: 3.7px;
     height: 3.7px;
     background-color: #494949;
     margin-right: 6px;
     margin-left: 6px;
   }
-  .carousel-indicators .active {
+  .carousel--base .carousel-indicators .active {
     width: 7.5px;
     height: 7.5px;
     background-color: #1560BD;
   }
-  .carousel-indicators .near-active {
+  .carousel--base .carousel-indicators .near-active {
     width: 6px;
     height: 6px;
   }
 }
+.carousel--product {
+  height: 568px;
+}
+.carousel--product .carousel-indicators {
+  height: 100%;
+}
+.carousel--product .carousel-indicators img {
+  border-radius: 15px;
+  overflow: hidden;
+}
+.carousel--product .carousel-inner {
+  width: -moz-min-content;
+  width: min-content;
+  overflow: initial;
+}
+.carousel--product .carousel-indicators [data-bs-target] {
+  width: auto;
+  background-color: #FAFAFA;
+}
+.carousel--product .carousel-indicators [data-bs-target] img {
+  height: 100%;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
+  overflow: hidden;
+}
+.carousel--product .carousel-item {
+  width: 420px;
+  height: 568px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.carousel--product .carousel-item img {
+  box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
+  border-radius: 15px;
+}
+
 .modal-header {
   border-bottom: 0;
 }
