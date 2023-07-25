@@ -187,6 +187,17 @@
           backdrop-filter: blur(4px);
 }
 
+.modal-dialog--img {
+  max-width: -moz-max-content !important;
+  max-width: max-content !important;
+}
+.modal-dialog--img .modal-body {
+  display: flex;
+}
+.modal-dialog--img .modal-body img {
+  max-width: 100%;
+  max-height: 90vh;
+}
 .form-control {
   box-shadow: 0px 4px 20px rgba(14, 14, 14, 0.07);
   border-width: 0;
@@ -947,6 +958,15 @@ body {
   color: #1560BD;
   font-size: 30px;
   font-weight: 600;
+}
+.user-feedback__popup-link {
+  border: none;
+  background-color: #FAFAFA;
+  color: #1560BD;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
 }
 .user-feedback p {
   margin-bottom: 10px;
