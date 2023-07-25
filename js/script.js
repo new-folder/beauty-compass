@@ -15,7 +15,34 @@
         })
     })()
 
+function  openModalQuestion() {
+    if(document.querySelector('#openQuestion')) {
+        const modal = document.querySelector('#openQuestion')
+        modal.addEventListener('show.bs.modal', function (event) {
+        let button = event.relatedTarget
+        let recipient = button.getAttribute('data-bs-whatever')
+        let modalTitle = modal.querySelector('.modal-name')
+        let modalBodyInput = modal.querySelector('.modal-body input')
+        modalTitle.textContent = recipient
+        modalBodyInput.value = recipient
+        })
+    }
+}
+openModalQuestion()
 
+function  openModalImg() {
+    if(document.querySelector('#openFullImg')) {
+        const modal = document.querySelector('#openFullImg')
+        modal.addEventListener('show.bs.modal', function (event) {
+            let img = event.relatedTarget
+            let recipient = img.getAttribute('src')
+            let modalImg = modal.querySelector('.modal-img img')
+            modalImg.src = recipient
+            console.log(modalImg.src)
+        })
+    }
+}
+openModalImg()
 
 // Pass validation
 function valid(event){
@@ -161,7 +188,6 @@ for (var i=0; i<carousels.length; i++)
 // Hide tag links
 
 function hideTagListInit(indexStartHide, wrapTagList) {
-    console.log(wrapTagList)
     const tagList = wrapTagList.querySelectorAll('.tag-links > .tag')
     const dots = createDots()
 
@@ -189,7 +215,6 @@ const createDots = () => {
 
 const hideTagList = (tagList, indexStartHide) => {
     if (tagList.length > (indexStartHide + 1)) {
-        console.log('Больше 3')
         for (let i = indexStartHide; i < tagList.length; i++) {
             tagList[i].classList.add('hide')
         }
@@ -250,7 +275,7 @@ function userInterface() {
             console.log('Unauth')
         }
     }    
-    toggleFavoriteBrand()    
+    //toggleFavoriteBrand()    
 
 }
 userInterface()
@@ -289,7 +314,9 @@ if(document.querySelector('.splide--gallery')) {
 
 if(document.querySelector('.splide--users-feedback')) {
     document.addEventListener( 'DOMContentLoaded', function() {
-        const splide = new Splide( '.splide--users-feedback', {
+        let elms = document.querySelectorAll( '.splide--users-feedback' )
+        for ( var i = 0; i < elms.length; i++ ) {
+        new Splide( elms[i], {
             height : 364,
             type   : 'slide',
             perPage: 3,
@@ -297,8 +324,8 @@ if(document.querySelector('.splide--users-feedback')) {
             pagination : false,
             arrows: true,
             arrowPath : '0',
-        } );
-        splide.mount();
+        } ).mount();
+    }
     } );
 }
 
