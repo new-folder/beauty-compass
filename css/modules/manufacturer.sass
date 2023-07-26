@@ -1,10 +1,8 @@
 .manufacturer
-  .row
-    //@media (max-width: $xs-breack-point)
-    //  --bs-gutter-x: 1rem
   a
     text-decoration: none
     margin-bottom: 0
+    color: inherit
   p
     margin-bottom: 0
   .cloud
@@ -16,25 +14,19 @@
     background: var(--unnamed, #FAFAFA)
     box-shadow: 0 10px 20px 0 rgba(14, 14, 14, 0.10)
   .profile
-    @media screen and (min-width: $first-breack-point)
-      margin-bottom: 20px
-    &__title
-      margin-bottom: 27px
+    &__company
+      &--email, &--phone
+        word-wrap: break-word
       &--badge
-        @media screen and (max-width: $first-breack-point)
-          background-color: yellow
-          font-size: 20px
-          line-height: 1.25
-          margin-bottom: 0
-          display: none !important
+        font-size: 20px
+        line-height: 1.25
+        margin-bottom: 0
         img
           margin-right: 18px
-        a
-          font-size: 30px
-          font-style: normal
-          font-weight: 600
-          color: #1560BD
-          margin-bottom: 0
+        span
+          @media screen and (max-width: $second-breack-point)
+            display: none
+
     &__card
       &--wrapper
         height: 26px
@@ -72,6 +64,7 @@
         border-radius: 15px
         background: #FFF
         box-shadow: 0 4px 20px 0 rgba(14, 14, 14, 0.07)
+        cursor: pointer
         @media screen and (min-width: $second-breack-point)
           width: 187px
           height: 187px
@@ -99,65 +92,68 @@
 
   .add-info
     &__wrapper
-      padding: 7px 8px
       border-radius: 10px
       background: #FFF
       box-shadow: 0 4px 20px 0 rgba(14, 14, 14, 0.07)
-      @media screen and (min-width: $second-breack-point)
-        margin-bottom: 40px
     &__content
-      width: 100%
+      //width: 100%
       overflow: hidden
       max-height: 0
       transition: all 0.3s ease
-      @media screen and (min-width: $first-breack-point)
-        width: 50%
     &__trigger
       cursor: pointer
       img
         transition: all 0.3s ease
     &__title
-      margin-right: 8px
+      //margin-right: 8px
       font-weight: 700
     &__schemes
       .left, .right
-        width: 50%
+        //width: 50%
       .left
         border-right: 1px solid #000000
         &__title
           margin-bottom: 0
+        &-inner
+          &__item
+            margin-top: -8px
+            div
+              span
+                cursor: pointer
+                &:hover
+                  color: #E31E24
+
         &__question
           width: 25px
           height: 25px
           @media screen and (max-width: $second-breack-point)
             display: none
-        &-inner
-          padding-top: 10px
-          &__item
-            &:not(:last-child)
-              margin-bottom: -8px
-            &:hover
-              p
-                color: #E31E24
-            img, p
-              margin-left: 10px
-            &--2lvl
-              padding-left: 35px
-              &:not(:last-child)
-                margin-top: 16px
-              &:hover
-                p
-                  color: #E31E24
+        //&-inner
+        //  &__item
+        //    &:not(:last-child)
+        //      margin-bottom: -8px
+        //    &:hover
+        //      p
+        //        color: #E31E24
+        //    img, p
+        //      margin-left: 10px
+        //    &--2lvl
+        //      padding-left: 35px
+        //      &:not(:last-child)
+        //        margin-top: 16px
+        //
+        //        p
+        //          color: #E31E24
       .right
-        padding-left: 25px
-        > p > a
-          margin-left: 8px
         &__title
           position: relative
-          margin-bottom: 0
+          color: inherit
+          text-decoration: none
+          &:hover
+            color: #E31E24
           a > img
-            width: 10px
-            height: 10px
+            width: 13px
+            height: 13px
           &--cloud
             position: absolute
             background-color: yellowgreen
@@ -169,13 +165,7 @@
           @media screen and (max-width: $second-breack-point)
             display: none
         &-inner
-          padding-top: 10px
           &__item
-            padding-top: 24px
-            img
-              margin-right: 10px
-            &:first-child
-              padding-top: 10px
             &:hover
               p
                 color: #E31E24
