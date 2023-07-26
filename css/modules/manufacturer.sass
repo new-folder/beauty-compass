@@ -1,11 +1,21 @@
 .manufacturer
+  .row
+    //@media (max-width: $xs-breack-point)
+    //  --bs-gutter-x: 1rem
   a
     text-decoration: none
     margin-bottom: 0
   p
     margin-bottom: 0
+  .cloud
+    color: #210E22
+    font-size: 15px
+    font-style: normal
+    font-weight: 600
+    line-height: normal
+    background: var(--unnamed, #FAFAFA)
+    box-shadow: 0 10px 20px 0 rgba(14, 14, 14, 0.10)
   .profile
-    margin-bottom: 15px
     @media screen and (min-width: $first-breack-point)
       margin-bottom: 20px
     &__title
@@ -29,6 +39,8 @@
       &--wrapper
         height: 26px
         position: relative
+        @media screen and (min-width: $first-breack-point)
+          height: 34px
       &--input
         width: 100%
         height: 100%
@@ -50,6 +62,9 @@
         font-weight: 600
         line-height: normal
         margin-bottom: -10px
+        @media screen and (min-width: $first-breack-point)
+          font-size: 15px
+          top: -15px
       &--photo
         position: relative
         width: 114px
@@ -80,11 +95,9 @@
           margin-left: 10px
       .small-brake
         @media (max-width: $xs-breack-point)
-          width: 53%
+          width: 60%
 
   .add-info
-    p
-      margin-bottom: 0
     &__wrapper
       padding: 7px 8px
       border-radius: 10px
@@ -94,9 +107,11 @@
         margin-bottom: 40px
     &__content
       width: 100%
-      max-height: 0
       overflow: hidden
+      max-height: 0
       transition: all 0.3s ease
+      @media screen and (min-width: $first-breack-point)
+        width: 50%
     &__trigger
       cursor: pointer
       img
@@ -109,6 +124,13 @@
         width: 50%
       .left
         border-right: 1px solid #000000
+        &__title
+          margin-bottom: 0
+        &__question
+          width: 25px
+          height: 25px
+          @media screen and (max-width: $second-breack-point)
+            display: none
         &-inner
           padding-top: 10px
           &__item
@@ -130,6 +152,22 @@
         padding-left: 25px
         > p > a
           margin-left: 8px
+        &__title
+          position: relative
+          margin-bottom: 0
+          a > img
+            width: 10px
+            height: 10px
+          &--cloud
+            position: absolute
+            background-color: yellowgreen
+            top: -100%
+            right: -100%
+        &__question
+          width: 25px
+          height: 25px
+          @media screen and (max-width: $second-breack-point)
+            display: none
         &-inner
           padding-top: 10px
           &__item
@@ -142,8 +180,9 @@
               p
                 color: #E31E24
     &__buttons
-      margin-top: 15px
-      row-gap: 20px
+      @media screen and (min-width: $first-breack-point)
+        row-gap: 1.5rem
+
       img
         @media screen and (min-width: $first-breack-point)
           width: 37px
@@ -161,12 +200,7 @@
           color: #E31E24
 
   .relations
-    margin: 31px 0 15px 0
     &__prices
-      &--title
-        margin-bottom: 15px
-      &--subtitle
-        margin-bottom: 15px
       &--button
         img
           margin-right: 8px

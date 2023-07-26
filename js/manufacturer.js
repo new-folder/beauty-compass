@@ -3,7 +3,9 @@
 const addInfoTrigger = document.querySelector('.add-info__trigger');
 const addInfoContent = document.querySelector('.add-info__content');
 const addInfoArrow = document.querySelector('.add-info__trigger img');
+const questionSign = document.querySelector('.question-sign')
 let isOpen = false;
+// addInfoContent.style.overflowY = 'hidden';
 
 addInfoTrigger.addEventListener('click', function() {
   if (!isOpen) {
@@ -11,14 +13,22 @@ addInfoTrigger.addEventListener('click', function() {
     isOpen = true;
     addInfoArrow.style.transform = 'rotate(180deg)';
     addInfoContent.style.margin = '30px 0 20px 0';
+    // setTimeout(addInfoContent.style.overflowY = 'inherit', 1000);
   } else {
     addInfoContent.style.maxHeight = '0';
     isOpen = false;
     addInfoArrow.style.transform = 'rotate(0)';
     addInfoContent.style.paddingTop = '0px';
     addInfoContent.style.margin =  '0';
+    // addInfoContent.style.overflowY = 'hidden';
   }
 });
+
+// questionSign.addEventListener('mouseenter', function() {
+//
+// })
+
+
 
 
 // creating brands
@@ -55,5 +65,20 @@ const createBrand = () => {
 
 
 
+tippy('.left__question', {
+  content: '<div class="cloud">Пример текста</div>',
+  theme: 'light',
+  placement: 'top-start',
+  arrow: false,
+  allowHTML: true,
+});
 
+tippy('.right__question', {
+
+  content: '<div class="cloud">Вы можете задать порядок отображения средств перемещая их иконки</div>',
+  theme: 'light',
+  placement: 'top-start',
+  arrow: false,
+  allowHTML: true,
+});
 

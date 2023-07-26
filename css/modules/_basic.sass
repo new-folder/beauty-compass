@@ -115,8 +115,6 @@ main
         max-width: 360px
         padding: 0 10px
 
-
-
 .slider
     margin-bottom: 56px
 
@@ -130,7 +128,7 @@ main
     background: #FFF
     box-shadow: 0 4px 20px 0 rgba(14, 14, 14, 0.07)
     color: #1560BD
-    font-size: 24px
+    font-size: 15px
     font-style: normal
     font-weight: 600
     line-height: normal
@@ -139,11 +137,15 @@ main
         width: 17px
         height: 17px
         margin-right: 8px
+        @media screen and (min-width: $first-breack-point)
+            width: 37px
+            height: 37px
     &:hover
         color: #E31E24
         opacity: .8
-    @media screen and (max-width: $first-breack-point)
-        font-size: 15px
+    @media screen and (min-width: $first-breack-point)
+        font-size: 24px
+
 
 .card--tagged
     &:after
@@ -183,7 +185,40 @@ main
         color: #FAFAFA
     &:focus
         color: #FAFAFA
+    @media screen and (min-width: $first-breack-point)
+        font-size: 15px
 
+.row-g-3
+    row-gap: 1rem
 
+.row-g-4
+    row-gap: 1.5rem
+
+.column-g-3
+    column-gap: 1rem
+
+.column-g-4
+    column-gap: 1.5rem
+
+.title--black
+    color: #494949
+    font-size: 15px
+    font-style: normal
+    font-weight: 700
+    line-height: normal
+    letter-spacing: 0.5px
+    text-transform: uppercase
+    @media screen and (min-width: $first-breack-point)
+        font-size: 36px
+
+.title--blue
+    color: #1560BD
+    font-size: 15px
+    font-style: normal
+    font-weight: 600
+    line-height: normal
+    text-transform: uppercase
+    @media screen and (min-width: $first-breack-point)
+        font-size: 24px
 
 
