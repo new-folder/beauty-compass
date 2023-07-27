@@ -19,11 +19,15 @@
     </button>
     <a class="navbar-brand col-1 d-xxl-none top-bar__short-logo" href="#"><img src="../img/short-logo.svg" alt=""></a>
     <div class="collapse navbar-collapse justify-content-center top-bar__collapse" id="navbarTogglerDemo01">
+
       <a class="navbar-brand col-11 col-xxl-4 offset-md-1 top-bar__logo" href="#"><img src="../img/logo.svg" alt=""></a>
+
       <form class="d-flex col-6 me-auto search-form">
         <input class="form-control me-2 search-form__input" type="search" placeholder="Поиск" aria-label="Search">
         <button class="btn search-form__submit" type="submit"></button>
       </form>
+
+
       <ul class="navbar-nav col-12 top-bar__list">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">О нас</a>
@@ -47,6 +51,7 @@
           <a class="nav-link" href="#">Беседка</a>
         </li>
       </ul>
+
       <div class="row justify-content-center my-3 d-flex d-xxl-none">
         <div class="col-3"><a href="" class="footer__social footer__social--email" target="_blank"></a></div>
         <div class="col-3"><a href="" class="footer__social footer__social--telegram" target="_blank"></a></div>
@@ -67,12 +72,12 @@
       <div class="profile__title row d-flex mb-4">
         <div class="col-12">
           <div class="row justify-content-center align-items-center">
-            <div class="col-4 offset-4 text-center">
-              <a href="" class="profile__link text-decoration-none title--h2 text-uppercase">Профиль</a>
+            <div class="col-5 offset-3 text-center">
+              <a href="" class="profile__link text-decoration-none title--h2 text-uppercase">Информация о бренде</a>
             </div>
-            <div class="col-4">
+            <div class="col-3">
               <a href="profile-block.html" class="profile__badge title--h3_blue col-md-3 d-flex align-items-center w-100">
-                <img src="../img/setting.svg" alt="settings logo">
+                <img src="../img/tick-circle.svg" alt="settings logo">
                 <span class="hover--red text-decoration-none text-uppercase d-none d-md-block ms-2">Настроить</span>
               </a>
             </div>
@@ -82,43 +87,103 @@
       <div class="profile__body">
         <div class="row">
           <div class="col-12 offset-xxl-1">
-            <div class="row justify-content-between ">
-              <div class="col-4 col-md-3 col-xxl-2">
-                <div class="profile__photo position-relative" role="button">
-                  <img src="../img/gallery-add.svg" alt="gallery-add logo" class="position-absolute top-50 start-50 translate-middle">
+
+            <div class="container container--bc">
+              <div class="row d-flex align-items-center profile__title">
+                <div class="col-md-6 offset-md-3 text-center">
+                  <a href="" class="profile__title--link text-decoration-none title--h2 text-uppercase">Профиль</a>
+                </div>
+                <div class="profile__title--badge col-md-3 d-flex align-items-center">
+                  <img src="../img/setting.svg" alt="settings logo">
+                  <a href="" class="text-decoration-none text-uppercase title--h2">Настроить</a>
                 </div>
               </div>
-              <div class="col-7 col-md-8 offset-md-1 col-xxl-10 offset-xxl-0">
-                <div class="row row-g-3">
-                  <div class="col-12">
-                    <div>
-                      <p class="title--h4">test@test.ru</p>
+              <div class="col-12 col-md-6 offset-xxl-1 profile__card">
+                <div class="d-flex flex-wrap">
+                  <div class="profile__card--wrapper profile__card--name position-relative col-12 mb-4">
+                    <label for="profile__input--name"  class="label--light profile__card--label position-absolute">Название компании</label>
+                    <input class="profile__card--input profile__input--name w-100 h-100 px-1 rounded-3 border-0" id="profile__input--name" value="">
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between mb-4">
+                  <div class="profile__card--wrapper profile__card--photo position-relative col-4">
+                    <label for="profile__input--photo" class="label--light profile__card--label position-absolute">Логотип компании</label>
+                    <img src="../img/gallery-add.svg" alt="gallery-add logo" id="profile__input--photo">
+                  </div>
+                  <div class="col-7 col-md-5 col-xxl-8 small-brake">
+                    <div class="d-flex">
+                      <div class="profile__card--wrapper profile__card--tel position-relative col-12 mb-4">
+                        <label for="profile__input--tel" class="label--light profile__card--label position-absolute">Телефон</label>
+                        <input class="profile__card--input profile__input--tel w-100 h-100 px-1 rounded-3 border-0" id="profile__input--tel" value="">
+                      </div>
+                    </div>
+                    <div class="d-flex">
+                      <div class="profile__card--wrapper profile__card--email position-relative col-12">
+                        <label for="profile__input--email" class="label--light profile__card--label position-absolute">E-mail</label>
+                        <input class="profile__card--input profile__input--email w-100 h-100 px-1 rounded-3 border-0" id="profile__input--email" value="">
+                      </div>
+                    </div>
+                    <div class="d-flex flex-wrap">
+                      <div class="col-12">
+                        <div></div>
+                      </div>
                     </div>
                   </div>
-                  <div class="col-12">
-                    <div>
-                      <p class="title--h4">+7(999)999-99-99</p>
-                    </div>
+                </div>
+                <div class="d-flex flex-wrap">
+                  <div class="profile__card--wrapper profile__card--login position-relative col-12 mb-4">
+                    <label for="profile__input--login" class="label--light profile__card--label position-absolute">Логин</label>
+                    <input class="profile__card--input profile__input--login w-100 h-100 px-1 rounded-3 border-0" id="profile__input--login" value="">
                   </div>
+                </div>
+                <div class="d-flex flex-wrap">
+                  <div class="profile__card--wrapper profile__card--pw position-relative col-12 mb-3">
+                    <label for="profile__input--pw" class="label--light profile__card--label position-absolute">Пароль</label>
+                    <input class="profile__card--input profile__input--pw w-100 h-100 px-1 rounded-3 border-0" id="profile__input--pw" value="">
+                  </div>
+                </div>
+                <div class="d-flex flex-wrap">
+                  <div class="profile__card--wrapper profile__card--btn col-12 mb-4 d-flex justify-content-center">
+                    <button type="button" class="btn btn--blue profile__card--btn d-flex align-items-center justify-content-center">Сохранить</button>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-xxl-10 offset-xxl-1 checkbox profile__card--checkbox confirm d-flex align-items-baseline">
+                  <label for="confirm"> Согласен получать новости сайта</label>
+                  <input type="checkbox" class="confirm" id="confirm">
                 </div>
               </div>
             </div>
+
+
+
+
+
+
+
+
           </div>
         </div>
       </div>
     </div>
   </section>
+
   <section class="add-info">
     <div class="container container--bc">
+
       <div class="add-info__wrapper d-flex flex-column col-12 col-xxl-10 offset-xxl-1 px-3 pb-3">
+
         <div role="button" class="add-info__trigger d-flex justify-content-center align-items-center col-12 pt-3">
           <p class="title--h5 add-info__title me-3">
             Добавление информации о брендах, сериях и средствах
           </p>
           <img class="ease3" src="../img/Vector.svg" alt="arrow image">
         </div>
+
         <div class="add-info__content ease3 col-12 col-xxl-6 overflow-hidden">
          <div class="add-info__schemes d-flex justify-content-between align-items-baseline">
+
            <div class="left col-6">
              <div class="row">
                <div class="col-12">
@@ -130,6 +195,7 @@
                </div>
              </div>
            </div>
+
            <div class="right col-6 ps-4">
              <div class="row">
               <div class="col-12">
@@ -168,8 +234,10 @@
           <span class="hover--red">создать рассылку</span>
         </a>
       </div>
+
     </div>
   </section>
+
   <section class="relations">
     <div class="container container--bc">
       <div class="relations__prices col-xxl-10 offset-xxl-1">

@@ -11,7 +11,7 @@
   />
   <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 <nav class="navbar navbar-expand-xxl top-bar">
   <div class="container justify-content-start position-relative p-xxl-0 container--header">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,27 +80,27 @@
       </div>
       <div class="col-12 col-md-6 offset-xxl-1 profile__card">
         <div class="d-flex flex-wrap">
-          <div class="col-12 profile__card--wrapper mb-4 profile__card--name">
-            <label for="profile__input--name"  class="profile__card--label">Название компании</label>
-            <input class="profile__card--input profile__input--name" id="profile__input--name" value="">
+          <div class="profile__card--wrapper profile__card--name position-relative col-12 mb-4">
+            <label for="profile__input--name"  class="label--light profile__card--label position-absolute">Название компании</label>
+            <input class="profile__card--input profile__input--name w-100 h-100 px-1 rounded-3 border-0" id="profile__input--name" value="">
           </div>
         </div>
         <div class="d-flex justify-content-between mb-4">
-          <div class="col-4 profile__card--wrapper profile__card--photo">
-            <label for="profile__input--photo" class="profile__card--label">Логотип компании</label>
+          <div class="profile__card--wrapper profile__card--photo position-relative col-4">
+            <label for="profile__input--photo" class="label--light profile__card--label position-absolute">Логотип компании</label>
             <img src="../img/gallery-add.svg" alt="gallery-add logo" id="profile__input--photo">
           </div>
           <div class="col-7 col-md-5 col-xxl-8 small-brake">
             <div class="d-flex">
-              <div class="col-12 mb-4 profile__card--wrapper profile__card--tel">
-                <label for="profile__input--tel" class="profile__card--label">Телефон</label>
-                <input class="profile__card--input profile__input--tel" id="profile__input--tel" value="">
+              <div class="profile__card--wrapper profile__card--tel position-relative col-12 mb-4">
+                <label for="profile__input--tel" class="label--light profile__card--label position-absolute">Телефон</label>
+                <input class="profile__card--input profile__input--tel w-100 h-100 px-1 rounded-3 border-0" id="profile__input--tel" value="">
               </div>
             </div>
             <div class="d-flex">
-              <div class="col-12 profile__card--wrapper profile__card--email">
-                <label for="profile__input--email" class="profile__card--label">E-mail</label>
-                <input class="profile__card--input profile__input--email" id="profile__input--email" value="">
+              <div class="profile__card--wrapper profile__card--email position-relative col-12">
+                <label for="profile__input--email" class="label--light profile__card--label position-absolute">E-mail</label>
+                <input class="profile__card--input profile__input--email w-100 h-100 px-1 rounded-3 border-0" id="profile__input--email" value="">
               </div>
             </div>
             <div class="d-flex flex-wrap">
@@ -111,19 +111,19 @@
           </div>
         </div>
         <div class="d-flex flex-wrap">
-          <div class="col-12 mb-4 profile__card--wrapper profile__card--login">
-            <label for="profile__input--login" class="profile__card--label">Логин</label>
-            <input class="profile__card--input profile__input--login" id="profile__input--login" value="">
+          <div class="profile__card--wrapper profile__card--login position-relative col-12 mb-4">
+            <label for="profile__input--login" class="label--light profile__card--label position-absolute">Логин</label>
+            <input class="profile__card--input profile__input--login w-100 h-100 px-1 rounded-3 border-0" id="profile__input--login" value="">
           </div>
         </div>
         <div class="d-flex flex-wrap">
-          <div class="col-12 mb-3 profile__card--wrapper profile__card--pw">
-            <label for="profile__input--pw" class="profile__card--label">Пароль</label>
-            <input class="profile__card--input profile__input--pw" id="profile__input--pw" value="">
+          <div class="profile__card--wrapper profile__card--pw position-relative col-12 mb-3">
+            <label for="profile__input--pw" class="label--light profile__card--label position-absolute">Пароль</label>
+            <input class="profile__card--input profile__input--pw w-100 h-100 px-1 rounded-3 border-0" id="profile__input--pw" value="">
           </div>
         </div>
         <div class="d-flex flex-wrap">
-          <div class="col-12 mb-4 d-flex justify-content-center profile__card--wrapper profile__card--btn">
+          <div class="profile__card--wrapper profile__card--btn col-12 mb-4 d-flex justify-content-center">
             <button type="button" class="btn btn--blue profile__card--btn d-flex align-items-center justify-content-center">Сохранить</button>
           </div>
         </div>
@@ -137,12 +137,9 @@
     </div>
   </section>
 
-
-
-
 </main>
 
-<footer class="footer py-5">
+<footer class="footer py-5 mt-auto">
   <div class="container footer__container">
     <div class="row justify-content-center footer__nav">
       <div class="col-12 col-md-4 col-xxl-3">
@@ -222,7 +219,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>

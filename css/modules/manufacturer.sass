@@ -2,82 +2,39 @@
   a
     text-decoration: none
     margin-bottom: 0
-    color: inherit
   p
     margin-bottom: 0
-  .cloud
-    color: #210E22
-    font-size: 15px
-    font-style: normal
-    font-weight: 600
-    line-height: normal
-    background: var(--unnamed, #FAFAFA)
-    box-shadow: 0 10px 20px 0 rgba(14, 14, 14, 0.10)
+  .question
+    width: 1.5rem
   .profile
-    &__company
+    &__badge
+      img
+        width: 2rem
+        @media screen and (min-width: $first-breack-point)
+          width: 3rem
       &--email, &--phone
         word-wrap: break-word
-      &--badge
-        font-size: 20px
-        line-height: 1.25
-        margin-bottom: 0
-        img
-          margin-right: 18px
-        span
-          @media screen and (max-width: $second-breack-point)
-            display: none
-
+    &__photo
+      width: 114px
+      height: 114px
+      border-radius: 15px
+      background: $white-color
+      box-shadow: $box-shadow-regular
+      @media screen and (min-width: $second-breack-point)
+        width: 187px
+        height: 187px
     &__card
-      &--wrapper
-        height: 26px
-        position: relative
-        @media screen and (min-width: $first-breack-point)
-          height: 34px
-      &--input
-        width: 100%
-        height: 100%
-        padding: 0 10px
-        border: none
-        border-radius: 10px
-        background: #FFF
-        box-shadow: 0 4px 20px 0 rgba(14, 14, 14, 0.07)
-        font-size: 10px
-        &:focus-visible
-          outline: 1px solid #1560BD
       &--label
-        position: absolute
         top: -12px
         left: 0
-        color: #D9D9D9
-        font-size: 10px
-        font-style: normal
-        font-weight: 600
-        line-height: normal
         margin-bottom: -10px
         @media screen and (min-width: $first-breack-point)
-          font-size: 15px
           top: -15px
-      &--photo
-        position: relative
-        width: 114px
-        height: 114px
-        border-radius: 15px
-        background: #FFF
-        box-shadow: 0 4px 20px 0 rgba(14, 14, 14, 0.07)
-        cursor: pointer
-        @media screen and (min-width: $second-breack-point)
-          width: 187px
-          height: 187px
-        img
-          position: absolute
-          top: 50%
-          left: 50%
-          transform: translate(-50%, -50%)
       &--btn
         justify-self: center
       &--checkbox
         label
-          color: #210E22
+          color: $dark-lighter
           font-size: 10px
           font-style: normal
           font-weight: 600
@@ -89,108 +46,30 @@
       .small-brake
         @media (max-width: $xs-breack-point)
           width: 60%
-
   .add-info
     &__wrapper
       border-radius: 10px
-      background: #FFF
-      box-shadow: 0 4px 20px 0 rgba(14, 14, 14, 0.07)
+      background: $white-color
+      box-shadow: $box-shadow-regular
     &__content
-      //width: 100%
-      overflow: hidden
       max-height: 0
-      transition: all 0.3s ease
-    &__trigger
-      cursor: pointer
-      img
-        transition: all 0.3s ease
     &__title
-      //margin-right: 8px
       font-weight: 700
     &__schemes
-      .left, .right
-        //width: 50%
       .left
-        border-right: 1px solid #000000
-        &__title
-          margin-bottom: 0
+        border-right: 1px solid $dark-color
         &-inner
           &__item
             margin-top: -8px
-            div
-              span
-                cursor: pointer
-                &:hover
-                  color: #E31E24
-
-        &__question
-          width: 25px
-          height: 25px
-          @media screen and (max-width: $second-breack-point)
-            display: none
-        //&-inner
-        //  &__item
-        //    &:not(:last-child)
-        //      margin-bottom: -8px
-        //    &:hover
-        //      p
-        //        color: #E31E24
-        //    img, p
-        //      margin-left: 10px
-        //    &--2lvl
-        //      padding-left: 35px
-        //      &:not(:last-child)
-        //        margin-top: 16px
-        //
-        //        p
-        //          color: #E31E24
       .right
         &__title
-          position: relative
-          color: inherit
-          text-decoration: none
-          &:hover
-            color: #E31E24
           a > img
             width: 13px
             height: 13px
-          &--cloud
-            position: absolute
-            background-color: yellowgreen
-            top: -100%
-            right: -100%
-        &__question
-          width: 25px
-          height: 25px
-          @media screen and (max-width: $second-breack-point)
-            display: none
-        &-inner
-          &__item
-            &:hover
-              p
-                color: #E31E24
     &__buttons
       @media screen and (min-width: $first-breack-point)
         row-gap: 1.5rem
-
       img
         @media screen and (min-width: $first-breack-point)
           width: 37px
           height: 37px
-    &__button
-      display: flex
-      align-items: center
-      margin-right: 45px
-      &:not(:last-child)
-        margin-bottom: 15px
-      img
-        margin-right: 8px
-      span
-        &:hover
-          color: #E31E24
-
-  .relations
-    &__prices
-      &--button
-        img
-          margin-right: 8px

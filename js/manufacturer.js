@@ -47,14 +47,18 @@ const brands = [];
 
 
 const addSeries = () => {
-  const series = document.createElement('div');
-  series.classList.add('left-inner__2lvl');
-  series.innerHTML = `
-  <div class="title--h5 d-flex align-items-end ps-2">
+  event.preventDefault();
+  const item = document.createElement('div');
+  item.classList.add('left-inner__2lvl');
+  item.innerHTML = `
+  <div class="title--h5 hover--red d-flex align-items-end" role='button' style="padding-left: 2rem;">
     <img src="../img/2-level.svg" alt="img">
     <span class="ps-2">Серия 1</span>
   </div>
   `
+  addInfoSchemeLeft.appendChild(item);
+  addInfoContent.style.maxHeight = (addInfoContent.scrollHeight + 50) + 'px';
+  addInfoSchemeLeft.classList.add('pt-4')
 }
 
 const addItem = () => {
@@ -64,16 +68,16 @@ const addItem = () => {
 
   if (addInfoSchemeLeft.childElementCount === 0) {
     item.innerHTML = `
-    <div class="title--h5 d-flex align-items-end ps-2">
+    <div class="title--h5 hover--red d-flex align-items-end ps-2">
       <img src="../img/1-level.svg" alt="img">
-      <span class="ps-2">Бренд1</span>
+      <span class="ps-2" onclick={addSeries()} role='button'>Бренд1</span>
     </div>`
   }
   if (addInfoSchemeLeft.childElementCount > 0) {
     item.innerHTML = `
-    <div class="title--h5 d-flex align-items-end ps-2">
+    <div class="title--h5 hover--red d-flex align-items-end ps-2">
       <img src="../img/1-level2.svg" alt="img">
-      <span class="ps-2" onclick={addSeries()}>Бренд2</span>
+      <span class="ps-2" onclick={addSeries()} role='button'>Бренд2</span>
     </div>`
   }
 
