@@ -197,25 +197,59 @@ const hideTagList = (tagList, indexStartHide) => {
 
 hideTagListInit(2)
 
+function userInterface() {
+    let userId
 
+    // Authorization
+    function saveUserLocalStorage() {
+        const authForm = document.querySelector('.auth__form')
+        authForm.onsubmit = async function(e) {
+            // const formData = new FormData(e.target)
+            const emailValue = document.querySelector('#headerAuthEmail')
+            const passValue = document.querySelector('#authInputPassword')
+            e.preventDefault()
+            const authBody = { 
+                // email: emailValue,
+                // password: passValue,
+                username: 'kminchelle',
+                password: '0lelplR',
+            }
+            const resp = await fetch('https://dummyjson.com/auth/login',{
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json'},
+                body: JSON.stringify(authBody)
+            })
+            const result = await resp.json()
+            localStorage.setItem('userToken', result['token'])
+            localStorage.setItem('userId', result['id'])
+            console.log(userId)
+        }    
+    }
+    saveUserLocalStorage()  
 
-// Add/remove class 'active' for favorite-brand
-function toggleFavoriteBrand() {
-    const favoriteList = document.querySelectorAll('.favorite--brand')
-    favoriteList.forEach(item => {
-        item.addEventListener('click', elem => {
-            if(!elem.target.classList.contains('active')) {
-                elem.target.classList.add('active')
-            // сюда запрос для добавления в избранное
-            } else
-            elem.target.classList.remove('active')
-            // сюда запрос для удаления из избранного
-        }) 
-    })
+    // Add/remove class 'active' for favorite-brand
+    async function toggleFavoriteBrand() {
+        const favoriteBrand = document.querySelector('.favorite--brand')
+        const userToken = localStorage.getItem('userToken')
+        if (userToken) {
+            const resp = await fetch('https://64a990b78b9afaf4844ad897.mockapi.io/favoritebrand')
+            const result = await resp.json()
+            userObject = result.find(elem => elem.id === userId)
+            if (userObject['favorite']) {
+                favoriteBrand.classList.add('active')
+            }
+        } else {
+            console.log('Unauth')
+        }
+    }    
+    toggleFavoriteBrand()    
+
 }
+userInterface()
 
-toggleFavoriteBrand()
 
+
+//For demonstration
 
 // Add/remove class 'active' for favorite-product
 function toggleFavoriteProduct() {
