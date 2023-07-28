@@ -11,7 +11,7 @@
   />
   <link rel="stylesheet" href="../css/style.css">
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body>
 <nav class="navbar navbar-expand-xxl top-bar">
   <div class="container justify-content-start position-relative p-xxl-0 container--header">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,35 +69,112 @@
 
   <section class="profile mb-3">
     <div class="container container--bc">
-      <div class="profile__title row d-flex mb-4">
-        <div class="col-12">
-          <div class="row justify-content-center align-items-center">
-            <div class="col-5 offset-3 text-center">
-              <a href="" class="profile__link text-decoration-none title--h2 text-uppercase">Информация о бренде</a>
+      <div class="profile__title row d-flex justify-content-center mb-4">
+        <div class="col-12 col-xxl-10">
+          <div class="row justify-content-between align-items-center">
+            <div class="col-2">
+              <a href="profile.html">
+                <img src="../img/arrow-left.svg" alt="arrow left icon">
+              </a>
             </div>
-            <div class="col-3">
+            <div class="col-8 text-center">
+              <a href="" class="profile__link text-decoration-none title--h2 text-uppercase text-center">Информация <br>
+                о производителе</a>
+            </div>
+            <div class="col-2">
               <a href="profile-block.html" class="profile__badge title--h3_blue col-md-3 d-flex align-items-center w-100">
                 <img src="../img/tick-circle.svg" alt="settings logo">
-                <span class="hover--red text-decoration-none text-uppercase d-none d-md-block ms-2">Настроить</span>
+                <span class="hover--red text-decoration-none text-uppercase d-none d-md-block ms-2">Принять</span>
               </a>
             </div>
           </div>
         </div>
       </div>
+
       <div class="profile__body">
-        <div class="row">
+        <div class="">
           <div class="col-12 offset-xxl-1">
 
-            <div class="container container--bc">
-              <div class="row d-flex align-items-center profile__title">
-                <div class="col-md-6 offset-md-3 text-center">
-                  <a href="" class="profile__title--link text-decoration-none title--h2 text-uppercase">Профиль</a>
-                </div>
-                <div class="profile__title--badge col-md-3 d-flex align-items-center">
-                  <img src="../img/setting.svg" alt="settings logo">
-                  <a href="" class="text-decoration-none text-uppercase title--h2">Настроить</a>
+
+            <div class="clearfix d-xxl-flex row-cols-xxl-3">
+
+              <div class="col-12 col-md-8 mb-4 float-md-end float-xxl-none">
+                <div class="input--wrapper position-relative">
+                  <label for="profile__name" class="label--light profile__label position-absolute">Название компании</label>
+                  <input class="profile__input profile__name input--regular w-100 h-100 px-1 rounded-3 border-0" id="profile__name" value="" type="text">
                 </div>
               </div>
+
+              <div class="col-4 float-start mb-4 float-xxl-none">
+                <div class="profile__photo position-relative">
+                  <label for="profile__photo" class="label--light profile__label position-absolute">Логотип компании</label>
+                  <img src="../img/gallery-add.svg" alt="gallery-add logo" id="profile__photo" class="position-absolute top-50 start-50 translate-middle">
+                </div>
+              </div>
+
+
+              <div class="col-7 col-md-8 float-end mb-4 float-xxl-none">
+                <div class="select--wrapper position-relative ">
+                  <label for="profile__country" class="label--light profile__label position-absolute">Страна</label>
+                  <select class="profile__select profile__country select--regular w-100 h-100 px-1 rounded-3 border-0" name="country" id="profile__country">
+                    <option value="">Выбор из списка</option>
+                    <option value="">Выбор из списка</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-7 col-md-8 float-end mb-4 float-xxl-none">
+                <div class="select--wrapper position-relative ">
+                  <label for="profile__town" class="label--light profile__label position-absolute">Город (необязательно)</label>
+                  <select class="profile__select profile__country select--regular w-100 h-100 px-1 rounded-3 border-0" name="country" id="profile__town">
+                    <option value="">Город (необязательно)</option>
+                    <option value="">Город (необязательно)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-12 float-end float-xxl-none">
+                  <div class="input--wrapper position-relative col-12 mb-4">
+                    <label for="profile__tel" class="label--light profile__label position-absolute">Телефон</label>
+                    <input class="profile__input profile__tel input--regular w-100 h-100 px-1 rounded-3 border-0" id="profile__tel" value="">
+                  </div>
+              </div>
+
+              <div class="col-12 float-start float-xxl-none">
+                <div class="input--wrapper position-relative col-12 mb-4">
+                  <label for="profile__email" class="label--light profile__label position-absolute">E-mail</label>
+                  <input class="profile__input profile__email input--regular w-100 h-100 px-1 rounded-3 border-0" id="profile__email" value="" type="email">
+                </div>
+              </div>
+
+              <div class="col-12 float-start float-xxl-none">
+                <div class="textarea--wrapper position-relative col-12 mb-4">
+                  <label for="profile__description" class="label--light profile__label position-absolute">Краткое описание компании</label>
+                  <textarea class="profile__description profile__description input--regular w-100 h-100 px-1 rounded-3 border-0" id="profile__description" rows="3"></textarea>
+                </div>
+              </div>
+
+              <div class="col-12 float-start float-xxl-none">
+                <div class="textarea--wrapper position-relative col-12 mb-4">
+                  <label for="profile__history" class="label--light profile__label position-absolute">История компании</label>
+                  <textarea class="profile__description profile__history input--regular w-100 h-100 px-1 rounded-3 border-0" id="profile__history" rows="3"></textarea>
+                </div>
+              </div>
+
+              <div class="col-12 float-start float-xxl-none">
+                <div class="textarea--wrapper position-relative col-12 mb-4">
+                  <label for="profile__principles" class="label--light profile__label position-absolute">Принципы компании</label>
+                  <textarea class="profile__description profile__principles input--regular w-100 h-100 px-1 rounded-3 border-0" id="profile__principles" rows="3"></textarea>
+                </div>
+              </div>
+
+            </div>
+
+
+
+
+
+            <div class="container container--bc mt-5">
               <div class="col-12 col-md-6 offset-xxl-1 profile__card">
                 <div class="d-flex flex-wrap">
                   <div class="profile__card--wrapper profile__card--name position-relative col-12 mb-4">

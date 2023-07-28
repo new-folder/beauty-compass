@@ -157,6 +157,17 @@ main
         color: $sub-color
     @media screen and (min-width: $first-breack-point)
         font-size: 15px
+.input--wrapper, .select--wrapper
+    height: 26px
+
+.input--regular, .select--regular
+    //background: $white-color
+    background: #0a58ca
+    box-shadow: $box-shadow-regular
+    font-size: 10px
+    &:focus-visible
+        outline: 1px solid $main-color
+
 .label--light
     color: $gray-light
     font-size: 10px
@@ -165,12 +176,6 @@ main
     line-height: normal
     @media screen and (min-width: $first-breack-point)
         font-size: 15px
-.input-regular
-    background: $white-color
-    box-shadow: $box-shadow-regular
-    font-size: 10px
-    &:focus-visible
-        outline: 1px solid $main-color
 .row-g-3
     row-gap: 1rem
 .row-g-4

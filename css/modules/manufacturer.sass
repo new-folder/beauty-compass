@@ -12,8 +12,12 @@
         width: 2rem
         @media screen and (min-width: $first-breack-point)
           width: 3rem
-      &--email, &--phone
-        word-wrap: break-word
+    &__label
+      top: -12px
+      left: 0
+      margin-bottom: -10px
+      @media screen and (min-width: $first-breack-point)
+        top: -15px
     &__photo
       width: 114px
       height: 114px
@@ -23,24 +27,12 @@
       @media screen and (min-width: $second-breack-point)
         width: 187px
         height: 187px
+      img
+        width: 54px
+        height: auto
     &__card
-      &--label
-        top: -12px
-        left: 0
-        margin-bottom: -10px
-        @media screen and (min-width: $first-breack-point)
-          top: -15px
       &--btn
         justify-self: center
-      &--checkbox
-        label
-          color: $dark-lighter
-          font-size: 10px
-          font-style: normal
-          font-weight: 600
-          line-height: normal
-          @media screen and (min-width: $first-breack-point)
-            font-size: 24px
         .confirm
           margin-left: 10px
       .small-brake
