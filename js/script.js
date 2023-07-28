@@ -16,6 +16,7 @@
     })()
 
 
+
 // Pass validation
 function valid(event){
     const pas = document.querySelector('#registerInputPassword1').value
@@ -197,9 +198,10 @@ const hideTagList = (tagList, indexStartHide) => {
 hideTagListInit(2)
 
 
-// Add/remove class 'active' for favorite-heart
-function toggleFavorite() {
-    const favoriteList = document.querySelectorAll('.favorite-heart')
+
+// Add/remove class 'active' for favorite-brand
+function toggleFavoriteBrand() {
+    const favoriteList = document.querySelectorAll('.favorite--brand')
     favoriteList.forEach(item => {
         item.addEventListener('click', elem => {
             if(!elem.target.classList.contains('active')) {
@@ -212,19 +214,38 @@ function toggleFavorite() {
     })
 }
 
-toggleFavorite()
+toggleFavoriteBrand()
+
+
+// Add/remove class 'active' for favorite-product
+function toggleFavoriteProduct() {
+    const favoriteList = document.querySelectorAll('.favorite--product')
+    favoriteList.forEach(item => {
+        item.addEventListener('click', elem => {
+            elem.preventDefault()
+            if(!elem.target.classList.contains('active')) {
+                elem.target.classList.add('active')
+            // сюда запрос для добавления в избранное
+            } else
+            elem.target.classList.remove('active')
+            // сюда запрос для удаления из избранного
+        }) 
+    })
+}
+
+toggleFavoriteProduct()
 
 
 // Add/remove class 'active' for subscription
 function toggleSubscription() {
     const subBtn = document.querySelector('.follow-brand')
     let text
+    if(subBtn) {
         subBtn.addEventListener('click', event => {
             if(!event.target.classList.contains('active')) {
                 text = 'Вы подписаны'
                 event.target.classList.add('active')
                 document.querySelector('.follow-brand').textContent = text
-                console.log(event.target.textContent)
             // сюда запрос для подписки
             } else{
                 text = 'Подписаться'
@@ -233,6 +254,7 @@ function toggleSubscription() {
             // сюда запрос для отписки
             }
         }) 
+    }
 }
 
 toggleSubscription()
