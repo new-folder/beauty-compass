@@ -7,20 +7,6 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-.catalog__list:before, .catalog-new__list:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 30px;
-  width: 53px;
-  height: 238px;
-  background: url(../img/new-products.png) no-repeat;
-}
-@media screen and (max-width: 1400px) {
-  .catalog__list:before, .catalog-new__list:before {
-    display: none;
-  }
-}
 .catalog__item, .catalog-new__item {
   position: relative;
   color: #1560BD;
@@ -48,26 +34,6 @@
 @media screen and (max-width: 1400px) {
   .catalog__item:last-child, .catalog-new__item:last-child {
     display: block;
-  }
-}
-.catalog__item:before, .catalog-new__item:before {
-  content: "New";
-  position: absolute;
-  top: 15px;
-  right: 27px;
-  width: 36px;
-  height: 17px;
-  background: #1560BD;
-  border-radius: 10px;
-  color: #FAFAFA;
-  font-size: 10px;
-  line-height: 1.6;
-  text-transform: uppercase;
-  text-align: center;
-}
-@media screen and (max-width: 1400px) {
-  .catalog__item:before, .catalog-new__item:before {
-    display: none;
   }
 }
 .catalog__img, .catalog-new__img {
@@ -103,5 +69,60 @@
 @media screen and (max-width: 1400px) {
   .catalog__social, .catalog-new__social {
     max-width: 23px;
+  }
+}
+.catalog__link-all, .catalog-new__link-all {
+  color: #1560BD;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.25;
+  text-transform: lowercase;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+.catalog__link-all:hover, .catalog-new__link-all:hover {
+  color: #E31E24;
+}
+@media screen and (max-width: 1400px) {
+  .catalog__link-all, .catalog-new__link-all {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.25;
+    letter-spacing: 0.5px;
+  }
+}
+
+.catalog-new__list:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 53px;
+  height: 238px;
+  background: url(../img/new-products.png) no-repeat;
+}
+@media screen and (max-width: 1400px) {
+  .catalog-new__list:before {
+    display: none;
+  }
+}
+.catalog-new__item:before {
+  content: "New";
+  position: absolute;
+  top: 15px;
+  right: 27px;
+  width: 36px;
+  height: 17px;
+  background: #1560BD;
+  border-radius: 10px;
+  color: #FAFAFA;
+  font-size: 10px;
+  line-height: 1.6;
+  text-transform: uppercase;
+  text-align: center;
+}
+@media screen and (max-width: 1400px) {
+  .catalog-new__item:before {
+    display: none;
   }
 }/*# sourceMappingURL=catalog.css.map */

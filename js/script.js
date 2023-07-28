@@ -1,7 +1,7 @@
 // Bootstrap form validation
 (function () {
     'use strict'
-    var forms = document.querySelectorAll('.needs-validation')
+    const forms = document.querySelectorAll('.needs-validation')
     Array.prototype.slice.call(forms)
         .forEach(function (form) {
         form.addEventListener('submit', function (event) {
@@ -151,10 +151,88 @@ async function initCarousel(id) {
     }
 }
 
-const carousels = document.querySelectorAll(".carousel")
+const carousels = document.querySelectorAll('.carousel')
 for (var i=0; i<carousels.length; i++)
 {
     initCarousel(carousels[i].id)
 }
 
+// Hide tag links
 
+function hideTagListInit(indexStartHide) {
+    const wrapTagList = document.querySelector('.tag-links')
+    const tagList = wrapTagList.querySelectorAll('.tag-links > .tag')
+    const dots = createDots()
+
+    const tagListHide = hideTagList(tagList, indexStartHide)
+
+    tagListHide.forEach(item => wrapTagList.appendChild(item))
+
+    wrapTagList.appendChild(dots)
+
+    dots.addEventListener('click', function() {
+        for (let i = indexStartHide; i < tagList.length; i++) {
+            tagList[i].classList.remove('hide')
+        }
+        dots.remove()
+    })
+}
+
+const createDots = () => {
+    const dots = document.createElement('div')
+    dots.className = 'tag tag--dots'
+    dots.textContent = '• • •'
+    return dots
+}
+
+const hideTagList = (tagList, indexStartHide) => {
+    if (tagList.length > (indexStartHide + 1)) {
+        for (let i = indexStartHide; i < tagList.length; i++) {
+            tagList[i].classList.add('hide')
+        }
+    }
+    return tagList
+}
+
+hideTagListInit(2)
+
+
+// Add/remove class 'active' for favorite-heart
+function toggleFavorite() {
+    const favoriteList = document.querySelectorAll('.favorite-heart')
+    favoriteList.forEach(item => {
+        item.addEventListener('click', elem => {
+            if(!elem.target.classList.contains('active')) {
+                elem.target.classList.add('active')
+            // сюда запрос для добавления в избранное
+            } else
+            elem.target.classList.remove('active')
+            // сюда запрос для удаления из избранного
+        }) 
+    })
+}
+
+toggleFavorite()
+
+
+// Add/remove class 'active' for subscription
+function toggleSubscription() {
+    const subBtn = document.querySelector('.follow-brand')
+    let text
+        subBtn.addEventListener('click', event => {
+            if(!event.target.classList.contains('active')) {
+                text = 'Вы подписаны'
+                event.target.classList.add('active')
+                document.querySelector('.follow-brand').textContent = text
+                console.log(event.target.textContent)
+            // сюда запрос для подписки
+            } else{
+                text = 'Подписаться'
+                event.target.classList.remove('active')
+                document.querySelector('.follow-brand').textContent = text
+            // сюда запрос для отписки
+            }
+        }) 
+}
+
+toggleSubscription()
