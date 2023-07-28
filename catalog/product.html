@@ -72,9 +72,9 @@
                     </div>
                 </h1>
 
-                <div class="col-6">
+                <div class="col-12 col-md-6 mb-3 mb-md-0">
                     <div id="carouselProducer" class="carousel carousel--product b-carousel carousel-fade row" data-bs-ride="carousel" data-bs-interval="false">
-                        <div class="carousel-inner col-9">
+                        <div class="carousel-inner pe-0 p-md-2 col-9 ">
                             <div class="carousel-item active">
                                 <img src="/img/test-product.png" class="d-block w-100" alt="...">
                             </div>
@@ -92,7 +92,7 @@
                             </div>
                         </div>
                         <!--splide для вертикальной прокрутки-->
-                        <div class="splide splide--vertical col-3">
+                        <div class="splide splide--vertical pe-0 pe-md-2 col-3">
                             <div class="splide__track">
                                 <div class="carousel-indicators splide__list align-items-center">
                                     <button type="button" data-bs-target="#carouselProducer" data-bs-slide-to="0" aria-label="Slide 1" class="active splide__slide"><img src="/img/test-product.png" class="d-block w-100" alt="..."></button>
@@ -106,8 +106,8 @@
                     </div>
                 </div>
 
-                <div class="col-4">
-                    <div class="row d-flex align-items-center mb-2  mb-md-4">
+                <div class="col-12 col-md-4 d-flex flex-column">
+                    <div class="row d-flex align-items-center mb-2 mb-md-4 order-2 order-xxl-1">
                         <div class="col-3">
                             <a href=""><img src="../img/france-flag-lage.svg" alt=""></a>
                         </div>
@@ -115,23 +115,21 @@
                             <a href=""><img src="../img/icon-skin-min.svg" alt=""></a>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row order-3 order-xxl-2">
                         <div class="col-12">
-                            <button class="favorite favorite--product-full mb-2  mb-md-4">Добавить в избранное</button> 
+                            <button class="favorite favorite--product-full mb-2 mb-md-4">Добавить в избранное</button> 
                         </div>
                     </div>
-                    <div class="row mb-2  mb-md-4">
-                        <div class="col-12">
-                            <div class="product-header__title mb-2">Рейтинг</div>
-                            <div class="product-header__rating rating rating--lage">
-                                <div class="me-2">4,0/5</div>
-                                <div class="rating__body">
-                                    <div class="rating__active" style="width: 75%;"></div>
-                                </div>
+                    <div class="row mb-2  mb-md-4 order-1 order-xxl-3">
+                        <div class="col-6 col-xxl-12 product-header__title mb-2">Рейтинг</div>
+                        <div class="col-6 col-xxl-12 product-header__rating rating rating--lage">
+                            <div class="me-2">4,0/5</div>
+                            <div class="rating__body">
+                                <div class="rating__active" style="width: 75%;"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row order-4 order-xxl-4">
                         <div class="col-12">
                             <div class="product-header__title mb-3">Серия</div>
                             <div class="row">
@@ -150,7 +148,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row order-5 order-xxl-5">
                         <div class="col-12">
                             <div class="product-header__title mb-3">Ценовая категория</div>
                             <div class="row">
@@ -176,7 +174,7 @@
         <section class="about-product">
             <div class="container container--bc"> 
             <div class="row justify-content-center mb-4">
-                <div class="col-12 col-md-10">
+                <div class="col-12 col-xxl-10">
                     <div class="accordion about-product__accordion mb-3">
                         <div class="accordion-item about-product__item">
                             <h2 class="accordion-header" id="panelsStayOpen-discription">
@@ -290,32 +288,32 @@
         <section class="gallary">
             <div class="container container--bc">
                 <div class="row justify-content-center mb-3">
-                    <div class="col-5">
+                    <div class="col-6 col-xxl-5">
                         Фото (212)
                     </div>
-                    <div class="col-5 text-end">
+                    <div class="col-6 col-xxl-5 text-end">
                         <a href="">Все фото</a>
                     </div>
                 </div>
                 <div class="splide splide--gallery row mb-4" aria-labelledby="carousel-heading">                    
-                    <div class="splide__track col-10">
+                    <div class="splide__track col-12 col-xxl-10">
                         <ul class="splide__list">
-                            <li class="splide__slide"><img src="../img/test-gallery-slide-4.jpg"  data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
-                            <li class="splide__slide"><img src="../img/test-gallery-slide-2.jpg"  data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb"  alt=""></li>
-                            <li class="splide__slide"><img src="../img/test-gallery-slide-3.jpg"  data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb"  alt=""></li>
-                            <li class="splide__slide"><img src="data:image/jpeg;base64,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"  data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb"  alt=""></li>
-                            <li class="splide__slide"><img src="../img/test-gallery-slide-4.jpg" alt=""></li>
-                            <li class="splide__slide"><img src="../img/test-gallery-slide-2.jpg" alt=""></li>
-                            <li class="splide__slide"><img src="../img/test-gallery-slide-3.jpg" alt=""></li>
-                            <li class="splide__slide"><img src="../img/test-gallery-slide.jpg" alt=""></li>
-                            <li class="splide__slide"><img src="../img/test-gallery-slide-4.jpg" alt=""></li>
-                            <li class="splide__slide"><img src="../img/test-gallery-slide-2.jpg" alt=""></li>
-                            <li class="splide__slide"><img src="../img/test-gallery-slide-3.jpg" alt=""></li>
-                            <li class="splide__slide"><img src="../img/test-gallery-slide.jpg" alt=""></li>
-                            <li class="splide__slide"><img src="../img/test-gallery-slide-4.jpg" alt=""></li>
-                            <li class="splide__slide"><img src="../img/test-gallery-slide-2.jpg" alt=""></li>
-                            <li class="splide__slide"><img src="../img/test-gallery-slide-3.jpg" alt=""></li>
-                            <li class="splide__slide"><img src="../img/test-gallery-slide.jpg" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-4.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-2.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb"  alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-3.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb"  alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb"  alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-4.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-2.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-3.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-4.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-2.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-3.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-4.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-2.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-3.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
                         </ul>
                     </div>
                 </div>
@@ -324,15 +322,15 @@
         <section class="users-feedback">
             <div class="container container--bc mb-4">
                 <div class="row justify-content-center mb-3 users-feedback__header">
-                    <div class="col-5">
+                    <div class="col-6 col-xxl-5">
                         Отзывы (102)
                     </div>
-                    <div class="col-5 text-end">
+                    <div class="col-6 col-xxl-5 text-end">
                         <a href="">Все отзывы</a>
                     </div>
                 </div>                
                 <div class="splide splide--users-feedback row justify-content-center mb-3" aria-labelledby="carousel-heading">                    
-                    <div class="splide__track col-10">
+                    <div class="splide__track col-12 col-xxl-10">
                         <div class="splide__list">
                             <a href="" class="splide__slide user-feedback">
                                 <div class="user-feedback__header row">
@@ -490,7 +488,7 @@
                     </div>
                 </div>
                 <div class="user-feedback__footer row justify-content-center">
-                    <div class="col-10">
+                    <div class="col-12 col-xxl-10">
                         <button type="button" class="user-feedback__popup-link" data-bs-toggle="modal" data-bs-target="#openReview" data-bs-whatever="Icon Skin Stop Acne Сыворотка Multi-Acid Serum"><img src="../img/pen-notice.svg" class="me-1" alt="">Отправить отзыв</button>
                     </div>
                 </div>
@@ -499,15 +497,15 @@
         <section class="users-feedback">
             <div class="container container--bc mb-4">
                 <div class="row justify-content-center mb-3 users-feedback__header">
-                    <div class="col-5">
+                    <div class="col-6 col-xxl-5">
                         Вопросы (12)
                     </div>
-                    <div class="col-5 text-end">
+                    <div class="col-6 col-xxl-5 text-end">
                         <a href="">Все вопросы</a>
                     </div>
                 </div>                
                 <div class="splide splide--users-feedback row justify-content-center mb-3" aria-labelledby="carousel-heading">                    
-                    <div class="splide__track col-10">
+                    <div class="splide__track col-12 col-xxl-10">
                         <div class="splide__list">
                             <a href="" class="splide__slide user-feedback">
                                 <div class="user-feedback__header row">
@@ -547,7 +545,7 @@
                     </div>
                 </div>
                 <div class="user-feedback__footer row justify-content-center">
-                    <div class="col-10">
+                    <div class="col-12 col-xxl-10">
                         <button type="button" class="user-feedback__popup-link" data-bs-toggle="modal" data-bs-target="#openQuestion" data-bs-whatever="Icon Skin Stop Acne Сыворотка Multi-Acid Serum"><img src="../img/message-question.svg" class="me-1" alt="">Задать вопрос</button>
                     </div>
                 </div>

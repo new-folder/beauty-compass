@@ -85,6 +85,8 @@
                     height: 6px
     &--product
         height: 568px
+        @media screen and (max-width: $first-breack-point) 
+            height: 324px
         .carousel-indicators
             height: 100%
             img                
@@ -102,11 +104,14 @@
                 box-shadow: $box-shadow-sm
                 overflow: hidden
         .carousel-item
-                width: 420px
+                width: 420px 
                 height: 568px
                 justify-content: center
                 display: flex
                 align-items: center
+                @media screen and (max-width: $first-breack-point) 
+                    width: 240px
+                    height: 324px
                 img
                     box-shadow: $box-shadow-sm
                     border-radius: $border-radius
@@ -122,13 +127,16 @@
 .modal-dialog
     &--img
         max-width: max-content !important
+        padding: 0 !important
+        margin: 0 auto
+
         .modal-body 
             display: flex
             img 
-                width:auto
-                height:auto
-                max-width:100%
-                max-height:90vh 
+                width: auto
+                height: auto
+                max-width: 100%
+                max-height: 90vh 
 
 
 // form
