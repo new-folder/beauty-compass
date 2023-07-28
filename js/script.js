@@ -1,7 +1,7 @@
 // Bootstrap form validation
 (function () {
     'use strict'
-    var forms = document.querySelectorAll('.needs-validation')
+    const forms = document.querySelectorAll('.needs-validation')
     Array.prototype.slice.call(forms)
         .forEach(function (form) {
         form.addEventListener('submit', function (event) {
@@ -14,6 +14,7 @@
         }, false)
         })
     })()
+
 
 
 // Pass validation
@@ -39,7 +40,7 @@ function valid(event){
 }
 
 // Carousel
-   function initCarousel(id) {
+async function initCarousel(id) {
     const myCarousel = document.getElementById(`${id}`)
     const indicatorsContainer = myCarousel.querySelector(".carousel-indicators")
     const indicators = myCarousel.querySelectorAll(".carousel-indicators button")
@@ -151,8 +152,143 @@ function valid(event){
     }
 }
 
-initCarousel('carouselMain')
-initCarousel('carouselSelection')
+const carousels = document.querySelectorAll('.carousel')
+for (var i=0; i<carousels.length; i++)
+{
+    initCarousel(carousels[i].id)
+}
+
+// Hide tag links
+
+function hideTagListInit(indexStartHide) {
+    const wrapTagList = document.querySelector('.tag-links')
+    const tagList = wrapTagList.querySelectorAll('.tag-links > .tag')
+    const dots = createDots()
+
+    const tagListHide = hideTagList(tagList, indexStartHide)
+
+    tagListHide.forEach(item => wrapTagList.appendChild(item))
+
+    wrapTagList.appendChild(dots)
+
+    dots.addEventListener('click', function() {
+        for (let i = indexStartHide; i < tagList.length; i++) {
+            tagList[i].classList.remove('hide')
+        }
+        dots.remove()
+    })
+}
+
+const createDots = () => {
+    const dots = document.createElement('div')
+    dots.className = 'tag tag--dots'
+    dots.textContent = '• • •'
+    return dots
+}
+
+const hideTagList = (tagList, indexStartHide) => {
+    if (tagList.length > (indexStartHide + 1)) {
+        for (let i = indexStartHide; i < tagList.length; i++) {
+            tagList[i].classList.add('hide')
+        }
+    }
+    return tagList
+}
+
+hideTagListInit(2)
+
+function userInterface() {
+    let userId
+
+    // Authorization
+    function saveUserLocalStorage() {
+        const authForm = document.querySelector('.auth__form')
+        authForm.onsubmit = async function(e) {
+            // const formData = new FormData(e.target)
+            const emailValue = document.querySelector('#headerAuthEmail')
+            const passValue = document.querySelector('#authInputPassword')
+            e.preventDefault()
+            const authBody = { 
+                // email: emailValue,
+                // password: passValue,
+                username: 'kminchelle',
+                password: '0lelplR',
+            }
+            const resp = await fetch('https://dummyjson.com/auth/login',{
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json'},
+                body: JSON.stringify(authBody)
+            })
+            const result = await resp.json()
+            localStorage.setItem('userToken', result['token'])
+            localStorage.setItem('userId', result['id'])
+            console.log(userId)
+        }    
+    }
+    saveUserLocalStorage()  
+
+    // Add/remove class 'active' for favorite-brand
+    async function toggleFavoriteBrand() {
+        const favoriteBrand = document.querySelector('.favorite--brand')
+        const userToken = localStorage.getItem('userToken')
+        if (userToken) {
+            const resp = await fetch('https://64a990b78b9afaf4844ad897.mockapi.io/favoritebrand')
+            const result = await resp.json()
+            userObject = result.find(elem => elem.id === userId)
+            if (userObject['favorite']) {
+                favoriteBrand.classList.add('active')
+            }
+        } else {
+            console.log('Unauth')
+        }
+    }    
+    toggleFavoriteBrand()    
+
+}
+userInterface()
 
 
 
+//For demonstration
+
+// Add/remove class 'active' for favorite-product
+function toggleFavoriteProduct() {
+    const favoriteList = document.querySelectorAll('.favorite--product')
+    favoriteList.forEach(item => {
+        item.addEventListener('click', elem => {
+            elem.preventDefault()
+            if(!elem.target.classList.contains('active')) {
+                elem.target.classList.add('active')
+            // сюда запрос для добавления в избранное
+            } else
+            elem.target.classList.remove('active')
+            // сюда запрос для удаления из избранного
+        }) 
+    })
+}
+
+toggleFavoriteProduct()
+
+
+// Add/remove class 'active' for subscription
+function toggleSubscription() {
+    const subBtn = document.querySelector('.follow-brand')
+    let text
+    if(subBtn) {
+        subBtn.addEventListener('click', event => {
+            if(!event.target.classList.contains('active')) {
+                text = 'Вы подписаны'
+                event.target.classList.add('active')
+                document.querySelector('.follow-brand').textContent = text
+            // сюда запрос для подписки
+            } else{
+                text = 'Подписаться'
+                event.target.classList.remove('active')
+                document.querySelector('.follow-brand').textContent = text
+            // сюда запрос для отписки
+            }
+        }) 
+    }
+}
+
+toggleSubscription()

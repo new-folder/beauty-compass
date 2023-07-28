@@ -6,6 +6,23 @@
     margin-bottom: 11px;
   }
 }
+.articles__sticker {
+  position: relative;
+}
+.articles__sticker:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 53px;
+  height: 749px;
+  background: url(../img/articles-sticker.svg) no-repeat;
+}
+@media screen and (max-width: 1400px) {
+  .articles__sticker:before {
+    display: none;
+  }
+}
 .articles__item {
   height: 100%;
   display: block;
