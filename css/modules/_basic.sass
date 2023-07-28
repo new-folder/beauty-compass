@@ -23,6 +23,14 @@ body
             padding-left: var(--bs-gutter-x,.75rem)
 
 .title
+    &--h1
+        font-weight: 700
+        font-size: 36px
+        line-height: 1.25
+        color: #494949
+        @media screen and (max-width: $first-breack-point) 
+            font-size: 20px
+            font-weight: 700
     &--h2
         display: block
         margin-bottom: 16px
@@ -40,6 +48,34 @@ body
             font-size: 20px
             line-height: 1.25
             margin-bottom: 0
+    &--sub
+        font-weight: 700
+        font-size: 30px
+        line-height: 37px
+        color: #494949
+        @media screen and (max-width: $first-breack-point) 
+            font-size: 20px
+            font-weight: 600
+            line-height: 1.25
+
+.btn
+    &--base
+        padding: 10px 25px
+        background: $main-color
+        border-radius: 60px
+        color: $sub-color
+        font-weight: 600
+        font-size: 18px
+        line-height: 1.22222
+        text-transform: uppercase
+        transition: background 0.3s
+        &:hover 
+            color: $sub-color
+            background: $pre-color
+        @media screen and (max-width: $first-breack-point) 
+            padding: 7px 20px
+            border-radius: 50px
+            font-size: 10px
 
 main    
     @media screen and (max-width: $first-breack-point) 
@@ -56,3 +92,80 @@ main
 
 .selection
     margin-bottom: 56px
+
+.section
+    &--carousel
+        margin-bottom: 56px
+
+.information
+    font-weight: 600
+    font-size: 18px
+    line-height: 1.25
+    color: #210E22
+    @media screen and (max-width: $first-breack-point) 
+        font-size: 12px
+        line-height: 1.25
+
+.brands-list
+    &__link
+        color: #210E22
+        text-decoration: none
+        transition: opacity .3s
+        &:hover
+            color: #494949
+            opacity: .7    
+        &--sticker 
+            position: relative
+            &:before
+                content: ""
+                position: absolute
+                top: 0
+                left: 30px
+                width: 53px
+                height: 749px
+                background: url(../img/brand-sticker.svg) no-repeat     
+                @media screen and (max-width: $first-breack-point)
+                    display: none      
+    &__logo
+        max-width: 150px
+        margin-right: 8px
+        img
+            max-width: 150px
+            max-height: 100px
+    &__title
+        font-size: 30px
+        font-weight: 600
+        letter-spacing: 0.5px
+        color: #494949
+        text-transform: uppercase   
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
+    &__discription
+        font-size: 18px
+        font-weight: 600 
+        color: #210E22
+        max-width: 910px
+        text-decoration: none
+        @media screen and (max-width: $first-breack-point)
+            font-size: 12px
+
+
+.producer
+    &__sticker
+        position: relative
+        &:before
+            content: ""
+            position: absolute
+            top: 0
+            left: 30px
+            width: 53px
+            height: 749px
+            background: url(../img/produser-sticker.svg) no-repeat     
+            @media screen and (max-width: $first-breack-point)
+                display: none
+    &__logo
+        img
+            max-height: 250px
+            @media screen and (max-width: $first-breack-point)
+                max-height: 125px
+                width: auto

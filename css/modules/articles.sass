@@ -4,6 +4,19 @@
     margin-bottom: 16px    
     @media screen and (max-width: $first-breack-point)
         margin-bottom: 11px    
+    &__sticker
+        position: relative
+        &:before
+            content: ""
+            position: absolute
+            top: 0
+            left: 30px
+            width: 53px
+            height: 749px
+            background: url(../img/articles-sticker.svg) no-repeat            
+            @media screen and (max-width: $first-breack-point)
+                display: none
+
     &__item
         height: 100%
         display: block
