@@ -1,0 +1,67 @@
+.manufacturer
+  a
+    text-decoration: none
+    margin-bottom: 0
+  p
+    margin-bottom: 0
+  .question
+    width: 1.5rem
+  .profile
+    &__badge
+      img
+        width: 2rem
+        @media screen and (min-width: $first-breack-point)
+          width: 3rem
+    &__label
+      top: -12px
+      left: 0
+      margin-bottom: -10px
+      @media screen and (min-width: $first-breack-point)
+        top: -15px
+    &__photo
+      width: 114px
+      height: 114px
+      border-radius: 15px
+      background: $white-color
+      box-shadow: $box-shadow-regular
+      @media screen and (min-width: $second-breack-point)
+        width: 187px
+        height: 187px
+      img
+        width: 54px
+        height: auto
+    &__card
+      &--btn
+        justify-self: center
+        .confirm
+          margin-left: 10px
+      .small-brake
+        @media (max-width: $xs-breack-point)
+          width: 60%
+  .add-info
+    &__wrapper
+      border-radius: 10px
+      background: $white-color
+      box-shadow: $box-shadow-regular
+    &__content
+      max-height: 0
+    &__title
+      font-weight: 700
+    &__schemes
+      .left
+        border-right: 1px solid $dark-color
+        &-inner
+          &__item
+            margin-top: -8px
+      .right
+        &__title
+          a > img
+            width: 13px
+            height: 13px
+    &__buttons
+      @media screen and (min-width: $first-breack-point)
+        row-gap: 1.5rem
+      img
+        @media screen and (min-width: $first-breack-point)
+          width: 37px
+          height: 37px
