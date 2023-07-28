@@ -287,11 +287,18 @@ if(document.querySelector('.splide--vertical')) {
             height : 484,
             type   : 'slide',
             perPage: 3,
-            heightRatio : 0.3,
             pagination : false,
             fixedHeight : 138,
             rewind: false,
             arrowPath : '0',
+            breakpoints: {
+                1400: {
+                    height : 268,
+                    fixedHeight : 70,
+                    gap : 0,
+                    heightRatio : 0.6,
+                },
+            }
         } );
         splide.mount();
     } );
@@ -307,6 +314,17 @@ if(document.querySelector('.splide--gallery')) {
             pagination : false,
             arrows: true,
             arrowPath : '0',
+            breakpoints: {
+                1400: {
+                    perPage : 5,
+                    gap : 14,
+                    padding: { left: 0, right: 40 },
+                    arrows: false,
+                },
+                768: {
+                    perPage : 3,
+                },
+            }
         } );
         splide.mount();
     } );
@@ -322,8 +340,20 @@ if(document.querySelector('.splide--users-feedback')) {
             perPage: 3,
             gap : 45,
             pagination : false,
+            padding: { left: 12, right: 12 },
             arrows: true,
             arrowPath : '0',
+            breakpoints: {
+                1400: {
+                    perPage : 2,
+                    gap : 14,
+                    padding: { left: 10, right: 60 },
+                    arrows: false,
+                },
+                768: {
+                    perPage : 1,
+                },
+            }
         } ).mount();
     }
     } );

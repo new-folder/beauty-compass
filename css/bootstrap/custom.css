@@ -99,6 +99,11 @@
 .carousel--product {
   height: 568px;
 }
+@media screen and (max-width: 1400px) {
+  .carousel--product {
+    height: 324px;
+  }
+}
 .carousel--product .carousel-indicators {
   height: 100%;
 }
@@ -128,6 +133,12 @@
   display: flex;
   align-items: center;
 }
+@media screen and (max-width: 1400px) {
+  .carousel--product .carousel-item {
+    width: 240px;
+    height: 324px;
+  }
+}
 .carousel--product .carousel-item img {
   box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
   border-radius: 15px;
@@ -146,14 +157,19 @@
 .modal-dialog--img {
   max-width: -moz-max-content !important;
   max-width: max-content !important;
+  padding: 0 !important;
+  margin: 0 auto;
 }
 .modal-dialog--img .modal-body {
   display: flex;
 }
 .modal-dialog--img .modal-body img {
+  width: auto;
+  height: auto;
   max-width: 100%;
   max-height: 90vh;
 }
+
 .form-control {
   box-shadow: 0px 4px 20px rgba(14, 14, 14, 0.07);
   border-width: 0;
