@@ -37,6 +37,24 @@ tippy('.right__question', {
   allowHTML: true,
 });
 
+// input file
+function triggerFileInputProfile() {
+  const profileFileInput = document.getElementById('profile__file-input');
+  profileFileInput.click();
+}
+function triggerFileInputShop() {
+  const shopFileInput = document.getElementById('shop__file-input');
+  shopFileInput.click();
+}
+
+function handleFileSelected(event) {
+  const file = event.target.files[0];
+  if (file) {
+    // Обработка загруженного файла
+    console.log('Загруженный файл:', file.name);
+  }
+}
+
 // creating brands
 const addInfoSchemes = document.querySelector('.add-info__schemes');
 const addInfoSchemeLeft = document.querySelector('.add-info__schemes .left .left-inner');
