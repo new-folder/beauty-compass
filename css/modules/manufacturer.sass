@@ -7,7 +7,9 @@
   textarea
     resize: none
   .question
-    width: 1.5rem
+    width: 1rem
+    @media screen and (min-width: $first-breack-point)
+      width: 1.5rem
   #profile__file-input, #shop__file-input
     position: absolute
     left: 0
@@ -16,6 +18,8 @@
     height: 100%
     opacity: 0
     cursor: pointer
+  .border--right
+    border-right: 1px solid $dark-color
   .profile
     &__badge
       img
@@ -110,16 +114,17 @@
     &__title
       font-weight: 700
     &__schemes
+
       .left
-        border-right: 1px solid $dark-color
+
         &-inner
           &__item
             margin-top: -8px
       .right
         &__title
-          a > img
-            width: 13px
-            height: 13px
+          display: flex
+          flex-wrap: nowrap
+          align-items: center
     &__buttons
       @media screen and (min-width: $first-breack-point)
         row-gap: 1.5rem
@@ -192,3 +197,82 @@
       line-height: normal
       text-transform: uppercase
       border: none
+
+.modal
+  &__prices
+    &-content
+      border-radius: 20px
+      max-width: 1200px
+      margin: auto
+      @media screen and (max-width: $first-breack-point)
+        max-width: 774px
+    &-header
+      padding-bottom: 0
+    &-close
+      top: -10px
+      right: -10px
+      width: 20px
+      height: 20px
+      @media screen and (min-width: $second-breack-point)
+        width: 44px
+        height: 44px
+        top: -22px
+        right: -22px
+    &-body
+      @media screen and (min-width: $first-breack-point)
+        padding: 74px 40px 54px 54px
+      tbody, td, tfoot, th, thead, tr
+        border-color: inherit
+        border-style: none
+        border-width: 0
+      th, td
+        text-align: center
+        vertical-align: middle
+        white-space: nowrap
+        padding: 7px 12px
+        @media screen and (min-width: $first-breack-point)
+          padding: 12px 26px
+        &:not(:last-child)
+          border-right: 1px solid $dark-color
+      tr
+        &:not(:last-child)
+          border-bottom: 1px solid $dark-color
+      td
+        cursor: pointer
+        &:hover
+          color: $pre-color
+  &__confirm
+    border-radius: 20px
+    &-content
+      max-width: 768px
+      margin: auto
+      border-radius: 20px
+    &-footer
+      border-top: none
+    &-close, &-apply
+      font-size: 15px
+      font-style: normal
+      font-weight: 600
+      line-height: normal
+      text-transform: uppercase
+      text-decoration: none
+      @media screen and (min-width: $first-breack-point)
+        font-size: 30px
+      img
+        width: 24px
+        height: 24px
+        @media screen and (min-width: $first-breack-point)
+          width: 48px
+          height: 48px
+    &-close
+      color: $pre-color
+    &-apply
+      color: $main-color
+
+
+
+
+
+
+
+
