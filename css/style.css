@@ -566,6 +566,7 @@ body {
   font-weight: 600;
   line-height: normal;
   text-transform: uppercase;
+  transition: color 1s;
 }
 .card--button-blue svg {
   width: 17px;
@@ -579,6 +580,7 @@ body {
   }
 }
 .card--button-blue:hover {
+  transition: color 1s;
   color: #E31E24;
   opacity: 0.8;
 }
@@ -1682,13 +1684,24 @@ body {
 .manufacturer .border--right {
   border-right: 1px solid #000000;
 }
-.manufacturer .profile__badge img {
+.manufacturer .inherit:hover {
+  color: inherit;
+  opacity: inherit;
+}
+.manufacturer .profile__badge svg {
   width: 2rem;
 }
 @media screen and (min-width: 1400px) {
-  .manufacturer .profile__badge img {
+  .manufacturer .profile__badge svg {
     width: 3rem;
   }
+}
+.manufacturer .profile__badge:hover {
+  color: #E31E24;
+  opacity: 0.8;
+}
+.manufacturer .profile__badge:hover svg path {
+  fill: #E31E24;
 }
 .manufacturer .profile__body {
   grid-template-columns: 1fr 2fr 1fr;
@@ -1802,6 +1815,13 @@ body {
   .manufacturer .profile__card .small-brake {
     width: 60%;
   }
+}
+.manufacturer .add-info__button:hover {
+  color: #E31E24;
+  opacity: 0.8;
+}
+.manufacturer .add-info__button:hover svg path {
+  fill: #E31E24;
 }
 .manufacturer .add-info__wrapper {
   border-radius: 10px;

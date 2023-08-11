@@ -20,12 +20,22 @@
     cursor: pointer
   .border--right
     border-right: 1px solid $dark-color
+  .inherit
+    &:hover
+      color: inherit
+      opacity: inherit
   .profile
     &__badge
-      img
+      svg
         width: 2rem
         @media screen and (min-width: $first-breack-point)
           width: 3rem
+      &:hover
+        color: $pre-color
+        opacity: .8
+        svg
+          path
+            fill: $pre-color
 
     &__body
       grid-template-columns: 1fr 2fr 1fr
@@ -105,6 +115,13 @@
         @media (max-width: $xs-breack-point)
           width: 60%
   .add-info
+    &__button
+      &:hover
+        color: $pre-color
+        opacity: .8
+        svg
+          path
+            fill: $pre-color
     &__wrapper
       border-radius: 10px
       background: $white-color
@@ -161,7 +178,6 @@
       height: 50px
       img
         width: 100%
-    &__banner
     &__photo
       width: 114px
       height: 114px
@@ -268,6 +284,7 @@
       color: $pre-color
     &-apply
       color: $main-color
+
 
 
 
