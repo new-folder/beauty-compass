@@ -1,42 +1,42 @@
 // accordion
-const addInfoTrigger = document.querySelector('.add-info__trigger');
-const addInfoContent = document.querySelector('.add-info__content');
-const addInfoArrow = document.querySelector('.add-info__trigger img');
-const questionSign = document.querySelector('.question-sign')
+const addInfoTrigger = document.querySelector(".add-info__trigger");
+const addInfoContent = document.querySelector(".add-info__content");
+const addInfoArrow = document.querySelector(".add-info__trigger img");
+const questionSign = document.querySelector(".question-sign");
 let isOpen = false;
 
-addInfoTrigger.addEventListener('click', function() {
+addInfoTrigger.addEventListener("click", function () {
   if (!isOpen) {
-    addInfoContent.style.maxHeight = (addInfoContent.scrollHeight + 20) + 'px';
+    addInfoContent.style.maxHeight = addInfoContent.scrollHeight + 20 + "px";
     isOpen = true;
-    addInfoArrow.style.transform = 'rotate(180deg)';
-    addInfoContent.style.margin = '1.5rem 0 1rem 0';
+    addInfoArrow.style.transform = "rotate(180deg)";
+    addInfoContent.style.margin = "1.5rem 0 1rem 0";
   } else {
-    addInfoContent.style.maxHeight = '0';
+    addInfoContent.style.maxHeight = "0";
     isOpen = false;
-    addInfoArrow.style.transform = 'rotate(0)';
-    addInfoContent.style.paddingTop = '0px';
-    addInfoContent.style.margin =  '0';
+    addInfoArrow.style.transform = "rotate(0)";
+    addInfoContent.style.paddingTop = "0px";
+    addInfoContent.style.margin = "0";
   }
 });
 
 // tooltip
-tippy('.left__question', {
+tippy(".left__question", {
   content: '<div class="cloud">Пример текста</div>',
-  theme: 'light',
-  placement: 'top-start',
+  theme: "light",
+  placement: "top-start",
   arrow: false,
   allowHTML: true,
 });
 
-tippy('.right__question', {
-  content: '<div class="cloud">Вы можете задать порядок отображения средств перемещая их иконки</div>',
-  theme: 'light',
-  placement: 'top-start',
+tippy(".right__question", {
+  content:
+    '<div class="cloud">Вы можете задать порядок отображения средств перемещая их иконки</div>',
+  theme: "light",
+  placement: "top-start",
   arrow: false,
   allowHTML: true,
 });
-
 
 // creating brands
 
@@ -110,59 +110,63 @@ tippy('.right__question', {
 //   parentItem.appendChild(inner2lvlItem);
 // }
 
-const addInfoInner = document.querySelector('.add-info__inner');
+const addInfoInner = document.querySelector(".add-info__inner");
 
 const addItem = () => {
   event.preventDefault();
 
-  const addInfoRow = document.createElement('div');
-  addInfoRow.classList.add('add-info__row', 'd-flex');
+  const addInfoRow = document.createElement("div");
+  addInfoRow.classList.add("add-info__row", "d-flex");
 
-  const addInfoLeft = document.createElement('div');
-  addInfoLeft.classList.add('add-info__left', 'col-6 border--right', 'pt-4');
+  const addInfoLeft = document.createElement("div");
+  addInfoLeft.classList.add("add-info__left", "col-6 border--right", "pt-4");
 
-  const addInfoRight = document.createElement('div');
-  addInfoRight.classList.add('add-info__right', 'col-6', 'ps-4', 'pt-4');
+  const addInfoRight = document.createElement("div");
+  addInfoRight.classList.add("add-info__right", "col-6", "ps-4", "pt-4");
 
-  const leftItem = document.createElement('div');
-  leftItem.classList.add('left-inner__item', 'title--h5', 'hover--red', 'd-flex', 'align-items-end', 'ps-2');
+  const leftItem = document.createElement("div");
+  leftItem.classList.add(
+    "left-inner__item",
+    "title--h5",
+    "hover--red",
+    "d-flex",
+    "align-items-end",
+    "ps-2"
+  );
 
-  const rightItem = document.createElement('div');
-  rightItem.classList.add('right-inner__item', 'title--h5', 'hover--red', 'd-flex', 'align-items-end', 'ps-2');
-
-
-
-
-
-
-}
-
-
+  const rightItem = document.createElement("div");
+  rightItem.classList.add(
+    "right-inner__item",
+    "title--h5",
+    "hover--red",
+    "d-flex",
+    "align-items-end",
+    "ps-2"
+  );
+};
 
 // modal price
-const modalPrices = document.getElementById('modal--prices');
-const modalPricesConfirm = document.getElementById('modal--confirm');
-const modalPricesCells = modalPrices.querySelectorAll('.table tr td');
+const modalPrices = document.getElementById("modal--prices");
+const modalPricesConfirm = document.getElementById("modal--confirm");
+const modalPricesCells = modalPrices.querySelectorAll(".table tr td");
 
 modalPricesCells.forEach((cell) => {
+  cell.setAttribute("data-bs-dismiss", "modal");
+  cell.setAttribute("data-bs-toggle", "modal");
+  cell.setAttribute("href", "#modal--confirm");
 
-  cell.setAttribute('data-bs-dismiss', 'modal');
-  cell.setAttribute('data-bs-toggle', 'modal');
-  cell.setAttribute('href', '#modal--confirm');
+  cell.addEventListener("click", () => {
+    console.log(cell);
 
-  cell.addEventListener('click', () => {
-
-    console.log(cell)
-
-    const cellElement = cell.querySelector('span');
+    const cellElement = cell.querySelector("span");
     if (cellElement) {
       const cellPrice = cellElement.textContent.trim();
       const cellNumber = parseInt(cellPrice);
       if (!isNaN(cellNumber)) {
-        console.log('Число внутри ячейки:', cellNumber);
+        console.log("Число внутри ячейки:", cellNumber);
       } else {
-        console.log('Содержимое внутри ячейки не является числом:', cellPrice);
+        console.log("Содержимое внутри ячейки не является числом:", cellPrice);
       }
     }
-  })
-})
+  });
+});
