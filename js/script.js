@@ -335,7 +335,6 @@ if(document.querySelector('.splide--users-feedback')) {
         let elms = document.querySelectorAll( '.splide--users-feedback' )
         for ( var i = 0; i < elms.length; i++ ) {
         new Splide( elms[i], {
-            height : 364,
             type   : 'slide',
             perPage: 3,
             gap : 45,
@@ -359,6 +358,61 @@ if(document.querySelector('.splide--users-feedback')) {
     } );
 }
 
+// add rating
+
+const ratings = document.querySelectorAll('.rating')
+if (ratings.length > 0) {
+    initRatings();
+}
+
+function initRatings() {
+    let ratingActive, ratingValue
+    for (let i = 0; i < ratings.length; i++) {
+        const rating = ratings[i];
+        initRating(rating);
+    }
+
+    function initRating(rating) {
+        initRatingVars(rating);
+
+        setActiveratingWidth();
+
+        if (rating.classList.contains('rating--set')) {
+            setRaring(rating)
+        }
+    }
+
+    function initRatingVars(rating) {
+        ratingActive = rating.querySelector('.rating__active')
+        ratingValue = 0
+    }
+
+    function setActiveratingWidth(i = ratingValue.innerHTML) {
+        const ratingActiveWidth = i / 0.05;
+        ratingActive.style.width = `${ratingActiveWidth}`;
+    }
+
+    function setRaring(rating) {
+        const ratingItems = rating.querySelectorAll('.rating__item')
+        for (let i = 0; i < ratingItems.length; i++) {
+            const ratingItem = ratingItems[i];
+            ratingItem.addEventListener('mouseenter', function(e) {
+                initRatingVars(rating);
+                setActiveratingWidth(ratingItem.value);
+            })
+
+            ratingItem.addEventListener('mouseLeave', function(e) {
+                setActiveratingWidth();
+            })
+
+            ratingItem.addEventListener('click', function(e) {
+                initRatingVars(rating);
+                ratingValue.innerHTML = i + 1;
+                setActiveratingWidth();
+            })
+        }
+    }
+}
 
 //For demonstration
 
