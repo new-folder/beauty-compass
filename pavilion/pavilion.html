@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>pavilion</title>
+    <title>Pavilion</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
@@ -129,14 +129,74 @@
             </div>
           </div>
         </div>
-        <div class="pavilion__description row">
-          <div class="col-12">
-            <div class="col-4 offset-4 text-center">
-              <p
-                class="profile__link text-decoration-none title--h2 text-uppercase"
+        <div class="row">
+          <div
+            class="col-12 text-center d-flex justify-content-center align-items-center"
+          >
+            <p class="pavilion__description d-flex align-items-center">
+              Общение на любые темы
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 d-flex justify-content-center align-items-center">
+            <div class="col-12 col-md-8 mb-4 position-relative">
+              <label
+                for="pavilion__name"
+                class="label--light pavilion__label d-md-none"
+                >Поиск по темам
+              </label>
+              <input
+                class="pavilion__input w-100 rounded-3 border-0"
+                placeholder="Поиск по темам"
+                id="pavilion__name"
+                value=""
+                type="text"
+              />
+              <svg
+                class="pavilion__input--icon position-absolute"
+                width="16"
+                height="16"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                Общение на любые темы
-              </p>
+                <path
+                  d="M16.2982 17.7124C16.6917 18.1 17.3248 18.0952 17.7124 17.7018C18.1 17.3083 18.0952 16.6752 17.7018 16.2876L16.2982 17.7124ZM14.881 8.32957C14.881 11.8112 12.0117 14.6591 8.44049 14.6591V16.6591C13.0878 16.6591 16.881 12.944 16.881 8.32957H14.881ZM8.44049 14.6591C4.86929 14.6591 2 11.8112 2 8.32957H0C0 12.944 3.79315 16.6591 8.44049 16.6591V14.6591ZM2 8.32957C2 4.84795 4.86929 2 8.44049 2V0C3.79315 0 0 3.71517 0 8.32957H2ZM8.44049 2C12.0117 2 14.881 4.84795 14.881 8.32957H16.881C16.881 3.71517 13.0878 0 8.44049 0V2ZM12.8775 14.3426L16.2982 17.7124L17.7018 16.2876L14.281 12.9179L12.8775 14.3426Z"
+                  fill="#494949"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center align-items-center">
+          <div class="col-12 col-md-8">
+            <div class="btn-v2 btn--base">Написать пост</div>
+            <p class="pavilion__discussions title--h3_v2">ОБСУЖДЕНИЯ</p>
+            <div class="pavilion__cards row">
+              <div class="col-12">
+                <div class="pavilion__cards--unit w-100">
+                  <div class="pavilion__cards--person">
+                    <img class="pavilion__cards--avatar" src="" alt="" />
+                    <div class="pavilion__cards--name_box">
+                      <p class="pavilion__cards--name title--h3_v2">Дарья С.</p>
+                      <p class="pavilion__cards--date">22.08.22</p>
+                    </div>
+                  </div>
+                  <p class="pavilion__cards--title title--h3_v2 w-100">
+                    Заголовок очень очень очень очень длинной статьи на пару
+                    строк
+                  </p>
+                  <p class="pavilion__cards--body w-100">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua...
+                  </p>
+                  <div class="pavilian__cards--react"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -200,7 +260,7 @@
         </div>
       </div>
     </footer>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/pavilion.js"></script>
   </body>
 </html>

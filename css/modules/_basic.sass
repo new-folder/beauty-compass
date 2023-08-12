@@ -1,3 +1,4 @@
+//Добавлены АП стили на стр: 59, 143
 @import "vars.sass"
 body
     font-family: 'Gilroy', sans-serif
@@ -25,7 +26,7 @@ body
         font-size: 36px
         line-height: 1.25
         color: #494949
-        @media screen and (max-width: $first-breack-point) 
+        @media screen and (max-width: $first-breack-point)
             font-size: 20px
             font-weight: 700
     &--h2
@@ -55,6 +56,16 @@ body
         text-transform: uppercase
         @media screen and (min-width: $first-breack-point)
             font-size: 36px
+    &--h3_v2 //Добавлено АП
+        color: #494949
+        font-size: 15px
+        font-style: normal
+        font-weight: 600
+        line-height: normal
+        letter-spacing: 0.5px
+        // text-transform: uppercase
+        @media screen and (min-width: $first-breack-point)
+            font-size: 30px
     &--h4
         color: #494949
         font-size: 15px
@@ -96,7 +107,7 @@ body
         font-size: 30px
         line-height: 37px
         color: #494949
-        @media screen and (max-width: $first-breack-point) 
+        @media screen and (max-width: $first-breack-point)
             font-size: 20px
             font-weight: 600
             line-height: 1.25
@@ -113,26 +124,47 @@ body
     line-height: 1.22222
     text-transform: uppercase
     transition: 0.3s
-    @media screen and (max-width: $first-breack-point) 
-        height: 27px   
+    @media screen and (max-width: $first-breack-point)
+        height: 27px
         padding: 0 20px
         border-radius: 50px
         font-size: 10px
-    &:hover 
+    &:hover
         color: $sub-color
         background: $pre-color
         border-color: $pre-color
     &--base
         background: $main-color
-        color: $sub-color 
+        color: $sub-color
     &--empty
         background: initial
         border: 2px solid $main-color
         color: $main-color
+.btn-v2 //Добавлено АП
+    height: 43px
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    padding: 1px 29px 0 29px
+    border-radius: 60px
+    font-weight: 700
+    font-size: 18px
+    line-height: 1.22222
+    text-transform: uppercase
+    transition: 0.3s
+    cursor: pointer
+    @media screen and (max-width: $first-breack-point)
+        height: 27px
+        padding: 0 20px
+        border-radius: 50px
+        font-size: 10px
+    &:hover
+        color: $sub-color
+        background: $pre-color
+        border-color: $pre-color
 
-
-main    
-    @media screen and (max-width: $first-breack-point) 
+main
+    @media screen and (max-width: $first-breack-point)
         max-width: 720px
         margin: 0 auto
     @media screen and (max-width: $second-breack-point)
@@ -246,8 +278,6 @@ main
     &:hover
         color: $pre-color
 
-
-
 .selection
     margin-bottom: 56px
 
@@ -262,7 +292,7 @@ main
     color: #210E22
     p
         text-align: justify
-    @media screen and (max-width: $first-breack-point) 
+    @media screen and (max-width: $first-breack-point)
         font-size: 12px
         line-height: 1.25
 
@@ -273,8 +303,8 @@ main
         transition: opacity .3s
         &:hover
             color: #494949
-            opacity: .7    
-        &--brands-sticker 
+            opacity: .7
+        &--brands-sticker
             position: relative
             &:before
                 content: ""
@@ -283,10 +313,10 @@ main
                 left: 30px
                 width: 53px
                 height: 749px
-                background: url(../img/brands-sticker.svg) no-repeat     
+                background: url(../img/brands-sticker.svg) no-repeat
                 @media screen and (max-width: $first-breack-point)
-                    display: none  
-        &--series-sticker 
+                    display: none
+        &--series-sticker
             position: relative
             &:before
                 content: ""
@@ -295,9 +325,9 @@ main
                 left: 30px
                 width: 53px
                 height: 749px
-                background: url(../img/series-sticker.svg) no-repeat     
+                background: url(../img/series-sticker.svg) no-repeat
                 @media screen and (max-width: $first-breack-point)
-                    display: none      
+                    display: none
     &__logo
         max-width: 150px
         margin-right: 8px
@@ -308,13 +338,13 @@ main
         font-size: 30px
         font-weight: 600
         letter-spacing: 0.5px
-        color: #494949 
+        color: #494949
         @media screen and (max-width: $first-breack-point)
             font-size: 15px
     &__discription
         font-size: 18px
         line-height: 1.25
-        font-weight: 600 
+        font-weight: 600
         color: #210E22
         max-width: 910px
         text-decoration: none
@@ -331,9 +361,9 @@ main
             left: 30px
             width: 53px
             height: 749px
-            background: url(../img/brand-sticker.svg) no-repeat     
+            background: url(../img/brand-sticker.svg) no-repeat
             @media screen and (max-width: $first-breack-point)
-                display: none   
+                display: none
 
 .producer
     &__sticker
@@ -345,7 +375,7 @@ main
             left: 30px
             width: 53px
             height: 749px
-            background: url(../img/produser-sticker.svg) no-repeat     
+            background: url(../img/produser-sticker.svg) no-repeat
             @media screen and (max-width: $first-breack-point)
                 display: none
     &__logo
@@ -357,7 +387,6 @@ main
             height: fit-content
             @media screen and (max-width: $first-breack-point)
                 max-height: 125px
-   
 
 .series
     &__sticker
@@ -369,7 +398,7 @@ main
             left: 30px
             width: 53px
             height: 749px
-            background: url(../img/one-series-sticker.svg) no-repeat     
+            background: url(../img/one-series-sticker.svg) no-repeat
             @media screen and (max-width: $first-breack-point)
                 display: none
     &__logo
@@ -383,9 +412,9 @@ main
             @media screen and (max-width: $first-breack-point)
                 width: auto
                 max-width: 100%
-                max-height: 125px 
+                max-height: 125px
 
-.tag 
+.tag
     display: inline-flex
     padding: 2px 10px
     border-radius: 15px
@@ -403,14 +432,14 @@ main
     @media screen and (max-width: $first-breack-point)
         font-size: 10px
         margin: 0 10px 0 0
-    &:hover 
+    &:hover
         opacity: .7
         color: #494949
     &.hide
         position: absolute
         visibility: hidden
         opacity: 0
-    &--dots 
+    &--dots
         cursor: pointer
 
 .favorite

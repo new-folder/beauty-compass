@@ -1,2 +1,73 @@
+@import "vars.sass"
 .pavilion
     &__title
+        // background-color: red
+    &__description
+        margin: 10px 0 10px 0
+        color: $main-color
+        text-align: center
+        font-family: Gilroy, sans-serif
+        font-size: 15px
+        font-style: normal
+        font-weight: 600
+        line-height: normal
+        letter-spacing: 0.5px
+        @media screen and (min-width: $first-breack-point)
+            font-size: 24px
+            margin: 20px 0 20px 0
+
+    &__label
+        // display: inline-block
+        color: #C9C9C9
+        font-family: Gilroy, sans-serif
+        font-size: 10px
+        font-style: normal
+        font-weight: 600
+        line-height: normal
+        @media screen and (max-width: $second-breack-point)
+            display: none
+    &__input
+        height: 26px
+        padding: 3px 0 0 20px
+        box-shadow: $box-shadow-regular
+        font-size: 10px
+        &--icon
+            width: 16px
+            height: 16px
+            bottom: 5px
+            left: 10px
+            // opacity: 1
+            @media screen and (min-width: $second-breack-point)
+                opacity: 0
+        &:focus-visible
+            outline: 1px solid $main-color
+        @media screen and (min-width: $second-breack-point)
+            height: 45px
+        &::placeholder
+            color: #C9C9C9
+            font-family: Gilroy, sans-serif
+            font-size: 18px
+            font-style: normal
+            font-weight: 600
+            line-height: normal
+            @media screen and (max-width: $second-breack-point)
+                opacity: 0
+    &__discussions
+        margin-top: 30px
+        @media screen and (max-width: $second-breack-point)
+            margin-top: 22px
+    &__cards row
+        &__cards
+            &--unit
+                max-height: 277px
+                flex-shrink: 0
+                @media screen and (max-width: $second-breack-point)
+                    max-height: 189px
+            &--person
+            &--avatar
+            &--name_box
+            &--name
+            &--date
+            &--title
+            &--body
+            &--react
