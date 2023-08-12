@@ -228,6 +228,11 @@ textarea
             font-size: 20px
             font-weight: 600
             line-height: 1.25
+    &__under
+        font-size: 30px
+        color: $main-color
+        @media screen and (max-width: $first-breack-point) 
+            font-size: 15px
 
 .btn
     height: 41px
@@ -325,153 +330,8 @@ textarea
 
 .slider
     margin-bottom: 56px
-
-.selection
-    margin-bottom: 56px
-
-.select
-    &__custom
-        position: relative
-    &__header
-        display: flex
-        align-items: center
-        justify-content: space-between
-        cursor: pointer
-    &__options
-        display: none
-        position: absolute
-        top: 100%
-        left: 0
-        right: 0
-        background: $white-color
-        box-shadow: $box-shadow-regular
-        border-radius: 10px
-        overflow: hidden
-        z-index: 100
-        &.open
-            display: flex
-            flex-direction: column
-        .option
-
-            padding: 12px 20px
-            cursor: pointer
-            transition: 0.3s
-
-            &:hover
-                //color: $main-color
-                background-color: $bg-grey
-            &:active
-                color: $pre-color
-
-.input
-    position: relative
-    &--general
-        height: 26px
-        @media all and (min-width: $first-breack-point)
-            height: 42px
-    &--textarea
-        height: 52px
-        @media all and (min-width: $first-breack-point)
-            height: 108px
-
-    input,
-    textarea,
-    select,
-    .input--select,
-    .input--textarea
-        background: $white-color
-        width: 100%
-        height: 100%
-        padding: 7px 12px
-        border: none
-        border-radius: 10px
-        color: $dark-lighter
-        box-shadow: $box-shadow-regular
-        font-size: 10px
-        font-style: normal
-        font-weight: 600
-        line-height: normal
-        &:focus-visible
-            outline: 1px solid $main-color
-        @media all and (min-width: $first-breack-point)
-            font-size: 18px
-    &--image
-        border-radius: 15px
-        box-shadow: $box-shadow-regular
-        input.file-input
-            position: absolute
-            left: 0
-            top: 0
-            width: 100%
-            height: 100%
-            opacity: 0
-            cursor: pointer
-
-.label
-    position: absolute
-    &--primary
-        color: $gray-light
-        font-size: 12px
-        font-style: normal
-        font-weight: 600
-        line-height: normal
-        height: 32px
-        top: -18px
-        left: 0
-        right: 0
-        @media screen and (min-width: $first-breack-point)
-            top: -24px
-            font-size: 18px
-    &--light
-        color: $gray-light
-        font-size: 10px
-        font-style: normal
-        font-weight: 600
-        line-height: normal
-        @media screen and (min-width: $first-breack-point)
-            font-size: 15px
-    &--profile
-        position: absolute
-        display: flex
-        flex-direction: column
-        justify-content: flex-end
-        height: 32px
-        top: -32px
-        left: 0
-        right: 0
-        @media screen and (min-width: $first-breack-point)
-            top: -32px
-
-
-
-.row-g-2
-    row-gap: 0.5rem
-.row-g-3
-    row-gap: 1rem
-.row-g-4
-    row-gap: 1.5rem
-.row-g-5
-    row-gap: 2rem
-.column-g-2
-    column-gap: 0.5rem
-.column-g-3
-    column-gap: 1rem
-.column-g-4
-    column-gap: 1.5rem
-.column-g-5
-    column-gap: 2rem
-
-.cloudR--white
-    color: $dark-lighter
-    font-size: 15px
-    font-style: normal
-    font-weight: 600
-    line-height: normal
-    background: $sub-color
-    box-shadow: $box-shadow-sm
-
-
-
+    @media screen and (max-width: $second-breack-point) 
+        margin-bottom: 40px
 
 .selection
     margin-bottom: 56px
@@ -670,6 +530,10 @@ textarea
         text-transform: uppercase
         color: $pre-color
         background-size: 47px
+        @media screen and (max-width: $first-breack-point)
+            padding-left: 40px
+            font-size: 15px 
+            background-size: contain
 
 .product-header
     &--sticker
@@ -693,12 +557,21 @@ textarea
             color: #494949
             font-size: 15px
             text-transform: uppercase
+    &__flag
+        @media screen and (max-width: $first-breack-point)
+            width: 65px
+            height: 65px
+    &__logo
+        @media screen and (max-width: $first-breack-point)
+            height: 65px
 
 .users-feedback    
     &__header
         font-weight: 600
         font-size: 30px
         color: #494949
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
         a
             color: #494949
             text-decoration: none
@@ -707,19 +580,34 @@ textarea
                 opacity: .7
 
 .user-feedback 
-    justify-content: start
+    height: 364px
+    justify-content: start    
+    padding: 20px
+    border-radius: $border-radius
+    box-shadow: $box-shadow-sm
     font-size: 15px
     font-weight: 600
     line-height: 1.1
     text-decoration: none
     color: #210E22
     transition: opacity .3s
+    @media screen and (max-width: $first-breack-point)
+        height: 301px
+        padding: 5px 20px
+        font-size: 12px
     &:hover
         color: #210E22
         opacity: .7
+    &--questions
+        height: 274px
+        @media screen and (max-width: $first-breack-point)
+            height: 223px
     &__name
         font-size: 20px
         line-height: 1.2
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
+            margin-bottom: 6px
     &__date
         font-size: 12px
     &__avatar
@@ -730,6 +618,9 @@ textarea
         justify-content: center
         border-radius: 50%
         overflow: hidden
+        @media screen and (max-width: $first-breack-point)
+            width: 40px
+            height: 40px
         img
             max-width: 200%
     &__photos
@@ -747,6 +638,9 @@ textarea
         box-shadow: 0px 3px 5px rgba(14, 14, 14, 0.1)
         overflow: hidden
         margin-right: 12px
+        @media screen and (max-width: $first-breack-point)
+            width: 66px
+            height: 88px
         img
             max-width: 200%
             max-height: 200%
@@ -759,6 +653,9 @@ textarea
         color: $main-color
         font-size: 30px
         font-weight: 600
+        @media screen and (max-width: $first-breack-point)
+            width: 66px
+            height: 88px
     &__popup-link
         border: none
         background-color: $sub-color
@@ -767,6 +664,11 @@ textarea
         font-weight: 600
         text-decoration: none
         cursor: pointer
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
+            img
+                width: 35px
+                height: 35px
     p
         margin-bottom: 10px
     
@@ -778,9 +680,14 @@ textarea
     &__title
         font-size: 30px
         font-weight: 600
+        line-height: 1.25
         color: #494949
         background-color: $sub-color
         padding: 0
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
+            line-height: 1.25
+            text-transform: uppercase
         &:focus
             border-color: none
             box-shadow: none
@@ -791,6 +698,10 @@ textarea
             margin-left: 10px
             margin-right: 0
             transform: rotate(180deg)
+            @media screen and (max-width: $first-breack-point)
+                width: 14px
+                height: 6px
+                background-size: 100%
         &:not(.collapsed)
             color: #494949  
             background-color: inherit
@@ -803,12 +714,17 @@ textarea
     &__information
         padding-left: 0
         padding-right: 0
+        @media screen and (max-width: $first-breack-point)
+            padding: 0
 
 
 .gallary
     font-weight: 600
     font-size: 30px
+    line-height: 1.25
     color: #494949
+    @media screen and (max-width: $first-breack-point)
+        font-size: 15px
     a
         color: #494949
         text-decoration: none
