@@ -29,7 +29,7 @@
                 right: 60px
                 transform: translateY(-50%) rotate(90deg)
             &[disabled]
-                background-image: url(../img/arrow-disabled.svg)
+                background-image: url(../../img/arrow-disabled.svg)
         &__slide
             display: flex
             text-align: center
@@ -73,10 +73,8 @@
         &__track
             padding-top: 10px
             padding-bottom: 24px
-        &__slide
-            padding: 20px
-            border-radius: $border-radius
-            box-shadow: $box-shadow-sm
+            @media screen and (max-width: $first-breack-point)
+                padding-bottom: 22px
     .splide__arrows:has(.splide__arrow--prev[disabled] ~ .splide__arrow--next[disabled])
         display: none
 

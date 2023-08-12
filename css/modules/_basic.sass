@@ -60,6 +60,8 @@ body
     &__under
         font-size: 30px
         color: $main-color
+        @media screen and (max-width: $first-breack-point) 
+            font-size: 15px
 
 .btn
     height: 41px
@@ -102,6 +104,8 @@ main
 
 .slider 
     margin-bottom: 56px
+    @media screen and (max-width: $second-breack-point) 
+        margin-bottom: 40px
 
 
 .selection
@@ -302,6 +306,10 @@ main
         text-transform: uppercase
         color: $pre-color
         background-size: 47px
+        @media screen and (max-width: $first-breack-point)
+            padding-left: 40px
+            font-size: 15px 
+            background-size: contain
 
 .product-header
     &--sticker
@@ -325,12 +333,21 @@ main
             color: #494949
             font-size: 15px
             text-transform: uppercase
+    &__flag
+        @media screen and (max-width: $first-breack-point)
+            width: 65px
+            height: 65px
+    &__logo
+        @media screen and (max-width: $first-breack-point)
+            height: 65px
 
 .users-feedback    
     &__header
         font-weight: 600
         font-size: 30px
         color: #494949
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
         a
             color: #494949
             text-decoration: none
@@ -339,19 +356,34 @@ main
                 opacity: .7
 
 .user-feedback 
-    justify-content: start
+    height: 364px
+    justify-content: start    
+    padding: 20px
+    border-radius: $border-radius
+    box-shadow: $box-shadow-sm
     font-size: 15px
     font-weight: 600
     line-height: 1.1
     text-decoration: none
     color: #210E22
     transition: opacity .3s
+    @media screen and (max-width: $first-breack-point)
+        height: 301px
+        padding: 5px 20px
+        font-size: 12px
     &:hover
         color: #210E22
         opacity: .7
+    &--questions
+        height: 274px
+        @media screen and (max-width: $first-breack-point)
+            height: 223px
     &__name
         font-size: 20px
         line-height: 1.2
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
+            margin-bottom: 6px
     &__date
         font-size: 12px
     &__avatar
@@ -362,6 +394,9 @@ main
         justify-content: center
         border-radius: 50%
         overflow: hidden
+        @media screen and (max-width: $first-breack-point)
+            width: 40px
+            height: 40px
         img
             max-width: 200%
     &__photos
@@ -379,6 +414,9 @@ main
         box-shadow: 0px 3px 5px rgba(14, 14, 14, 0.1)
         overflow: hidden
         margin-right: 12px
+        @media screen and (max-width: $first-breack-point)
+            width: 66px
+            height: 88px
         img
             max-width: 200%
             max-height: 200%
@@ -391,6 +429,9 @@ main
         color: $main-color
         font-size: 30px
         font-weight: 600
+        @media screen and (max-width: $first-breack-point)
+            width: 66px
+            height: 88px
     &__popup-link
         border: none
         background-color: $sub-color
@@ -399,6 +440,11 @@ main
         font-weight: 600
         text-decoration: none
         cursor: pointer
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
+            img
+                width: 35px
+                height: 35px
     p
         margin-bottom: 10px
     
@@ -410,9 +456,14 @@ main
     &__title
         font-size: 30px
         font-weight: 600
+        line-height: 1.25
         color: #494949
         background-color: $sub-color
         padding: 0
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
+            line-height: 1.25
+            text-transform: uppercase
         &:focus
             border-color: none
             box-shadow: none
@@ -423,6 +474,10 @@ main
             margin-left: 10px
             margin-right: 0
             transform: rotate(180deg)
+            @media screen and (max-width: $first-breack-point)
+                width: 14px
+                height: 6px
+                background-size: 100%
         &:not(.collapsed)
             color: #494949  
             background-color: inherit
@@ -435,12 +490,17 @@ main
     &__information
         padding-left: 0
         padding-right: 0
+        @media screen and (max-width: $first-breack-point)
+            padding: 0
 
 
 .gallary
     font-weight: 600
     font-size: 30px
+    line-height: 1.25
     color: #494949
+    @media screen and (max-width: $first-breack-point)
+        font-size: 15px
     a
         color: #494949
         text-decoration: none
