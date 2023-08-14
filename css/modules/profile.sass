@@ -1,0 +1,79 @@
+
+.profile
+  &__body
+    grid-template-columns: 1fr 2fr 1fr
+    grid-template-rows: 26px auto auto auto repeat(3, auto)
+    grid-row-gap: 23px
+    grid-column-gap: 1rem
+    grid-template-areas: 'name name name' 'photo country country' 'photo town town' 'photo . .' 'tel tel tel' 'email email email' 'description description description' 'history history history' 'principles principles principles'
+    @media screen and (min-width: $second-breack-point)
+      grid-template-rows: repeat(3, 42px) repeat(3, auto)
+      grid-row-gap: 1.5rem
+      grid-column-gap: 1.5rem
+      grid-template-areas: 'photo name country' 'photo email town' 'photo tel .' 'description description description' 'history history history' 'principles principles principles'
+
+    @media screen and (min-width: $first-breack-point)
+      grid-template-columns: 187px auto 258px
+      grid-column-gap: 37px
+      grid-row-gap: 30px
+
+    .name
+      grid-area: name
+    .photo
+      grid-area: photo
+    .country
+      grid-area: country
+    .town
+      grid-area: town
+    .tel
+      grid-area: tel
+      @media screen and (min-width: $first-breack-point)
+        max-width: 410px
+    .email
+      grid-area: email
+      @media screen and (min-width: $first-breack-point)
+        max-width: 410px
+    .description
+      grid-area: description
+    .history
+      grid-area: history
+    .principles
+      grid-area: principles
+
+    .tel, .email
+      img
+        width: 26px
+        height: 26px
+        @media screen and (min-width: $first-breack-point)
+          width: 42px
+          height: 42px
+
+  &__label
+    top: -12px
+    left: 0
+    margin-bottom: -10px
+    @media screen and (min-width: $first-breack-point)
+      top: -18px
+  &__photo
+    width: 114px
+    height: 114px
+    border-radius: 15px
+    background: $white-color
+    box-shadow: $box-shadow-regular
+    @media screen and (min-width: $second-breack-point)
+      width: 175px
+      height: 175px
+    @media screen and (min-width: $first-breack-point)
+      width: 187px
+      height: 187px
+    img
+      width: 54px
+      height: auto
+  &__card
+    &--btn
+      justify-self: center
+      .confirm
+        margin-left: 10px
+    .small-brake
+      @media (max-width: $xs-breack-point)
+        width: 60%
