@@ -764,6 +764,73 @@ body {
   }
 }
 
+.label {
+  position: absolute;
+}
+.label--general {
+  position: absolute;
+  top: -14px;
+  left: 0;
+  color: #D9D9D9;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+@media screen and (min-width: 1400px) {
+  .label--general {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .label--general {
+    top: -20px;
+  }
+}
+
+.input {
+  position: relative;
+}
+@media all and (min-width: 768px) {
+  .input--general {
+    height: 42px;
+  }
+}
+.input--general input {
+  background: #FFFFFF;
+  width: 100%;
+  height: 100px;
+  padding: 7px 12px;
+  box-shadow: 0px 4px 20px 0 rgba(14, 14, 14, 0.07);
+  font-size: 10px;
+  border-radius: 10px;
+  border: none;
+}
+.input--general input:focus-visible {
+  outline: 1px solid #1560BD;
+}
+@media all and (min-width: 1400px) {
+  .input--general input {
+    font-size: 18px;
+  }
+}
+.input--image {
+  border-radius: 15px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 20px 0 rgba(14, 14, 14, 0.07);
+}
+.input--image input.file-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.input--textarea {
+  resize: none;
+}
 .row-g-2 {
   row-gap: 0.5rem;
 }
@@ -1920,6 +1987,44 @@ body {
   }
 }
 
+.prof {
+  background-color: lightgoldenrodyellow;
+}
+.prof__label {
+  position: absolute;
+}
+.prof__image {
+  position: relative;
+  width: 114px;
+  height: 114px;
+}
+@media screen and (min-width: 1400px) {
+  .prof__image {
+    width: 187px;
+    height: 187px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .prof__image {
+    width: 175px;
+    height: 175px;
+  }
+}
+.prof__image img {
+  width: 54px;
+  height: auto;
+}
+.prof__input {
+  height: 26px;
+}
+@media all and (min-width: 768px) {
+  .prof__input {
+    height: 42px;
+  }
+}
+.prof__textarea {
+  resize: none;
+}
 @media screen and (min-width: 768px) {
   .additional__buttons {
     row-gap: 1.5rem;
