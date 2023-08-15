@@ -375,7 +375,7 @@ function initRatings() {
     function initRating(rating) {
         initRatingVars(rating);
 
-        setActiveratingWidth();
+        setActiveRatingWidth();
 
         if (rating.classList.contains('rating--set')) {
             setRaring(rating)
@@ -384,12 +384,15 @@ function initRatings() {
 
     function initRatingVars(rating) {
         ratingActive = rating.querySelector('.rating__active')
-        ratingValue = 0
+        if (rating.querySelector('.rating__value')) {
+            ratingValue = rating.querySelector('.rating__value')
+        } else ratingValue = 0
     }
-
-    function setActiveratingWidth(i = ratingValue.innerHTML) {
+    
+    function setActiveRatingWidth(i = ratingValue.innerHTML) {   
         const ratingActiveWidth = i / 0.05;
-        ratingActive.style.width = `${ratingActiveWidth}`;
+        ratingActive.style.width = `${ratingActiveWidth}%`;
+        console.log(ratingActiveWidth)     
     }
 
     function setRaring(rating) {
@@ -398,17 +401,17 @@ function initRatings() {
             const ratingItem = ratingItems[i];
             ratingItem.addEventListener('mouseenter', function(e) {
                 initRatingVars(rating);
-                setActiveratingWidth(ratingItem.value);
+                setActiveRatingWidth(ratingItem.value);
             })
 
             ratingItem.addEventListener('mouseLeave', function(e) {
-                setActiveratingWidth();
+                setActiveRatingWidth();
             })
 
             ratingItem.addEventListener('click', function(e) {
                 initRatingVars(rating);
                 ratingValue.innerHTML = i + 1;
-                setActiveratingWidth();
+                setActiveRatingWidth();
             })
         }
     }

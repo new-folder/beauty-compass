@@ -91,4 +91,12 @@
 .rating--sm .rating__body::before {
   width: 93px;
   height: 15px;
+}
+.rating--xl .rating__active::before {
+  width: 235px;
+  height: 41px;
+}
+.rating--xl .rating__body::before {
+  width: 235px;
+  height: 41px;
 }/*# sourceMappingURL=rating.css.map */
