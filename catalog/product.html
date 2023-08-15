@@ -735,17 +735,17 @@
 
     <!--Оставить отзыв-->
     <div class="modal fade" id="openQuestion" tabindex="-1" role="dialog" aria-labelledby="openQuestionLabel" aria-hidden="true" style="display: block !important; opacity: 1 !important;">
-        <div class="modal-dialog" role="document" style="transform: translate(0) !important">
+        <div class="modal-dialog modal-lg" role="document" style="transform: translate(0) !important">
         <div class="modal-content">
             <div class="row modal-header">
                 <h5 class="col-12 modal-title">Отзыв о средстве</h5>
                 <div class="col-12 modal-name" id="openReviewLabel"></div>
             </div>
             <div class="modal-body">
-                <div class="row">
-                    <div class="title--h3 col-6">Оцените средство</div>
+                <div class="row mb-4">
+                    <div class="title--sub col-6">Оцените средство</div>
                     <div class="col-6 ">                                        
-                        <div class="rating rating--xl rating--set">
+                        <div class="rating rating--xl rating--set float-end">
                             <div class="rating__body">
                                 <div class="rating__active"></div>
                                 <div class="rating__items">
@@ -758,6 +758,18 @@
                             </div>
                             <div class="rating__value" style="display: none;">0</div><!--Пока значение хранится здесь-->
                         </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="title--sub col-12 mb-3">Расскажите о средстве</div>
+                    <div class="col-12">      
+                        <textarea class="form-control form-control--textarea" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="title--sub col-12 mb-3">Загрузите до 5 фотографий</div>
+                    <div class="col-12">      
+                        <textarea class="form-control form-control--textarea" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
                 </div>
             </div>
