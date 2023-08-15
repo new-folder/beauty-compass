@@ -327,6 +327,18 @@ body {
   }
 }
 
+.page-title {
+  margin-top: 15px;
+  margin-bottom: 27px;
+}
+@media screen and (min-width: 1400px) {
+  .page-title {
+    row-gap: 35px;
+    margin-top: 30px;
+    margin-bottom: 58px;
+  }
+}
+
 .question {
   width: 1rem;
 }
@@ -503,6 +515,7 @@ body {
   line-height: normal;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  color: #494949;
 }
 @media screen and (min-width: 1400px) {
   .title--15-36, .text--15-36 {
@@ -623,7 +636,7 @@ body {
     font-size: 10px;
   }
 }
-.btn:hover {
+.btn--base:hover, .btn--empty:hover {
   color: #FAFAFA;
   background: #E31E24;
   border-color: #E31E24;
@@ -636,6 +649,22 @@ body {
   background: initial;
   border: 2px solid #1560BD;
   color: #1560BD;
+}
+.btn--delete {
+  background: #E31E24;
+  color: #FAFAFA;
+}
+.btn--delete:hover {
+  color: #FAFAFA;
+  opacity: 0.8;
+}
+.btn__svg-confirm svg {
+  width: 2rem;
+}
+@media screen and (min-width: 1400px) {
+  .btn__svg-confirm svg {
+    width: 3rem;
+  }
 }
 .btn__card-blue {
   display: flex;
@@ -692,14 +721,6 @@ body {
   .btn__card-blue svg {
     width: 37px;
     height: 37px;
-  }
-}
-.btn__svg-confirm svg {
-  width: 2rem;
-}
-@media screen and (min-width: 1400px) {
-  .btn__svg-confirm svg {
-    width: 3rem;
   }
 }
 
@@ -764,6 +785,45 @@ body {
   }
 }
 
+.input {
+  position: relative;
+}
+.input input, .input textarea, .input select {
+  background: #FFFFFF;
+  width: 100%;
+  height: 100%;
+  padding: 7px 12px;
+  box-shadow: 0px 4px 20px 0 rgba(14, 14, 14, 0.07);
+  border-radius: 10px;
+  border: none;
+  color: #210E22;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.input input:focus-visible, .input textarea:focus-visible, .input select:focus-visible {
+  outline: 1px solid #1560BD;
+}
+@media all and (min-width: 1400px) {
+  .input input, .input textarea, .input select {
+    font-size: 18px;
+  }
+}
+.input--image {
+  border-radius: 15px;
+  box-shadow: 0px 4px 20px 0 rgba(14, 14, 14, 0.07);
+}
+.input--image input.file-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
 .label {
   position: absolute;
 }
@@ -788,49 +848,6 @@ body {
   }
 }
 
-.input {
-  position: relative;
-}
-@media all and (min-width: 768px) {
-  .input--general {
-    height: 42px;
-  }
-}
-.input--general input {
-  background: #FFFFFF;
-  width: 100%;
-  height: 100px;
-  padding: 7px 12px;
-  box-shadow: 0px 4px 20px 0 rgba(14, 14, 14, 0.07);
-  font-size: 10px;
-  border-radius: 10px;
-  border: none;
-}
-.input--general input:focus-visible {
-  outline: 1px solid #1560BD;
-}
-@media all and (min-width: 1400px) {
-  .input--general input {
-    font-size: 18px;
-  }
-}
-.input--image {
-  border-radius: 15px;
-  background: #FFFFFF;
-  box-shadow: 0px 4px 20px 0 rgba(14, 14, 14, 0.07);
-}
-.input--image input.file-input {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  cursor: pointer;
-}
-.input--textarea {
-  resize: none;
-}
 .row-g-2 {
   row-gap: 0.5rem;
 }
@@ -1127,16 +1144,6 @@ body {
   transition: 0.3s;
 }
 
-.my__15-30 {
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-@media screen and (min-width: 1400px) {
-  .my__15-30 {
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-}
 .my__25-25 {
   margin-top: 25px;
   margin-bottom: 25px;
@@ -1144,6 +1151,16 @@ body {
 .my__20-20 {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+.my__15-30 {
+  margin-top: 15px;
+  margin-bottom: 22px;
+}
+@media screen and (min-width: 1400px) {
+  .my__15-30 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
 }
 
 .top-bar {
@@ -1987,44 +2004,78 @@ body {
   }
 }
 
-.prof {
-  background-color: lightgoldenrodyellow;
+.profile__brand {
+  display: grid;
+  grid-auto-columns: 114px auto auto;
+  grid-column-gap: 11px;
+  grid-row-gap: 27px;
+  grid-template-areas: "image . ." "image . ." "image . ." "name name name" "description description description";
+  margin-top: 27px;
+  margin-bottom: 27px;
 }
-.prof__label {
-  position: absolute;
+@media screen and (min-width: 1400px) {
+  .profile__brand {
+    grid-template-areas: "image name name" "image description description" "image description description";
+    grid-auto-columns: 187px auto auto;
+    grid-column-gap: 38px;
+    grid-row-gap: 38px;
+    margin-top: 58px;
+    margin-bottom: 37px;
+  }
 }
-.prof__image {
+.profile__image {
   position: relative;
   width: 114px;
   height: 114px;
 }
+.profile__image img {
+  width: 54px;
+  height: auto;
+}
 @media screen and (min-width: 1400px) {
-  .prof__image {
+  .profile__image {
     width: 187px;
     height: 187px;
   }
 }
-@media screen and (min-width: 768px) {
-  .prof__image {
-    width: 175px;
-    height: 175px;
-  }
+.profile__input.profile__image {
+  grid-area: image;
 }
-.prof__image img {
-  width: 54px;
-  height: auto;
+.profile__input.brand__name {
+  grid-area: name;
 }
-.prof__input {
-  height: 26px;
+.profile__input.brand__description {
+  grid-area: description;
 }
-@media all and (min-width: 768px) {
-  .prof__input {
-    height: 42px;
-  }
-}
-.prof__textarea {
+.profile__description {
+  height: 52px;
   resize: none;
 }
+@media all and (min-width: 1400px) {
+  .profile__description {
+    height: 108px;
+  }
+}
+
+.tags {
+  margin-top: 27px;
+  margin-bottom: 15px;
+}
+@media screen and (min-width: 1400px) {
+  .tags {
+    margin-top: 37px;
+    margin-bottom: 30px;
+  }
+}
+.tags.brand__tags .brand__tags-select {
+  width: 100%;
+}
+@media screen and (min-width: 1400px) {
+  .tags.brand__tags .brand__tags-select {
+    width: 260px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .additional__buttons {
     row-gap: 1.5rem;

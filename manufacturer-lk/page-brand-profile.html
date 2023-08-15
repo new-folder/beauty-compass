@@ -5,17 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Страница производителя</title>
-    <link
-            rel="stylesheet"
-            href="https://unpkg.com/tippy.js@6/themes/light.css"
-    />
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/light.css"/>
     <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
 <nav class="navbar navbar-expand-xxl top-bar">
-    <div
-            class="container justify-content-start position-relative p-xxl-0 container--header"
-    >
+    <div class="container justify-content-start position-relative p-xxl-0 container--header">
         <button
                 class="navbar-toggler"
                 type="button"
@@ -125,117 +120,103 @@
     </div>
 </nav>
 
-<main class="manufacturer">
-    <section class="brand mb-3">
+<main class="brand">
+
+    <section class="brand__title">
         <div class="container container--bc">
-            <div class="brand__title row d-flex justify-content-center mb-4">
-                <div class="col-12 col-xxl-10">
-                    <div class="d-flex flex-wrap align-items-center justify-content-left">
-                        <div class="col-2 col-md-12 order-md-1 justify-content-center">
-                            <a href="" class="btn__svg-confirm text--15-30 fw-600 main-color hover-red col-md-3 d-flex align-items-center justify-content-start justify-content-md-center  m-auto mt-md-4">
-                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g id="vuesax/outline/arrow-left">
-                                        <g id="arrow-left">
-                                            <path id="Vector" d="M11.9633 23.5254C11.7258 23.5254 11.4883 23.4379 11.3008 23.2504L3.71328 15.6629C3.35078 15.3004 3.35078 14.7004 3.71328 14.3379L11.3008 6.75039C11.6633 6.38789 12.2633 6.38789 12.6258 6.75039C12.9883 7.11289 12.9883 7.71289 12.6258 8.07539L5.70078 15.0004L12.6258 21.9254C12.9883 22.2879 12.9883 22.8879 12.6258 23.2504C12.4508 23.4379 12.2008 23.5254 11.9633 23.5254Z" fill="#1560BD"></path>
-                                            <path id="Vector_2" d="M25.6234 15.9375H4.58594C4.07344 15.9375 3.64844 15.5125 3.64844 15C3.64844 14.4875 4.07344 14.0625 4.58594 14.0625H25.6234C26.1359 14.0625 26.5609 14.4875 26.5609 15C26.5609 15.5125 26.1359 15.9375 25.6234 15.9375Z" fill="#1560BD"></path>
-                                        </g>
-                                    </g>
-                                </svg>
-                                <span class="text-decoration-none text-uppercase d-none d-md-block ms-3">Назад</span>
-                            </a>
-                        </div>
-                        <div class="text-center col-6 col-md-12 offset-2 offset-md-0">
-                            <h1
-                                    class="title--20-36"
-                            >
-                                Информация <wbr>
-                                о бренде
-                            </h1>
-                        </div>
-
-                    </div>
+            <div class="page-title page-title d-flex flex-wrap align-items-center col-xxl-10 offset-xxl-1">
+                <div class="col-1 col-xxl-12 order-xxl-1">
+                    <a href="" class="btn__svg-confirm text--15-30 fw-600 main-color hover-red d-flex align-items-center justify-content-start justify-content-xxl-center m-auto">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="vuesax/outline/arrow-left">
+                                <g id="arrow-left">
+                                    <path id="Vector" d="M11.9633 23.5254C11.7258 23.5254 11.4883 23.4379 11.3008 23.2504L3.71328 15.6629C3.35078 15.3004 3.35078 14.7004 3.71328 14.3379L11.3008 6.75039C11.6633 6.38789 12.2633 6.38789 12.6258 6.75039C12.9883 7.11289 12.9883 7.71289 12.6258 8.07539L5.70078 15.0004L12.6258 21.9254C12.9883 22.2879 12.9883 22.8879 12.6258 23.2504C12.4508 23.4379 12.2008 23.5254 11.9633 23.5254Z" fill="#1560BD"></path>
+                                    <path id="Vector_2" d="M25.6234 15.9375H4.58594C4.07344 15.9375 3.64844 15.5125 3.64844 15C3.64844 14.4875 4.07344 14.0625 4.58594 14.0625H25.6234C26.1359 14.0625 26.5609 14.4875 26.5609 15C26.5609 15.5125 26.1359 15.9375 25.6234 15.9375Z" fill="#1560BD"></path>
+                                </g>
+                            </g>
+                        </svg>
+                        <span class="text-decoration-none text-uppercase d-none d-xxl-block ms-2">Назад</span>
+                    </a>
                 </div>
-            </div>
-
-
-
-
-            <div class="prof brand__body row row-cols-2 offset-xxl-1 col-xxl-10">
-
-                <div class="input input--image col-4" type="button"  onclick="triggerFileInputProfile()">
-
-                    <label for="brand__image" class="label label--general">Логотип компании</label>
-                    <img src="../img/gallery-add.svg" alt="logo" id="brand__image" class="position-absolute top-50 start-50 translate-middle"/>
-                    <input type="file" name="brand__image" id="brand__file-input" class="file-input picture-input brand__picture-input" onchange="handleFileSelected(event)"/>
-
+                <div class="col text-center col-xxl-12">
+                    <h1 class="title--20-36">Информация о бренде</h1>
                 </div>
-
-                <div class="input input--general prof__input brand__name position-relative col-12 col-md-7">
-                    <label for="brand__name" class="label--general brand__label prof__label position-absolute">Название компании</label>
-                    <input class="brand__input brand__name input--regular w-100 h-100 border-0" id="brand__name" name="brand__name" value="" type="text" required/>
-
-                </div>
-
-
-
-
-
-                <div class="input input--textarea col-12 col-md-7">
-
-                        <label for="brand__description" class="label--general profile__label position-absolute">Краткое описание компании</label>
-                        <textarea class="brand__description textarea--regular w-100 h-100 border-0" id="brand__description" name="brand__description" rows="3" required></textarea>
-
-                </div>
-
-
-
-
-
-
-
-
-
+                <div class="col-1 d-xxl-none"></div>
             </div>
         </div>
     </section>
 
-<!--    <section class="tags">-->
-<!--        <div class="container container&#45;&#45;bc">-->
-<!--            <div class="col-xxl-10 offset-xxl-1">-->
-<!--                <div class="row my-3 my-xxl-4">-->
-<!--                    <div class="country">-->
-<!--                        <div class="select&#45;&#45;wrapper position-relative">-->
-<!--                            <label-->
-<!--                                    for="profile__country"-->
-<!--                                    class="label&#45;&#45;light profile__label position-absolute"-->
-<!--                            >Страна</label-->
-<!--                            >-->
-<!--                            <select-->
-<!--                                    class="profile__select profile__country select&#45;&#45;regular w-100 h-100 border-0"-->
-<!--                                    name="country"-->
-<!--                                    id="profile__country"-->
-<!--                                    required-->
-<!--                            >-->
-<!--                                <option value="">Выбор из списка</option>-->
-<!--                                <option value="">Выбор из списка</option>-->
-<!--                                <option value="">Выбор из списка</option>-->
-<!--                                <option value="">Выбор из списка</option>-->
-<!--                            </select>-->
-<!--                        </div>-->
-<!--                    </div>-->
+    <section class="brand__details">
+        <div class="container container--bc">
+            <form class="profile profile__brand brand__profile offset-xxl-1 col-xxl-10">
+
+                <div class="input image input--image profile__input profile__image brand__image" type="button"   onclick="triggerFileInputProfile()">
+                    <label for="brand__file-input" class="label label--general">Логотип компании</label>
+                    <img src="../img/gallery-add.svg" alt="logo" class="position-absolute top-50 start-50 translate-middle"/>
+                    <input type="file" name="brand__file-input" id="brand__file-input" class="file-input profile__file-input brand__file-input" onchange="handleFileSelected(event)"/>
+                </div>
+
+                <div class="input name input--general profile__input profile__name brand__input brand__name">
+                    <label for="brand__name" class="label label--general profile__label">Название компании</label>
+                    <input class="brand__input input--regular" id="brand__name" name="brand__name" value="" type="text" required/>
+                </div>
+
+                <div class="input description input--textarea profile__input profile__textarea profile__description brand__input brand__description">
+                    <label for="brand__description" class="label label--general profile__label">Краткое описание компании</label>
+                    <textarea class="textarea--regular" id="brand__description" name="brand__description" rows="3" required></textarea>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+    <section class="tags brand__tags">
+        <div class="container container--bc">
+            <div class="col-xxl-10 offset-xxl-1">
+
+                <div class="input input--select brand__tags-select">
+                    <label
+                            for="brand__tags-select"
+                            class="label--general brand__tags-label tags__label position-absolute">Теги
+                    </label>
+
+                    <div class="select--regular" id="brand__tags-select">
+
+                    </div>
+                </div>
+
+                <script>
+
+                      console.log('123')
+
+                </script>
+
+<!--                <div class="input input&#45;&#45;select brand__tags-select">-->
+<!--                    <label-->
+<!--                            for="brand__tags-select"-->
+<!--                            class="label&#45;&#45;general brand__tags-label tags__label position-absolute">Теги-->
+<!--                    </label>-->
+<!--                    <select-->
+<!--                            class="select&#45;&#45;regular"-->
+<!--                            name="brand__tags-select"-->
+<!--                            id="brand__tags-select"-->
+<!--                            required>-->
+<!--                        <option value="">Выбор из списка</option>-->
+<!--                        <option value="">Выбор из списка</option>-->
+<!--                        <option value="">Выбор из списка</option>-->
+<!--                        <option value="">Выбор из списка</option>-->
+<!--                    </select>-->
 <!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
+            </div>
+        </div>
+    </section>
 
     <section class="shops">
         <div class="container container--bc">
             <div class="col-xxl-10 offset-xxl-1">
                 <div class="row my-3 my-xxl-4">
                     <div class="col-12 text-center d-flex justify-content-center align-items-center">
-                        <h2
-                                class="title--15-36"
-                        >
+                        <h2 class="title--15-36">
                             Интернет магазины
                         </h2>
                     </div>
@@ -313,9 +294,10 @@
         </div>
     </section>
 
-    <section>
+    <section class="page__bottom my__15-30">
         <div class="container container--bc">
-            <div class="col-12 col-xxl-10 offset-xxl-1 d-flex justify-content-center gx-0 gy-2 my-4">
+            <div class="col-12 col-xxl-10 offset-xxl-1 d-flex justify-content-around gx-0 gy-2 my-4">
+                <div class="btn btn--delete">Удалить</div>
                 <div class="btn btn--base">Сохранить</div>
             </div>
         </div>

@@ -1,71 +1,46 @@
-//.brand
-//  &__body
-//    //grid-template-columns: 1fr 2fr
-//    //grid-template-rows: 114px 26px 52px
-//    //grid-row-gap: 27px
-//    //grid-column-gap: 37px
-//
-//  &__picture
-//    width: 114px
-//    height: 114px
-//    border-radius: 15px
-//    background: $white-color
-//    box-shadow: $box-shadow-regular
-//    @media screen and (min-width: $first-breack-point)
-//      width: 187px
-//      height: 187px
-//    @media screen and (min-width: $second-breack-point)
-//      width: 175px
-//      height: 175px
-//    img
-//      width: 54px
-//      height: auto
-//
-//  &__name
-//  &__description
-
-.prof
-  background-color: lightgoldenrodyellow
-  &__label
-    position: absolute
-    //top: -14px
-    //left: 0
-    //color: $gray-light
-    //font-size: 10px
-    //font-style: normal
-    //font-weight: 600
-    //line-height: normal
-    //@media screen and (min-width: $first-breack-point)
-    //  font-size: 15px
-    //@media screen and (min-width: $first-breack-point)
-    //  top: -20px
+.profile
+  &__brand
+    display: grid
+    grid-auto-columns: 114px auto auto
+    grid-column-gap: 11px
+    grid-row-gap: 27px
+    grid-template-areas: 'image . .' 'image . .' 'image . .' 'name name name' 'description description description'
+    margin-top: 27px
+    margin-bottom: 27px
+    @media screen and (min-width: $first-breack-point)
+      grid-template-areas: 'image name name' 'image description description' 'image description description'
+      grid-auto-columns: 187px auto auto
+      grid-column-gap: 38px
+      grid-row-gap: 38px
+      margin-top: 58px
+      margin-bottom: 37px
 
   &__image
     position: relative
     width: 114px
     height: 114px
-    @media screen and (min-width: $first-breack-point)
-      width: 187px
-      height: 187px
-    @media screen and (min-width: $second-breack-point)
-      width: 175px
-      height: 175px
+
     img
       width: 54px
       height: auto
-
+    @media screen and (min-width: $first-breack-point)
+      width: 187px
+      height: 187px
 
   &__input
-    height: 26px
-    @media all and (min-width: $second-breack-point)
-      height: 42px
+    &.profile__image
+      grid-area: image
+    &.brand__name
+      grid-area: name
+    &.brand__description
+      grid-area: description
 
-
-
-  &__textarea
+  &__description
+    height: 52px
     resize: none
+    @media all and (min-width: $first-breack-point)
+      height: 108px
 
-  &__select
 
 
 
