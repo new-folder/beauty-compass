@@ -124,7 +124,7 @@
                         <div class="col-6 col-xxl-12 product-header__title mb-2">Рейтинг</div>
                         <div class="col-6 col-xxl-12 product-header__rating rating rating--lage mb-2">
                             <div class="me-2">4,0/5</div>
-                            <div class="rating__body">
+                            <div class="rating__value rating__body">
                                 <div class="rating__active" style="width: 75%;"></div>
                             </div>
                         </div>
@@ -733,7 +733,7 @@
     </div>
 
 
-    <!--Оставить отзыв вопрос-->
+    <!--Оставить отзыв-->
     <div class="modal fade" id="openQuestion" tabindex="-1" role="dialog" aria-labelledby="openQuestionLabel" aria-hidden="true" style="display: block !important; opacity: 1 !important;">
         <div class="modal-dialog" role="document" style="transform: translate(0) !important">
         <div class="modal-content">
@@ -743,9 +743,9 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-6">Оцените средство</div>
-                    <div class="col-6">                                        
-                        <div class="rating rating--sm rating--set">
+                    <div class="title--h3 col-6">Оцените средство</div>
+                    <div class="col-6 ">                                        
+                        <div class="rating rating--xl rating--set">
                             <div class="rating__body">
                                 <div class="rating__active"></div>
                                 <div class="rating__items">
@@ -756,6 +756,7 @@
                                     <input type="radio" class="rating__item" value="5" name="rating">
                                 </div>
                             </div>
+                            <div class="rating__value" style="display: none;">0</div><!--Пока значение хранится здесь-->
                         </div>
                     </div>
                 </div>
