@@ -178,9 +178,6 @@
 .form-control:focus {
   box-shadow: 0px 4px 20px rgba(14, 14, 14, 0.07);
 }
-.form-control--textarea {
-  border-radius: 15px;
-}
 
 .form-control.is-invalid, .was-validated .form-control:invalid {
   border: 2px solid #E31E24;

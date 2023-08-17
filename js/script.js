@@ -417,6 +417,20 @@ function initRatings() {
     }
 }
 
+function countChars() {
+    if (document.querySelector(".leave-feed__textarea") && document.querySelector(".leave-feed__count")) {
+        areas = document.querySelectorAll(".leave-feed__textarea")
+        for (let i = 0; i < areas.length; i++) {
+            let area = areas[i].querySelector('textarea')
+            let areaCounter =  areas[i].querySelector(".leave-feed__num")
+            area.addEventListener('keyup', e => 
+            areaCounter.innerHTML = area.value.length)
+        }
+    }
+}
+
+countChars();
+
 //For demonstration
 
 // Add/remove class 'active' for favorite brand

@@ -734,7 +734,7 @@
 
 
     <!--Оставить отзыв-->
-    <div class="modal fade" id="openQuestion" tabindex="-1" role="dialog" aria-labelledby="openQuestionLabel" aria-hidden="true" style="display: block !important; opacity: 1 !important;">
+    <div class="modal fade leave-feed" id="openQuestion" tabindex="-1" role="dialog" aria-labelledby="openQuestionLabel" aria-hidden="true" style="display: block !important; opacity: 1 !important;">
         <div class="modal-dialog modal-lg" role="document" style="transform: translate(0) !important">
         <div class="modal-content">
             <div class="row modal-header">
@@ -762,14 +762,21 @@
                 </div>
                 <div class="row mb-4">
                     <div class="title--sub col-12 mb-3">Расскажите о средстве</div>
-                    <div class="col-12">      
-                        <textarea class="form-control form-control--textarea" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <div class="col-12 position-relative leave-feed__textarea">      
+                        <textarea class="form-control" id="feedFormControlTextarea" rows="8"></textarea>
+                        <div class="leave-feed__count">
+                            <span class="leave-feed__num">0</span>
+                            <span class="leave-feed__maximum">/ 1400</span>
+                        </div>
                     </div>
                 </div>
                 <div class="row mb-4">
                     <div class="title--sub col-12 mb-3">Загрузите до 5 фотографий</div>
-                    <div class="col-12">      
-                        <textarea class="form-control form-control--textarea" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <div class="col-4"> 
+                        <div class="input image input--image profile__input profile__image" type="button"   onclick="triggerFileInputProfile()">
+                            <img src="../img/gallery-add.svg" alt="add photos" class="position-absolute top-50 start-50 translate-middle"/>
+                            <input type="file" name="brand__file-input" id="brand__file-input" class="file-input profile__file-input" onchange="handleFileSelected(event)"/>
+                        </div>
                     </div>
                 </div>
             </div>
