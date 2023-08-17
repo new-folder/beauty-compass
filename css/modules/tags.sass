@@ -53,13 +53,21 @@
       &-column
         display: inline-block
         vertical-align: top
-        //width: 33.33%
-        //padding: 10px
         box-sizing: border-box
       &-option
         width: max-content
-        padding: 7px 12px
+        //padding: 7px 12px
+        padding: 12px 20px
         cursor: pointer
+        transition: 0.3s
+        &.active
+          color: $dark-semi-light
+          background: $bg-grey
+          border-radius: 15px
+        &:hover
+          color: $main-color
+        &:active
+          color: $pre-color
 
 
       &-content
@@ -79,7 +87,7 @@
         justify-content: center
         padding: 4px 10px
         border-radius: 15px
-        background: #E8E8E8
+        background: $bg-grey
         color: $dark-semi-light
         font-size: 10px
         font-style: normal

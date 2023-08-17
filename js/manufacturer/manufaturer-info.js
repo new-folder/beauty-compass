@@ -15,7 +15,7 @@ const addShopsItem = () => {
       <input
         class="input input--regular"
         id="shops__form-name"
-        placeholder="Оффициальный магазин"
+        placeholder="Официальный магазин"
       />
     </div>
     <div>

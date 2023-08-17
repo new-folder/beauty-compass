@@ -2133,8 +2133,20 @@ body {
 }
 .tags.brand__tags .brand__tags-option {
   width: max-content;
-  padding: 7px 12px;
+  padding: 12px 20px;
   cursor: pointer;
+  transition: 0.3s;
+}
+.tags.brand__tags .brand__tags-option.active {
+  color: #494949;
+  background: #E8E8E8;
+  border-radius: 15px;
+}
+.tags.brand__tags .brand__tags-option:hover {
+  color: #1560BD;
+}
+.tags.brand__tags .brand__tags-option:active {
+  color: #E31E24;
 }
 .tags.brand__tags .brand__tags-content {
   display: flex;

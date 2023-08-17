@@ -150,18 +150,18 @@
             <form class="profile profile__brand brand__profile offset-xxl-1 col-xxl-10">
 
                 <div class="input image input--image profile__input profile__image brand__image" type="button"   onclick="triggerFileInputProfile()">
-                    <label for="brand__file-input" class="label label--general">Логотип компании</label>
+                    <label for="brand__file-input" class="label label--general">Логотип бренда</label>
                     <img src="../img/gallery-add.svg" alt="logo" class="position-absolute top-50 start-50 translate-middle"/>
                     <input type="file" name="brand__file-input" id="brand__file-input" class="file-input profile__file-input brand__file-input" onchange="handleFileSelected(event)"/>
                 </div>
 
                 <div class="input name input--general profile__input profile__name brand__input brand__name">
-                    <label for="brand__name" class="label label--general profile__label">Название компании</label>
+                    <label for="brand__name" class="label label--general profile__label">Название бренда</label>
                     <input class="brand__input input--regular" id="brand__name" name="brand__name" value="" type="text" required/>
                 </div>
 
                 <div class="input description input--textarea profile__input profile__textarea profile__description brand__input brand__description">
-                    <label for="brand__description" class="label label--general profile__label">Краткое описание компании</label>
+                    <label for="brand__description" class="label label--general profile__label">Краткое описание бренда</label>
                     <textarea class="textarea--regular" id="brand__description" name="brand__description" rows="3" required></textarea>
                 </div>
 
@@ -173,7 +173,7 @@
         <div class="container container--bc">
             <div class="col-xxl-10 offset-xxl-1">
 
-                <div class="input input--select select--regular brand__tags-select">
+                <div class="input input--select select--regular brand__tags-select" id="brand__tags-select">
 
                     <label for="brand__tags-select" class="label--general brand__tags-label tags__label position-absolute">Теги</label>
                     <div class="brand__tags-header">

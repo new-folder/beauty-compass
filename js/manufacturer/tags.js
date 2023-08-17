@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-
-
   const select = document.querySelector(".brand__tags-select");
   const selectHeader = document.querySelector(".brand__tags-header");
   const selectOptions = document.querySelector(".brand__tags-options");
   const tagsContent = document.querySelector(".brand__tags-content");
+  const optionSelected = document.querySelector(".brand__tags-selected");
 
   select.addEventListener("click", function () {
     if (selectOptions.classList.contains("open")) {
@@ -15,22 +14,42 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   })
 
+
   const options = document.querySelectorAll(".brand__tags-option");
-  options.forEach(function (option) {
+  options.forEach(function (option, index) {
+
+    const optionId = `option-${index + 1}`;
+    option.setAttribute("data-option-id", optionId);
+
     option.addEventListener("click", function () {
       const selectedValue = option.textContent;
-      document.querySelector(".brand__tags-selected").textContent = selectedValue;
+      const selectedOptionId = option.getAttribute("data-option-id");
 
-      const tag = document.createElement('div')
-      tag.classList.add('brand__tags-item');
-      // tag.textContent = selectedValue;
-      tag.innerHTML = `<span>${selectedValue}</span>`;
-      tagsContent.appendChild(tag);
+      optionSelected.textContent = selectedValue;
 
+      const existingTag = tagsContent.querySelector(`[data-tag-id="${selectedOptionId}"]`);
+
+      if (existingTag) {
+        tagsContent.removeChild(existingTag);
+        option.classList.remove("active");
+      } else {
+        const tag = document.createElement('div');
+        tag.classList.add('brand__tags-item');
+        tag.setAttribute("data-tag-id", selectedOptionId);
+        tag.innerHTML = `<span>${selectedValue}</span>`;
+        option.classList.add("active");
+        tagsContent.appendChild(tag);
+      }
+
+      selectOptions.classList.remove("open");
+
+      const tagsExist = tagsContent.querySelector('.brand__tags-item');
+      optionSelected.textContent = tagsExist ? selectedValue : 'Выберите значение';
 
       console.log('brand__tags-option: ' + selectedValue);
     });
   });
+
 
   document.addEventListener("click", function (event) {
     if (!event.target.closest(".brand__tags-select")) {
@@ -38,61 +57,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-
-
 });
-
-
-
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   const brandSelect = document.querySelector(".brand__tags-select");
-//   const brandHeader = document.querySelector(".brand__tags-header");
-//   const brandOptions = document.querySelector(".brand__tags-options");
-//
-//   brandSelect.addEventListener("click", function () {
-//     brandOptions.classList.toggle("open");
-//   });
-//
-//   const options = document.querySelectorAll(".option");
-//   options.forEach(function (option) {
-//     option.addEventListener("click", function () {
-//       const selectedValue = option.textContent;
-//       document.querySelector(".brand__tags-selected").textContent = selectedValue;
-//       brandOptions.classList.remove("open");
-//     });
-//   });
-//
-//   document.addEventListener("click", function (event) {
-//     if (!event.target.closest(".custom-select")) {
-//       brandOptions.classList.remove("open");
-//     }
-//   });
-// });
-//
-//
-// document.addEventListener("DOMContentLoaded", function () {
-//   const select = document.querySelector(".brand__tags-select");
-//   const selectHeader = document.querySelector(".brand__tags-selected");
-//   const selectOptions = document.querySelector(".brand__tags-options");
-//
-//   select.addEventListener("click", function () {
-//     selectOptions.classList.toggle("open");
-//     console.log('123')
-//   });
-//
-//   const options = document.querySelectorAll(".brand__tags-option");
-//   options.forEach(function (option) {
-//     option.addEventListener("click", function () {
-//       const selectedValue = option.textContent;
-//       document.querySelector(".brand__tags-selected").textContent = selectedValue;
-//       selectOptions.classList.remove("open");
-//     });
-//   });
-//
-//   document.addEventListener("click", function (event) {
-//     if (!event.target.closest(".custom-select")) {
-//       selectOptions.classList.remove("open");
-//     }
-//   });
-// });
