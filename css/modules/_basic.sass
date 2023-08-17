@@ -336,6 +336,81 @@ textarea
 .selection
     margin-bottom: 56px
 
+.input--wrapper, .select--wrapper
+    height: 26px
+    @media all and (min-width: $second-breack-point)
+        height: 42px
+
+.input--regular, .select--regular, .textarea--regular
+    background: $white-color
+    width: 100%
+    padding: 7px 12px
+    box-shadow: $box-shadow-regular
+    font-size: 10px
+    border-radius: 10px
+    border: none
+    &:focus-visible
+        outline: 1px solid $main-color
+    @media all and (min-width: $first-breack-point)
+        font-size: 18px
+
+.label--light
+    color: $gray-light
+    font-size: 10px
+    font-style: normal
+    font-weight: 600
+    line-height: normal
+    @media screen and (min-width: $first-breack-point)
+        font-size: 15px
+
+.input
+    position: relative
+    input, textarea, select, &.input--select
+        background: $white-color
+        width: 100%
+        height: 100%
+        padding: 7px 12px
+        box-shadow: $box-shadow-regular
+        border-radius: 10px
+        border: none
+        color: $dark-lighter
+        font-size: 10px
+        font-style: normal
+        font-weight: 600
+        line-height: normal
+        &:focus-visible
+            outline: 1px solid $main-color
+        @media all and (min-width: $first-breack-point)
+            font-size: 18px
+    &--image
+        border-radius: 15px
+        box-shadow: $box-shadow-regular
+        input.file-input
+            position: absolute
+            left: 0
+            top: 0
+            width: 100%
+            height: 100%
+            opacity: 0
+            cursor: pointer
+
+.label
+    position: absolute
+    &--general
+        position: absolute
+        top: -14px
+        left: 0
+        color: $gray-light
+        font-size: 10px
+        font-style: normal
+        font-weight: 600
+        line-height: normal
+        @media screen and (min-width: $first-breack-point)
+            font-size: 15px
+        @media screen and (min-width: $first-breack-point)
+            top: -20px
+
+
 .section
     &--carousel
         margin-bottom: 56px

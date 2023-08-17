@@ -392,7 +392,6 @@ function initRatings() {
     function setActiveRatingWidth(i = ratingValue.innerHTML) {   
         const ratingActiveWidth = i / 0.05;
         ratingActive.style.width = `${ratingActiveWidth}%`;
-        console.log(ratingActiveWidth)     
     }
 
     function setRaring(rating) {
@@ -418,13 +417,13 @@ function initRatings() {
 }
 
 function countChars() {
-    if (document.querySelector(".leave-feed__textarea") && document.querySelector(".leave-feed__count")) {
+    if (document.querySelector(".leave-feed__count")) {
         areas = document.querySelectorAll(".leave-feed__textarea")
         for (let i = 0; i < areas.length; i++) {
             let area = areas[i].querySelector('textarea')
             let areaCounter =  areas[i].querySelector(".leave-feed__num")
             area.addEventListener('keyup', e => 
-            areaCounter.innerHTML = area.value.length)
+                areaCounter.innerHTML = area.value.length)
         }
     }
 }
