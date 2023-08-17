@@ -223,9 +223,6 @@
 .form-control:focus {
   box-shadow: 0px 4px 20px rgba(14, 14, 14, 0.07);
 }
-.form-control--textarea {
-  border-radius: 15px;
-}
 
 .form-control.is-invalid, .was-validated .form-control:invalid {
   border: 2px solid #E31E24;
@@ -1034,6 +1031,17 @@ body {
 }
 .gallary a:hover {
   opacity: 0.7;
+}
+
+.leave-feed__textarea .form-control {
+  border-radius: 15px;
+  resize: none;
+}
+.leave-feed__count {
+  position: absolute;
+  bottom: 8px;
+  right: 20px;
+  font-size: 15px;
 }
 
 .top-bar {
