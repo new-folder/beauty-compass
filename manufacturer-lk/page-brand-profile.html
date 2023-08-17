@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Страница производителя</title>
-    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/light.css"/>
     <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
@@ -174,39 +173,42 @@
         <div class="container container--bc">
             <div class="col-xxl-10 offset-xxl-1">
 
-                <div class="input input--select brand__tags-select">
-                    <label
-                            for="brand__tags-select"
-                            class="label--general brand__tags-label tags__label position-absolute">Теги
-                    </label>
+                <div class="input input--select select--regular brand__tags-select">
 
-                    <div class="select--regular" id="brand__tags-select">
-
+                    <label for="brand__tags-select" class="label--general brand__tags-label tags__label position-absolute">Теги</label>
+                    <div class="brand__tags-header">
+                        <span class="brand__tags-selected text--10_18">Выберите значение</span>
+                        <span class="brand__tags-arrow">
+                            <svg width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(0deg);">
+                                <path d="M14.1304 0.80744C14.1304 0.957419 14.0734 1.1074 13.9511 1.2258L8.63719 6.37246C7.77327 7.20918 6.35513 7.20918 5.49121 6.37246L0.177267 1.2258C-0.059089 0.996887 -0.059089 0.617993 0.177267 0.389077C0.413623 0.160161 0.804834 0.160161 1.04119 0.389077L6.35513 5.53573C6.74634 5.91462 7.38206 5.91462 7.77327 5.53573L13.0872 0.389077C13.3236 0.160161 13.7148 0.160161 13.9511 0.389077C14.0652 0.507482 14.1304 0.657461 14.1304 0.80744Z" fill="#210E22"></path>
+                            </svg>
+                        </span>
                     </div>
+
+                    <div class="brand__tags-options">
+                        <div class="brand__tags-column">
+                            <div class="brand__tags-option">Значение 1</div>
+                            <div class="brand__tags-option">Значение 2</div>
+                            <div class="brand__tags-option">Значение 3</div>
+                        </div>
+                        <div class="brand__tags-column">
+                            <div class="brand__tags-option">Значение 4</div>
+                            <div class="brand__tags-option">Значение 5</div>
+                            <div class="brand__tags-option">Значение 6</div>
+                        </div>
+                        <div class="brand__tags-column">
+                            <div class="brand__tags-option">Значение 7</div>
+                            <div class="brand__tags-option">Значение 8</div>
+                            <div class="brand__tags-option">Значение 9</div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <script>
+                <div class="brand__tags-content">
 
-                      console.log('123')
+                </div>
 
-                </script>
-
-<!--                <div class="input input&#45;&#45;select brand__tags-select">-->
-<!--                    <label-->
-<!--                            for="brand__tags-select"-->
-<!--                            class="label&#45;&#45;general brand__tags-label tags__label position-absolute">Теги-->
-<!--                    </label>-->
-<!--                    <select-->
-<!--                            class="select&#45;&#45;regular"-->
-<!--                            name="brand__tags-select"-->
-<!--                            id="brand__tags-select"-->
-<!--                            required>-->
-<!--                        <option value="">Выбор из списка</option>-->
-<!--                        <option value="">Выбор из списка</option>-->
-<!--                        <option value="">Выбор из списка</option>-->
-<!--                        <option value="">Выбор из списка</option>-->
-<!--                    </select>-->
-<!--                </div>-->
             </div>
         </div>
     </section>
@@ -695,7 +697,7 @@
 
 <script src="../js/bootstrap.bundle.min.js"></script>
 <!--<script src="../js/script.js"></script>-->
-<script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="../js/manufacturer/manufaturer-info.js"></script>
+<script src="../js/manufacturer/tags.js"></script>
 </body>
 </html>

@@ -7,6 +7,83 @@
   &.brand__tags
     .brand__tags
       &-select
+        display: flex
+        align-items: center
+        justify-content: space-between
         width: 100%
+        height: 26px
         @media screen and (min-width: $first-breack-point)
-            width: 260px
+          width: 260px
+          height: 42px
+        .brand__tags-options.open &
+          border: 3px solid $main-color
+      &-header
+        display: flex
+        align-items: center
+        justify-content: space-between
+        width: 100%
+        cursor: pointer
+      &-options
+        display: none
+        position: absolute
+        left: 0
+        top: 100%
+        height: auto
+        background-color: $white-color
+        box-shadow: $box-shadow-regular
+        z-index: 1
+        border-radius: 10px
+        padding: 7px 12px
+        &.open
+          flex-direction: column
+          @media screen and (min-width: $first-breack-point)
+            flex-direction: row
+
+          display: flex
+      &-selected
+        color: $dark-lighter
+        font-size: 10px
+        font-style: normal
+        font-weight: 600
+        line-height: normal
+        @media screen and (min-width: $first-breack-point)
+          font-size: 18px
+      &-arrow
+        font-size: 12px
+      &-column
+        display: inline-block
+        vertical-align: top
+        //width: 33.33%
+        //padding: 10px
+        box-sizing: border-box
+      &-option
+        width: max-content
+        padding: 7px 12px
+        cursor: pointer
+
+
+      &-content
+        display: flex
+        flex-wrap: wrap
+        align-items: flex-start
+        gap: 10px
+        margin-top: 10px
+        margin-bottom: 10px
+        @media screen and (min-width: $first-breack-point)
+          gap: 20px
+          margin-top: 20px
+          margin-bottom: 20px
+      &-item
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        padding: 4px 10px
+        border-radius: 15px
+        background: #E8E8E8
+        color: $dark-semi-light
+        font-size: 10px
+        font-style: normal
+        font-weight: 600
+        line-height: normal
+        @media screen and (min-width: $first-breack-point)
+          font-size: 18px
