@@ -68,19 +68,47 @@
           color: $main-color
         &:active
           color: $pre-color
-
+      &-select
+      &-header
+        display: flex
+        align-items: center
+        justify-content: space-between
+        width: 100%
+        cursor: pointer
+      &-options
+        display: none
+        position: absolute
+        left: 0
+        top: 100%
+        height: auto
+        &.open
+          display: flex
+      &-selected
+      &-arrow
+        font-size: 12px
+      &-column
+        display: inline-block
+        vertical-align: top
+      &-option
+        cursor: pointer
+        transition: 0.3s
+        &.active
+        &:hover
+        &:active
 
       &-content
         display: flex
         flex-wrap: wrap
         align-items: flex-start
         gap: 10px
-        margin-top: 10px
-        margin-bottom: 10px
-        @media screen and (min-width: $first-breack-point)
-          gap: 20px
-          margin-top: 20px
-          margin-bottom: 20px
+        &.filled
+          margin-top: 10px
+          margin-bottom: 10px
+          @media screen and (min-width: $first-breack-point)
+            margin-top: 20px
+            margin-bottom: 20px
+            gap: 20px
+
       &-item
         display: inline-flex
         align-items: center
@@ -95,3 +123,7 @@
         line-height: normal
         @media screen and (min-width: $first-breack-point)
           font-size: 18px
+
+
+
+
