@@ -123,7 +123,7 @@
 
     <section class="brand__title">
         <div class="container container--bc">
-            <div class="page-title page-title d-flex flex-wrap align-items-center col-xxl-10 offset-xxl-1">
+            <div class="page-title d-flex flex-wrap align-items-center col-xxl-10 offset-xxl-1">
                 <div class="col-1 col-xxl-12 order-xxl-1">
                     <a href="" class="btn__svg-confirm text--15-30 fw-600 main-color hover-red d-flex align-items-center justify-content-start justify-content-xxl-center m-auto">
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -147,21 +147,21 @@
 
     <section class="brand__details">
         <div class="container container--bc">
-            <form class="profile profile__brand brand__profile offset-xxl-1 col-xxl-10">
+            <form class="profile profile__brand brand__profile col-12 offset-xxl-1 col-xxl-10">
 
-                <div class="input image input--image profile__input profile__image brand__image" type="button"   onclick="triggerFileInputProfile()">
-                    <label for="brand__file-input" class="label label--general">Логотип бренда</label>
+                <div class="input image input--image profile__input profile__image brand__image profile__brand-image profile__brand-input" type="button" onclick="triggerFileInputProfile()">
+                    <label for="brand__file-input" class="label--light label--profile ">Логотип бренда</label>
                     <img src="../img/gallery-add.svg" alt="logo" class="position-absolute top-50 start-50 translate-middle"/>
                     <input type="file" name="brand__file-input" id="brand__file-input" class="file-input profile__file-input brand__file-input" onchange="handleFileSelected(event)"/>
                 </div>
 
-                <div class="input name input--general profile__input profile__name brand__input brand__name">
-                    <label for="brand__name" class="label label--general profile__label">Название бренда</label>
+                <div class="input name input--general profile__brand-input brand__input brand__name ">
+                    <label for="brand__name" class="label--light label--profile ">Название бренда</label>
                     <input class="brand__input input--regular" id="brand__name" name="brand__name" value="" type="text" required/>
                 </div>
 
-                <div class="input description input--textarea profile__input profile__textarea profile__description brand__input brand__description">
-                    <label for="brand__description" class="label label--general profile__label">Краткое описание бренда</label>
+                <div class="input description input--textarea profile__input profile__textarea profile__description profile__brand-description brand__input brand__description profile__brand-input">
+                    <label for="brand__description" class="label--light label--profile">Краткое описание бренда</label>
                     <textarea class="textarea--regular" id="brand__description" name="brand__description" rows="3" required></textarea>
                 </div>
 
@@ -173,42 +173,42 @@
         <div class="container container--bc">
             <div class="col-xxl-10 offset-xxl-1">
 
-                <div class="input input--select select--regular brand__tags-select" id="brand__tags-select">
+                <div class="input input--select select--regular tags__select brand__tags-select" id="brand__tags-select">
 
-                    <label for="brand__tags-select" class="label--general brand__tags-label tags__label position-absolute">Теги</label>
-                    <div class="brand__tags-header">
-                        <span class="brand__tags-selected text--10_18">Выберите значение</span>
-                        <span class="brand__tags-arrow">
+                    <label for="brand__tags-select" class="label--light label--profile">Теги</label>
+
+                    <div class="select__header input--select">
+                        <span class="tags__selected text--10_18">Выберите значение</span>
+                        <span class="tags__arrow">
                             <svg width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(0deg);">
                                 <path d="M14.1304 0.80744C14.1304 0.957419 14.0734 1.1074 13.9511 1.2258L8.63719 6.37246C7.77327 7.20918 6.35513 7.20918 5.49121 6.37246L0.177267 1.2258C-0.059089 0.996887 -0.059089 0.617993 0.177267 0.389077C0.413623 0.160161 0.804834 0.160161 1.04119 0.389077L6.35513 5.53573C6.74634 5.91462 7.38206 5.91462 7.77327 5.53573L13.0872 0.389077C13.3236 0.160161 13.7148 0.160161 13.9511 0.389077C14.0652 0.507482 14.1304 0.657461 14.1304 0.80744Z" fill="#210E22"></path>
                             </svg>
                         </span>
                     </div>
 
-                    <div class="brand__tags-options">
-                        <div class="brand__tags-column">
-                            <div class="brand__tags-option">Значение 1</div>
-                            <div class="brand__tags-option">Значение 2</div>
-                            <div class="brand__tags-option">Значение 3</div>
+                    <div class="select__options">
+                        <div class="tags__column">
+                            <div class="tags__option">Значение 1</div>
+                            <div class="tags__option">Значение 2</div>
+                            <div class="tags__option">Значение 3</div>
                         </div>
-                        <div class="brand__tags-column">
-                            <div class="brand__tags-option">Значение 4</div>
-                            <div class="brand__tags-option">Значение 5</div>
-                            <div class="brand__tags-option">Значение 6</div>
+                        <div class="tags__column">
+                            <div class="tags__option">Значение 4</div>
+                            <div class="tags__option">Значение 5</div>
+                            <div class="tags__option">Значение 6</div>
                         </div>
-                        <div class="brand__tags-column">
-                            <div class="brand__tags-option">Значение 7</div>
-                            <div class="brand__tags-option">Значение 8</div>
-                            <div class="brand__tags-option">Значение 9</div>
+                        <div class="tags__column">
+                            <div class="tags__option">Значение 7</div>
+                            <div class="tags__option">Значение 8</div>
+                            <div class="tags__option">Значение 9</div>
                         </div>
                     </div>
 
                 </div>
 
-                <div class="brand__tags-content">
+                <div class="tags__content">
 
                 </div>
-
             </div>
         </div>
     </section>
@@ -698,6 +698,6 @@
 <script src="../js/bootstrap.bundle.min.js"></script>
 <!--<script src="../js/script.js"></script>-->
 <script src="../js/manufacturer/manufaturer-info.js"></script>
-<script src="../js/manufacturer/tags.js"></script>
+<script src="../js/tags.js"></script>
 </body>
 </html>

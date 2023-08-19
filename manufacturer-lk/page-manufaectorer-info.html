@@ -125,227 +125,236 @@
       </div>
     </nav>
 
-    <main class="manufacturer">
+    <main class="manufacturer-info">
 
-      <section class="profile mb-3">
+      <section class="manufacturer-info__title">
         <div class="container container--bc">
-          <div class="row d-flex justify-content-center mb-4">
-            <div class="col-12 col-xxl-10">
-              <div class="d-flex align-items-center justify-content-sm-between">
-                <div class="col-1 col-md-2">
-                  <a href="" class="hover-red">
-                    <svg
-                      width="30"
-                      height="30"
-                      viewBox="0 0 30 30"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g id="vuesax/outline/arrow-left">
-                        <g id="arrow-left">
-                          <path
-                            id="Vector"
-                            d="M11.9633 23.5254C11.7258 23.5254 11.4883 23.4379 11.3008 23.2504L3.71328 15.6629C3.35078 15.3004 3.35078 14.7004 3.71328 14.3379L11.3008 6.75039C11.6633 6.38789 12.2633 6.38789 12.6258 6.75039C12.9883 7.11289 12.9883 7.71289 12.6258 8.07539L5.70078 15.0004L12.6258 21.9254C12.9883 22.2879 12.9883 22.8879 12.6258 23.2504C12.4508 23.4379 12.2008 23.5254 11.9633 23.5254Z"
-                            fill="#1560BD"
-                          />
-                          <path
-                            id="Vector_2"
-                            d="M25.6234 15.9375H4.58594C4.07344 15.9375 3.64844 15.5125 3.64844 15C3.64844 14.4875 4.07344 14.0625 4.58594 14.0625H25.6234C26.1359 14.0625 26.5609 14.4875 26.5609 15C26.5609 15.5125 26.1359 15.9375 25.6234 15.9375Z"
-                            fill="#1560BD"
-                          />
-                        </g>
-                      </g>
-                    </svg>
-                  </a>
-                </div>
-                <div class="text-center col-10 col-md-8">
-                  <h1
-                    class="title--20-36"
-                  >
-                    Информация <br />
-                    о производителе
-                  </h1>
-                </div>
-                <div class="col-1 col-md-2"></div>
-              </div>
+          <div class="page-title d-flex flex-wrap align-items-center col-xxl-10 offset-xxl-1">
+            <div class="col-1 col-xxl-12 order-xxl-1">
+              <a href="" class="btn__svg-confirm text--15-30 fw-600 main-color hover-red d-flex align-items-center justify-content-start justify-content-xxl-center m-auto">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="vuesax/outline/arrow-left">
+                    <g id="arrow-left">
+                      <path id="Vector" d="M11.9633 23.5254C11.7258 23.5254 11.4883 23.4379 11.3008 23.2504L3.71328 15.6629C3.35078 15.3004 3.35078 14.7004 3.71328 14.3379L11.3008 6.75039C11.6633 6.38789 12.2633 6.38789 12.6258 6.75039C12.9883 7.11289 12.9883 7.71289 12.6258 8.07539L5.70078 15.0004L12.6258 21.9254C12.9883 22.2879 12.9883 22.8879 12.6258 23.2504C12.4508 23.4379 12.2008 23.5254 11.9633 23.5254Z" fill="#1560BD"></path>
+                      <path id="Vector_2" d="M25.6234 15.9375H4.58594C4.07344 15.9375 3.64844 15.5125 3.64844 15C3.64844 14.4875 4.07344 14.0625 4.58594 14.0625H25.6234C26.1359 14.0625 26.5609 14.4875 26.5609 15C26.5609 15.5125 26.1359 15.9375 25.6234 15.9375Z" fill="#1560BD"></path>
+                    </g>
+                  </g>
+                </svg>
+                <span class="text-decoration-none text-uppercase d-none d-xxl-block ms-2">Назад</span>
+              </a>
             </div>
+            <div class="col text-center col-xxl-12">
+              <h1 class="title--20-36">Информация <br />о производителе</h1>
+            </div>
+            <div class="col-1 d-xxl-none"></div>
           </div>
-          <div class="profile__body offset-xxl-1 col-xxl-10 d-grid">
-            <div class="name">
-              <div class="input--wrapper position-relative">
-                <label
-                  for="profile__name"
-                  class="label--light profile__label position-absolute"
-                  >Название компании</label
-                >
-                <input
-                  class="profile__input profile__name input--regular w-100 h-100 border-0"
-                  id="profile__name"
-                  value=""
-                  type="text"
-                  required
-                />
-              </div>
-            </div>
-            <div class="photo">
-              <div
-                type="button"
-                onclick="triggerFileInputProfile()"
-                class="profile__photo position-relative"
-              >
-                <label
-                  for="shops__photo"
-                  class="label--light profile__label position-absolute"
-                  >Логотип компании</label
-                >
-                <img
-                  src="../img/gallery-add.svg"
-                  alt="gallery-add logo"
-                  id="shops__photo"
-                  class="position-absolute top-50 start-50 translate-middle"
-                />
-                <input
-                  type="file"
-                  id="profile__file-input"
-                  class="file-input"
-                  onchange="handleFileSelected(event)"
-                />
-              </div>
-            </div>
-            <div class="country">
-              <div class="select--wrapper position-relative">
-                <label
-                  for="profile__country"
-                  class="label--light profile__label position-absolute"
-                  >Страна</label
-                >
-                <select
-                  class="profile__select profile__country select--regular w-100 h-100 border-0"
-                  name="country"
-                  id="profile__country"
-                  required
-                >
-                  <option value="">Выбор из списка</option>
-                  <option value="">Выбор из списка</option>
-                  <option value="">Выбор из списка</option>
-                  <option value="">Выбор из списка</option>
-                </select>
-              </div>
-            </div>
-            <div class="town">
-              <div class="select--wrapper position-relative">
-                <label
-                  for="profile__town"
-                  class="label--light profile__label position-absolute"
-                  >Город (необязательно)</label
-                >
-                <select
-                  class="profile__select profile__country select--regular w-100 h-100 border-0"
-                  name="town"
-                  id="profile__town"
-                  required
-                >
-                  <option value="">Город (необязательно)</option>
-                  <option value="">Город (необязательно)</option>
-                  <option value="">Город (необязательно)</option>
-                  <option value="">Город (необязательно)</option>
-                </select>
-              </div>
-            </div>
-            <div class="tel">
-              <div
-                class="input--wrapper position-relative col-12 d-flex align-items-center"
-              >
-                <label
-                  for="profile__tel"
-                  class="label--light profile__label position-absolute"
-                  >Телефон</label
-                >
-                <input
-                  class="profile__input profile__tel input--regular"
-                  id="profile__tel"
-                  value=""
-                  required
-                />
-                <img
-                  type="button"
-                  src="../img/add-circle.svg"
-                  alt="logo image"
-                  class="plus ms-2 ms-xxl-3 d-none"
-                />
-              </div>
-            </div>
-            <div class="email">
-              <div
-                class="input--wrapper position-relative col-12 d-flex align-items-center"
-              >
-                <label
-                  for="profile__email"
-                  class="label--light profile__label position-absolute"
-                  >E-mail</label
-                >
-                <input
-                  class="profile__input profile__email input--regular"
-                  id="profile__email"
-                  value=""
-                  type="email"
-                  required
-                />
-                <img
-                  type="button"
-                  src="../img/add-circle.svg"
-                  alt="logo image"
-                  class="plus ms-2 ms-xxl-3 d-none"
-                />
-              </div>
-            </div>
-            <div class="description">
-              <div class="textarea--wrapper position-relative col-12">
-                <label
-                  for="profile__description"
-                  class="label--light profile__label position-absolute"
-                  >Краткое описание компании</label
-                >
-                <textarea
-                  class="profile__description profile__description textarea--regular w-100 h-100 border-0"
-                  id="profile__description"
-                  rows="3"
-                  required
-                ></textarea>
-              </div>
-            </div>
-            <div class="history">
-              <div class="textarea--wrapper position-relative col-12">
-                <label
-                  for="profile__history"
-                  class="label--light profile__label position-absolute"
-                  >История компании</label
-                >
-                <textarea
-                  class="profile__description profile__history textarea--regular w-100 h-100 border-0"
-                  id="profile__history"
-                  rows="3"
+        </div>
+      </section>
 
-                  required
-                ></textarea>
+      <section class="manufacturer-info__details">
+        <div class="container container--bc">
+          <form class="profile profile__manufacturer-info col-12 offset-xxl-1 col-xxl-10">
+
+            <div class="input name input--general profile__manufacturer-info_input">
+              <label
+                for="manufacturer-info-name"
+                class="label--light label--profile ">
+                Название компании
+              </label>
+              <input
+                class=""
+                id="manufacturer-info-name"
+                value=""
+                type="text"
+                name="manufacturer-info-name"
+                required
+              />
+            </div>
+
+
+            <div
+              class="input input--image image profile__manufacturer-info_input profile__manufacturer-info_image"
+              type="button"
+              onclick="triggerFileInputProfile()"
+            >
+              <label
+                for="manufacturer-info-image"
+                class="label label--light label--profile">
+                Логотип компании
+              </label>
+              <img
+                src="../img/gallery-add.svg"
+                alt="gallery-add logo"
+                class="position-absolute top-50 start-50 translate-middle"
+              />
+              <input
+                type="file"
+                id="manufacturer-info-image"
+                class="file-input"
+                onchange="handleFileSelected(event)"
+                name="manufacturer-info-image"
+              />
+            </div>
+
+            <div
+                    class="
+                    country
+                    input
+                    input--general
+                    select__custom
+                    profile__manufacturer-info_input
+                    profile__manufacturer-info_country"
+                    data-select-id="select-manufacturer-info-country"
+                    id="manufacturer-info-country"
+            >
+              <label for="manufacturer-info-country" class="label--light label--profile">
+                Город (необязательно)
+              </label>
+
+              <div class="select__header input--select">
+                <span class="select__header-selected">Выберите значение</span>
+                <span class="arrow">&#9660;</span>
+              </div>
+              <div class="select__options">
+                <div class="column">
+                  <div class="option">Значение 1</div>
+                  <div class="option">Значение 2</div>
+                  <div class="option">Значение 3</div>
+                  <div class="option">Значение 4</div>
+                  <div class="option">Значение 5</div>
+                  <div class="option">Значение 6</div>
+                  <div class="option">Значение 7</div>
+                  <div class="option">Значение 8</div>
+                  <div class="option">Значение 9</div>
+                </div>
               </div>
             </div>
-            <div class="principles">
-              <div class="textarea--wrapper position-relative col-12">
-                <label
-                  for="profile__principles"
-                  class="label--light profile__label position-absolute"
-                  >Принципы компании</label
-                >
-                <textarea
-                  class="profile__description profile__principles textarea--regular w-100 h-100 border-0"
-                  id="profile__principles"
-                  rows="3"
-                  required
-                ></textarea>
+
+            <div
+                    class="
+                    select__custom
+                    input
+                    input--general
+                    town
+                    profile__manufacturer-info_input
+                    profile__manufacturer-info_town"
+                    data-select-id="select-manufacturer-info-town"
+                    id="manufacturer-info-town"
+            >
+              <label for="manufacturer-info-town" class="label--light label--profile">
+                Город (необязательно)
+              </label>
+
+              <div class="select__header input--select">
+                <span class="select__header-selected">Выберите значение</span>
+                <span class="arrow">&#9660;</span>
+              </div>
+              <div class="select__options">
+                <div class="column">
+                  <div class="option">Значение 1</div>
+                  <div class="option">Значение 2</div>
+                  <div class="option">Значение 3</div>
+                  <div class="option">Значение 4</div>
+                  <div class="option">Значение 5</div>
+                  <div class="option">Значение 6</div>
+                  <div class="option">Значение 7</div>
+                  <div class="option">Значение 8</div>
+                  <div class="option">Значение 9</div>
+                </div>
               </div>
             </div>
-          </div>
+
+
+
+            <div
+              class="input input--general tel phone input--wrapper position-relative col-12 d-flex align-items-center profile__manufacturer-info_input"
+            >
+              <label
+                for="profile__tel"
+                class="label--light label--profile">
+                Телефон
+              </label>
+              <input
+                class="profile__input profile__tel input--regular"
+                id="profile__tel"
+                value=""
+                required
+              />
+              <img
+                type="button"
+                src="../img/add-circle.svg"
+                alt="logo image"
+                class="plus ms-2 ms-xxl-3 d-none"
+              />
+            </div>
+
+            <div
+              class="input input--general email input--wrapper profile__manufacturer-info_input"
+            >
+              <label
+                for="profile__email"
+                class="label--light label--profile">
+                E-mail
+              </label>
+              <input
+                class="profile__input profile__email input--regular"
+                id="profile__email"
+                value=""
+                type="email"
+                required
+              />
+              <img
+                type="button"
+                src="../img/add-circle.svg"
+                alt="logo image"
+                class="plus ms-2 ms-xxl-3 d-none"
+              />
+            </div>
+
+            <div class="input input--textarea description profile__manufacturer-info_input">
+              <label
+                for="profile__description"
+                class="label--light label--profile">
+                Краткое описание компании
+              </label>
+              <textarea
+                class="profile__description profile__description textarea--regular"
+                id="profile__description"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+
+
+            <div class="input input--textarea history profile__manufacturer-info_input">
+              <label
+                for="profile__history"
+                class="label--light label--profile">
+                История компании
+              </label>
+              <textarea
+                class="profile__description profile__history textarea--regular w-100 h-100 border-0"
+                id="profile__history"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+
+            <div class="input input--textarea principles profile__manufacturer-info_input">
+              <label
+                for="profile__principles"
+                class="label--light label--profile">
+                Принципы компании
+              </label>
+              <textarea
+                class="profile__description profile__principles textarea--regular w-100 h-100 border-0"
+                id="profile__principles"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+
+          </form>
         </div>
       </section>
 
@@ -433,18 +442,6 @@
           </div>
         </div>
       </section>
-
-<!--      <section class="page-buttons__bottom">-->
-<!--        <div class="container container&#45;&#45;bc">-->
-<!--          <div-->
-<!--            class="col-12 col-xxl-10 offset-xxl-1 d-flex justify-content-center gx-0 gy-2 my-4"-->
-<!--          >-->
-<!--            <button type="button" class="button__round-confirm d-inline-flex">-->
-<!--              Сохранить-->
-<!--            </button>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </section>-->
 
       <section>
         <div class="container container--bc">
@@ -848,5 +845,6 @@
     <!--<script src="../js/script.js"></script>-->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="../js/manufacturer/manufaturer-info.js"></script>
+    <script src="../js/select-custom.js"></script>
   </body>
 </html>
