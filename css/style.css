@@ -2332,44 +2332,44 @@ textarea {
   width: 100%;
 }
 
-.banners {
+.flop .banners {
   margin-top: 28px;
   margin-bottom: 15px;
 }
 @media screen and (min-width: 768px) {
-  .banners {
+  .flop .banners {
     margin-top: 56px;
     margin-bottom: 31px;
   }
 }
-.banners__form {
+.flop .banners__form {
   column-gap: 1.5rem;
 }
-.banners__item {
+.flop .banners__item {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 24px;
 }
 @media screen and (min-width: 768px) {
-  .banners__item {
+  .flop .banners__item {
     margin-bottom: 0;
   }
 }
-.banners__add-btn {
+.flop .banners__add-btn {
   padding: 0;
   width: 50px;
   height: 50px;
 }
 @media screen and (min-width: 768px) {
-  .banners__add-btn {
+  .flop .banners__add-btn {
     width: 42px;
     height: 42px;
   }
 }
-.banners__add-image {
+.flop .banners__add-image {
   width: 100%;
 }
-.banners__photo {
+.flop .banners__photo {
   width: 114px;
   height: 114px;
   border-radius: 10px;
@@ -2377,27 +2377,27 @@ textarea {
   box-shadow: 0 4px 20px 0 rgba(14, 14, 14, 0.07);
 }
 @media screen and (min-width: 768px) {
-  .banners__photo {
+  .flop .banners__photo {
     width: 100%;
     height: 200px;
   }
 }
 @media screen and (min-width: 1400px) {
-  .banners__photo {
+  .flop .banners__photo {
     height: 277px;
   }
 }
 @media screen and (min-width: 768px) {
-  .banners__photo-series {
+  .flop .banners__photo-series {
     height: 185px;
   }
 }
 @media screen and (min-width: 1400px) {
-  .banners__photo-series {
+  .flop .banners__photo-series {
     height: 185px;
   }
 }
-.banners__photo i.tag-close {
+.flop .banners__photo i.tag-close {
   position: absolute;
   top: -11px;
   right: -11px;
@@ -2418,20 +2418,127 @@ textarea {
   text-transform: uppercase;
   cursor: pointer;
 }
-.banners__photo i.tag-close:hover {
+.flop .banners__photo i.tag-close:hover {
   opacity: 0.8;
 }
-.banners__photo img {
+.flop .banners__photo img {
   width: 54px;
   height: 54px;
 }
-.banners__label {
+.flop .banners__label {
   position: absolute;
   top: -50px;
   height: 50px;
   display: flex;
   flex-direction: column;
   justify-content: end;
+}
+
+.banners {
+  margin-top: 28px;
+  margin-bottom: 15px;
+}
+@media screen and (min-width: 1400px) {
+  .banners {
+    margin-top: 56px;
+    margin-bottom: 31px;
+  }
+}
+.banners__container {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .banners__container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 15px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .banners__container {
+    justify-content: flex-start;
+    column-gap: 46px;
+  }
+}
+.banners__item {
+  display: flex;
+  justify-content: space-between;
+  row-gap: 11px;
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 24px;
+}
+.banners__item.last {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 1400px) {
+  .banners__item {
+    flex-direction: column;
+    row-gap: 32px;
+    max-width: 336px;
+    margin-bottom: 32px;
+  }
+}
+.banners__image {
+  position: relative;
+  width: 114px;
+  height: 114px;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0px 4px 20px 0 rgba(14, 14, 14, 0.07);
+}
+@media screen and (min-width: 1400px) {
+  .banners__image {
+    width: 336px;
+    height: 228px;
+  }
+}
+.banners__image img {
+  width: 54px;
+  height: 54px;
+}
+.banners__input {
+  position: relative;
+  width: 194px;
+}
+@media screen and (min-width: 1400px) {
+  .banners__input {
+    width: 336px;
+  }
+}
+.banners i.tag-close {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 22px;
+  height: 22px;
+  background-color: #E31E24;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FAFAFA;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.banners i.tag-close:hover {
+  opacity: 0.8;
+}
+.banners__plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banners__plus svg {
+  width: 50px;
+  height: 50px;
 }
 
 .confirm-news__checkbox {
