@@ -11,3 +11,7 @@ function handleFileSelected(event) {
     console.log("Загруженный файл:", file.name);
   }
 }
+
+
+
+

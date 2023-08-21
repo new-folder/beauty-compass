@@ -57,9 +57,30 @@ textarea
         margin-bottom: 58px
 
 .question
-    width: 1rem
+    width: 15px
+    height: 15px
     @media screen and (min-width: $first-breack-point)
-        width: 1.5rem
+        width: 30px
+        height: 30px
+    &__cloud
+        position: absolute
+        background: $sub-color
+        color: $dark-lighter
+        box-shadow: $box-shadow-regular
+        border-radius: 10px
+        font-size: 10px
+        font-style: normal
+        font-weight: 600
+        line-height: normal
+        visibility: hidden
+        transition: 0.3s
+        opacity: 0
+        z-index: 100
+        @media screen and (min-width: $first-breack-point)
+            font-size: 15px
+        &.open
+            visibility: visible
+            opacity: 1
 
 .file-input
     position: absolute
@@ -100,6 +121,14 @@ textarea
             path
                 transition: all .3s
                 fill: $pre-color
+    &-blue
+        &:hover
+            transition: all .3s
+            color: $main-color
+            path
+                transition: all .3s
+                fill: $main-color
+
     &-opacity
         &:hover
             transition: all .3s
@@ -437,19 +466,19 @@ textarea
 
 .label
     position: absolute
-    //&--general
-    //    position: absolute
-    //    top: -14px
-    //    left: 0
-    //    color: $gray-light
-    //    font-size: 10px
-    //    font-style: normal
-    //    font-weight: 600
-    //    line-height: normal
-    //    @media screen and (min-width: $first-breack-point)
-    //        font-size: 15px
-    //    @media screen and (min-width: $first-breack-point)
-    //        top: -20px
+    &--primary
+        color: $gray-light
+        font-size: 12px
+        font-style: normal
+        font-weight: 600
+        line-height: normal
+        height: 32px
+        top: -18px
+        left: 0
+        right: 0
+        @media screen and (min-width: $first-breack-point)
+            top: -24px
+            font-size: 18px
     &--light
         color: $gray-light
         font-size: 10px

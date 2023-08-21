@@ -171,7 +171,6 @@
               />
             </div>
 
-
             <div
               class="input input--image image profile__manufacturer-info_input profile__manufacturer-info_image"
               type="button"
@@ -213,7 +212,11 @@
 
               <div class="select__header input--select">
                 <span class="select__header-selected">Выберите значение</span>
-                <span class="arrow">&#9660;</span>
+                <span class="arrow">
+                    <svg width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(0deg);">
+                                <path d="M14.1304 0.80744C14.1304 0.957419 14.0734 1.1074 13.9511 1.2258L8.63719 6.37246C7.77327 7.20918 6.35513 7.20918 5.49121 6.37246L0.177267 1.2258C-0.059089 0.996887 -0.059089 0.617993 0.177267 0.389077C0.413623 0.160161 0.804834 0.160161 1.04119 0.389077L6.35513 5.53573C6.74634 5.91462 7.38206 5.91462 7.77327 5.53573L13.0872 0.389077C13.3236 0.160161 13.7148 0.160161 13.9511 0.389077C14.0652 0.507482 14.1304 0.657461 14.1304 0.80744Z" fill="#210E22"></path>
+                            </svg>
+                </span>
               </div>
               <div class="select__options">
                 <div class="column">
@@ -247,7 +250,11 @@
 
               <div class="select__header input--select">
                 <span class="select__header-selected">Выберите значение</span>
-                <span class="arrow">&#9660;</span>
+                <span class="arrow">
+                    <svg width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(0deg);">
+                                <path d="M14.1304 0.80744C14.1304 0.957419 14.0734 1.1074 13.9511 1.2258L8.63719 6.37246C7.77327 7.20918 6.35513 7.20918 5.49121 6.37246L0.177267 1.2258C-0.059089 0.996887 -0.059089 0.617993 0.177267 0.389077C0.413623 0.160161 0.804834 0.160161 1.04119 0.389077L6.35513 5.53573C6.74634 5.91462 7.38206 5.91462 7.77327 5.53573L13.0872 0.389077C13.3236 0.160161 13.7148 0.160161 13.9511 0.389077C14.0652 0.507482 14.1304 0.657461 14.1304 0.80744Z" fill="#210E22"></path>
+                            </svg>
+                </span>
               </div>
               <div class="select__options">
                 <div class="column">
@@ -263,8 +270,6 @@
                 </div>
               </div>
             </div>
-
-
 
             <div
               class="input input--general tel phone input--wrapper position-relative col-12 d-flex align-items-center profile__manufacturer-info_input"
@@ -358,14 +363,13 @@
         </div>
       </section>
 
-      <section class="shops">
+      <section class="page__title">
         <div class="container container--bc">
           <div class="col-xxl-10 offset-xxl-1">
+
             <div class="row my-3 my-xxl-4">
               <div class="col-12 text-center d-flex justify-content-center align-items-center">
-                <h2
-                  class="title--15-36"
-                >
+                <h2 class="title--15-36">
                   Интернет магазины
                 </h2>
               </div>
@@ -375,32 +379,35 @@
               ссылок на разные площадки. Название кнопки будет отображаться на
               странице для всех пользователей.
             </div>
-            <div class="shops__form mt-4 col-12">
-              <div class="shops__wrap row gx-0 gy-4 gy-md-0 gap-md-4">
-                <div
-                  class="shops__plus col-3 d-flex justify-content-center justify-content-md-start align-items-center"
+          </div>
+        </div>
+      </section>
+
+      <section class="shops">
+        <div class="container container--bc">
+          <div class="col-xxl-10 offset-xxl-1">
+            <div class="shops__container" data-shops="shops-manufacturer-info-page">
+              <div class="shops__plus">
+                <svg
+                        role="button"
+                        class="banners__plus-image hover-red"
+                        viewBox="0 0 26 26"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    role="button"
-                    class="plus-image hover-red"
-                    viewBox="0 0 26 26"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M12.9993 24.6452C6.57518 24.6452 1.35352 19.4235 1.35352 12.9993C1.35352 6.57518 6.57518 1.35352 12.9993 1.35352C19.4235 1.35352 24.6452 6.57518 24.6452 12.9993C24.6452 19.4235 19.4235 24.6452 12.9993 24.6452ZM12.9993 2.97852C7.47435 2.97852 2.97852 7.47435 2.97852 12.9993C2.97852 18.5243 7.47435 23.0202 12.9993 23.0202C18.5243 23.0202 23.0202 18.5243 23.0202 12.9993C23.0202 7.47435 18.5243 2.97852 12.9993 2.97852Z"
-                      fill="#1560BD"
-                    />
-                    <path
-                      d="M17.3327 13.8125H8.66602C8.22185 13.8125 7.85352 13.4442 7.85352 13C7.85352 12.5558 8.22185 12.1875 8.66602 12.1875H17.3327C17.7769 12.1875 18.1452 12.5558 18.1452 13C18.1452 13.4442 17.7769 13.8125 17.3327 13.8125Z"
-                      fill="#1560BD"
-                    />
-                    <path
-                      d="M13 18.1452C12.5558 18.1452 12.1875 17.7769 12.1875 17.3327V8.66602C12.1875 8.22185 12.5558 7.85352 13 7.85352C13.4442 7.85352 13.8125 8.22185 13.8125 8.66602V17.3327C13.8125 17.7769 13.4442 18.1452 13 18.1452Z"
-                      fill="#1560BD"
-                    />
-                  </svg>
-                </div>
+                  <path
+                          d="M12.9993 24.6452C6.57518 24.6452 1.35352 19.4235 1.35352 12.9993C1.35352 6.57518 6.57518 1.35352 12.9993 1.35352C19.4235 1.35352 24.6452 6.57518 24.6452 12.9993C24.6452 19.4235 19.4235 24.6452 12.9993 24.6452ZM12.9993 2.97852C7.47435 2.97852 2.97852 7.47435 2.97852 12.9993C2.97852 18.5243 7.47435 23.0202 12.9993 23.0202C18.5243 23.0202 23.0202 18.5243 23.0202 12.9993C23.0202 7.47435 18.5243 2.97852 12.9993 2.97852Z"
+                          fill="#1560BD"
+                  />
+                  <path
+                          d="M17.3327 13.8125H8.66602C8.22185 13.8125 7.85352 13.4442 7.85352 13C7.85352 12.5558 8.22185 12.1875 8.66602 12.1875H17.3327C17.7769 12.1875 18.1452 12.5558 18.1452 13C18.1452 13.4442 17.7769 13.8125 17.3327 13.8125Z"
+                          fill="#1560BD"
+                  />
+                  <path
+                          d="M13 18.1452C12.5558 18.1452 12.1875 17.7769 12.1875 17.3327V8.66602C12.1875 8.22185 12.5558 7.85352 13 7.85352C13.4442 7.85352 13.8125 8.22185 13.8125 8.66602V17.3327C13.8125 17.7769 13.4442 18.1452 13 18.1452Z"
+                          fill="#1560BD"
+                  />
+                </svg>
               </div>
             </div>
           </div>
@@ -409,35 +416,28 @@
 
       <section class="banners">
         <div class="container container--bc">
-          <div
-            class="banners__form row col-xxl-10 offset-xxl-1 gx-0 "
-          >
-<!--            <div class="banners__wrap"></div>-->
-            <div
-              class="banners__add col-12 col-md-2 d-flex justify-content-center justify-content-md-start align-items-center mt-1"
-            >
-              <div class="banners__add-btn shops__plus plus-image col-12">
-                <svg
-                  role="button"
-                  class="banners__add-image hover-red"
-                  viewBox="0 0 26 26"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12.9993 24.6452C6.57518 24.6452 1.35352 19.4235 1.35352 12.9993C1.35352 6.57518 6.57518 1.35352 12.9993 1.35352C19.4235 1.35352 24.6452 6.57518 24.6452 12.9993C24.6452 19.4235 19.4235 24.6452 12.9993 24.6452ZM12.9993 2.97852C7.47435 2.97852 2.97852 7.47435 2.97852 12.9993C2.97852 18.5243 7.47435 23.0202 12.9993 23.0202C18.5243 23.0202 23.0202 18.5243 23.0202 12.9993C23.0202 7.47435 18.5243 2.97852 12.9993 2.97852Z"
-                    fill="#1560BD"
-                  />
-                  <path
-                    d="M17.3327 13.8125H8.66602C8.22185 13.8125 7.85352 13.4442 7.85352 13C7.85352 12.5558 8.22185 12.1875 8.66602 12.1875H17.3327C17.7769 12.1875 18.1452 12.5558 18.1452 13C18.1452 13.4442 17.7769 13.8125 17.3327 13.8125Z"
-                    fill="#1560BD"
-                  />
-                  <path
-                    d="M13 18.1452C12.5558 18.1452 12.1875 17.7769 12.1875 17.3327V8.66602C12.1875 8.22185 12.5558 7.85352 13 7.85352C13.4442 7.85352 13.8125 8.22185 13.8125 8.66602V17.3327C13.8125 17.7769 13.4442 18.1452 13 18.1452Z"
-                    fill="#1560BD"
-                  />
-                </svg>
-              </div>
+          <div class="banners__container col-xxl-10 offset-xxl-1 gx-0 ">
+            <div class="banners__plus">
+              <svg
+                      role="button"
+                      class="banners__plus-image hover-red"
+                      viewBox="0 0 26 26"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                        d="M12.9993 24.6452C6.57518 24.6452 1.35352 19.4235 1.35352 12.9993C1.35352 6.57518 6.57518 1.35352 12.9993 1.35352C19.4235 1.35352 24.6452 6.57518 24.6452 12.9993C24.6452 19.4235 19.4235 24.6452 12.9993 24.6452ZM12.9993 2.97852C7.47435 2.97852 2.97852 7.47435 2.97852 12.9993C2.97852 18.5243 7.47435 23.0202 12.9993 23.0202C18.5243 23.0202 23.0202 18.5243 23.0202 12.9993C23.0202 7.47435 18.5243 2.97852 12.9993 2.97852Z"
+                        fill="#1560BD"
+                />
+                <path
+                        d="M17.3327 13.8125H8.66602C8.22185 13.8125 7.85352 13.4442 7.85352 13C7.85352 12.5558 8.22185 12.1875 8.66602 12.1875H17.3327C17.7769 12.1875 18.1452 12.5558 18.1452 13C18.1452 13.4442 17.7769 13.8125 17.3327 13.8125Z"
+                        fill="#1560BD"
+                />
+                <path
+                        d="M13 18.1452C12.5558 18.1452 12.1875 17.7769 12.1875 17.3327V8.66602C12.1875 8.22185 12.5558 7.85352 13 7.85352C13.4442 7.85352 13.8125 8.22185 13.8125 8.66602V17.3327C13.8125 17.7769 13.4442 18.1452 13 18.1452Z"
+                        fill="#1560BD"
+                />
+              </svg>
             </div>
           </div>
         </div>
@@ -450,7 +450,6 @@
           </div>
         </div>
       </section>
-
 
     </main>
 
@@ -842,9 +841,13 @@
     </div>
 
     <script src="../js/bootstrap.bundle.min.js"></script>
-    <!--<script src="../js/script.js"></script>-->
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
+<!--    <script src="../js/script.js"></script>-->
     <script src="../js/manufacturer/manufaturer-info.js"></script>
     <script src="../js/select-custom.js"></script>
+    <script src="../js/banners.js"></script>
+    <script src="../js/shops.js"></script>
+<!--    <script src="../js/modals.js"></script>-->
+
+
   </body>
 </html>

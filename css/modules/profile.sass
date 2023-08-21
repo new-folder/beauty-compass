@@ -38,6 +38,7 @@
       @media all and (min-width: $first-breack-point)
         height: 108px
 
+
   &__manufacturer
     grid-template-columns: 114px auto auto
     grid-template-rows: repeat(4, 1fr)
@@ -65,12 +66,12 @@
     &-phone
       grid-area: phone
 
+
   &__manufacturer-info
     grid-auto-columns: 114px auto auto
     grid-column-gap: 11px
     grid-row-gap: 22px
     grid-template-areas: 'name name name' 'image country country' 'image town town' 'image . .' 'photo photo photo' 'email email email' 'description description description' 'history history history' 'principles principles principles'
-
     @media screen and (min-width: $first-breack-point)
       grid-auto-columns: 187px auto auto
       //grid-auto-rows: 62px 62px 62px 108px 108px 108px
@@ -106,7 +107,69 @@
       &.principles
         grid-area: principles
 
-  &
+  &__products
+    display: flex
+    flex-wrap: wrap
+    flex-direction: column
+    column-gap: 11px
+    row-gap: 27px
+    @media screen and (min-width: $first-breack-point)
+      justify-content: flex-start
+      flex-direction: row
+      column-gap: 38px
+      row-gap: 38px
+    &-images
+      width: 100%
+      display: flex
+      align-items: center
+      flex-wrap: wrap
+      row-gap: 18px
+      column-gap: 12px
+      @media screen and (min-width: $first-breack-point)
+        column-gap: 40px
+        row-gap: 38px
+    &-image
+      grid-area: image
+      position: relative
+      width: 114px
+      height: 114px
+      @media screen and (min-width: $first-breack-point)
+        width: 187px
+        height: 187px
+      &_cloud
+        top: -65px
+        right: -115%
+        width: 150px
+        padding: 6px 8px
+        @media screen and (min-width: $first-breack-point)
+          top: -66%
+          right: auto
+          width: 440px
+          padding: 14px 20px 10px
+      label
+        top: -40px
+      img
+        width: 54px
+        height: auto
+      svg
+        position: absolute
+        top: -20px
+        right: 5px
+        @media screen and (min-width: $first-breack-point)
+          top: -34px
+    &-assignment, &-format, &-region, &-assignment2, &_price-category, &_age-recommendations, &_key-action, &-gender
+      @media screen and (min-width: $first-breack-point)
+        width: 31%
+    &_formal-name, &_explanatory-name, &-description, &-INCI, &-usage, &_catalog-section
+      width: 100%
+    &-plus
+      margin-left: 21px
+      width: 30px
+      height: 30px
+      @media screen and (min-width: $first-breack-point)
+        width: 42px
+        height: 42px
+        margin-left: 10px
 
 
 

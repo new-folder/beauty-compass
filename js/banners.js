@@ -46,6 +46,13 @@ const addBannersItem = () => {
       element.classList.remove('last');
     }
   });
+
+  if (allBanners.length % 3 === 0) {
+    // bannersAddBtn.remove();
+    bannersAddBtn.classList.add("center");
+  } else {
+    bannersAddBtn.classList.remove("center");
+  }
 };
 
 bannersAddBtn.addEventListener("click", addBannersItem);
