@@ -75,7 +75,7 @@
                 <div class="col-12 col-md-7 col-xxl-6 mb-4 mb-xxl-0">
                     <div id="carouselProducer" class="carousel carousel--product b-carousel carousel-fade row" data-bs-ride="carousel" data-bs-interval="false">
                         <div class="carousel-inner pe-0 p-md-2 col-9 ">
-                            <div class="carousel-item active">
+                            <div class="carousel-item active thumb" data-bs-toggle="modal" data-bs-target="#openFullImg">
                                 <img src="/img/test-product.png" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
@@ -489,7 +489,7 @@
                 </div>
                 <div class="user-feedback__footer row justify-content-center">
                     <div class="col-12 col-xxl-10">
-                        <button type="button" class="user-feedback__popup-link" data-bs-toggle="modal" data-bs-target="#openReview" data-bs-whatever="Icon Skin Stop Acne Сыворотка Multi-Acid Serum"><img src="../img/pen-notice.svg" class="me-1" alt="">Отправить отзыв</button>
+                        <button type="button" class="btn-string" data-bs-toggle="modal" data-bs-target="#openReview" data-bs-whatever="Icon Skin Stop Acne Сыворотка Multi-Acid Serum"><img src="../img/pen-notice.svg" class="me-1" alt="">Отправить отзыв</button>
                     </div>
                 </div>
             </div>
@@ -546,7 +546,7 @@
                 </div>
                 <div class="user-feedback__footer row justify-content-center">
                     <div class="col-12 col-xxl-10">
-                        <button type="button" class="user-feedback__popup-link" data-bs-toggle="modal" data-bs-target="#openQuestion" data-bs-whatever="Icon Skin Stop Acne Сыворотка Multi-Acid Serum"><img src="../img/message-question.svg" class="me-1" alt="">Задать вопрос</button>
+                        <button type="button" class="btn-string" data-bs-toggle="modal" data-bs-target="#openQuestion" data-bs-whatever="Icon Skin Stop Acne Сыворотка Multi-Acid Serum"><img src="../img/message-question.svg" class="me-1" alt="">Задать вопрос</button>
                     </div>
                 </div>
             </div>
@@ -734,16 +734,16 @@
 
 
     <!--Оставить отзыв-->
-    <div class="modal fade leave-feed" id="openQuestion" tabindex="-1" role="dialog" aria-labelledby="openQuestionLabel" aria-hidden="true" style="display: block !important; opacity: 1 !important;">
+    <div class="modal fade" id="openQuestion" tabindex="-1" role="dialog" aria-labelledby="openQuestionLabel" aria-hidden="true" style="display: block !important; opacity: 1 !important;">
         <div class="modal-dialog modal-lg" role="document" style="transform: translate(0) !important">
-        <div class="modal-content">
+        <div class="modal-content leave-feed__modal-content p-0 p-xxl-4">
             <div class="row modal-header">
-                <h5 class="col-12 modal-title">Отзыв о средстве</h5>
-                <div class="col-12 modal-name" id="openReviewLabel"></div>
+                <h5 class="col-12 leave-feed__title text-center text-xxl-start">Отзыв о средстве</h5>
+                <div class="col-12 modal-name leave-feed__name text-center text-xxl-start" id="openReviewLabel"></div>
             </div>
             <div class="modal-body">
                 <div class="row mb-4">
-                    <div class="title--sub col-6">Оцените средство</div>
+                    <div class="text--15-30 text-start col-6">Оцените средство</div>
                     <div class="col-6 ">                                        
                         <div class="rating rating--xl rating--set float-end">
                             <div class="rating__body">
@@ -761,9 +761,9 @@
                     </div>
                 </div>
                 <div class="row mb-4">
-                    <div class="title--sub col-12 mb-3">Расскажите о средстве</div>
-                    <div class="col-12 position-relative leave-feed__textarea">      
-                        <textarea class="form-control" id="feedFormControlTextarea" rows="8"></textarea>
+                    <div class="text--15-30 text-start col-12 mb-3">Расскажите о средстве</div>
+                    <div class="col-12 position-relative leave-feed__textarea  input--dark">      
+                        <textarea class="form-control" id="feedFormControlTextarea" maxlength="1400"></textarea>
                         <div class="leave-feed__count">
                             <span class="leave-feed__num">0</span>
                             <span class="leave-feed__maximum">/ 1400</span>
@@ -771,12 +771,22 @@
                     </div>
                 </div>
                 <div class="row mb-4">
-                    <div class="title--sub col-12 mb-3">Загрузите до 5 фотографий</div>
-                    <div class="col-4"> 
-                        <div class="input image input--image profile__input profile__image" type="button"   onclick="triggerFileInputProfile()">
+                    <div class="text--15-30 text-start col-12 mb-3">Загрузите до 5 фотографий</div>
+                    <div class="col-3 col-xxl-4"> 
+                        <div class="input input--modal input--image profile__input profile__image" type="button">
                             <img src="../img/gallery-add.svg" alt="add photos" class="position-absolute top-50 start-50 translate-middle"/>
-                            <input type="file" name="brand__file-input" id="brand__file-input" class="file-input profile__file-input" onchange="handleFileSelected(event)"/>
+                            <input type="file" name="brand__file-input" id="img-multiple" class="file-input profile__file-input" accept="image/png, image/jpg" multiple/>
                         </div>
+                    </div>
+                    <div class="col-9 col-xxl-8 d-flex justify-content-center flex-column">
+                        <p class="mb-1 leave-feed__comment">Нажмите на область с иконкой</p>
+                        <p class="leave-feed__comment leave-feed__comment--light mb-1">Фото до 10 МБ. Формат JPG, JPEG, BMP, GIF</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 d-flex justify-content-start justify-content-md-around flex-column flex-md-row flex-column-reverse">
+                        <button type="button" class="btn-string pre-color" data-bs-dismiss="modal"><img src="../img/cansel-icon.svg" class="me-1" alt="">Отменить</button>
+                        <button type="button" class="btn-string mb-3 mb-md-0" ><img src="../img/pen-notice.svg" class="me-1" alt="">Отправить отзыв</button>
                     </div>
                 </div>
             </div>
@@ -789,13 +799,24 @@
         <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="row modal-header">
-                <h5 class="col-12 modal-title">Задать вопрос о средстве</h5>
-                <div class="col-12 modal-name" id="openQuestionLabel"></div>
+                <h5 class="col-12 leave-feed__title text-center text-xxl-center">Задать вопрос о средстве</h5>
+                <div class="col-12  modal-name leave-feed__name text-center text-xxl-center" id="openQuestionLabel"></div>
             </div>
             <div class="modal-body">
-                <div class="row">
-                    <div class="col-6">Оцените средство</div>
-                    <div class="col-6"></div>
+                <div class="row mb-4">
+                    <div class="col-12 position-relative leave-feed__textarea  input--dark">      
+                        <textarea class="form-control" id="feedFormControlTextarea" maxlength="500"></textarea>
+                        <div class="leave-feed__count">
+                            <span class="leave-feed__num">0</span>
+                            <span class="leave-feed__maximum">/ 500</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 d-flex justify-content-start justify-content-md-around flex-column flex-md-row flex-column-reverse">
+                        <button type="button" class="btn-string pre-color" data-bs-dismiss="modal"><img src="../img/cansel-icon.svg" class="me-1" alt="">Отменить</button>
+                        <button type="button" class="btn-string mb-3 mb-md-0" ><img src="../img/pen-notice.svg" class="me-1" alt="">Отправить вопрос</button>
+                    </div>
                 </div>
             </div>
         </div>
