@@ -22,13 +22,15 @@ body
             padding-right: var(--bs-gutter-x,.75rem)
             padding-left: var(--bs-gutter-x,.75rem)
 
-.title
+// === Text ===
+
+.title, .text
     &--h1
         font-weight: 700
         font-size: 36px
         line-height: 1.25
         color: #494949
-        @media screen and (max-width: $first-breack-point) 
+        @media screen and (max-width: $first-breack-point)
             font-size: 20px
             font-weight: 700
     &--h2
@@ -41,18 +43,115 @@ body
         text-transform: uppercase
         text-decoration: none
         transition: opacity .3s
-        &:hover            
+        &:hover
             color: #494949
-            opacity: .8            
-        @media screen and (max-width: $first-breack-point) 
+            opacity: .8
+        @media screen and (max-width: $first-breack-point)
             font-size: 20px
             line-height: 1.25
             margin-bottom: 0
+    &--h3
+        color: $dark-semi-light
+        font-size: 15px
+        font-style: normal
+        font-weight: 700
+        line-height: normal
+        letter-spacing: 0.5px
+        text-transform: uppercase
+        @media screen and (min-width: $first-breack-point)
+            font-size: 36px
+    &--h4
+        color: #494949
+        font-size: 15px
+        font-style: normal
+        font-weight: 700
+        line-height: normal
+        letter-spacing: 0.5px
+        text-transform: uppercase
+        @media screen and (min-width: $first-breack-point)
+            font-size: 24px
+    &--h5
+        color: $dark-lighter
+        font-size: 10px
+        font-style: normal
+        font-weight: 600
+        line-height: normal
+        @media screen and (min-width: $first-breack-point)
+            font-size: 15px
+    &--20-36
+        font-size: 20px
+        text-transform: uppercase
+        font-weight: 700
+        line-height: 1.25
+        letter-spacing: 0.5px
+        color: $dark-semi-light
+        @media screen and (max-width: $first-breack-point)
+            font-size: 36px
+    &--20-36
+        font-size: 20px
+        font-weight: 700
+        letter-spacing: 0.5px
+        @media screen and (min-width: $first-breack-point)
+            font-size: 36px
+    &--20-30
+        font-size: 20px
+        font-weight: 700
+        line-height: 37px
+        @media screen and (min-width: $first-breack-point)
+            font-size: 30px
+            font-weight: 600
+            line-height: 1.25
+    &--15-36
+        font-size: 15px
+        font-weight: 700
+        font-style: normal
+        line-height: normal
+        letter-spacing: 0.5px
+        text-transform: uppercase
+        color: $dark-semi-light
+        @media screen and (min-width: $first-breack-point)
+            font-size: 36px
+    &--15-30
+        text-align: center
+        font-size: 15px
+        font-weight: 700
+        font-style: normal
+        line-height: normal
+        letter-spacing: 0.5px
+        @media screen and (min-width: $first-breack-point)
+            font-size: 30px
+    &--15-24
+        font-size: 15px
+        font-style: normal
+        line-height: normal
+        @media screen and (min-width: $first-breack-point)
+            font-size: 24px
+    &--10_24
+        font-size: 10px
+        font-weight: 600
+        font-style: normal
+        line-height: normal
+        @media screen and (min-width: $first-breack-point)
+            font-size: 24px
+    &--10_18
+        font-size: 10px
+        font-weight: 600
+        font-style: normal
+        line-height: normal
+        @media screen and (min-width: $first-breack-point)
+            font-size: 18px
+    &--10-15
+        font-size: 10px
+        font-weight: 600
+        font-style: normal
+        line-height: normal
+        @media screen and (min-width: $first-breack-point)
+            font-size: 15px
     &--sub
         font-weight: 700
         font-size: 30px
         line-height: 1.25
-        color: #494949
+        color: $dark-semi-light
         @media screen and (max-width: $first-breack-point) 
             font-size: 20px
             font-weight: 600
@@ -62,6 +161,31 @@ body
         color: $main-color
         @media screen and (max-width: $first-breack-point) 
             font-size: 15px
+
+
+// === Colors ===
+.main-color
+    color: $main-color
+.pre-color
+    color: $pre-color
+.dark-semi
+    color: $dark-semi-light
+.dark-lighter
+    color: $dark-lighter
+
+// === Styles ===
+.fw-600
+    font-weight: 600
+.fw700
+    font-weight: 700
+.lh-125
+    line-height: 1.25
+.ls-05
+    letter-spacing: 0.5px
+.fz-20
+    font-size: 30px
+.fz-30
+    font-size: 30px
 
 .btn
     height: 41px
@@ -91,6 +215,23 @@ body
         background: initial
         border: 2px solid $main-color
         color: $main-color
+    
+.btn-string
+    width: fit-content
+    border: none
+    background: inherit
+    color: #1560BD
+    font-size: 30px
+    font-weight: 600
+    text-decoration: none
+    cursor: pointer
+    &.pre-color
+        color: $pre-color
+    @media screen and (max-width: $first-breack-point)
+        font-size: 15px
+        img
+            width: 35px
+            height: 35px
 
 
 main    
@@ -168,6 +309,14 @@ main
             height: 100%
             opacity: 0
             cursor: pointer
+    &--modal   
+        &.input--image 
+            background: #F8F8F8
+            box-shadow: none
+        @media all and (max-width: $first-breack-point)
+            width: 56px
+            height: 56px
+
 
 .label
     position: absolute
@@ -507,19 +656,6 @@ main
         @media screen and (max-width: $first-breack-point)
             width: 66px
             height: 88px
-    &__popup-link
-        border: none
-        background-color: $sub-color
-        color: $main-color
-        font-size: 30px
-        font-weight: 600
-        text-decoration: none
-        cursor: pointer
-        @media screen and (max-width: $first-breack-point)
-            font-size: 15px
-            img
-                width: 35px
-                height: 35px
     p
         margin-bottom: 10px
     
@@ -584,12 +720,54 @@ main
             opacity: .7
 
 .leave-feed
+    &__modal-dialog
+        background: $white-color
+        border-radius: $border-radius
+    &__title
+        font-size: 30px
+        font-weight: 600
+        color: $main-color
+        @media screen and (max-width: $first-breack-point)
+            font-size: 20px
+            font-weight: 700
+    &__name
+        font-size: 30px
+        font-weight: 600
+        @media screen and (max-width: $first-breack-point)
+            font-size: 20px
+            font-weight: 700
+
+    &__modal-content
+        border-width: 0
+        border-radius: $border-radius
     &__textarea
         .form-control
+            height: 202px
             border-radius: $border-radius
             resize: none
+            @media screen and (max-width: $second-breack-point)
+                height: 61px    
+        input, textarea, select, &.input--select
+            background: #F8F8F8
+            box-shadow: none
+            border-radius: 15px
+            &:focus
+                background: #F8F8F8
+                box-shadow: none     
     &__count
         position: absolute
         bottom: 8px
         right: 20px
         font-size: 15px
+        color: $gray-light
+        @media screen and (max-width: $second-breack-point)
+            font-size: 10px
+            font-weight: 400
+    &__comment
+        font-size: 18px
+        font-weight: 600
+        color: $dark-lighter
+        &--light
+            color: #C9C9C9
+        @media screen and (max-width: $first-breack-point)
+            font-size: 10px

@@ -96,7 +96,31 @@
   width: 235px;
   height: 41px;
 }
+@media screen and (max-width: 1400px) {
+  .rating--xl .rating__active::before {
+    width: 104px;
+    height: 18px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .rating--xl .rating__active::before {
+    width: 74px;
+    height: 13px;
+  }
+}
 .rating--xl .rating__body::before {
   width: 235px;
   height: 41px;
+}
+@media screen and (max-width: 1400px) {
+  .rating--xl .rating__body::before {
+    width: 104px;
+    height: 18px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .rating--xl .rating__body::before {
+    width: 74px;
+    height: 13px;
+  }
 }/*# sourceMappingURL=rating.css.map */

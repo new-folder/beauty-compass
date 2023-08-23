@@ -15,20 +15,19 @@
         })
     })()
 
-function  openModalQuestion() {
-    if(document.querySelector('#openQuestion')) {
-        const modal = document.querySelector('#openQuestion')
+function  openModalQuestion(modalID) {
+    if(document.querySelector(modalID)) {
+        const modal = document.querySelector(modalID)
         modal.addEventListener('show.bs.modal', function (event) {
         let button = event.relatedTarget
         let recipient = button.getAttribute('data-bs-whatever')
         let modalTitle = modal.querySelector('.modal-name')
-        let modalBodyInput = modal.querySelector('.modal-body input')
         modalTitle.textContent = recipient
-        modalBodyInput.value = recipient
         })
     }
 }
-openModalQuestion()
+openModalQuestion('#openQuestion')
+openModalQuestion('#openReview')
 
 function  openModalImg() {
     if(document.querySelector('#openFullImg')) {
@@ -185,6 +184,7 @@ for (var i=0; i<carousels.length; i++)
     initCarousel(carousels[i].id)
 }
 
+
 // Hide tag links
 
 function hideTagListInit(indexStartHide, wrapTagList) {
@@ -279,6 +279,46 @@ function userInterface() {
 
 }
 userInterface()
+
+
+// opent active product img
+
+function imgSetAttributes() {
+    if (document.querySelector('.carousel--product')){
+        const indicators = document.querySelector('.carousel--product .carousel-indicators')
+        imgProductSetAttributes()
+        restartSetAttributes(indicators)
+    }
+    function imgProductSetAttributes() {  
+        let productPics = document.querySelectorAll('.carousel--product .carousel-item')    
+        console.log('productPics ', productPics)  
+        for (let i=0; i < productPics.length; i++) {
+            if(productPics[i].classList.contains('active')) {
+                productPics[i].querySelector('img').setAttribute('data-bs-toggle', 'modal')
+                productPics[i].querySelector('img').setAttribute('data-bs-target', '#openFullImg')
+            }else {
+                productPics[i].querySelector('img').removeAttribute('data-bs-toggle', 'modal')
+                productPics[i].querySelector('img').removeAttribute('data-bs-target', '#openFullImg')
+
+            }
+        }
+    }
+    function restartSetAttributes(indicators) {
+        indicators.addEventListener('click', e => imgProductSetAttributes())
+    }
+}
+
+imgSetAttributes()
+
+// add img multiple 
+function upploadImgMultyple() {
+    if (document.querySelector('#img-multiple')) {
+        let fileInput = document.querySelector('#img-multiple')
+
+    }
+}
+
+// splide settings
 
 if(document.querySelector('.splide--vertical')) {
     document.addEventListener( 'DOMContentLoaded', function() {
@@ -403,7 +443,7 @@ function initRatings() {
                 setActiveRatingWidth(ratingItem.value);
             })
 
-            ratingItem.addEventListener('mouseLeave', function(e) {
+            ratingItem.addEventListener('mouseleave', function(e) {
                 setActiveRatingWidth();
             })
 
@@ -422,8 +462,9 @@ function countChars() {
         for (let i = 0; i < areas.length; i++) {
             let area = areas[i].querySelector('textarea')
             let areaCounter =  areas[i].querySelector(".leave-feed__num")
-            area.addEventListener('keyup', e => 
-                areaCounter.innerHTML = area.value.length)
+            area.addEventListener('keyup', e => {
+                areaCounter.innerHTML = area.value.length
+            })
         }
     }
 }
