@@ -210,30 +210,399 @@
                     <input class="products__input input--regular" id="products__usage" name="products__usage" value="" type="text" required/>
                 </div>
 <!--                    // catalog-section-->
-                <div class="select__custom input input--general catalog-section profile__products_catalog-section" data-select-id="products__catalog-section" id="products__catalog-section">
+                <div class="select__custom input input--general catalog-section tags__select tags__select--auto profile__products_catalog-section
+" data-select-id="products__catalog-section" id="products__catalog-section">
+
+
                     <label for="products__catalog-section" class="label--light label--profile">
                         Раздел в каталоге
                     </label>
+
+
                     <div class="select__header input--select">
-                        <span class="select__header-selected">Выбор из списка</span>
-                        <span class="arrow">
+                        <div class="tags__selected">
+                            <span class="text-default">Выбор из списка</span></div>
+                        <span class="arrow tags__arrow">
                             <svg width="15" height="10" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(0deg);">
                                 <path d="M14.1304 0.80744C14.1304 0.957419 14.0734 1.1074 13.9511 1.2258L8.63719 6.37246C7.77327 7.20918 6.35513 7.20918 5.49121 6.37246L0.177267 1.2258C-0.059089 0.996887 -0.059089 0.617993 0.177267 0.389077C0.413623 0.160161 0.804834 0.160161 1.04119 0.389077L6.35513 5.53573C6.74634 5.91462 7.38206 5.91462 7.77327 5.53573L13.0872 0.389077C13.3236 0.160161 13.7148 0.160161 13.9511 0.389077C14.0652 0.507482 14.1304 0.657461 14.1304 0.80744Z" fill="#210E22"></path>
                             </svg>
                         </span>
                     </div>
-                    <div class="select__options">
-                        <div class="column">
-                            <div class="option">Значение 1</div>
-                            <div class="option">Значение 2</div>
-                            <div class="option">Значение 3</div>
-                            <div class="option">Значение 4</div>
-                            <div class="option">Значение 5</div>
-                            <div class="option">Значение 6</div>
-                            <div class="option">Значение 7</div>
-                            <div class="option">Значение 8</div>
-                            <div class="option">Значение 9</div>
+                    <div class="select__options tags__catalog-section_options">
+                        <div class="tags__row">
+                            <div class="tags__column">
+                                <div class="tags__title">Лицо</div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Проблема и решение</div>
+
+                                    <div class="tags__option">Акне</div>
+                                    <div class="tags__option">Антивозрастной уход</div>
+                                    <div class="tags__option">Обезвоженность / Сухость</div>
+                                    <div class="tags__option">Пигментация / Постакне</div>
+                                    <div class="tags__option">Розацеа / Купероз</div>
+                                    <div class="tags__option">Тусклый оттенок / Неровная текстура</div>
+                                    <div class="tags__option">Черные точки</div>
+                                    <div class="tags__option">Чувствительная кожа</div>
+                                    <div class="tags__option">Жирная кожа</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Очищение</div>
+
+                                    <div class="tags__option">Средства для снятия макияжа</div>
+                                    <div class="tags__option">Мицеллярная вода</div>
+                                    <div class="tags__option">Гидрофильное масло</div>
+                                    <div class="tags__option">Молочко</div>
+                                    <div class="tags__option">Гель</div>
+                                    <div class="tags__option">Крем</div>
+                                    <div class="tags__option">Пенка</div>
+                                    <div class="tags__option">Тоник</div>
+                                    <div class="tags__option">Лосьон</div>
+                                    <div class="tags__option">Мыло</div>
+                                    <div class="tags__option">Аксессуары</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Отшелушивание</div>
+
+                                    <div class="tags__option">Скраб / Пилинг</div>
+                                    <div class="tags__option">Тоник / Лосьон</div>
+                                    <div class="tags__option">Маска</div>
+                                    <div class="tags__option">Диски</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Увлажнение и питание</div>
+
+                                    <div class="tags__option">Крем</div>
+                                    <div class="tags__option">Гель</div>
+                                    <div class="tags__option">Лосьон / Эмульсия / Флюид</div>
+                                    <div class="tags__option">Масло</div>
+                                    <div class="tags__option">Тоник / Тонер</div>
+                                    <div class="tags__option">Спрей</div>
+                                    <div class="tags__option">Ночной крем</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Сыворотки</div>
+
+                                    <div class="tags__option">Антивозрастной уход</div>
+                                    <div class="tags__option">Антиоксидантные</div>
+                                    <div class="tags__option">Против акне</div>
+                                    <div class="tags__option">Против пигментации</div>
+                                    <div class="tags__option">С витамином С</div>
+                                    <div class="tags__option">С кислотами</div>
+                                    <div class="tags__option">С лифтинг-эффектом</div>
+                                    <div class="tags__option">С пептидами</div>
+                                    <div class="tags__option">С ретинолом</div>
+                                    <div class="tags__option">Увлажняющие</div>
+                                    <div class="tags__option">Универсальные</div>
+                                    <div class="tags__option">Успокаивающие</div>
+                                    <div class="tags__option">Питательные</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Маски и патчи</div>
+
+                                    <div class="tags__option">Альгинатные маски</div>
+                                    <div class="tags__option">Восстанавливающие</div>
+                                    <div class="tags__option">Для глаз</div>
+                                    <div class="tags__option">Ночные маски</div>
+                                    <div class="tags__option">Очищающие / Отшелушивающие</div>
+                                    <div class="tags__option">Против пигментации</div>
+                                    <div class="tags__option">Против прыщей</div>
+                                    <div class="tags__option">Тканевые маски</div>
+                                    <div class="tags__option">Увлажняющие / Успокаивающие</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Глаза и губы</div>
+
+                                    <div class="tags__option">Кремы / Гели для глаз</div>
+                                    <div class="tags__option">Маски для глаз</div>
+                                    <div class="tags__option">Патчи для глаз</div>
+                                    <div class="tags__option">Уход для губ</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Загар и защита от солнца</div>
+
+                                    <div class="tags__option">Солнцезащитные средства</div>
+                                    <div class="tags__option">Средства для загара / автозагары</div>
+                                    <div class="tags__option">После загара</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Гаджеты</div>
+
+                                    <div class="tags__option">LED-терапия</div>
+                                    <div class="tags__option">Массажеры</div>
+                                    <div class="tags__option">Микротоки</div>
+                                </div>
+                            </div>
+                            <div class="tags__column">
+                                <div class="tags__title">Тело</div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Проблема и решение</div>
+
+                                    <div class="tags__option">Депиляция</div>
+                                    <div class="tags__option">Коррекция фигуры</div>
+                                    <div class="tags__option">Тонус / Лифтинг</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Увлажнение и питание</div>
+
+
+                                    <div class="tags__option">Бальзам</div>
+                                    <div class="tags__option">Крем для рук</div>
+                                    <div class="tags__option">Крем для тела</div>
+                                    <div class="tags__option">Лосьон</div>
+                                    <div class="tags__option">Масло</div>
+                                    <div class="tags__option">Молочко</div>
+                                    <div class="tags__option">Спрей</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Гель для душа</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Мыло</div>
+
+                                    <div class="tags__option">Жидкое мыло</div>
+                                    <div class="tags__option">Твердое мыло</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Дезодорант</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Скраб / пилинг</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Для ванны</div>
+
+                                    <div class="tags__option">Масло</div>
+                                    <div class="tags__option">Соль для ванны</div>
+                                    <div class="tags__option">Тоник / Молочко для ванны</div>
+                                    <div class="tags__option">Пена</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Загар и защита от солнца</div>
+
+                                    <div class="tags__option">Солнцезащитные средства</div>
+                                    <div class="tags__option">Средства для загара / Автозагары</div>
+                                    <div class="tags__option">После загара</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Для рук и ног</div>
+
+                                    <div class="tags__option">Крем для рук</div>
+                                    <div class="tags__option">Крем для ног</div>
+                                    <div class="tags__option">Скраб / Пилинг</div>
+                                    <div class="tags__option">Уход за ногтями</div>
+                                    <div class="tags__option">Дезодорант для ног</div>
+                                    <div class="tags__option">Маски / Патчи для рук и ног</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Гигиена</div>
+
+                                    <div class="tags__option">Антисептики</div>
+                                    <div class="tags__option">Бактериофаги</div>
+                                    <div class="tags__option">Дезодоранты</div>
+                                    <div class="tags__option">Интимная гигиена</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Уход за полостью рта</div>
+
+                                    <div class="tags__option">Зубная щетка</div>
+                                    <div class="tags__option">Зубная паста</div>
+                                    <div class="tags__option">Зубная нить</div>
+                                    <div class="tags__option">Ополаскиватель</div>
+                                    <div class="tags__option">Скребок для языка</div>
+                                </div>
+                            </div>
+                            <div class="tags__column">
+                                <div class="tags__title">Волосы</div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Проблема и решение</div>
+                                    <div class="tags__option">Выпадение волос</div>
+                                    <div class="tags__option">Жирная кожа головы</div>
+                                    <div class="tags__option">Защита от солнца</div>
+                                    <div class="tags__option">Кудрявые волосы</div>
+                                    <div class="tags__option">Лечение перхоти</div>
+                                    <div class="tags__option">Недостаток объема</div>
+                                    <div class="tags__option">Окрашенные волосы</div>
+                                    <div class="tags__option">Поврежденные волосы</div>
+                                    <div class="tags__option">Разглаживание волос</div>
+                                    <div class="tags__option">Чувствительная кожа головы</div>
+                                    <div class="tags__option">Уход за кончиками</div>
+
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Шампуни</div>
+
+                                    <div class="tags__option">Сухой шампунь</div>
+                                    <div class="tags__option">Шампунь</div>
+
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Уход за волосами и кожей головы</div>
+
+                                    <div class="tags__option">Крем / Молочко</div>
+                                    <div class="tags__option">Маска</div>
+                                    <div class="tags__option">Бальзам</div>
+                                    <div class="tags__option">Кондиционер</div>
+                                    <div class="tags__option">Масло</div>
+                                    <div class="tags__option">Пилинг / Скраб</div>
+                                    <div class="tags__option">Престайлинг</div>
+                                    <div class="tags__option">Спрей</div>
+                                    <div class="tags__option">Сыворотка</div>
+                                    <div class="tags__option">Тоник</div>
+
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Стайлинг</div>
+
+                                    <div class="tags__option">Лак для фиксации</div>
+                                    <div class="tags__option">Пенка / Мусс</div>
+                                    <div class="tags__option">Пудра</div>
+                                    <div class="tags__option">Воск / Помада</div>
+                                    <div class="tags__option">Глина / Паста</div>
+                                    <div class="tags__option">Термозащита</div>
+                                    <div class="tags__option">Текстура и объем</div>
+                                    <div class="tags__option">Гель для волос</div>
+                                    <div class="tags__option">Гладкость волос</div>
+                                </div>
+                            </div>
+                            <div class="tags__column">
+                                <div class="tags__title">Макияж</div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Лицо</div>
+                                    <div class="tags__option">Кисти и спонжи</div>
+                                    <div class="tags__option">Праймеры и базы</div>
+                                    <div class="tags__option">Румяна и бронзеры</div>
+                                    <div class="tags__option">Тени для век</div>
+                                    <div class="tags__option">Карандаши</div>
+                                    <div class="tags__option">Пудры</div>
+                                    <div class="tags__option">Тональные и BB-кремы</div>
+                                    <div class="tags__option">Тушь для ресниц</div>
+                                    <div class="tags__option">Хайлайтеры</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Ногти</div>
+                                    <div class="tags__option">Лак</div>
+                                    <div class="tags__option">Гель-лак</div>
+                                    <div class="tags__option">Средства для дизайна</div>
+                                    <div class="tags__option">База под лак</div>
+                                    <div class="tags__option">База под гель-лак</div>
+                                    <div class="tags__option">Топ для лака</div>
+                                    <div class="tags__option">Топ для гель-лака</div>
+                                    <div class="tags__option">Кисти</div>
+                                    <div class="tags__option">Лампы</div>
+                                    <div class="tags__option">Инструменты</div>
+                                </div>
+                            </div>
                         </div>
+
+                        <div class="tags__row">
+                            <div class="tags__column">
+                                <div class="tags__title">Мужское</div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Бритье</div>
+                                    <div class="tags__option">Аксессуары для бритья</div>
+                                    <div class="tags__option">Средства для бритья</div>
+                                    <div class="tags__option">После бритья</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Уход за лицом</div>
+
+                                    <div class="tags__option">Средства для умывания</div>
+                                    <div class="tags__option">Скрабы / Пилинги</div>
+                                    <div class="tags__option">Тоники</div>
+                                    <div class="tags__option">Сыворотки</div>
+                                    <div class="tags__option">Кремы и лосьоны</div>
+                                    <div class="tags__option">Маски</div>
+                                    <div class="tags__option">Защита от солнца</div>
+                                    <div class="tags__option">Уход для губ</div>
+                                    <div class="tags__option">Кремы и бальзамы</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Уход за бородой</div>
+                                    <div class="tags__option">Шампунь</div>
+                                    <div class="tags__option">Воск</div>
+                                    <div class="tags__option">Бальзам</div>
+                                    <div class="tags__option">Масло</div>
+                                    <div class="tags__option">Аксессуары</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Уход за волосами</div>
+
+                                    <div class="tags__option">Шампунь</div>
+                                    <div class="tags__option">Бальзам / Кондиционер</div>
+                                    <div class="tags__option">От перхоти</div>
+                                    <div class="tags__option">Стайлинг</div>
+                                    <div class="tags__option">Расчески</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Уход за телом</div>
+
+                                    <div class="tags__option">Гель для душа</div>
+                                    <div class="tags__option">Крем / Лосьон для тела</div>
+                                    <div class="tags__option">Мыло</div>
+                                    <div class="tags__option">Скраб</div>
+                                    <div class="tags__option">Дезодорант</div>
+                                </div>
+                            </div>
+                            <div class="tags__column">
+                                <div class="tags__title">Детское</div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Уход за телом</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Уход за волосами</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Средства для мытья</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Декоративная косметика</div>
+                                </div>
+                            </div>
+                            <div class="tags__column">
+                                <div class="tags__title">Lifestyle</div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Sexual Wellness</div>
+                                    <div class="tags__option">Гаджеты</div>
+                                    <div class="tags__option">Косметика</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Аксессуары</div>
+                                    <div class="tags__option">Маски для сна</div>
+                                    <div class="tags__option">Маски и респираторы</div>
+                                    <div class="tags__option">Украшения</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Текстиль</div>
+
+                                    <div class="tags__option">Одежда для дома</div>
+                                    <div class="tags__option">Полотенца</div>
+                                    <div class="tags__option">Постельное белье</div>
+                                    <div class="tags__option">Средства ухода</div>
+
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Ароматы для дома</div>
+                                    <div class="tags__option">Свечи</div>
+                                    <div class="tags__option">Диффузоры</div>
+                                    <div class="tags__option">Саше</div>
+                                </div>
+                            </div>
+                            <div class="tags__column">
+                                <div class="tags__title">Бытовая химия</div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Средства для стирки</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Средства для кухни</div>
+                                </div>
+                                <div class="tags__subcolumn">
+                                    <div class="tags__subtitle">Средства для уборки</div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
 <!--                    // assignment-->
@@ -317,7 +686,7 @@
                 <div class=" select__custom input input--general assignment2 profile__products_input profile__products-assignment2" data-select-id="select-products-assignment2" id="select-products-assignment2">
                     <label for="select-products-assignment2" class="label--light label--profile"></label>
                     <div class="select__header input--select">
-                        <span class="select__header-selected">Назначение</span>
+                        <span class="select__header-selected">Ключевые активы</span>
                         <span class="arrow">
                     <svg width="15" height="10" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(0deg);">
                                 <path d="M14.1304 0.80744C14.1304 0.957419 14.0734 1.1074 13.9511 1.2258L8.63719 6.37246C7.77327 7.20918 6.35513 7.20918 5.49121 6.37246L0.177267 1.2258C-0.059089 0.996887 -0.059089 0.617993 0.177267 0.389077C0.413623 0.160161 0.804834 0.160161 1.04119 0.389077L6.35513 5.53573C6.74634 5.91462 7.38206 5.91462 7.77327 5.53573L13.0872 0.389077C13.3236 0.160161 13.7148 0.160161 13.9511 0.389077C14.0652 0.507482 14.1304 0.657461 14.1304 0.80744Z" fill="#210E22"></path>
@@ -902,5 +1271,8 @@
 <script src="../js/select-custom.js"></script>
 <script src="../js/shops.js"></script>
 <script src="../js/tips.js"></script>
+<script src="../js/select-tags-custom.js"></script>
+
+
 </body>
 </html>
