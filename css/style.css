@@ -1398,7 +1398,7 @@ body {
   width: fit-content;
   color: #FFFFFF;
   min-width: 218px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 .quest-b .questText p {
   font-weight: 600;
@@ -1417,22 +1417,37 @@ body {
   width: fit-content;
   width: 100%;
 }
-.showResult {
+.respOpt {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0.5px;
+  color: #494949;
+  text-transform: uppercase;
+}
+
+.checkInp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+}
+
+.checkWrap {
   border-radius: 15px;
-  color: #1560BD;
-  border: 3px solid #1560BD;
+  -webkit-box-shadow: 0px 4px 20px 0 rgba(14, 14, 14, 0.07);
+          box-shadow: 0px 4px 20px 0 rgba(14, 14, 14, 0.07);
+  padding: 15px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin: auto;
 }
-.showResult p {
-  margin: 4px 15px;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 22px;
-}
-
 .checkWrap input {
   position: absolute;
   z-index: -1;
@@ -1458,17 +1473,12 @@ body {
   display: inline-block;
   width: 1em;
   height: 1em;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  -webkit-box-flex: 0;
-      -ms-flex-positive: 0;
-          flex-grow: 0;
-  border: 1px solid #adb5bd;
+  border: 1px solid #292D32;
   border-radius: 0.25em;
   margin-right: 0.5em;
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 50% 50%;
+  background-size: 80% 80%;
 }
 
 .radioInp input[type=radio] {
@@ -1512,12 +1522,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   text-transform: uppercase;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 29px;
-  letter-spacing: 0.5px;
-  margin-bottom: 16px;
-  color: #494949;
+  margin-bottom: 15px;
 }
 .radioInp label::before {
   content: "";
@@ -1551,6 +1556,12 @@ body {
     display: none;
   }
 }
+.radioInp .option {
+  margin-bottom: 15px;
+}
+.radioInp .option p {
+  text-transform: none;
+}
 
 .adapt {
   display: -ms-grid;
@@ -1575,5 +1586,19 @@ body {
             justify-content: end;
     width: auto;
   }
+}
+
+.showResult {
+  border-radius: 15px;
+  color: #1560BD;
+  border: 3px solid #1560BD;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  padding: 5px 20px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
 }
 /*# sourceMappingURL=style.css.map */

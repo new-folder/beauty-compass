@@ -165,7 +165,7 @@
               <p class="text-uppercase ">Ваши ощущения после умывани водой:</p>
               <small>Укажите возраст</small>
             </div>
-            <div class="respOpt">
+            <div class="respOpt checkInp">
               <div class="checkWrap">
                 <input type="checkbox" name="skinSens" value="tightening" id="tightening"><label for="tightening">Кожу стягивает</label>
               </div>
@@ -284,7 +284,7 @@
               <p class="text-uppercase">что вы отмечаете  прямо сейчас:</p>
               <small>Можно выбрать несколько вариантов</small>
             </div>
-            <div class="respOpt">
+            <div class="respOpt checkInp">
               <div class="checkWrap">
                 <input type="checkbox" name="skinProp" value="dehydration" id="dehydration"><label for="dehydration">обезвоженность</label>
               </div>
@@ -313,9 +313,9 @@
               <p class="text-uppercase">кожа вокруг глаз:</p>
               <small>Можно выбрать несколько вариантов</small>
             </div>
-            <div class="respOpt">
+            <div class="respOpt checkInp">
               <div class="checkWrap">
-                <input type="checkbox" name="skinEyes" value="wrinkles" id="wrinkles"><label for="wrinkles">морщины и потеря упругости</label>
+                <input type="checkbox" name="skinEyes" value="wrinklesElast" id="wrinklesElast"><label for="wrinklesElast">морщины и потеря упругости</label>
               </div>
               <div class="checkWrap">
                 <input type="checkbox" name="skinEyes" value="darkCircl" id="darkCircl"><label for="darkCircl">темные круги</label>
@@ -346,10 +346,8 @@
               <input type="radio" name="oftenPreg" id="noPreg" value="noPreg"><label for="noPreg">нет</label>
             </div>
           </div>
-          <div class="quest-b">
-            <div class="showResult">
-              <p class="text-uppercase">Показать результаты</p>
-            </div>
+          <div class="quest-b d-flex align-items-center">
+              <input class="showResult text-uppercase" type="submit" value="Показать результаты">
           </div>
         </form>
       </section>
