@@ -34,30 +34,20 @@
 }
 .downloadRezult form {
   width: 100%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[2];
-  grid-template-columns: repeat(2, 1fr);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 @media screen and (max-width: 768px) {
   .downloadRezult form {
-    -ms-grid-rows: (20%)[3];
-    grid-template-rows: repeat(3, 20%);
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
     width: 100%;
-  }
-  .downloadRezult form > *:nth-child(1) {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-  }
-  .downloadRezult form > *:nth-child(2) {
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-  }
-  .downloadRezult form > *:nth-child(3) {
-    -ms-grid-row: 3;
-    -ms-grid-column: 1;
   }
 }
 .downloadRezult form label {
@@ -65,11 +55,7 @@
   font-size: 18px;
   line-height: 22px;
   color: #D9D9D9;
-  display: -ms-grid;
-  display: grid;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
 }
 @media screen and (max-width: 768px) {
   .downloadRezult form label {
@@ -82,8 +68,10 @@
   border-radius: 15px;
   background: #FFFFFF;
   border: 0;
-  width: 555px;
+  width: 100%;
   padding: 5px;
+  -webkit-box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
+          box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
 }
 @media screen and (max-width: 768px) {
   .downloadRezult form label input {
@@ -125,7 +113,7 @@
   background-size: 68%;
   background-image: url("../img/checkBlue.svg");
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1400px) {
   .downloadRezult form button:before {
     width: 20px !important;
     border: 1px solid #1560BD;
@@ -140,14 +128,16 @@
   font-size: 30px;
   line-height: 37px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1400px) {
   .downloadRezult form button p {
     font-size: 15px;
     line-height: 18px;
   }
 }
 .downloadRezult form #butChoice {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .downloadRezult form #butChoice:before {
   -ms-flex-negative: 0;
@@ -163,12 +153,5 @@
   background-position: center center;
   background-size: 100%;
   background-image: url("../img/settingDidg.svg");
-}
-@media screen and (max-width: 768px) {
-  .downloadRezult form #butChoice {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
 }
 /*# sourceMappingURL=result_test.css.map */

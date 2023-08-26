@@ -60,6 +60,10 @@
   width: fit-content;
   width: 100%;
 }
+.quest-b .adaptQuest p b {
+  font-weight: 600;
+}
+
 .respOpt {
   font-weight: 600;
   font-size: 24px;
@@ -111,7 +115,7 @@
   opacity: 0;
 }
 .checkWrap input:checked + label::before {
-  background-image: url("../../img/check.svg");
+  background-image: url("../img/check.svg");
 }
 .checkWrap input + label {
   display: -webkit-inline-box;
