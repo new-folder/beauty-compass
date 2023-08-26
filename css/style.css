@@ -1665,4 +1665,22 @@ body {
   font-size: 18px;
   line-height: 22px;
 }
+
+.recomend {
+  font-weight: 600;
+  font-style: normal;
+}
+.recomend p {
+  font-size: 18px;
+  line-height: 22px;
+  color: #210E22;
+}
+.recomend .heading {
+  font-size: 30px;
+  line-height: 37px;
+  color: #494949;
+}
+.recomend:first-child {
+  margin-top: 40px;
+}
 /*# sourceMappingURL=style.css.map */
