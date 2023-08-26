@@ -314,7 +314,11 @@ imgSetAttributes()
 function upploadImgMultyple() {
     if (document.querySelector('#img-multiple')) {
         let fileInput = document.querySelector('#img-multiple')
+        let imageContainer = document.querySelector('#leave-feed__img-list')
 
+        function preview() {
+            imageContainer.innerHTML = "";
+        }
     }
 }
 
