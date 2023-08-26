@@ -775,8 +775,9 @@
                     <div class="col-3 col-xxl-4"> 
                         <div class="input input--modal input--image profile__input profile__image" type="button">
                             <img src="../img/gallery-add.svg" alt="add photos" class="position-absolute top-50 start-50 translate-middle"/>
-                            <input type="file" name="brand__file-input" id="img-multiple" class="file-input profile__file-input" accept="image/png, image/jpg" multiple/>
+                            <input type="file" name="brand__file-input" id="img-multiple" class="file-input profile__file-input" accept="image/png, image/jpg" onchange="preview()" multiple/>
                         </div>
+                        <div class="leave-feed__img-list"></div>
                     </div>
                     <div class="col-9 col-xxl-8 d-flex justify-content-center flex-column">
                         <p class="mb-1 leave-feed__comment">Нажмите на область с иконкой</p>
