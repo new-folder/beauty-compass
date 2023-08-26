@@ -176,7 +176,7 @@
                 <input type="checkbox" name="skinSens" value="oily" id="oily"><label for="oily">спустя некоторое время появляется жирный блеск</label>
               </div>
               <div class="checkWrap">
-                <input type="checkbox" name="skinSens" value="dirty " id="dirty "><label for="dirty ">есть ощущение недостаточного очищения кожи</label>
+                <input type="checkbox" name="skinSens" value="dirty" id="dirty"><label for="dirty">есть ощущение недостаточного очищения кожи</label>
               </div>
 
             </div>
@@ -234,7 +234,121 @@
           </div>
           <div class="quest-b">
             <div class="questText d-flex">
-              <p class="text-uppercase">Спасибо за ответы! ваш тип кожи - <p id="rezultText" class="text-uppercase ">комбинированная</p></p>
+              <p class="text-uppercase">какой у вас тип старения</p>
+            </div>
+            <div class="respOpt">
+              <div class="option">
+                <input type="radio" name="typeAging" id="tired_type" value="tired_type">
+                <label for="poreHid">
+                  усталый тип
+                </label>
+                <p>
+                  Мягкие черты лица, умеренно развитая мускулатура и умеренное количество подкожной клетчатки. Старение проявляется общим усталым видом, опущением уголков глаз и губ, "помятостью".
+                </p>
+                <img src="img\tired_type.jpg" alt="Пример усталого типа кожи">
+              </div>
+              <div class="option">
+                <input type="radio" name="typeAging" id="small_wrinkled" value="small_wrinkled">
+                <label for="poreHid">
+                  Мелкоморщинистый тип
+                </label>
+                <p>
+                  Пухлое лицо почти без подкожной жировой клетчатки, хорошо просматриваются кости черепа. Довольно рано лицо начинает покрываться сеточкой морщин.
+                </p>
+                <img src="img\small_wrinkled.jpg" alt="Пример мелкоморщинистого тип кожи">
+              </div>
+              <div class="option">
+                <input type="radio" name="typeAging" id="gravity_type" value="gravity_type">
+                <label for="poreHid">
+                  Гравитационный тип
+                </label>
+                <p>
+                  Обильная подкожная клетчатка, объёмное лицо, склонность к отекам. Старение в первую очередь проявляется деформацией овала лица.
+                </p>
+                <img src="img\gravity_type.jpg" alt="Пример гравитационного тип кожи">
+              </div>
+              <div class="option">
+                <input type="radio" name="typeAging" id="muscular_type" value="muscular_type">
+                <label for="poreHid">
+                  Мускульный тип
+                </label>
+                <p>
+                  Хорошо развиты мышцы, черты лица часто крупные (но необязательно), мало подкожной клетчатки, кожа "припаяна" к мышцам. С возрастом начинают появляться вертикальные борозды. Характерная особенность - залом, борозда в носогубной складке.
+                </p>
+                <img src="img\muscular_type.jpg" alt="Пример мускульного типа кожи">
+              </div>
+            </div>
+          </div>
+          <div class="quest-b">
+            <div class="questText">
+              <p class="text-uppercase">что вы отмечаете  прямо сейчас:</p>
+              <small>Можно выбрать несколько вариантов</small>
+            </div>
+            <div class="respOpt">
+              <div class="checkWrap">
+                <input type="checkbox" name="skinProp" value="dehydration" id="dehydration"><label for="dehydration">обезвоженность</label>
+              </div>
+              <div class="checkWrap">
+                <input type="checkbox" name="skinProp" value="pigmented" id="pigmented"><label for="pigmented">пигментные пятна</label>
+              </div>
+              <div class="checkWrap">
+                <input type="checkbox" name="skinProp" value="uneven" id="uneven"><label for="uneven">неровный тон и текстура кожи</label>
+              </div>
+              <div class="checkWrap">
+                <input type="checkbox" name="skinProp" value="red_irritat" id="red_irritat"><label for="red_irritat">покраснения и раздражения</label>
+              </div>
+              <div class="checkWrap">
+                <input type="checkbox" name="skinProp" value="enlar_black_dots" id="enlar_black_dots"><label for="enlar_black_dots">расширенные поры и черные точки</label>
+              </div>
+              <div class="checkWrap">
+                <input type="checkbox" name="skinProp" value="wrinkles" id="wrinkles"><label for="wrinkles">потеря упругости и эластичности, морщины</label>
+              </div>
+              <div class="checkWrap">
+                <input type="checkbox" name="skinProp" value="rosacea" id="rosacea"><label for="rosacea">купероз и розацеа</label>
+              </div>
+            </div>
+          </div>
+          <div class="quest-b">
+            <div class="questText">
+              <p class="text-uppercase">кожа вокруг глаз:</p>
+              <small>Можно выбрать несколько вариантов</small>
+            </div>
+            <div class="respOpt">
+              <div class="checkWrap">
+                <input type="checkbox" name="skinEyes" value="wrinkles" id="wrinkles"><label for="wrinkles">морщины и потеря упругости</label>
+              </div>
+              <div class="checkWrap">
+                <input type="checkbox" name="skinEyes" value="darkCircl" id="darkCircl"><label for="darkCircl">темные круги</label>
+              </div>
+              <div class="checkWrap">
+                <input type="checkbox" name="skinEyes" value="edema" id="edema"><label for="edema">отеки</label>
+              </div>
+              <div class="checkWrap">
+                <input type="checkbox" name="skinEyes" value="dryness" id="dryness"><label for="dryness">сухость и обезвоженность</label>
+              </div>
+            </div>
+          </div>
+          <div class="quest-b">
+            <div class="questText">
+              <p class="text-uppercase">Часто ли уходовая косметика вызывает раздражение, покраснение, жжение?</p>
+            </div>
+            <div class="respOpt">
+              <input type="radio" name="often" id="yes" value="yes"><label for="yes">да</label>
+              <input type="radio" name="often" id="no" value="no"><label for="no">нет</label>
+            </div>
+          </div>
+          <div class="quest-b">
+            <div class="questText">
+              <p class="text-uppercase">В данный момент вы беременны, кормите грудью или планируете беременность в течение ближайших 6 месяцев?</p>
+            </div>
+            <div class="respOpt">
+              <input type="radio" name="often" id="yes" value="yes"><label for="yes">да</label>
+              <input type="radio" name="often" id="no" value="no"><label for="no">нет</label>
+            </div>
+          </div>
+          <div class="quest-b">
+            <div class="showResult">
+              <p class="text-uppercase">Показать результаты</p>
             </div>
           </div>
         </form>
