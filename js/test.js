@@ -45,5 +45,5 @@ function typeSens(water, pore, flam){
             return "комбинированная"
         }
     }  
-    else return ''
+    else return "комбинированная"
 }
