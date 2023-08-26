@@ -1367,4 +1367,43 @@ body {
     height: 29px;
   }
 }
+
+.btn__svg-confirm span {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 37px;
+  text-transform: uppercase;
+  color: #1560BD;
+}
+
+.title--20-36 {
+  margin-bottom: 30px;
+}
+
+.quest-b {
+  margin-bottom: 15px;
+}
+.quest-b .questText {
+  border-radius: 15px;
+  background: #1560BD;
+  padding: 15px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #FFFFFF;
+  min-width: 218px;
+  margin-bottom: 5px;
+}
+.quest-b .questText p {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 37px;
+  margin: 0;
+}
+.quest-b .questText small {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
 /*# sourceMappingURL=style.css.map */

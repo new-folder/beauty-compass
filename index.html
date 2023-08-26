@@ -125,19 +125,120 @@
         <div class="container container--bc">
             <div class="page-title d-flex flex-wrap align-items-center col-xxl-10 offset-xxl-1">
                 <div class="col-1 col-xxl-12 order-xxl-1">
-                    <a href="" class="btn__svg-confirm text--15-30 fw-600 main-color hover-red d-flex align-items-center justify-content-start justify-content-xxl-center m-auto">
+                    <a href="" class="btn__svg-confirm text--15-30 fw-600 main-color hover-red d-flex align-items-center justify-content-start justify-content-xxl-center m-auto text-decoration-none">
                         <img src="img/arrow-left.svg" alt="Стрелка налево">
-                        <span class="text-decoration-none text-uppercase d-none d-xxl-block ms-2">Назад</span>
+                        <span class=" text-uppercase ms-2">Вернуться в кабинет</span>
                     </a>
                 </div>
                 <div class="col text-center col-xxl-12">
-                    <h1 class="title--20-36">Информация о бренде</h1>
+                    <h1 class="title--20-36">ТЕСТ</h1>
                 </div>
-                <div class="col-1 d-xxl-none"></div>
             </div>
         </div>
       </section>
-      
+      <section>
+        <form action="" class="container container--bc">
+          <div class="quest-b">
+            <div class="questText">
+              <p class="text-uppercase">Вы:</p>
+              <small>Укажите пол</small>
+            </div>
+            <div class="respOpt">
+              <input type="radio" name="gender" value="male"><label for="gender1">мужчина</label>
+              <input type="radio" name="gender" value="female"><label for="gender2">женщина</label>
+            </div>
+          </div>
+          <div class="quest-b">
+            <div class="questText">
+              <p class="text-uppercase">Вам:</p>
+              <small>Укажите возраст</small>
+            </div>
+            <div class="respOpt">
+              <input type="radio" name="age" id="age20" value="age20"><label for="age20">до 20</label>
+              <input type="radio" name="age" id="age25" value="age25"><label for="age25">25-35</label>
+              <input type="radio" name="age" id="age35" value="age35"><label for="age35">35-45</label>
+              <input type="radio" name="age" id="age45" value="age45"><label for="age45">больше 45</label>
+            </div>
+          </div>
+          <div class="quest-b">
+            <div class="questText">
+              <p class="text-uppercase">Ваши ощущения после умывани водой:</p>
+              <small>Укажите возраст</small>
+            </div>
+            <div class="respOpt">
+              <div class="checkWrap">
+                <input type="checkbox" name="skinSens" value="tightening" id="tightening"><label for="tightening">Кожу стягивает</label>
+              </div>
+              <div class="checkWrap">
+                <input type="checkbox" name="skinSens" value="purity" id="purity"><label for="purity">Есть ощущение чистоты и свежести</label>
+              </div>
+              <div class="checkWrap">
+                <input type="checkbox" name="skinSens" value="oily" id="oily"><label for="oily">спустя некоторое время появляется жирный блеск</label>
+              </div>
+              <div class="checkWrap">
+                <input type="checkbox" name="skinSens" value="dirty " id="dirty "><label for="dirty ">есть ощущение недостаточного очищения кожи</label>
+              </div>
+
+            </div>
+          </div>
+          <div class="quest-b">
+            <div class="questText">
+              <p class="text-uppercase">Поры на вашем лице:</p>
+            </div>
+            <div class="respOpt">
+              <input type="radio" name="pore" id="poreHid" value="poreHid">
+              <label for="poreHid">
+                незаметны
+              </label>
+              <input type="radio" name="pore" id="poreModerat" value="poreModerat">
+              <label for="poreModerat">
+                умеренно выражены
+              </label>
+              <input type="radio" name="pore" id="poreTZon" value="poreTZon">
+              <label for="poreTZon">
+                заметны на т-зоне
+              </label>
+              <input type="radio" name="pore" id="poreBright" value="poreBright">
+              <label for="poreBright">
+                ярко выражены на всем лице
+              </label>
+            </div>
+          </div>
+          <div class="quest-b">
+            <div class="questText">
+              <p class="text-uppercase">Бывают ли воспаления:</p>
+            </div>
+            <div class="respOpt">
+              <input type="radio" name="poreInflam" id="poreHid" value="poreHid">
+              <label for="poreHid">
+                нет
+              </label>
+              <input type="radio" name="poreInflam" id="poreModerat" value="poreModerat">
+              <label for="poreModerat">
+                единичные редко
+              </label>
+              <input type="radio" name="poreInflam" id="poreTZon" value="poreTZon">
+              <label for="poreTZon">
+                в т-зоне
+              </label>
+              <input type="radio" name="poreInflam" id="poreBright" value="poreBright">
+              <label for="poreBright">
+                довольно часто
+              </label>
+            </div>
+          </div>
+          <div class="quest-b">
+            <div class="questText d-flex">
+              <p class="text-uppercase">Спасибо за ответы! ваш тип кожи - <p id="rezultText" class="text-uppercase ">комбинированная</p></p>
+            </div>
+          </div>
+          <div class="quest-b">
+            <div class="questText d-flex">
+              <p class="text-uppercase">Спасибо за ответы! ваш тип кожи - <p id="rezultText" class="text-uppercase ">комбинированная</p></p>
+            </div>
+          </div>
+        </form>
+      </section>
     </main>
 
     <footer class="footer py-5">
