@@ -61,7 +61,7 @@
   width: 100%;
 }
 .quest-b .adaptQuest p b {
-  font-weight: 600;
+  font-weight: 600 !important;
 }
 
 .respOpt {
