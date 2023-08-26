@@ -1406,10 +1406,23 @@ body {
   line-height: 37px;
   margin: 0;
 }
+@media screen and (max-width: 768px) {
+  .quest-b .questText p {
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+  }
+}
 .quest-b .questText small {
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
+}
+@media screen and (max-width: 768px) {
+  .quest-b .questText small {
+    font-size: 12px;
+    margin-top: -15px;
+  }
 }
 .quest-b .adaptQuest {
   width: -webkit-fit-content;
@@ -1424,6 +1437,13 @@ body {
   letter-spacing: 0.5px;
   color: #494949;
   text-transform: uppercase;
+}
+@media screen and (max-width: 768px) {
+  .respOpt {
+    font-size: 15px;
+    line-height: 17.85px;
+    font-weight: 500;
+  }
 }
 
 .checkInp {
@@ -1447,6 +1467,13 @@ body {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 768px) {
+  .checkWrap {
+    margin-bottom: 15px;
+    padding: 11px;
+  }
 }
 .checkWrap input {
   position: absolute;
@@ -1469,16 +1496,26 @@ body {
           user-select: none;
 }
 .checkWrap input + label::before {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   content: "";
   display: inline-block;
-  width: 1em;
-  height: 1em;
-  border: 1px solid #292D32;
-  border-radius: 0.25em;
-  margin-right: 0.5em;
+  width: 34px;
+  aspect-ratio: 1;
+  border: 3px solid #292D32;
+  border-radius: 10px;
+  margin-right: 20px;
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 80% 80%;
+  background-size: 68%;
+}
+@media screen and (max-width: 768px) {
+  .checkWrap input + label::before {
+    width: 17px;
+    border-radius: 5px;
+    border: 1px solid #292D32;
+    margin-right: 10px;
+  }
 }
 
 .radioInp input[type=radio] {
@@ -1535,6 +1572,13 @@ body {
   margin-right: 0.5em;
   -webkit-box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
           box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+@media screen and (max-width: 768px) {
+  .radioInp label::before {
+    border: 5px solid #FFFFFF;
+  }
 }
 .radioInp label::after {
   content: "";
@@ -1547,8 +1591,15 @@ body {
   -webkit-box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
           box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
   display: none;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 768px) {
+  .radioInp label::after {
+    border: 5px solid #FFFFFF;
+  }
+}
+@media screen and (max-width: 768px) {
   .radioInp label::after {
     display: inline-block;
   }
@@ -1559,8 +1610,20 @@ body {
 .radioInp .option {
   margin-bottom: 15px;
 }
+.radioInp .option label::before {
+  display: inline-block;
+}
+.radioInp .option label::after {
+  display: none;
+}
 .radioInp .option p {
   text-transform: none;
+  margin-left: 1.8em;
+}
+@media screen and (max-width: 768px) {
+  .radioInp .option img {
+    width: 100%;
+  }
 }
 
 .adapt {
@@ -1569,7 +1632,7 @@ body {
   -ms-grid-columns: (25%)[4];
   grid-template-columns: repeat(4, 25%);
 }
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 768px) {
   .adapt {
     -ms-grid-columns: (50%)[2];
     grid-template-columns: repeat(2, 50%);
@@ -1579,7 +1642,7 @@ body {
   width: 183px;
   margin-right: 20px;
 }
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 768px) {
   .adapt label {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
@@ -1596,7 +1659,8 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
-  padding: 5px 20px;
+  background: #FFFFFF;
+  padding: 5px 25px;
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
