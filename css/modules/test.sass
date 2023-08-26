@@ -13,6 +13,9 @@ $lineHeightText: 16px
         line-height: 37px
         text-transform: uppercase
         color: $main-color
+        @media screen and (max-width: $first-breack-point) 
+            display: none
+        
 
 .title--20-36
     margin-bottom: 30px
@@ -52,7 +55,6 @@ $lineHeightText: 16px
     
     p
         margin: 4px $paddingBlock
-
         font-weight: 700
         font-size: 18px
         line-height: 22px
@@ -65,7 +67,6 @@ $lineHeightText: 16px
 
         &:checked+label::before
             background-image: url("../../img/check.svg")
-
 
     input+label
         display: inline-flex
@@ -84,5 +85,87 @@ $lineHeightText: 16px
             background-repeat: no-repeat
             background-position: center center
             background-size: 50% 50%
+
+.radioInp
+
+    input[type=radio]
+        position: absolute
+        z-index: -1
+        opacity: 0
+
+        &:checked+label::before
+            border-color: $white-color
+            background-color: $main-color
+
+        &:checked+label::after
+            border-color: $white-color
+            background-color: $main-color
+
+        &:not(:disabled)
+            &:active+label:before
+                border-color: $white-color
+                background-color: $main-color
+
+        &:not(:disabled)
+            &:active+label:after
+                border-color: $white-color
+                background-color: $main-color
+
+    input[typy=radio]+label
+        display: inline-flex
+        align-items: center
+        user-select: none
+        
+    label
+        display: flex
+        align-items: center
+        text-transform: uppercase
+        font-weight: 600
+        font-size: 24px
+        line-height: 29px
+        letter-spacing: 0.5px
+
+        color: $dark-semi-light
+
+        &::before
+            content: ''
+            display: inline-block
+            width: 1em
+            height: 1em
+            border: 6px solid $white-color
+            background: $white-color
+            border-radius: 50%
+            margin-right: 0.5em
+            box-shadow: $box-shadow-sm
+
+        &::after
+            content: ''
+            width: 1em
+            height: 1em
+            border: 6px solid $white-color
+            background: $white-color
+            border-radius: 50%
+            margin-left: 0.5em
+            box-shadow: $box-shadow-sm
+            display: none
+
+        @media screen and (max-width: $first-breack-point) 
+            &::after
+                display: inline-block 
+            &::before
+                display: none
+
+.adapt
+
+    display: grid
+    grid-template-columns: repeat(4,25%)
+
+    @media screen and (max-width: $first-breack-point) 
+        grid-template-columns: repeat(2,50%)
+
+
+    label
+        width: 183px
+        margin-right: 20px
 
 
