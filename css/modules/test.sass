@@ -34,7 +34,6 @@ $lineHeightText: 16px
         min-width: 218px
         margin-bottom: 5px
 
-
         p   
             font-weight: 600
             font-size: 30px
@@ -45,6 +44,11 @@ $lineHeightText: 16px
             font-weight: 400
             font-size: 14px
             line-height: $lineHeightText
+
+    .adaptQuest
+        width: fit-content
+        @media screen and (max-width: $first-breack-point) 
+        width: 100%
 
 .showResult
     border-radius: $border-radius
@@ -124,15 +128,15 @@ $lineHeightText: 16px
         font-size: 24px
         line-height: 29px
         letter-spacing: 0.5px
-
+        margin-bottom: 16px
         color: $dark-semi-light
 
         &::before
             content: ''
             display: inline-block
-            width: 1em
-            height: 1em
-            border: 6px solid $white-color
+            width: 1.3em
+            aspect-ratio: 1
+            border: 9px solid $white-color
             background: $white-color
             border-radius: 50%
             margin-right: 0.5em
@@ -140,9 +144,9 @@ $lineHeightText: 16px
 
         &::after
             content: ''
-            width: 1em
-            height: 1em
-            border: 6px solid $white-color
+            width: 1.3em
+            aspect-ratio: 1
+            border: 9px solid $white-color
             background: $white-color
             border-radius: 50%
             margin-left: 0.5em
@@ -150,6 +154,9 @@ $lineHeightText: 16px
             display: none
 
         @media screen and (max-width: $first-breack-point) 
+
+            
+
             &::after
                 display: inline-block 
             &::before
@@ -167,5 +174,11 @@ $lineHeightText: 16px
     label
         width: 183px
         margin-right: 20px
+
+        @media screen and (max-width: $first-breack-point) 
+            justify-content: end
+            width: auto
+
+
 
 
