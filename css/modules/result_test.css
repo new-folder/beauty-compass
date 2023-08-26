@@ -79,7 +79,7 @@
   }
 }
 .downloadRezult form label input:focus {
-  border: 1px solid #1560BD;
+  border: 1px solid #1560BD !important;
   -webkit-filter: drop-shadow(0px 0px 3px #1560BD);
           filter: drop-shadow(0px 0px 3px #1560BD);
 }
