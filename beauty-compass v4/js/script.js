@@ -43,6 +43,13 @@ function  openModalImg() {
 }
 openModalImg()
 
+const userToken = localStorage.getItem('userToken')
+if (userToken) {
+    console.log('Uder auth')
+} else {
+    console.log('Unauth')
+}
+    
 // Pass validation
 function valid(event){
     const pas = document.querySelector('#registerInputPassword1').value
@@ -230,33 +237,19 @@ if(tagList) {
     }
 }
 
-function userInterface() {
-    let userId
 
-    // Authorization
-    function saveUserLocalStorage() {
-        const authForm = document.querySelector('.auth__form')
-        authForm.onsubmit = async function(e) {
-            // const formData = new FormData(e.target)
-            const emailValue = document.querySelector('#headerAuthEmail')
-            const passValue = document.querySelector('#authInputPassword')
-            e.preventDefault()
-            const authBody = { 
-                // email: emailValue,
-                // password: passValue,
-                username: 'kminchelle',
-                password: '0lelplR',
-            }
-            const resp = await fetch('https://dummyjson.com/auth/login',{
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json'},
-                body: JSON.stringify(authBody)
-            })
-            const result = await resp.json()
-            localStorage.setItem('userToken', result['token'])
-            localStorage.setItem('userId', result['id'])
-            console.log(userId)
-        }    
+const authForm = document.querySelector('.auth__form')
+console.log(authForm)
+authForm.onsubmit = async function(e) {
+    // const formData = new FormData(e.target)
+    const emailValue = document.querySelector('#headerAuthEmail')
+    const passValue = document.querySelector('#authInputPassword')
+    e.preventDefault()
+    const authBody = { 
+        // username: emailValue,
+        // password: passValue,
+        username: 'kminchelle',
+        password: '0lelplR',
     }
     saveUserLocalStorage()  
 
@@ -277,9 +270,30 @@ function userInterface() {
     }    
     //toggleFavoriteBrand()    
 
+    const resp = await fetch('https://dummyjson.com/auth/login',{
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(authBody)
+    })
+    const result = await resp.json()
+    localStorage.setItem('userToken', result['token'])
+    console.log("result", result)
 }
-userInterface()
 
+// Add/remove class 'active' for favorite-brand
+function toggleFavoriteBrand() {
+    const favoriteList = document.querySelectorAll('.favorite--brand')
+    favoriteList.forEach(item => {
+        item.addEventListener('click', elem => {
+            if(!elem.target.classList.contains('active')) {
+                elem.target.classList.add('active')
+            // сюда запрос для добавления в избранное
+            } else
+            elem.target.classList.remove('active')
+            // сюда запрос для удаления из избранного
+        }) 
+    })
+}
 
 // opent active product img
 
@@ -463,8 +477,8 @@ function countChars() {
 }
 
 countChars();
+toggleFavoriteBrand()
 
-//For demonstration
 
 // Add/remove class 'active' for favorite brand
 function toggleFavoriteBrand() {
@@ -524,7 +538,6 @@ toggleFavoriteProductFull()
 function toggleSubscription() {
     const subBtn = document.querySelector('.follow-brand')
     let text
-    if(subBtn) {
         subBtn.addEventListener('click', event => {
             if(!event.target.classList.contains('active')) {
                 text = 'Вы подписаны'
@@ -536,7 +549,6 @@ function toggleSubscription() {
                 document.querySelector('.follow-brand').textContent = text
             }
         }) 
-    }
 }
 
 toggleSubscription()
