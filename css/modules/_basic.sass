@@ -473,7 +473,7 @@ main
         &:before
             content: ""
             position: absolute
-            top: 0
+            top: 260px
             left: 30px
             width: 53px
             height: 749px
@@ -615,3 +615,53 @@ main
         font-size: 18px
         @media screen and (max-width: $first-breack-point)
             font-size: 10px
+    &__images
+        display: flex
+        flex-wrap: wrap
+        gap: 16px
+    &__image
+        width: 180px
+        height: 219px
+        overflow: hidden
+        border-radius: 15px
+        @media screen and (max-width: $first-breack-point)
+            width: 89px
+            height: 108px
+        img
+            height: 100%
+            width: 100%
+            object-fit: cover
+    &__footer
+        border-top: 1px solid $gray-light
+        padding-top: 12px
+    &__actions
+        display: flex
+        align-items: center
+        gap: 16px
+    &__action
+        display: flex
+        align-items: center
+        gap: 6px
+        background-color: transparent
+        padding: 0
+        border: none
+        span
+            font-size: 18px
+            font-weight: 600
+        &--like
+            svg
+                path
+                    fill: $gray-light
+        &--like_active
+            svg
+                path
+                    fill: $main-color
+        &--dislike
+            svg
+                transform: rotate(180deg)
+                path
+                    fill: $gray-light
+        &--dislike_active
+            svg
+                path
+                    fill: $pre-color
