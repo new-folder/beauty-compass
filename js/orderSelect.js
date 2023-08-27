@@ -26,7 +26,6 @@ $(document).ready(function() {
 
     $('#selectProgram').on('click',function(event){
         event.preventDefault();
-        //place ajax
         
         location.replace("orderSelect.html");
         
