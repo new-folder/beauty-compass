@@ -2147,6 +2147,10 @@ body {
   color: #494949;
 }
 
+.selectInpOrder {
+  width: 100%;
+}
+
 .selectWrap {
   width: 28.3333333333%;
   margin: 15px 0;
@@ -2206,6 +2210,11 @@ body {
   scroll-margin-right: 7px;
   max-height: 80px;
   width: 100% !important;
+}
+@media screen and (max-width: 576px) {
+  .select2 {
+    max-width: 100%;
+  }
 }
 .select2:-webkit-scrollbar {
   height: 1px;

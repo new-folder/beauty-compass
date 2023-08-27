@@ -9,6 +9,8 @@
         background: none
         padding: 0
         color: $dark-semi-light
+.selectInpOrder 
+    width: 100%
 .selectWrap
     width: calc( (100% / 3) - 5% )
     margin: 15px 0
@@ -53,7 +55,8 @@
 
     max-height: 80px
     width: 100% !important
-        
+    @media screen and (max-width: $xs-breack-point) 
+        max-width: 100%
     &:-webkit-scrollbar 
         height: 1px
         width: 12px
