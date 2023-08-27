@@ -284,9 +284,18 @@ main
     border: none
     &:focus-visible
         outline: 1px solid $main-color
+    &::placeholder
+        color: $gray-light
     @media all and (min-width: $first-breack-point)
         font-size: 18px
-
+.textarea--char-count
+    position: absolute
+    bottom: 10px
+    right: 10px
+    font-size: 10px
+    color: $gray-light
+    @media all and (min-width: $first-breack-point)
+        font-size: 15px
 .label--light
     color: $gray-light
     font-size: 10px
@@ -525,6 +534,12 @@ main
         transition: .3s
 
 .questions
+    &__heading-link
+        text-decoration: none
+        transition: all .3s ease
+        &:hover
+            color: $pre-color
+
     &__sticker
         position: relative
         &:before
@@ -537,6 +552,18 @@ main
             background: url(../img/questions-sticker.svg) no-repeat
             @media screen and (max-width: $first-breack-point)
                 display: none
+    &__form-open-btn
+        width: 100%
+        border: none
+        border-radius: 15px
+        background: $white-color
+        box-shadow: 0px 4px 20px 0px rgba(14, 14, 14, 0.07)
+        font-size: 18px
+        color: $gray-light
+        text-align: left
+        padding-left: 16px
+        @media screen and (max-width: $first-breack-point)
+            font-size: 10px
 .feed
     &__row
         padding: 24px
@@ -571,6 +598,11 @@ main
     &__name
         font-size: 30px
         font-weight: 600
+        text-decoration: none
+        transition: all .3s ease
+        color: $dark-lighter
+        &:hover
+            color: $pre-color
         @media screen and (max-width: $first-breack-point)
             font-size: 15px
     &__date

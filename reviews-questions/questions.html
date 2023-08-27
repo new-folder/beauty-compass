@@ -129,33 +129,46 @@
               Icon Skin Stop Acne Сыворотка Multi-Acid Serum
             </h1>
             <div class="col-12">
-              <p
-                class="title--sub_blue d-flex justify-content-center align-items-center text-center"
+              <a
+                href="#"
+                class="questions__heading-link title--sub_blue d-flex justify-content-center align-items-center text-center"
               >
                 Мультикислотная сыворотка от акне
-              </p>
+              </a>
             </div>
           </div>
           <div class="questions__body offset-xxl-1 col-xxl-10">
-            <div class="input--wrapper position-relative mb-3">
-              <input
-                class="input--regular w-100 h-100 border-0"
-                id="question"
-                value=""
-                type="text"
-                placeholder="Задайте вопрос"
-                required
-              />
-            </div>
+            <button
+              id="question-form-btn"
+              class="input--wrapper questions__form-open-btn mb-3"
+              type="button"
+            >
+              Задать вопрос
+            </button>
+            <form id="question-form" class="questions__form mb-4" hidden>
+              <div class="textarea--wrapper position-relative col-12 mb-2">
+                <textarea
+                  id="question-input"
+                  class="textarea--regular w-100 h-100 border-0"
+                  placeholder="Задайте вопрос"
+                  maxlength="500"
+                  minlength="10"
+                  rows="5"
+                  required
+                ></textarea>
+                <div id="char-count" class="textarea--char-count">0/500</div>
+              </div>
+              <button type="submit" class="btn btn--base">Задать вопрос</button>
+            </form>
             <h3 class="title--h4 mb-4">Вопросы пользователей (23)</h3>
             <div class="feed d-flex flex-column mb-5">
               <div class="feed__row">
                 <div class="feed__user">
-                  <figure class="feed__avatar">
-                    <img src="/img/image 221.png" alt="avatar" />
-                  </figure>
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 221.png" alt="avatar" />
+                  </a>
                   <div class="feed__info">
-                    <div class="feed__name">Дарья С.</div>
+                    <a href="#" class="feed__name">Дарья С.</a>
                     <div class="feed__date">22.08.2022</div>
                   </div>
                 </div>
@@ -173,11 +186,11 @@
                 </p>
 
                 <div class="feed__user">
-                  <figure class="feed__avatar">
-                    <img src="/img/image 222.png" alt="avatar" />
-                  </figure>
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 222.png" alt="avatar" />
+                  </a>
                   <div class="feed__info">
-                    <div class="feed__name">НАЗВАНИЕ КОМПАНИИ</div>
+                    <a href="#" class="feed__name">НАЗВАНИЕ КОМПАНИИ</a>
                     <div class="feed__date">25.08.2022</div>
                   </div>
                 </div>
@@ -189,11 +202,11 @@
               </div>
               <div class="feed__row">
                 <div class="feed__user">
-                  <figure class="feed__avatar">
-                    <img src="/img/image 221.png" alt="avatar" />
-                  </figure>
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 221.png" alt="avatar" />
+                  </a>
                   <div class="feed__info">
-                    <div class="feed__name">Дарья С.</div>
+                    <a href="#" class="feed__name">Дарья С.</a>
                     <div class="feed__date">22.08.2022</div>
                   </div>
                 </div>
@@ -211,11 +224,11 @@
                 </p>
 
                 <div class="feed__user">
-                  <figure class="feed__avatar">
-                    <img src="/img/image 222.png" alt="avatar" />
-                  </figure>
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 222.png" alt="avatar" />
+                  </a>
                   <div class="feed__info">
-                    <div class="feed__name">НАЗВАНИЕ КОМПАНИИ</div>
+                    <a href="#" class="feed__name">НАЗВАНИЕ КОМПАНИИ</a>
                     <div class="feed__date">25.08.2022</div>
                   </div>
                 </div>
@@ -227,11 +240,11 @@
               </div>
               <div class="feed__row">
                 <div class="feed__user">
-                  <figure class="feed__avatar">
-                    <img src="/img/image 221.png" alt="avatar" />
-                  </figure>
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 221.png" alt="avatar" />
+                  </a>
                   <div class="feed__info">
-                    <div class="feed__name">Дарья С.</div>
+                    <a href="#" class="feed__name">Дарья С.</a>
                     <div class="feed__date">22.08.2022</div>
                   </div>
                 </div>
@@ -249,11 +262,11 @@
                 </p>
 
                 <div class="feed__user">
-                  <figure class="feed__avatar">
-                    <img src="/img/image 222.png" alt="avatar" />
-                  </figure>
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 222.png" alt="avatar" />
+                  </a>
                   <div class="feed__info">
-                    <div class="feed__name">НАЗВАНИЕ КОМПАНИИ</div>
+                    <a href="#" class="feed__name">НАЗВАНИЕ КОМПАНИИ</a>
                     <div class="feed__date">25.08.2022</div>
                   </div>
                 </div>
@@ -265,11 +278,11 @@
               </div>
               <div class="feed__row">
                 <div class="feed__user">
-                  <figure class="feed__avatar">
-                    <img src="/img/image 221.png" alt="avatar" />
-                  </figure>
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 221.png" alt="avatar" />
+                  </a>
                   <div class="feed__info">
-                    <div class="feed__name">Дарья С.</div>
+                    <a href="#" class="feed__name">Дарья С.</a>
                     <div class="feed__date">22.08.2022</div>
                   </div>
                 </div>
@@ -287,11 +300,11 @@
                 </p>
 
                 <div class="feed__user">
-                  <figure class="feed__avatar">
-                    <img src="/img/image 222.png" alt="avatar" />
-                  </figure>
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 222.png" alt="avatar" />
+                  </a>
                   <div class="feed__info">
-                    <div class="feed__name">НАЗВАНИЕ КОМПАНИИ</div>
+                    <a href="#" class="feed__name">НАЗВАНИЕ КОМПАНИИ</a>
                     <div class="feed__date">25.08.2022</div>
                   </div>
                 </div>
@@ -303,11 +316,11 @@
               </div>
               <div class="feed__row">
                 <div class="feed__user">
-                  <figure class="feed__avatar">
-                    <img src="/img/image 221.png" alt="avatar" />
-                  </figure>
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 221.png" alt="avatar" />
+                  </a>
                   <div class="feed__info">
-                    <div class="feed__name">Дарья С.</div>
+                    <a href="#" class="feed__name">Дарья С.</a>
                     <div class="feed__date">22.08.2022</div>
                   </div>
                 </div>
@@ -325,11 +338,11 @@
                 </p>
 
                 <div class="feed__user">
-                  <figure class="feed__avatar">
-                    <img src="/img/image 222.png" alt="avatar" />
-                  </figure>
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 222.png" alt="avatar" />
+                  </a>
                   <div class="feed__info">
-                    <div class="feed__name">НАЗВАНИЕ КОМПАНИИ</div>
+                    <a href="#" class="feed__name">НАЗВАНИЕ КОМПАНИИ</a>
                     <div class="feed__date">25.08.2022</div>
                   </div>
                 </div>
@@ -755,7 +768,7 @@
       </div>
     </div>
 
-    <script src="/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/profile-info.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/questions.js"></script>
   </body>
 </html>
