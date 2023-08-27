@@ -2570,7 +2570,6 @@ body {
 @media screen and (max-width: 1400px) {
   .downloadRezult form.order button:before {
     width: 20px !important;
-    border: 1px solid #1560BD;
   }
 }
 
