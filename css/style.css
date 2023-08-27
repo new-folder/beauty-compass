@@ -2184,12 +2184,6 @@ body {
 .selectWrap select:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
-  border-radius: 15px 15px 0 0 !important;
-}
-@media screen and (max-width: 768px) {
-  .selectWrap select:focus {
-    border-radius: 0 0 15px 15px !important;
-  }
 }
 
 .select2-dropdown {
@@ -2248,6 +2242,20 @@ body {
   background-color: #1560BD !important;
   color: #FFFFFF;
   border-radius: 10px !important;
+  margin-top: 7px !important;
+}
+@media screen and (max-width: 768px) {
+  .select2 ul li {
+    height: 32px;
+    padding: 8px 20px !important;
+  }
+}
+.select2 ul li button {
+  padding: 5px 4px !important;
+  color: #FFFFFF !important;
+}
+.select2 ul li button:hover {
+  background-color: rgba(0, 0, 0, 0) !important;
 }
 
 .select2-results__option {
@@ -2323,15 +2331,6 @@ body {
   opacity: 0.7;
   background-color: rgba(241, 241, 241, 0);
   outline: none;
-}
-
-.select2-container--open {
-  border-radius: 15px 15px 0 0 !important;
-}
-@media screen and (max-width: 768px) {
-  .select2-container--open {
-    border-radius: 0 0 15px 15px !important;
-  }
 }
 
 .checkInp {
@@ -2579,5 +2578,47 @@ body {
 
 #selectProgram:before {
   background-image: url("../img/wallet-money.svg");
+}
+
+.selectSave {
+  display: block;
+}
+
+.choseSave {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100px;
+}
+.choseSave .inputAnswer {
+  width: 100%;
+}
+.choseSave .selectWrap {
+  width: 70%;
+  margin: 0;
+  margin-top: -18px;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .choseSave .selectWrap {
+    display: none !important;
+  }
+}
+
+.quest-b .selectWrapchoseSave {
+  margin-top: -18px;
+  display: none;
+  width: 70%;
+}
+@media screen and (max-width: 768px) {
+  .quest-b .selectWrapchoseSave {
+    display: none !important;
+  }
 }
 /*# sourceMappingURL=style.css.map */

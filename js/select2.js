@@ -2093,7 +2093,7 @@ S2.define('select2/selection/search',[
 
     container.on('open', function () {
       self.$search.attr('aria-controls', resultsId);
-      self.$search.trigger('focus');
+      // self.$search.trigger('focus');
     });
 
     container.on('close', function () {
@@ -2101,7 +2101,7 @@ S2.define('select2/selection/search',[
       self.resizeSearch();
       self.$search.removeAttr('aria-controls');
       self.$search.removeAttr('aria-activedescendant');
-      self.$search.trigger('focus');
+      // self.$search.trigger('focus');
     });
 
     container.on('enable', function () {
@@ -2114,9 +2114,9 @@ S2.define('select2/selection/search',[
       self.$search.prop('disabled', true);
     });
 
-    container.on('focus', function (evt) {
-      self.$search.trigger('focus');
-    });
+    // container.on('focus', function (evt) {
+    //   self.$search.trigger('focus');
+    // });
 
     container.on('results:focus', function (params) {
       if (params.data._resultId) {
@@ -4890,12 +4890,12 @@ S2.define('select2/i18n/en',[],function () {
   // English
   return {
     errorLoading: function () {
-      return 'The results could not be loaded.';
+      return 'Результаты не могут быть загружены.';
     },
     inputTooLong: function (args) {
       var overChars = args.input.length - args.maximum;
 
-      var message = 'Please delete ' + overChars + ' character';
+      var message = 'Пожалуйста, удалите ' + overChars + ' символов';
 
       if (overChars != 1) {
         message += 's';
@@ -4906,7 +4906,7 @@ S2.define('select2/i18n/en',[],function () {
     inputTooShort: function (args) {
       var remainingChars = args.minimum - args.input.length;
 
-      var message = 'Please enter ' + remainingChars + ' or more characters';
+      var message = 'Пожалуйста, введите ' + remainingChars + ' или больше символов';
 
       return message;
     },
@@ -4914,7 +4914,7 @@ S2.define('select2/i18n/en',[],function () {
       return 'Loading more results…';
     },
     maximumSelected: function (args) {
-      var message = 'You can only select ' + args.maximum + ' item';
+      var message = 'Вы можете выбрать ' + args.maximum + ' пунктов';
 
       if (args.maximum != 1) {
         message += 's';
@@ -4923,19 +4923,19 @@ S2.define('select2/i18n/en',[],function () {
       return message;
     },
     noResults: function () {
-      return 'No results found';
+      return 'Нет результата поиска';
     },
     searching: function () {
-      return 'Searching…';
+      return 'Поиск...';
     },
     removeAllItems: function () {
-      return 'Remove all items';
+      return 'Удалить все';
     },
     removeItem: function () {
-      return 'Remove item';
+      return 'Удалить';
     },
     search: function() {
-      return 'Search';
+      return 'Поиск';
     }
   };
 });

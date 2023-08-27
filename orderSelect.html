@@ -157,11 +157,33 @@
               <p class="text-uppercase">Взять результаты теста для подбора программы?</p>
             </div>
             <div class="respOpt radioInp adapt adaptOrder">
-              <input type="radio" name="resultTest" id="yes" value="yes"><label for="yes">да</label>
+              <div class="choseSave">
+                <div class="selectWrap">
+                  <small>Результаты теста</small>
+                  <select class="form-select"  name="gender" id="gender">
+                    <option selected>Выберите из списка</option>
+                    <option value="male">
+                      Подгрузка с БД
+                    </option>
+                  </select>
+                </div>
+                <div class="inputAnswer">
+                  <input type="radio" name="resultTest" id="yes" value="yes"><label for="yes">да</label>
+                </div>
+              </div>
               <input type="radio" name="resultTest" id="no" value="no"><label for="no">нет</label>
             </div>
+            <div class="selectWrap selectWrapchoseSave">
+              <small>Результаты теста</small>
+              <select class="form-select"  name="gender" id="gender">
+                <option selected>Выберите из списка</option>
+                <option value="male">
+                  Подгрузка с БД
+                </option>
+              </select>
+            </div>
           </div>
-          <div class="quest-b">
+          <div class="quest-b selectSave">
             <div class="questText">
               <p class="text-uppercase">Установить параметры самостоятельно</p>
             </div>
@@ -280,7 +302,7 @@
               </div>
             </div>
           </div>
-          <div class="quest-b">
+          <div class="quest-b selectSave">
             <div class="questText">
               <p class="text-uppercase">Дополнительно</p>
             </div>
@@ -309,7 +331,7 @@
                 </div>
                 <div class="selectWrap">
                   <small>Категория косметики</small>
-                  <select class="form-select"  name="category" id="category">
+                  <select class="form-select"  name="category" id="category" multiple>
                     <option value="pharmacy">
                       Аптечная
                     </option>
