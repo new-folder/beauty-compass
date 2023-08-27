@@ -2137,6 +2137,10 @@ body {
   line-height: 22px;
 }
 
+.brand__title {
+  margin-bottom: 20px;
+}
+
 .quest-b .questText {
   background: none;
   padding: 0;
@@ -2144,8 +2148,13 @@ body {
 }
 
 .selectWrap {
-  width: 33.3333333333%;
-  padding: 10px 40px;
+  width: 28.3333333333%;
+  margin: 15px 0;
+}
+@media screen and (max-width: 768px) {
+  .selectWrap {
+    width: 45%;
+  }
 }
 .selectWrap small {
   text-transform: none;
@@ -2166,23 +2175,37 @@ body {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  height: 42px;
 }
 .selectWrap select:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
+  border-radius: 15px 15px 0 0 !important;
+}
+@media screen and (max-width: 768px) {
+  .selectWrap select:focus {
+    border-radius: 0 0 15px 15px !important;
+  }
+}
+
+.select2-dropdown {
+  min-width: 180px;
 }
 
 .select2 {
+  height: 42px !important;
   border: 0 solid #000;
   position: unset;
   -webkit-box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
           box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
   border-radius: 15px;
   overflow-y: scroll;
+  overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: #1560BD #D9D9D9;
   scroll-margin-right: 7px;
   max-height: 80px;
+  width: 100% !important;
 }
 .select2:-webkit-scrollbar {
   height: 1px;
@@ -2204,11 +2227,21 @@ body {
   margin-top: 5px !important;
   font-size: 18px !important;
   color: #000 !important;
-  height: 32px !important;
+  height: 42px !important;
   width: auto !important;
 }
+@media screen and (max-width: 768px) {
+  .select2 .select2-search__field {
+    font-size: 16px !important;
+  }
+}
+.select2 ul li {
+  background-color: #1560BD !important;
+  color: #FFFFFF;
+  border-radius: 10px !important;
+}
 
-.select2-results__option--selected {
+.select2-results__option {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2216,7 +2249,15 @@ body {
       -ms-flex-align: center;
           align-items: center;
   background-color: rgba(0, 0, 0, 0) !important;
+  color: #210E22 !important;
 }
+
+.select2-results__option--highlighted {
+  background-color: rgba(0, 0, 0, 0) !important;
+  border-bottom: 1px solid #1560BD;
+  color: #210E22 !important;
+}
+
 .select2-results__option--selected::before {
   background-image: url("../img/check.svg");
 }
@@ -2276,22 +2317,11 @@ body {
 }
 
 .select2-container--open {
-  border-radius: 0 15px 15px 0 !important;
-}
-
-.respOpt {
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 29px;
-  letter-spacing: 0.5px;
-  color: #494949;
-  text-transform: uppercase;
+  border-radius: 15px 15px 0 0 !important;
 }
 @media screen and (max-width: 768px) {
-  .respOpt {
-    font-size: 15px;
-    line-height: 17.85px;
-    font-weight: 500;
+  .select2-container--open {
+    border-radius: 0 0 15px 15px !important;
   }
 }
 
@@ -2308,63 +2338,14 @@ body {
           align-items: start;
 }
 
-.checkWrap {
-  border-radius: 15px;
+.checkInpOrder .checkWrap {
   -webkit-box-shadow: none;
           box-shadow: none;
-  padding: 15px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin-bottom: 20px;
+  margin-bottom: 0;
+  padding: 10px 0;
 }
-@media screen and (max-width: 768px) {
-  .checkWrap {
-    margin-bottom: 15px;
-    padding: 11px;
-  }
-}
-.checkWrap input {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
-}
-.checkWrap input:checked + label::before {
-  background-image: url("../img/check.svg");
-}
-.checkWrap input + label {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-.checkWrap input + label::before {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  content: "";
-  display: inline-block;
-  width: 34px;
-  aspect-ratio: 1;
-  border: 3px solid #292D32;
-  border-radius: 10px;
-  margin-right: 20px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 68%;
-}
-@media screen and (max-width: 768px) {
-  .checkWrap input + label::before {
-    width: 17px;
-    border-radius: 5px;
-    border: 1px solid #292D32;
-    margin-right: 10px;
-  }
+.checkInpOrder input + label {
+  text-transform: none;
 }
 
 .radioInp input[type=radio] {
@@ -2475,29 +2456,90 @@ body {
   }
 }
 
-.adapt {
+.adaptOrder {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (25%)[4];
   grid-template-columns: repeat(4, 25%);
 }
 @media screen and (max-width: 768px) {
-  .adapt {
-    -ms-grid-columns: (50%)[2];
-    grid-template-columns: repeat(2, 50%);
+  .adaptOrder {
+    -ms-grid-columns: 100%;
+    grid-template-columns: 100%;
   }
 }
-.adapt label {
+.adaptOrder label {
   width: 183px;
   margin-right: 20px;
 }
 @media screen and (max-width: 768px) {
-  .adapt label {
+  .adaptOrder label {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: end;
     width: auto;
   }
+}
+
+.select2-selection__choice {
+  min-height: 25px;
+  padding: 2.5px 0 !important;
+  padding-left: 20px !important;
+}
+.select2-selection__choice * {
+  margin: 2.5px;
+}
+
+.selectInpDls {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+  .selectInpDls {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.selectInpDls .selectWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0;
+}
+@media screen and (max-width: 768px) {
+  .selectInpDls .selectWrap {
+    width: 100%;
+  }
+}
+.selectInpDls .selectWrap .select2 {
+  width: 100% !important;
+  margin-top: 15px !important;
+}
+.selectInpDls .selectWrap select {
+  margin-top: 15px !important;
+}
+
+.selectInp {
+  margin-bottom: 20px;
+}
+
+.alerg {
+  margin: 10px 0;
+  width: 100% !important;
 }
 
 .downloadRezult form.order {

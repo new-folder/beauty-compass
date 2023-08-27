@@ -1,14 +1,20 @@
 @import vars
 @import test
 
+.brand__title
+    margin-bottom: 20px
+
 .quest-b
     .questText
         background: none
         padding: 0
         color: $dark-semi-light
 .selectWrap
-    width: calc( 100% / 3 )
-    padding: 10px 40px 
+    width: calc( (100% / 3) - 5% )
+    margin: 15px 0
+    @media screen and (max-width: $second-breack-point) 
+        width: calc( (100% / 2) - 5% )
+        
     small
         text-transform: none
         color: $gray-light
@@ -21,23 +27,33 @@
         box-shadow: $box-shadow-sm
         border-radius: $border-radius
         appearance: none
-        
+        height: 42px    
         &:focus
             box-shadow: none
-.select2
+            border-radius: $border-radius $border-radius 0 0 !important
+        @media screen and (max-width: $second-breack-point) 
+            &:focus
+                border-radius: 0 0  $border-radius $border-radius !important
 
+.select2-dropdown
+    min-width: 180px
+
+.select2
+    height: 42px !important
     border: 0 solid #000
     position: unset
     box-shadow: $box-shadow-sm
     border-radius: $border-radius
     overflow-y: scroll
+    overflow-x: hidden
 
     scrollbar-width: thin
     scrollbar-color: $main-color $gray-light
     scroll-margin-right: 7px
 
     max-height: 80px
-
+    width: 100% !important
+        
     &:-webkit-scrollbar 
         height: 1px
         width: 12px
@@ -58,14 +74,28 @@
         margin-top: 5px !important
         font-size: 18px !important
         color: #000 !important
-        height: 32px !important
+        height: 42px !important
         width: auto !important
-.select2-results__option--selected
+        @media screen and (max-width: $second-breack-point) 
+            font-size: 16px !important
+
+    ul
+        li
+            background-color: $main-color !important
+            color: $white-color
+            border-radius: 10px !important
+.select2-results__option
     display: flex
     align-items: center
     background-color: #00000000 !important
-    color: 
+    color: $dark-lighter !important
 
+.select2-results__option--highlighted
+    background-color: #00000000 !important
+    border-bottom: 1px solid $main-color
+    color: $dark-lighter !important
+
+.select2-results__option--selected
     &::before
         background-image: url("../img/check.svg")
     
@@ -113,66 +143,26 @@
                 outline: none
 
 .select2-container--open
-    border-radius: 0 $border-radius $border-radius 0 !important
+    border-radius: $border-radius $border-radius 0 0 !important
 
-.respOpt
-    font-weight: 600
-    font-size: 24px
-    line-height: 29px
-    letter-spacing: 0.5px
-    color: $dark-semi-light
-    text-transform: uppercase
     @media screen and (max-width: $second-breack-point) 
-        font-size: 15px
-        line-height: 17.85px
-        font-weight: 500
+        border-radius: 0 0  $border-radius $border-radius !important
+
 
 .checkInp
     display: flex
     flex-direction: column
     align-items: start
 
-.checkWrap
-
-    border-radius: $border-radius
-    box-shadow: none
-    padding: $paddingBlock
-    width: fit-content
-    margin-bottom: 20px
-    @media screen and (max-width: $second-breack-point) 
-        margin-bottom: 15px
-        padding: 11px
-
-    input
-        position: absolute
-        z-index: -1
-        opacity: 0
-
-        &:checked+label::before
-            background-image: url("../img/check.svg")
-
+.checkInpOrder
+    
+    .checkWrap
+        box-shadow: none
+        margin-bottom: 0
+        padding: 10px 0
     input+label
-        display: inline-flex
-        align-items: center
-        user-select: none
-        &::before
-            flex-shrink: 0
-            content: ''
-            display: inline-block
-            width: 34px
-            aspect-ratio: 1
-            border: 3px solid $colorBorderCheck
-            border-radius: 10px
-            margin-right: 20px
-            background-repeat: no-repeat
-            background-position: center center
-            background-size: 68%
-
-            @media screen and (max-width: $second-breack-point) 
-                width: 17px
-                border-radius: 5px 
-                border: 1px solid $colorBorderCheck
-                margin-right: 10px
+        text-transform: none
+    
 
 .radioInp
 
@@ -259,14 +249,13 @@
         @media screen  and (max-width: $second-breack-point)
             img
                 width: 100%
-.adapt
+.adaptOrder
 
     display: grid
     grid-template-columns: repeat(4,25%)
 
     @media screen and (max-width: $second-breack-point) 
-        grid-template-columns: repeat(2,50%)
-
+        grid-template-columns: 100%
 
     label
         width: 183px
@@ -275,7 +264,35 @@
         @media screen and (max-width: $second-breack-point) 
             justify-content: end
             width: auto
-
+.select2-selection__choice
+    min-height: 25px
+    padding: calc( 5px / 2  ) 0 !important
+    padding-left: 20px !important
+    *
+        margin: calc( 5px / 2  )
+.selectInpDls
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: space-between
+    @media screen and (max-width: $second-breack-point) 
+        flex-direction: column
+    .selectWrap
+        display: flex
+        flex-direction: column
+        padding: 0
+        @media screen and (max-width: $second-breack-point) 
+            width: 100%
+        .select2
+            width: 100% !important
+            margin-top: 15px !important
+        select
+            margin-top: 15px !important
+.selectInp
+    margin-bottom: 20px
+.alerg
+    margin: 10px 0
+    width: 100% !important
 .downloadRezult
     form.order
         justify-content: space-between

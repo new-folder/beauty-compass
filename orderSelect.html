@@ -145,7 +145,7 @@
             <div class="questText">
               <p class="text-uppercase">Ник, для какого сезона вы хотите подобрать программу ухода?</p>
             </div>
-            <div class="respOpt radioInp adapt">
+            <div class="respOpt radioInp adapt adaptOrder">
               <input type="radio" name="season" id="autumn " value="autumn "><label for="autumn ">осень</label>
               <input type="radio" name="season" id="winter " value="winter "><label for="winter ">зима</label>
               <input type="radio" name="season" id="spring" value="spring"><label for="spring">весна</label>
@@ -156,7 +156,7 @@
             <div class="questText">
               <p class="text-uppercase">Взять результаты теста для подбора программы?</p>
             </div>
-            <div class="respOpt radioInp adapt">
+            <div class="respOpt radioInp adapt adaptOrder">
               <input type="radio" name="resultTest" id="yes" value="yes"><label for="yes">да</label>
               <input type="radio" name="resultTest" id="no" value="no"><label for="no">нет</label>
             </div>
@@ -165,24 +165,24 @@
             <div class="questText">
               <p class="text-uppercase">Установить параметры самостоятельно</p>
             </div>
-            <div class="respOpt checkInp">
-              <div class="selectInp d-flex justify-content-between flex-wrap">
+            <div class="respOpt checkInp checkInpOrder">
+              <div class="selectInp selectInpOrder d-flex justify-content-between flex-wrap">
                 <div class="selectWrap">
                   <small>Пол</small>
-                  <select class="form-select" placeholder="Выберите из списка" name="gender" id="gender">
-                    
+                  <select class="form-select"  name="gender" id="gender">
+                    <option selected>Выберите из списка</option>
                     <option value="male">
-                      мужчина
+                      Мужчина
                     </option>
                     <option value="female">
-                      женщина
+                      Женщина
                     </option>
                   </select>
                 </div>
                 <div class="selectWrap">
                   <small>Возраст</small>
-                  <select class="form-select" placeholder="Выберите из списка" name="age" id="age">
-                    
+                  <select class="form-select"  name="age" id="age">
+                    <option selected>Выберите из списка</option>
                     <option value="age25">
                       до 25
                     </option>
@@ -199,34 +199,31 @@
                 </div>
                 <div class="selectWrap">
                   <small>Тип кожи</small>
-                  <select class="form-select" placeholder="Выберите из списка" name="typeSens" id="typeSens">
-                    
+                  <select class="form-select"  name="typeSens" id="typeSens">
+                    <option selected>Выберите из списка</option>
                     <option value="dry">
-                      сухая
+                      Сухая
                     </option>
                     <option value="normal">
-                      нормальная
+                      Нормальная
                     </option>
                     <option value="combined">
-                      комбинированная
+                      Комбинированная
                     </option>
                     <option value="fat">
-                      жирная
+                      Жирная
                     </option>
                   </select>
                 </div>
                 <div class="selectWrap">
                   <small>Тип старения</small>
-                  <select class="form-select" placeholder="Выберите из списка" name="typeAging" id="typeAging">
-                    
+                  <select class="form-select"  name="typeAging" id="typeAging">
+                    <option selected>Выберите из списка</option>
                     <option value="tired_type">
-                      усталый тип
+                      Усталый тип
                     </option>
                     <option value="small_wrinkled">
                       Мелкоморщинистый тип
-                    </option>
-                    <option value="tired_type">
-                      усталый тип
                     </option>
                     <option value="gravity_type">
                       Гравитационный тип
@@ -238,8 +235,7 @@
                 </div>
                 <div class="selectWrap">
                   <small>Состояние кожи</small>
-                  <select class="form-select" placeholder="Выберите из списка" name="skinProp" id="skinProp" multiple>
-                    
+                  <select class="form-select"  name="skinProp" id="skinProp" multiple>
                     <option value="dehydration">
                       обезвоженность
                     </option>
@@ -262,13 +258,13 @@
                 </div>
                 <div class="selectWrap">
                   <small>Гормональный статус</small>
-                  <select class="form-select" placeholder="Выберите из списка" name="oftenPreg" id="oftenPreg">
-                    
+                  <select class="form-select"  name="oftenPreg" id="oftenPreg">
+                    <option selected>Выберите из списка</option>
                     <option value="yesPreg">
                       Беременна/кормлю грудью
                     </option>
                     <option value="noPreg">
-                      не беременна/не кормлю грудью
+                      Не беременна/не кормлю грудью
                     </option>
                   </select>
                 </div>
@@ -277,10 +273,10 @@
                 <input type="checkbox" name="skinProp" value="dehydration" id="dehydration"><label for="dehydration">Чувствительная кожа</label>
               </div>
               <div class="checkWrap">
-                <input type="checkbox" name="skinProp" value="dehydration" id="dehydration"><label for="dehydration">Подобрать упрощенную программу для тех, кто не любит заморачиваться</label>
+                <input type="checkbox" name="skinProp" value="simple" id="simple"><label for="simple">Подобрать упрощенную программу для тех, кто не любит заморачиваться</label>
               </div>
               <div class="checkWrap">
-                <input type="checkbox" name="skinProp" value="dehydration" id="dehydration"><label for="dehydration">Подобрать развернутую программу для продвинутых любителей</label>
+                <input type="checkbox" name="skinProp" value="hard" id="hard"><label for="hard">Подобрать развернутую программу для продвинутых любителей</label>
               </div>
             </div>
           </div>
@@ -289,10 +285,16 @@
               <p class="text-uppercase">Дополнительно</p>
             </div>
             <div class="respOpt checkInp">
-              <div class="selectInp">
+              <label for="nameFile" class="alerg selectWrap">
+                <small>
+                  Аллергия на ингредиенты (название в INCI)
+                </small>
+                <input class="form-control" type="text" name="nameFile" id="nameFile">
+              </label>
+              <div class="selectInp selectInpDls">
                 <div class="selectWrap">
                   <small>Ценовая категория</small>
-                  <select class="form-select" placeholder="Выберите из списка" name="price" id="price" multiple>
+                  <select class="form-select"  name="price" id="price" multiple>
                     
                     <option value="budget">
                       Бюджетная
@@ -307,7 +309,7 @@
                 </div>
                 <div class="selectWrap">
                   <small>Категория косметики</small>
-                  <select class="form-select" placeholder="Выберите из списка" name="category" id="category">
+                  <select class="form-select"  name="category" id="category">
                     <option value="pharmacy">
                       Аптечная
                     </option>
@@ -336,12 +338,12 @@
                 </div>
                 <div class="selectWrap">
                   <small>Исключить активы</small>
-                  <select class="form-select" placeholder="Выберите из списка" name="activeIgnore" id="activeIgnore">
-                    <option value="">
-                      какой-то
+                  <select class="form-select"  name="activeIgnore" id="activeIgnore" multiple>
+                    <option value="england">
+                      Подстановка из БД
                     </option>
-                    <option value="">
-                      какой-то
+                    <option value="england">
+                      Подстановка из БД
                     </option>
                   </select>
                 </div>
