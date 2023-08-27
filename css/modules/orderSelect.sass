@@ -73,7 +73,7 @@
         margin-top: 5px !important
         font-size: 18px !important
         color: #000 !important
-        height: 42px !important
+        height: 30px !important
         width: auto !important
         @media screen and (max-width: $second-breack-point) 
             font-size: 16px !important
@@ -83,15 +83,24 @@
             background-color: $main-color !important
             color: $white-color
             border-radius: 10px !important
-            margin-top: 7px !important
+            margin-top: 3px !important
+            overflow: hidden
             @media screen and (max-width: $second-breack-point) 
                 height: 32px
                 padding: 8px 20px !important
             button
-                padding: 5px 4px !important
+                opacity: 1
                 color: $white-color !important
+                transition: 0.3s
+                height: 100%
+                margin: 0
+                @media screen and (max-width: $second-breack-point) 
+                    padding: 5px 4px !important
                 &:hover
-                    background-color: #00000000 !important
+                    background-color: $pre-color !important
+                    background-size: 200%
+                    color: $white-color !important
+                    opacity: 0.7
 
 .select2-results__option
     display: flex
@@ -325,11 +334,11 @@
     justify-content: space-between
     height: 100px
     .inputAnswer
-        width: 100%
+        width: 30%
     .selectWrap
         width: 70%
         margin: 0
-        margin-top: -18px
+        margin-top: -30px
         display: none 
         @media screen and (min-width: $second-breack-point)
             display: none !important
