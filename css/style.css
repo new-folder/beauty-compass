@@ -2635,16 +2635,43 @@ body {
   }
 }
 
-.recomend {
-  margin-top: 20px;
-  margin-bottom: 40px;
+.customMain {
+  max-width: 100% !important;
+  padding: 0;
+}
+@media screen and (max-width: 768px) {
+  .customMain .brand__title + .recomendCust {
+    max-width: 360px;
+    padding: 0 10px;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .customMain .brand__title + .recomendCust {
+    max-width: 720px;
+    margin: 0 auto;
+  }
 }
 
+.recomendProg {
+  margin-top: 20px !important;
+  margin-bottom: 40px !important;
+}
+@media screen and (max-width: 1400px) {
+  .recomendProg {
+    margin-top: 10px !important;
+    margin-bottom: 20px !important;
+  }
+}
+
+.wrapRec {
+  -webkit-box-shadow: 0px 4px 20px 0 rgba(14, 14, 14, 0.07);
+          box-shadow: 0px 4px 20px 0 rgba(14, 14, 14, 0.07);
+  padding: 10px 0;
+}
 .recomendProduct {
   position: relativ;
   height: auto;
-  -webkit-box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
-          box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
 }
 @media screen and (max-width: 1400px) {
   .recomendProduct {
@@ -2695,6 +2722,9 @@ body {
   }
 }
 
+.saveRezult {
+  margin-top: 20px;
+}
 .saveRezult form label {
   width: 60%;
 }
