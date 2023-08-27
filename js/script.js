@@ -291,7 +291,6 @@ function imgSetAttributes() {
     }
     function imgProductSetAttributes() {  
         let productPics = document.querySelectorAll('.carousel--product .carousel-item')    
-        console.log('productPics ', productPics)  
         for (let i=0; i < productPics.length; i++) {
             if(productPics[i].classList.contains('active')) {
                 productPics[i].querySelector('img').setAttribute('data-bs-toggle', 'modal')
@@ -310,17 +309,7 @@ function imgSetAttributes() {
 
 imgSetAttributes()
 
-// add img multiple 
-function upploadImgMultyple() {
-    if (document.querySelector('#img-multiple')) {
-        let fileInput = document.querySelector('#img-multiple')
-        let imageContainer = document.querySelector('#leave-feed__img-list')
 
-        function preview() {
-            imageContainer.innerHTML = "";
-        }
-    }
-}
 
 // splide settings
 
