@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beauty Compass</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link href="css/select2.min.css" rel="stylesheet" />
+    <script src="js/jq.js"></script>
+    <script src="js/select2.js" defer></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-xxl top-bar">
@@ -137,10 +140,221 @@
         </div>
       </section>
       <section class="container container--bc">
-        
+        <form action="">
+          <div class="quest-b">
+            <div class="questText">
+              <p class="text-uppercase">Ник, для какого сезона вы хотите подобрать программу ухода?</p>
+              <small>
+                Выбор сезона
+              </small>
+            </div>
+            <div class="respOpt radioInp adapt">
+              <input type="radio" name="season" id="autumn " value="autumn "><label for="autumn ">осень</label>
+              <input type="radio" name="season" id="winter " value="winter "><label for="winter ">зима</label>
+              <input type="radio" name="season" id="spring" value="spring"><label for="spring">весна</label>
+              <input type="radio" name="season" id="summer" value="summer"><label for="summer">лето</label>
+            </div>
+          </div>
+          <div class="quest-b">
+            <div class="questText">
+              <p class="text-uppercase">Взять результаты теста для подбора программы?</p>
+            </div>
+            <div class="respOpt radioInp adapt">
+              <input type="radio" name="resultTest" id="yes" value="yes"><label for="yes">да</label>
+              <input type="radio" name="resultTest" id="no" value="no"><label for="no">нет</label>
+            </div>
+          </div>
+          <div class="quest-b">
+            <div class="questText">
+              <p class="text-uppercase">Установить параметры самостоятельно</p>
+            </div>
+            <div class="respOpt checkInp">
+              <div class="selectInp d-flex justify-content-between flex-wrap">
+                <div class="selectWrap">
+                  <small>Пол</small>
+                  <select class="form-select" placeholder="Выберите из списка" name="gender" id="gender">
+                    
+                    <option value="male">
+                      мужчина
+                    </option>
+                    <option value="female">
+                      женщина
+                    </option>
+                  </select>
+                </div>
+                <div class="selectWrap">
+                  <small>Возраст</small>
+                  <select class="form-select" placeholder="Выберите из списка" name="age" id="age">
+                    
+                    <option value="age25">
+                      до 25
+                    </option>
+                    <option value="age30">
+                      25-35
+                    </option>
+                    <option value="age40">
+                      35-45
+                    </option>
+                    <option value="age45">
+                      больше 45
+                    </option>
+                  </select>
+                </div>
+                <div class="selectWrap">
+                  <small>Тип кожи</small>
+                  <select class="form-select" placeholder="Выберите из списка" name="typeSens" id="typeSens">
+                    
+                    <option value="dry">
+                      сухая
+                    </option>
+                    <option value="normal">
+                      нормальная
+                    </option>
+                    <option value="combined">
+                      комбинированная
+                    </option>
+                    <option value="fat">
+                      жирная
+                    </option>
+                  </select>
+                </div>
+                <div class="selectWrap">
+                  <small>Тип старения</small>
+                  <select class="form-select" placeholder="Выберите из списка" name="typeAging" id="typeAging">
+                    
+                    <option value="tired_type">
+                      усталый тип
+                    </option>
+                    <option value="small_wrinkled">
+                      Мелкоморщинистый тип
+                    </option>
+                    <option value="tired_type">
+                      усталый тип
+                    </option>
+                    <option value="gravity_type">
+                      Гравитационный тип
+                    </option>
+                    <option value="muscular_type">
+                      Мускульный тип
+                    </option>
+                  </select>
+                </div>
+                <div class="selectWrap">
+                  <small>Состояние кожи</small>
+                  <select class="form-select" placeholder="Выберите из списка" name="skinProp" id="skinProp" multiple>
+                    
+                    <option value="dehydration">
+                      обезвоженность
+                    </option>
+                    <option value="pigmented">
+                      пигментные пятна
+                    </option>
+                    <option value="uneven">
+                      неровный тон и текстура кожи
+                    </option>
+                    <option value="red_irritat">
+                      покраснения и раздражения
+                    </option>
+                    <option value="inflamRash">
+                      воспаления и высыпания
+                    </option>
+                    <option value="enlar_black_dots">
+                      расширенные поры и черные точки
+                    </option>
+                  </select>
+                </div>
+                <div class="selectWrap">
+                  <small>Гормональный статус</small>
+                  <select class="form-select" placeholder="Выберите из списка" name="oftenPreg" id="oftenPreg">
+                    
+                    <option value="yesPreg">
+                      Беременна/кормлю грудью
+                    </option>
+                    <option value="noPreg">
+                      не беременна/не кормлю грудью
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="checkWrap">
+                <input type="checkbox" name="skinProp" value="dehydration" id="dehydration"><label for="dehydration">Чувствительная кожа</label>
+              </div>
+              <div class="checkWrap">
+                <input type="checkbox" name="skinProp" value="dehydration" id="dehydration"><label for="dehydration">Подобрать упрощенную программу для тех, кто не любит заморачиваться</label>
+              </div>
+              <div class="checkWrap">
+                <input type="checkbox" name="skinProp" value="dehydration" id="dehydration"><label for="dehydration">Подобрать развернутую программу для продвинутых любителей</label>
+              </div>
+            </div>
+          </div>
+          <div class="quest-b">
+            <div class="questText">
+              <p class="text-uppercase">Дополнительно</p>
+            </div>
+            <div class="respOpt checkInp">
+              <div class="selectInp">
+                <div class="selectWrap">
+                  <small>Ценовая категория</small>
+                  <select class="form-select" placeholder="Выберите из списка" name="price" id="price" multiple>
+                    
+                    <option value="budget">
+                      Бюджетная
+                    </option>
+                    <option value="middl">
+                      Мидл
+                    </option>
+                    <option value="prem">
+                      Премиум
+                    </option>
+                  </select>
+                </div>
+                <div class="selectWrap">
+                  <small>Категория косметики</small>
+                  <select class="form-select" placeholder="Выберите из списка" name="category" id="category">
+                    <option value="pharmacy">
+                      Аптечная
+                    </option>
+                    <option value="professional">
+                      Профессиональная
+                    </option>
+                    <option value="natural">
+                      Натуральная
+                    </option>
+                    <option value="lux">
+                      Люкс
+                    </option>
+                    <option value="asian">
+                      Азиатская
+                    </option>
+                    <option value="russian">
+                      Российская
+                    </option>
+                    <option value="belarusian">
+                      Белорусская
+                    </option>
+                    <option value="european">
+                      Европейская
+                    </option>
+                  </select>
+                </div>
+                <div class="selectWrap">
+                  <small>Исключить активы</small>
+                  <select class="form-select" placeholder="Выберите из списка" name="activeIgnore" id="activeIgnore">
+                    <option value="">
+                      какой-то
+                    </option>
+                    <option value="">
+                      какой-то
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>            
+          </div>
+        </form>
       </section>
       <section class="downloadRezult container container--bc">
-        <form action="">
+        <form class="order" action="">
           <button id="paySelect" class="text-uppercase"><p>оплатить подбор</p></button>
           <button id="selectProgram" class="text-uppercase"><p>подобрать программу</p></button>
         </form>
@@ -206,6 +420,6 @@
       </div>
     </footer>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/profile-info.js"></script>
+    <script src="js/orderSelect.js"></script>
   </body>
 </html>
