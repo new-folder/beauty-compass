@@ -1,0 +1,53 @@
+@import vars
+.recomend
+    margin-top: 20px
+    margin-bottom: 40px
+.recomendProduct
+    position: relativ
+    height: auto
+    @media screen and (max-width: $first-breack-point)
+        overflow-y: scroll
+    .product
+        box-shadow: $box-shadow-sm
+        a
+            text-decoration: none
+        margin-right: calc( 27.5% / 4 )
+        &:last-child
+            margin-right:0
+        width: 190px
+        @media screen and (max-width: $second-breack-point)
+            width: 140px
+        
+        .wrapImg
+            img
+                height: 100%
+                width: 100%
+                position: relative
+                top: 50%
+            border-radius: $border-radius
+            
+            width: 100%
+            overflow: hidden
+            box-shadow: $box-shadow-sm
+        .rating
+            margin: 10px
+        p   
+            margin: 0 10px
+            letter-spacing: 0.5px
+            @media screen and (max-width: $first-breack-point)
+                font-size: 10px
+                line-height: 12px
+                letter-spacing: 0.5px
+                color: $main-color
+.saveRezult
+    form
+        label
+            width: 60%
+            @media screen and (max-width: $second-breack-point)
+                width: 100%
+
+
+
+
+
+

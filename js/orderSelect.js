@@ -27,7 +27,7 @@ $(document).ready(function() {
     $('#selectProgram').on('click',function(event){
         event.preventDefault();
         
-        location.replace("orderSelect.html");
+        location.replace("programm.html");
         
     });
 

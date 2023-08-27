@@ -2634,4 +2634,73 @@ body {
     display: none !important;
   }
 }
+
+.recomend {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.recomendProduct {
+  position: relativ;
+  height: auto;
+}
+@media screen and (max-width: 1400px) {
+  .recomendProduct {
+    overflow-y: scroll;
+  }
+}
+.recomendProduct .product {
+  -webkit-box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
+          box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
+  margin-right: 6.875%;
+  width: 190px;
+}
+.recomendProduct .product a {
+  text-decoration: none;
+}
+.recomendProduct .product:last-child {
+  margin-right: 0;
+}
+@media screen and (max-width: 768px) {
+  .recomendProduct .product {
+    width: 140px;
+  }
+}
+.recomendProduct .product .wrapImg {
+  border-radius: 15px;
+  width: 100%;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
+          box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
+}
+.recomendProduct .product .wrapImg img {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: 50%;
+}
+.recomendProduct .product .rating {
+  margin: 10px;
+}
+.recomendProduct .product p {
+  margin: 0 10px;
+  letter-spacing: 0.5px;
+}
+@media screen and (max-width: 1400px) {
+  .recomendProduct .product p {
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0.5px;
+    color: #1560BD;
+  }
+}
+
+.saveRezult form label {
+  width: 60%;
+}
+@media screen and (max-width: 768px) {
+  .saveRezult form label {
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=style.css.map */
