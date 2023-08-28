@@ -1,6 +1,29 @@
 .profile
   display: grid
 
+  &__image-file
+    position: absolute
+    &_box
+      position: relative
+      width: 100%
+      height: 100%
+      border-radius: 15px
+      overflow: hidden
+    &_token
+      position: absolute
+      top: 50%
+      left: 50%
+      width: 54px
+      transform: translate(-50%, -50%)
+    &_preview
+      transform: translate(-50%, -50%)
+      top: 50%
+      left: 50%
+      width: 100%
+      //height: 100%
+
+
+
   &__brand
     grid-auto-columns: 114px auto auto
     grid-column-gap: 11px
@@ -86,6 +109,7 @@
         position: relative
         width: 114px
         height: 114px
+
         img
           width: 54px
           height: auto
@@ -146,9 +170,9 @@
           right: auto
           width: 440px
           padding: 14px 20px 10px
-      label
+      &_label
         top: -40px
-      img
+      &_token
         width: 54px
         height: auto
       svg
