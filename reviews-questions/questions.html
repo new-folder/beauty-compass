@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Страница производителя</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <title>Вопросы</title>
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
-  <body>
+  <body class="">
     <nav class="navbar navbar-expand-xxl top-bar">
       <div
         class="container justify-content-start position-relative p-xxl-0 container--header"
@@ -24,7 +24,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand col-1 d-xxl-none top-bar__short-logo" href="#"
-          ><img src="/img/short-logo.svg" alt=""
+          ><img src="../img/short-logo.svg" alt=""
         /></a>
         <div
           class="collapse navbar-collapse justify-content-center top-bar__collapse"
@@ -33,9 +33,8 @@
           <a
             class="navbar-brand col-11 col-xxl-4 offset-md-1 top-bar__logo"
             href="#"
-            ><img src="/img/logo.svg" alt=""
+            ><img src="../img/logo.svg" alt=""
           /></a>
-
           <form class="d-flex col-6 me-auto search-form">
             <input
               class="form-control me-2 search-form__input"
@@ -45,10 +44,9 @@
             />
             <button class="btn search-form__submit" type="submit"></button>
           </form>
-
           <ul class="navbar-nav col-12 top-bar__list">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">О нас</a>
+              <a class="nav-link active" aria-current="page" href="#">О нас</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Подбор косметики</a>
@@ -57,7 +55,7 @@
               <a class="nav-link" href="#"
                 >Обзоры авторов
                 <img
-                  src="/img/logo-micro.svg"
+                  src="../img/logo-micro.svg"
                   class="align-baseline px-1"
                   alt=""
               /></a>
@@ -75,7 +73,6 @@
               <a class="nav-link" href="#">Беседка</a>
             </li>
           </ul>
-
           <div class="row justify-content-center my-3 d-flex d-xxl-none">
             <div class="col-3">
               <a
@@ -108,225 +105,286 @@
             data-bs-toggle="modal"
             href="#headerAutorisation"
             role="button"
-            ><img src="/img/login.svg" alt=""
+            ><img src="../img/login.svg" alt=""
           /></a>
           <a
             class="top-bar__link"
             data-bs-toggle="modal"
             href="#headerFavorites"
             role="button"
-            ><img src="/img/favorites.svg" alt=""
+            ><img src="../img/favorites.svg" alt=""
           /></a>
         </div>
       </div>
     </nav>
+
     <main>
+      <section class="questions">
+        <div class="container container--bc questions__sticker">
+          <div class="row justify-content-center mb-4">
+            <a
+              href=""
+              class="col-12 col-xxl-10 mb-2 mb-md-4 text-center title--h1 questions__heading-link--h1-link"
+            >
+              Icon Skin Stop Acne Сыворотка Multi-Acid Serum
+            </a>
+            <div class="col-12">
+              <a
+                href="#"
+                class="questions__heading-link title--sub_blue d-flex justify-content-center align-items-center text-center"
+              >
+                Мультикислотная сыворотка от акне
+              </a>
+            </div>
+          </div>
+          <div class="questions__body offset-xxl-1 col-xxl-10">
+            <button
+              id="question-form-btn"
+              class="input--wrapper questions__form-open-btn mb-3"
+              type="button"
+            >
+              Задать вопрос
+            </button>
+            <form id="question-form" class="questions__form mb-4" hidden>
+              <div class="textarea--wrapper position-relative col-12 mb-2">
+                <textarea
+                  id="question-input"
+                  class="textarea--regular w-100 h-100 border-0"
+                  placeholder="Задайте вопрос"
+                  maxlength="500"
+                  minlength="10"
+                  rows="5"
+                  required
+                ></textarea>
+                <div id="char-count" class="textarea--char-count">0/500</div>
+              </div>
+              <button
+                type="button"
+                data-bs-toggle="modal"
+                href="#questionApply"
+                class="btn btn--base"
+              >
+                Задать вопрос
+              </button>
+            </form>
+            <h3 class="title--h4 mb-4">Вопросы пользователей (23)</h3>
+            <div class="feed d-flex flex-column mb-5">
+              <div class="feed__row">
+                <div class="feed__user">
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 221.png" alt="avatar" />
+                  </a>
+                  <div class="feed__info">
+                    <a href="#" class="feed__name">Дарья С.</a>
+                    <div class="feed__date">22.08.2022</div>
+                  </div>
+                </div>
+                <p class="feed__text mb-4">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea...Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                  ea?
+                </p>
 
-        <section class="series">
-            <div class="container container--bc series__sticker">
-                <div class="row justify-content-center mb-4">
-                    <h1 href="" class="col-12 col-xxl-10 mb-2 mb-md-4 text-center title--h1 text-uppercase">Серия</h1>
-                    <div class="col-12 col-xxl-10 d-flex justify-content-center series__logo">
-                        <img src="../img/Icon Skin.png" alt="">
-                    </div>
+                <div class="feed__user">
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 222.png" alt="avatar" />
+                  </a>
+                  <div class="feed__info">
+                    <a href="#" class="feed__name">НАЗВАНИЕ КОМПАНИИ</a>
+                    <div class="feed__date">25.08.2022</div>
+                  </div>
                 </div>
-                <div class="row justify-content-center mb-2  mb-md-4">
-                    <div class="col-12 col-xxl-10 title--sub">
-                        Название серии
-                    </div>
+                <p class="feed__text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                </p>
+              </div>
+              <div class="feed__row">
+                <div class="feed__user">
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 221.png" alt="avatar" />
+                  </a>
+                  <div class="feed__info">
+                    <a href="#" class="feed__name">Дарья С.</a>
+                    <div class="feed__date">22.08.2022</div>
+                  </div>
                 </div>
-                <div class="row justify-content-center mb-3 mb-xxl-4">
-                    <div class="col-12 col-xxl-10 information">
-                        <p>Краткое описание. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br>
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea...</p>
-                    </div>
-                </div>
-                <div class="row  justify-content-center">
-                    <div class="col-12 col-xxl-10 mb-2 mb-xxl-4 tag-links">
-                        <a href="" class="tag">Название тега</a>
-                        <a href="" class="tag">Тег</a>
-                        <a href="" class="tag">Название тега</a>
-                        <a href="" class="tag">Ещё название тега</a>
-                        <a href="" class="tag">Название тега</a>
-                        <a href="" class="tag">Ещё название тега</a>
-                        <a href="" class="tag">Тег</a>
-                        <a href="" class="tag">Ещё название тега</a>
-                        <a href="" class="tag">Название тега</a>
-                        <a href="" class="tag">Ещё название тега</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="slider">
-            <div class="container container--bc">                
-                <div class="row justify-content-center">
-                    <div class="col-12 col-xxl-10">
-                        <div id="carouselProducer" class="carousel  carousel--base slide b-carousel carousel-fade" data-bs-ride="carousel">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselProducer" data-bs-slide-to="0" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselProducer" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselProducer" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                <button type="button" data-bs-target="#carouselProducer" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                                <button type="button" data-bs-target="#carouselProducer" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                            </div>
-                            <div class="carousel-inner">
-                                <div class="carousel-item">
-                                    <img src="/img/image 198.png" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/img/image 199.png" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/img/image 198.png" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/img/image 199.png" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/img/image 198.png" class="d-block w-100" alt="...">
-                                </div>
-                            </div>
-                        </div>
+                <p class="feed__text mb-4">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea...Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                  ea?
+                </p>
 
-                    </div>
+                <div class="feed__user">
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 222.png" alt="avatar" />
+                  </a>
+                  <div class="feed__info">
+                    <a href="#" class="feed__name">НАЗВАНИЕ КОМПАНИИ</a>
+                    <div class="feed__date">25.08.2022</div>
+                  </div>
                 </div>
-            </div>
-        </section>
-        <section class="products">
-            <div class="container container--bc">
-                <div class="catalog mb-3 mb-md-4">
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-xxl-10">
-                            <div class="row catalog__list catalog__list--full">
-                                <a href="" class="col-6 col-md-2 catalog__item">
-                                    <button class="favorite favorite--product"></button> 
-                                    <img src="../img/image 191.png" alt="" class="catalog__img">
-                                    <div class="catalog__rating rating">
-                                        <div class="rating__body">
-                                            <div class="rating__active" style="width: 70%;"></div>
-                                        </div>
-                                    </div>
-                                    <p>Мультиактивная сыворотка</p>
-                                </a>
-                                <a href="" class="col-6 col-md-2 catalog__item">
-                                    <button class="favorite favorite--product"></button>
-                                    <img src="../img/image 192.png" alt="" class="catalog__img">
-                                    <div class="catalog__rating rating">
-                                        <div class="rating__body">
-                                            <div class="rating__active" style="width: 20%;"></div>
-                                        </div>
-                                    </div>
-                                    <p>Мультиактивная сыворотка</p>
-                                </a>
-                                <a href="" class="col-6 col-md-2 catalog__item">
-                                    <button class="favorite favorite--product"></button>
-                                    <img src="../img/image 191.png" alt="" class="catalog__img">
-                                    <div class="catalog__rating rating">
-                                        <div class="rating__body">
-                                            <div class="rating__active" style="width: 25%;"></div>
-                                        </div>
-                                    </div>
-                                    <p>Мультиактивная сыворотка</p>
-                                </a>
-                                <a href="" class="col-6 col-md-2 catalog__item">
-                                    <button class="favorite favorite--product"></button>
-                                    <img src="../img/image 192.png" alt="" class="catalog__img">
-                                    <div class="catalog__rating rating">
-                                        <div class="rating__body">
-                                            <div class="rating__active" style="width: 100%;"></div>
-                                        </div>
-                                    </div>
-                                    <p>Мультиактивная сыворотка</p>
-                                </a>
-                                <a href="" class="col-6 col-md-2 catalog__item">
-                                    <button class="favorite favorite--product"></button>
-                                    <img src="../img/image 191.png" alt="" class="catalog__img">
-                                    <div class="catalog__rating rating">
-                                        <div class="rating__body">
-                                            <div class="rating__active" style="width: 70%;"></div>
-                                        </div>
-                                    </div>
-                                    <p>Мультиактивная сыворотка</p>
-                                </a>
-                                <a href="" class="col-6 col-md-2 catalog__item">
-                                    <button class="favorite favorite--product"></button>
-                                    <img src="../img/image 192.png" alt="" class="catalog__img">
-                                    <div class="catalog__rating rating">
-                                        <div class="rating__body">
-                                            <div class="rating__active" style="width: 70%;"></div>
-                                        </div>
-                                    </div>
-                                    <p>Мультиактивная сыворотка</p>
-                                </a>
-                                <a href="" class="col-6 col-md-2 catalog__item">
-                                    <button class="favorite favorite--product"></button>
-                                    <img src="../img/image 191.png" alt="" class="catalog__img">
-                                    <div class="catalog__rating rating">
-                                        <div class="rating__body">
-                                            <div class="rating__active" style="width: 70%;"></div>
-                                        </div>
-                                    </div>
-                                    <p>Мультиактивная сыворотка</p>
-                                </a>
-                                <a href="" class="col-6 col-md-2 catalog__item">
-                                    <button class="favorite favorite--product"></button>
-                                    <img src="../img/image 192.png" alt="" class="catalog__img">
-                                    <div class="catalog__rating rating">
-                                        <div class="rating__body">
-                                            <div class="rating__active" style="width: 70%;"></div>
-                                        </div>
-                                    </div>
-                                    <p>Мультиактивная сыворотка</p>
-                                </a>
-                                <a href="" class="col-6 col-md-2 catalog__item">
-                                    <button class="favorite favorite--product"></button>
-                                    <img src="../img/image 191.png" alt="" class="catalog__img">
-                                    <div class="catalog__rating rating">
-                                        <div class="rating__body">
-                                            <div class="rating__active" style="width: 70%;"></div>
-                                        </div>
-                                    </div>
-                                    <p>Мультиактивная сыворотка</p>
-                                </a>
-                                <a href="" class="col-6 col-md-2 catalog__item">
-                                    <button class="favorite favorite--product"></button>
-                                    <img src="../img/image 192.png" alt="" class="catalog__img">
-                                    <div class="catalog__rating rating">
-                                        <div class="rating__body">
-                                            <div class="rating__active" style="width: 70%;"></div>
-                                        </div>
-                                    </div>
-                                    <p>Мультиактивная сыворотка</p>
-                                </a>
-                                <a href="" class="col-6 col-md-2 catalog__item">
-                                    <button class="favorite favorite--product"></button>
-                                    <img src="../img/image 191.png" alt="" class="catalog__img">
-                                    <div class="catalog__rating rating">
-                                        <div class="rating__body">
-                                            <div class="rating__active" style="width: 70%;"></div>
-                                        </div>
-                                    </div>
-                                    <p>Мультиактивная сыворотка</p>
-                                </a>
-                                <a href="" class="col-6 col-md-2 catalog__item">
-                                    <button class="favorite favorite--product"></button>
-                                    <img src="../img/image 192.png" alt="" class="catalog__img">
-                                    <div class="catalog__rating rating">
-                                        <div class="rating__body">
-                                            <div class="rating__active" style="width: 70%;"></div>
-                                        </div>
-                                    </div>
-                                    <p>Мультиактивная сыворотка</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                <p class="feed__text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                </p>
+              </div>
+              <div class="feed__row">
+                <div class="feed__user">
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 221.png" alt="avatar" />
+                  </a>
+                  <div class="feed__info">
+                    <a href="#" class="feed__name">Дарья С.</a>
+                    <div class="feed__date">22.08.2022</div>
+                  </div>
                 </div>
+                <p class="feed__text mb-4">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea...Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                  ea?
+                </p>
+
+                <div class="feed__user">
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 222.png" alt="avatar" />
+                  </a>
+                  <div class="feed__info">
+                    <a href="#" class="feed__name">НАЗВАНИЕ КОМПАНИИ</a>
+                    <div class="feed__date">25.08.2022</div>
+                  </div>
+                </div>
+                <p class="feed__text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                </p>
+              </div>
+              <div class="feed__row">
+                <div class="feed__user">
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 221.png" alt="avatar" />
+                  </a>
+                  <div class="feed__info">
+                    <a href="#" class="feed__name">Дарья С.</a>
+                    <div class="feed__date">22.08.2022</div>
+                  </div>
+                </div>
+                <p class="feed__text mb-4">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea...Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                  ea?
+                </p>
+
+                <div class="feed__user">
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 222.png" alt="avatar" />
+                  </a>
+                  <div class="feed__info">
+                    <a href="#" class="feed__name">НАЗВАНИЕ КОМПАНИИ</a>
+                    <div class="feed__date">25.08.2022</div>
+                  </div>
+                </div>
+                <p class="feed__text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                </p>
+              </div>
+              <div class="feed__row">
+                <div class="feed__user">
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 221.png" alt="avatar" />
+                  </a>
+                  <div class="feed__info">
+                    <a href="#" class="feed__name">Дарья С.</a>
+                    <div class="feed__date">22.08.2022</div>
+                  </div>
+                </div>
+                <p class="feed__text mb-4">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea...Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                  ea?
+                </p>
+
+                <div class="feed__user">
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 222.png" alt="avatar" />
+                  </a>
+                  <div class="feed__info">
+                    <a href="#" class="feed__name">НАЗВАНИЕ КОМПАНИИ</a>
+                    <div class="feed__date">25.08.2022</div>
+                  </div>
+                </div>
+                <p class="feed__text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                </p>
+              </div>
             </div>
-        </section>
+            <div class="d-flex justify-content-center">
+              <ul class="pagination">
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">〈</span>
+                  </a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">〉</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer class="footer py-5">
+    <footer class="footer py-5 mt-auto">
       <div class="container footer__container">
         <div class="row justify-content-center footer__nav">
           <div class="col-12 col-md-4 col-xxl-3">
@@ -356,7 +414,7 @@
         </div>
         <div class="row justify-content-center order-1 order-xxl-2">
           <div class="col-10 col-xxl-12 text-center footer__logo">
-            <img src="/img/logo.svg" alt="" />
+            <img src="../img/logo.svg" alt="" />
           </div>
         </div>
         <div class="row justify-content-center order-3 order-xxl-3">
@@ -401,7 +459,7 @@
               </h5>
             </div>
             <div class="modal-body">
-              <form class="auth__form needs-validation" novalidate>
+              <form class="needs-validation auth__form" novalidate>
                 <div class="row mb-2 d-flex auth__group">
                   <label
                     for="headerAuthEmail"
@@ -410,6 +468,7 @@
                   >
                   <input
                     type="email"
+                    name="mail"
                     class="form-control order-2"
                     id="headerAuthEmail"
                     required
@@ -429,6 +488,7 @@
                   >
                   <input
                     type="password"
+                    name="pass"
                     class="form-control order-2"
                     id="authInputPassword"
                     required
@@ -480,6 +540,7 @@
         </div>
       </div>
     </div>
+
     <div
       class="modal fade"
       id="headerRegistration"
@@ -715,7 +776,38 @@
       </div>
     </div>
 
-    <script src="/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/profile-info.js"></script>
+    <div
+      class="modal fade"
+      id="questionApply"
+      aria-hidden="true"
+      aria-labelledby="questionApplyLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="container">
+          <div class="modal-content auth__content">
+            <div class="modal-header py-2 px-0">
+              <h5
+                class="modal-title text-center auth__title"
+                id="questionToggleLabel"
+              >
+                Ваш вопрос принят в обработку, уведомление об ответе появится в
+                Личном кабинете
+              </h5>
+            </div>
+            <div class="modal-body">
+              <div class="row d-flex justify-content-around">
+                <form class="w-100">
+                  <button type="submit" class="btn btn--base w-100">ok</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/questions.js"></script>
   </body>
 </html>
