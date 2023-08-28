@@ -20,14 +20,17 @@
 .wrapRec
     box-shadow: $box-shadow-regular
     padding: 10px 0
-    &:last-child
-        // padding-bottom: 0 
+
 .recomendProduct
     position: relativ
     height: auto
 
     @media screen and (max-width: $first-breack-point)
         overflow-y: scroll
+        -ms-overflow-style: none
+        scrollbar-width: none
+        &::-webkit-scrollbar
+            display: none
     .product
         a
             text-decoration: none

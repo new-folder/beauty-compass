@@ -2199,20 +2199,18 @@ body {
   border-radius: 15px;
   overflow-y: scroll;
   overflow-x: hidden;
-  scrollbar-width: thin;
-  scrollbar-color: #1560BD #D9D9D9;
-  scroll-margin-right: 7px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   max-height: 80px;
   width: 100% !important;
+}
+.select2::-webkit-scrollbar {
+  display: none;
 }
 @media screen and (max-width: 576px) {
   .select2 {
     max-width: 100%;
   }
-}
-.select2:-webkit-scrollbar {
-  height: 1px;
-  width: 12px;
 }
 .select2:-webkit-scrollbar-track {
   background: #D9D9D9;
@@ -2669,6 +2667,7 @@ body {
           box-shadow: 0px 4px 20px 0 rgba(14, 14, 14, 0.07);
   padding: 10px 0;
 }
+
 .recomendProduct {
   position: relativ;
   height: auto;
@@ -2676,6 +2675,11 @@ body {
 @media screen and (max-width: 1400px) {
   .recomendProduct {
     overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .recomendProduct::-webkit-scrollbar {
+    display: none;
   }
 }
 .recomendProduct .product {

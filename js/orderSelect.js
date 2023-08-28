@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('.choseSave .selectWrap').css('display','none')
-    $('.choseSave').css('justify-content','end')
+    $('.choseSave').css('justify-content','start')
 
     $('#activeIgnore').select2({
         closeOnSelect: false,
