@@ -1,8 +1,36 @@
 @import "vars.sass"
+
+html
+    height: 100dvh
+
 body
+    height: 100%
     font-family: 'Gilroy', sans-serif
     font-style: normal
     background: $sub-color
+
+main
+    @media screen and (max-width: $first-breack-point)
+        max-width: 720px
+        margin: 0 auto
+    @media screen and (max-width: $second-breack-point)
+        max-width: 360px
+        padding: 0 10px
+
+a
+    text-decoration: none
+    margin-bottom: 0
+
+p
+    margin-bottom: 0
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6
+    margin-top: 0
+    margin-bottom: 0
+
+textarea
+    resize: none
+
 .container
     &--header
         @media screen and (max-width: $first-breack-point)
@@ -19,6 +47,97 @@ body
             max-width: 360px
             padding-right: var(--bs-gutter-x,.75rem)
             padding-left: var(--bs-gutter-x,.75rem)
+
+// === Text ===
+
+.page-title, .text
+    margin-top: 15px
+    margin-bottom: 27px
+    @media screen and (min-width: $first-breack-point)
+        row-gap: 35px
+        margin-top: 30px
+        margin-bottom: 58px
+
+.question
+    width: 15px
+    height: 15px
+    @media screen and (min-width: $first-breack-point)
+        width: 30px
+        height: 30px
+    &__cloud
+        position: absolute
+        background: $sub-color
+        color: $dark-lighter
+        box-shadow: $box-shadow-regular
+        border-radius: 10px
+        font-size: 10px
+        font-style: normal
+        font-weight: 600
+        line-height: normal
+        visibility: hidden
+        transition: 0.3s
+        opacity: 0
+        z-index: 100
+        @media screen and (min-width: $first-breack-point)
+            font-size: 15px
+        &.open
+            visibility: visible
+            opacity: 1
+
+.file-input
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    opacity: 0
+    cursor: pointer
+
+.border--right
+    border-right: 1px solid $dark-color
+
+.inherit
+    &:hover
+        color: inherit
+        opacity: inherit
+
+
+
+.banners
+    &__add
+        &-btn
+            padding: 0
+            width: 50px
+            height: 50px
+            @media screen and (min-width: $second-breack-point)
+                width: 42px
+                height: 42px
+        &-image
+            width: 100%
+
+.hover
+    &-red
+        &:hover
+            transition: all .3s
+            color: $pre-color
+            path
+                transition: all .3s
+                fill: $pre-color
+    &-blue
+        &:hover
+            transition: all .3s
+            color: $main-color
+            path
+                transition: all .3s
+                fill: $main-color
+
+    &-opacity
+        &:hover
+            transition: all .3s
+            opacity: 0.8
+            path
+                transition: all .3s
+                opacity: 0.8
 
 // === Text ===
 
@@ -82,6 +201,12 @@ body
         font-weight: 700
         line-height: 1.25
         letter-spacing: 0.5px
+    &--20-36
+        font-size: 20px
+        text-transform: uppercase
+        font-weight: 700
+        line-height: 1.25
+        letter-spacing: 0.5px
         color: $dark-semi-light
         @media screen and (max-width: $first-breack-point)
             font-size: 36px
@@ -89,6 +214,45 @@ body
         font-size: 20px
         font-weight: 700
         letter-spacing: 0.5px
+        @media screen and (min-width: $first-breack-point)
+            font-size: 36px
+    &--20-30
+        font-size: 20px
+        font-weight: 700
+        line-height: 37px
+        @media screen and (min-width: $first-breack-point)
+            font-size: 30px
+            font-weight: 600
+            line-height: 1.25
+    &--15-36
+        font-size: 15px
+        font-weight: 700
+        font-style: normal
+        line-height: normal
+        letter-spacing: 0.5px
+        text-transform: uppercase
+        color: $dark-semi-light
+        @media screen and (max-width: $first-breack-point)
+            font-size: 36px
+    &--20-36
+        font-size: 20px
+        font-weight: 700
+        letter-spacing: 0.5px
+        @media screen and (min-width: $first-breack-point)
+            font-size: 36px
+    &--15-30
+        text-align: center
+        font-size: 15px
+        font-weight: 700
+        font-style: normal
+        line-height: normal
+        letter-spacing: 0.5px
+        @media screen and (min-width: $first-breack-point)
+            font-size: 30px
+    &--15-24
+        font-size: 15px
+        font-style: normal
+        line-height: normal
         @media screen and (min-width: $first-breack-point)
             font-size: 36px
     &--20-30
@@ -211,10 +375,11 @@ body
         padding: 0 20px
         border-radius: 50px
         font-size: 10px
-    &:hover
-        color: $sub-color
-        background: $pre-color
-        border-color: $pre-color
+    &--base, &--empty
+        &:hover
+            color: $sub-color
+            background: $pre-color
+            border-color: $pre-color
     &--base
         background: $main-color
         color: $sub-color
@@ -222,7 +387,67 @@ body
         background: initial
         border: 2px solid $main-color
         color: $main-color
-    
+    &--delete
+        background: $pre-color
+        color: $sub-color
+        &:hover
+            color: $sub-color
+            opacity: 0.8
+    &__svg
+        &-confirm
+            svg
+                width: 2rem
+                @media screen and (min-width: $first-breack-point)
+                    width: 3rem
+    &__card
+        &-blue
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 100%
+            padding: 16px 0
+            border-radius: 10px
+            background: $white-color
+            box-shadow: $box-shadow-regular
+            color: $main-color
+            font-size: 15px
+            font-style: normal
+            font-weight: 600
+            line-height: normal
+            text-transform: uppercase
+            &-wrapper
+                position: relative
+                width: 100%
+                i.tag-count
+                    position: absolute
+                    top: -11px
+                    right: -11px
+                    width: 22px
+                    height: 22px
+                    background-color: $pre-color
+                    -webkit-border-radius: 50px
+                    -moz-border-radius: 50px
+                    border-radius: 50px
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    color: $sub-color
+                    font-size: 10px
+                    font-style: normal
+                    font-weight: 700
+                    line-height: normal
+                    text-transform: uppercase
+                    cursor: pointer
+            @media screen and (min-width: $first-breack-point)
+                font-size: 24px
+            svg
+                width: 17px
+                height: 17px
+                margin-right: 8px
+                @media screen and (min-width: $first-breack-point)
+                    width: 37px
+                    height: 37px
+
 .btn-string
     width: fit-content
     border: none
@@ -249,8 +474,6 @@ main
         padding: 0 10px
 .slider
     margin-bottom: 56px
-    @media screen and (max-width: $second-breack-point) 
-        margin-bottom: 40px
 .selection
     margin-bottom: 56px
 .card--button-blue
@@ -360,8 +583,6 @@ main
     row-gap: 1rem
 .row-g-4
     row-gap: 1.5rem
-.row-g-5
-    row-gap: 2rem
 .column-g-3
     column-gap: 1rem
 .column-g-4
@@ -379,9 +600,7 @@ main
 .hover--red
     &:hover
         color: $pre-color
-        svg
-            path
-                fill: $pre-color
+
 
 .selection
     margin-bottom: 56px
@@ -1041,3 +1260,254 @@ main
                 path
                     fill: $pre-color
 
+    &--product-full
+        width: fit-content
+        border: none
+        padding-left: 60px
+        transition: .3s
+        font-size: 30px
+        font-weight: 600
+        text-transform: uppercase
+        color: $pre-color
+        background-size: 47px
+        @media screen and (max-width: $first-breack-point)
+            padding-left: 40px
+            font-size: 15px 
+            background-size: contain
+
+.product-header
+    &--sticker
+        position: relative
+        &:before
+            content: ""
+            position: absolute
+            top: 118px
+            left: 30px
+            width: 53px
+            height: 500px
+            background: url(../img/product-sticker.svg) no-repeat     
+            @media screen and (max-width: $first-breack-point)
+                display: none
+    &__title
+        color: #0E0E0E
+        font-weight: 600
+        font-size: 30px
+        line-height: 1.25
+        @media screen and (max-width: $first-breack-point)
+            color: #494949
+            font-size: 15px
+            text-transform: uppercase
+    &__flag
+        @media screen and (max-width: $first-breack-point)
+            width: 65px
+            height: 65px
+    &__logo
+        @media screen and (max-width: $first-breack-point)
+            height: 65px
+
+.users-feedback    
+    &__header
+        font-weight: 600
+        font-size: 30px
+        color: #494949
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
+        a
+            color: #494949
+            text-decoration: none
+            transition: opacity .3s
+            &:hover
+                opacity: .7
+
+.user-feedback 
+    height: 364px
+    justify-content: start    
+    padding: 20px
+    border-radius: $border-radius
+    box-shadow: $box-shadow-sm
+    font-size: 15px
+    font-weight: 600
+    line-height: 1.1
+    text-decoration: none
+    color: #210E22
+    transition: opacity .3s
+    @media screen and (max-width: $first-breack-point)
+        height: 301px
+        padding: 5px 20px
+        font-size: 12px
+    &:hover
+        color: #210E22
+        opacity: .7
+    &--questions
+        height: 274px
+        @media screen and (max-width: $first-breack-point)
+            height: 223px
+    &__name
+        font-size: 20px
+        line-height: 1.2
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
+            margin-bottom: 6px
+    &__date
+        font-size: 12px
+    &__avatar
+        width: 60px
+        height: 60px
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        border-radius: 50%
+        overflow: hidden
+        @media screen and (max-width: $first-breack-point)
+            width: 40px
+            height: 40px
+        img
+            max-width: 200%
+    &__photos
+        display: flex
+        justify-content: start    
+        &:has(.user-feedback__photo:nth-child(3))
+            justify-content: space-between 
+            .user-feedback__photo
+                margin-right: 0
+
+    &__photo
+        width: 90px
+        height: 120px
+        border-radius: $border-radius
+        box-shadow: 0px 3px 5px rgba(14, 14, 14, 0.1)
+        overflow: hidden
+        margin-right: 12px
+        @media screen and (max-width: $first-breack-point)
+            width: 66px
+            height: 88px
+        img
+            max-width: 200%
+            max-height: 200%
+    &__num
+        width: 90px
+        height: 120px
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        color: $main-color
+        font-size: 30px
+        font-weight: 600
+        @media screen and (max-width: $first-breack-point)
+            width: 66px
+            height: 88px
+    p
+        margin-bottom: 10px
+    
+
+.about-product
+    &__item
+        background: $sub-color
+        border: 0
+    &__title
+        font-size: 30px
+        font-weight: 600
+        line-height: 1.25
+        color: #494949
+        background-color: $sub-color
+        padding: 0
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
+            line-height: 1.25
+            text-transform: uppercase
+        &:focus
+            border-color: none
+            box-shadow: none
+        &::after
+            width: 28px
+            height: 11px
+            background-image: url(../img/arrow-text.svg)
+            margin-left: 10px
+            margin-right: 0
+            transform: rotate(180deg)
+            @media screen and (max-width: $first-breack-point)
+                width: 14px
+                height: 6px
+                background-size: 100%
+        &:not(.collapsed)
+            color: #494949  
+            background-color: inherit
+            box-shadow: none
+            &::after
+                background-image: url(../img/arrow-text.svg)
+                transform: rotate(0)
+                margin-left: 20px
+                margin-right: 0
+    &__information
+        padding-left: 0
+        padding-right: 0
+        @media screen and (max-width: $first-breack-point)
+            padding: 0
+
+
+.gallary
+    font-weight: 600
+    font-size: 30px
+    line-height: 1.25
+    color: #494949
+    @media screen and (max-width: $first-breack-point)
+        font-size: 15px
+    a
+        color: #494949
+        text-decoration: none
+        transition: opacity .3s
+        &:hover
+            opacity: .7
+
+.leave-feed
+    &__modal-dialog
+        background: $white-color
+        border-radius: $border-radius
+    &__title
+        font-size: 30px
+        font-weight: 600
+        color: $main-color
+        @media screen and (max-width: $first-breack-point)
+            font-size: 20px
+            font-weight: 700
+    &__name
+        font-size: 30px
+        font-weight: 600
+        @media screen and (max-width: $first-breack-point)
+            font-size: 20px
+            font-weight: 700
+
+    &__modal-content
+        border-width: 0
+        border-radius: $border-radius
+    &__textarea
+        .form-control
+            height: 202px
+            border-radius: $border-radius
+            resize: none
+            @media screen and (max-width: $second-breack-point)
+                height: 61px    
+        input, textarea, select, &.input--select
+            background: #F8F8F8
+            box-shadow: none
+            border-radius: 15px
+            &:focus
+                background: #F8F8F8
+                box-shadow: none     
+    &__count
+        position: absolute
+        bottom: 8px
+        right: 20px
+        font-size: 15px
+        color: $gray-light
+        @media screen and (max-width: $second-breack-point)
+            font-size: 10px
+            font-weight: 400
+    &__comment
+        font-size: 18px
+        font-weight: 600
+        color: $dark-lighter
+        &--light
+            color: #C9C9C9
+        @media screen and (max-width: $first-breack-point)
+            font-size: 10px
