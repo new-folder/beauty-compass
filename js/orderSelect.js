@@ -7,6 +7,12 @@ $(document).ready(function() {
         placeholder:"Выберите из списка",
     }
     );
+    $('#selectCountry').select2({
+        closeOnSelect: false,
+        placeholder:"Выберите из списка",
+    }
+    );
+    
     $('#skinProp').select2({
         closeOnSelect: false,
         placeholder:"Выберите из списка" 
