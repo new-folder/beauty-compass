@@ -2739,6 +2739,9 @@ body {
   }
 }
 
+.viewRez, .viewProgram {
+  margin-bottom: 20px;
+}
 .viewRez p, .viewProgram p {
   font-size: 30px;
   line-height: 37px;
