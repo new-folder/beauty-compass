@@ -197,6 +197,10 @@ body
             font-weight: 600
             line-height: 1.25
 
+.first-bp
+    @media screen and (max-width: $first-breack-point)
+        display: none
+
 .btn
     height: 41px
     display: inline-flex
@@ -616,6 +620,53 @@ main
             background: url(../img/reviews-sticker.svg) no-repeat
             @media screen and (max-width: $first-breack-point)
                 display: none
+        &--reviews-photos
+            &:before
+                top: 760px
+    &__photo-link
+        display: block
+        height: 182px
+        border-radius: 15px
+        overflow: hidden
+        transition: all .3s ease
+        img
+            height: 100%
+            width: 100%
+            object-fit: cover
+        &:hover
+            opacity: .7
+    &__photo-grid
+        @media screen and (max-width: $first-breack-point)
+            display: none
+    &__splide
+        width: 85%
+        @media screen and (max-width: $second-breack-point)
+            width: 100%
+
+        .splide__slide
+            width: 100%
+            height: auto
+            overflow: hidden
+            border-radius: 15px
+            img
+                border-radius: 15px
+                height: 100%
+                width: 100%
+                object-fit: cover
+    &__splide-arrow
+        position: absolute
+        top: 50%
+        border: none
+        background: none
+        svg
+            width: 30px
+            path
+                fill: $main-color
+    &__splide-next
+        right: -50px
+    &__splide-prev
+        left: -50px
+        transform: rotate(180deg)
 
 .tag
     display: inline-flex
