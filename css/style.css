@@ -1808,6 +1808,10 @@ body {
   height: auto;
   overflow: hidden;
   border-radius: 15px;
+  transition: all 0.3 ease;
+}
+.feed__splide .splide__slide:hover {
+  opacity: 0.7;
 }
 .feed__splide .splide__slide img {
   border-radius: 15px;
@@ -1815,6 +1819,7 @@ body {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  cursor: pointer;
 }
 .feed__image {
   width: 100%;
@@ -1852,6 +1857,9 @@ body {
 .feed__action span {
   font-size: 18px;
   font-weight: 600;
+}
+.feed__action:hover svg {
+  opacity: 0.7;
 }
 .feed__action--like svg path {
   fill: #D9D9D9;

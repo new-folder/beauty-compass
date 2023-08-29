@@ -188,19 +188,39 @@
                   <div class="splide__track">
                     <div class="splide__list">
                       <div class="splide__slide">
-                        <img src="../img/image 224.jpg" alt="review-photo" />
+                        <img
+                          src="../img/image 224.jpg"
+                          alt="review-photo"
+                          data-modal-image
+                        />
                       </div>
                       <div class="splide__slide">
-                        <img src="../img/image 196.png" alt="review-photo" />
+                        <img
+                          src="../img/image 196.png"
+                          alt="review-photo"
+                          data-modal-image
+                        />
                       </div>
                       <div class="splide__slide">
-                        <img src="../img/image 192.png" alt="review-photo" />
+                        <img
+                          src="../img/image 192.png"
+                          alt="review-photo"
+                          data-modal-image
+                        />
                       </div>
                       <div class="splide__slide">
-                        <img src="../img/image 193.png" alt="review-photo" />
+                        <img
+                          src="../img/image 193.png"
+                          alt="review-photo"
+                          data-modal-image
+                        />
                       </div>
                       <div class="splide__slide">
-                        <img src="../img/image 196.png" alt="review-photo" />
+                        <img
+                          src="../img/image 196.png"
+                          alt="review-photo"
+                          data-modal-image
+                        />
                       </div>
                     </div>
                   </div>
@@ -481,10 +501,18 @@
                   <div class="splide__track">
                     <div class="splide__list">
                       <div class="splide__slide">
-                        <img src="../img/image 224.jpg" alt="review-photo" />
+                        <img
+                          src="../img/image 224.jpg"
+                          alt="review-photo"
+                          data-modal-image
+                        />
                       </div>
                       <div class="splide__slide">
-                        <img src="../img/image 196.png" alt="review-photo" />
+                        <img
+                          src="../img/image 196.png"
+                          alt="review-photo"
+                          data-modal-image
+                        />
                       </div>
                     </div>
                   </div>
@@ -1122,9 +1150,15 @@
         </div>
       </div>
     </div>
+    <div id="imageModal" class="image-modal">
+      <span class="image-modal__close">&times;</span>
+      <img class="image-modal__content" id="img01" />
+    </div>
 
     <script src="../js/splide.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/image-modal.js"></script>
+    <script src="../js/script.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         Splide.defaults = {
