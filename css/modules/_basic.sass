@@ -48,8 +48,7 @@ textarea
             padding-right: var(--bs-gutter-x,.75rem)
             padding-left: var(--bs-gutter-x,.75rem)
 
-
-.page-title
+.page-title, .text
     margin-top: 15px
     margin-bottom: 27px
     @media screen and (min-width: $first-breack-point)
@@ -200,6 +199,12 @@ textarea
         font-weight: 700
         line-height: 1.25
         letter-spacing: 0.5px
+    &--20-36
+        font-size: 20px
+        text-transform: uppercase
+        font-weight: 700
+        line-height: 1.25
+        letter-spacing: 0.5px
         color: $dark-semi-light
         @media screen and (max-width: $first-breack-point)
             font-size: 36px
@@ -207,6 +212,45 @@ textarea
         font-size: 20px
         font-weight: 700
         letter-spacing: 0.5px
+        @media screen and (min-width: $first-breack-point)
+            font-size: 36px
+    &--20-30
+        font-size: 20px
+        font-weight: 700
+        line-height: 37px
+        @media screen and (min-width: $first-breack-point)
+            font-size: 30px
+            font-weight: 600
+            line-height: 1.25
+    &--15-36
+        font-size: 15px
+        font-weight: 700
+        font-style: normal
+        line-height: normal
+        letter-spacing: 0.5px
+        text-transform: uppercase
+        color: $dark-semi-light
+        @media screen and (max-width: $first-breack-point)
+            font-size: 36px
+    &--20-36
+        font-size: 20px
+        font-weight: 700
+        letter-spacing: 0.5px
+        @media screen and (min-width: $first-breack-point)
+            font-size: 36px
+    &--15-30
+        text-align: center
+        font-size: 15px
+        font-weight: 700
+        font-style: normal
+        line-height: normal
+        letter-spacing: 0.5px
+        @media screen and (min-width: $first-breack-point)
+            font-size: 30px
+    &--15-24
+        font-size: 15px
+        font-style: normal
+        line-height: normal
         @media screen and (min-width: $first-breack-point)
             font-size: 36px
     &--20-30
@@ -263,6 +307,21 @@ textarea
         line-height: normal
         @media screen and (min-width: $first-breack-point)
             font-size: 15px
+    &--sub
+        font-weight: 700
+        font-size: 30px
+        line-height: 1.25
+        color: $dark-semi-light
+        @media screen and (max-width: $first-breack-point) 
+            font-size: 20px
+            font-weight: 600
+            line-height: 1.25
+    &__under
+        font-size: 30px
+        color: $main-color
+        @media screen and (max-width: $first-breack-point) 
+            font-size: 15px
+
 
 // === Colors ===
 .main-color
@@ -283,8 +342,19 @@ textarea
     line-height: 1.25
 .ls-05
     letter-spacing: 0.5px
+.fz-20
+    font-size: 30px
 .fz-30
     font-size: 30px
+    &--sub_blue
+        font-weight: 700
+        font-size: 30px
+        line-height: 37px
+        color: $main-color
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
+            font-weight: 600
+            line-height: 1.25
 
 .btn
     height: 41px
@@ -376,73 +446,201 @@ textarea
                     width: 37px
                     height: 37px
 
+.btn-string
+    width: fit-content
+    border: none
+    background: inherit
+    color: #1560BD
+    font-size: 30px
+    font-weight: 600
+    text-decoration: none
+    cursor: pointer
+    &.pre-color
+        color: $pre-color
+    @media screen and (max-width: $first-breack-point)
+        font-size: 15px
+        img
+            width: 35px
+            height: 35px
 
-
-
+main
+    @media screen and (max-width: $first-breack-point)
+        max-width: 720px
+        margin: 0 auto
+    @media screen and (max-width: $second-breack-point)
+        max-width: 360px
+        padding: 0 10px
 .slider
     margin-bottom: 56px
+.selection
+    margin-bottom: 56px
+.card--button-blue
+    position: relative
+    padding: 16px 0
+    border-radius: 10px
+    background: $white-color
+    box-shadow: $box-shadow-regular
+    color: $main-color
+    font-size: 15px
+    font-style: normal
+    font-weight: 600
+    line-height: normal
+    text-transform: uppercase
+    transition: color 1s
+    svg
+        width: 17px
+        height: 17px
+        margin-right: 8px
+        @media screen and (min-width: $first-breack-point)
+            width: 37px
+            height: 37px
+    &:hover
+        transition: color 1s
+        color: $pre-color
+        opacity: .8
+        svg
+            path
+                fill: $pre-color
+    @media screen and (min-width: $first-breack-point)
+        font-size: 24px
+.card--tagged
+    &:after
+        content: '10'
+        position: absolute
+        top: -11px
+        right: -11px
+        width: 22px
+        height: 22px
+        background-color: $pre-color
+        -webkit-border-radius: 50px
+        -moz-border-radius: 50px
+        border-radius: 50px
+        display: flex
+        align-items: center
+        justify-content: center
+        color: $sub-color
+        font-size: 10px
+        font-style: normal
+        font-weight: 700
+        line-height: normal
+        text-transform: uppercase
+.btn--blue
+    width: fit-content
+    padding: 10px 25px
+    background: $main-color
+    border-radius: 60px
+    color: $sub-color
+    font-weight: 600
+    font-size: 10px
+    line-height: 1.22222
+    text-transform: uppercase
+    transition: background 0.3s
+    &:hover
+        background: $pre-color
+        color: $sub-color
+    &:focus
+        color: $sub-color
+    @media screen and (min-width: $first-breack-point)
+        font-size: 15px
+.input--wrapper, .select--wrapper
+    height: 26px
+    @media all and (min-width: $second-breack-point)
+        height: 42px
+
+.input--regular, .select--regular, .textarea--regular
+    background: $white-color
+    width: 100%
+    padding: 7px 12px
+    box-shadow: $box-shadow-regular
+    font-size: 10px
+    border-radius: 10px
+    border: none
+    &:focus-visible
+        outline: 1px solid $main-color
+    &::placeholder
+        color: $gray-light
+    @media all and (min-width: $first-breack-point)
+        font-size: 18px
+.textarea--char-count
+    position: absolute
+    bottom: 10px
+    right: 10px
+    font-size: 10px
+    color: $gray-light
+    @media all and (min-width: $first-breack-point)
+        font-size: 15px
+.label--light
+    color: $gray-light
+    font-size: 10px
+    font-style: normal
+    font-weight: 600
+    line-height: normal
+    @media screen and (min-width: $first-breack-point)
+        font-size: 15px
+.row-g-3
+    row-gap: 1rem
+.row-g-4
+    row-gap: 1.5rem
+.column-g-3
+    column-gap: 1rem
+.column-g-4
+    column-gap: 1.5rem
+.cloudR--white
+    color: $dark-lighter
+    font-size: 15px
+    font-style: normal
+    font-weight: 600
+    line-height: normal
+    background: var(--unnamed, $sub-color)
+    box-shadow: $box-shadow-sm
+.ease3
+    transition: all 0.3s ease
+.hover--red
+    &:hover
+        color: $pre-color
+
 
 .selection
     margin-bottom: 56px
 
-.select
-    &__custom
-        position: relative
-    &__header
-        display: flex
-        align-items: center
-        justify-content: space-between
-        cursor: pointer
-    &__options
-        display: none
-        position: absolute
-        top: 100%
-        left: 0
-        right: 0
-        background: $white-color
-        box-shadow: $box-shadow-regular
-        border-radius: 10px
-        overflow: hidden
-        z-index: 100
-        &.open
-            display: flex
-            flex-direction: column
-        .option
+.input--wrapper, .select--wrapper
+    height: 26px
+    @media all and (min-width: $second-breack-point)
+        height: 42px
 
-            padding: 12px 20px
-            cursor: pointer
-            transition: 0.3s
+.input--regular, .select--regular, .textarea--regular
+    background: $white-color
+    width: 100%
+    padding: 7px 12px
+    box-shadow: $box-shadow-regular
+    font-size: 10px
+    border-radius: 10px
+    border: none
+    &:focus-visible
+        outline: 1px solid $main-color
+    @media all and (min-width: $first-breack-point)
+        font-size: 18px
 
-            &:hover
-                //color: $main-color
-                background-color: $bg-grey
-            &:active
-                color: $pre-color
+.label--light
+    color: $gray-light
+    font-size: 10px
+    font-style: normal
+    font-weight: 600
+    line-height: normal
+    @media screen and (min-width: $first-breack-point)
+        font-size: 15px
 
 .input
     position: relative
-    &--general
-        height: 26px
-        @media all and (min-width: $first-breack-point)
-            height: 42px
-    &--textarea
-        height: 52px
-        @media all and (min-width: $first-breack-point)
-            height: 108px
-
-    input,
-    textarea,
-    select,
-    .input--select,
-    .input--textarea
+    input, textarea, select, &.input--select
         background: $white-color
         width: 100%
         height: 100%
         padding: 7px 12px
-        border: none
-        border-radius: 10px
-        color: $dark-lighter
         box-shadow: $box-shadow-regular
+        border-radius: 10px
+        border: none
+        color: $dark-lighter
         font-size: 10px
         font-style: normal
         font-weight: 600
@@ -462,23 +660,21 @@ textarea
             height: 100%
             opacity: 0
             cursor: pointer
+    &--modal   
+        &.input--image 
+            background: #F8F8F8
+            box-shadow: none
+        @media all and (max-width: $first-breack-point)
+            width: 56px
+            height: 56px
+
 
 .label
     position: absolute
-    &--primary
-        color: $gray-light
-        font-size: 12px
-        font-style: normal
-        font-weight: 600
-        line-height: normal
-        height: 32px
-        top: -18px
+    &--general
+        position: absolute
+        top: -14px
         left: 0
-        right: 0
-        @media screen and (min-width: $first-breack-point)
-            top: -24px
-            font-size: 18px
-    &--light
         color: $gray-light
         font-size: 10px
         font-style: normal
@@ -486,51 +682,9 @@ textarea
         line-height: normal
         @media screen and (min-width: $first-breack-point)
             font-size: 15px
-    &--profile
-        position: absolute
-        display: flex
-        flex-direction: column
-        justify-content: flex-end
-        height: 32px
-        top: -32px
-        left: 0
-        right: 0
         @media screen and (min-width: $first-breack-point)
-            top: -32px
+            top: -20px
 
-
-
-.row-g-2
-    row-gap: 0.5rem
-.row-g-3
-    row-gap: 1rem
-.row-g-4
-    row-gap: 1.5rem
-.row-g-5
-    row-gap: 2rem
-.column-g-2
-    column-gap: 0.5rem
-.column-g-3
-    column-gap: 1rem
-.column-g-4
-    column-gap: 1.5rem
-.column-g-5
-    column-gap: 2rem
-
-.cloudR--white
-    color: $dark-lighter
-    font-size: 15px
-    font-style: normal
-    font-weight: 600
-    line-height: normal
-    background: $sub-color
-    box-shadow: $box-shadow-sm
-
-
-
-
-.selection
-    margin-bottom: 56px
 
 .section
     &--carousel
@@ -665,6 +819,20 @@ textarea
                 max-width: 100%
                 max-height: 125px
 
+.reviews
+    &__sticker
+        position: relative
+        &:before
+            content: ""
+            position: absolute
+            top: 260px
+            left: 30px
+            width: 53px
+            height: 749px
+            background: url(../img/reviews-sticker.svg) no-repeat
+            @media screen and (max-width: $first-breack-point)
+                display: none
+
 .tag
     display: inline-flex
     padding: 2px 10px
@@ -716,40 +884,628 @@ textarea
         z-index: 2
         border: none
         transition: .3s
+    &--product-full
+        width: fit-content
+        border: none
+        padding-left: 60px
+        transition: .3s
+        font-size: 30px
+        font-weight: 600
+        text-transform: uppercase
+        color: $pre-color
+        background-size: 47px
+        @media screen and (max-width: $first-breack-point)
+            padding-left: 40px
+            font-size: 15px 
+            background-size: contain
 
-.my
-    &__25-25
-        margin-top: 25px
-        margin-bottom: 25px
-    &__20-20
-        margin-top: 20px
+.product-header
+    &--sticker
+.questions
+    &__heading-link
+        text-decoration: none
+        transition: all .3s ease
+        &:hover
+            color: $pre-color
+        &--h1-link
+            text-decoration: none
+            &:hover
+                color: #494949
+                opacity: .7
+
+    &__sticker
+        position: relative
+        &:before
+            content: ""
+            position: absolute
+            top: 118px
+            left: 30px
+            width: 53px
+            height: 500px
+            background: url(../img/product-sticker.svg) no-repeat     
+            @media screen and (max-width: $first-breack-point)
+                display: none
+    &__title
+        color: #0E0E0E
+        font-weight: 600
+        font-size: 30px
+        line-height: 1.25
+        @media screen and (max-width: $first-breack-point)
+            color: #494949
+            font-size: 15px
+            text-transform: uppercase
+    &__flag
+        @media screen and (max-width: $first-breack-point)
+            width: 65px
+            height: 65px
+    &__logo
+        @media screen and (max-width: $first-breack-point)
+            height: 65px
+
+.users-feedback    
+    &__header
+        font-weight: 600
+        font-size: 30px
+        color: #494949
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
+        a
+            color: #494949
+            text-decoration: none
+            transition: opacity .3s
+            &:hover
+                opacity: .7
+
+.user-feedback 
+    height: 364px
+    justify-content: start    
+    padding: 20px
+    border-radius: $border-radius
+    box-shadow: $box-shadow-sm
+    font-size: 15px
+    font-weight: 600
+    line-height: 1.1
+    text-decoration: none
+    color: #210E22
+    transition: opacity .3s
+    @media screen and (max-width: $first-breack-point)
+        height: 301px
+        padding: 5px 20px
+        font-size: 12px
+    &:hover
+        color: #210E22
+        opacity: .7
+    &--questions
+        height: 274px
+        @media screen and (max-width: $first-breack-point)
+            height: 223px
+    &__name
+        font-size: 20px
+        line-height: 1.2
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
+            margin-bottom: 6px
+    &__date
+        font-size: 12px
+    &__avatar
+        width: 60px
+        height: 60px
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        border-radius: 50%
+        overflow: hidden
+        @media screen and (max-width: $first-breack-point)
+            width: 40px
+            height: 40px
+        img
+            max-width: 200%
+    &__photos
+        display: flex
+        justify-content: start    
+        &:has(.user-feedback__photo:nth-child(3))
+            justify-content: space-between 
+            .user-feedback__photo
+                margin-right: 0
+
+    &__photo
+        width: 90px
+        height: 120px
+        border-radius: $border-radius
+        box-shadow: 0px 3px 5px rgba(14, 14, 14, 0.1)
+        overflow: hidden
+        margin-right: 12px
+        @media screen and (max-width: $first-breack-point)
+            width: 66px
+            height: 88px
+        img
+            max-width: 200%
+            max-height: 200%
+    &__num
+        width: 90px
+        height: 120px
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        color: $main-color
+        font-size: 30px
+        font-weight: 600
+        @media screen and (max-width: $first-breack-point)
+            width: 66px
+            height: 88px
+    p
+        margin-bottom: 10px
+    
+
+.about-product
+    &__item
+        background: $sub-color
+        border: 0
+    &__title
+        font-size: 30px
+        font-weight: 600
+        line-height: 1.25
+        color: #494949
+        background-color: $sub-color
+        padding: 0
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
+            line-height: 1.25
+            text-transform: uppercase
+        &:focus
+            border-color: none
+            box-shadow: none
+        &::after
+            width: 28px
+            height: 11px
+            background-image: url(../img/arrow-text.svg)
+            margin-left: 10px
+            margin-right: 0
+            transform: rotate(180deg)
+            @media screen and (max-width: $first-breack-point)
+                width: 14px
+                height: 6px
+                background-size: 100%
+        &:not(.collapsed)
+            color: #494949  
+            background-color: inherit
+            box-shadow: none
+            &::after
+                background-image: url(../img/arrow-text.svg)
+                transform: rotate(0)
+                margin-left: 20px
+                margin-right: 0
+    &__information
+        padding-left: 0
+        padding-right: 0
+        @media screen and (max-width: $first-breack-point)
+            padding: 0
+
+
+.gallary
+    font-weight: 600
+    font-size: 30px
+    line-height: 1.25
+    color: #494949
+    @media screen and (max-width: $first-breack-point)
+        font-size: 15px
+    a
+        color: #494949
+        text-decoration: none
+        transition: opacity .3s
+        &:hover
+            opacity: .7
+
+.leave-feed
+    &__modal-dialog
+        background: $white-color
+        border-radius: $border-radius
+    &__title
+        font-size: 30px
+        font-weight: 600
+        color: $main-color
+        @media screen and (max-width: $first-breack-point)
+            font-size: 20px
+            font-weight: 700
+    &__name
+        font-size: 30px
+        font-weight: 600
+        @media screen and (max-width: $first-breack-point)
+            font-size: 20px
+            font-weight: 700
+
+    &__modal-content
+        border-width: 0
+        border-radius: $border-radius
+    &__textarea
+        .form-control
+            height: 202px
+            border-radius: $border-radius
+            resize: none
+            @media screen and (max-width: $second-breack-point)
+                height: 61px    
+        input, textarea, select, &.input--select
+            background: #F8F8F8
+            box-shadow: none
+            border-radius: 15px
+            &:focus
+                background: #F8F8F8
+                box-shadow: none     
+    &__count
+        position: absolute
+        bottom: 8px
+        right: 20px
+        font-size: 15px
+        color: $gray-light
+        @media screen and (max-width: $second-breack-point)
+            font-size: 10px
+            font-weight: 400
+    &__comment
+        font-size: 18px
+        font-weight: 600
+        color: $dark-lighter
+        &--light
+            color: #C9C9C9
+        @media screen and (max-width: $first-breack-point)
+            font-size: 10px
+
+    &__form-open-btn
+        width: 100%
+        border: none
+        border-radius: 15px
+        background: $white-color
+        box-shadow: 0px 4px 20px 0px rgba(14, 14, 14, 0.07)
+        font-size: 18px
+        color: $gray-light
+        text-align: left
+        padding-left: 16px
+        @media screen and (max-width: $first-breack-point)
+            font-size: 10px
+.feed
+    &__row
+        padding: 24px
+        font-size: 18px
+        font-weight: 600
+        background-color: $white-color
+        box-shadow: 0px 4px 20px 0px rgba(14, 14, 14, 0.07)
+        border-radius: 15px
         margin-bottom: 20px
-    &__15-30
-        margin-top: 15px
-        margin-bottom: 22px
-        @media screen and (min-width: $first-breack-point)
-            margin-top: 30px
-            margin-bottom: 30px
+        &:last-child
+            margin-bottom: 0
+        @media screen and (max-width: $first-breack-point)
+            font-size: 12px
+    &__user
+        display: flex
+        gap: 8px
+
+    &__avatar
+        width: 60px
+        height: 60px
+        overflow: hidden
+        border-radius: 50%
+
+        @media screen and (max-width: $first-breack-point)
+            width: 45px
+            height: 45px
+
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+    &__name
+        font-size: 30px
+        font-weight: 600
+        text-decoration: none
+        transition: all .3s ease
+        color: $dark-lighter
+        &:hover
+            color: $pre-color
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
+    &__date
+        color: $gray-light
+        font-size: 18px
+        @media screen and (max-width: $first-breack-point)
+            font-size: 10px
+    &__images
+        display: flex
+        flex-wrap: wrap
+        gap: 16px
+    &__image
+        width: 180px
+        height: 219px
+        overflow: hidden
+        border-radius: 15px
+        @media screen and (max-width: $first-breack-point)
+            width: 89px
+            height: 108px
+        img
+            height: 100%
+            width: 100%
+            object-fit: cover
+    &__footer
+        border-top: 1px solid $gray-light
+        padding-top: 12px
+    &__actions
+        display: flex
+        align-items: center
+        gap: 16px
+    &__action
+        display: flex
+        align-items: center
+        gap: 6px
+        background-color: transparent
+        padding: 0
+        border: none
+        span
+            font-size: 18px
+            font-weight: 600
+        &--like
+            svg
+                path
+                    fill: $gray-light
+        &--like_active
+            svg
+                path
+                    fill: $main-color
+        &--dislike
+            svg
+                transform: rotate(180deg)
+                path
+                    fill: $gray-light
+        &--dislike_active
+            svg
+                path
+                    fill: $pre-color
+
+    &--product-full
+        width: fit-content
+        border: none
+        padding-left: 60px
+        transition: .3s
+        font-size: 30px
+        font-weight: 600
+        text-transform: uppercase
+        color: $pre-color
+        background-size: 47px
+        @media screen and (max-width: $first-breack-point)
+            padding-left: 40px
+            font-size: 15px 
+            background-size: contain
+
+.product-header
+    &--sticker
+        position: relative
+        &:before
+            content: ""
+            position: absolute
+            top: 118px
+            left: 30px
+            width: 53px
+            height: 500px
+            background: url(../img/product-sticker.svg) no-repeat     
+            @media screen and (max-width: $first-breack-point)
+                display: none
+    &__title
+        color: #0E0E0E
+        font-weight: 600
+        font-size: 30px
+        line-height: 1.25
+        @media screen and (max-width: $first-breack-point)
+            color: #494949
+            font-size: 15px
+            text-transform: uppercase
+    &__flag
+        @media screen and (max-width: $first-breack-point)
+            width: 65px
+            height: 65px
+    &__logo
+        @media screen and (max-width: $first-breack-point)
+            height: 65px
+
+.users-feedback    
+    &__header
+        font-weight: 600
+        font-size: 30px
+        color: #494949
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
+        a
+            color: #494949
+            text-decoration: none
+            transition: opacity .3s
+            &:hover
+                opacity: .7
+
+.user-feedback 
+    height: 364px
+    justify-content: start    
+    padding: 20px
+    border-radius: $border-radius
+    box-shadow: $box-shadow-sm
+    font-size: 15px
+    font-weight: 600
+    line-height: 1.1
+    text-decoration: none
+    color: #210E22
+    transition: opacity .3s
+    @media screen and (max-width: $first-breack-point)
+        height: 301px
+        padding: 5px 20px
+        font-size: 12px
+    &:hover
+        color: #210E22
+        opacity: .7
+    &--questions
+        height: 274px
+        @media screen and (max-width: $first-breack-point)
+            height: 223px
+    &__name
+        font-size: 20px
+        line-height: 1.2
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
+            margin-bottom: 6px
+    &__date
+        font-size: 12px
+    &__avatar
+        width: 60px
+        height: 60px
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        border-radius: 50%
+        overflow: hidden
+        @media screen and (max-width: $first-breack-point)
+            width: 40px
+            height: 40px
+        img
+            max-width: 200%
+    &__photos
+        display: flex
+        justify-content: start    
+        &:has(.user-feedback__photo:nth-child(3))
+            justify-content: space-between 
+            .user-feedback__photo
+                margin-right: 0
+
+    &__photo
+        width: 90px
+        height: 120px
+        border-radius: $border-radius
+        box-shadow: 0px 3px 5px rgba(14, 14, 14, 0.1)
+        overflow: hidden
+        margin-right: 12px
+        @media screen and (max-width: $first-breack-point)
+            width: 66px
+            height: 88px
+        img
+            max-width: 200%
+            max-height: 200%
+    &__num
+        width: 90px
+        height: 120px
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        color: $main-color
+        font-size: 30px
+        font-weight: 600
+        @media screen and (max-width: $first-breack-point)
+            width: 66px
+            height: 88px
+    p
+        margin-bottom: 10px
+    
+
+.about-product
+    &__item
+        background: $sub-color
+        border: 0
+    &__title
+        font-size: 30px
+        font-weight: 600
+        line-height: 1.25
+        color: #494949
+        background-color: $sub-color
+        padding: 0
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
+            line-height: 1.25
+            text-transform: uppercase
+        &:focus
+            border-color: none
+            box-shadow: none
+        &::after
+            width: 28px
+            height: 11px
+            background-image: url(../img/arrow-text.svg)
+            margin-left: 10px
+            margin-right: 0
+            transform: rotate(180deg)
+            @media screen and (max-width: $first-breack-point)
+                width: 14px
+                height: 6px
+                background-size: 100%
+        &:not(.collapsed)
+            color: #494949  
+            background-color: inherit
+            box-shadow: none
+            &::after
+                background-image: url(../img/arrow-text.svg)
+                transform: rotate(0)
+                margin-left: 20px
+                margin-right: 0
+    &__information
+        padding-left: 0
+        padding-right: 0
+        @media screen and (max-width: $first-breack-point)
+            padding: 0
 
 
-//.label
-//    &--light
-//        color: $gray-light
-//        font-size: 10px
-//        font-style: normal
-//        font-weight: 600
-//        line-height: normal
-//        @media screen and (min-width: $first-breack-point)
-//            font-size: 15px
-//    &--profile
-//        position: absolute
-//        display: flex
-//        flex-direction: column
-//        justify-content: flex-end
-//        height: 32px
-//        top: -32px
-//        left: 0
-//        right: 0
-//        @media screen and (min-width: $first-breack-point)
-//            top: -32px
+.gallary
+    font-weight: 600
+    font-size: 30px
+    line-height: 1.25
+    color: #494949
+    @media screen and (max-width: $first-breack-point)
+        font-size: 15px
+    a
+        color: #494949
+        text-decoration: none
+        transition: opacity .3s
+        &:hover
+            opacity: .7
 
+.leave-feed
+    &__modal-dialog
+        background: $white-color
+        border-radius: $border-radius
+    &__title
+        font-size: 30px
+        font-weight: 600
+        color: $main-color
+        @media screen and (max-width: $first-breack-point)
+            font-size: 20px
+            font-weight: 700
+    &__name
+        font-size: 30px
+        font-weight: 600
+        @media screen and (max-width: $first-breack-point)
+            font-size: 20px
+            font-weight: 700
+
+    &__modal-content
+        border-width: 0
+        border-radius: $border-radius
+    &__textarea
+        .form-control
+            height: 202px
+            border-radius: $border-radius
+            resize: none
+            @media screen and (max-width: $second-breack-point)
+                height: 61px    
+        input, textarea, select, &.input--select
+            background: #F8F8F8
+            box-shadow: none
+            border-radius: 15px
+            &:focus
+                background: #F8F8F8
+                box-shadow: none     
+    &__count
+        position: absolute
+        bottom: 8px
+        right: 20px
+        font-size: 15px
+        color: $gray-light
+        @media screen and (max-width: $second-breack-point)
+            font-size: 10px
+            font-weight: 400
+    &__comment
+        font-size: 18px
+        font-weight: 600
+        color: $dark-lighter
+        &--light
+            color: #C9C9C9
+        @media screen and (max-width: $first-breack-point)
+            font-size: 10px
