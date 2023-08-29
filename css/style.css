@@ -1823,6 +1823,7 @@ body {
   border-radius: 15px;
 }
 .feed__footer {
+  position: relative;
   border-top: 1px solid #D9D9D9;
   padding-top: 12px;
 }
@@ -1830,6 +1831,15 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
+}
+.feed__footer-show-more {
+  position: absolute;
+  right: 0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.feed__footer-show-more:hover {
+  color: #E31E24;
 }
 .feed__action {
   display: flex;

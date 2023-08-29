@@ -1061,12 +1061,20 @@ main
         border-radius: 15px
 
     &__footer
+        position: relative
         border-top: 1px solid $gray-light
         padding-top: 12px
     &__actions
         display: flex
         align-items: center
         gap: 16px
+    &__footer-show-more
+        position: absolute
+        right: 0
+        text-decoration: none
+        transition: all .3s ease
+        &:hover
+            color: $pre-color    
     &__action
         display: flex
         align-items: center
