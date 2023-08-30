@@ -1,6 +1,14 @@
 $(document).ready(function() {
     $('.choseSave .selectWrap').css('display','none')
-    $('.choseSave').css('justify-content','start')
+
+    if($(window).width()>=768) $('.choseSave').css('justify-content','start')
+    else $('.choseSave').css('justify-content','end')
+
+
+    $(window).resize(function() {
+        if($(window).width()>=768) $('.choseSave').css('justify-content','start')
+        else $('.choseSave').css('justify-content','end')
+    });
 
     $('#activeIgnore').select2({
         closeOnSelect: false,
@@ -49,7 +57,8 @@ $(document).ready(function() {
         if(this.checked){
             $('.choseSave .selectWrap').css('display','none')
             $('.selectWrapchoseSave').css('display','none')
-            $('.choseSave').css('justify-content','start')
+            if($(window).width()>=768) $('.choseSave').css('justify-content','start')
+            else $('.choseSave').css('justify-content','end')
             $('.selectSave').css('display', 'block')
         }
     })
