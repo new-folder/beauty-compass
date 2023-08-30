@@ -394,6 +394,7 @@ textarea
     &__svg
         &-confirm
             svg
+                flex-shrink: 0
                 width: 2rem
                 @media screen and (min-width: $first-breack-point)
                     width: 3rem
@@ -445,6 +446,12 @@ textarea
                 @media screen and (min-width: $first-breack-point)
                     width: 37px
                     height: 37px
+    &--disabled
+        pointer-events: none
+        *
+            color: $gray-light !important
+            fill: $gray-light !important
+
 
 .btn-string
     width: fit-content
@@ -1509,3 +1516,148 @@ main
             color: #C9C9C9
         @media screen and (max-width: $first-breack-point)
             font-size: 10px
+
+
+.mailing-form
+    display: flex 
+    flex-direction: column
+    gap: 35px
+    padding: 40px 60px
+    @media screen and (max-width: $first-breack-point)
+        padding: 20px 40px
+    @media screen and (max-width: $second-breack-point)
+        padding: 20px 10px
+        gap: 20px
+    &__info
+        display: grid
+        grid-template-columns: 190px 500px
+        gap: 40px
+        @media screen and (max-width: $first-breack-point)
+            grid-template-columns: 190px 1fr
+            gap: 20px
+        @media screen and (max-width: $second-breack-point)
+            grid-template-columns: 115px 1fr
+    &__contact, &__banner
+        display: flex
+        flex-direction: column
+        gap: 30px
+        @media screen and (max-width: $second-breack-point)
+            gap: 20px
+    &__banners
+        display: grid
+        grid-template-columns: 1fr 335px
+        gap: 40px
+        @media screen and (max-width: $first-breack-point)
+            grid-template-columns: 1fr
+            gap: 20px
+    &__pic
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 30px
+        width: 100%
+        max-height: 375px
+        aspect-ratio: 1.1
+        background: #ffffff
+        @media screen and (max-width: $first-breack-point)
+            max-height: 150px
+        @media screen and (max-width: $second-breack-point)
+            max-height: 100px
+            padding: 20px
+        img
+            width: 100%
+            height: 100%
+            max-width: 80px
+    &__buttons
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        gap: 10px
+    &__plus
+        position: relative
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        gap: 15px
+        @media screen and (max-width: $second-breack-point)
+            gap: 8px
+    &__add-input
+        position: absolute
+        top: 0
+        right: -60px
+        @media screen and (max-width: $first-breack-point)
+            position: relative
+            top: auto
+            right: inherit
+            align-self: center
+        svg
+            width: 36px
+            @media screen and (max-width: $second-breack-point)
+                width: 26px
+
+.mailing-edit
+    display: flex
+    flex-direction: column
+    gap: 35px
+    padding: 20px 60px
+    @media screen and (max-width: $first-breack-point)
+        padding: 20px 40px
+    @media screen and (max-width: $second-breack-point)
+        padding: 20px 10px
+        gap: 20px
+    &__pic img
+        width: 70px
+        margin: 0 auto
+    &__text
+        font-size: 18px
+        @media screen and (max-width: $first-breack-point)
+            font-size: 14px
+        @media screen and (max-width: $second-breack-point)
+            font-size: 12px
+    &__contact 
+        display: flex
+        align-items: center
+        gap: 25px
+        flex-wrap: wrap
+        @media screen and (max-width: $second-breack-point)
+            gap: 10px
+        a
+            display: flex
+            align-items: center
+            gap: 10px
+            color: #000
+            font-size: 15px
+            @media screen and (max-width: $second-breack-point)
+                gap: 5px
+                font-size: 8px
+                img
+                    width: 10px
+            &:hover
+                opacity: 0.7
+                transition: opacity 0.3s
+    &__banner img
+        width: 100%
+        height: 100%
+    &__unsub
+        display: flex 
+        align-items: center
+        justify-content: center
+        flex-wrap: wrap
+        gap: 10px 20px
+        p
+            text-align: center
+            font-size: 14px
+            @media screen and (max-width: $second-breack-point)
+                font-size: 8px
+        a
+            padding: 5px 15px
+            color: #ffffff
+            font-size: 10px
+            font-weight: 700
+            text-transform: uppercase
+            background: $gray-light
+            border-radius: $border-radius
+            &:hover
+                opacity: 0.7
+                transition: opacity 0.3s
+    

@@ -49,6 +49,7 @@
 }
 .auth__invalid {
   display: none;
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   font-weight: 600;
@@ -67,6 +68,7 @@
 }
 .auth__label {
   display: flex;
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   font-weight: 600;
@@ -128,6 +130,7 @@
   max-width: 100%;
 }
 .auth__user {
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   padding: 0;

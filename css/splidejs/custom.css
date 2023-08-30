@@ -46,8 +46,7 @@
   }
 }
 .splide--gallery .splide__slide img {
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   max-width: 220px;
   max-height: 195px;
 }

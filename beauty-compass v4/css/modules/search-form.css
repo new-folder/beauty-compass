@@ -71,7 +71,7 @@
   box-shadow: none;
 }
 
-.search-form__input::-moz-placeholder {
+.search-form__input::-ms-input-placeholder {
   color: #1560BD;
 }
 
