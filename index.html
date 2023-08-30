@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beauty Compass</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link href="css/select2.min.css" rel="stylesheet" />
+    <script src="js/jq.js"></script>
+    <script src="js/select2.js" defer></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-xxl top-bar">
@@ -124,225 +127,267 @@
       <section class="brand__title">
         <div class="container container--bc">
             <div class="page-title d-flex flex-wrap align-items-center col-xxl-10 offset-xxl-1">
+                <div class="col text-center col-xxl-12">
+                    <h1 class="title--20-36 text-uppercase"><P>ЗАКАЗАТЬ ПОДБОР</P></h1>
+                </div>
                 <div class="col-1 col-xxl-12 order-xxl-1">
                     <a href="" class="btn__svg-confirm text--15-30 fw-600 main-color hover-red d-flex align-items-center justify-content-start justify-content-xxl-center m-auto text-decoration-none">
-                        <img src="img/arrow-left.svg" alt="Стрелка налево">
-                        <span class=" text-uppercase ms-2">Вернуться в кабинет</span>
+                        
                     </a>
-                </div>
-                <div class="col text-center col-xxl-12">
-                    <h1 class="title--20-36">ТЕСТ</h1>
                 </div>
             </div>
         </div>
       </section>
-      <section>
-        <form action="rezultTest.html" class="container container--bc">
+      <section class="container container--bc">
+        <form action="">
           <div class="quest-b">
             <div class="questText">
-              <p class="text-uppercase">Вы:</p>
-              <small>Укажите пол</small>
+              <p class="text-uppercase">Ник, для какого сезона вы хотите подобрать программу ухода?</p>
             </div>
-            <div class="respOpt radioInp adapt">
-              <input type="radio" name="gender" id="gender1" value="male"><label for="gender1">мужчина</label>
-              <input type="radio" name="gender" id="gender2" value="female"><label for="gender2">женщина</label>
-            </div>
-          </div>
-          <div class="quest-b">
-            <div class="questText">
-              <p class="text-uppercase">Вам:</p>
-              <small>Укажите возраст</small>
-            </div>
-            <div class="respOpt radioInp adapt">
-              <input type="radio" name="age" id="age20" value="age25"><label for="age20">до 25</label>
-              <input type="radio" name="age" id="age25" value="age30"><label for="age25">25-35</label>
-              <input type="radio" name="age" id="age35" value="age40"><label for="age35">35-45</label>
-              <input type="radio" name="age" id="age45" value="age45"><label for="age45">больше 45</label>
-            </div>
-          </div>
-          <div class="quest-b">
-            <div class="questText adaptQuest">
-              <p class="text-uppercase ">Ваши ощущения после умывани водой:</p>
-            </div>
-            <div class="respOpt radioInp skinType">
-              <input type="radio" name="skinSens" value="1" id="tightening"><label for="tightening">Кожу стягивает</label>
-              <input type="radio" name="skinSens" value="2" id="purity"><label for="purity">Есть ощущение чистоты и свежести</label>
-              <input type="radio" name="skinSens" value="3" id="oily"><label for="oily">спустя некоторое время появляется жирный блеск</label>
-              <input type="radio" name="skinSens" value="4" id="dirty"><label for="dirty">есть ощущение недостаточного очищения кожи</label>
+            <div class="respOpt radioInp adapt adaptOrder">
+              <input type="radio" name="season" id="autumn " value="autumn "><label for="autumn ">осень</label>
+              <input type="radio" name="season" id="winter " value="winter "><label for="winter ">зима</label>
+              <input type="radio" name="season" id="spring" value="spring"><label for="spring">весна</label>
+              <input type="radio" name="season" id="summer" value="summer"><label for="summer">лето</label>
             </div>
           </div>
           <div class="quest-b">
             <div class="questText">
-              <p class="text-uppercase">Поры на вашем лице:</p>
+              <p class="text-uppercase">Взять результаты теста для подбора программы?</p>
             </div>
-            <div class="respOpt radioInp skinType">
-              <input type="radio" name="pore" id="poreHid" value="1">
-              <label for="poreHid">
-                незаметны
-              </label>
-              <input type="radio" name="pore" id="poreModerat" value="2">
-              <label for="poreModerat">
-                умеренно выражены
-              </label>
-              <input type="radio" name="pore" id="poreTZon" value="3">
-              <label for="poreTZon">
-                заметны на т-зоне
-              </label>
-              <input type="radio" name="pore" id="poreBright" value="4">
-              <label for="poreBright">
-                ярко выражены на всем лице
-              </label>
-            </div>
-          </div>
-          <div class="quest-b">
-            <div class="questText">
-              <p class="text-uppercase">Бывают ли воспаления:</p>
-            </div>
-            <div class="radioInp respOpt skinType">
-              <input type="radio" name="poreInflam" id="poreHidflam" value="1">
-              <label for="poreHidflam">
-                нет
-              </label>
-              <input type="radio" name="poreInflam" id="poreModeratflam" value="2">
-              <label for="poreModeratflam">
-                единичные редко
-              </label>
-              <input type="radio" name="poreInflam" id="poreTZonflam" value="3">
-              <label for="poreTZonflam">
-                в т-зоне
-              </label>
-              <input type="radio" name="poreInflam" id="poreBrightflam" value="4">
-              <label for="poreBrightflam">
-                довольно часто
-              </label>
-            </div>
-          </div>
-          <div class="quest-b">
-            <div class="questText text-uppercase adaptQuest">
-              <p> Спасибо за ответы! ваш тип кожи - <b id="anserText">комбинированная</b></p>
-              </p>
-            </div>
-          </div>
-          <div class="quest-b">
-            <div class="questText d-flex">
-              <p class="text-uppercase">какой у вас тип старения</p>
-            </div>
-            <div class="respOpt radioInp">
-              <div class="option">
-                <input type="radio" name="typeAging" id="tired_type" value="tired_type">
-                <label for="tired_type">
-                  усталый тип
-                </label>
-                <p>
-                  Мягкие черты лица, умеренно развитая мускулатура и умеренное количество подкожной клетчатки. Старение проявляется общим усталым видом, опущением уголков глаз и губ, "помятостью".
-                </p>
-                <img src="img\tired_type.jpg" alt="Пример усталого типа кожи">
+            <div class="respOpt radioInp adapt adaptOrder">
+              <div class="choseSave">
+                <div class="selectWrap">
+                  <small>Результаты теста</small>
+                  <select class="form-select"  name="gender" id="gender">
+                    <option selected>Выберите из списка</option>
+                    <option value="male">
+                      Подгрузка с БД
+                    </option>
+                  </select>
+                </div>
+                <div class="inputAnswer">
+                  <input type="radio" name="resultTest" id="yes" value="yes"><label for="yes">да</label>
+                </div>
               </div>
-              <div class="option">
-                <input type="radio" name="typeAging" id="small_wrinkled" value="small_wrinkled">
-                <label for="small_wrinkled">
-                  Мелкоморщинистый тип
-                </label>
-                <p>
-                  Пухлое лицо почти без подкожной жировой клетчатки, хорошо просматриваются кости черепа. Довольно рано лицо начинает покрываться сеточкой морщин.
-                </p>
-                <img src="img\small_wrinkled.jpg" alt="Пример мелкоморщинистого тип кожи">
+              <input type="radio" name="resultTest" id="no" value="no"><label for="no">нет</label>
+            </div>
+            <div class="selectWrap selectWrapchoseSave">
+              <small>Результаты теста</small>
+              <select class="form-select"  name="gender" id="gender">
+                <option selected>Выберите из списка</option>
+                <option value="male">
+                  Подгрузка с БД
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="quest-b selectSave">
+            <div class="questText">
+              <p class="text-uppercase">Установить параметры самостоятельно</p>
+            </div>
+            <div class="respOpt checkInp checkInpOrder">
+              <div class="selectInp selectInpOrder d-flex justify-content-between flex-wrap">
+                <div class="selectWrap">
+                  <small>Пол</small>
+                  <select class="form-select"  name="gender" id="gender">
+                    <option selected>Выберите из списка</option>
+                    <option value="male">
+                      Мужчина
+                    </option>
+                    <option value="female">
+                      Женщина
+                    </option>
+                  </select>
+                </div>
+                <div class="selectWrap">
+                  <small>Возраст</small>
+                  <select class="form-select"  name="age" id="age">
+                    <option selected>Выберите из списка</option>
+                    <option value="age25">
+                      до 25
+                    </option>
+                    <option value="age30">
+                      25-35
+                    </option>
+                    <option value="age40">
+                      35-45
+                    </option>
+                    <option value="age45">
+                      больше 45
+                    </option>
+                  </select>
+                </div>
+                <div class="selectWrap">
+                  <small>Тип кожи</small>
+                  <select class="form-select"  name="typeSens" id="typeSens">
+                    <option selected>Выберите из списка</option>
+                    <option value="dry">
+                      Сухая
+                    </option>
+                    <option value="normal">
+                      Нормальная
+                    </option>
+                    <option value="combined">
+                      Комбинированная
+                    </option>
+                    <option value="fat">
+                      Жирная
+                    </option>
+                  </select>
+                </div>
+                <div class="selectWrap">
+                  <small>Тип старения</small>
+                  <select class="form-select"  name="typeAging" id="typeAging">
+                    <option selected>Выберите из списка</option>
+                    <option value="tired_type">
+                      Усталый тип
+                    </option>
+                    <option value="small_wrinkled">
+                      Мелкоморщинистый тип
+                    </option>
+                    <option value="gravity_type">
+                      Гравитационный тип
+                    </option>
+                    <option value="muscular_type">
+                      Мускульный тип
+                    </option>
+                  </select>
+                </div>
+                <div class="selectWrap">
+                  <small>Состояние кожи</small>
+                  <select class="form-select"  name="skinProp" id="skinProp" multiple>
+                    <option value="dehydration">
+                      обезвоженность
+                    </option>
+                    <option value="pigmented">
+                      пигментные пятна
+                    </option>
+                    <option value="uneven">
+                      неровный тон и текстура кожи
+                    </option>
+                    <option value="red_irritat">
+                      покраснения и раздражения
+                    </option>
+                    <option value="inflamRash">
+                      воспаления и высыпания
+                    </option>
+                    <option value="enlar_black_dots">
+                      расширенные поры и черные точки
+                    </option>
+                  </select>
+                </div>
+                <div class="selectWrap">
+                  <small>Гормональный статус</small>
+                  <select class="form-select"  name="oftenPreg" id="oftenPreg">
+                    <option selected>Выберите из списка</option>
+                    <option value="yesPreg">
+                      Беременна/кормлю грудью
+                    </option>
+                    <option value="noPreg">
+                      Не беременна/не кормлю грудью
+                    </option>
+                  </select>
+                </div>
               </div>
-              <div class="option">
-                <input type="radio" name="typeAging" id="gravity_type" value="gravity_type">
-                <label for="gravity_type">
-                  Гравитационный тип
-                </label>
-                <p>
-                  Обильная подкожная клетчатка, объёмное лицо, склонность к отекам. Старение в первую очередь проявляется деформацией овала лица.
-                </p>
-                <img src="img\gravity_type.jpg" alt="Пример гравитационного тип кожи">
+              <div class="checkWrap">
+                <input type="checkbox" name="skinProp" value="dehydration" id="dehydration"><label for="dehydration">Чувствительная кожа</label>
               </div>
-              <div class="option">
-                <input type="radio" name="typeAging" id="muscular_type" value="muscular_type">
-                <label for="muscular_type">
-                  Мускульный тип
-                </label>
-                <p>
-                  Хорошо развиты мышцы, черты лица часто крупные (но необязательно), мало подкожной клетчатки, кожа "припаяна" к мышцам. С возрастом начинают появляться вертикальные борозды. Характерная особенность - залом, борозда в носогубной складке.
-                </p>
-                <img src="img\muscular_type.jpg" alt="Пример мускульного типа кожи">
+              <div class="checkWrap">
+                <input type="checkbox" name="skinProp" value="simple" id="simple"><label for="simple">Подобрать упрощенную программу для тех, кто не любит заморачиваться</label>
+              </div>
+              <div class="checkWrap">
+                <input type="checkbox" name="skinProp" value="hard" id="hard"><label for="hard">Подобрать развернутую программу для продвинутых любителей</label>
               </div>
             </div>
           </div>
-          <div class="quest-b">
+          <div class="quest-b selectSave">
             <div class="questText">
-              <p class="text-uppercase">что вы отмечаете  прямо сейчас:</p>
-              <small>Можно выбрать несколько вариантов</small>
+              <p class="text-uppercase">Дополнительно</p>
             </div>
             <div class="respOpt checkInp">
-              <div class="checkWrap">
-                <input type="checkbox" name="skinProp" value="dehydration" id="dehydration"><label for="dehydration">обезвоженность</label>
+              <label for="nameFile" class="alerg selectWrap">
+                <small>
+                  Аллергия на ингредиенты (название в INCI)
+                </small>
+                <input class="form-control" type="text" name="nameFile" id="nameFile">
+              </label>
+              <div class="selectInp selectInpDls">
+                <div class="selectWrap">
+                  <small>Ценовая категория</small>
+                  <select class="form-select"  name="price" id="price" multiple>
+                    
+                    <option value="budget">
+                      Бюджетная
+                    </option>
+                    <option value="middl">
+                      Мидл
+                    </option>
+                    <option value="prem">
+                      Премиум
+                    </option>
+                  </select>
+                </div>
+                <div class="selectWrap">
+                  <small>Категория косметики</small>
+                  <select class="form-select"  name="category" id="category" multiple>
+                    <option value="pharmacy">
+                      Аптечная
+                    </option>
+                    <option value="professional">
+                      Профессиональная
+                    </option>
+                    <option value="natural">
+                      Натуральная
+                    </option>
+                    <option value="lux">
+                      Люкс
+                    </option>
+                    <option value="asian">
+                      Азиатская
+                    </option>
+                    <option value="russian">
+                      Российская
+                    </option>
+                    <option value="belarusian">
+                      Белорусская
+                    </option>
+                    <option value="european">
+                      Европейская
+                    </option>
+                  </select>
+                </div>
+                <div class="selectWrap">
+                  <small>Страна производства</small>
+                  <select class="form-select"  name="selectCountry" id="selectCountry" multiple>
+                    <option value="russian">
+                      Россия
+                    </option>
+                    <option value="england">
+                      Америка
+                    </option>
+                  </select>
+                </div>
+                <div class="selectWrap">
+                  <small>Исключить активы</small>
+                  <select class="form-select"  name="activeIgnore" id="activeIgnore" multiple>
+                    <option value="england">
+                      Подстановка из БД
+                    </option>
+                    <option value="england">
+                      Подстановка из БД
+                    </option>
+                  </select>
+                </div>
               </div>
-              <div class="checkWrap">
-                <input type="checkbox" name="skinProp" value="pigmented" id="pigmented"><label for="pigmented">пигментные пятна</label>
-              </div>
-              <div class="checkWrap">
-                <input type="checkbox" name="skinProp" value="uneven" id="uneven"><label for="uneven">неровный тон и текстура кожи</label>
-              </div>
-              <div class="checkWrap">
-                <input type="checkbox" name="skinProp" value="red_irritat" id="red_irritat"><label for="red_irritat">покраснения и раздражения</label>
-              </div>
-              <div class="checkWrap">
-                <input type="checkbox" name="skinProp" value="inflamRash" id="inflamRash"><label for="inflamRash">воспаления и высыпания</label>
-              </div>
-              <div class="checkWrap">
-                <input type="checkbox" name="skinProp" value="enlar_black_dots" id="enlar_black_dots"><label for="enlar_black_dots">расширенные поры и черные точки</label>
-              </div>
-              <div class="checkWrap">
-                <input type="checkbox" name="skinProp" value="wrinkles" id="wrinkles"><label for="wrinkles">потеря упругости и эластичности, морщины</label>
-              </div>
-              <div class="checkWrap">
-                <input type="checkbox" name="skinProp" value="rosacea" id="rosacea"><label for="rosacea">купероз и розацеа</label>
-              </div>
-            </div>
+            </div>            
           </div>
-          <div class="quest-b">
-            <div class="questText">
-              <p class="text-uppercase">кожа вокруг глаз:</p>
-              <small>Можно выбрать несколько вариантов</small>
-            </div>
-            <div class="respOpt checkInp">
-              <div class="checkWrap">
-                <input type="checkbox" name="skinEyes" value="wrinklesElast" id="wrinklesElast"><label for="wrinklesElast">морщины и потеря упругости</label>
-              </div>
-              <div class="checkWrap">
-                <input type="checkbox" name="skinEyes" value="darkCircl" id="darkCircl"><label for="darkCircl">темные круги</label>
-              </div>
-              <div class="checkWrap">
-                <input type="checkbox" name="skinEyes" value="edema" id="edema"><label for="edema">отеки</label>
-              </div>
-              <div class="checkWrap">
-                <input type="checkbox" name="skinEyes" value="dryness" id="dryness"><label for="dryness">сухость и обезвоженность</label>
-              </div>
-            </div>
-          </div>
-          <div class="quest-b">
-            <div class="questText">
-              <p class="text-uppercase">Часто ли уходовая косметика вызывает раздражение, покраснение, жжение?</p>
-            </div>
-            <div class="respOpt radioInp">
-              <input type="radio" name="often" id="yes" value="yes"><label for="yes">да</label>
-              <input type="radio" name="often" id="no" value="no"><label for="no">нет</label>
-            </div>
-          </div>
-          <div class="quest-b">
-            <div class="questText">
-              <p class="text-uppercase">В данный момент вы беременны, кормите грудью или планируете беременность в течение ближайших 6 месяцев?</p>
-            </div>
-            <div class="respOpt radioInp">
-              <input type="radio" name="oftenPreg" id="yesPreg" value="yesPreg"><label for="yesPreg">да</label>
-              <input type="radio" name="oftenPreg" id="noPreg" value="noPreg"><label for="noPreg">нет</label>
-            </div>
-          </div>
-          <div class="quest-b d-flex align-items-center">
-              <input class="showResult text-uppercase" type="submit" value="Показать результаты">
-          </div>
+        </form>
+      </section>
+      <section class="downloadRezult container container--bc">
+        <form class="order" action="">
+          <button id="paySelect" class="text-uppercase"><p>оплатить подбор</p></button>
+          <button id="selectProgram" class="text-uppercase"><p>подобрать программу</p></button>
         </form>
       </section>
     </main>
@@ -406,6 +451,6 @@
       </div>
     </footer>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/test.js"></script>
+    <script src="js/orderSelect.js"></script>
   </body>
 </html>
