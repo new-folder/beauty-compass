@@ -3,11 +3,6 @@
 
 .brand__title
     margin-bottom: 20px
-.selectInp
-    margin-bottom: 20px
-.alerg
-    margin: 10px 0
-    width: 100% !important
 .wrapHead
     display: flex
     flex-direction: row-reverse
@@ -25,3 +20,40 @@
 #saveProfile
     &:before
         background-image: url("../img/tick-circle.svg")
+
+.persData
+    display: grid
+    grid-template-rows: repeat(4,1fr)
+    grid-template-columns: 2fr repeat(6,1fr)
+    column-gap: 30px
+    row-gap: 5px
+    
+    input
+        height: 42px
+    *
+        width: 100%
+
+#ava
+    width: 90%
+    grid-row: span 4
+
+#avatar
+    border-radius: 50%
+    width: 100%
+    aspect-ratio: 1
+    background-image: url("../img/gallery-add.svg")
+    overflow: hidden
+    box-shadow: $box-shadow-sm
+    background-position: center
+    background-repeat: no-repeat
+    background-size: 60%
+    
+
+#nikname
+    grid-column: span 4
+
+#gender, #realName, #partName, #dateBirth
+    grid-column: span 2
+
+#phone, #login, #email, #password
+    grid-column: span 3

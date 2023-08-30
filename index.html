@@ -133,31 +133,77 @@
                       <button id="saveProfile" class="text-uppercase"><p>сохранить</p></button>
                     </div>
                 </div>
-                
             </div>
         </div>
       </section>
       <section class="container container--bc">
-        <form action="" class="">
-          <label for="nameFile" class="selectWrap">
+        <form action="" class="persData">
+          <label id="ava" class="selectWrap">
             <small>
-              Аллергия на ингредиенты (название в INCI)
+              Аватар
             </small>
-            <input class="form-control" type="text" name="nameFile" id="nameFile">
-          </label>
-            <div class="">
-            <div class="selectWrap">
-              <small>Страна производства</small>
-              <select class="form-select"  name="selectCountry" id="selectCountry" multiple>
-                <option value="russian">
-                  Россия
-                </option>
-                <option value="england">
-                  Америка
-                </option>
-              </select>
+            <div id="avatar">
             </div>
+          </label>
+          <label for="nikname" class="selectWrap" id="nikname">
+            <small>
+              Ник
+            </small>
+            <input class="form-control" type="text" name="nikname" id="niknameInp">
+          </label>
+          <div class="selectWrap" id="gender">
+            <small>Пол</small>
+            <select class="form-select"  name="selectGender" id="selectGender">
+              <option value="men">
+                Мужчина
+              </option>
+              <option value="women">
+                Женщина
+              </option>
+            </select>
           </div>
+          <label for="realName" class="selectWrap" id="realName">
+            <small>
+              Имя
+            </small>
+            <input class="form-control" type="text" name="realName" id="realName">
+          </label>
+          <label for="partName" class="selectWrap" id="partName">
+            <small>
+              Фамилия
+            </small>
+            <input class="form-control" type="text" name="partName" id="partName">
+          </label>
+          <label for="dateBirth" class="selectWrap" id="dateBirth">
+            <small>
+              Дата рождения
+            </small>
+            <input class="form-control" type="date" name="dateBirth" id="dateBirth">
+          </label>
+          <label for="login" class="selectWrap" id="login">
+            <small>
+              Логин
+            </small>
+            <input class="form-control" type="text" name="login" id="login">
+          </label>
+          <label for="phone" class="selectWrap" id="phone">
+            <small>
+              Телефон
+            </small>
+            <input class="form-control" type="text" name="phone" id="phone">
+          </label>
+          <label for="password" class="selectWrap" id="password">
+            <small>
+              Пароль
+            </small>
+            <input class="form-control" type="text" name="password" id="password">
+          </label>
+          <label for="email" class="selectWrap" id="email">
+            <small>
+              Email для связи с админимтрацией
+            </small>
+            <input class="form-control" type="email" name="email" id="email">
+          </label>
         </form>
       </section>
       <section class="downloadRezult container container--bc">
