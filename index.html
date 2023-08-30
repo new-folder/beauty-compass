@@ -127,260 +127,36 @@
       <section class="brand__title">
         <div class="container container--bc">
             <div class="page-title d-flex flex-wrap align-items-center col-xxl-10 offset-xxl-1">
-                <div class="col text-center col-xxl-12">
-                    <h1 class="title--20-36 text-uppercase"><P>ЗАКАЗАТЬ ПОДБОР</P></h1>
+                <div class="col wrapHead  text-center col-xxl-12">
+                    <div class="headPage ">
+                      <h1 class="title--20-36 text-uppercase"><P>профиль</P></h1>
+                      <button id="saveProfile" class="text-uppercase"><p>сохранить</p></button>
+                    </div>
                 </div>
-                <div class="col-1 col-xxl-12 order-xxl-1">
-                    <a href="" class="btn__svg-confirm text--15-30 fw-600 main-color hover-red d-flex align-items-center justify-content-start justify-content-xxl-center m-auto text-decoration-none">
-                        
-                    </a>
-                </div>
+                
             </div>
         </div>
       </section>
       <section class="container container--bc">
-        <form action="">
-          <div class="quest-b">
-            <div class="questText">
-              <p class="text-uppercase">Ник, для какого сезона вы хотите подобрать программу ухода?</p>
-            </div>
-            <div class="respOpt radioInp adapt adaptOrder">
-              <input type="radio" name="season" id="autumn " value="autumn "><label for="autumn ">осень</label>
-              <input type="radio" name="season" id="winter " value="winter "><label for="winter ">зима</label>
-              <input type="radio" name="season" id="spring" value="spring"><label for="spring">весна</label>
-              <input type="radio" name="season" id="summer" value="summer"><label for="summer">лето</label>
-            </div>
-          </div>
-          <div class="quest-b">
-            <div class="questText">
-              <p class="text-uppercase">Взять результаты теста для подбора программы?</p>
-            </div>
-            <div class="respOpt radioInp adapt adaptOrder">
-              <div class="choseSave">
-                <div class="selectWrap">
-                  <small>Результаты теста</small>
-                  <select class="form-select"  name="gender" id="gender">
-                    <option selected>Выберите из списка</option>
-                    <option value="male">
-                      Подгрузка с БД
-                    </option>
-                  </select>
-                </div>
-                <div class="inputAnswer">
-                  <input type="radio" name="resultTest" id="yes" value="yes"><label for="yes">да</label>
-                </div>
-              </div>
-              <input type="radio" name="resultTest" id="no" value="no"><label for="no">нет</label>
-            </div>
-            <div class="selectWrap selectWrapchoseSave">
-              <small>Результаты теста</small>
-              <select class="form-select"  name="gender" id="gender">
-                <option selected>Выберите из списка</option>
-                <option value="male">
-                  Подгрузка с БД
+        <form action="" class="">
+          <label for="nameFile" class="selectWrap">
+            <small>
+              Аллергия на ингредиенты (название в INCI)
+            </small>
+            <input class="form-control" type="text" name="nameFile" id="nameFile">
+          </label>
+            <div class="">
+            <div class="selectWrap">
+              <small>Страна производства</small>
+              <select class="form-select"  name="selectCountry" id="selectCountry" multiple>
+                <option value="russian">
+                  Россия
+                </option>
+                <option value="england">
+                  Америка
                 </option>
               </select>
             </div>
-          </div>
-          <div class="quest-b selectSave">
-            <div class="questText">
-              <p class="text-uppercase">Установить параметры самостоятельно</p>
-            </div>
-            <div class="respOpt checkInp checkInpOrder">
-              <div class="selectInp selectInpOrder d-flex justify-content-between flex-wrap">
-                <div class="selectWrap">
-                  <small>Пол</small>
-                  <select class="form-select"  name="gender" id="gender">
-                    <option selected>Выберите из списка</option>
-                    <option value="male">
-                      Мужчина
-                    </option>
-                    <option value="female">
-                      Женщина
-                    </option>
-                  </select>
-                </div>
-                <div class="selectWrap">
-                  <small>Возраст</small>
-                  <select class="form-select"  name="age" id="age">
-                    <option selected>Выберите из списка</option>
-                    <option value="age25">
-                      до 25
-                    </option>
-                    <option value="age30">
-                      25-35
-                    </option>
-                    <option value="age40">
-                      35-45
-                    </option>
-                    <option value="age45">
-                      больше 45
-                    </option>
-                  </select>
-                </div>
-                <div class="selectWrap">
-                  <small>Тип кожи</small>
-                  <select class="form-select"  name="typeSens" id="typeSens">
-                    <option selected>Выберите из списка</option>
-                    <option value="dry">
-                      Сухая
-                    </option>
-                    <option value="normal">
-                      Нормальная
-                    </option>
-                    <option value="combined">
-                      Комбинированная
-                    </option>
-                    <option value="fat">
-                      Жирная
-                    </option>
-                  </select>
-                </div>
-                <div class="selectWrap">
-                  <small>Тип старения</small>
-                  <select class="form-select"  name="typeAging" id="typeAging">
-                    <option selected>Выберите из списка</option>
-                    <option value="tired_type">
-                      Усталый тип
-                    </option>
-                    <option value="small_wrinkled">
-                      Мелкоморщинистый тип
-                    </option>
-                    <option value="gravity_type">
-                      Гравитационный тип
-                    </option>
-                    <option value="muscular_type">
-                      Мускульный тип
-                    </option>
-                  </select>
-                </div>
-                <div class="selectWrap">
-                  <small>Состояние кожи</small>
-                  <select class="form-select"  name="skinProp" id="skinProp" multiple>
-                    <option value="dehydration">
-                      обезвоженность
-                    </option>
-                    <option value="pigmented">
-                      пигментные пятна
-                    </option>
-                    <option value="uneven">
-                      неровный тон и текстура кожи
-                    </option>
-                    <option value="red_irritat">
-                      покраснения и раздражения
-                    </option>
-                    <option value="inflamRash">
-                      воспаления и высыпания
-                    </option>
-                    <option value="enlar_black_dots">
-                      расширенные поры и черные точки
-                    </option>
-                  </select>
-                </div>
-                <div class="selectWrap">
-                  <small>Гормональный статус</small>
-                  <select class="form-select"  name="oftenPreg" id="oftenPreg">
-                    <option selected>Выберите из списка</option>
-                    <option value="yesPreg">
-                      Беременна/кормлю грудью
-                    </option>
-                    <option value="noPreg">
-                      Не беременна/не кормлю грудью
-                    </option>
-                  </select>
-                </div>
-              </div>
-              <div class="checkWrap">
-                <input type="checkbox" name="skinProp" value="dehydration" id="dehydration"><label for="dehydration">Чувствительная кожа</label>
-              </div>
-              <div class="checkWrap">
-                <input type="checkbox" name="skinProp" value="simple" id="simple"><label for="simple">Подобрать упрощенную программу для тех, кто не любит заморачиваться</label>
-              </div>
-              <div class="checkWrap">
-                <input type="checkbox" name="skinProp" value="hard" id="hard"><label for="hard">Подобрать развернутую программу для продвинутых любителей</label>
-              </div>
-            </div>
-          </div>
-          <div class="quest-b selectSave">
-            <div class="questText">
-              <p class="text-uppercase">Дополнительно</p>
-            </div>
-            <div class="respOpt checkInp">
-              <label for="nameFile" class="alerg selectWrap">
-                <small>
-                  Аллергия на ингредиенты (название в INCI)
-                </small>
-                <input class="form-control" type="text" name="nameFile" id="nameFile">
-              </label>
-              <div class="selectInp selectInpDls">
-                <div class="selectWrap">
-                  <small>Ценовая категория</small>
-                  <select class="form-select"  name="price" id="price" multiple>
-                    
-                    <option value="budget">
-                      Бюджетная
-                    </option>
-                    <option value="middl">
-                      Мидл
-                    </option>
-                    <option value="prem">
-                      Премиум
-                    </option>
-                  </select>
-                </div>
-                <div class="selectWrap">
-                  <small>Категория косметики</small>
-                  <select class="form-select"  name="category" id="category" multiple>
-                    <option value="pharmacy">
-                      Аптечная
-                    </option>
-                    <option value="professional">
-                      Профессиональная
-                    </option>
-                    <option value="natural">
-                      Натуральная
-                    </option>
-                    <option value="lux">
-                      Люкс
-                    </option>
-                    <option value="asian">
-                      Азиатская
-                    </option>
-                    <option value="russian">
-                      Российская
-                    </option>
-                    <option value="belarusian">
-                      Белорусская
-                    </option>
-                    <option value="european">
-                      Европейская
-                    </option>
-                  </select>
-                </div>
-                <div class="selectWrap">
-                  <small>Страна производства</small>
-                  <select class="form-select"  name="selectCountry" id="selectCountry" multiple>
-                    <option value="russian">
-                      Россия
-                    </option>
-                    <option value="england">
-                      Америка
-                    </option>
-                  </select>
-                </div>
-                <div class="selectWrap">
-                  <small>Исключить активы</small>
-                  <select class="form-select"  name="activeIgnore" id="activeIgnore" multiple>
-                    <option value="england">
-                      Подстановка из БД
-                    </option>
-                    <option value="england">
-                      Подстановка из БД
-                    </option>
-                  </select>
-                </div>
-              </div>
-            </div>            
           </div>
         </form>
       </section>
