@@ -1,10 +1,9 @@
 $(document).ready(function() {
 
-    $('#selectCountry').select2({
-        closeOnSelect: false,
-        placeholder:"Выберите из списка",
-    }
-    ); 
+    // $('#selectCountry').select2({
+    //     placeholder:"Выберите из списка",
+    // }
+    // ); 
 
-    
+
 })

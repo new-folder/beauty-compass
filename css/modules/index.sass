@@ -26,7 +26,6 @@
     grid-template-rows: repeat(4,1fr)
     grid-template-columns: 2fr repeat(6,1fr)
     column-gap: 30px
-    row-gap: 5px
     
     input
         height: 42px
@@ -52,8 +51,24 @@
 #nikname
     grid-column: span 4
 
-#gender, #realName, #partName, #dateBirth
+#gender, #realName, #partName, #dateBirth, #emailOpen, #selecDerma, #selecHaier
     grid-column: span 2
 
 #phone, #login, #email, #password
     grid-column: span 3
+
+.infOpenProfile
+    display: grid
+    grid-template-rows: 3fr repeat(2,1fr)
+    grid-template-columns: repeat(4,1fr)
+    column-gap: 30px
+    *
+        width: 100%
+
+.descrProf
+    grid-column: span 4
+    width: 100%
+
+#descrProf
+    height: 230px
+    resize: none

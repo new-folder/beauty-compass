@@ -136,8 +136,8 @@
             </div>
         </div>
       </section>
-      <section class="container container--bc">
-        <form action="" class="persData">
+      <section class="profile container container--bc">
+        <form action="" class="persData" id="confidInfPerson">
           <label id="ava" class="selectWrap">
             <small>
               Аватар
@@ -205,6 +205,75 @@
             <input class="form-control" type="email" name="email" id="email">
           </label>
         </form>
+      </section>
+      <section class="infoOpen container container--bc">
+        <p class="title--20-36 text-uppercase">Информация для открытого профиля</p>
+        <div class="infOpenProfile ">
+          <label class="selectWrap descrProf">
+            <small>
+              Описание профиля
+            </small>
+            <textarea name="descrProf" id="descrProf" class="form-control" form="confidInfPerson"></textarea>
+          </label>
+          <label class="selectWrap contry">
+            <small>
+              Страна
+            </small>
+            <select class="form-select" name="selectCountry" id="selectCountry" form="confidInfPerson">
+              <option value="country1">
+                Подгрузка с БД
+              </option>
+              <option value="country2">
+                Подгрузка с БД
+              </option>
+            </select>
+          </label>
+          <label class="selectWrap city">
+            <small>
+              Город
+            </small>
+            <select class="form-select" name="selectCity" id="selectCity" form="confidInfPerson">
+              <option value="city1">
+                Подгрузка с БД
+              </option>
+              <option value="city2">
+                Подгрузка с БД
+              </option>
+            </select>
+          </label>
+          <label for="emailOpen" class="selectWrap" id="emailOpen">
+            <small>
+              E-mail (виден на странице профиля)
+            </small>
+            <input class="form-control" type="email" name="emailOpen" id="emailOpen" form="confidInfPerson">
+          </label>
+          <label class="selectWrap haier" id="selecHaier">
+            <small>
+              Тип волос
+            </small>
+            <select class="form-select" name="selecHaier" id="selecHaier" form="confidInfPerson">
+              <option value="haier1">
+                Подгрузка с БД
+              </option>
+              <option value="haier1">
+                Подгрузка с БД
+              </option>
+            </select>
+          </label>
+          <label class="selectWrap derma" id="selecDerma">
+            <small>
+              Тип кожи
+            </small>
+            <select class="form-select" name="selecDerma" id="selecDerma" form="confidInfPerson">
+              <option value="derma1">
+                Подгрузка с БД
+              </option>
+              <option value="derma2">
+                Подгрузка с БД
+              </option>
+            </select>
+          </label>
+        </div>
       </section>
       <section class="downloadRezult container container--bc">
         <form class="order" action="">
