@@ -13,56 +13,114 @@
     grid-template-areas: "photo name country" "photo email town" "photo tel ." "description description description" "history history history" "principles principles principles";
   }
 }
+.profile__image-file {
+  position: absolute;
+}
+.profile__image-file_box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.profile__image-file_token {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 54px;
+  transform: translate(-50%, -50%);
+}
+.profile__image-file_preview {
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 100%;
+}
+.profile__brand {
+  grid-auto-columns: 114px auto auto;
+  grid-column-gap: 11px;
+  grid-row-gap: 27px;
+  grid-template-areas: "image . ." "image . ." "image . ." "name name name" "description description description";
+  margin-top: 27px;
+  margin-bottom: 27px;
+}
 @media screen and (min-width: 1400px) {
-  .profile__body {
+  .profile__brand {
     grid-template-columns: 187px auto 258px;
     grid-column-gap: 37px;
     grid-row-gap: 30px;
   }
 }
-.profile__body .name {
+.profile__brand .name {
   grid-area: name;
 }
-.profile__body .photo {
+.profile__brand .photo {
   grid-area: photo;
 }
-.profile__body .country {
+.profile__brand .country {
   grid-area: country;
 }
-.profile__body .town {
+.profile__brand .town {
   grid-area: town;
 }
-.profile__body .tel {
+.profile__brand .tel {
   grid-area: tel;
 }
 @media screen and (min-width: 1400px) {
-  .profile__body .tel {
+  .profile__brand .tel {
     max-width: 410px;
   }
 }
-.profile__body .email {
+.profile__brand .email {
   grid-area: email;
 }
 @media screen and (min-width: 1400px) {
-  .profile__body .email {
+  .profile__brand .email {
     max-width: 410px;
   }
 }
-.profile__body .description {
+.profile__brand .description {
   grid-area: description;
 }
-.profile__body .history {
+.profile__brand .history {
   grid-area: history;
 }
-.profile__body .principles {
+.profile__brand .principles {
   grid-area: principles;
 }
-.profile__body .tel img, .profile__body .email img {
+.profile__manufacturer-info {
+  grid-auto-columns: 114px auto auto;
+  grid-column-gap: 11px;
+  grid-row-gap: 22px;
+  grid-template-areas: "name name name" "image country country" "image town town" "image . ." "photo photo photo" "email email email" "description description description" "history history history" "principles principles principles";
+}
+@media screen and (min-width: 1400px) {
+  .profile__manufacturer-info {
+    grid-auto-columns: 187px auto auto;
+    grid-column-gap: 38px;
+    grid-row-gap: 31px;
+    grid-template-areas: "image name country" "image email town" "image photo ." "description description description" "history history history" "principles principles principles";
+  }
+}
+.profile__manufacturer-info_input.name {
+  grid-area: name;
+}
+.profile__manufacturer-info_input.image {
+  grid-area: image;
+  position: relative;
+  width: 114px;
+  height: 114px;
+}
+.profile__manufacturer-info_input.image img {
+  width: 54px;
+  height: auto;
+}
+.profile__manufacturer-info .tel img, .profile__manufacturer-info .email img {
   width: 26px;
   height: 26px;
 }
 @media screen and (min-width: 1400px) {
-  .profile__body .tel img, .profile__body .email img {
+  .profile__manufacturer-info .tel img, .profile__manufacturer-info .email img {
     width: 42px;
     height: 42px;
   }
@@ -74,7 +132,90 @@
 }
 @media screen and (min-width: 1400px) {
   .profile__label {
-    top: -18px;
+    justify-content: flex-start;
+    flex-direction: row;
+    -moz-column-gap: 38px;
+         column-gap: 38px;
+    row-gap: 38px;
+  }
+}
+.profile__label-images {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 18px;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+}
+@media screen and (min-width: 1400px) {
+  .profile__label-images {
+    -moz-column-gap: 40px;
+         column-gap: 40px;
+    row-gap: 38px;
+  }
+}
+.profile__label-image {
+  grid-area: image;
+  position: relative;
+  width: 114px;
+  height: 114px;
+}
+@media screen and (min-width: 1400px) {
+  .profile__label-image {
+    width: 187px;
+    height: 187px;
+  }
+}
+.profile__label-image_cloud {
+  top: -65px;
+  right: -115%;
+  width: 150px;
+  padding: 6px 8px;
+}
+@media screen and (min-width: 1400px) {
+  .profile__label-image_cloud {
+    top: -66%;
+    right: auto;
+    width: 440px;
+    padding: 14px 20px 10px;
+  }
+}
+.profile__label-image_label {
+  top: -40px;
+}
+.profile__label-image_token {
+  width: 54px;
+  height: auto;
+}
+.profile__label-image svg {
+  position: absolute;
+  top: -20px;
+  right: 5px;
+}
+@media screen and (min-width: 1400px) {
+  .profile__label-image svg {
+    top: -34px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .profile__label-assignment, .profile__label-format, .profile__label-region, .profile__label-assignment2, .profile__label_price-category, .profile__label_age-recommendations, .profile__label_key-action, .profile__label-gender {
+    width: 31%;
+  }
+}
+.profile__label_formal-name, .profile__label_explanatory-name, .profile__label-description, .profile__label-INCI, .profile__label-usage, .profile__label_catalog-section {
+  width: 100%;
+}
+.profile__label-plus {
+  margin-left: 21px;
+  width: 30px;
+  height: 30px;
+  top: -18px;
+}
+@media screen and (min-width: 1400px) {
+  .profile__label-plus {
+    width: 42px;
+    height: 42px;
   }
 }
 .profile__photo {
