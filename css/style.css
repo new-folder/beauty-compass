@@ -4172,23 +4172,62 @@ textarea {
   color: #E31E24;
 }
 
-.besed-0 {
-  border-radius: 5px;
-  border: 1px solid #1560BD;
+.btit01 {
+  background-color: #99a5bb;
+  border: 1px solid blue;
+  margin-top: 1px;
 }
 
-.besed-01 {
-  border-radius: 10px;
-  border: 1px solid #074e0d;
+.btit02 {
+  border-radius: 10%;
+  background-color: none;
+  border: 1.5px solid green;
+  margin-top: 1.5px;
 }
 
-.besed-02 {
-  border-radius: 10px;
-  border: 2px solid #E31E24;
+.btit03 {
+  border-radius: 10%;
+  background-color: #d49a9a;
+  border: 1.5px solid red;
+  margin-top: 2px;
 }
 
-.tit-01 {
-  margin-top: -10px;
+.btxt-01 {
+  color: brown;
+  margin-top: -6px;
+  font-size: 100%;
+  padding-top: 2px;
+}
+
+.besedka1 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1080px;
+}
+
+.brow201 {
+  margin-top: 18px;
+  align-items: last baseline;
+}
+
+.brow205 {
+  align-items: last baseline;
+  font-size: 30px;
+  color: #494949;
+  margin-top: 28px;
+}
+
+.btxt-201 {
+  color: #494949;
+  font-size: 36px;
+}
+
+.btxt-202 {
   color: #1560BD;
   font-size: 30px;
+}
+
+.btxt-204 {
+  color: #FAFAFA;
+  font-size: 18px;
 }/*# sourceMappingURL=style.css.map */
