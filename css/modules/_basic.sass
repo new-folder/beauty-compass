@@ -150,16 +150,15 @@ body
         font-size: 30px
         line-height: 1.25
         color: $dark-semi-light
-        @media screen and (max-width: $first-breack-point) 
+        @media screen and (max-width: $first-breack-point)
             font-size: 20px
             font-weight: 600
             line-height: 1.25
     &__under
         font-size: 30px
         color: $main-color
-        @media screen and (max-width: $first-breack-point) 
+        @media screen and (max-width: $first-breack-point)
             font-size: 15px
-
 
 // === Colors ===
 .main-color
@@ -222,7 +221,7 @@ body
         background: initial
         border: 2px solid $main-color
         color: $main-color
-    
+
 .btn-string
     width: fit-content
     border: none
@@ -249,7 +248,7 @@ main
         padding: 0 10px
 .slider
     margin-bottom: 56px
-    @media screen and (max-width: $second-breack-point) 
+    @media screen and (max-width: $second-breack-point)
         margin-bottom: 40px
 .selection
     margin-bottom: 56px
@@ -416,20 +415,20 @@ main
 .input
     position: relative
     input, textarea, select, &.input--select
-        background: $white-color
-        width: 100%
-        height: 100%
-        padding: 7px 12px
-        box-shadow: $box-shadow-regular
-        border-radius: 10px
-        border: none
-        color: $dark-lighter
-        font-size: 10px
-        font-style: normal
-        font-weight: 600
-        line-height: normal
-        &:focus-visible
-            outline: 1px solid $main-color
+    background: $white-color
+    width: 100%
+    height: 100%
+    padding: 7px 12px
+    box-shadow: $box-shadow-regular
+    border-radius: 10px
+    border: none
+    color: $dark-lighter
+    font-size: 10px
+    font-style: normal
+    font-weight: 600
+    line-height: normal
+    &:focus-visible
+        outline: 1px solid $main-color
         @media all and (min-width: $first-breack-point)
             font-size: 18px
     &--image
@@ -443,14 +442,13 @@ main
             height: 100%
             opacity: 0
             cursor: pointer
-    &--modal   
-        &.input--image 
+    &--modal
+        &.input--image
             background: #F8F8F8
             box-shadow: none
         @media all and (max-width: $first-breack-point)
             width: 56px
             height: 56px
-
 
 .label
     position: absolute
@@ -467,7 +465,6 @@ main
             font-size: 15px
         @media screen and (min-width: $first-breack-point)
             top: -20px
-
 
 .section
     &--carousel
@@ -679,7 +676,7 @@ main
         background-size: 47px
         @media screen and (max-width: $first-breack-point)
             padding-left: 40px
-            font-size: 15px 
+            font-size: 15px
             background-size: contain
 
 .product-header
@@ -705,7 +702,7 @@ main
             left: 30px
             width: 53px
             height: 500px
-            background: url(../img/product-sticker.svg) no-repeat     
+            background: url(../img/product-sticker.svg) no-repeat
             @media screen and (max-width: $first-breack-point)
                 display: none
     &__title
@@ -725,7 +722,7 @@ main
         @media screen and (max-width: $first-breack-point)
             height: 65px
 
-.users-feedback    
+.users-feedback
     &__header
         font-weight: 600
         font-size: 30px
@@ -739,9 +736,9 @@ main
             &:hover
                 opacity: .7
 
-.user-feedback 
+.user-feedback
     height: 364px
-    justify-content: start    
+    justify-content: start
     padding: 20px
     border-radius: $border-radius
     box-shadow: $box-shadow-sm
@@ -785,9 +782,9 @@ main
             max-width: 200%
     &__photos
         display: flex
-        justify-content: start    
+        justify-content: start
         &:has(.user-feedback__photo:nth-child(3))
-            justify-content: space-between 
+            justify-content: space-between
             .user-feedback__photo
                 margin-right: 0
 
@@ -818,7 +815,6 @@ main
             height: 88px
     p
         margin-bottom: 10px
-    
 
 .about-product
     &__item
@@ -850,7 +846,7 @@ main
                 height: 6px
                 background-size: 100%
         &:not(.collapsed)
-            color: #494949  
+            color: #494949
             background-color: inherit
             box-shadow: none
             &::after
@@ -863,7 +859,6 @@ main
         padding-right: 0
         @media screen and (max-width: $first-breack-point)
             padding: 0
-
 
 .gallary
     font-weight: 600
@@ -906,14 +901,15 @@ main
             border-radius: $border-radius
             resize: none
             @media screen and (max-width: $second-breack-point)
-                height: 61px    
-        input, textarea, select, &.input--select
+                height: 61px
+        input, textarea, select,
+        &.input--select
             background: #F8F8F8
             box-shadow: none
             border-radius: 15px
             &:focus
                 background: #F8F8F8
-                box-shadow: none     
+                box-shadow: none
     &__count
         position: absolute
         bottom: 8px
@@ -1041,10 +1037,7 @@ main
                 path
                     fill: $pre-color
 
-
-
-
-.categories-item 
+.categories-item
     &__title
         margin-bottom: 42px
         a
@@ -1056,7 +1049,7 @@ main
             &:hover
                 color: $pre-color
             @media screen and (max-width: $second-breack-point)
-                font-size: 18px 
+                font-size: 18px
 .categories-dop
     &__title
         margin-bottom: 42px
@@ -1070,7 +1063,7 @@ main
                 color: $pre-color
 
 .categories-product
-    padding-left: 30px  
+    padding-left: 30px
     &__title
         margin-bottom: 20px
         &:last-child
@@ -1083,3 +1076,154 @@ main
             transition: all .3s ease
             &:hover
                 color: $pre-color
+
+.bread
+    margin-bottom: 30px
+    ul
+        list-style: none
+        margin: 0
+        padding: 0
+        display: flex
+        justify-content: center
+        li
+            position: relative
+            font-size: 18px
+            margin-right: 14px
+            &::before
+                content: '/'
+                position: absolute
+                top: 1px
+                right: -9px
+                width: 5px
+                height: 5px
+                color: #494949
+                border-bottom: none
+                border-left: none
+            &:last-child
+                &::before
+                    content: ''
+            @media (max-width: $second-breack-point)
+                font-size: 14px
+
+            a
+                text-decoration: none
+                transition: all .3s ease
+                &:hover
+                    color: $pre-color
+.category-page
+    &__container
+        width: 100%
+        padding-right: 16px
+        padding-left: 16px
+        margin-right: auto
+        margin-left: auto
+
+.filter
+    &__mobile
+        display: none
+        width: 100%
+        height: 42px
+        font-size: 18px
+        line-height: 42px
+        background: $white-color
+        box-shadow: 0 4px 20px rgba(14, 14, 14, 0.07)
+        border-radius: 15px
+        border: none
+        outline: none
+        padding-right: 40px
+        padding-left: 20px
+        position: relative
+        cursor: pointer
+        z-index: 990
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+    &__item
+        margin-bottom: 40px
+    &__item-title
+        font-weight: 600
+        margin-bottom: 20px
+    &__item-wrap
+        display: flex
+        flex-direction: column
+        a
+            text-decoration: none
+            color: $dark-color
+            transition: all .3s ease
+            &:hover
+                color: $pre-color
+    &__item-check
+        margin-bottom: 12px
+
+.filter-form
+    &__wrap
+        font-size: 18px
+        @media screen and ( max-width: $second-breack-point)
+            font-size: 14px
+    &__tags-input
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 100
+        padding: 10px
+
+.select-block
+    position: relative
+
+    input
+        width: 100%
+        height: 100%
+        border: none
+        outline: none
+        font: 18px 'Gilroy', sans-serif
+        font-weight: 600
+        border-radius: 15px
+
+    &__top
+        width: 100%
+        height: 42px
+        font-size: 18px
+        line-height: 42px
+        background: $white-color
+        box-shadow: 0 4px 20px rgba(14, 14, 14, 0.07)
+        border-radius: 15px
+        border: none
+        outline: none
+        padding-right: 40px
+        padding-left: 20px
+        position: relative
+        cursor: pointer
+        z-index: 990
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+    &__toggle
+        width: 100%
+        box-shadow: 0 4px 20px rgba(14, 14, 14, 0.07)
+        border-radius: 15px
+        padding: 20px
+        position: absolute
+        top: 65px
+        left: 0
+        z-index: 8000
+        background: #fff
+        // display: none
+        overflow-y: auto
+        max-height: 300px
+    &__item
+        position: relative
+        cursor: pointer
+        border-bottom: 1px solid #D9D9D9
+        padding: 10px 0
+        padding-right: 30px
+        input
+            position: absolute
+            width: 100%
+            height: 100%
+            opacity: 0
+            top: 0
+            cursor: pointer
+        label
+            cursor: pointer
+            font-size: 16px
+            font-weight: 600
