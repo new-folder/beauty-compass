@@ -145,15 +145,44 @@
             <div id="avatar">
             </div>
           </label>
+          <div class="selectWrap d-noneMinSec" id="gender">
+            <small>Пол</small>
+            <select class="form-select"  name="selectGender" id="selectGender">
+              <option selected>
+                Выбрать вариант ответа
+              </option>
+              <option value="men">
+                Мужчина
+              </option>
+              <option value="women">
+                Женщина
+              </option>
+            </select>
+          </div>
+          <label for="dateBirth" class="d-noneMinSec selectWrap" id="dateBirth">
+            <small>
+              Дата рождения
+            </small>
+            <input class="form-control" type="date" name="dateBirth" id="dateBirth">
+          </label>
+          <label for="phone" class="d-noneMinSec selectWrap" id="phone">
+            <small> 
+              Телефон
+            </small>
+            <input class="form-control" type="text" name="phone" id="phone">
+          </label>
           <label for="nikname" class="selectWrap" id="nikname">
             <small>
               Ник
             </small>
             <input class="form-control" type="text" name="nikname" id="niknameInp">
           </label>
-          <div class="selectWrap" id="gender">
+          <div class="selectWrap d-noneMaxSec" id="gender">
             <small>Пол</small>
             <select class="form-select"  name="selectGender" id="selectGender">
+              <option selected>
+                Выбрать вариант ответа
+              </option>
               <option value="men">
                 Мужчина
               </option>
@@ -174,7 +203,7 @@
             </small>
             <input class="form-control" type="text" name="partName" id="partName">
           </label>
-          <label for="dateBirth" class="selectWrap" id="dateBirth">
+          <label for="dateBirth" class="d-noneMaxSec selectWrap" id="dateBirth">
             <small>
               Дата рождения
             </small>
@@ -186,8 +215,8 @@
             </small>
             <input class="form-control" type="text" name="login" id="login">
           </label>
-          <label for="phone" class="selectWrap" id="phone">
-            <small>
+          <label for="phone" class="d-noneMaxSec selectWrap" id="phone">
+            <small> 
               Телефон
             </small>
             <input class="form-control" type="text" name="phone" id="phone">
@@ -333,8 +362,14 @@
       <section class="select container container--bc">
         <p class="title--20-36 text-uppercase">Обратная связь</p>
         <div class="shell">
-          <button id="progSelect" class="d-progMin text-uppercase">          
+          <button id="comment" class="d-progMin text-uppercase">
             <p>комментарии</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+          <button id="feedback" class="d-progMin text-uppercase">
+            <p>отзывы</p>
             <div class="notice">
               <p>999</p>
             </div>
@@ -351,7 +386,7 @@
               <p>999</p>
             </div>
           </button>
-          <button id="comment" class="text-uppercase">
+          <button id="comment" class="d-progMax text-uppercase">
             <p>комментарии</p>
             <div class="notice">
               <p>999</p>
@@ -370,6 +405,54 @@
             </div>
           </button>
           <button id="dummy" class="text-uppercase">
+          </button>
+        </div>
+      </section>
+      <section class="select container container--bc">
+        <p class="title--20-36 text-uppercase">Избранное</p>
+        <div class="shell">
+          <button id="articl" class="d-progMax text-uppercase">  
+            <p>статьи/обзоры</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+          <button id="brend" class="text-uppercase">          
+            <p>бренды</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+          <button id="articl" class="d-progMin text-uppercase">  
+            <p>статьи</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+          <button id="tool" class=" text-uppercase">
+            <p>средства</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+        </div>
+      </section>
+      <section class="select chatsAll container container--bc">
+        <p class="title--20-36 text-uppercase">Переписка</p>
+        <div class="shell">
+          <button id="techChat" class="text-uppercase">
+            <p>чат с ВС</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+          <button id="chat" class="text-uppercase">
+            <p>чаты</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+          <button id="dummy" class="d-progMax text-uppercase">
           </button>
         </div>
       </section>
@@ -434,6 +517,6 @@
       </div>
     </footer>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/orderSelect.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>

@@ -25,6 +25,13 @@
         box-shadow: none
         padding: 0
         margin: 0
+        @media screen and ( max-width: $second-breack-point)
+            
+        margin-top: 20px
+        font-size: 10px
+        line-height: 12px
+        color: $dark-lighter
+
         @media screen and (max-width: $second-breack-point)
             width: 100%
         label
@@ -64,25 +71,59 @@
         margin: 0
     p
         margin: 0
-
+.infoOpen
+    .title--20-36
+        margin-bottom: 15px
+.profile
+    margin-bottom: 20px
+.selectWrap
+    @media screen and ( max-width: $second-breack-point)
+        margin: 0
 #saveProfile
+    margin-right: -115px
     &:before
         background-image: url("../img/tick-circle.svg")
+    @media screen and ( max-width: $first-breack-point)
+        margin-right: -4px
+    @media screen and ( max-width: $second-breack-point)
+        display: none
+
+#selectGender
+    @media screen and ( max-width: $second-breack-point)
+        height: 26px
 
 .persData
     display: grid
     grid-template-rows: repeat(4,1fr)
     grid-template-columns: 2fr repeat(6,1fr)
     column-gap: 30px
-    
+    @media screen and ( max-width: $second-breack-point)
+        grid-template-columns: 149px repeat(3,1fr)
+        grid-template-rows: repeat(9,1fr)
+        column-gap: 0
+
     input
         height: 42px
+        @media screen and ( max-width: $second-breack-point)
+            height: 26px
+
     *
         width: 100%
 
+.d-noneMinSec
+    display: none
+    @media screen and ( max-width: $second-breack-point )
+        display: block
+.d-noneMaxSec
+    display: block
+    @media screen and ( max-width: $second-breack-point )
+        display: none
 #ava
     width: 90%
     grid-row: span 4
+    @media screen and ( max-width: $second-breack-point )
+        width: 94%
+        grid-row: span 3   
 
 #avatar
     border-radius: 50%
@@ -94,7 +135,30 @@
     background-position: center
     background-repeat: no-repeat
     background-size: 60%
+    @media screen and ( max-width: $second-breack-point )
+        border-radius: 20%
     
+#nikname, #realName, #partName, #login, #password, #email
+    @media screen and ( max-width: $second-breack-point )
+        grid-column: span 5 !important
+#gender
+    @media screen and ( max-width: $second-breack-point )
+        .form-select
+            font-weight: 700
+            font-size: 10px
+            line-height: 12px
+            color: $dark-lighter
+
+        select
+            padding-top: 0
+            padding-bottom: 0
+#dateBirth
+    @media screen and ( max-width: $second-breack-point  )
+        padding-top: 0
+        padding-bottom: 0
+#phone, #dateBirth, #gender
+    @media screen and ( max-width: $second-breack-point )
+        grid-column: span 4 !important
 
 #nikname
     grid-column: span 4
@@ -120,7 +184,13 @@
 #descrProf
     height: 230px
     resize: none
-
+    @media screen and ( max-width: $second-breack-point )
+        height: 80px
+        border-radius: 10px
+.infOpenProfile 
+    display: flex
+    flex-direction: column
+    margin-bottom: 20px
 #saveProf
     background-color: $main-color
     border-radius: $border-radius
@@ -156,6 +226,9 @@
     display: flex
     justify-content: space-between 
     flex-wrap: wrap
+    button
+        &::before
+            border-radius: 0 !important
 
 .review
     .shell
@@ -181,6 +254,7 @@
                 background-image: url('../img/document.svg')
 #dummy
     box-shadow: none
+
 .select
     p
         margin-bottom: 30px
@@ -206,44 +280,52 @@
             height: 78px
             @media screen and (max-width: $first-breack-point)
                 height: 50px
+                width: 48%
             align-items: center
             justify-content: center
-        #testSelect
-            .notice
-                left: 39%
-            @media screen and (max-width: $first-breack-point)
-                width: 48%
-                .notice
-                    left: 47%
-            &::before
-                background-image: url('../img/task-square.svg')
-        #progSelect
-            .notice
-                left: 9%
-            @media screen and (max-width: $first-breack-point)
-                width: 100%
-            &::before
-                background-image: url('../img/setting-5.svg')
-                margin-top: 0
-        #saveSelect
-            .notice
-                left: 21%
-            @media screen and (max-width: $first-breack-point)
-                width: 48%
-                .notice
-                    left: 35.5%
-            &::before
-                background-image: url('../img/note.svg')
-        .d-progMin
-            display: none
-            .notice
-                left: 39.5% !important
-            @media screen and (max-width: $first-breack-point)
-                display: flex !important
-        .d-progMax
-            display: flex
-            @media screen and (max-width: $first-breack-point)
-                display: none !important
+#testSelect
+    .notice
+        left: 39%
+    @media screen and (max-width: $first-breack-point)
+        .notice
+            left: 47%
+    @media screen and ( max-width: $second-breack-point )
+        .notice
+            left: 42%
+    &::before
+        background-image: url('../img/task-square.svg')
+#progSelect
+    .notice
+        left: 9%
+    @media screen and (max-width: $first-breack-point)
+        width: 100%
+        .notice
+            left: 39.5%
+    @media screen and ( max-width: $second-breack-point )
+        .notice
+            left: 27.5%
+    &::before
+        background-image: url('../img/settingDidg.svg')
+        margin-top: 0
+#saveSelect
+    .notice
+        left: 21%
+    @media screen and (max-width: $first-breack-point)
+        .notice
+            left: 35.3%
+    @media screen and ( max-width: $second-breack-point )
+        .notice
+            left: 19.5%
+    &::before
+        background-image: url('../img/note.svg')
+.d-progMin
+    display: none
+    @media screen and (max-width: $first-breack-point)
+        display: flex !important
+.d-progMax
+    display: flex
+    @media screen and (max-width: $first-breack-point)
+        display: none !important
 .notice
     background-color: $pre-color
     border-radius: 50%
@@ -255,8 +337,125 @@
     top: -50%
     margin: 0 !important
     margin-left: -30px !important
+    display: none
     p
         margin: 0 !important
         color: $sub-color
         font-size: 10px !important
         line-height: 31px !important
+
+#quest
+    .notice
+        left: 29.5%
+    @media screen and (max-width: $first-breack-point)
+        .notice
+            left: 40%
+    @media screen and ( max-width: $second-breack-point )
+        .notice
+            left: 30.5%
+    &::before
+        background-image: url('../img/message-question.svg')
+#feedback
+    .notice
+        left: 33%
+    @media screen and (max-width: $first-breack-point)
+        .notice
+            left: 42.6%
+    @media screen and ( max-width: $second-breack-point )
+        .notice
+            left: 33%
+    &::before
+        background-image: url('../img/like-tag.svg')
+#comment
+    .notice
+        left: 21%
+    @media screen and (max-width: $first-breack-point)
+        width: 100%
+        .notice
+            left: 42.9%
+    @media screen and ( max-width: $second-breack-point )
+        .notice
+            left: 35.6%
+    &::before
+        background-image: url('../img/messages.svg')
+    
+#review
+    .notice
+        left: 33%
+    @media screen and (max-width: $first-breack-point)
+        .notice
+            left: 42.5%
+    @media screen and ( max-width: $second-breack-point )
+        .notice
+            left: 32.7%
+    &::before
+        background-image: url('../img/task.svg')
+#monet
+    .notice
+        left: 21.5%
+    @media screen and (max-width: $first-breack-point)
+        .notice
+            left: 35%
+    @media screen and ( max-width: $second-breack-point )
+        .notice
+            left: 19%
+    &::before
+        background-image: url('../img/monetisation.svg')
+#brend
+    .notice
+        left: 34%
+    @media screen and (max-width: $first-breack-point)
+        .notice
+            left: 43%
+    @media screen and ( max-width: $second-breack-point )
+        .notice
+            left: 33.5%
+    &::before
+        background-image: url('../img/tag.svg')
+#articl
+    .notice
+        left: 17%
+    @media screen and (max-width: $first-breack-point)
+        .notice
+            left: 43.3%
+    @media screen and ( max-width: $second-breack-point )
+        .notice
+            left: 37.5%
+    &::before
+        background-image: url('../img/document-text.svg')
+#tool
+    .notice
+        left: 29%
+    @media screen and (max-width: $first-breack-point)
+        width: 100%
+        .notice
+            left: 45.3%
+    @media screen and ( max-width: $second-breack-point )
+        .notice
+            left: 41%
+    &::before
+        background-image: url('../img/toolsSkin.svg')
+#techChat
+    .notice
+        left: 31%
+    @media screen and ( max-width: $first-breack-point )
+        .notice
+            left: 42%
+    @media screen and ( max-width: $second-breack-point )
+        .notice
+            left: 31.5%
+    &::before
+        background-image: url('../img/unlock.svg')
+#chat
+    .notice
+        left: 38.7%
+    @media screen and ( max-width: $first-breack-point )
+        .notice
+            left: 45.6%
+    @media screen and ( max-width: $second-breack-point )
+        .notice
+            left: 43.5%
+    &::before
+        background-image: url('../img/edit.svg')
+.chatsAll
+    margin-bottom: 20px
