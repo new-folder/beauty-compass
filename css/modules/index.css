@@ -241,6 +241,23 @@
   line-height: 22px;
 }
 
+.lk-user button p {
+  font-size: 24px;
+}
+@media screen and (max-width: 1400px) {
+  .lk-user button p {
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .lk-user button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 .dlsFunctButton {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -266,13 +283,6 @@
 }
 .dlsFunctButton button {
   margin: 0;
-}
-@media screen and (max-width: 1400px) {
-  .dlsFunctButton button {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
 }
 .dlsFunctButton .checkWrap {
   -webkit-box-shadow: none;
@@ -671,14 +681,19 @@
   width: 27px;
 }
 
-.review .shell {
+.shell {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 75%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.review .shell {
+  width: 75%;
 }
 @media screen and (max-width: 768px) {
   .review .shell {
@@ -686,19 +701,6 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-  }
-}
-@media screen and (max-width: 1400px) {
-  .review .shell button p {
-    font-size: 15px;
-    line-height: 18px;
-  }
-}
-@media screen and (max-width: 1400px) {
-  .review .shell button {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
   }
 }
 .review .shell * {
@@ -712,27 +714,36 @@
 .review .shell *::before {
   margin: 0;
   margin-right: 20px;
+  border-radius: 0;
 }
 .review .shell #createRev::before {
   background-image: url("../img/edit.svg");
-  border-radius: 0;
 }
 .review .shell #drafRev::before {
   background-image: url("../img/document-copy.svg");
-  border-radius: 0;
 }
 .review .shell #publRev::before {
   background-image: url("../img/document.svg");
-  border-radius: 0;
 }
 
-.select .shell {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+#dummy {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.select p {
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 1400px) {
+  .select p {
+    margin-bottom: 15px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .select .shell {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 .select .shell * {
   margin: 30px 0;
@@ -745,12 +756,19 @@
 .select .shell *::before {
   margin: 0;
   margin-right: 20px;
+  margin-top: -1px;
+}
+@media screen and (max-width: 1400px) {
+  .select .shell *::before {
+    margin-right: 5px;
+  }
 }
 .select .shell button {
   -webkit-box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
           box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
   border-radius: 15px;
-  width: 31.3333333333%;
+  width: 25.3333333333%;
+  height: 78px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -760,27 +778,89 @@
 }
 @media screen and (max-width: 1400px) {
   .select .shell button {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    height: 50px;
   }
 }
-.select .shell button p {
-  margin: 10px 0;
+.select .shell #testSelect .notice {
+  left: 39%;
 }
 @media screen and (max-width: 1400px) {
-  .select .shell button p {
-    font-size: 15px;
-    line-height: 18px;
+  .select .shell #testSelect {
+    width: 48%;
+  }
+  .select .shell #testSelect .notice {
+    left: 47%;
   }
 }
 .select .shell #testSelect::before {
-  background-image: url("../img/");
+  background-image: url("../img/task-square.svg");
+}
+.select .shell #progSelect .notice {
+  left: 9%;
+}
+@media screen and (max-width: 1400px) {
+  .select .shell #progSelect {
+    width: 100%;
+  }
 }
 .select .shell #progSelect::before {
-  background-image: url("../img/");
+  background-image: url("../img/setting-5.svg");
+  margin-top: 0;
+}
+.select .shell #saveSelect .notice {
+  left: 21%;
+}
+@media screen and (max-width: 1400px) {
+  .select .shell #saveSelect {
+    width: 48%;
+  }
+  .select .shell #saveSelect .notice {
+    left: 35.5%;
+  }
 }
 .select .shell #saveSelect::before {
-  background-image: url("../img/");
+  background-image: url("../img/note.svg");
+}
+.select .shell .d-progMin {
+  display: none;
+}
+.select .shell .d-progMin .notice {
+  left: 39.5% !important;
+}
+@media screen and (max-width: 1400px) {
+  .select .shell .d-progMin {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+}
+.select .shell .d-progMax {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media screen and (max-width: 1400px) {
+  .select .shell .d-progMax {
+    display: none !important;
+  }
+}
+
+.notice {
+  background-color: #E31E24;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  top: -50%;
+  margin: 0 !important;
+  margin-left: -30px !important;
+}
+.notice p {
+  margin: 0 !important;
+  color: #FAFAFA;
+  font-size: 10px !important;
+  line-height: 31px !important;
 }
 /*# sourceMappingURL=index.css.map */
