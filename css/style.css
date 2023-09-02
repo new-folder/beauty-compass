@@ -3028,7 +3028,7 @@ button:hover {
 }
 @media screen and (max-width: 768px) {
   #testSelect .notice {
-    left: 41%;
+    left: 39%;
   }
 }
 #testSelect::before {
@@ -3048,7 +3048,7 @@ button:hover {
 }
 @media screen and (max-width: 768px) {
   #progSelect .notice {
-    left: 26.5%;
+    left: 24.5%;
   }
 }
 #progSelect::before {
@@ -3066,7 +3066,7 @@ button:hover {
 }
 @media screen and (max-width: 768px) {
   #saveSelect .notice {
-    left: 18.5%;
+    left: 16.5%;
   }
 }
 #saveSelect::before {
@@ -3125,7 +3125,7 @@ button:hover {
 }
 @media screen and (max-width: 768px) {
   #quest .notice {
-    left: 29.5%;
+    left: 27.5%;
   }
 }
 #quest::before {
@@ -3142,7 +3142,7 @@ button:hover {
 }
 @media screen and (max-width: 768px) {
   #feedback .notice {
-    left: 32%;
+    left: 30%;
   }
 }
 #feedback::before {
@@ -3162,7 +3162,7 @@ button:hover {
 }
 @media screen and (max-width: 768px) {
   #comment .notice {
-    left: 34.6%;
+    left: 32.6%;
   }
 }
 #comment::before {
@@ -3179,7 +3179,7 @@ button:hover {
 }
 @media screen and (max-width: 768px) {
   #review .notice {
-    left: 31.7%;
+    left: 29.7%;
   }
 }
 #review::before {
@@ -3196,7 +3196,7 @@ button:hover {
 }
 @media screen and (max-width: 768px) {
   #monet .notice {
-    left: 18%;
+    left: 16%;
   }
 }
 #monet::before {
@@ -3213,7 +3213,7 @@ button:hover {
 }
 @media screen and (max-width: 768px) {
   #brend .notice {
-    left: 32.5%;
+    left: 30.5%;
   }
 }
 #brend::before {
@@ -3230,7 +3230,7 @@ button:hover {
 }
 @media screen and (max-width: 768px) {
   #articl .notice {
-    left: 36.5%;
+    left: 34.5%;
   }
 }
 #articl::before {
@@ -3250,7 +3250,7 @@ button:hover {
 }
 @media screen and (max-width: 768px) {
   #tool .notice {
-    left: 40%;
+    left: 38%;
   }
 }
 #tool::before {
@@ -3267,7 +3267,7 @@ button:hover {
 }
 @media screen and (max-width: 768px) {
   #techChat .notice {
-    left: 30.5%;
+    left: 28.5%;
   }
 }
 #techChat::before {
@@ -3284,7 +3284,7 @@ button:hover {
 }
 @media screen and (max-width: 768px) {
   #chat .notice {
-    left: 42.5%;
+    left: 40.5%;
   }
 }
 #chat::before {
