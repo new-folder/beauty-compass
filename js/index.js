@@ -5,4 +5,10 @@ $(document).ready(function() {
             $(element).css('display', 'block')
         }
     }) 
+
+    $('#techChat').on('click',function(){
+        location.replace('chatTech.html');
+    })
+
+    
 })
