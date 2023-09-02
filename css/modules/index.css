@@ -749,6 +749,7 @@
 }
 
 #avatar {
+  cursor: pointer;
   border-radius: 50%;
   width: 100%;
   aspect-ratio: 1;
@@ -1388,5 +1389,15 @@
   font-size: 18px;
   line-height: 29px;
   color: #E31E24;
+}
+
+input.file-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
 }
 /*# sourceMappingURL=index.css.map */

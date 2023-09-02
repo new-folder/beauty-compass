@@ -7,8 +7,8 @@
     <title>Beauty Compass</title>
     <link rel="stylesheet" href="css/style.css" />
     <link href="css/select2.min.css" rel="stylesheet" />
-    <script src="js/jq.js"></script>
-    <script src="js/select2.js" defer></script>
+
+
   </head>
   <body>
     <nav class="navbar navbar-expand-xxl top-bar">
@@ -137,12 +137,13 @@
         </div>
       </section>
       <section class="profile container container--bc">
-        <form action="" class="persData" id="confidInfPerson">
+        <form action="" class="persData" id="confidInfPerson" enctype="multipart/form-data">
           <label id="ava" class="selectWrap">
             <small>
               Аватар
             </small>
             <div id="avatar">
+              <input type="file" name="form__pic" id="form__pic" class="file-input" onchange="handleFileSelected(this)"/>
             </div>
           </label>
           <div class="selectWrap d-noneMinSec" id="gender">
@@ -517,7 +518,22 @@
       </div>
     </footer>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jq.js"></script>
+    <script src="js/select2.js" defer></script>
     <script src="js/index.js"></script>
+    <script>
+      function handleFileSelected(input) {
+        let file = input.files[0]
+    
+        let reader = new FileReader()
+        reader.readAsDataURL(file)
+        
+        reader.onload = function () {
+          $('#avatar').css('background-image', 'url('+reader.result+')'  )
+          $('#avatar').css('background-size', '100%' )
+        }
+    }
+    </script>
     <div class="modal fade" id="deleteProfile" tabindex="-1" aria-labelledby="deleteProfileLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
