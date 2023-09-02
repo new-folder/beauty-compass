@@ -3023,7 +3023,7 @@ button:hover {
 }
 @media screen and (max-width: 1400px) {
   #testSelect .notice {
-    left: 47%;
+    left: 43%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -3043,7 +3043,7 @@ button:hover {
     width: 100%;
   }
   #progSelect .notice {
-    left: 39.5%;
+    left: 36.5%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -3061,7 +3061,7 @@ button:hover {
 }
 @media screen and (max-width: 1400px) {
   #saveSelect .notice {
-    left: 35.3%;
+    left: 32.3%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -3098,8 +3098,8 @@ button:hover {
 .notice {
   background-color: #E31E24;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
   overflow: hidden;
   text-overflow: ellipsis;
   position: relative;
@@ -3120,7 +3120,7 @@ button:hover {
 }
 @media screen and (max-width: 1400px) {
   #quest .notice {
-    left: 40%;
+    left: 46%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -3137,7 +3137,7 @@ button:hover {
 }
 @media screen and (max-width: 1400px) {
   #feedback .notice {
-    left: 42.6%;
+    left: 38.6%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -3157,7 +3157,7 @@ button:hover {
     width: 100%;
   }
   #comment .notice {
-    left: 42.9%;
+    left: 38.9%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -3174,7 +3174,7 @@ button:hover {
 }
 @media screen and (max-width: 1400px) {
   #review .notice {
-    left: 42.5%;
+    left: 38.5%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -3191,7 +3191,7 @@ button:hover {
 }
 @media screen and (max-width: 1400px) {
   #monet .notice {
-    left: 35%;
+    left: 31%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -3208,7 +3208,7 @@ button:hover {
 }
 @media screen and (max-width: 1400px) {
   #brend .notice {
-    left: 43%;
+    left: 39%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -3225,7 +3225,7 @@ button:hover {
 }
 @media screen and (max-width: 1400px) {
   #articl .notice {
-    left: 43.3%;
+    left: 39.3%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -3245,7 +3245,7 @@ button:hover {
     width: 100%;
   }
   #tool .notice {
-    left: 45.3%;
+    left: 41.3%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -3262,7 +3262,7 @@ button:hover {
 }
 @media screen and (max-width: 1400px) {
   #techChat .notice {
-    left: 42%;
+    left: 38%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -3279,7 +3279,7 @@ button:hover {
 }
 @media screen and (max-width: 1400px) {
   #chat .notice {
-    left: 45.6%;
+    left: 41.6%;
   }
 }
 @media screen and (max-width: 768px) {
