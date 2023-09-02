@@ -1340,4 +1340,45 @@
 .chatsAll {
   margin-bottom: 20px;
 }
+
+.modal-dialog {
+  max-width: 315px;
+  max-height: auto;
+}
+.modal-dialog .modal-content {
+  border-radius: 15px;
+}
+
+.modal-header {
+  margin-bottom: 20px;
+}
+.modal-header h5 {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 37px;
+  color: #E31E24;
+}
+
+.modal-footer {
+  border-top: none;
+}
+.modal-footer button::before {
+  display: none;
+}
+.modal-footer button:first-child {
+  padding: 2% 5%;
+  border-radius: 15px;
+  background-color: #1560BD;
+  color: #FAFAFA;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 10px;
+}
+.modal-footer button:last-child {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 29px;
+  color: #E31E24;
+}
 /*# sourceMappingURL=index.css.map */

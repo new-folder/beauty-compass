@@ -317,7 +317,7 @@
         </div>
         <div class="dlsFunctButton">
           <button id="saveProf"  class="text-uppercase"><p>Сохранить</p></button>
-          <button id="delProf"><p>Удалить профиль</p></button>
+          <button id="delProf" data-bs-toggle="modal" data-bs-target="#deleteProfile"><p>Удалить профиль</p></button>
           <div class="checkWrap">
             <input type="checkbox" name="skinProp" value="dehydration" id="dehydration"><label for="dehydration">Согласен получать новости сайта</label>
           </div>
@@ -519,4 +519,17 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/index.js"></script>
   </body>
+  <div class="modal fade" id="deleteProfile" tabindex="-1" aria-labelledby="deleteProfileLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h5 class="m-auto modal-title" id="deleteProfileLabel">Вы уверены?</h5>
+        </div>
+        <div class="modal-footer d-flex flex-column">
+          <button type="button" class="text-uppercase" data-bs-dismiss="modal">отмена</button>
+          <button type="button" class="">Удалить профиль</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </html>
