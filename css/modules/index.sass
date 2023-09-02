@@ -176,6 +176,10 @@
     column-gap: 30px
     *
         width: 100%
+    @media screen and ( max-width: $second-breack-point )
+        display: flex
+        flex-direction: column
+        margin-bottom: 20px
 
 .descrProf
     grid-column: span 4
@@ -187,10 +191,7 @@
     @media screen and ( max-width: $second-breack-point )
         height: 80px
         border-radius: 10px
-.infOpenProfile 
-    display: flex
-    flex-direction: column
-    margin-bottom: 20px
+
 #saveProf
     background-color: $main-color
     border-radius: $border-radius
@@ -474,6 +475,8 @@
 .modal-footer
     border-top: none
     button
+        @media screen and (max-width: $first-breack-point)
+            display: flex
         &::before
             display: none
         &:first-child

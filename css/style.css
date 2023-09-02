@@ -2842,6 +2842,18 @@ button:hover {
 .infOpenProfile * {
   width: 100%;
 }
+@media screen and (max-width: 768px) {
+  .infOpenProfile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 20px;
+  }
+}
 
 .descrProf {
   -ms-grid-column-span: 4;
@@ -2858,17 +2870,6 @@ button:hover {
     height: 80px;
     border-radius: 10px;
   }
-}
-
-.infOpenProfile {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-bottom: 20px;
 }
 
 #saveProf {
@@ -3314,6 +3315,13 @@ button:hover {
 
 .modal-footer {
   border-top: none;
+}
+@media screen and (max-width: 1400px) {
+  .modal-footer button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 .modal-footer button::before {
   display: none;
