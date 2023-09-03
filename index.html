@@ -131,6 +131,7 @@
                     <div class="headPage ">
                       <h1 class="title--20-36 text-uppercase"><P>профиль</P></h1>
                       <button id="saveProfile" class="text-uppercase"><p>сохранить</p></button>
+                      <button onclick="" id="changeProfile" class="text-uppercase"><p>настроить</p></button>
                     </div>
                 </div>
             </div>
@@ -138,47 +139,33 @@
       </section>
       <section class="profile container container--bc">
         <form action="" class="persData" id="confidInfPerson" enctype="multipart/form-data">
-          <label id="ava" class="selectWrap">
-            <small>
+          <label id="ava" class="selectWrap visPrfile">
+            <small class="redPrfile">
               Аватар
             </small>
             <div id="avatar">
-              <input type="file" name="form__pic" id="form__pic" class="file-input" onchange="handleFileSelected(this)"/>
+              <input type="file" name="form__pic" id="form__pic" class="file-input"/>
             </div>
           </label>
-          <div class="selectWrap d-noneMinSec" id="gender">
-            <small>Пол</small>
-            <select class="form-select"  name="selectGender" id="selectGender">
-              <option selected>
-                Выбрать вариант ответа
-              </option>
-              <option value="men">
-                Мужчина
-              </option>
-              <option value="women">
-                Женщина
-              </option>
-            </select>
-          </div>
-          <label for="dateBirth" class="d-noneMinSec selectWrap" id="dateBirth">
+          <label for="dateBirth" class="d-noneMinSec selectWrap redPrfile" id="dateBirth">
             <small>
               Дата рождения
             </small>
             <input class="form-control" type="date" name="dateBirth" id="dateBirth">
           </label>
-          <label for="phone" class="d-noneMinSec selectWrap" id="phone">
+          <label for="phone" class="d-noneMinSec selectWrap redPrfile" id="phone">
             <small> 
               Телефон
             </small>
             <input class="form-control" type="text" name="phone" id="phone">
           </label>
-          <label for="nikname" class="selectWrap" id="nikname">
+          <label for="nikname" class="selectWrap redPrfile" id="nikname">
             <small>
               Ник
             </small>
             <input class="form-control" type="text" name="nikname" id="niknameInp">
           </label>
-          <div class="selectWrap d-noneMaxSec" id="gender">
+          <div class="selectWrap d-noneMaxSec redPrfile" id="gender">
             <small>Пол</small>
             <select class="form-select"  name="selectGender" id="selectGender">
               <option selected>
@@ -192,51 +179,55 @@
               </option>
             </select>
           </div>
-          <label for="realName" class="selectWrap" id="realName">
+          <label for="realName" class="selectWrap redPrfile" id="realName">
             <small>
               Имя
             </small>
             <input class="form-control" type="text" name="realName" id="realName">
           </label>
-          <label for="partName" class="selectWrap" id="partName">
+          <label for="partName" class="selectWrap redPrfile" id="partName">
             <small>
               Фамилия
             </small>
             <input class="form-control" type="text" name="partName" id="partName">
           </label>
-          <label for="dateBirth" class="d-noneMaxSec selectWrap" id="dateBirth">
-            <small>
-              Дата рождения
-            </small>
-            <input class="form-control" type="date" name="dateBirth" id="dateBirth">
-          </label>
-          <label for="login" class="selectWrap" id="login">
+          <label for="login" class="selectWrap redPrfile" id="login">
             <small>
               Логин
             </small>
             <input class="form-control" type="text" name="login" id="login">
           </label>
-          <label for="phone" class="d-noneMaxSec selectWrap" id="phone">
-            <small> 
-              Телефон
-            </small>
-            <input class="form-control" type="text" name="phone" id="phone">
-          </label>
-          <label for="password" class="selectWrap" id="password">
+          <label for="password" class="selectWrap redPrfile" id="password">
             <small>
               Пароль
             </small>
-            <input class="form-control" type="text" name="password" id="password">
+            <div class="funt">
+              <input class="form-control passwordInput" type="password" name="password" id="password">
+              <button id="visPassword" class="visPassword"></button>
+            </div>
           </label>
-          <label for="email" class="selectWrap" id="email">
+          <label for="password_repit" class="selectWrap redPrfile" id="password_repit">
             <small>
-              Email для связи с админимтрацией
+              Повтор пароля
+            </small>
+            <div class="funt">
+              <input class="form-control passwordRepitInput" type="password" name="password_repit" id="password_repit">
+              <button id="visPasswordRep" class="visPassword"></button>
+            </div>            
+          </label>
+          <label for="email" class="selectWrap redPrfile" id="email">
+            <small>
+              Email для связи с администрацией
             </small>
             <input class="form-control" type="email" name="email" id="email">
           </label>
+          <label class="selectWrap visPrfile">
+            <p class="outputMail">example@ex.ex</p>
+            <p class="outputPhone">+78005553535</p>
+          </label>
         </form>
       </section>
-      <section class="infoOpen container container--bc">
+      <section class="infoOpen container container--bc redPrfile">
         <p class="title--20-36 text-uppercase">Информация для открытого профиля</p>
         <div class="infOpenProfile ">
           <label class="selectWrap descrProf">
@@ -316,14 +307,14 @@
             </select>
           </label>
         </div>
-        <div class="dlsFunctButton">
-          <button id="saveProf"  class="text-uppercase"><p>Сохранить</p></button>
-          <button id="delProf" data-bs-toggle="modal" data-bs-target="#deleteProfile"><p>Удалить профиль</p></button>
-          <div class="checkWrap">
-            <input type="checkbox" name="skinProp" value="dehydration" id="dehydration"><label for="dehydration">Согласен получать новости сайта</label>
-          </div>
-        </div>
       </section>
+      <div class="dlsFunctButton container container--bc">
+        <button id="saveProf"  class="text-uppercase"><p>Сохранить</p></button>
+        <button id="delProf" data-bs-toggle="modal" data-bs-target="#deleteProfile"><p>Удалить профиль</p></button>
+        <div class="checkWrap">
+          <input type="checkbox" name="skinProp" value="dehydration" id="dehydration"><label for="dehydration">Согласен получать новости сайта</label>
+        </div>
+      </div>
       <section class="review container container--bc">
         <div class="shell">
           <button id="createRev" class="text-uppercase"><p>создать обзор</p></button>
@@ -522,17 +513,7 @@
     <script src="js/select2.js" defer></script>
     <script src="js/index.js"></script>
     <script>
-      function handleFileSelected(input) {
-        let file = input.files[0]
-    
-        let reader = new FileReader()
-        reader.readAsDataURL(file)
-        
-        reader.onload = function () {
-          $('#avatar').css('background-image', 'url('+reader.result+')'  )
-          $('#avatar').css('background-size', '100%' )
-        }
-    }
+      
     </script>
     <div class="modal fade" id="deleteProfile" tabindex="-1" aria-labelledby="deleteProfileLabel" aria-hidden="true">
       <div class="modal-dialog">

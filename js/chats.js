@@ -61,6 +61,8 @@ if($('#viewChatBC').length){
     });
 }
 
+$('#them').select2();
+
 if($('#viewRez').length){
     $('#viewRez').pagination({
         dataSource: [
@@ -231,5 +233,3 @@ function templatingItem(data) {
 
     return html;
 }
-
-
