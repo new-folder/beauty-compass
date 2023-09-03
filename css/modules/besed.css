@@ -1,21 +1,14 @@
+@charset "UTF-8";
 .btit01 {
   background-color: #99a5bb;
-  border: 1px solid blue;
-  margin-top: 1px;
 }
 
 .btit02 {
-  border-radius: 10%;
   background-color: none;
-  border: 1.5px solid green;
-  margin-top: 1.5px;
 }
 
 .btit03 {
-  border-radius: 10%;
   background-color: #d49a9a;
-  border: 1.5px solid red;
-  margin-top: 2px;
 }
 
 .btxt-01 {
@@ -38,22 +31,112 @@
 
 .brow205 {
   align-items: last baseline;
-  font-size: 30px;
-  color: #494949;
   margin-top: 28px;
+  width: 208px;
+}
+
+.brow206 {
+  margin-top: 18px;
+  padding-left: 37px;
+}
+
+.bsec02 {
+  margin-left: -50px;
+}
+
+.bsec03 {
+  margin-left: -30px;
+}
+
+.bbloc02 {
+  width: 370px;
+  height: 37px;
+}
+
+.bbloc04 {
+  width: 208px;
+  height: 37px;
+}
+
+.bloc07 {
+  margin-top: 18px;
+  margin-left: 12px;
+  height: 62px;
+}
+
+.bloc08 {
+  margin-top: 8px;
+  margin-left: 12px;
+  width: 1000px;
+}
+
+.bloc06 {
+  height: 37px;
 }
 
 .btxt-201 {
-  color: #494949;
   font-size: 36px;
+  height: 45px;
 }
 
 .btxt-202 {
   color: #1560BD;
-  font-size: 30px;
 }
 
 .btxt-204 {
   color: #FAFAFA;
   font-size: 18px;
+}
+
+.btxt-207 {
+  color: £C9C9C9;
+  font-size: 18px;
+  margin-top: -3px;
+  height: 22px;
+}
+
+.discussions_block {
+  color: #210E22;
+  width: 1000px;
+}
+
+.discussions_articles {
+  margin-top: 3px;
+  font-size: 30px;
+}
+
+.discussions_txt {
+  margin-top: 8px;
+  font-size: 18px;
+  height: 66px;
+  overflow: hidden;
+  line-height: 1.25;
+}
+
+.btxt-201, .btxt-205, .btxt-206 {
+  color: #494949;
+}
+
+.btxt-202, .btxt-205, .btxt-206 {
+  font-size: 30px;
+  height: 37px;
+}
+
+.img-bloc06 {
+  width: 37px;
+  height: 37px;
+}
+
+.img-bloc09 {
+  margin-left: -12px;
+}
+
+.btxt-200 {
+  margin-top: -5px;
+}
+
+.data_face08 {
+  height: 62px;
+  margin-top: -8px;
+  margin-left: -16px;
 }/*# sourceMappingURL=besed.css.map */
