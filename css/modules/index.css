@@ -375,6 +375,10 @@ section {
     margin: 0;
   }
 }
+.selectWrap textarea {
+  resize: none;
+  border-radius: 15px;
+}
 
 #saveProfile {
   display: none;

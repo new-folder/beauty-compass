@@ -10,7 +10,6 @@
     <script src="js/jq.js"></script>
     <script src="js/select2.js" defer></script>
     <script src="js/pogination.js"></script>
-
   </head>
   <body>
     <nav class="navbar navbar-expand-xxl top-bar">
@@ -215,37 +214,57 @@
       </div>
     </footer>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/chats.js"></script>
-    <div class="modal fade" id="sendMess" tabindex="-1" aria-labelledby="deleteProfileLabel" aria-hidden="true">
-      <div class="modal-dialog">
+    <script defer src="js/chats.js"></script>
+    <div class="modal fade" id="sendMess" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <div class="modal-header text-center">
+          <div class="modal-header chat text-center">
             <h5 class="modal-title" id="deleteProfileLabel">Сообщение</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
           </div>
           <div class="modal-body">
-            <label for="appeal" class="d-noneMinSec selectWrap" id="appeal">
-              <small> 
-                Заголовок обращения
-              </small>
-              <input class="form-control" type="text" name="appeal" id="appeal">
-            </label>
-            <div class="selectWrap d-noneMinSec" id="them">
-              <small>Пол</small>
-              <select class="form-select" multiple  name="them" id="them">
-                <option selected>
-                  Тема обращения
-                </option>
-                <option value="techSup">
-                  Техническая поддержка
-                </option>
-                <option value="generQuest">
-                  Общие вопросы и предложения
-                </option>
-                <option value="legalIss">
-                  Юридические и финансовые вопросы
-                </option>
-              </select>
-            </div>
+            <form action="" class="sendMessTech">
+              <div class="titleModal">
+                <label for="appeal" class="selectWrap" id="appeal">
+                  <small> 
+                    Заголовок обращения
+                  </small>
+                  <input class="form-control" type="text" name="appeal" id="appeal">
+                </label>
+                <div class="selectWrap">
+                  <small>Тема обращения</small>
+                  <select class="form-select" multiple  name="them" id="them">
+                    <option value="techSup">
+                      Техническая поддержка
+                    </option>
+                    <option value="generQuest">
+                      Общие вопросы и предложения
+                    </option>
+                    <option value="legalIss">
+                      Юридические и финансовые вопросы
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <label for="textApeal" class="selectWrap">
+                <small> 
+                  Текст обращения
+                </small>
+                <textarea class="form-control" name="textApeal" id="textApeal" rows="3"></textarea>
+              </label>
+              <label id="ava" class="selectWrap visPrfile">
+                <small>
+                  Загрузите до 5 фотографий
+                </small>
+                <div class="previewImage">
+
+                  <div id="avatar" class="addImage">
+                    <input multiple type="file" name="form__pic" id="form__pic" class="file-input"/>
+                  </div>
+                  
+                </div>
+              </label>
+            </form> 
           </div>
           <div class="modal-footer d-flex flex-column">
             <button type="button" class="text-uppercase" data-bs-dismiss="modal">отмена</button>
@@ -253,6 +272,6 @@
           </div>
         </div>
       </div>
-    </div>  
+    </div> 
 </body>
 </html>

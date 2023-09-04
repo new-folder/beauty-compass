@@ -62,19 +62,26 @@ a.unlockIcon
             left: 38.5%
     &::before
         background-image: url('../img/edit.svg')
+        border-radius: 0     
 
 .modal-dialog
-    max-width: 315px
-    max-height: auto
+    max-width: 800px
     .modal-content
+        height: fit-content
         border-radius: $border-radius
-.modal-header
+.chat
     h5
         font-weight: 600
         font-size: 30px
         line-height: 37px
         color: $pre-color
-    margin-bottom: 20px
+    margin-bottom: 0
+.modal-body
+    .selectWrap
+        width: 100%
+        margin: 5px 0
+    .select2
+        height: auto !important
 .modal-footer
     border-top: none
     button
@@ -97,3 +104,22 @@ a.unlockIcon
             font-size: 18px
             line-height: 29px
             color: $pre-color
+
+.sendMessTech
+    #ava
+        width: 100%
+        .previewImage
+            display: flex
+            *
+                margin: 0 0.5%
+            #avatar
+                margin: 0
+                background-size:60%
+            .addImage
+                width: calc( 100% / 7 )
+                padding: 5px
+                background-size:80%
+                background-repeat: no-repeat
+                background-position: center
+                box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1)
+                border-radius: 50%

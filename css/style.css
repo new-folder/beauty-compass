@@ -2541,6 +2541,10 @@ section {
     margin: 0;
   }
 }
+.selectWrap textarea {
+  resize: none;
+  border-radius: 15px;
+}
 
 #saveProfile {
   display: none;
@@ -4065,24 +4069,35 @@ a.unlockIcon:after {
 }
 #createRev::before {
   background-image: url("../img/edit.svg");
+  border-radius: 0;
 }
 
 .modal-dialog {
-  max-width: 315px;
-  max-height: auto;
+  max-width: 800px;
 }
 .modal-dialog .modal-content {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   border-radius: 15px;
 }
 
-.modal-header {
-  margin-bottom: 20px;
+.chat {
+  margin-bottom: 0;
 }
-.modal-header h5 {
+.chat h5 {
   font-weight: 600;
   font-size: 30px;
   line-height: 37px;
   color: #E31E24;
+}
+
+.modal-body .selectWrap {
+  width: 100%;
+  margin: 5px 0;
+}
+.modal-body .select2 {
+  height: auto !important;
 }
 
 .modal-footer {
@@ -4113,5 +4128,31 @@ a.unlockIcon:after {
   font-size: 18px;
   line-height: 29px;
   color: #E31E24;
+}
+
+.sendMessTech #ava {
+  width: 100%;
+}
+.sendMessTech #ava .previewImage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.sendMessTech #ava .previewImage * {
+  margin: 0 0.5%;
+}
+.sendMessTech #ava .previewImage #avatar {
+  margin: 0;
+  background-size: 60%;
+}
+.sendMessTech #ava .previewImage .addImage {
+  width: 14.2857142857%;
+  padding: 5px;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
+          box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
+  border-radius: 50%;
 }
 /*# sourceMappingURL=style.css.map */

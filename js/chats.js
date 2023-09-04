@@ -61,7 +61,13 @@ if($('#viewChatBC').length){
     });
 }
 
-$('#them').select2();
+$('#them').select2({
+    closeOnSelect: false,
+    placeholder:"Выберите из списка",
+    multiple: true,
+    dropdownParent: $("#sendMess")
+}
+);
 
 if($('#viewRez').length){
     $('#viewRez').pagination({
@@ -232,4 +238,45 @@ function templatingItem(data) {
     html += '</ul>';
 
     return html;
+}
+
+$('.sendMessTech input#form__pic.file-input').on("change", null, $('#form__pic'), handleFileSelected)
+
+function handleFileSelected(input) {
+
+    console.log(input);
+
+    var container=$(".previewImage")
+    if(input.data[0])
+        file = input.data[0].files
+    else
+        file = input[0].files
+
+    if(file.length!=0){
+        if (parseInt($fileUpload.get(0).files.length)>6){
+            for (let index = 0; index < file.length; index++) {
+                const element = file[index];
+                let reader = new FileReader()
+                reader.readAsDataURL(element)
+                reader.onload = function () {
+                    html='<div id="image_'+index+'"' 
+                    html+='class="delImage addImage" '
+                    html+='style="background-image:url('+reader.result+'); "></div>'
+                    output=$(html)
+                    output.on('click', delImg)
+                    container[0].prepend(output[0]);
+                    
+                }
+            }
+        }
+        else{
+            
+        }
+    }
+
+}
+
+function delImg(image){
+    this.remove()
+    event.preventDefault()
 }
