@@ -9,4 +9,15 @@ document.addEventListener("DOMContentLoaded", function () {
       filters.classList.add("filter--active");
     }
   });
+
+  const searchInput = document.getElementById("search-input");
+  const searchResults = document.getElementById("search-results");
+
+  searchInput.addEventListener("focus", function () {
+    searchResults.classList.add("select-block__toggle--active");
+  });
+
+  searchInput.addEventListener("focusout", function () {
+    searchResults.classList.remove("select-block__toggle--active");
+  });
 });

@@ -1895,7 +1895,8 @@ body {
     overflow: hidden;
   }
   .filter--active {
-    max-height: 3000px;
+    overflow: visible;
+    max-height: 100000000000000px;
   }
 }
 .filter__mobile {
@@ -1995,8 +1996,12 @@ body {
   left: 0;
   z-index: 8000;
   background: #fff;
+  display: none;
   overflow-y: auto;
   max-height: 300px;
+}
+.select-block__toggle--active {
+  display: block;
 }
 .select-block__item {
   position: relative;
