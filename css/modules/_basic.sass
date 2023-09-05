@@ -1119,25 +1119,30 @@ main
         margin-left: auto
 
 .filter
+    @media screen and ( max-width: $first-breack-point )
+        // display: none
+        // opacity: 0
+        max-height: 0
+        transition: max-height .4s ease-in-out
+        overflow: hidden
+        &--active
+            // opacity: 1
+            max-height: 3000px
+
     &__mobile
         display: none
-        width: 100%
-        height: 42px
-        font-size: 18px
-        line-height: 42px
-        background: $white-color
-        box-shadow: 0 4px 20px rgba(14, 14, 14, 0.07)
-        border-radius: 15px
-        border: none
-        outline: none
-        padding-right: 40px
-        padding-left: 20px
         position: relative
+
+        @media (max-width: $first-breack-point)
+            display: block
+
+    &__mobile-btn
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        right: 0
         cursor: pointer
-        z-index: 990
-        white-space: nowrap
-        overflow: hidden
-        text-overflow: ellipsis
     &__item
         margin-bottom: 40px
     &__item-title
@@ -1210,6 +1215,7 @@ main
         // display: none
         overflow-y: auto
         max-height: 300px
+
     &__item
         position: relative
         cursor: pointer
@@ -1227,3 +1233,47 @@ main
             cursor: pointer
             font-size: 16px
             font-weight: 600
+
+.products
+    display: flex
+    flex-wrap: wrap
+    gap: 34px
+    @media screen and ( max-width: $first-breack-point )
+        gap: 24px
+
+    &__item-wrapper
+        margin-bottom: 25px
+        width: 20%
+        @media screen and ( max-width: $first-breack-point )
+            width: 31%
+        @media screen and ( max-width: $second-breack-point )
+            width: 46%
+    &__item
+
+    &__img
+        border-radius: 15px
+        filter: drop-shadow(0px 10px 20px rgba(14, 14, 14, 0.1))
+        position: relative
+        margin-bottom: 10px
+        overflow: hidden
+        a
+            display: block
+
+            img
+                height: 100%
+                width: 100%
+                object-fit: cover
+    &__info
+        padding: 0 10px
+    &__rating
+
+    &__text
+        a
+            font-size: 18px
+            font-weight: 600
+            line-height: 22px
+            letter-spacing: 0.5px
+            text-decoration: none
+            color: $dark-color
+            @media ( max-width: $second-breack-point )
+                font-size: 14px
