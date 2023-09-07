@@ -468,6 +468,16 @@ textarea
     &--xs-full
         @media screen and (max-width: $second-breack-point)
             width: 100%
+    &--gray
+        color: #c9c9c9
+        border: 3px solid #c9c9c9
+        border-radius: $border-radius
+        padding: 0 40px
+        &:hover
+            color: #c9c9c9
+            opacity: 0.7
+        @media screen and (max-width: $first-breack-point)
+            padding: 10px 20px
     &.active
         background: $pre-color
 
@@ -701,7 +711,23 @@ main
         @media all and (max-width: $first-breack-point)
             width: 56px
             height: 56px
-
+    &--gray
+        border: none
+        border-radius: $border-radius 
+        background: $sub-color
+        padding: 10px 20px
+        font-weight: 600
+        &::-webkit-input-placeholder 
+            color: #c9c9c9
+        &::-moz-placeholder 
+            color: #c9c9c9
+        &:-ms-input-placeholder
+            color: #c9c9c9
+        &::placeholder
+            color: #c9c9c9
+        &:focus-visible
+            border-radius: $border-radius 
+            outline: 2px solid $dark-color
 
 .label
     position: absolute
@@ -1475,7 +1501,9 @@ main
             svg
                 path
                     fill: $pre-color
-
+    &__answer
+        button
+            max-width: fit-content
     &--product-full
         width: fit-content
         border: none
