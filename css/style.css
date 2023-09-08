@@ -3237,9 +3237,15 @@ textarea {
   position: relative;
   cursor: pointer;
 }
+.social-count__icon--like {
+  color: #1560BD;
+}
+.social-count__icon--fav {
+  color: #E31E24;
+}
 .social-count__icon.active .icon-inner {
-  fill: #E31E24;
-  fill-opacity: 0.5;
+  fill: currentColor;
+  fill-opacity: 0.7;
 }
 @media screen and (max-width: 1400px) {
   .social-count__icon svg {
