@@ -81,22 +81,14 @@
 }
 
 .checkInp {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: end;
+  flex-direction: column;
+  align-items: end;
 }
 
 .checkWrap {
   border-radius: 15px;
-  -webkit-box-shadow: 0px 4px 20px 0 rgba(14, 14, 14, 0.07);
-          box-shadow: 0px 4px 20px 0 rgba(14, 14, 14, 0.07);
+  box-shadow: 0px 4px 20px 0 rgba(14, 14, 14, 0.07);
   padding: 15px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -118,20 +110,15 @@
   background-image: url("../img/check.svg");
 }
 .checkWrap input + label {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
 .checkWrap input + label::before {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
+  flex-shrink: 0;
   content: "";
   display: inline-block;
   width: 34px;
@@ -174,24 +161,16 @@
   background-color: #1560BD;
 }
 .radioInp input[typy=radio] + label {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
 .radioInp label {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   text-transform: uppercase;
   margin-bottom: 15px;
 }
@@ -204,10 +183,8 @@
   background: #FFFFFF;
   border-radius: 50%;
   margin-right: 0.5em;
-  -webkit-box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
-          box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
+  box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
+  flex-shrink: 0;
 }
 @media screen and (max-width: 768px) {
   .radioInp label::before {
@@ -222,11 +199,9 @@
   background: #FFFFFF;
   border-radius: 50%;
   margin-left: 0.5em;
-  -webkit-box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
-          box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
+  box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
   display: none;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
+  flex-shrink: 0;
 }
 @media screen and (max-width: 768px) {
   .radioInp label::after {
@@ -261,14 +236,11 @@
 }
 
 .adapt {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (25%)[4];
   grid-template-columns: repeat(4, 25%);
 }
 @media screen and (max-width: 768px) {
   .adapt {
-    -ms-grid-columns: (50%)[2];
     grid-template-columns: repeat(2, 50%);
   }
 }
@@ -278,9 +250,7 @@
 }
 @media screen and (max-width: 768px) {
   .adapt label {
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: end;
+    justify-content: end;
     width: auto;
   }
 }
@@ -299,4 +269,3 @@
   font-size: 18px;
   line-height: 22px;
 }
-/*# sourceMappingURL=test.css.map */
