@@ -27,6 +27,10 @@
     &__icon
         position: relative
         cursor: pointer
+        &.active
+            .icon-inner
+                fill: $pre-color
+                fill-opacity: .5
         @media screen and (max-width: $first-breack-point)
             svg 
                 width: 25px

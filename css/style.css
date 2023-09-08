@@ -3237,6 +3237,10 @@ textarea {
   position: relative;
   cursor: pointer;
 }
+.social-count__icon.active .icon-inner {
+  fill: #E31E24;
+  fill-opacity: 0.5;
+}
 @media screen and (max-width: 1400px) {
   .social-count__icon svg {
     width: 25px;
