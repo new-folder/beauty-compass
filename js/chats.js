@@ -207,11 +207,15 @@ if($('#viewRez').length){
 function templatingItem(data) {
     html = '<ul>';
     data.forEach(element => {
-        html += '<li class="">        <a href="" class="d-flex justify-content-between align-items-center '
+        html += '<li class="">        <a href="'
         if(element.statusChat=='unlockIcon'){
             html+='unlockIcon'
         }
-        html+=' ">           <div class="infProg">            <p class="title '
+        html+= '" class="d-flex justify-content-between align-items-center '
+        if(element.statusChat=='unlockIcon'){
+            html+='unlockIcon'
+        }
+        html+=' "> <div class="infProg"> <p class="title '
         if(element.statusChat){
             if(element.statusChat=='unlockIcon'){
                 html+='unlockIcon'
@@ -219,8 +223,6 @@ function templatingItem(data) {
             else if(element.statusChat=='bing')
                 html+='bing'
         }
-            
-
         html+='">'+element.nameUserProgram+'</p> <small>'+element.date+'</small>'
         if(element.descriptProgram!=undefined){
             html+= '<p class="descr">'+element.descriptProgram+'</p>'
