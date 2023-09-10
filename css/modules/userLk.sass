@@ -1,11 +1,5 @@
 @import vars
 @import test
-
-@import inputText
-@import select2
-@import buttonStyle
-@import checkBox
-@import pagin
 .lk-user
     button
         p
@@ -80,33 +74,58 @@
 .infoOpen
     .title--20-36
         margin-bottom: 15px
-.profile
+section
     margin-bottom: 20px
-.selectWrap
-    @media screen and ( max-width: $second-breack-point)
-        margin: 0
+
+#confidInfPerson,.infOpenProfile
+    .selectWrap
+        width: auto
+        @media screen and ( max-width: $second-breack-point)
+            margin: 0
+        textarea
+            resize: none
+            border-radius: $border-radius
 #saveProfile
+    display: none
     margin-right: -115px
     &:before
         background-image: url("../img/tick-circle.svg")
     @media screen and ( max-width: $first-breack-point)
         margin-right: -4px
     @media screen and ( max-width: $second-breack-point)
-        display: none
+        display: none !important
+
+#changeProfile
+    margin-right: -115px
+    &:before
+        background-image: url("../img/setting.svg")
+    @media screen and ( max-width: $first-breack-point)
+        margin-right: 0
+
+    @media screen and ( max-width: $second-breack-point)
+        p
+            display: none
+        
+        &:before
+            margin-right: 0
 
 #selectGender
+    
     @media screen and ( max-width: $second-breack-point)
         height: 26px
 
 .persData
-    display: grid
-    grid-template-rows: repeat(4,1fr)
-    grid-template-columns: 2fr repeat(6,1fr)
+    display: flex
+    // grid-template-rows: repeat(4,82px)
+    grid-template-columns: 2fr repeat(7,1fr)
     column-gap: 30px
-    @media screen and ( max-width: $second-breack-point)
+    @media screen and ( max-width: $first-breack-point)
         grid-template-columns: 149px repeat(3,1fr)
-        grid-template-rows: repeat(9,1fr)
+        // grid-template-rows: repeat(9,1fr)
+        grid-template-rows: repeat(10,110px)
         column-gap: 0
+    @media screen and ( max-width: $second-breack-point)
+        grid-template-rows: repeat(10, 48px)
 
     input
         height: 42px
@@ -118,20 +137,43 @@
 
 .d-noneMinSec
     display: none
-    @media screen and ( max-width: $second-breack-point )
+    @media screen and ( max-width: $first-breack-point )
         display: block
 .d-noneMaxSec
     display: block
-    @media screen and ( max-width: $second-breack-point )
+    @media screen and ( max-width: $first-breack-point )
         display: none
 #ava
-    width: 90%
-    grid-row: span 4
+    width: 30%
+    grid-column-start: 1
+    grid-column-end: 3
+    margin-right: 20px
+    grid-row: span 5
+    @media screen and ( max-width: $first-breack-point )
+        width: 94%
+        grid-row: span 2
     @media screen and ( max-width: $second-breack-point )
         width: 94%
-        grid-row: span 3   
+        grid-column: 1
+
+.redPrfile
+    display: none
+.visPrfile
+    p
+        font-size: 30px
+        line-height: 35px
+        color: $dark-lighter
+        font-weight: 500
+        @media screen and (max-width: $first-breack-point)
+            font-weight: 700
+            font-size: 15px
+            line-height: 12px  
+
+#ava.visPrfile
+    width: 30%
 
 #avatar
+    margin: auto
     cursor: pointer
     border-radius: 50%
     width: 100%
@@ -145,11 +187,17 @@
     @media screen and ( max-width: $second-breack-point )
         border-radius: 20%
     
-#nikname, #realName, #partName, #login, #password, #email
-    @media screen and ( max-width: $second-breack-point )
-        grid-column: span 5 !important
 #gender
+    grid-row-start: 1
+    grid-column-start: 7
+    grid-column-end: 9
+    @media screen and ( max-width: $first-breack-point )
+        grid-column-start: 3
+        grid-column-end: 9
+    
     @media screen and ( max-width: $second-breack-point )
+        grid-column-start: 2
+        grid-column-end: 9
         .form-select
             font-weight: 700
             font-size: 10px
@@ -159,22 +207,121 @@
         select
             padding-top: 0
             padding-bottom: 0
-#dateBirth
-    @media screen and ( max-width: $second-breack-point  )
-        padding-top: 0
-        padding-bottom: 0
-#phone, #dateBirth, #gender
-    @media screen and ( max-width: $second-breack-point )
-        grid-column: span 4 !important
+
 
 #nikname
-    grid-column: span 4
+    grid-row-start: 1
+    grid-column-start: 3
+    grid-column-end: 7
+    @media screen and ( max-width: $first-breack-point )
+        grid-row: 4
+        grid-column: 1/9
 
-#gender, #realName, #partName, #dateBirth, #emailOpen, #selecDerma, #selecHaier
-    grid-column: span 2
+#realName
+    grid-row: 2
+    grid-column: 3/5
+    @media screen and ( max-width: $first-breack-point )
+        grid-row: 5
+        grid-column: 1/9
+#partName
+    grid-row: 2
+    grid-column: 5/7
+    @media screen and ( max-width: $first-breack-point )
+        grid-row: 6
+        grid-column: 1/9
 
-#phone, #login, #email, #password
-    grid-column: span 3
+#phone
+    grid-row: 3
+    grid-column: 6/9
+    @media screen and ( max-width: $first-breack-point  )
+        grid-row: 3
+        grid-column-start: 3
+        grid-column-end: 9
+    @media screen and (max-width: $second-breack-point)
+        grid-column-start: 2
+#login
+    grid-row: 3
+    grid-column: 3/6
+    @media screen and ( max-width: $first-breack-point )
+        grid-row: 7
+        grid-column: 1/9
+
+#password
+    grid-row: 4
+    grid-column: 3/6
+    @media screen and ( max-width: $first-breack-point )
+        grid-row: 8
+        grid-column: 1/9
+#password_repit
+    grid-row: 4
+    grid-column: 6/9
+    @media screen and ( max-width: $first-breack-point )
+        grid-row: 9
+        grid-column: 1/9
+
+.contry
+    grid-row: 2
+    grid-column: 1/2
+.city
+    grid-row: 2
+    grid-column: 2/3
+
+#email
+    grid-column: span 8
+    @media screen and ( max-width: $first-breack-point )
+        grid-row: 10
+        grid-column: 1/9
+
+#dateBirth
+    grid-row: 2
+    grid-column: 7/9
+    @media screen and ( max-width: $first-breack-point  )
+        grid-row: 2
+        grid-column-start: 3
+        grid-column-end: 9
+        padding-top: 0
+        padding-bottom: 0
+    @media screen and ( max-width: $second-breack-point  )
+        grid-column-start: 2
+        grid-column-end: 9
+#emailOpen
+    grid-row: 2
+    grid-column: 3/5
+#selecDerma
+    grid-row: 3
+    grid-column: 3/5
+#selecHaier
+    grid-row: 3
+    grid-column: 1/3
+.visPassword
+    margin-right: 0
+    margin-left: -30px
+    width: 30px
+    top: 9%
+    position: relative
+    left: -16px
+
+.funt
+    display: flex
+    width: 100%
+
+#visPassword
+    background-image: url('../img/eye_show.svg')  
+    background-repeat: no-repeat
+    background-size: 100%
+    background-position: center
+    @media screen and ( max-width: $first-breack-point )
+        background-size: 80%
+
+
+#visPasswordRep
+    background-image: url('../img/eye_show.svg')  
+    background-repeat: no-repeat
+    background-size: 100%
+    background-position: center
+    @media screen and ( max-width: $first-breack-point )
+        background-size: 80%
+
 
 .infOpenProfile
     display: grid
@@ -195,9 +342,9 @@
 #descrProf
     height: 230px
     resize: none
+    border-radius: $border-radius
     @media screen and ( max-width: $second-breack-point )
         height: 80px
-        border-radius: 10px
 
 #saveProf
     background-color: $main-color
@@ -240,9 +387,9 @@
 
 .review
     .shell
+        
         @media screen and ( max-width: $second-breack-point)
             flex-direction: column
-        width: 75%
         *
             margin: 30px 0
             @media screen and ( max-width: $first-breack-point)
@@ -251,6 +398,9 @@
                 margin: 0
                 margin-right: 20px
                 border-radius: 0
+        button
+            margin-top: 0
+            margin-bottom: 0
         #createRev
             &::before
                 background-image: url('../img/edit.svg')
@@ -261,7 +411,7 @@
             &::before
                 background-image: url('../img/document.svg')
 #dummy
-    box-shadow: none
+    display: none
 
 .select
     p
@@ -308,10 +458,10 @@
     @media screen and (max-width: $first-breack-point)
         width: 100%
         .notice
-            left: 36.5%
+            left: 39.5%
     @media screen and ( max-width: $second-breack-point )
         .notice
-            left: 22.5%
+            left: 25.5%
     &::before
         background-image: url('../img/settingDidg.svg')
         margin-top: 0
@@ -357,7 +507,7 @@
         left: 29.5%
     @media screen and (max-width: $first-breack-point)
         .notice
-            left: 46%
+            left: 36%
     @media screen and ( max-width: $second-breack-point )
         .notice
             left: 25.5%
@@ -380,10 +530,10 @@
     @media screen and (max-width: $first-breack-point)
         width: 100%
         .notice
-            left: 38.9%
+            left: 41%
     @media screen and ( max-width: $second-breack-point )
         .notice
-            left: 30.6%
+            left: 33.6%
     &::before
         background-image: url('../img/messages.svg')
     
@@ -437,10 +587,10 @@
     @media screen and (max-width: $first-breack-point)
         width: 100%
         .notice
-            left: 41.3%
+            left: 43.3%
     @media screen and ( max-width: $second-breack-point )
         .notice
-            left: 36%
+            left: 38%
     &::before
         background-image: url('../img/toolsSkin.svg')
 #techChat
@@ -459,7 +609,7 @@
         left: 38.7%
     @media screen and ( max-width: $first-breack-point )
         .notice
-            left: 41.6%
+            left: 41.4%
     @media screen and ( max-width: $second-breack-point )
         .notice
             left: 38.5%
@@ -509,3 +659,19 @@ input.file-input
     height: 100%
     opacity: 0
     cursor: pointer
+
+.delImage 
+    transition: 0.1s
+    &:hover
+        opacity: 0.3
+        z-index: -1
+.visDestr
+    transition: 0.1s
+    background-image: none
+    background-position: center
+    background-repeat: no-repeat
+    background-size: 60%
+    border-radius: $border-radius
+    &:hover
+        background-image: url('../img/destr.svg')
+#sendMess

@@ -248,7 +248,9 @@ function handleFileSelected(input) {
     
     if(file.length!=0){
         $('.sendMessTech .previewImage_text').css('display','none')
-        $('.sendMessTech .previewImage').css('justify-content','start')
+        if(window.innerWidth>1440){
+            $('.sendMessTech .previewImage').css('justify-content','start')
+        }
         $('.sendMessTech .previewImage').css('flex-direction','row')
         $('.sendMessTech .previewImage').css('flex-wrap','wrap')
 
@@ -261,9 +263,9 @@ function handleFileSelected(input) {
                 let reader = new FileReader()
                 reader.readAsDataURL(element)
                 reader.onload = function () {
-                    html='<div id="image_'+index+'"' 
+                    html='<div class="visDestr"><div id="image_'+index+'"' 
                     html+='class="delImage addImage" '
-                    html+='style="background-image:url('+reader.result+'); "></div>'
+                    html+='style="background-image:url('+reader.result+'); "></div></div>'
                     output=$(html)
                     output.on('click', delImg)
                     container[0].prepend(output[0]);
@@ -279,8 +281,10 @@ function delImg(image){
     this.remove()
     if($('.previewImage #avatar')[0].previousElementSibling==null){
         $('.sendMessTech .previewImage_text').css('display','block')
-        $('.sendMessTech .previewImage').css('justify-content','space-between')
-        $('.sendMessTech .previewImage').css('flex-direction','column')
+        if(window.innerWidth<=1440){
+            $('.sendMessTech .previewImage').css('justify-content','center')
+            $('.sendMessTech .previewImage').css('flex-direction','column')
+        }
 
     }
     
