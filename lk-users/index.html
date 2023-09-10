@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beauty Compass</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link href="../css/modules/select2.min.css" rel="stylesheet" />
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-xxl top-bar">
+      <div
+        class="container justify-content-start position-relative p-xxl-0 container--header"
+      >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand col-1 d-xxl-none top-bar__short-logo" href="#"
+          ><img src="../img/short-logo.svg" alt=""
+        /></a>
+        <div
+          class="collapse navbar-collapse justify-content-center top-bar__collapse"
+          id="navbarTogglerDemo01"
+        >
+          <a
+            class="navbar-brand col-11 col-xxl-4 offset-md-1 top-bar__logo"
+            href="#"
+            ><img src="../img/logo.svg" alt=""
+          /></a>
+
+          <form class="d-flex col-6 me-auto search-form">
+            <input
+              class="form-control me-2 search-form__input"
+              type="search"
+              placeholder="Поиск"
+              aria-label="Search"
+            />
+            <button class="btn search-form__submit" type="submit"></button>
+          </form>
+
+          <ul class="navbar-nav col-12 top-bar__list">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">О нас</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Подбор косметики</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                >Обзоры авторов
+                <img
+                  src="../img/logo-micro.svg"
+                  class="align-baseline px-1"
+                  alt=""
+              /></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Статьи брендов</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Бренды</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Каталог</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Беседка</a>
+            </li>
+          </ul>
+
+          <div class="row justify-content-center my-3 d-flex d-xxl-none">
+            <div class="col-3">
+              <a
+                href=""
+                class="footer__social footer__social--email"
+                target="_blank"
+              ></a>
+            </div>
+            <div class="col-3">
+              <a
+                href=""
+                class="footer__social footer__social--telegram"
+                target="_blank"
+              ></a>
+            </div>
+            <div class="col-3">
+              <a
+                href=""
+                class="footer__social footer__social--vk"
+                target="_blank"
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-1 ms-md-1 position-absolute top-0 end-0 d-flex justify-content-end top-bar__links"
+        >
+          <a
+            class="top-bar__link"
+            data-bs-toggle="modal"
+            href="#headerAutorisation"
+            role="button"
+            ><img src="../img/login.svg" alt=""
+          /></a>
+          <a
+            class="top-bar__link"
+            data-bs-toggle="modal"
+            href="#headerFavorites"
+            role="button"
+            ><img src="../img/favorites.svg" alt=""
+          /></a>
+        </div>
+      </div>
+    </nav>
+    <main class="lk-user">
+      <section class="brand__title">
+        <div class="container container--bc">
+            <div class="page-title d-flex flex-wrap align-items-center col-xxl-10 offset-xxl-1">
+                <div class="col wrapHead  text-center col-xxl-12">
+                    <div class="headPage ">
+                      <h1 class="title--20-36 text-uppercase"><P>профиль</P></h1>
+                      <button id="saveProfile" class="text-uppercase"><p>сохранить</p></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+      <section class="profile container container--bc">
+        <form action="" class="persData" id="confidInfPerson" enctype="multipart/form-data">
+          <label id="ava" class="selectWrap">
+            <small>
+              Аватар
+            </small>
+            <div id="avatar">
+              <input type="file" name="form__pic" id="form__pic" class="file-input" onchange="handleFileSelected(this)"/>
+            </div>
+          </label>
+          <div class="selectWrap d-noneMinSec" id="gender">
+            <small>Пол</small>
+            <select class="form-select"  name="selectGender" id="selectGender">
+              <option selected>
+                Выбрать вариант ответа
+              </option>
+              <option value="men">
+                Мужчина
+              </option>
+              <option value="women">
+                Женщина
+              </option>
+            </select>
+          </div>
+          <label for="dateBirth" class="d-noneMinSec selectWrap" id="dateBirth">
+            <small>
+              Дата рождения
+            </small>
+            <input class="form-control" type="date" name="dateBirth" id="dateBirth">
+          </label>
+          <label for="phone" class="d-noneMinSec selectWrap" id="phone">
+            <small> 
+              Телефон
+            </small>
+            <input class="form-control" type="text" name="phone" id="phone">
+          </label>
+          <label for="nikname" class="selectWrap" id="nikname">
+            <small>
+              Ник
+            </small>
+            <input class="form-control" type="text" name="nikname" id="niknameInp">
+          </label>
+          <div class="selectWrap d-noneMaxSec" id="gender">
+            <small>Пол</small>
+            <select class="form-select"  name="selectGender" id="selectGender">
+              <option selected>
+                Выбрать вариант ответа
+              </option>
+              <option value="men">
+                Мужчина
+              </option>
+              <option value="women">
+                Женщина
+              </option>
+            </select>
+          </div>
+          <label for="realName" class="selectWrap" id="realName">
+            <small>
+              Имя
+            </small>
+            <input class="form-control" type="text" name="realName" id="realName">
+          </label>
+          <label for="partName" class="selectWrap" id="partName">
+            <small>
+              Фамилия
+            </small>
+            <input class="form-control" type="text" name="partName" id="partName">
+          </label>
+          <label for="dateBirth" class="d-noneMaxSec selectWrap" id="dateBirth">
+            <small>
+              Дата рождения
+            </small>
+            <input class="form-control" type="date" name="dateBirth" id="dateBirth">
+          </label>
+          <label for="login" class="selectWrap" id="login">
+            <small>
+              Логин
+            </small>
+            <input class="form-control" type="text" name="login" id="login">
+          </label>
+          <label for="phone" class="d-noneMaxSec selectWrap" id="phone">
+            <small> 
+              Телефон
+            </small>
+            <input class="form-control" type="text" name="phone" id="phone">
+          </label>
+          <label for="password" class="selectWrap" id="password">
+            <small>
+              Пароль
+            </small>
+            <input class="form-control" type="text" name="password" id="password">
+          </label>
+          <label for="email" class="selectWrap" id="email">
+            <small>
+              Email для связи с админимтрацией
+            </small>
+            <input class="form-control" type="email" name="email" id="email">
+          </label>
+        </form>
+      </section>
+      <section class="infoOpen container container--bc">
+        <p class="title--20-36 text-uppercase">Информация для открытого профиля</p>
+        <div class="infOpenProfile ">
+          <label class="selectWrap descrProf">
+            <small>
+              Описание профиля
+            </small>
+            <textarea name="descrProf" id="descrProf" class="form-control" form="confidInfPerson"></textarea>
+          </label>
+          <label class="selectWrap contry">
+            <small>
+              Страна
+            </small>
+            <select class="form-select" name="selectCountry" id="selectCountry" form="confidInfPerson">
+              <option selected>
+                Выберите один из вариантов
+              </option>
+              <option value="country1">
+                Подгрузка с БД
+              </option>
+              <option value="country2">
+                Подгрузка с БД
+              </option>
+            </select>
+          </label>
+          <label class="selectWrap city">
+            <small>
+              Город
+            </small>
+            <select class="form-select" name="selectCity" id="selectCity" form="confidInfPerson">
+              <option selected>
+                Выберите один из вариантов
+              </option>
+              <option value="city1">
+                Подгрузка с БД
+              </option>
+              <option value="city2">
+                Подгрузка с БД
+              </option>
+            </select>
+          </label>
+          <label for="emailOpen" class="selectWrap" id="emailOpen">
+            <small>
+              E-mail (виден на странице профиля)
+            </small>
+            <input class="form-control" type="email" name="emailOpen" id="emailOpen" form="confidInfPerson">
+          </label>
+          <label class="selectWrap haier" id="selecHaier">
+            <small>
+              Тип волос
+            </small>
+            <select class="form-select" name="selecHaier" id="selecHaier" form="confidInfPerson">
+              <option selected>
+                Выберите один из вариантов
+              </option>
+              <option value="haier1">
+                Подгрузка с БД
+              </option>
+              <option value="haier1">
+                Подгрузка с БД
+              </option>
+            </select>
+          </label>
+          <label class="selectWrap derma" id="selecDerma">
+            <small>
+              Тип кожи
+            </small>
+            <select class="form-select" name="selecDerma" id="selecDerma" form="confidInfPerson">
+              <option selected>
+                Выберите один из вариантов
+              </option>
+              <option value="derma1">
+                Подгрузка с БД
+              </option>
+              <option value="derma2">
+                Подгрузка с БД
+              </option>
+            </select>
+          </label>
+        </div>
+        <div class="dlsFunctButton">
+          <button id="saveProf"  class="text-uppercase"><p>Сохранить</p></button>
+          <button id="delProf" data-bs-toggle="modal" data-bs-target="#deleteProfile"><p>Удалить профиль</p></button>
+          <div class="checkWrap">
+            <input type="checkbox" name="skinProp" value="dehydration" id="dehydration"><label for="dehydration">Согласен получать новости сайта</label>
+          </div>
+        </div>
+      </section>
+      <section class="review container container--bc">
+        <div class="shell">
+          <button id="createRev" class="text-uppercase"><p>создать обзор</p></button>
+          <button id="drafRev" class="text-uppercase"><p>Черновики</p></button>
+          <button id="publRev" class="text-uppercase"><p>Опубликованные</p></button>
+        </div>
+      </section>
+      <section class="select container container--bc">
+        <p class="title--20-36 text-uppercase">Подбор косметики</p>
+        <div class="shell">
+          <button id="progSelect" class="d-progMin text-uppercase">          
+            <p>подбор программы</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+          <button id="testSelect" class="text-uppercase">  
+            <p>тест</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+          <button id="progSelect" class="d-progMax text-uppercase">
+            <p>подбор программы</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+          <button id="saveSelect" class="text-uppercase">
+            <p>сохраненное</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+        </div>
+      </section>
+      <section class="select container container--bc">
+        <p class="title--20-36 text-uppercase">Обратная связь</p>
+        <div class="shell">
+          <button id="comment" class="d-progMin text-uppercase">
+            <p>комментарии</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+          <button id="feedback" class="d-progMin text-uppercase">
+            <p>отзывы</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+          <button id="quest" class="text-uppercase">  
+            <p>вопросы</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+          <button id="feedback" class="d-progMax text-uppercase">
+            <p>отзывы</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+          <button id="comment" class="d-progMax text-uppercase">
+            <p>комментарии</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+          <button id="review" class="text-uppercase">
+            <p>обзоры</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+          <button id="monet" class="text-uppercase">
+            <p>монетизация</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+          <button id="dummy" class="text-uppercase">
+          </button>
+        </div>
+      </section>
+      <section class="select container container--bc">
+        <p class="title--20-36 text-uppercase">Избранное</p>
+        <div class="shell">
+          <button id="articl" class="d-progMax text-uppercase">  
+            <p>статьи/обзоры</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+          <button id="brend" class="text-uppercase">          
+            <p>бренды</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+          <button id="articl" class="d-progMin text-uppercase">  
+            <p>статьи</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+          <button id="tool" class=" text-uppercase">
+            <p>средства</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+        </div>
+      </section>
+      <section class="select chatsAll container container--bc">
+        <p class="title--20-36 text-uppercase">Переписка</p>
+        <div class="shell">
+          <button id="techChat" class="text-uppercase">
+            <p>чат с ВС</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+          <button id="chat" class="text-uppercase">
+            <p>чаты</p>
+            <div class="notice">
+              <p>999</p>
+            </div>
+          </button>
+          <button id="dummy" class="d-progMax text-uppercase">
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer py-5">
+      <div class="container footer__container">
+        <div class="row justify-content-center footer__nav">
+          <div class="col-12 col-md-4 col-xxl-3">
+            <div class="footer__title">О нас</div>
+            <ul class="footer__list">
+              <li><a href="">О проекте</a></li>
+              <li><a href="">Отзывы и предложения</a></li>
+              <li><a href="">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-4 col-xxl-4 text-start text-md-center">
+            <div class="footer__title">Пользователям</div>
+            <ul class="footer__list">
+              <li><a href="">Подбор косметики</a></li>
+              <li><a href="">Избранное</a></li>
+              <li><a href="">Авторизация</a></li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-4 col-xxl-3 text-start text-md-end">
+            <div class="footer__title">Брендам</div>
+            <ul class="footer__list">
+              <li><a href="">Сотрудничество</a></li>
+              <li><a href="">Отправить заявку</a></li>
+              <li><a href="">Авторизация</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row justify-content-center order-1 order-xxl-2">
+          <div class="col-10 col-xxl-12 text-center footer__logo">
+            <img src="../img/logo.svg" alt="" />
+          </div>
+        </div>
+        <div class="row justify-content-center order-3 order-xxl-3">
+          <div class="col-3 col-xxl-1">
+            <a
+              href=""
+              class="footer__social footer__social--email"
+              target="_blank"
+            ></a>
+          </div>
+          <div class="col-3 col-xxl-1">
+            <a
+              href=""
+              class="footer__social footer__social--telegram"
+              target="_blank"
+            ></a>
+          </div>
+          <div class="col-3 col-xxl-1">
+            <a
+              href=""
+              class="footer__social footer__social--vk"
+              target="_blank"
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jq.js"></script>
+    <script src="../js/select2.js" defer></script>
+    <script src="../js/userLk.js"></script>
+    <script>
+      function handleFileSelected(input) {
+        let file = input.files[0]
+    
+        let reader = new FileReader()
+        reader.readAsDataURL(file)
+        
+        reader.onload = function () {
+          $('#avatar').css('background-image', 'url('+reader.result+')'  )
+          $('#avatar').css('background-size', '100%' )
+        }
+    }
+    </script>
+    <div class="modal fade" id="deleteProfile" tabindex="-1" aria-labelledby="deleteProfileLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h5 class="m-auto modal-title" id="deleteProfileLabel">Вы уверены?</h5>
+          </div>
+          <div class="modal-footer d-flex flex-column">
+            <button type="button" class="text-uppercase" data-bs-dismiss="modal">отмена</button>
+            <button type="button" class="">Удалить профиль</button>
+          </div>
+        </div>
+      </div>
+    </div>  
+</body>
+</html>
