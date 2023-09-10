@@ -7,7 +7,7 @@ $(document).ready(function() {
     }) 
 
     $('#techChat').on('click',function(){
-        location.replace('chatTech.html');
+        location.replace('chat-tech.html');
     })
 
     $('#saveProfile').on('click', function(){

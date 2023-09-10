@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beauty Compass</title>
     <link rel="stylesheet" href="../css/style.css" />
-    <link href="../css/select2.min.css" rel="stylesheet" />
+    <link href="../css/modules/select2.min.css" rel="stylesheet" />
 
 
   </head>
@@ -38,7 +38,6 @@
             href="#"
             ><img src="../img/logo.svg" alt=""
           /></a>
-
           <form class="d-flex col-6 me-auto search-form">
             <input
               class="form-control me-2 search-form__input"
@@ -48,10 +47,9 @@
             />
             <button class="btn search-form__submit" type="submit"></button>
           </form>
-
           <ul class="navbar-nav col-12 top-bar__list">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">О нас</a>
+              <a class="nav-link active" aria-current="page" href="#">О нас</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Подбор косметики</a>
@@ -78,7 +76,6 @@
               <a class="nav-link" href="#">Беседка</a>
             </li>
           </ul>
-
           <div class="row justify-content-center my-3 d-flex d-xxl-none">
             <div class="col-3">
               <a
@@ -126,106 +123,110 @@
     <main class="lk-user">
       <section class="brand__title">
         <div class="container container--bc">
+          <div class="col-12 col-xxl-12">
             <div class="page-title d-flex flex-wrap align-items-center col-xxl-10 offset-xxl-1">
-                <div class="col wrapHead  text-center col-xxl-12">
-                    <div class="headPage ">
-                      <h1 class="title--20-36 text-uppercase"><P>профиль</P></h1>
-                      <button id="saveProfile" class="text-uppercase"><p>сохранить</p></button>
-                      <button onclick="" id="changeProfile" class="text-uppercase"><p>настроить</p></button>
-                    </div>
-                </div>
+              <div class="col wrapHead  text-center col-xxl-12">
+                  <div class="headPage ">
+                    <h1 class="title--20-36 text-uppercase"><P>профиль</P></h1>
+                    <button id="saveProfile" class="text-uppercase"><p>сохранить</p></button>
+                    <button onclick="" id="changeProfile" class="text-uppercase"><p>настроить</p></button>
+                  </div>
+              </div>
             </div>
+          </div>
         </div>
       </section>
       <section class="profile container container--bc">
-        <form action="" class="persData" id="confidInfPerson" enctype="multipart/form-data">
-          <label id="ava" class="selectWrap visPrfile">
-            <small class="redPrfile">
-              Аватар
-            </small>
-            <div id="avatar">
-              <input type="file" name="form__pic" id="form__pic" class="file-input"/>
+        <div class="col-12 col-xxl-12">
+          <form action="" class="persData" id="confidInfPerson" enctype="multipart/form-data">
+            <label id="ava" class="selectWrap visPrfile">
+              <small class="redPrfile">
+                Аватар
+              </small>
+              <div id="avatar">
+                <input type="file" name="form__pic" id="form__pic" class="file-input"/>
+              </div>
+            </label>
+            <label for="dateBirth" class="d-noneMinSec selectWrap redPrfile" id="dateBirth">
+              <small>
+                Дата рождения
+              </small>
+              <input class="form-control" type="date" name="dateBirth" id="dateBirth">
+            </label>
+            <label for="phone" class="d-noneMinSec selectWrap redPrfile" id="phone">
+              <small> 
+                Телефон
+              </small>
+              <input class="form-control" type="text" name="phone" id="phone">
+            </label>
+            <label for="nikname" class="selectWrap redPrfile" id="nikname">
+              <small>
+                Ник
+              </small>
+              <input class="form-control" type="text" name="nikname" id="niknameInp">
+            </label>
+            <div class="selectWrap d-noneMaxSec redPrfile" id="gender">
+              <small>Пол</small>
+              <select class="form-select"  name="selectGender" id="selectGender">
+                <option selected>
+                  Выбрать вариант ответа
+                </option>
+                <option value="men">
+                  Мужчина
+                </option>
+                <option value="women">
+                  Женщина
+                </option>
+              </select>
             </div>
-          </label>
-          <label for="dateBirth" class="d-noneMinSec selectWrap redPrfile" id="dateBirth">
-            <small>
-              Дата рождения
-            </small>
-            <input class="form-control" type="date" name="dateBirth" id="dateBirth">
-          </label>
-          <label for="phone" class="d-noneMinSec selectWrap redPrfile" id="phone">
-            <small> 
-              Телефон
-            </small>
-            <input class="form-control" type="text" name="phone" id="phone">
-          </label>
-          <label for="nikname" class="selectWrap redPrfile" id="nikname">
-            <small>
-              Ник
-            </small>
-            <input class="form-control" type="text" name="nikname" id="niknameInp">
-          </label>
-          <div class="selectWrap d-noneMaxSec redPrfile" id="gender">
-            <small>Пол</small>
-            <select class="form-select"  name="selectGender" id="selectGender">
-              <option selected>
-                Выбрать вариант ответа
-              </option>
-              <option value="men">
-                Мужчина
-              </option>
-              <option value="women">
-                Женщина
-              </option>
-            </select>
-          </div>
-          <label for="realName" class="selectWrap redPrfile" id="realName">
-            <small>
-              Имя
-            </small>
-            <input class="form-control" type="text" name="realName" id="realName">
-          </label>
-          <label for="partName" class="selectWrap redPrfile" id="partName">
-            <small>
-              Фамилия
-            </small>
-            <input class="form-control" type="text" name="partName" id="partName">
-          </label>
-          <label for="login" class="selectWrap redPrfile" id="login">
-            <small>
-              Логин
-            </small>
-            <input class="form-control" type="text" name="login" id="login">
-          </label>
-          <label for="password" class="selectWrap redPrfile" id="password">
-            <small>
-              Пароль
-            </small>
-            <div class="funt">
-              <input class="form-control passwordInput" type="password" name="password" id="password">
-              <button id="visPassword" class="visPassword"></button>
-            </div>
-          </label>
-          <label for="password_repit" class="selectWrap redPrfile" id="password_repit">
-            <small>
-              Повтор пароля
-            </small>
-            <div class="funt">
-              <input class="form-control passwordRepitInput" type="password" name="password_repit" id="password_repit">
-              <button id="visPasswordRep" class="visPassword"></button>
-            </div>            
-          </label>
-          <label for="email" class="selectWrap redPrfile" id="email">
-            <small>
-              Email для связи с администрацией
-            </small>
-            <input class="form-control" type="email" name="email" id="email">
-          </label>
-          <label class="selectWrap visPrfile">
-            <p class="outputMail">example@ex.ex</p>
-            <p class="outputPhone">+78005553535</p>
-          </label>
-        </form>
+            <label for="realName" class="selectWrap redPrfile" id="realName">
+              <small>
+                Имя
+              </small>
+              <input class="form-control" type="text" name="realName" id="realName">
+            </label>
+            <label for="partName" class="selectWrap redPrfile" id="partName">
+              <small>
+                Фамилия
+              </small>
+              <input class="form-control" type="text" name="partName" id="partName">
+            </label>
+            <label for="login" class="selectWrap redPrfile" id="login">
+              <small>
+                Логин
+              </small>
+              <input class="form-control" type="text" name="login" id="login">
+            </label>
+            <label for="password" class="selectWrap redPrfile" id="password">
+              <small>
+                Пароль
+              </small>
+              <div class="funt">
+                <input class="form-control passwordInput" type="password" name="password" id="password">
+                <button id="visPassword" class="visPassword"></button>
+              </div>
+            </label>
+            <label for="password_repit" class="selectWrap redPrfile" id="password_repit">
+              <small>
+                Повтор пароля
+              </small>
+              <div class="funt">
+                <input class="form-control passwordRepitInput" type="password" name="password_repit" id="password_repit">
+                <button id="visPasswordRep" class="visPassword"></button>
+              </div>            
+            </label>
+            <label for="email" class="selectWrap redPrfile" id="email">
+              <small>
+                Email для связи с администрацией
+              </small>
+              <input class="form-control" type="email" name="email" id="email">
+            </label>
+            <label class="selectWrap visPrfile">
+              <p class="outputMail">example@ex.ex</p>
+              <p class="outputPhone">+78005553535</p>
+            </label>
+          </form>
+        </div>
       </section>
       <section class="infoOpen container container--bc redPrfile">
         <p class="title--20-36 text-uppercase">Информация для открытого профиля</p>
@@ -511,7 +512,7 @@
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/jq.js"></script>
     <script src="../js/select2.js" defer></script>
-    <script src="../js/userLk.js"></script>
+    <script src="../js/user-lk.js"></script>
     <div class="modal fade" id="deleteProfile" tabindex="-1" aria-labelledby="deleteProfileLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
