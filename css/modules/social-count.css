@@ -41,6 +41,10 @@
 .social-count__icon--fav {
   color: #E31E24;
 }
+.social-count__icon--small svg {
+  max-width: 18px;
+  max-height: 18px;
+}
 .social-count__icon.active .icon-inner {
   fill: currentColor;
 }

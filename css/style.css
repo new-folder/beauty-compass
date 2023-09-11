@@ -1640,6 +1640,7 @@ textarea {
 }
 
 .feed__row {
+  position: relative;
   padding: 24px;
   font-size: 18px;
   font-weight: 600;
@@ -1765,6 +1766,7 @@ textarea {
 .feed__action span {
   font-size: 18px;
   font-weight: 600;
+  line-height: 1;
 }
 .feed__action:hover svg {
   opacity: 0.7;
@@ -1783,6 +1785,26 @@ textarea {
 }
 .feed__action--dislike_active svg path {
   fill: #E31E24;
+}
+.feed__mark {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+@media screen and (max-width: 1400px) {
+  .feed__mark svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .feed__mark {
+    top: 30px;
+  }
+  .feed__mark svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 .feed--product-full {
   width: -webkit-fit-content;
@@ -1803,6 +1825,10 @@ textarea {
     font-size: 15px;
     background-size: contain;
   }
+}
+
+.feed-answer {
+  margin-left: 15%;
 }
 
 .tag {
@@ -2258,6 +2284,9 @@ textarea {
 }
 .feed__row:last-child {
   margin-bottom: 0;
+}
+.feed__row--blue {
+  background: #F0F7FF;
 }
 @media screen and (max-width: 1400px) {
   .feed__row {
@@ -3025,14 +3054,33 @@ textarea {
   object-fit: cover;
 }
 
+.discourse-comments__aside {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  margin-right: -60px;
+}
+@media screen and (max-width: 1400px) {
+  .discourse-comments__aside {
+    margin-right: 0;
+  }
+}
 .discourse-comments__controls {
   position: -webkit-sticky;
   position: sticky;
-  top: 15px;
+  z-index: 5;
+  bottom: 40px;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-right: -60px;
+}
+@media screen and (max-width: 1400px) {
+  .discourse-comments__controls {
+    gap: 10px;
+  }
 }
 .discourse-comments__controls__icon {
   display: flex;
@@ -3046,11 +3094,27 @@ textarea {
   font-size: 20px;
   font-weight: 600;
 }
+.discourse-comments__controls__icon img {
+  width: 50%;
+  margin: 0 auto;
+}
 .discourse-comments__controls__icon--reload {
   background: #1560BD;
 }
 .discourse-comments__controls__icon--count {
   background: #E31E24;
+}
+.discourse-comments__controls__icon:hover {
+  color: #fff;
+  opacity: 0.7;
+  transition: all 0.3s;
+}
+@media screen and (max-width: 1400px) {
+  .discourse-comments__controls__icon {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+  }
 }
 
 .top-bar {
@@ -3280,6 +3344,10 @@ textarea {
 }
 .social-count__icon--fav {
   color: #E31E24;
+}
+.social-count__icon--small svg {
+  max-width: 18px;
+  max-height: 18px;
 }
 .social-count__icon.active .icon-inner {
   fill: currentColor;
@@ -4843,6 +4911,55 @@ textarea {
   padding: 20px 0;
 }
 
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.image-modal__content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+@media screen and (max-width: 1400px) {
+  .image-modal__content {
+    width: 100%;
+  }
+}
+.image-modal__close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.image-modal__close:hover {
+  color: #D9D9D9;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 .modal__confirm {
   border-radius: 20px;
 }
