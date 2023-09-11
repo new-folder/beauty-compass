@@ -1328,7 +1328,7 @@ textarea {
   padding: 10px 20px;
   font-weight: 600;
 }
-.input--gray::-ms-input-placeholder {
+.input--gray::-moz-placeholder {
   color: #c9c9c9;
 }
 .input--gray::placeholder {
@@ -2362,7 +2362,6 @@ textarea {
   fill: #E31E24;
 }
 .feed__answer button {
-  max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
 }
