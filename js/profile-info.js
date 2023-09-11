@@ -29,9 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     shopsWrap.insertBefore(newShopsItem, shopsPlus);
   };
-if (shopsPlus) {
+
   shopsPlus.addEventListener("click", addShopsItem);
-}
+
   const bannersForm = document.querySelector(".banners__form");
   const bannersAddBtn = document.querySelector(".banners__add-btn");
 
@@ -94,7 +94,6 @@ if (shopsPlus) {
 
     bannersForm.insertBefore(newBannersItem, bannersAddBtn.parentElement);
   };
-if (bannersAddBtn) {
+
   bannersAddBtn.addEventListener("click", addBannersItem);
-}
 });
