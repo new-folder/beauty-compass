@@ -61,145 +61,208 @@ if($('#viewChatBC').length){
     });
 }
 
-if($('#viewRez').length){
-    $('#viewRez').pagination({
+if($('#view_chats').length){
+    $('#view_chats').pagination({
         dataSource: [
             {
-                nameUserProgram: 'Ник, длииииииииииииииинное Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis temporibus quasi iure illum! Architecto a atque fugiat ratione autem numquam, mollitia nam dolores et veritatis iusto excepturi vero minima. Deleniti!',
-                date:'22.08.2022'
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
             },
             {
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
             },
             {
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
-            },{
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
-            },{
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
-            },{
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
-            },{
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
-            },{
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
-            },{
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
             },
             {
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
             },
             {
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
             },
             {
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
             },
             {
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
             },
             {
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
             },
             {
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
             },
             {
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
             },
             {
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
             },
             {
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
-            },{
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
-            },{
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
-            },{
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
-            },{
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
-            },{
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
-            },{
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
             },
             {
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
             },
             {
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
             },
             {
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
             },
             {
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
             },
             {
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
             },
             {
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
             },
             {
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
             },
             {
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
             },
             {
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
             },
             {
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
             },
             {
-                nameUserProgram: 'Ник, длииииииииииииииинное название теста',
-                date:'22.08.2022'
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
             },
-    
+            {
+                nameUserProgram: 'Ник, длииииииииииииииинное ',
+                date:'22.08.2022',
+                avatar: 'user-avatar.svg',
+                idUser:'1',
+                nameUser:'Дарья С.',
+                prevLastMess:' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
+            },
         ],
-        pageSize: 5,
-        pageNumber: 3,
+        pageSize: 10,
+        pageNumber: 1,
         pageRange: 0,
         callback: function(data, pagination) {
-            var html = templatingItem(data);
-            $('#viewRez').prev().html(html);
+            var html = templatingItemPerson(data);
+            $('#view_chats').prev().html(html);
         }
     })
 }
@@ -207,9 +270,9 @@ if($('#viewRez').length){
 function templatingItem(data) {
     html = '<ul>';
     data.forEach(element => {
-        html += '<li class="">        <a href="'
+        html += '<li class="">        <a href="#'
         if(element.statusChat=='unlockIcon'){
-            html+='unlockIcon'
+            html+='?lock'
         }
         html+= '" class="d-flex justify-content-between align-items-center '
         if(element.statusChat=='unlockIcon'){
@@ -230,6 +293,42 @@ function templatingItem(data) {
         html+='</div></a> </li>';
     });
     html += '</ul>';
+
+    return html;
+}
+
+function templatingItemPerson(data) {
+    
+    html = '<ul>'
+    data.forEach(element => {
+        html +='<div class="feed__row"><div class="feed__user"><a href="#" class="feed__avatar-chats"><img src="'
+
+        html+='../img/'+element.avatar
+        
+        html+='" alt="avatar" /></a>  <div> <div class="feed__info">' 
+        html+='<div class="d-flex align-items-center gap-2">'
+
+        html+='<a href="#" class="feed__avatar feed__avatar-chats"><img src="'
+
+        html+='../img/'+element.avatar
+        
+        html+='" alt="avatar" /></a>'
+
+        html+='<a href="#" class="feed__name">'
+        
+        html+=element.nameUser
+
+        html+='</a><div class="feed__date">'
+
+        html+= element.date
+
+        html+='</div> </div> </div> <p class="feed__text feed__text-chats mt-3">'
+
+        html+=element.prevLastMess
+
+        html+='</p> </div> </div> </div>'
+    });
+    html += '</ul>'
 
     return html;
 }
@@ -293,8 +392,8 @@ function delImg(image){
     event.preventDefault()
 }
 
-$('#sendMess .tech .sendMess').on('click', function(params) {
-    console.log('отправка сообщения на сервер');
+$('#sendMess .tech .sendMess').on('click', function() {
+    console.log('отправка сообщения на сервер техн поддержки');
 
     $.ajax({
         type: "post",
@@ -307,4 +406,65 @@ $('#sendMess .tech .sendMess').on('click', function(params) {
     });
 
     $('#sendMess').modal('toggle');
+})
+$('#sendMess .tech .sendMess-chats').on('click', function() {
+    console.log('отправка сообщения на сервер чатов');
+
+    $.ajax({
+        type: "post",
+        url: "#",
+        data: $('.sendMessTech').serialize() ,
+        dataType: "dataType",
+        success: function (response) {
+            console.log('успех');
+        }
+    });
+
+    $('#sendMess').modal('toggle');
+})
+$('.sendMessTech #adrese button').on('click', function(params) {
+    event.preventDefault();
+    $('.sendMessTech #adrese .form-control').focus();
+})
+
+$('.sendMessTech #adrese .form-control').on('keyup',function (params) {
+
+    if(params.target.value=='' || params.target.value==null){
+        $('.modal__adrese__ansver').css('display', 'none')
+        $('.sendMessTech #adrese .form-control').css('padding-left', '43px')
+        $('.sendMessTech #adrese button').css('display','block')
+    }
+    else{
+
+        //раскомментировать когда прийдет время
+        // $.ajax({
+        //     type: "post",
+        //     url: "url",
+        //     data: params.target.value,
+        //     dataType: "dataType",
+        //     success: function (response) {
+        //         $('.modal__adrese__ansver').css('display', 'block')
+
+        //         response.forEach(element => {
+        //             let html='<div class="modal__adrese"><p class="modal__adrese__text">'
+        //             html+= element.nameUser
+        //             html+='</p></div> '
+        //             $('.modal__adrese__ansver').appendChild(html);
+
+        //         });
+        //     }
+        // });
+
+        //удалить при появлении серверной части
+        $('.modal__adrese__ansver').css('display', 'block')
+        $('.sendMessTech #adrese button').css('display','none')
+        $('.sendMessTech #adrese .form-control').css('padding-left', '.75rem')
+    }
+})
+
+$('.modal__adrese__ansver').on('click',null, $('.modal__adrese'), function(params) {
+    $('.sendMessTech #adrese .form-control')[0].value=params.target.innerText
+    $('.sendMessTech #adrese .form-control').css('padding-left', '43px')
+    $('.sendMessTech #adrese button').css('display','block')
+    $('.modal__adrese__ansver').css('display', 'none')
 })

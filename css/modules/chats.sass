@@ -15,7 +15,27 @@
                 line-height: 18px
         @media screen and (max-width: $first-breack-point)
             display: flex
-
+    .feed__avatar
+        &-chats
+            display: block 
+            flex-shrink: 0
+            padding: 0
+            margin-right: 10px
+            @media screen and ( max-width: $first-breack-point)   
+                display: none    
+    .feed__info .feed__avatar-chats 
+        display: none 
+        @media screen and ( max-width: $first-breack-point)   
+            display: block 
+    .feed__text
+        &-chats
+            font-weight: 600
+            font-size: 18px
+            line-height: 22px
+            @media screen and (max-width: $first-breack-point)
+                line-height: 18px
+                font-size: 15px
+                
 a.unlockIcon
     &:after
         background-image: none
@@ -222,3 +242,44 @@ a.unlockIcon
                 background-repeat: no-repeat
                 background-position: center center
                 background-image: url('../img/edit.svg')
+
+.modal__adrese__ansver
+    display: none
+    min-height: 31px
+    position: absolute
+    top: 25%
+    background-color: $white-color
+    padding-top: 7px
+    width: 96%
+    transition: 0.3s
+    border-radius: 0 0 $border-radius $border-radius
+    .modal__adrese
+        background-color: $white-color
+        &:last-child
+            border-radius: 0 0 $border-radius $border-radius
+        &:hover
+            background-color: $gray-light
+        &__text
+            padding: 5px 15px 
+
+.sendMessTech #adrese
+    button        
+        border: 0px
+        background-size: 100%
+        border-radius: 0
+        -ms-flex-negative: 0
+        flex-shrink: 0
+        content: ""
+        display: inline-block
+        width: 30px
+        aspect-ratio: 1
+        background-repeat: no-repeat
+        background-position: center center
+        background-image: url("../img/search.svg")
+        position: absolute
+        top: 48px
+        left: 23px
+        &::before
+            display: none
+    #adrese.form-control
+        padding-left: 43px

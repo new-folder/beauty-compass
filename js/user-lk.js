@@ -10,6 +10,10 @@ $(document).ready(function() {
         location.replace('chat-tech.html');
     })
 
+    $('#chat').on('click',function(){
+        location.replace('chat-persons.html');
+    })
+
     $('#saveProfile').on('click', function(){
         const data=new FormData($('.persData')[0]);
         file=data.get('form__pic')
