@@ -509,8 +509,7 @@ main
     margin-bottom: 56px
     @media screen and (max-width: $second-breack-point)
         margin-bottom: 40px
-.selection
-    margin-bottom: 56px
+
 .card--button-blue
     position: relative
     padding: 16px 0
@@ -647,6 +646,40 @@ main
 
 .selection
     margin-bottom: 56px
+
+.select
+    &__custom
+        position: relative
+    &__header
+        display: flex
+        align-items: center
+        justify-content: space-between
+        cursor: pointer
+    &__options
+        display: none
+        position: absolute
+        top: 100%
+        left: 0
+        right: 0
+        background: $white-color
+        box-shadow: $box-shadow-regular
+        border-radius: 10px
+        overflow: hidden
+        z-index: 100
+        &.open
+            display: flex
+            flex-direction: column
+        .option
+
+            padding: 12px 20px
+            cursor: pointer
+            transition: 0.3s
+
+            &:hover
+                //color: $main-color
+                background-color: $bg-grey
+            &:active
+                color: $pre-color
 
 .input--wrapper, .select--wrapper
     height: 26px
