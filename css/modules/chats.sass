@@ -7,10 +7,19 @@ $colorBorderCheck: #292D32
 
 @import input_text
 @import select2
-@import button_style
 @import check_box
 @import pagin
+
+.d-progMin
+    display: none !important
+    @media screen and ( max-width: $first-breack-point)
+        display: flex !important
+.d-progMax
+    display: flex !important
+    @media screen and ( max-width: $first-breack-point)
+        display: none !important
 .chat
+
     button
         p
             font-size: 24px
@@ -198,11 +207,11 @@ a.unlockIcon
         justify-content: center
         align-items: center
     button 
+        display: flex
         border-radius: 0
-        @media screen and (max-width: $second-breack-point)
-            // font-weight: 700 !important
-            // font-size: 10px !important
-            // line-height: 12px !important
+        box-shadow: none
+        border: 1px #00000000
+        align-items: center
         &::before
             @media screen and (max-width: $first-breack-point)
                 width: 34px !important
@@ -225,6 +234,9 @@ a.unlockIcon
                 background-position: center center
                 background-image: url('../img/close-square.svg')
         &:last-child
+            @media screen and (min-width: $first-breack-point)
+                background: #00000000
+
             color: $main-color
             @media screen and (max-width: $first-breack-point)
                 background-color: $main-color

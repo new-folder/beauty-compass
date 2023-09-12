@@ -55,7 +55,7 @@ $(document).ready(function() {
         $('.visPrfile').css('display', 'none')
         $('#ava').css('display', 'block')
         $('#ava').css('width', '90%')
-
+        $('#avatar').css('width','100%')
         $('#saveProfile').css('display','flex')
     })
 
@@ -68,6 +68,7 @@ $(document).ready(function() {
         $('#ava').css('width', '30%')
         $('#saveProf').css('display','none')
     })
+
     $('#saveProfile').on('click', function(){
         $('#confidInfPerson').css('display','flex')
         $('#changeProfile').css('display','flex')
@@ -75,6 +76,7 @@ $(document).ready(function() {
         $('.visPrfile').css('display', 'block')
         $('#ava').css('display', 'block')
         $('#ava').css('width', '30%')
+        $('#avatar').css('width','50%')
         $('#saveProfile').css('display','none')
     })
 })

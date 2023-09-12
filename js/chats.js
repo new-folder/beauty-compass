@@ -385,6 +385,8 @@ function delImg(image){
         if(window.innerWidth<=1440){
             $('.sendMessTech .previewImage').css('justify-content','center')
             $('.sendMessTech .previewImage').css('flex-direction','column')
+        }else{
+            $('.sendMessTech .previewImage').css('flex-direction','row')
         }
 
     }
