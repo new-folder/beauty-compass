@@ -56,6 +56,7 @@ $(document).ready(function() {
         $('#ava').css('display', 'block')
         $('#ava').css('width', '90%')
         $('#avatar').css('width','100%')
+        $('#avatar').css('border-radius','20%')
         if(window.innerWidth<1440)        $('#saveProf').css('display','block')
         else        $('#saveProfile').css('display','flex')
     })
@@ -69,6 +70,7 @@ $(document).ready(function() {
         if(window.innerWidth<1440)        $('#ava').css('width', '50%')
         else        $('#ava').css('width', '30%')
         $('#avatar').css('width','50%')
+        $('#avatar').css('border-radius','50%')
 
         $('#saveProf').css('display','none')
     })
@@ -84,6 +86,8 @@ $(document).ready(function() {
         else        $('#ava').css('width', '30%')
 
         $('#avatar').css('width','50%')
+        $('#avatar').css('border-radius','50%')
+
         $('#saveProfile').css('display','none')
     })
 })
