@@ -67,8 +67,10 @@ $(document).ready(function() {
         $('.redPrfile').css('display', 'none')
         $('.visPrfile').css('display', 'block')
         $('#ava').css('display', 'block')
-        if(window.innerWidth<1440)        $('#ava').css('width', '50%')
-        else        $('#ava').css('width', '30%')
+        if (window.innerWidth<=768) {
+            $('#ava').css('width', '50%')
+        }else
+        $('#ava').css('width', '30%')
         $('#avatar').css('width','50%')
         $('#avatar').css('border-radius','50%')
 
@@ -81,9 +83,11 @@ $(document).ready(function() {
         $('.redPrfile').css('display', 'none')
         $('.visPrfile').css('display', 'block')
         $('#ava').css('display', 'block')
+        if (window.innerWidth<=768) {
+            $('#ava').css('width', '50%')
+        }else
 
-        if(window.innerWidth<1440)        $('#ava').css('width', '50%')
-        else        $('#ava').css('width', '30%')
+        $('#ava').css('width', '30%')
 
         $('#avatar').css('width','50%')
         $('#avatar').css('border-radius','50%')
