@@ -449,14 +449,6 @@
   }
 }
 
-#paySelect:before {
-  background-image: url("../img/receipt-item.svg");
-}
-
-#selectProgram:before {
-  background-image: url("../img/wallet-money.svg");
-}
-
 .selectSave {
   display: block;
 }
