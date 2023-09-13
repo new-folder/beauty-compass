@@ -14,6 +14,10 @@ $(document).ready(function() {
         location.replace('chat-persons.html');
     })
 
+    $('#comment').on('click',function(){
+        location.replace('comments.html');
+    })
+
     $('#saveProfile').on('click', function(){
         const data=new FormData($('.persData')[0]);
         file=data.get('form__pic')
