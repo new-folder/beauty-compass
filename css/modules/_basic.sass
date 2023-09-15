@@ -718,7 +718,7 @@ main
         height: 52px
         @media all and (min-width: $first-breack-point)
             height: 108px
-    input, textarea, select, &.input--select
+    input, textarea, select, .input--select
         background: $white-color
         width: 100%
         height: 100%
@@ -734,7 +734,7 @@ main
         &:focus-visible
             outline: 1px solid $main-color
             @media all and (min-width: $first-breack-point)
-                font-size: 18px
+                font-size: 18px 
     &--image
         border-radius: 15px
         box-shadow: $box-shadow-regular
@@ -1715,9 +1715,10 @@ main
         padding: 0
         margin: 0
         @media screen and (max-width: $first-breack-point)
-.select            width: 30px
-            svg 
-                width: 15px
+    .select            
+        width: 30px
+        svg 
+            width: 15px
     input
         padding-left: 50px 
         @media screen and (max-width: $first-breack-point)
@@ -2002,8 +2003,6 @@ main
                 object-fit: cover
     &__info
         padding: 0 10px
-    &__rating
-
     &__text
         a
             font-size: 18px
