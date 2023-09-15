@@ -710,6 +710,14 @@ main
 
 .input
     position: relative
+    &--general
+        height: 26px
+        @media all and (min-width: $first-breack-point)
+            height: 42px
+    &--textarea
+        height: 52px
+        @media all and (min-width: $first-breack-point)
+            height: 108px
     input, textarea, select, &.input--select
         background: $white-color
         width: 100%
@@ -1707,7 +1715,7 @@ main
         padding: 0
         margin: 0
         @media screen and (max-width: $first-breack-point)
-            width: 30px
+.select            width: 30px
             svg 
                 width: 15px
     input
