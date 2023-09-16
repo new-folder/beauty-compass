@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('.selectWrap-choseSave').css('display','none')
+    $('.select-wrap-choseSave').css('display','none')
 
     if($(window).width()>=768) $('.choseSave').css('justify-content','start')
     else $('.choseSave').css('justify-content','end')
@@ -47,16 +47,16 @@ $(document).ready(function() {
 
     $('#yes').on('click', function(){
         if(this.checked){
-            $('.selectWrap-choseSave').css('display','block')
+            $('.select-wrap-choseSave').css('display','block')
             $('.choseSave').css('justify-content','space-between')
-            $('.selectWrapchoseSave').css('display','block')
+            $('.select-wrapchoseSave').css('display','block')
             $('.selectSave').css('display', 'none')
         }
     })
     $('#no').on('click', function(){
         if(this.checked){
-            $('.selectWrap-choseSave').css('display','none')
-            $('.selectWrapchoseSave').css('display','none')
+            $('.select-wrap-choseSave').css('display','none')
+            $('.select-wrapchoseSave').css('display','none')
             if($(window).width()>=768) $('.choseSave').css('justify-content','start')
             else $('.choseSave').css('justify-content','end')
             $('.selectSave').css('display', 'block')

@@ -12,28 +12,28 @@
   width: 100%;
 }
 
-.selectWrap {
+.select-wrap {
   width: 28.3333333333%;
   margin: 15px 0;
 }
 @media screen and (max-width: 768px) {
-  .selectWrap {
+  .select-wrap {
     width: 45%;
   }
 }
-.selectWrap small {
+.select-wrap small {
   text-transform: none;
   color: #D9D9D9;
   font-size: 18px;
   line-height: 16px;
 }
 @media screen and (max-width: 768px) {
-  .selectWrap small {
+  .select-wrap small {
     font-size: 10px;
     margin-top: -15px;
   }
 }
-.selectWrap select {
+.select-wrap select {
   -webkit-box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
           box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
   border-radius: 15px;
@@ -42,7 +42,7 @@
           appearance: none;
   height: 42px;
 }
-.selectWrap select:focus {
+.select-wrap select:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -370,7 +370,7 @@
   margin: 2.5px;
 }
 
-.selectInpDls {
+.quest__resp__inp_dls {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -385,14 +385,14 @@
       flex-wrap: wrap;
 }
 @media screen and (max-width: 768px) {
-  .selectInpDls {
+  .quest__resp__inp_dls {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
 }
-.selectInpDls .selectWrap {
+.quest__resp__inp_dls .select-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -402,19 +402,19 @@
           flex-direction: column;
   padding: 0;
 }
-.selectInpDls .selectWrap:last-child {
+.quest__resp__inp_dls .select-wrap:last-child {
   width: 100%;
 }
 @media screen and (max-width: 768px) {
-  .selectInpDls .selectWrap {
+  .quest__resp__inp_dls .select-wrap {
     width: 100%;
   }
 }
-.selectInpDls .selectWrap .select2 {
+.quest__resp__inp_dls .select-wrap .select2 {
   width: 100% !important;
   margin-top: 15px !important;
 }
-.selectInpDls .selectWrap select {
+.quest__resp__inp_dls .select-wrap select {
   margin-top: 15px !important;
 }
 
@@ -427,24 +427,24 @@
   width: 100% !important;
 }
 
-.downloadRezult form.order {
+.download_rezult form.order {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 @media screen and (max-width: 768px) {
-  .downloadRezult form.order button {
+  .download_rezult form.order button {
     width: 100%;
     margin-top: 25px;
   }
 }
-.downloadRezult form.order button:before {
+.download_rezult form.order button:before {
   border: 0px;
   background-size: 100%;
   border-radius: 0;
 }
 @media screen and (max-width: 1400px) {
-  .downloadRezult form.order button:before {
+  .download_rezult form.order button:before {
     width: 20px !important;
   }
 }
@@ -468,25 +468,25 @@
 .choseSave .inputAnswer {
   width: 30%;
 }
-.choseSave .selectWrap {
+.choseSave .select-wrap {
   width: 70%;
   margin: 0;
   margin-top: -30px;
   display: none;
 }
 @media screen and (min-width: 768px) {
-  .choseSave .selectWrap {
+  .choseSave .select-wrap {
     display: none !important;
   }
 }
 
-.quest .selectWrapchoseSave {
+.quest .select-wrapchoseSave {
   margin-top: -18px;
   display: none;
   width: 70%;
 }
 @media screen and (max-width: 768px) {
-  .quest .selectWrapchoseSave {
+  .quest .select-wrapchoseSave {
     display: none !important;
   }
 }

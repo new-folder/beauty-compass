@@ -1,0 +1,28 @@
+@import vars
+
+$margin-botom-block: 27px
+
+.recomend
+    font-weight: 600
+    font-style: normal
+    margin-bottom: $margin-botom-block
+    p
+        font-size: 18px
+        line-height: 22px
+        color: $dark-lighter
+        @media screen and (max-width: $second-breack-point)
+            font-size: 12px
+            line-height: 15px
+
+    &__heading
+        font-size: 30px !important
+        line-height: 37px !important
+        color: $dark-semi-light !important
+        margin-bottom: $margin-botom-block
+        @media screen and (max-width: $second-breack-point)
+            font-size: 15px !important
+            line-height: 18px !important
+            letter-spacing: 0.5px !important
+
+    &:first-child
+        margin-top: 40px
