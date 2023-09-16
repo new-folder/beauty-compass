@@ -22,7 +22,6 @@
                 line-height: 18px
                 letter-spacing: 0.5px
 
-
         small
             font-weight: 400
             font-size: 14px
@@ -30,6 +29,10 @@
             @media screen and (max-width: $second-breack-point) 
                 font-size: 12px
                 margin-top: -15px
+        &-invert
+            background: none
+            padding: 0
+            color: $dark-semi-light
     &__resp
         font-weight: 600
         font-size: 24px
@@ -88,6 +91,9 @@
             p
                 b
                     font-weight: 600 !important
+        &-right
+            @media screen and (max-width: $second-breack-point) 
+                grid-template-columns: repeat(1,100%)
     &__show_result
         border-radius: $border-radius
         color: $main-color
