@@ -1,7 +1,7 @@
 //test 3-5 quest
 var form=document.forms[1];
 var outPut = document.getElementById('anserText');
-let listInpu=document.querySelectorAll("div.radioInp.respOpt.skinType input");
+let listInpu=document.querySelectorAll("div.radio__inpt.quest__resp.skinType input");
 
 listInpu.forEach(element => {
     element.on('click', function(){

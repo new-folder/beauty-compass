@@ -2,7 +2,7 @@
   margin-bottom: 20px;
 }
 
-.quest-b .questText {
+.quest .quest__text {
   background: none;
   padding: 0;
   color: #494949;
@@ -178,13 +178,13 @@
     margin-right: 10px;
   }
 }
-.select2-results__option::before .adaptQuest {
+.select2-results__option::before .quest__adapt__quest {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   width: 100%;
 }
-.select2-results__option::before .adaptQuest p b {
+.select2-results__option::before .quest__adapt__quest p b {
   font-weight: 600 !important;
 }
 .select2-results__option::before .select2-selection__choice {
@@ -205,7 +205,7 @@
   outline: none;
 }
 
-.checkInp {
+.check-right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -218,38 +218,38 @@
           align-items: start;
 }
 
-.checkInpOrder .checkWrap {
+.check-rightOrder .check__wrap {
   -webkit-box-shadow: none;
           box-shadow: none;
   margin-bottom: 0;
   padding: 10px 0;
 }
-.checkInpOrder input + label {
+.check-rightOrder input + label {
   text-transform: none;
 }
 
-.radioInp input[type=radio] {
+.radio__inpt input[type=radio] {
   position: absolute;
   z-index: -1;
   opacity: 0;
 }
-.radioInp input[type=radio]:checked + label::before {
+.radio__inpt input[type=radio]:checked + label::before {
   border-color: #FFFFFF;
   background-color: #1560BD;
 }
-.radioInp input[type=radio]:checked + label::after {
+.radio__inpt input[type=radio]:checked + label::after {
   border-color: #FFFFFF;
   background-color: #1560BD;
 }
-.radioInp input[type=radio]:not(:disabled):active + label:before {
+.radio__inpt input[type=radio]:not(:disabled):active + label:before {
   border-color: #FFFFFF;
   background-color: #1560BD;
 }
-.radioInp input[type=radio]:not(:disabled):active + label:after {
+.radio__inpt input[type=radio]:not(:disabled):active + label:after {
   border-color: #FFFFFF;
   background-color: #1560BD;
 }
-.radioInp input[typy=radio] + label {
+.radio__inpt input[typy=radio] + label {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -261,7 +261,7 @@
       -ms-user-select: none;
           user-select: none;
 }
-.radioInp label {
+.radio__inpt label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -271,7 +271,7 @@
   text-transform: uppercase;
   margin-bottom: 15px;
 }
-.radioInp label::before {
+.radio__inpt label::before {
   content: "";
   display: inline-block;
   width: 1.3em;
@@ -286,11 +286,11 @@
       flex-shrink: 0;
 }
 @media screen and (max-width: 768px) {
-  .radioInp label::before {
+  .radio__inpt label::before {
     border: 5px solid #FFFFFF;
   }
 }
-.radioInp label::after {
+.radio__inpt label::after {
   content: "";
   width: 1.3em;
   aspect-ratio: 1;
@@ -305,33 +305,33 @@
       flex-shrink: 0;
 }
 @media screen and (max-width: 768px) {
-  .radioInp label::after {
+  .radio__inpt label::after {
     border: 5px solid #FFFFFF;
   }
 }
 @media screen and (max-width: 768px) {
-  .radioInp label::after {
+  .radio__inpt label::after {
     display: inline-block;
   }
-  .radioInp label::before {
+  .radio__inpt label::before {
     display: none;
   }
 }
-.radioInp .option {
+.radio__inpt .option {
   margin-bottom: 15px;
 }
-.radioInp .option label::before {
+.radio__inpt .option label::before {
   display: inline-block;
 }
-.radioInp .option label::after {
+.radio__inpt .option label::after {
   display: none;
 }
-.radioInp .option p {
+.radio__inpt .option p {
   text-transform: none;
   margin-left: 1.8em;
 }
 @media screen and (max-width: 768px) {
-  .radioInp .option img {
+  .radio__inpt .option img {
     width: 100%;
   }
 }
@@ -480,13 +480,13 @@
   }
 }
 
-.quest-b .selectWrapchoseSave {
+.quest .selectWrapchoseSave {
   margin-top: -18px;
   display: none;
   width: 70%;
 }
 @media screen and (max-width: 768px) {
-  .quest-b .selectWrapchoseSave {
+  .quest .selectWrapchoseSave {
     display: none !important;
   }
 }

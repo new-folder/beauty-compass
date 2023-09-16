@@ -1,14 +1,10 @@
 @import vars
-$paddingBlock: 15px
-$lineHeightQuest: 37px
-$lineHeightText: 16px
-$colorBorderCheck: #292D32
 
 .brand__title
     margin-bottom: 20px
 
-.quest-b
-    .questText
+.quest
+    .quest__text
         background: none
         padding: 0
         color: $dark-semi-light
@@ -24,7 +20,7 @@ $colorBorderCheck: #292D32
         text-transform: none
         color: $gray-light
         font-size: 18px
-        line-height: $lineHeightText
+        line-height: 16px
         @media screen and (max-width: $second-breack-point) 
             font-size: 10px
             margin-top: -15px
@@ -127,7 +123,7 @@ $colorBorderCheck: #292D32
     display: inline-block
     width: 20px
     aspect-ratio: 1
-    border: 2px solid $colorBorderCheck
+    border: 2px solid #292D32
     border-radius: 30%
     margin-right: 20px
     background-repeat: no-repeat
@@ -137,10 +133,10 @@ $colorBorderCheck: #292D32
     @media screen and (max-width: $second-breack-point) 
         width: 17px
         border-radius: 5px 
-        border: 1px solid $colorBorderCheck
+        border: 1px solid #292D32
         margin-right: 10px
 
-    .adaptQuest
+    .quest__adapt__quest
         width: fit-content
         @media screen and (max-width: $first-breack-point) 
         width: 100%
@@ -160,14 +156,14 @@ $colorBorderCheck: #292D32
                 background-color: #f1f1f100
                 outline: none
 
-.checkInp
+.check-right
     display: flex
     flex-direction: column
     align-items: start
 
-.checkInpOrder
+.check-rightOrder
     
-    .checkWrap
+    .check__wrap
         box-shadow: none
         margin-bottom: 0
         padding: 10px 0
@@ -175,7 +171,7 @@ $colorBorderCheck: #292D32
         text-transform: none
     
 
-.radioInp
+.radio__inpt
 
     input[type=radio]
         position: absolute
@@ -340,7 +336,7 @@ $colorBorderCheck: #292D32
         @media screen and (min-width: $second-breack-point)
             display: none !important
 
-.quest-b
+.quest
     .selectWrapchoseSave
         margin-top: -18px
         display: none 
