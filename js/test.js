@@ -1,16 +1,9 @@
 //test 3-5 quest
 var form=document.forms[1];
-var outPut = document.getElementById('anserText');
-let listInpu=document.querySelectorAll("div.radio__inpt.quest__resp.skinType input");
-
-listInpu.forEach(element => {
-    element.on('click', function(){
+$("div.radio__inpt.quest__resp.skinType input").on('click', function(){
         let formData = new FormData(form);
-
-        outPut.innerText=    typeSens(formData.get("skinSens"), formData.get("pore"), formData.get("poreInflam"))
-            
+        $('anserText').innerText= typeSens(formData.get("skinSens"), formData.get("pore"), formData.get("poreInflam"))
     })
-});
 
 function typeSens(water, pore, flam){
 
@@ -51,10 +44,9 @@ function typeSens(water, pore, flam){
 
 // redirection and ajax 
 
-document.getElementsByClassName('showResult').on('click',function(event){
+$('quest__show_result').on('click',function(event){
     event.preventDefault();
     //place ajax
-    
     location.replace("resultTest.html");
     
 });
