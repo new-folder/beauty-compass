@@ -2,7 +2,7 @@
 var form=document.forms[1];
 $("div.radio__inpt.quest__resp.skinType input").on('click', function(){
         let formData = new FormData(form);
-        $('anserText').innerText= typeSens(formData.get("skinSens"), formData.get("pore"), formData.get("poreInflam"))
+        $('#anserText')[0].innerText= typeSens(formData.get("skinSens"), formData.get("pore"), formData.get("poreInflam"))
     })
 
 function typeSens(water, pore, flam){
@@ -14,7 +14,6 @@ function typeSens(water, pore, flam){
 
     if(water!=undefined && pore!=undefined && flam!=undefined){
         let array = [water, pore, flam];
-
         array.forEach(element => {
             if(element == 1 ){
                 dry++
