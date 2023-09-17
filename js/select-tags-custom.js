@@ -9,12 +9,12 @@
 
     select.addEventListener("click", function (event) {
 
-      console.log('123')
-      if (selectOptions.classList.contains("open")) {
-        selectOptions.classList.remove("open");
-      } else {
-        selectOptions.classList.add("open");
-      }
+      // console.log('123')
+      // if (selectOptions.classList.contains("open")) {
+      //   selectOptions.classList.remove("open");
+      // } else {
+      //   selectOptions.classList.add("open");
+      // }
   });
 
     options.forEach(function (option, index) {
