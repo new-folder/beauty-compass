@@ -103,3 +103,25 @@
         &::before
             background-image: url('../img/info-circle.svg') !important
             width: 27px
+    #saveProfile
+        display: none
+        margin-right: -115px
+        &:before
+            background-image: url("../img/tick-circle.svg")
+        @media screen and ( max-width: $first-breack-point)
+            margin-right: -4px
+        @media screen and ( max-width: $second-breack-point)
+            display: none !important
+    #changeProfile
+        margin-right: -115px
+        &:before
+            background-image: url("../img/setting.svg")
+        @media screen and ( max-width: $first-breack-point)
+            margin-right: 0
+
+        @media screen and ( max-width: $second-breack-point)
+            p
+                display: none
+            
+            &:before
+                margin-right: 0
