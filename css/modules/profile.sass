@@ -1,38 +1,6 @@
-@import "vars.sass" 
+@import "vars.sass"
 .profile
-  &__body
-    grid-template-columns: 1fr 2fr 1fr
-    grid-template-rows: 26px auto auto auto repeat(3, auto)
-    grid-row-gap: 23px
-    grid-column-gap: 1rem
-    grid-template-areas: 'name name name' 'photo country country' 'photo town town' 'photo . .' 'tel tel tel' 'email email email' 'description description description' 'history history history' 'principles principles principles'
-    @media screen and (min-width: $second-breack-point)
-      grid-template-rows: repeat(3, 42px) repeat(3, auto)
-      grid-row-gap: 1.5rem
-      grid-column-gap: 1.5rem
-      grid-template-areas: 'photo name country' 'photo email town' 'photo tel .' 'description description description' 'history history history' 'principles principles principles'
-  &__image-file
-    position: absolute
-    &_box
-      position: relative
-      width: 100%
-      height: 100%
-      border-radius: 15px
-      overflow: hidden
-    &_token
-      position: absolute
-      top: 50%
-      left: 50%
-      width: 54px
-      transform: translate(-50%, -50%)
-    &_preview
-      transform: translate(-50%, -50%)
-      top: 50%
-      left: 50%
-      width: 100%
-      //height: 100%
-
-
+  display: grid
 
   &__brand
     grid-auto-columns: 114px auto auto
@@ -42,32 +10,63 @@
     margin-top: 27px
     margin-bottom: 27px
     @media screen and (min-width: $first-breack-point)
-      grid-template-columns: 187px auto 258px
-      grid-column-gap: 37px
-      grid-row-gap: 30px
-
-    .name
-      grid-area: name
-    .photo
-      grid-area: photo
-    .country
-      grid-area: country
-    .town
-      grid-area: town
-    .tel
-      grid-area: tel
+      grid-template-areas: 'image name name' 'image description description' 'image description description'
+      grid-auto-columns: 187px auto auto
+      grid-column-gap: 38px
+      grid-row-gap: 38px
+      margin-top: 58px
+      margin-bottom: 37px
+    &-image
+      position: relative
+      width: 114px
+      height: 114px
+      img
+        width: 54px
+        height: auto
       @media screen and (min-width: $first-breack-point)
-        max-width: 410px
-    .email
+        width: 187px
+        height: 187px
+    &-input
+      &.profile__image
+        grid-area: image
+      &.brand__name
+        grid-area: name
+      &.brand__description
+        grid-area: description
+    &-description
+      height: 52px
+      resize: none
+      @media all and (min-width: $first-breack-point)
+        height: 108px
+
+
+  &__manufacturer
+    grid-template-columns: 114px auto auto
+    grid-template-rows: repeat(4, 1fr)
+    grid-column-gap: 11px
+    grid-template-areas: 'image name name' 'image . .' 'image email email' 'image phone phone'
+    @media screen and (min-width: $first-breack-point)
+      grid-template-columns: 187px auto auto
+      grid-column-gap: 38px
+    &-image
+      grid-area: image
+      position: relative
+      width: 114px
+      height: 114px
+      img
+        width: 54px
+        height: auto
+      @media screen and (min-width: $first-breack-point)
+        width: 187px
+        height: 187px
+    &-name
+      grid-area: name
+      padding-top: 10px
+    &-email
       grid-area: email
-      @media screen and (min-width: $first-breack-point) 
-        max-width: 410px
-    .description
-      grid-area: description
-    .history
-      grid-area: history
-    .principles
-      grid-area: principles
+    &-phone
+      grid-area: phone
+
 
   &__manufacturer-info
     grid-auto-columns: 114px auto auto
@@ -88,22 +87,33 @@
         position: relative
         width: 114px
         height: 114px
-
         img
           width: 54px
           height: auto
-    .tel, .email
-      img
-        width: 26px
-        height: 26px
         @media screen and (min-width: $first-breack-point)
-          width: 42px
-          height: 42px
+          width: 188px
+          height: 188px
+      &.country
+        grid-area: country
+      &.town
+        grid-area: town
+      &.phone
+        grid-area: photo
+      &.email
+        grid-area: email
+      &.description
+        grid-area: description
+      &.history
+        grid-area: history
+      &.principles
+        grid-area: principles
 
-  &__label
-    top: -12px
-    left: 0
-    margin-bottom: -10px
+  &__products
+    display: flex
+    flex-wrap: wrap
+    flex-direction: column
+    column-gap: 11px
+    row-gap: 27px
     @media screen and (min-width: $first-breack-point)
       justify-content: flex-start
       flex-direction: row
@@ -119,7 +129,7 @@
       @media screen and (min-width: $first-breack-point)
         column-gap: 40px
         row-gap: 38px
-    &-image
+    &-image 
       grid-area: image
       position: relative
       width: 114px
@@ -137,9 +147,9 @@
           right: auto
           width: 440px
           padding: 14px 20px 10px
-      &_label
+      label
         top: -40px
-      &_token
+      img
         width: 54px
         height: auto
       svg
@@ -160,27 +170,8 @@
       @media screen and (min-width: $first-breack-point)
         width: 42px
         height: 42px
-      top: -18px
-  &__photo
-    width: 114px
-    height: 114px
-    border-radius: 15px
-    background: $white-color
-    box-shadow: $box-shadow-regular
-    @media screen and (min-width: $second-breack-point)
-      width: 175px
-      height: 175px
-    @media screen and (min-width: $first-breack-point)
-      width: 187px
-      height: 187px
-    img
-      width: 54px
-      height: auto
-  &__card
-    &--btn
-      justify-self: center
-      .confirm
         margin-left: 10px
-    .small-brake
-      @media (max-width: $xs-breack-point)
-        width: 60%
+
+
+
+
