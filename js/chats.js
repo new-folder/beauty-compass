@@ -10,7 +10,7 @@ if($('#viewChatBC').length){
             {
                 nameUserProgram: 'Ник, весна 2025',
                 date:'№ 876324876239847 от 22.08.2022',
-                statusChat:'unlockIcon',
+                statusChat:'unlock-icon',
                 descriptProgram: 'Причина обращения: Программа для сухой кожи на весну. Дополнительные решаемые задачи: потеря упругости, гиперпигментация'
             },
             {
@@ -22,7 +22,7 @@ if($('#viewChatBC').length){
             {
                 nameUserProgram: 'Ник, весна 2025',
                 date:'№ 876324876239847 от 22.08.2022',
-                statusChat:'unlockIcon',
+                statusChat:'unlock-icon',
                 descriptProgram: 'Причина обращения: Программа для сухой кожи на весну. Дополнительные решаемые задачи: потеря упругости, гиперпигментация'
             },
             {
@@ -271,17 +271,17 @@ function templatingItem(data) {
     html = '<ul>';
     data.forEach(element => {
         html += '<li class="">        <a href="#'
-        if(element.statusChat=='unlockIcon'){
+        if(element.statusChat=='unlock-icon'){
             html+='?lock'
         }
         html+= '" class="d-flex justify-content-between align-items-center '
-        if(element.statusChat=='unlockIcon'){
-            html+='unlockIcon'
+        if(element.statusChat=='unlock-icon'){
+            html+='unlock-icon'
         }
         html+=' "> <div class="infProg"> <p class="title '
         if(element.statusChat){
-            if(element.statusChat=='unlockIcon'){
-                html+='unlockIcon'
+            if(element.statusChat=='unlock-icon'){
+                html+='unlock-icon'
             }
             else if(element.statusChat=='bing')
                 html+='bing'
@@ -333,7 +333,7 @@ function templatingItemPerson(data) {
     return html;
 }
 
-$('.sendMessTech input#form__pic.file-input').on("change", null, $('#form__pic'), handleFileSelected)
+$('.send-mess-tech input#form__pic.file-input').on("change", null, $('#form__pic'), handleFileSelected)
 function handleFileSelected(input) {
 
     var container=$(".previewImage")
@@ -348,12 +348,12 @@ function handleFileSelected(input) {
         file = input[0].files
     
     if(file.length!=0){
-        $('.sendMessTech .previewImage_text').css('display','none')
+        $('.send-mess-tech .previewImage_text').css('display','none')
         if(window.innerWidth>1440){
-            $('.sendMessTech .previewImage').css('justify-content','start')
+            $('.send-mess-tech .previewImage').css('justify-content','start')
         }
-        $('.sendMessTech .previewImage').css('flex-direction','row')
-        $('.sendMessTech .previewImage').css('flex-wrap','wrap')
+        $('.send-mess-tech .previewImage').css('flex-direction','row')
+        $('.send-mess-tech .previewImage').css('flex-wrap','wrap')
 
         for (let index = 0; index < file.length; index++) {
             if (index == 5) {
@@ -381,12 +381,12 @@ function handleFileSelected(input) {
 function delImg(image){
     this.remove()
     if($('.previewImage #avatar')[0].previousElementSibling==null){
-        $('.sendMessTech .previewImage_text').css('display','block')
+        $('.send-mess-tech .previewImage_text').css('display','block')
         if(window.innerWidth<=1440){
-            $('.sendMessTech .previewImage').css('justify-content','center')
-            $('.sendMessTech .previewImage').css('flex-direction','column')
+            $('.send-mess-tech .previewImage').css('justify-content','center')
+            $('.send-mess-tech .previewImage').css('flex-direction','column')
         }else{
-            $('.sendMessTech .previewImage').css('flex-direction','row')
+            $('.send-mess-tech .previewImage').css('flex-direction','row')
         }
 
     }
@@ -400,7 +400,7 @@ $('#sendMess .tech .sendMess').on('click', function() {
     $.ajax({
         type: "post",
         url: "#",
-        data: $('.sendMessTech').serialize() ,
+        data: $('.send-mess-tech').serialize() ,
         dataType: "dataType",
         success: function (response) {
             console.log('успех');
@@ -415,7 +415,7 @@ $('#sendMess .tech .sendMess-chats').on('click', function() {
     $.ajax({
         type: "post",
         url: "#",
-        data: $('.sendMessTech').serialize() ,
+        data: $('.send-mess-tech').serialize() ,
         dataType: "dataType",
         success: function (response) {
             console.log('успех');
@@ -424,17 +424,17 @@ $('#sendMess .tech .sendMess-chats').on('click', function() {
 
     $('#sendMess').modal('toggle');
 })
-$('.sendMessTech #adrese button').on('click', function(params) {
+$('.send-mess-tech #adrese button').on('click', function(params) {
     event.preventDefault();
-    $('.sendMessTech #adrese .form-control').focus();
+    $('.send-mess-tech #adrese .form-control').focus();
 })
 
-$('.sendMessTech #adrese .form-control').on('keyup',function (params) {
+$('.send-mess-tech #adrese .form-control').on('keyup',function (params) {
 
     if(params.target.value=='' || params.target.value==null){
         $('.modal__adrese__ansver').css('display', 'none')
-        $('.sendMessTech #adrese .form-control').css('padding-left', '43px')
-        $('.sendMessTech #adrese button').css('display','block')
+        $('.send-mess-tech #adrese .form-control').css('padding-left', '43px')
+        $('.send-mess-tech #adrese button').css('display','block')
     }
     else{
 
@@ -459,14 +459,14 @@ $('.sendMessTech #adrese .form-control').on('keyup',function (params) {
 
         //удалить при появлении серверной части
         $('.modal__adrese__ansver').css('display', 'block')
-        $('.sendMessTech #adrese button').css('display','none')
-        $('.sendMessTech #adrese .form-control').css('padding-left', '.75rem')
+        $('.send-mess-tech #adrese button').css('display','none')
+        $('.send-mess-tech #adrese .form-control').css('padding-left', '.75rem')
     }
 })
 
 $('.modal__adrese__ansver').on('click',null, $('.modal__adrese'), function(params) {
-    $('.sendMessTech #adrese .form-control')[0].value=params.target.innerText
-    $('.sendMessTech #adrese .form-control').css('padding-left', '43px')
-    $('.sendMessTech #adrese button').css('display','block')
+    $('.send-mess-tech #adrese .form-control')[0].value=params.target.innerText
+    $('.send-mess-tech #adrese .form-control').css('padding-left', '43px')
+    $('.send-mess-tech #adrese button').css('display','block')
     $('.modal__adrese__ansver').css('display', 'none')
 })

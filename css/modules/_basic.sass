@@ -96,6 +96,8 @@ textarea
     height: 100%
     opacity: 0
     cursor: pointer
+    &-modal
+        width: 0
 
 .preload-wrap
     position: absolute
@@ -1963,6 +1965,7 @@ main
 .lk-user
     button
         p
+            margin: 0 !important
             font-size: 24px
             @media screen and ( max-width: $first-breack-point)
                 font-size: 15px
@@ -2473,25 +2476,3 @@ main
         height: 100%
         opacity: 0
         cursor: pointer
-
-    .delImage 
-        transition: 0.1s
-        &:hover
-            opacity: 0.3
-            z-index: -1
-    .visDestr
-        transition: 0.1s
-        background-image: none
-        background-position: center
-        background-repeat: no-repeat
-        background-size: 60%
-        border-radius: $border-radius
-        &:hover
-            background-image: url('../img/destr.svg')
-
-.modal
-    &__del-profile
-        .modal
-            &-footer
-                .feed-button
-                    margin-right: 0

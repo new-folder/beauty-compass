@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beauty Compass</title>
     <link rel="stylesheet" href="../css/style.css" />
-    <link href="../css/modules/.css" rel="stylesheet" />
-    <script src="../js/jq.js"></script>
-    <script src="../js/select2.js" defer></script>
-    <script src="../js/pogination.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-xxl top-bar">
@@ -543,8 +539,11 @@
       </div>
     </div>
     <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jq.js"></script>
+    <script src="../js/select2.js" defer></script>
+    <script src="../js/pogination.js"></script>
     <script defer src="../js/chats.js"></script>
-    <div class="modal fade" id="sendMess" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal modal-send-mess modal__create-rev fade" id="sendMess" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header chat text-center">
@@ -552,7 +551,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
           </div>
           <div class="modal-body">
-            <form action="" class="sendMessTech">
+            <form action="" class="send-mess-tech">
               <div class="titleModal">
                 <label for="appeal" class="select-wrap" id="appeal">
                   <small> 
@@ -563,18 +562,18 @@
                 <div class="select-wrap">
                   <small>Тема обращения</small>
                   <select class="form-select" name="them" id="them">
-                    <radio__option selected>
+                    <option selected>
                       Выберите один из вариантов
-                    </radio__option>
-                    <radio__option value="techSup">
+                    </option>
+                    <option value="techSup">
                       Техническая поддержка
-                    </radio__option>
-                    <radio__option value="generQuest">
+                    </option>
+                    <option value="generQuest">
                       Общие вопросы и предложения
-                    </radio__option>
-                    <radio__option value="legalIss">
+                    </option>
+                    <option value="legalIss">
                       Юридические и финансовые вопросы
-                    </radio__option>
+                    </option>
                   </select>
                 </div>
               </div>
@@ -590,7 +589,7 @@
                 </small>
                 <div class="previewImage">
                   <div id="avatar" class="addImage">
-                    <input multiple type="file" name="form__pic" id="form__pic" class="file-input"/>
+                    <input multiple type="file" name="form__pic" id="form__pic" class="file-input file-input-modal"/>
                   </div>
                   <div class="previewImage_text">
                     <p>Нажмите на область с иконкой</p>
@@ -600,7 +599,7 @@
               </label>
             </form> 
           </div>
-          <div class="modal-footer tech d-flex">
+          <div class="modal-footer modal-footer-tech d-flex">
             <button type="button" class="close text-uppercase" data-bs-dismiss="modal">отмена</button>
             <button type="button" class="sendMess text-uppercase">отправить</button>
           </div>
