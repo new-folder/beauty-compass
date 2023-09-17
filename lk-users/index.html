@@ -118,12 +118,12 @@
       </div>
     </nav>
     <main class="lk-user">
-      <section class="brand__title">
+      <section>
         <div class="container container--bc">
           <div class="col-12 col-xxl-12">
             <div class="page-title d-flex flex-wrap align-items-center col-xxl-10 offset-xxl-1">
-              <div class="col wrapHead  text-center col-xxl-12">
-                  <div class="headPage ">
+              <div class="col head__wrap  text-center col-xxl-12">
+                  <div class="head__page ">
                     <h1 class="title--20-36 text-uppercase"><P>профиль</P></h1>
                     <button id="saveProfile" class="feed-button text-uppercase"><p>сохранить</p></button>
                     <button onclick="" id="changeProfile" class="text-uppercase feed-button"><p>настроить</p></button>
@@ -135,13 +135,13 @@
       </section>
       <section class="profile container container--bc">
         <div class="col-12 col-xxl-12">
-          <form action="" class="persData" id="confidInfPerson" enctype="multipart/form-data">
+          <form action="" class="persData profile__confidInf" id="profile__confidInf" enctype="multipart/form-data">
             <label id="ava" class="select-wrap visPrfile">
               <small class="redPrfile">
                 Аватар
               </small>
               <div id="avatar">
-                <input type="file" name="form__pic" id="form__pic" class="file-input"/>
+                <input type="file" name="form__pic" id="form__pic" class="file-input "/>
               </div>
             </label>
             <label for="dateBirth" class="d-noneMinSec select-wrap redPrfile" id="dateBirth">
@@ -198,18 +198,18 @@
               <small>
                 Пароль
               </small>
-              <div class="funt">
-                <input class="form-control passwordInput" type="password" name="password" id="password">
-                <button id="visPassword" class="feed-button visPassword"></button>
+              <div class="passw">
+                <input class="form-control passw__inp" type="password" name="password" id="password">
+                <button id="visPassword" class="feed-button passw__vis"></button>
               </div>
             </label>
             <label for="password_repit" class="select-wrap redPrfile" id="password_repit">
               <small>
                 Повтор пароля
               </small>
-              <div class="funt">
-                <input class="form-control passwordRepitInput" type="password" name="password_repit" id="password_repit">
-                <button id="visPasswordRep" class="feed-button visPassword"></button>
+              <div class="passw">
+                <input class="form-control passw__inp__rep" type="password" name="password_repit" id="password_repit">
+                <button id="visPasswordRep" class="feed-button passw__vis"></button>
               </div>            
             </label>
             <label for="email" class="select-wrap redPrfile" id="email">
@@ -225,20 +225,20 @@
           </form>
         </div>
       </section>
-      <section class="infoOpen container container--bc redPrfile">
+      <section class="container container--bc redPrfile">
         <p class="title--20-36 text-uppercase">Информация для открытого профиля</p>
-        <div class="infOpenProfile ">
+        <div class="profile__infOpen">
           <label class="select-wrap descrProf">
             <small>
               Описание профиля
             </small>
-            <textarea name="descrProf" id="descrProf" class="form-control" form="confidInfPerson"></textarea>
+            <textarea name="descrProf" id="descrProf" class="form-control" form="profile__confidInf"></textarea>
           </label>
           <label class="select-wrap contry">
             <small>
               Страна
             </small>
-            <select class="form-select" name="selectCountry" id="selectCountry" form="confidInfPerson">
+            <select class="form-select" name="selectCountry" id="selectCountry" form="profile__confidInf">
               <option selected>
                 Выберите один из вариантов
               </option>
@@ -254,7 +254,7 @@
             <small>
               Город
             </small>
-            <select class="form-select" name="selectCity" id="selectCity" form="confidInfPerson">
+            <select class="form-select" name="selectCity" id="selectCity" form="profile__confidInf">
               <option selected>
                 Выберите один из вариантов
               </option>
@@ -270,13 +270,13 @@
             <small>
               E-mail (виден на странице профиля)
             </small>
-            <input class="form-control" type="email" name="emailOpen" id="emailOpen" form="confidInfPerson">
+            <input class="form-control" type="email" name="emailOpen" id="emailOpen" form="profile__confidInf">
           </label>
           <label class="select-wrap haier" id="selecHaier">
             <small>
               Тип волос
             </small>
-            <select class="form-select" name="selecHaier" id="selecHaier" form="confidInfPerson">
+            <select class="form-select" name="selecHaier" id="selecHaier" form="profile__confidInf">
               <option selected>
                 Выберите один из вариантов
               </option>
@@ -292,7 +292,7 @@
             <small>
               Тип кожи
             </small>
-            <select class="form-select" name="selecDerma" id="selecDerma" form="confidInfPerson">
+            <select class="form-select" name="selecDerma" id="selecDerma" form="profile__confidInf">
               <option selected>
                 Выберите один из вариантов
               </option>
@@ -306,15 +306,15 @@
           </label>
         </div>
       </section>
-      <div class="dlsFunctButton container container--bc">
-        <button id="saveProf"  class="feed-button text-uppercase"><p>Сохранить</p></button>
-        <button id="delProf" class="feed-button " data-bs-toggle="modal" data-bs-target="#deleteProfile"><p>Удалить профиль</p></button>
-        <div class="check__wrap">
+      <div class="dls container container--bc">
+        <button id="save"  class="feed-button text-uppercase"><p>Сохранить</p></button>
+        <button id="del" class="feed-button " data-bs-toggle="modal" data-bs-target="#deleteProfile"><p>Удалить профиль</p></button>
+        <div class="check__wrap m-0">
           <input type="checkbox" name="skinProp" value="dehydration" id="dehydration"><label for="dehydration">Согласен получать новости сайта</label>
         </div>
       </div>
       <section class="review container container--bc">
-        <div class="shell">
+        <div class="shell shell__rev">
           <button id="createRev" class="feed-button text-uppercase"><p>создать обзор</p></button>
           <button id="drafRev" class="feed-button text-uppercase"><p>Черновики</p></button>
           <button id="publRev" class="feed-button text-uppercase"><p>Опубликованные</p></button>
@@ -322,26 +322,26 @@
       </section>
       <section class="select container container--bc">
         <p class="title--20-36 text-uppercase text-center">Подбор косметики</p>
-        <div class="shell">
-          <button id="progSelect" class="feed-button d-progMin text-uppercase">          
+        <div class="shell shell__select">
+          <button id="prog" class="feed-button d-progMin text-uppercase">          
             <p>подбор программы</p>
             <div class="notice">
               <p>999</p>
             </div>
           </button>
-          <button id="testSelect" class="feed-button text-uppercase">  
+          <button id="testS" class="feed-button text-uppercase">  
             <p>тест</p>
             <div class="notice">
               <p>999</p>
             </div>
           </button>
-          <button id="progSelect" class="feed-button d-progMax text-uppercase">
+          <button id="prog" class="feed-button d-progMax text-uppercase">
             <p>подбор программы</p>
             <div class="notice">
               <p>999</p>
             </div>
           </button>
-          <button id="saveSelect" class="feed-button text-uppercase">
+          <button id="save" class="feed-button text-uppercase">
             <p>сохраненное</p>
             <div class="notice">
               <p>999</p>
@@ -351,7 +351,7 @@
       </section>
       <section class="select container container--bc">
         <p class="title--20-36 text-uppercase text-center">Обратная связь</p>
-        <div class="shell">
+        <div class="shell shell__select">
           <button id="comment" class="feed-button d-progMin text-uppercase">
             <p>комментарии</p>
             <div class="notice">
@@ -400,7 +400,7 @@
       </section>
       <section class="select container container--bc">
         <p class="title--20-36 text-uppercase text-center">Избранное</p>
-        <div class="shell">
+        <div class="shell shell__select">
           <button id="articl" class="d-progMax feed-button text-uppercase">  
             <p>статьи/обзоры</p>
             <div class="notice">
@@ -429,7 +429,7 @@
       </section>
       <section class="select chatsAll container container--bc">
         <p class="title--20-36 text-uppercase text-center">Переписка</p>
-        <div class="shell">
+        <div class="shell shell__select">
           <button id="techChat" class="feed-button text-uppercase">
             <p>чат с ВС</p>
             <div class="notice">
@@ -839,7 +839,7 @@
     <script src="../js/jq.js"></script>
     <script src="../js/select2.js" defer></script>
     <script src="../js/user-lk.js"></script>
-    <div class="modal fade" id="deleteProfile" tabindex="-1" aria-labelledby="deleteProfileLabel" aria-hidden="true">
+    <div class="modal fade modal__del-profile" id="deleteProfile" tabindex="-1" aria-labelledby="deleteProfileLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header text-center">

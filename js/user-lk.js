@@ -30,30 +30,30 @@ $(document).ready(function() {
     
     $('#visPassword').on('click',function(){
         event.preventDefault()
-        if($('.passwordInput')[0].type=='password'){
+        if($('.passw__inp')[0].type=='password'){
             $('#visPassword').css('background-image','url("../img/eye_hide.svg")');
-            $('.passwordInput')[0].type='text'
+            $('.passw__inp')[0].type='text'
         }
         else{
-            $('.passwordInput')[0].type='password'
+            $('.passw__inp')[0].type='password'
             $('#visPassword').css('background-image','url("../img/eye_show.svg")');
         } 
     })
 
     $('#visPasswordRep').on('click',function(){
         event.preventDefault()
-        if($('.passwordRepitInput')[0].type=='password'){
+        if($('.passw__inp__rep')[0].type=='password'){
             $('#visPasswordRep').css('background-image','url("../img/eye_hide.svg")');
-            $('.passwordRepitInput')[0].type='text'
+            $('.passw__inp__rep')[0].type='text'
         }
         else{
             $('#visPasswordRep').css('background-image','url("../img/eye_show.svg")');
-            $('.passwordRepitInput')[0].type='password'
+            $('.passw__inp__rep')[0].type='password'
         } 
     })
 
     $('#changeProfile').on('click', function(){
-        $('#confidInfPerson').css('display','grid')
+        $('#profile__confidInf').css('display','grid')
         $('#changeProfile').css('display','none')
         $('.redPrfile').css('display', 'block')
         $('.visPrfile').css('display', 'none')
@@ -61,12 +61,12 @@ $(document).ready(function() {
         $('#ava').css('width', '90%')
         $('#avatar').css('width','100%')
         $('#avatar').css('border-radius','20%')
-        if(window.innerWidth<1440)        $('#saveProf').css('display','block')
+        if(window.innerWidth<1440)        $('#save').css('display','block')
         else        $('#saveProfile').css('display','flex')
     })
 
-    $('#saveProf').on('click', function(){
-        $('#confidInfPerson').css('display','flex')
+    $('#save').on('click', function(){
+        $('#profile__confidInf').css('display','flex')
         $('#changeProfile').css('display','flex')
         $('.redPrfile').css('display', 'none')
         $('.visPrfile').css('display', 'block')
@@ -78,11 +78,11 @@ $(document).ready(function() {
         $('#avatar').css('width','50%')
         $('#avatar').css('border-radius','50%')
 
-        $('#saveProf').css('display','none')
+        $('#save').css('display','none')
     })
 
     $('#saveProfile').on('click', function(){
-        $('#confidInfPerson').css('display','flex')
+        $('#profile__confidInf').css('display','flex')
         $('#changeProfile').css('display','flex')
         $('.redPrfile').css('display', 'none')
         $('.visPrfile').css('display', 'block')

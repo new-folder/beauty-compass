@@ -22,6 +22,8 @@
 
             &:checked+label::before
                 background-image: url("../img/check.svg")
+            &:checked+label::after
+                background-image: url("../img/check.svg")
 
         input+label
             display: inline-flex
@@ -31,6 +33,24 @@
                 flex-shrink: 0
                 content: ''
                 display: inline-block
+                width: 34px
+                aspect-ratio: 1
+                border: 3px solid #292D32
+                border-radius: 10px
+                margin-right: 20px
+                background-repeat: no-repeat
+                background-position: center center
+                background-size: 68%
+
+                @media screen and (max-width: $second-breack-point) 
+                    width: 17px
+                    border-radius: 5px 
+                    border: 1px solid #292D32
+                    margin-right: 10px
+            &::after
+                flex-shrink: 0
+                content: ''
+                display: none
                 width: 34px
                 aspect-ratio: 1
                 border: 3px solid #292D32
