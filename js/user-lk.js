@@ -14,7 +14,7 @@ $(document).ready(function() {
         location.replace('chat-persons.html');
     })
 
-    $('#comment').on('click',function(){
+    $('.comment').on('click',function(){
         location.replace('comments.html');
     })
 

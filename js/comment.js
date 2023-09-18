@@ -51,7 +51,7 @@ $('#view_comment').pagination({
 function templatingItem(data) {
     html = '<ul>';
     data.forEach(element => {
-        html+='<p class="mb-2 text--20-30">'
+        html+='<p class="mb-2 text--15-24">'
         html+=element.respPost
         html+='</p>'
         html+='<a class="navbar-brand col-11 col-xxl-4 d-none d-xl-block" href="#"><img src="../img/logo-blue.svg" alt=""></a>'

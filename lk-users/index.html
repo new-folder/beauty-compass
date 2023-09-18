@@ -309,14 +309,14 @@
           </label>
         </div>
       </section>
-      <div class="dls container container--bc">
+      <div class="dls mb-2 container container--bc">
         <button id="save"  class="feed-button text-uppercase"><p>Сохранить</p></button>
         <button id="del" class="feed-button " data-bs-toggle="modal" data-bs-target="#deleteProfile"><p>Удалить профиль</p></button>
         <div class="check__wrap m-0">
           <input type="checkbox" name="skinProp" value="dehydration" id="dehydration"><label for="dehydration">Согласен получать новости сайта</label>
         </div>
       </div>
-      <section class="review container container--bc">
+      <section class="review container container--bc mt-4 mb-4">
         <div class="shell shell__rev">
           <button id="createRev" class="feed-button text-uppercase"><p>создать обзор</p></button>
           <button id="drafRev" class="feed-button text-uppercase"><p>Черновики</p></button>
@@ -355,7 +355,7 @@
       <section class="select container container--bc">
         <p class="title--20-36 text-uppercase text-center">Обратная связь</p>
         <div class="shell shell__select">
-          <button id="comment" class="feed-button d-progMin text-uppercase">
+          <button id="comment" class="comment feed-button d-progMin text-uppercase">
             <p>комментарии</p>
             <div class="notice">
               <p>999</p>
@@ -379,7 +379,7 @@
               <p>999</p>
             </div>
           </button>
-          <button id="comment" class="feed-button d-progMax text-uppercase">
+          <button id="comment" class="comment feed-button d-progMax text-uppercase">
             <p>комментарии</p>
             <div class="notice">
               <p>999</p>
@@ -849,8 +849,8 @@
             <h5 class="m-auto modal-title" id="deleteProfileLabel">Вы уверены?</h5>
           </div>
           <div class="modal-footer d-flex flex-column">
-            <button class="feed-button text-uppercase" type="button" data-bs-dismiss="modal">отмена</button>
-            <button class="feed-button" type="button">Удалить профиль</button>
+            <button class="feed-button--cansel feed-button text-uppercase text--10_18" type="button" data-bs-dismiss="modal">отмена</button>
+            <button class="feed-button--del feed-button text--10_18" type="button">Удалить профиль</button>
           </div>
         </div>
       </div>
