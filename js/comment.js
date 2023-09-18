@@ -101,16 +101,12 @@ function templatingItem(data) {
     return html;
 }
 
-var likeTrig=true;
-
 function onLike(element) {
     if(element.children[0].children[0].attributes.fill.nodeValue=="#1560BD"){
         element.children[1].innerText=Number(element.children[1].innerText)+1
-        likeTrig=!likeTrig
     }
     else{
         element.children[1].innerText=Number(element.children[1].innerText)-1
-        likeTrig=!likeTrig
     }
     for (let index = 0; index < element.children[0].children.length; index++) {
         const path = element.children[0].children[index];
