@@ -8,7 +8,8 @@ $('#view_comment').pagination({
             date:'22.08.2022',
             respPost:'Какой-то пост на который был комментарий',
             commentUser:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ipsam labore dolor voluptate quos quas quibusdam asperiores in pariatur velit nulla illum vel, dolorem dolores dignissimos ut natus mollitia voluptatum. Rem expedita magnam ducimus odio molestias libero quas, labore laborum eligendi, numquam maiores voluptate? Illo possimus itaque consequuntur aut officia dolorum fuga quae magni, cumque ipsam. Aspernatur quidem sunt aliquid! Ducimus excepturi doloremque autem fugiat corporis praesentium? Expedita delectus nobis nesciunt, quis magnam ad. Tempora modi voluptas id eaque sequi veniam accusamus porro. Ut ratione, ipsum unde eius maiores corporis?',
-            linkComm:'#'
+            linkComm:'#',
+            linkPost:'#'
         }, 
         {
             linkProfile:'#',
@@ -17,7 +18,8 @@ $('#view_comment').pagination({
             date:'22.08.2023',
             respPost:'Какой-то пост1 на который был комментарий',
             commentUser:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ipsam labore dolor voluptate quos quas quibusdam asperiores in pariatur velit nulla illum vel, dolorem dolores dignissimos ut natus mollitia voluptatum. Rem expedita magnam ducimus odio molestias libero quas, labore laborum eligendi, numquam maiores voluptate? Illo possimus itaque consequuntur aut officia dolorum fuga quae magni, cumque ipsam. Aspernatur quidem sunt aliquid! Ducimus excepturi doloremque autem fugiat corporis praesentium? Expedita delectus nobis nesciunt, quis magnam ad. Tempora modi voluptas id eaque sequi veniam accusamus porro. Ut ratione, ipsum unde eius maiores corporis?',
-            linkComm:'#'
+            linkComm:'#',
+            linkPost:'#'
         }, 
         {
             linkProfile:'#',
@@ -26,7 +28,8 @@ $('#view_comment').pagination({
             date:'21.08.2022',
             respPost:'Какой-то пост2 на который был комментарий',
             commentUser:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ipsam labore dolor voluptate quos quas quibusdam asperiores in pariatur velit nulla illum vel, dolorem dolores dignissimos ut natus mollitia voluptatum. Rem expedita magnam ducimus odio molestias libero quas, labore laborum eligendi, numquam maiores voluptate? Illo possimus itaque consequuntur aut officia dolorum fuga quae magni, cumque ipsam. Aspernatur quidem sunt aliquid! Ducimus excepturi doloremque autem fugiat corporis praesentium? Expedita delectus nobis nesciunt, quis magnam ad. Tempora modi voluptas id eaque sequi veniam accusamus porro. Ut ratione, ipsum unde eius maiores corporis?',
-            linkComm:'#'
+            linkComm:'#',
+            linkPost:'#'
         }, 
         {
             linkProfile:'#',
@@ -35,8 +38,9 @@ $('#view_comment').pagination({
             date:'29.08.2022',
             respPost:'Какой-то пост3 на который был комментарий',
             commentUser:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ipsam labore dolor voluptate quos quas quibusdam asperiores in pariatur velit nulla illum vel, dolorem dolores dignissimos ut natus mollitia voluptatum. Rem expedita magnam ducimus odio molestias libero quas, labore laborum eligendi, numquam maiores voluptate? Illo possimus itaque consequuntur aut officia dolorum fuga quae magni, cumque ipsam. Aspernatur quidem sunt aliquid! Ducimus excepturi doloremque autem fugiat corporis praesentium? Expedita delectus nobis nesciunt, quis magnam ad. Tempora modi voluptas id eaque sequi veniam accusamus porro. Ut ratione, ipsum unde eius maiores corporis?',
-            linkComm:'#'
-        },        
+            linkComm:'#',
+            linkPost:'#'
+        },
     ],
     pageSize: 10,
     pageNumber: 1,
@@ -51,9 +55,9 @@ $('#view_comment').pagination({
 function templatingItem(data) {
     html = '<ul>';
     data.forEach(element => {
-        html+='<p class="mb-2 text--15-24">'
+        html+='<a href="'+element.linkPost+'" class="mb-2 text--15-24 dark-lighter">'
         html+=element.respPost
-        html+='</p>'
+        html+='</a>'
         html+='<a class="navbar-brand col-11 col-xxl-4 d-none d-xl-block" href="#"><img src="../img/logo-blue.svg" alt=""></a>'
         html+='<div class="feed__row mt-3">'
         html+='<div class="feed__user align-items-center">'
