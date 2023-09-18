@@ -104,7 +104,6 @@ function templatingItem(data) {
 var likeTrig=true;
 
 function onLike(element) {
-    console.log(likeTrig);
     if(likeTrig){
         element.children[1].innerText=Number(element.children[1].innerText)+1
         likeTrig=!likeTrig
