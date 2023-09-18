@@ -73,7 +73,7 @@ function templatingItem(data) {
         html+='<span class="feed__text feed__text--preview">'+element.commentUser+'</span>'
         html+='</div>'
         html+='<div class="feed__actions justify-content-between">'
-        html+='<button type="button" class="feed__action social-count__icon social-count__icon--small social-count__icon--like" onclick="onClickActive(this)">'
+        html+='<button type="button" class="feed__action social-count__icon social-count__icon--small social-count__icon--like" onclick="onLike(this)">'
         html+='    <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="19px" viewBox="0 0 22.2825 21.6998">'
         html+='        <path fill="#1560BD" d="M15.736 21.6998l-4.08184 0c-0.601234,0 -1.91179,-0.182397 -2.60994,-0.880805l-2.29113 -1.76914c-0.392855,0.984735 -1.29445,1.46905 -2.72504,1.46905l-1.07411 0c-1.9874,0 -2.95394,-0.934589 -2.95394,-2.84664l0 -10.5263c0,-1.91205 0.966547,-2.84638 2.95394,-2.84638l1.07411 0c1.52595,0 2.44988,0.551347 2.79675,1.67301l3.19688 -4.75635c0.676843,-1.00968 2.15888,-1.49321 3.31874,-1.05281 1.34277,0.440402 2.20201,1.9227 1.9014,3.29769l-0.526404 3.38369c-0.0106528,0.0750893 -0.0106528,0.182397 0.0644365,0.268399 0.0537837,0.0537837 0.128873,0.0860019 0.214875,0.0860019l4.29672 0c1.05255,0 1.96557,0.440402 2.50263,1.20299 0.526404,0.741019 0.633712,1.71874 0.289964,2.66398l-2.56707 7.81942c-0.397531,1.55739 -2.05183,2.81416 -3.78097,2.81416zm-8.75427 -4.51445l3.12595 2.42c0.268399,0.257746 0.945241,0.472621 1.54648,0.472621l4.08184 0c0.966547,0 2.00844,-0.773497 2.22332,-1.64339l2.59954 -7.89477c0.171744,-0.472621 0.139526,-0.90237 -0.0860019,-1.2139 -0.23618,-0.332835 -0.66593,-0.526145 -1.19233,-0.526145l-4.29646 0c-0.558623,0 -1.07437,-0.23644 -1.42877,-0.644624 -0.365053,-0.418837 -0.526145,-0.97746 -0.440402,-1.55739l0.537057 -3.44813c0.129133,-0.601494 -0.279051,-1.27808 -0.859239,-1.47139 -0.526404,-0.193569 -1.20299,0.0857421 -1.43943,0.42949l-4.37155 6.50471 0 8.57291zm-4.0278 -11.2746c-1.17103,0 -1.34277,0.279311 -1.34277,1.23521l0 10.5263c0,0.956154 0.171744,1.23547 1.34277,1.23547l1.07411 0c1.17077,0 1.34251,-0.279311 1.34251,-1.23547l0 -10.5263c0,-0.955894 -0.171744,-1.23521 -1.34251,-1.23521l-1.07411 0z"></path>'
         html+='        <path class="icon-inner" fill="none" d="M2.77908 5.68106c-1.31289,0 -1.50542,0.289185 -1.50542,1.2786l0 10.8963c0,0.989671 0.19253,1.27886 1.50542,1.27886l1.20455 0c1.31263,0 1.50516,-0.289185 1.50516,-1.27886l0 -10.8963c0,-0.989412 -0.19253,-1.2786 -1.50516,-1.2786l-1.20455 0z"></path>'
@@ -101,3 +101,24 @@ function templatingItem(data) {
     return html;
 }
 
+var likeTrig=true;
+
+function onLike(element) {
+    console.log(likeTrig);
+    if(likeTrig){
+        element.children[1].innerText=Number(element.children[1].innerText)+1
+        likeTrig=!likeTrig
+    }
+    else{
+        element.children[1].innerText=Number(element.children[1].innerText)-1
+        likeTrig=!likeTrig
+    }
+    for (let index = 0; index < element.children[0].children.length; index++) {
+        const path = element.children[0].children[index];
+        if(path.attributes.fill.nodeValue=="#1560BD"){
+            path.attributes.fill.nodeValue='none'
+        }else if(path.attributes.fill.nodeValue=='none'){
+            path.attributes.fill.nodeValue="#1560BD"
+        }
+    }
+}
