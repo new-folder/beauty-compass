@@ -143,19 +143,6 @@
                     font-weight: 600
                     font-size: 18px
                     line-height: 22px
-            .delImage 
-                opacity: 1
-                transition: .4s
-                &:hover
-                    z-index: -1
-                    opacity: 0.3
-            .visDestr
-                transition: .1s
-                &:hover
-                    background-image: url('../img/destr.svg')
-                    background-color: $gray-light
-                    border-radius: $border-radius
-                    z-index: 2
     #adrese
         button   
             margin: 0     
@@ -289,13 +276,13 @@
                     &::before
                         display: none
                     &:first-child
-                        padding: 10px 15px
-                        background-color: $main-color
-                        border-radius: 15px
                         color: $sub-color
+                        background-color: $main-color
+                        border-radius: $border-radius
+                        padding: 10px 15px
                     &:last-child
                         color: $pre-color
-                        
+
     &-footer
         border-top: none
     &__create-rev
@@ -313,6 +300,7 @@
                         font-weight: 700
                         font-size: 18px
                         line-height: 22px
+
                     &:last-child
                         font-weight: 700
                         font-size: 18px
