@@ -1,4 +1,10 @@
-.pagin-b
+ul
+    padding-left: 0
+
+.infProg
+    width: 95%
+    height: 100%
+.pagin
     margin-bottom: 20px
     p
         font-size: 30px
@@ -13,78 +19,71 @@
             line-height: 18px
             margin-bottom: 10px
             line-height: 10px
+    &__save-program
+        .image
+            background-color: $main-color
+            mask: url('../img/Vector.svg')
+            mask-repeat: no-repeat
+            mask-size: 75%
+            mask-position: center
+            width: 50px
+            height: 18px
+            rotate: -90deg
+            transition: 0.3s
+            opacity: 1
+            cursor: pointer
+            &:hover
+                opacity: 0.7
+            @media screen and (max-width: $first-breack-point) 
+                display: none
 
-ul
-    padding-left: 0
-
-.infProg
-    width: 95%
-    height: 100%
-    
-.paginSaveProgram-d
-    .image
-        background-color: $main-color
-        mask: url('../img/Vector.svg')
-        mask-repeat: no-repeat
-        mask-size: 75%
-        mask-position: center
-        width: 50px
-        height: 18px
-        rotate: -90deg
-        transition: 0.3s
-        opacity: 1
-        cursor: pointer
-        &:hover
-            opacity: 0.7
-        @media screen and (max-width: $first-breack-point) 
-            display: none
-
-    ul, li 
-        list-style: none
-    ul p 
-        padding: 0
-        margin: 0
-    li 
-        margin-bottom: 30px
-        padding: 5px 10px
-        box-shadow: $box-shadow-sm
-        height: 158px
-        border-radius: $border-radius
-        overflow: hidden
-        text-overflow: ellipsis
-        @media screen and (max-width: $first-breack-point)
-            margin-bottom: 10px
-    a
-        transition: color 0.3s
-        text-decoration: none
-        height: 100%
-        .title
-            line-height: 37px
-            letter-spacing: 0.5px
-            text-transform: uppercase
-            color: $dark-semi-light
+        ul, li 
+            list-style: none
+        ul p 
+            padding: 0
+            margin: 0
+        li 
+            margin-bottom: 30px
+            padding: 5px 10px
+            box-shadow: $box-shadow-sm
+            height: 158px
+            border-radius: $border-radius
             overflow: hidden
             text-overflow: ellipsis
-            width: 100%
-            display: flex
-            align-items: center
-        small
-            font-size: 18px
-            line-height: 22px
-            color: $gray-light
-            @media screen and (max-width: $first-breack-point) 
-                font-size: 10px
-                line-height: 12px
+            @media screen and (max-width: $first-breack-point)
+                margin-bottom: 10px
+        a
+            transition: color 0.3s
+            text-decoration: none
+            height: 100%
+            .title
+                line-height: 37px
+                letter-spacing: 0.5px
+                text-transform: uppercase
+                color: $dark-semi-light
+                overflow: hidden
+                text-overflow: ellipsis
+                width: 100%
+                display: flex
+                align-items: center
+            small
+                font-size: 18px
+                line-height: 22px
+                color: $gray-light
+                @media screen and (max-width: $first-breack-point) 
+                    font-size: 10px
+                    line-height: 12px
 
-        .descr
-            font-size: 18px
-            line-height: 22px
-            color: $dark-lighter
-            @media screen and (max-width: $first-breack-point) 
-                font-size: 12px
-                line-height: 15px
-    .feed__name
-        flex-shrink: 0
+            .descr
+                font-size: 18px
+                line-height: 22px
+                color: $dark-lighter
+                @media screen and (max-width: $first-breack-point) 
+                    font-size: 12px
+                    line-height: 15px
+        .feed__name
+            flex-shrink: 0
+
 .paginationjs-pages
 
     .paginationjs-page, .paginationjs-ellipsis
@@ -170,7 +169,7 @@ ul
             margin-bottom: 10px
             line-height: 10px
     &-rez
-        .paginSaveProgram-d
+        .pagin__save-program
             .title
                 height: 60%
 

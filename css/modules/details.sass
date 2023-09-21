@@ -1,0 +1,60 @@
+@import vars
+summary 
+    outline: none
+    &:focus 
+        border-color: black
+    color: $dark-lighter
+    cursor: pointer
+    transition: .2s
+    display: flex
+    align-items: center
+    box-shadow: $box-shadow-regular
+summary::marker 
+    content: ''
+
+details 
+    box-sizing: border-box
+    margin-top: 5px
+
+details[open] > summary:before 
+    transform: rotate(0deg)
+
+summary::before 
+    transition: .3s ease
+    transform: rotate(-90deg)
+    width: 16px
+    aspect-ratio: 1
+    content: " "
+    background-image: url('../img/Vector.svg')
+    background-repeat: no-repeat
+    background-position: center
+    margin-right: 10px
+    background-size: 80%
+
+.details
+    &__summary
+        display: flex
+        justify-content: space-between
+        padding: 5px 10px
+        margin-bottom: 10px
+        border-radius: $border-radius
+        &--last-item
+            &::before
+                background-image: none
+        p
+            width: 20%
+            text-overflow: ellipsis
+            overflow: hidden
+    &-button
+        width: 80%
+        display: flex
+        justify-content: end
+        margin: 0 20px
+        &__edit
+            margin: 0 20px
+        &__del
+            margin: 0 20px
+    &__search
+        margin: 10px 5px
+    .content
+        margin-left: 15px
