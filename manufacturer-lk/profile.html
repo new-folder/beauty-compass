@@ -222,52 +222,12 @@
               <img class="ease3" src="../img/Vector.svg" alt="arrow image" />
             </div>
             <div class="add-info__content ease3 col-12 overflow-hidden">
-              <div class="add-info__schemes col-12">
-                <div class="input input--general">
-                  <label for="search_brand" class="label label--light label--profile">Ссылка к баннеру</label>
-                  <input class="details__search" id="search_brand" value="" type="text" required="">
-                </div>
-                <details class="details">
-                  <summary class="details__summary">
-                    <p class="text--15-24">
-                      Бренд1
-                    </p> 
-                    <div class="details-button">
-                      <a class="details-button__edit btn btn--base" href="#">Изменить</a>
-                      <a class="details-button__del btn btn--delete" href="#">Удалить</a>
-                    </div>
-                  </summary>
-                  <div class="content">
-                    <details class="details">
-                      <summary class="details__summary">
-                        <p class="text--15-24">
-                          компания
-                        </p> 
-                        <div class="details-button">
-                          <a class="details-button__edit btn btn--base" href="#">Изменить</a>
-                          <a class="details-button__del btn btn--delete" href="#">Удалить</a>
-                        </div>
-                      </summary>
-                      <div class="content">
-                        <details class="details">
-                          <summary class="details__summary details__summary--last-item">
-                            <p class="text--15-24">
-                              Средство
-                            </p> 
-                            <div class="details-button">
-                              <a class="details-button__edit btn btn--base" href="#">Изменить</a>
-                              <a class="details-button__del btn btn--delete" href="#">Удалить</a>
-                            </div>
-                          </summary>
-                          <div class="content">
-                            
-                          </div>
-                        </details>
-                      </div>
-                    </details>
+              <div class="add-info__schemes p-2 col-12">
+                <div class="pagin__output-info pagin__output-info-lk-man">
+                  <p></p>
+                  <div class="pagin__output-info d-none" id="view_all_info_manufacter">
                   </div>
-                </details>
-
+                </div>
               </div>
             </div>
           </div>
@@ -1427,9 +1387,10 @@
         </div>
       </div>
     </div>
-
+    <script src="../js/jq.js"></script>
+    <script src="../js/pogination.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
-    <script src="../js/profile.js"></script>
+    <script defer src="../js/profile.js"></script>
   </body>
 </html>

@@ -171,6 +171,210 @@ modalPricesCells.forEach((cell) => {
   });
 });
 
+var outputInfoDetails=''
+
+// Сортировка по столбцу "очередь показа"
+// $.ajax({
+//   type: "post",
+//   url: "url",
+//   dataType: "json",
+//   success: function (response) {
+//     outputInfoDetails=response
+//   }
+// });
+
+outputInfoDetails=[{
+  idDB:1,
+  name:"Производитель1",
+  place_display:"1",
+  brands:[
+    {
+      idDB:1,
+      name:"Бранд1",
+      place_display:"1",
+      series:[
+        {
+          idDB:1,
+          name:"Серия1",
+          place_display:"1",
+          cosmetics:[
+            {
+              idDB:1,
+              name:"Средство1",
+              place_display:"1",
+            },
+            {
+              idDB:2,
+              name:"Средство2",
+              place_display:"2",
+            },
+            {
+              idDB:3,
+              name:"Средство3",
+              place_display:"3",
+            },
+            {
+              idDB:4,
+              name:"Средство4",
+              place_display:"4",
+            },
+          ]
+        },
+        {
+          idDB:2,
+          name:"Серия2",
+          place_display:"2",
+          cosmetics:[
+            {
+              idDB:1,
+              name:"Средство1",
+              place_display:"1",
+            },
+            {
+              idDB:2,
+              name:"Средство2",
+              place_display:"2",
+            },
+            {
+              idDB:3,
+              name:"Средство3",
+              place_display:"3",
+            },
+            {
+              idDB:4,
+              name:"Средство4",
+              place_display:"4",
+            },
+          ]
+        },
+      ]
+    },
+    {
+      idDB:2,
+      name:"Бранд2",
+      place_display:"2",
+      cosmetics:[
+        {
+          idDB:1,
+          name:"Средство1",
+          place_display:"1",
+        },
+        {
+          idDB:2,
+          name:"Средство2",
+          place_display:"2",
+        },
+        {
+          idDB:3,
+          name:"Средство3",
+          place_display:"3",
+        },
+        {
+          idDB:4,
+          name:"Средство4",
+          place_display:"4",
+        },
+      ]
+    },
+  ]
+}]
+
+let global_club='manuf'
+createPagin($('#view_all_info_manufacter'),outputInfoDetails, global_club,false, null, null, false,)
+
+var object=$('#'+global_club+'_'+outputInfoDetails[0].idDB+'_view-all')
+
+global_club='brand'
+createPagin(object,outputInfoDetails[0].brands, global_club,false, 'Поиск бренда', 'бренд')
+
+outputInfoDetails[0].brands.forEach(brand => {
+
+  object=$('#'+global_club+'_'+brand.idDB+'_view-all')
+
+  if(brand.series != undefined){
+    createPagin(object, brand.series, 'seria',false, 'Поиск серии', 'серия')
+    
+    brand.series.forEach( seria=>{
+
+      object=$('#seria_'+seria.idDB+'_view-all')
+
+      createPagin(object, seria.cosmetics, 'cosmetic',true, 'Поиск средства', 'средство')
+      
+    })
+  }else{
+    createPagin(object, brand.cosmetics, 'cosmetic',true, 'Поиск средства', 'средство')
+  }
+});
+
+function createPagin(arrayIdParent ,blockOutput, _data, _classEl,_lastItem=false,  _placeholderSearch='', _textButtonAdd='',_visSearch=true, _pageSize=5, _pageNumber=1, _pageRange=0){
+  blockOutput.pagination({
+    dataSource: _data,
+    pageSize: 5,
+    pageNumber: 1,
+    pageRange: 0,
+    callback: function(data, pagination) {
+        var html = templatingItem(data, _classEl, _placeholderSearch, _textButtonAdd, _visSearch, _lastItem);
+        blockOutput.prev().html(html);
+    }
+})
+}
+
+function templatingItem(data, classEl='', placeholderSearch, textButtonAdd, visSearch, lastItem) {
+
+  html = '<ul>'
+
+  for (let i = 0; i < data.length; i++) {
+    const manufacter = data[i];
+    if(i==0 && visSearch){
+      html+='<div class="input input--general d-flex justify-content-between">'
+      +'<label for="search_'+classEl+'_'+manufacter.idDB+'" class="details__search label label--light label--profile">'
+      +placeholderSearch
+      +'</label>'
+      +'<input  id="search_'+classEl+'_'+manufacter.idDB+'" value="" type="text" class="details__search-input '
+      if(lastItem) html+='details__search-input-last'
+      html+='">'
+      +'<a href="" class="details__btn btn btn--blue"> <p class="text--15-25">Добавить '
+      +textButtonAdd
+      +'</p></a>'
+      +'</div>'
+    }
+    html+='<div class="details__view">'
+    +'<input type="text" value="'+manufacter.place_display+'" name="" class="details__view-place" id="">'
+
+    html+='<details class="details">'
+    +'<summary class="details__summary '
+    if(lastItem) html+='details__summary--last-item'
+    html+='">'
+    +'  <p class="title--h5">'
+    +manufacter.name
+    +'  </p> '
+    +'  <div class="details-button">'
+    +'    <a class="details-button__edit btn" href="#">'
+    +'      <img src="../img/btn_pen.svg" alt="">'
+    +'    </a>'
+    +'    <a class="details-button__del btn" href="#">'
+    +'      <img src="../img/destr.svg" alt="">'
+    +'    </a>'
+    +'  </div>'
+    +'</summary>'
+    +'<div class="content">'
+    +'<div class="pagin__output-info">'
+    +'  <p></p>'
+    +'  <div class="pagin__output-info" id="'
+    +classEl+'_'+manufacter.idDB+'_view-all'
+    +'">'
+    +'  </div>'
+    +'</div>'
+    +'</div>'
+    +'</details>'
+    +'</div>'
+  }
+  html += '</ul>'
+
+  return html;
+}
+
+//анимация details
 class Accordion {
   constructor(el) {
     this.el = el;
@@ -246,7 +450,7 @@ class Accordion {
     this.el.style.height = this.el.style.overflow = '';
   }
 }
-
+// Присваивание анимаций
 document.querySelectorAll('.add-info__schemes details').forEach((el) => {
   new Accordion(el);
 });
