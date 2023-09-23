@@ -183,6 +183,7 @@ var outputInfoDetails=''
 //   }
 // });
 
+//предпологаемый и желаемый JSON данные
 outputInfoDetails=[{
   idDB:1,
   name:"Производитель1",
@@ -279,33 +280,8 @@ outputInfoDetails=[{
   ]
 }]
 
-let global_club='manuf'
-createPagin($('#view_all_info_manufacter'),outputInfoDetails, global_club,false, null, null, false,)
 
-var object=$('#'+global_club+'_'+outputInfoDetails[0].idDB+'_view-all')
-
-global_club='brand'
-createPagin(object,outputInfoDetails[0].brands, global_club,false, 'Поиск бренда', 'бренд')
-
-outputInfoDetails[0].brands.forEach(brand => {
-
-  object=$('#'+global_club+'_'+brand.idDB+'_view-all')
-
-  if(brand.series != undefined){
-    createPagin(object, brand.series, 'seria',false, 'Поиск серии', 'серия')
-    
-    brand.series.forEach( seria=>{
-
-      object=$('#seria_'+seria.idDB+'_view-all')
-
-      createPagin(object, seria.cosmetics, 'cosmetic',true, 'Поиск средства', 'средство')
-      
-    })
-  }else{
-    createPagin(object, brand.cosmetics, 'cosmetic',true, 'Поиск средства', 'средство')
-  }
-});
-
+//функция вывода данных
 function createPagin(arrayIdParent ,blockOutput, _data, _classEl,_lastItem=false,  _placeholderSearch='', _textButtonAdd='',_visSearch=true, _pageSize=5, _pageNumber=1, _pageRange=0){
   blockOutput.pagination({
     dataSource: _data,
@@ -313,24 +289,33 @@ function createPagin(arrayIdParent ,blockOutput, _data, _classEl,_lastItem=false
     pageNumber: 1,
     pageRange: 0,
     callback: function(data, pagination) {
-        var html = templatingItem(data, _classEl, _placeholderSearch, _textButtonAdd, _visSearch, _lastItem);
-        blockOutput.prev().html(html);
+      var html = templatingItem(arrayIdParent, data, _classEl, _placeholderSearch, _textButtonAdd, _visSearch, _lastItem);
+      blockOutput.prev().html(html);
     }
-})
+  })
 }
 
-function templatingItem(data, classEl='', placeholderSearch, textButtonAdd, visSearch, lastItem) {
-
+//шаблон вывода инфы
+function templatingItem(arrayIdParent, data, classEl='', placeholderSearch, textButtonAdd, visSearch, lastItem) {
+  
   html = '<ul>'
 
   for (let i = 0; i < data.length; i++) {
     const manufacter = data[i];
     if(i==0 && visSearch){
       html+='<div class="input input--general d-flex justify-content-between">'
-      +'<label for="search_'+classEl+'_'+manufacter.idDB+'" class="details__search label label--light label--profile">'
+      +'<label for="search_'+classEl
+      arrayIdParent.forEach(id=>{
+        html+='_'+id
+      })
+      html+='" class="details__search label label--light label--profile">'
       +placeholderSearch
       +'</label>'
-      +'<input  id="search_'+classEl+'_'+manufacter.idDB+'" value="" type="text" class="details__search-input '
+      +'<input  id="searchIn_'+classEl
+      arrayIdParent.forEach(id=>{
+        html+='_'+id
+      })
+      html+='" value="" type="text" class="details__search-input '
       if(lastItem) html+='details__search-input-last'
       html+='">'
       +'<a href="" class="details__btn btn btn--blue"> <p class="text--15-25">Добавить '
@@ -453,4 +438,82 @@ class Accordion {
 // Присваивание анимаций
 document.querySelectorAll('.add-info__schemes details').forEach((el) => {
   new Accordion(el);
+});
+
+//вывод информации с помощью пагинации
+//производитель
+let global_club='manuf'
+createPagin([0],$('#view_all_info_manufacter'),outputInfoDetails, global_club,false, null, null, false,)
+
+var object=$('#'+global_club+'_'+outputInfoDetails[0].idDB+'_view-all')
+//бренды
+global_club='brand'
+createPagin([0],object,outputInfoDetails[0].brands, global_club,false, 'Поиск бренда', 'бренд')
+
+for (let i = 0; i < outputInfoDetails[0].brands.length; i++) {
+  const brand = outputInfoDetails[0].brands[i];
+  
+  object=$('#'+global_club+'_'+brand.idDB+'_view-all')
+  
+  //зависимости есть ли серия у бренда
+  if(brand.series != undefined){
+    createPagin([0, i],object, brand.series, 'seria',false, 'Поиск серии', 'серия')
+
+    for (let j = 0; j < brand.series.length; j++) {
+      const seria = brand.series[j];
+      object=$('#seria_'+seria.idDB+'_view-all')
+
+      createPagin([0, i, j],object, seria.cosmetics, 'cosmetic',true, 'Поиск средства', 'средство')
+    }
+  }else{
+    createPagin([0, i],object, brand.cosmetics, 'cosmetic',true, 'Поиск средства', 'средство')
+  }
+}
+
+$('input[id^="searchIn"]').keyup(function (element) { 
+  
+  //вывод новой пагинации по поиску
+  var outputHtml=element.currentTarget.parentElement.parentElement.parentElement.parentElement.lastChild
+
+  //строка поиска
+  var stroke_seach=element.target.value
+
+  //id_elem [id производителя, id брендов, id серии] в json
+  let id_elem=$.grep(element.target.attributes.id.value.split('_'), function(el){
+    return !isNaN(el)
+  })
+
+  var arrayOutput=[];
+  switch (id_elem.length) {
+    case 1:
+        arraySearch=outputInfoDetails[id_elem[0]].brands
+        
+        arraySearch.forEach(el=>{
+          if(el.name.includes(stroke_seach))
+            arrayOutput.push(el)
+        })
+        console.log(arrayOutput);
+      break;
+    case 2:
+      if (outputInfoDetails[id_elem[0]].brands[id_elem[1]].series == undefined) 
+        arraySearch=outputInfoDetails[id_elem[0]].brands[id_elem[1]].cosmetics
+      else 
+        arraySearch=outputInfoDetails[id_elem[0]].brands[id_elem[1]].series
+
+        arraySearch.forEach(el=>{
+          if(el.name.includes(stroke_seach))
+            arrayOutput.push(el)
+        })
+        console.log(arrayOutput);
+      break;
+    case 3:
+        arraySearch=outputInfoDetails[id_elem[0]].brands[id_elem[1]].series[id_elem[2]].cosmetics
+        
+        arraySearch.forEach(el=>{
+          if(el.name.includes(stroke_seach))
+            arrayOutput.push(el)
+        })
+        console.log(arrayOutput);
+  }
+
 });
