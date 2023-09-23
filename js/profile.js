@@ -282,21 +282,21 @@ outputInfoDetails=[{
 
 
 //функция вывода данных
-function createPagin(arrayIdParent ,blockOutput, _data, _classEl,_lastItem=false,  _placeholderSearch='', _textButtonAdd='',_visSearch=true, _pageSize=5, _pageNumber=1, _pageRange=0){
+function createPagin(valSearch,arrayIdParent ,blockOutput, _data, _classEl,_lastItem=false,  _placeholderSearch='', _textButtonAdd='',_visSearch=true, _pageSize=5, _pageNumber=1, _pageRange=0){
   blockOutput.pagination({
     dataSource: _data,
     pageSize: 5,
     pageNumber: 1,
     pageRange: 0,
     callback: function(data, pagination) {
-      var html = templatingItem(arrayIdParent, data, _classEl, _placeholderSearch, _textButtonAdd, _visSearch, _lastItem);
+      var html = templatingItem(valSearch,arrayIdParent, data, _classEl, _placeholderSearch, _textButtonAdd, _visSearch, _lastItem);
       blockOutput.prev().html(html);
     }
   })
 }
 
 //шаблон вывода инфы
-function templatingItem(arrayIdParent, data, classEl='', placeholderSearch, textButtonAdd, visSearch, lastItem) {
+function templatingItem(valSearch,arrayIdParent, data, classEl='', placeholderSearch, textButtonAdd, visSearch, lastItem) {
   
   html = '<ul>'
 
@@ -315,7 +315,7 @@ function templatingItem(arrayIdParent, data, classEl='', placeholderSearch, text
       arrayIdParent.forEach(id=>{
         html+='_'+id
       })
-      html+='" value="" type="text" class="details__search-input '
+      html+='" value="'+valSearch+'" type="text" class="details__search-input '
       if(lastItem) html+='details__search-input-last'
       html+='">'
       +'<a href="" class="details__btn btn btn--blue"> <p class="text--15-25">Добавить '
@@ -443,12 +443,12 @@ document.querySelectorAll('.add-info__schemes details').forEach((el) => {
 //вывод информации с помощью пагинации
 //производитель
 let global_club='manuf'
-createPagin([0],$('#view_all_info_manufacter'),outputInfoDetails, global_club,false, null, null, false,)
+createPagin('',[0],$('#view_all_info_manufacter'),outputInfoDetails, global_club,false, null, null, false,)
 
 var object=$('#'+global_club+'_'+outputInfoDetails[0].idDB+'_view-all')
 //бренды
 global_club='brand'
-createPagin([0],object,outputInfoDetails[0].brands, global_club,false, 'Поиск бренда', 'бренд')
+createPagin('',[0],object,outputInfoDetails[0].brands, global_club,false, 'Поиск бренда', 'бренд')
 
 for (let i = 0; i < outputInfoDetails[0].brands.length; i++) {
   const brand = outputInfoDetails[0].brands[i];
@@ -457,29 +457,34 @@ for (let i = 0; i < outputInfoDetails[0].brands.length; i++) {
   
   //зависимости есть ли серия у бренда
   if(brand.series != undefined){
-    createPagin([0, i],object, brand.series, 'seria',false, 'Поиск серии', 'серия')
+    createPagin('',[0, i],object, brand.series, 'seria',false, 'Поиск серии', 'серия')
 
     for (let j = 0; j < brand.series.length; j++) {
       const seria = brand.series[j];
       object=$('#seria_'+seria.idDB+'_view-all')
 
-      createPagin([0, i, j],object, seria.cosmetics, 'cosmetic',true, 'Поиск средства', 'средство')
+      createPagin('',[0, i, j],object, seria.cosmetics, 'cosmetic',true, 'Поиск средства', 'средство')
     }
+
   }else{
-    createPagin([0, i],object, brand.cosmetics, 'cosmetic',true, 'Поиск средства', 'средство')
+    createPagin('',[0, i],object, brand.cosmetics, 'cosmetic',true, 'Поиск средства', 'средство')
   }
 }
 
-$('input[id^="searchIn"]').keyup(function (element) { 
-  
-  //вывод новой пагинации по поиску
-  var outputHtml=element.currentTarget.parentElement.parentElement.parentElement.parentElement.lastChild
+$('input[id^="searchIn"]').keyup(searching);
 
+function searching(element) { 
+  //вывод новой пагинации по поиску
+  var outputHtml=$(element.currentTarget.parentElement.parentElement.parentElement.parentElement.lastChild)
   //строка поиска
   var stroke_seach=element.target.value
 
+  let array_el=element.target.attributes.id.value.split('_');
+
+  let idForFocus=element.target.attributes.id;
+  let classEl=array_el[1]
   //id_elem [id производителя, id брендов, id серии] в json
-  let id_elem=$.grep(element.target.attributes.id.value.split('_'), function(el){
+  let id_elem=$.grep(array_el, function(el){
     return !isNaN(el)
   })
 
@@ -487,24 +492,77 @@ $('input[id^="searchIn"]').keyup(function (element) {
   switch (id_elem.length) {
     case 1:
         arraySearch=outputInfoDetails[id_elem[0]].brands
-        
-        arraySearch.forEach(el=>{
-          if(el.name.includes(stroke_seach))
-            arrayOutput.push(el)
-        })
-        console.log(arrayOutput);
-      break;
-    case 2:
-      if (outputInfoDetails[id_elem[0]].brands[id_elem[1]].series == undefined) 
-        arraySearch=outputInfoDetails[id_elem[0]].brands[id_elem[1]].cosmetics
-      else 
-        arraySearch=outputInfoDetails[id_elem[0]].brands[id_elem[1]].series
 
         arraySearch.forEach(el=>{
           if(el.name.includes(stroke_seach))
             arrayOutput.push(el)
         })
-        console.log(arrayOutput);
+        createPagin(stroke_seach,id_elem, outputHtml, arrayOutput, classEl, false, 'Поиск бренда', 'бренд')
+
+        for (let i = 0; i < arrayOutput.length; i++) {
+          const brand = arrayOutput[i];
+          
+          object=$('#'+global_club+'_'+brand.idDB+'_view-all')
+          
+          //зависимости есть ли серия у бренда
+          if(brand.series != undefined){
+            createPagin('',[0, i],object, brand.series, 'seria',false, 'Поиск серии', 'серия')
+        
+            for (let j = 0; j < brand.series.length; j++) {
+              const seria = brand.series[j];
+              object=$('#seria_'+seria.idDB+'_view-all')
+        
+              createPagin('',[0, i, j],object, seria.cosmetics, 'cosmetic',true, 'Поиск средства', 'средство')
+            }
+        
+          }else{
+            createPagin('',[0, i],object, brand.cosmetics, 'cosmetic',true, 'Поиск средства', 'средство')
+          }
+        }
+
+        $('input[id^="searchIn"]').keyup(searching);
+      break;
+    case 2:
+      let triger
+      let placeholder
+      let addText
+
+      if (outputInfoDetails[id_elem[0]].brands[id_elem[1]].series == undefined) {
+        arraySearch=outputInfoDetails[id_elem[0]].brands[id_elem[1]].cosmetics
+        triger=true
+        placeholder='Поиск средства'
+        addText='средство'
+
+        arraySearch.forEach(el=>{
+          if(el.name.includes(stroke_seach))
+            arrayOutput.push(el)
+        })
+  
+        createPagin(stroke_seach,id_elem, outputHtml, arrayOutput, classEl, triger, placeholder,addText)
+      }
+      else {
+        arraySearch=outputInfoDetails[id_elem[0]].brands[id_elem[1]].series
+        triger=true
+        placeholder='Поиск серии'
+        addText='серию'
+
+        arraySearch.forEach(el=>{
+          if(el.name.includes(stroke_seach))
+            arrayOutput.push(el)
+        })
+  
+        createPagin(stroke_seach,id_elem, outputHtml, arrayOutput, classEl, triger, placeholder,addText)
+
+        for (let j = 0; j < arrayOutput.length; j++) {
+          const seria = arrayOutput[j];
+          object=$('#seria_'+seria.idDB+'_view-all')
+    
+          createPagin('',[0, id_elem[1], j],object, seria.cosmetics, 'cosmetic',true, 'Поиск средства', 'средство')
+        }
+      }
+
+      
+      $('input[id^="searchIn"]').keyup(searching);
       break;
     case 3:
         arraySearch=outputInfoDetails[id_elem[0]].brands[id_elem[1]].series[id_elem[2]].cosmetics
@@ -513,7 +571,10 @@ $('input[id^="searchIn"]').keyup(function (element) {
           if(el.name.includes(stroke_seach))
             arrayOutput.push(el)
         })
-        console.log(arrayOutput);
+        createPagin(stroke_seach,id_elem, outputHtml, arrayOutput, classEl, true, 'Поиск серии', 'серию')
+      $('input[id^="searchIn"]').keyup(searching);
+      break;
   }
 
-});
+  $(idForFocus).focus();
+}
