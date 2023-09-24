@@ -196,7 +196,7 @@ outputInfoDetails=[{
       series:[
         {
           idDB:1,
-          name:"Серия1",
+          name:"чистая линия",
           place_display:"1",
           cosmetics:[
             {
@@ -223,7 +223,7 @@ outputInfoDetails=[{
         },
         {
           idDB:2,
-          name:"Серия2",
+          name:"чистая оливия",
           place_display:"2",
           cosmetics:[
             {
@@ -471,17 +471,25 @@ for (let i = 0; i < outputInfoDetails[0].brands.length; i++) {
   }
 }
 
-$('input[id^="searchIn"]').keyup(searching);
+for (let i = 0; i < $('input[id^="searchIn"]').length; i++) {
+  const element = $('input[id^="searchIn"]')[i];
+  $(element).bind('keyup', {input: element}, searching);
+}
 
 function searching(element) { 
   //вывод новой пагинации по поиску
-  var outputHtml=$(element.currentTarget.parentElement.parentElement.parentElement.parentElement.lastChild)
   //строка поиска
-  var stroke_seach=element.target.value
 
-  let array_el=element.target.attributes.id.value.split('_');
+  workInp=element.data.input
 
-  let idForFocus=element.target.attributes.id;
+  s=workInp.parentElement.parentElement.parentElement.parentElement.lastChild
+  outHtml=$(s)
+
+  var stroke_seach=workInp.value
+
+  let array_el=workInp.attributes.id.value.split('_');
+
+  let idForFocus=workInp.attributes.id;
   let classEl=array_el[1]
   //id_elem [id производителя, id брендов, id серии] в json
   let id_elem=$.grep(array_el, function(el){
@@ -489,16 +497,43 @@ function searching(element) {
   })
 
   var arrayOutput=[];
+
   switch (id_elem.length) {
     case 1:
         arraySearch=outputInfoDetails[id_elem[0]].brands
-
         arraySearch.forEach(el=>{
           if(el.name.includes(stroke_seach))
             arrayOutput.push(el)
         })
-        createPagin(stroke_seach,id_elem, outputHtml, arrayOutput, classEl, false, 'Поиск бренда', 'бренд')
+        idForFocus.ownerElement.focus();
+        break;
+    case 2:
+      if (outputInfoDetails[id_elem[0]].brands[id_elem[1]].series == undefined) {
+        arraySearch=outputInfoDetails[id_elem[0]].brands[id_elem[1]].cosmetics
+      }
+      else {
+        arraySearch=outputInfoDetails[id_elem[0]].brands[id_elem[1]].series
+      }
 
+      arraySearch.forEach(el=>{
+        if(el.name.includes(stroke_seach))
+          arrayOutput.push(el)
+      })
+      break;
+    case 3:
+        arraySearch=outputInfoDetails[id_elem[0]].brands[id_elem[1]].series[id_elem[2]].cosmetics
+        arraySearch.forEach(el=>{
+          if(el.name.includes(stroke_seach))
+            arrayOutput.push(el)
+        })
+        break;
+  }
+  
+  if(arrayOutput.length!=0){
+    switch (id_elem.length) {
+      case 1:
+        createPagin(stroke_seach,id_elem, outHtml, arrayOutput, classEl, false, 'Поиск бренда', 'бренд')
+  
         for (let i = 0; i < arrayOutput.length; i++) {
           const brand = arrayOutput[i];
           
@@ -519,62 +554,48 @@ function searching(element) {
             createPagin('',[0, i],object, brand.cosmetics, 'cosmetic',true, 'Поиск средства', 'средство')
           }
         }
-
-        $('input[id^="searchIn"]').keyup(searching);
-      break;
-    case 2:
-      let triger
-      let placeholder
-      let addText
-
-      if (outputInfoDetails[id_elem[0]].brands[id_elem[1]].series == undefined) {
-        arraySearch=outputInfoDetails[id_elem[0]].brands[id_elem[1]].cosmetics
-        triger=true
-        placeholder='Поиск средства'
-        addText='средство'
-
-        arraySearch.forEach(el=>{
-          if(el.name.includes(stroke_seach))
-            arrayOutput.push(el)
-        })
-  
-        createPagin(stroke_seach,id_elem, outputHtml, arrayOutput, classEl, triger, placeholder,addText)
+        idForFocus.ownerElement.focus();
+        for (let i = 0; i < $('input[id^="searchIn"]').length; i++) {
+      const element = $('input[id^="searchIn"]')[i];
+      $(element).bind('keyup', {input: element}, searching);
+      if($(element)==workInp){
+        workInp.focus();
       }
-      else {
-        arraySearch=outputInfoDetails[id_elem[0]].brands[id_elem[1]].series
-        triger=true
-        placeholder='Поиск серии'
-        addText='серию'
-
-        arraySearch.forEach(el=>{
-          if(el.name.includes(stroke_seach))
-            arrayOutput.push(el)
-        })
-  
-        createPagin(stroke_seach,id_elem, outputHtml, arrayOutput, classEl, triger, placeholder,addText)
-
-        for (let j = 0; j < arrayOutput.length; j++) {
-          const seria = arrayOutput[j];
-          object=$('#seria_'+seria.idDB+'_view-all')
-    
-          createPagin('',[0, id_elem[1], j],object, seria.cosmetics, 'cosmetic',true, 'Поиск средства', 'средство')
+    }  
+      break;
+      case 2:
+        if (outputInfoDetails[id_elem[0]].brands[id_elem[1]].series == undefined) {
+          createPagin(stroke_seach,id_elem, outHtml, arrayOutput, classEl, true, 'Поиск средства','средство')
         }
+        else {
+          createPagin(stroke_seach,id_elem, outHtml, arrayOutput, classEl, false, 'Поиск серии','серию')
+          for (let j = 0; j < arrayOutput.length; j++) {
+            const seria = arrayOutput[j];
+            object=$('#seria_'+seria.idDB+'_view-all')
+            
+            createPagin('',[0, id_elem[1], j],object, seria.cosmetics, 'cosmetic',true, 'Поиск средства', 'средство')
+          }
+        }
+        for (let i = 0; i < $('input[id^="searchIn"]').length; i++) {
+      const element = $('input[id^="searchIn"]')[i];
+      $(element).bind('keyup', {input: element}, searching);
+      if($(element)==workInp){
+        workInp.focus();
       }
+    }
+      break;
+      case 3:
+          createPagin(stroke_seach,id_elem, outHtml, arrayOutput, classEl, true, 'Поиск средства', 'средство')                
+        for (let i = 0; i < $('input[id^="searchIn"]').length; i++) {
+          const element = $('input[id^="searchIn"]')[i];
+          $(element).bind('keyup', {input: element}, searching);
+          if($(element)==workInp){
+            workInp.focus();
+          }
+        }
+      break;
+    }
 
-      
-      $('input[id^="searchIn"]').keyup(searching);
-      break;
-    case 3:
-        arraySearch=outputInfoDetails[id_elem[0]].brands[id_elem[1]].series[id_elem[2]].cosmetics
-        
-        arraySearch.forEach(el=>{
-          if(el.name.includes(stroke_seach))
-            arrayOutput.push(el)
-        })
-        createPagin(stroke_seach,id_elem, outputHtml, arrayOutput, classEl, true, 'Поиск серии', 'серию')
-      $('input[id^="searchIn"]').keyup(searching);
-      break;
   }
-
-  $(idForFocus).focus();
+  
 }
