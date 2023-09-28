@@ -336,10 +336,14 @@ textarea
             font-weight: 600
             line-height: 1.25
     &__under
+        font-weight: 700
         font-size: 30px
         color: $main-color
+        line-height: 1.25
         @media screen and (max-width: $first-breack-point)
             font-size: 15px
+            font-weight: 600
+            line-height: 1.25
 
 // === Colors ===
 .main-color
@@ -373,6 +377,10 @@ textarea
             font-size: 15px
             font-weight: 600
             line-height: 1.25
+
+.first-bp
+    @media screen and (max-width: $first-breack-point)
+        display: none
 
 .btn
     height: 41px
@@ -495,7 +503,7 @@ textarea
     font-weight: 600
     text-decoration: none
     cursor: pointer
-    &.pre-color
+    &:hover
         color: $pre-color
     @media screen and (max-width: $first-breack-point)
         font-size: 15px
@@ -1068,6 +1076,53 @@ main
     &__splide-prev
         left: -50px
         transform: rotate(180deg)
+        &--reviews-photos
+            &:before
+                top: 760px
+    &__photo-link
+        display: block
+        height: 182px
+        border-radius: 15px
+        overflow: hidden
+        transition: all .3s ease
+        img
+            height: 100%
+            width: 100%
+            object-fit: cover
+        &:hover
+            opacity: .7
+    &__photo-grid
+        @media screen and (max-width: $first-breack-point)
+            display: none
+    &__splide
+        width: 85%
+        @media screen and (max-width: $second-breack-point)
+            width: 100%
+
+        .splide__slide
+            width: 100%
+            height: auto
+            overflow: hidden
+            border-radius: 15px
+            img
+                border-radius: 15px
+                height: 100%
+                width: 100%
+                object-fit: cover
+    &__splide-arrow
+        position: absolute
+        top: 50%
+        border: none
+        background: none
+        svg
+            width: 30px
+            path
+                fill: $main-color
+    &__splide-next
+        right: -50px
+    &__splide-prev
+        left: -50px
+        transform: rotate(180deg)
 .feed
     &__row
         padding: 24px
@@ -1351,8 +1406,23 @@ main
         @media screen and (max-width: $first-breack-point)
             height: 65px
 
+.users-feedback
+    &__header
+        font-weight: 600
+        font-size: 30px
+        color: #494949
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
+        a
+            color: #494949
+            text-decoration: none
+            transition: opacity .3s
+            &:hover
+                opacity: .7
+
 .user-feedback
     height: 364px
+    justify-content: start
     justify-content: start
     padding: 20px
     border-radius: $border-radius
@@ -1536,6 +1606,7 @@ main
             border-radius: 15px
             &:focus
                 background: #F8F8F8
+                box-shadow: none
                 box-shadow: none
     &__count
         position: absolute
