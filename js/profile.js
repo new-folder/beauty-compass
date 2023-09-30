@@ -262,12 +262,7 @@ if(searchText==''){
   html+='<div class="paginationjs">'
   +'            <div class="paginationjs-pages">'
   +'              <ul>'
-  +'                <li class="paginationjs-prev ' 
-  if(selectPage==1){
-    html+='disabled'
-  }
-  
-  html+='">'
+  +'                <li class="paginationjs-prev ">'
   +'                  <a></a>'
   +'                </li>'
 
@@ -281,11 +276,7 @@ if(searchText==''){
     +'</li>'
   }
 
-  html+='                <li class="paginationjs-next '
-  if(selectPage==(Math.ceil(arrayData.length/pageItemCount)-1)){
-    html+='disabled'
-  }
-  html+='">'
+  html+='                <li class="paginationjs-next ">'
   +'                  <a></a>'
   +'                </li>'
   +'              </ul>'
@@ -300,57 +291,176 @@ function changePage(params) {
 
   collectSort=params.data.pageSelect.parentElement.parentElement.parentElement.parentElement.children[1].children
 
-  console.log(collectSort);
+  // console.log(collectSort);
   //сортировка того, что отобразилось
   for (let i = 0; i < collectSort.length; i++) {
     const element = collectSort[i];
-    //добавление удаление нужных классов
-    console.log(element.classList.add('d-none'));
+    //скрытие всех элементов
+    element.classList.add('d-none')
   }
 
+  numListActive=-1
 
-  // switch (params.data.pageSelect.attributes[0].value.split(' ')[0].split('-')[1]) {
-  //   case 'page':
+  switch (params.data.pageSelect.attributes[0].value.split(' ')[0].split('-')[1]) {
+    case 'page':
     
-  //     selectPage=params.data.pageSelect.attributes[1].value
-
-  //     break;
-  //   case 'prev':
-
-  //     activeValue=0;
-  //     for (let ch = 0; ch < params.data.pageSelect.parentElement.children.length; ch++) {
-  //       const child = params.data.pageSelect.parentElement.children[ch];
-
-  //       if(child.classList[2]=='active'){
-  //         activeValue=Number(child.attributes["data-num"].value)
-  //       }
-  //     }
-
-  //     if(activeValue-1>=params.data.pageSelect.nextElementSibling.attributes[1].value){
-  //       selectPage=activeValue-1
-  //     }else
-  //       selectPage=params.data.pageSelect.nextElementSibling.attributes[1].value
+      selectPage=params.data.pageSelect.attributes[1].value
       
-  //     break;
-  //   case 'next':
+      searchArray=Array.prototype.slice.call(params.data.pageSelect.parentElement.children)
+      next=searchArray.pop().previousElementSibling
+      prev=searchArray.shift().nextElementSibling
+      
+      searchArray.forEach(el=>{
+        if(el.classList.contains('active')){
+          el.classList.remove('active');
+        }
+      })
 
-  //     activeValue=0;
-  //     for (let ch = 0; ch < params.data.pageSelect.parentElement.children.length; ch++) {
-  //       const child = params.data.pageSelect.parentElement.children[ch];
+      params.data.pageSelect.classList.add('active')
+      
 
-  //       if(child.classList[2]=='active'){
-  //         activeValue=Number(child.attributes["data-num"].value)
-  //       }
-  //     }
+      if(selectPage<=prev.attributes[1].value){
 
-  //     if(activeValue+1<=params.data.pageSelect.previousElementSibling.attributes[1].value){
-  //       selectPage=activeValue+1
-  //     }else
-  //       selectPage=params.data.pageSelect.previousElementSibling.attributes[1].value
-  //     break;
-  // }
+        $(params.data.pageSelect.parentElement.children[0])[0].classList.add('disabled')
+
+        $(params.data.pageSelect.parentElement.children[params.data.pageSelect.parentElement.children.length-1])[0].classList.remove('disabled')
+
+      }else if(selectPage+1>=next.attributes[1].value){
+
+        $(params.data.pageSelect.parentElement.children[0])[0].classList.remove('disabled')
+
+        $(params.data.pageSelect.parentElement.children[params.data.pageSelect.parentElement.children.length-1])[0].classList.add('disabled')
+
+      }else{
+        $(params.data.pageSelect.parentElement.children[0])[0].classList.remove('disabled')
+
+        $(params.data.pageSelect.parentElement.children[params.data.pageSelect.parentElement.children.length-1])[0].classList.remove('disabled')
+      }
+
+      break;
+    case 'prev':
+      
+      if (!params.data.pageSelect.classList.contains('disabled')) {
+        activeValue=0;
+  
+        searchArray=Array.prototype.slice.call(params.data.pageSelect.parentElement.children)
+        trash=searchArray.pop()
+        trash=searchArray.shift()
+        
+        for (let ch = 0; ch < searchArray.length; ch++) {
+          const child = searchArray[ch];
+          
+          if(child.classList[2]=='active'){
+  
+            numListActive=ch
+  
+            activeValue=Number(child.attributes["data-num"].value)
+  
+            child.classList.remove('active')
+          }
+        }
+  
+        if(activeValue-1>=params.data.pageSelect.nextElementSibling.attributes[1].value)
+          selectPage=activeValue-1
+        else
+          selectPage=params.data.pageSelect.nextElementSibling.attributes[1].value
+  
 
 
+        if(activeValue-1<=params.data.pageSelect.nextElementSibling.attributes[1].value){
+
+          $(params.data.pageSelect.parentElement.children[0])[0].classList.add('disabled')
+
+          $(params.data.pageSelect.parentElement.children[params.data.pageSelect.parentElement.children.length-1])[0].classList.remove('disabled')
+
+        }else if(activeValue-1>params.data.pageSelect.nextElementSibling.attributes[1].value){
+
+          $(params.data.pageSelect.parentElement.children[0])[0].classList.remove('disabled')
+
+          $(params.data.pageSelect.parentElement.children[params.data.pageSelect.parentElement.children.length-1])[0].classList.remove('disabled')
+
+        }else{
+
+        }
+
+        if(numListActive-1>=0 )
+          searchArray[numListActive-1].classList.add('active')
+        else
+          searchArray[0].classList.add('active')
+      }
+
+      break;
+    case 'next':
+
+    if (!params.data.pageSelect.classList.contains('disabled')) {
+    
+      activeValue=0;
+
+      searchArray=Array.prototype.slice.call(params.data.pageSelect.parentElement.children)
+      trash=searchArray.pop()
+      trash=searchArray.shift()
+
+      for (let ch = 0; ch < searchArray.length; ch++) {
+        const child = searchArray[ch];
+
+        if(child.classList[2]=='active'){
+
+          numListActive=ch
+
+          activeValue=Number(child.attributes["data-num"].value)
+
+          child.classList.remove('active')
+
+        }
+      }
+
+      if(activeValue+1<=params.data.pageSelect.previousElementSibling.attributes[1].value)
+        selectPage=activeValue+1
+      else
+        selectPage=params.data.pageSelect.previousElementSibling.attributes[1].value
+      
+      if(activeValue+1>=params.data.pageSelect.previousElementSibling.attributes[1].value){
+
+        $(params.data.pageSelect.parentElement.children[params.data.pageSelect.parentElement.children.length-1])[0].classList.add('disabled')
+
+        $(params.data.pageSelect.parentElement.children[0])[0].classList.remove('disabled')
+        
+      }else if(activeValue+1<params.data.pageSelect.previousElementSibling.attributes[1].value){
+
+        $(params.data.pageSelect.parentElement.children[params.data.pageSelect.parentElement.children.length-1])[0].classList.remove('disabled')
+      
+        $(params.data.pageSelect.parentElement.children[0])[0].classList.remove('disabled')
+
+      }else{
+
+      }
+
+      if(numListActive+1<=searchArray.length )
+        
+        numListActive+1==searchArray.length ? searchArray[searchArray.length-1].classList.add('active') : searchArray[numListActive+1].classList.add('active')
+      else
+        searchArray[searchArray.length-1].classList.add('active')
+
+    }
+
+      break;
+  }
+
+  startCikle=Number(selectPage)
+  finishCikle=0
+  
+  startCikle==1 ? startCikle=0 : startCikle=globalPageSize*(Number(selectPage)-1)+1
+
+  finishCikle=startCikle+globalPageSize
+
+  for (let i = startCikle; i <= finishCikle; i++) {
+
+    const element = collectSort[i];
+    if(element==undefined)
+      break;
+    //скрытие всех элементов
+    element.classList.remove('d-none')
+  }
 }
 
 function search(el){
