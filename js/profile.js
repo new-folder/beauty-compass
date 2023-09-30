@@ -183,8 +183,21 @@ var outputInfoDetails=''
 //   }
 // });
 
-//предпологаемый и желаемый JSON данные
-outputInfoDetails=""
+//предпологаемый и желаемый JSON данные в manufacter-lk/profile.json
+
+function fetchJSONFile(path, callback) {
+  var httpRequest = new XMLHttpRequest();
+  httpRequest.onreadystatechange = function() {
+      if (httpRequest.readyState === 4) {
+          if (httpRequest.status === 200) {
+              var data = JSON.parse(httpRequest.responseText);
+              if (callback) callback(data);
+          }
+      }
+  };
+  httpRequest.open('GET', path);
+  httpRequest.send(); 
+}
 
 var globalPageSize=4
 
@@ -294,46 +307,48 @@ function changePage(params) {
     //добавление удаление нужных классов
     console.log(element.classList.add('d-none'));
   }
-  switch (params.data.pageSelect.attributes[0].value.split(' ')[0].split('-')[1]) {
-    case 'page':
+
+
+  // switch (params.data.pageSelect.attributes[0].value.split(' ')[0].split('-')[1]) {
+  //   case 'page':
     
-      selectPage=params.data.pageSelect.attributes[1].value
+  //     selectPage=params.data.pageSelect.attributes[1].value
 
-      break;
-    case 'prev':
+  //     break;
+  //   case 'prev':
 
-      activeValue=0;
-      for (let ch = 0; ch < params.data.pageSelect.parentElement.children.length; ch++) {
-        const child = params.data.pageSelect.parentElement.children[ch];
+  //     activeValue=0;
+  //     for (let ch = 0; ch < params.data.pageSelect.parentElement.children.length; ch++) {
+  //       const child = params.data.pageSelect.parentElement.children[ch];
 
-        if(child.classList[2]=='active'){
-          activeValue=Number(child.attributes["data-num"].value)
-        }
-      }
+  //       if(child.classList[2]=='active'){
+  //         activeValue=Number(child.attributes["data-num"].value)
+  //       }
+  //     }
 
-      if(activeValue-1>=params.data.pageSelect.nextElementSibling.attributes[1].value){
-        selectPage=activeValue-1
-      }else
-        selectPage=params.data.pageSelect.nextElementSibling.attributes[1].value
+  //     if(activeValue-1>=params.data.pageSelect.nextElementSibling.attributes[1].value){
+  //       selectPage=activeValue-1
+  //     }else
+  //       selectPage=params.data.pageSelect.nextElementSibling.attributes[1].value
       
-      break;
-    case 'next':
+  //     break;
+  //   case 'next':
 
-      activeValue=0;
-      for (let ch = 0; ch < params.data.pageSelect.parentElement.children.length; ch++) {
-        const child = params.data.pageSelect.parentElement.children[ch];
+  //     activeValue=0;
+  //     for (let ch = 0; ch < params.data.pageSelect.parentElement.children.length; ch++) {
+  //       const child = params.data.pageSelect.parentElement.children[ch];
 
-        if(child.classList[2]=='active'){
-          activeValue=Number(child.attributes["data-num"].value)
-        }
-      }
+  //       if(child.classList[2]=='active'){
+  //         activeValue=Number(child.attributes["data-num"].value)
+  //       }
+  //     }
 
-      if(activeValue+1<=params.data.pageSelect.previousElementSibling.attributes[1].value){
-        selectPage=activeValue+1
-      }else
-        selectPage=params.data.pageSelect.previousElementSibling.attributes[1].value
-      break;
-  }
+  //     if(activeValue+1<=params.data.pageSelect.previousElementSibling.attributes[1].value){
+  //       selectPage=activeValue+1
+  //     }else
+  //       selectPage=params.data.pageSelect.previousElementSibling.attributes[1].value
+  //     break;
+  // }
 
 
 }
@@ -428,47 +443,100 @@ document.querySelectorAll('.add-info__schemes details').forEach((el) => {
 //вывод информации с помощью пагинации
 //производитель
 
-var classPg='brand'
+var prompt = new Promise((resolve, reject) => {
 
-outputInfo($('#view-all-item'), outputInfoDetails[0].brands,'Поиск бренда', 'Добавить бренд',classPg,'' )
-
-outputInfoDetails[0].brands.forEach(brand => {
-
-  let nxtClassPg='serie'
-
-  if (brand.series != undefined) {
-    outputInfo($('#view-all-'+classPg+'-'+brand.idDB), brand.series,'Поиск  серии', 'Добавить серию',nxtClassPg,'' )
-
-    brand.series.forEach(serie => {
-      outputInfo($('#view-all-'+nxtClassPg+'-'+serie.idDB), serie.cosmetics,'Поиск  средства', 'Добавить средство','', '',true )
-      
-    });
-    
-  } else {
-    outputInfo($('#view-all-'+classPg+'-'+brand.idDB), brand.cosmetics,'Поиск  средства', 'Добавить средство','','',true  )
-  }
+  fetchJSONFile('profile.json', function(data){
+    outputInfoDetails=data
+    resolve(outputInfoDetails)
+  });
 
 });
 
-for (let i = 0; i < $('li[class^="paginationjs"]').length; i++) {
-  const element = $('li[class^="paginationjs"]')[i];
+prompt.then(data=>{
 
-  triger=false
-  element.classList.forEach((classEl)=>{
-    if(classEl=='disabled'){
-      triger=true
-    }
+  return new Promise((resolve, reject)=>{
+    
+    var classPg='brand'
+    outputInfo($('#view-all-item'), data.brands,'Поиск бренда', 'Добавить бренд',classPg,'' )
+    
+    params=[{
+      brands:data.brands,
+      class:classPg
+    }]
+    resolve(params)
   })
+}).then(params=>{
+
+  return new Promise((resolve, reject)=>{
+    brandWithSer=[];
+
+    var nxtClassPg='serie'
+
+    params[0].brands.forEach(brand => {
+    
+      if (brand.series != undefined) {
+          brandWithSer.push(brand)
+      } else {
+        outputInfo($('#view-all-'+params[0].class+'-'+brand.idDB), brand.cosmetics,'Поиск  средства', 'Добавить средство','','',true  )
+      }
+      
+    });
+    
+    resolve({brands:brandWithSer,classPrev:params[0].class,class:nxtClassPg})
+
+  })
+}).then((brandWithSer)=>{
+
+  var outputCosmetic=[];
+
+  return new Promise((resolve, reject)=>{
+    brandWithSer.brands.forEach((brand)=>{
+
+        outputInfo($('#view-all-'+brandWithSer.classPrev+'-'+brand.idDB), brand.series,'Поиск  серии', 'Добавить серию',brandWithSer.class,'' )
+
+        outputCosmetic.push(brand.series)
+
+    })
+    resolve({series:outputCosmetic, class:brandWithSer.class})
+  })
+
+}).then((serWithClass)=>{
   
-  if(!triger)
-    $(element).bind('click', {pageSelect: element}, changePage);
-}
+  return new Promise((resolve, reject)=>{
 
-for(let i=0;i<$('input[id="search"]').length;i++){
-  const element = $('input[id="search"]')[i];
+    outputItem=[]
+    serWithClass.series.forEach(cosmetics => {
+      cosmetics.forEach(element => {
+        outputItem.push(element)
+      });
+    })
 
-  array=element.parentElement.parentElement.children[1].children
+    resolve({outputItem:outputItem, class:serWithClass.class})
+  })
+})
+.then((outputInf)=>{
 
-  $(element).bind('keyup', {input: element, arraySearch:array}, search)
-
-}
+  outputInf.outputItem.forEach(serie => {
+    outputInfo($('#view-all-'+outputInf.class+'-'+serie.idDB), serie.cosmetics,'Поиск  средства', 'Добавить средство','', '',true )
+});
+})
+.then(()=>{
+  for (let i = 0; i < $('li[class^="paginationjs"]').length; i++) {
+    const element = $('li[class^="paginationjs"]')[i];
+  
+    triger=false
+    element.classList.forEach((classEl)=>{
+      if(classEl=='disabled'){
+        triger=true
+      }
+    })
+    if(!triger)
+      $(element).bind('click', {pageSelect: element}, changePage);
+  }
+  
+  for(let i=0;i<$('input[id="search"]').length;i++){
+    const element = $('input[id="search"]')[i];
+    array=element.parentElement.parentElement.children[1].children
+    $(element).bind('keyup', {input: element, arraySearch:array}, search)
+  }
+})
