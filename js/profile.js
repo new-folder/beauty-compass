@@ -467,6 +467,66 @@ function search(el){
 
 searchText=el.data.input.value
 
+allObject=el.data.input.parentElement.parentElement.children[1].children
+
+paginBlock=el.data.input.parentElement.parentElement.children[2]
+
+for (let i = 0; i < allObject.length; i++) {
+  const element = allObject[i];
+  element.classList.remove('d-none')
+}
+
+for (let i = 0; i < allObject.length; i++) {
+  const element = allObject[i];
+  
+  if(!element.children[1].children[0].children[0].outerText.includes(searchText)){
+    element.classList.add('d-none')
+  }
+}
+
+if(searchText==''){
+  paginBlock.classList.add('d-block')
+  paginBlock.classList.remove('d-none')
+
+  for (let i = 0; i < allObject.length; i++) {
+    const element = allObject[i];
+    element.classList.add('d-none')
+  }
+  
+  pageArray=paginBlock.children[0].children[0].children
+  
+  selectPage=-1
+  
+  for (let k = 1; k < pageArray.length-1; k++) {
+    const element = pageArray[k];
+    if (element.classList.contains('active')) {
+  
+      selectPage=element.attributes[1].value
+    }
+  }
+  
+  startCikle=Number(selectPage)
+  finishCikle=0
+  
+  startCikle==1 ? startCikle=0 : startCikle=globalPageSize*(Number(selectPage)-1)+1
+  
+  finishCikle=startCikle+globalPageSize
+  
+  for (let i = startCikle; i <= finishCikle; i++) {
+  
+    const element = allObject[i];
+    if(element==undefined)
+      break;
+    //скрытие всех элементов
+    element.classList.remove('d-none')
+  }
+}
+else{
+  paginBlock.classList.add('d-none')
+  paginBlock.classList.remove('d-block')
+}
+
+
 }
 
 //анимация details
