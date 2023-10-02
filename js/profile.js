@@ -206,11 +206,13 @@ var globalPageSize=4
 function outputInfo(outpBlock, arrayData, labelSearch, textAddBut, classNexPag,searchText,lastTrig=false, selectPage=1, elStart=0 ,pageItemCount=globalPageSize) {
 if(searchText==''){ 
   html='<div class="outputInf">'
-  +'<div class="input input--general d-flex justify-content-between">'
+  +'<div class="details__search_wrap">'
+  +'<div class="input input--general">'
   +'  <label for="search" class="details__search label label--light label--profile">'
   +labelSearch
   +'</label>'
   +'  <input id="search" value="" type="text" class="details__search-input ">'
+  +'</div>'
   +'  <a href="" class="details__btn btn btn--blue"> '
   +'    <p class="text--15-25">'
   +textAddBut
@@ -291,7 +293,6 @@ function changePage(params) {
 
   collectSort=params.data.pageSelect.parentElement.parentElement.parentElement.parentElement.children[1].children
 
-  // console.log(collectSort);
   //сортировка того, что отобразилось
   for (let i = 0; i < collectSort.length; i++) {
     const element = collectSort[i];
@@ -461,15 +462,64 @@ function changePage(params) {
     //скрытие всех элементов
     element.classList.remove('d-none')
   }
+
+  html=new DOMParser().parseFromString('<li class="paginationjs-page J-paginationjs-page disabled"><a>...</a></li>', "text/html").getElementsByTagName("li")[0]
+
+  for (let k = 1; k < params.data.pageSelect.parentElement.children.length-1; k++) {
+    const element = params.data.pageSelect.parentElement.children[k];
+    const elemPrev=params.data.pageSelect.parentElement.children[k-1]
+    const elemNext=params.data.pageSelect.parentElement.children[k+1]
+
+    element.classList.add('d-none')
+    
+    if(!(k==1 || k==params.data.pageSelect.parentElement.children.length-2)){
+      
+      if(element.classList.contains('active')){
+    
+        element.classList.remove('d-none')
+
+        if(k-1!=1){
+          if (k-2>3) {
+            //перенести выше в отдельную переменную
+            
+            // console.log('Добавить блок с точками после');
+          }
+
+          element.classList.remove('d-none')
+        }
+        if(k+1!=(element.parentElement.children.length-1)){
+          if (k+2<(element.parentElement.children.length-2)) {
+            //перенести выше в отдельную переменную
+            
+            // console.log('Добавить блок с точками перед');
+          }
+
+          element.classList.remove('d-none')
+        }
+      }
+      else{
+        if(params.data.pageSelect.parentElement.children[k-1].classList.contains('active') || params.data.pageSelect.parentElement.children[k+1].classList.contains('active'))
+          element.classList.remove('d-none')
+      }
+      if(k==Math.ceil((element.parentElement.children.length-1)/2))
+        element.classList.remove('d-none')
+    }            
+    else{
+      element.classList.remove('d-none')
+
+      if(element.classList.contains('active'))
+        k==1 ? element.parentElement.children[k+1].classList.remove('d-none') : element.parentElement.children[k-1].classList.remove('d-none')
+    }
+  }
 }
 
 function search(el){
 
 searchText=el.data.input.value
 
-allObject=el.data.input.parentElement.parentElement.children[1].children
+allObject=el.data.input.parentElement.parentElement.parentElement.children[1].children
 
-paginBlock=el.data.input.parentElement.parentElement.children[2]
+paginBlock=el.data.input.parentElement.parentElement.parentElement.children[2]
 
 for (let i = 0; i < allObject.length; i++) {
   const element = allObject[i];
@@ -492,7 +542,7 @@ if(searchText==''){
     const element = allObject[i];
     element.classList.add('d-none')
   }
-  
+
   pageArray=paginBlock.children[0].children[0].children
   
   selectPage=-1
@@ -700,8 +750,46 @@ prompt.then(data=>{
         triger=true
       }
     })
-    if(!triger)
+    if(!triger){
       $(element).bind('click', {pageSelect: element}, changePage);
+      html=new DOMParser().parseFromString('<li class="paginationjs-page J-paginationjs-page disabled"><a>...</a></li>', "text/html").getElementsByTagName("li")[0]
+      
+
+      for (let k = 1; k < element.parentElement.children.length-1; k++) {
+        const pageSelector = element.parentElement.children[k];
+        
+        pageSelector.classList.add('d-none')
+        
+        if(!(k==1 || k==pageSelector.parentElement.children.length-2)){
+          
+          if(pageSelector.classList.contains('active')){
+    
+            pageSelector.classList.remove('d-none')
+    
+            if(k-1!=1){
+              pageSelector.classList.remove('d-none')
+            }
+            if(k+1!=(pageSelector.parentElement.children.length-1)){
+              pageSelector.classList.remove('d-none')
+            }
+          }else{
+            if(pageSelector.parentElement.children[k-1].classList.contains('active') || pageSelector.parentElement.children[k+1].classList.contains('active'))
+            pageSelector.classList.remove('d-none')
+          } 
+          if(k==Math.ceil((element.parentElement.children.length-1)/2)){
+            pageSelector.classList.remove('d-none')
+          }
+        }
+        else{
+          pageSelector.classList.remove('d-none')
+
+          if(pageSelector.classList.contains('active'))
+            k==1 ? element.parentElement.children[k+1].classList.remove('d-none') : element.parentElement.children[k-1].classList.remove('d-none')
+          
+        }
+
+      }
+    }
   }
   
   for(let i=0;i<$('input[id="search"]').length;i++){
