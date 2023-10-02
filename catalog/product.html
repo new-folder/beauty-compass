@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница средства</title>
+    <link rel="stylesheet" href="/css/style.css"> 
+</head>
+<body>
+    <nav class="navbar navbar-expand-xxl top-bar">
+        <div class="container justify-content-start position-relative p-xxl-0 container--header">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand col-1 d-xxl-none top-bar__short-logo" href="#"><img src="/img/short-logo.svg" alt=""></a>
+            <div class="collapse navbar-collapse justify-content-center top-bar__collapse" id="navbarTogglerDemo01">
+
+                <a class="navbar-brand col-11 col-xxl-4 offset-md-1 top-bar__logo" href="#"><img src="/img/logo.svg" alt=""></a>
+
+                <form class="d-flex col-6 me-auto search-form">
+                    <input class="form-control me-2 search-form__input" type="search" placeholder="Поиск" aria-label="Search">
+                    <button class="btn search-form__submit" type="submit"></button>
+                </form>
+
+
+                <ul class="navbar-nav col-12 top-bar__list">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Подбор косметики</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Обзоры авторов <img src="/img/logo-micro.svg" class="align-baseline px-1" alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Статьи брендов</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Бренды</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Каталог</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Беседка</a>
+                    </li>
+                </ul>
+                
+                <div class="row justify-content-center my-3 d-flex d-xxl-none">
+                    <div class="col-3"><a href="" class="footer__social footer__social--email" target="_blank"></a></div>
+                    <div class="col-3"><a href="" class="footer__social footer__social--telegram" target="_blank"></a></div>
+                    <div class="col-3"><a href="" class="footer__social footer__social--vk" target="_blank"></a></div>
+                </div>
+            </div>
+            <div class="col-1 ms-md-1 position-absolute top-0 end-0 d-flex justify-content-end top-bar__links">
+                <a class="top-bar__link" data-bs-toggle="modal" href="#headerAutorisation" role="button"><img src="/img/login.svg" alt=""></a>
+                <a class="top-bar__link" data-bs-toggle="modal" href="#headerFavorites" role="button"><img src="/img/favorites.svg" alt=""></a>
+            </div>
+        </div>
+    </nav>
+    <main>
+
+    <section class="product-header">
+        <div class="container container--bc product-header--sticker">
+            <div class="row justify-content-center mb-2 mb-xxl-4">
+                <h1 href="" class="col-12 col-xxl-10 mb-2 mb-md-4 text-center text-capitalize title title--h1">
+                    Icon Skin Stop Acne Сыворотка Multi-Acid Serum                        
+                    <div class="title__under mt-1 mt-xxl-3">
+                        Мультикислотная сыворотка от акне
+                    </div>
+                </h1>
+
+                <div class="col-12 col-md-7 col-xxl-6 mb-4 mb-xxl-0">
+                    <div id="carouselProducer" class="carousel carousel--product b-carousel carousel-fade row" data-bs-ride="carousel" data-bs-interval="false">
+                        <div class="carousel-inner pe-0 p-md-2 col-9 ">
+                            <div class="carousel-item active thumb" data-bs-toggle="modal" data-bs-target="#openFullImg">
+                                <img src="/img/test-product.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/img/test-product-2.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/img/test-product.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/img/test-product-2.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/img/test-product.png" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <!--splide для вертикальной прокрутки-->
+                        <div class="splide splide--vertical pe-0 pe-md-2 col-3">
+                            <div class="splide__track">
+                                <div class="carousel-indicators splide__list align-items-center">
+                                    <button type="button" data-bs-target="#carouselProducer" data-bs-slide-to="0" aria-label="Slide 1" class="active splide__slide"><img src="/img/test-product.png" class="d-block w-100" alt="..."></button>
+                                    <button type="button" data-bs-target="#carouselProducer" data-bs-slide-to="1" aria-label="Slide 2" class="splide__slide"><img src="/img/test-product-2.png" class="d-block w-100" alt="..."></button>
+                                    <button type="button" data-bs-target="#carouselProducer" data-bs-slide-to="2" aria-label="Slide 3" class="splide__slide"><img src="/img/test-product.png" class="d-block w-100" alt="..."></button>
+                                    <button type="button" data-bs-target="#carouselProducer" data-bs-slide-to="3" aria-label="Slide 4" class="splide__slide"><img src="/img/test-product-2.png" class="d-block w-100" alt="..."></button>
+                                    <button type="button" data-bs-target="#carouselProducer" data-bs-slide-to="4" aria-label="Slide 5" class="splide__slide"><img src="/img/test-product.png" class="d-block w-100" alt="..."></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-5 col-xxl-4 d-flex flex-column">
+                    <div class="row d-flex align-items-center mb-3 mb-md-4 order-2 order-xxl-1">
+                        <div class="col-3">
+                            <a href=""><img src="../img/france-flag-lage.svg" class="product-header__flag" alt=""></a>
+                        </div>
+                        <div class="col-9">
+                            <a href=""><img src="../img/icon-skin-min.svg" class="product-header__logo" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="row order-3 order-xxl-2r mb-3 mb-md-4">
+                        <div class="col-12">
+                            <button class="favorite favorite--product-full">Добавить в избранное</button> 
+                        </div>
+                    </div>
+                    <div class="row mb-2  mb-md-4 order-1 order-xxl-3">
+                        <div class="col-6 col-xxl-12 product-header__title mb-2">Рейтинг</div>
+                        <div class="col-6 col-xxl-12 product-header__rating rating rating--lage mb-2">
+                            <div class="me-2">4,0/5</div>
+                            <div class="rating__value rating__body">
+                                <div class="rating__active" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row order-4 mb-2 mb-xxl-3 order-xxl-4">
+                        <div class="col-12">
+                            <div class="product-header__title mb-2 mb-xxl-3">Серия</div>
+                            <div class="row">
+                                <div class="col-12 mb-2 tag-links">
+                                    <a href="" class="tag">Название тега</a>
+                                    <a href="" class="tag">Тег</a>
+                                    <a href="" class="tag">Название тега</a>
+                                    <a href="" class="tag">Ещё название тега</a>
+                                    <a href="" class="tag">Название тега</a>
+                                    <a href="" class="tag">Ещё название тега</a>
+                                    <a href="" class="tag">Тег</a>
+                                    <a href="" class="tag">Ещё название тега</a>
+                                    <a href="" class="tag">Название тега</a>
+                                    <a href="" class="tag">Ещё название тега</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row order-5 order-xxl-5">
+                        <div class="col-12">
+                            <div class="product-header__title mb-2 mb-xxl-3">Ценовая категория</div>
+                            <div class="row">
+                                <div class="col-12 tag-links">
+                                    <a href="" class="tag">Название тега</a>
+                                    <a href="" class="tag">Тег</a>
+                                    <a href="" class="tag">Название тега</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-2 mb-md-3">
+                <div class="col-12 col-xxl-10 information">
+                    <a href="#" class="btn btn--base me-3 mb-2 mb-md-3">Официальный сайт</a> <a href="#" class="btn btn--base me-3 mb-2 mb-md-3">Золотое яблоко</a> <a href="#" class="btn btn--base me-3 mb-2 mb-md-3">Wildberries</a>
+                    <a href="#" class="btn btn--base me-3 mb-2 mb-md-3">Официальный сайт</a> <a href="#" class="btn btn--base me-3 mb-2 mb-md-3">Золотое яблоко</a> <a href="#" class="btn btn--base me-3 mb-2 mb-md-3">Wildberries</a>
+                </div>
+            </div>
+        </div>
+    </section>
+        <section class="about-product">
+            <div class="container container--bc"> 
+            <div class="row justify-content-center mb-2 mb-xxl-4">
+                <div class="col-12 col-xxl-10">
+                    <div class="accordion about-product__accordion mb-2 mb-xxl-3">
+                        <div class="accordion-item about-product__item">
+                            <h2 class="accordion-header" id="panelsStayOpen-discription">
+                                <button class="accordion-button collapsed about-product__title" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+                                Описание
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-discription">
+                                <div class="accordion-body about-product__information information ">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, quam nulla nostrum dolorum necessitatibus delectus corporis repellat amet. Dolore a explicabo atque culpa earum temporibus odio molestias et facere repudiandae!
+                                </div>
+                            </div>
+                        </div>         
+                    </div>
+                    <div class="about-product__title mb-1 mb-xxl-3">Назначение средства</div>
+                    <div class="row">
+                        <div class="col-12 mb-2 tag-links">
+                            <a href="" class="tag">Название тега</a>
+                            <a href="" class="tag">Тег</a>
+                            <a href="" class="tag">Название тега</a>
+                            <a href="" class="tag">Ещё название тега</a>
+                            <a href="" class="tag">Название тега</a>
+                            <a href="" class="tag">Ещё название тега</a>
+                            <a href="" class="tag">Тег</a>
+                            <a href="" class="tag">Ещё название тега</a>
+                            <a href="" class="tag">Название тега</a>
+                            <a href="" class="tag">Ещё название тега</a>
+                        </div>
+                    </div>
+                    <div class="accordion about-product__accordion mb-2 mb-xxl-3">
+                        <div class="accordion-item about-product__item">
+                            <h2 class="accordion-header" id="panelsStayOpen-application">
+                                <button class="accordion-button collapsed about-product__title" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseApplication" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+                                Применение
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseApplication" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-application">
+                                <div class="accordion-body about-product__information information ">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, quam nulla nostrum dolorum necessitatibus delectus corporis repellat amet. Dolore a explicabo atque culpa earum temporibus odio molestias et facere repudiandae!
+                                </div>
+                            </div>
+                        </div>         
+                    </div>
+                    <div class="about-product__title mb-1 mb-xxl-3">Ключевое действие</div>
+                    <div class="row">
+                        <div class="col-12 mb-2 tag-links">
+                            <a href="" class="tag">Название тега</a>
+                            <a href="" class="tag">Тег</a>
+                            <a href="" class="tag">Название тега</a>
+                            <a href="" class="tag">Ещё название тега</a>
+                            <a href="" class="tag">Название тега</a>
+                            <a href="" class="tag">Ещё название тега</a>
+                            <a href="" class="tag">Тег</a>
+                            <a href="" class="tag">Ещё название тега</a>
+                            <a href="" class="tag">Название тега</a>
+                            <a href="" class="tag">Ещё название тега</a>
+                        </div>
+                    </div>
+                    <div class="about-product__title mb-1 mb-xxl-3">Пол</div>
+                    <div class="row">
+                        <div class="col-12 mb-2 tag-links">
+                            <a href="" class="tag">Название тега</a>
+                            <a href="" class="tag">Тег</a>
+                        </div>
+                    </div>
+                    <div class="about-product__title mb-1 mb-xxl-3">Рекомендации по возрасту</div>
+                    <div class="row">
+                        <div class="col-12 mb-2 tag-links">
+                            <a href="" class="tag">Название тега</a>
+                            <a href="" class="tag">Тег</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+        <section class="slider">
+            <div class="container container--bc">                
+                <div class="row justify-content-center">
+                    <div class="col-12 col-xxl-10">
+                        <div id="carouselProduct" class="carousel carousel--base slide b-carousel carousel-fade" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselProduct" data-bs-slide-to="0" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselProduct" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselProduct" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselProduct" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                <button type="button" data-bs-target="#carouselProduct" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item">
+                                    <img src="/img/image 198.png" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/img/image 199.png" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/img/image 198.png" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/img/image 199.png" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/img/image 198.png" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gallary">
+            <div class="container container--bc">
+                <div class="row justify-content-center mb-3 gallary__header">
+                    <div class="col-6 col-xxl-5">
+                        Фото (212)
+                    </div>
+                    <div class="col-6 col-xxl-5 text-end">
+                        <a href="">Все фото</a>
+                    </div>
+                </div>
+                <div class="splide splide--gallery row mb-3 mb-xxl-4" aria-labelledby="carousel-heading">                    
+                    <div class="splide__track col-12 col-xxl-10">
+                        <ul class="splide__list">
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-4.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-2.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb"  alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-3.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb"  alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb"  alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-4.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-2.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-3.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-4.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-2.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-3.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-4.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-2.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide-3.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                            <li class="splide__slide"><img src="../img/test-gallery-slide.jpg" data-bs-toggle="modal" data-bs-target="#openFullImg" class="thumb" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="users-feedback">
+            <div class="container container--bc mb-3 mb-xxl-4">
+                <div class="row justify-content-center mb-2 mb-xxl-3 users-feedback__header">
+                    <div class="col-6 col-xxl-5">
+                        Отзывы (102)
+                    </div>
+                    <div class="col-6 col-xxl-5 text-end">
+                        <a href="">Все отзывы</a>
+                    </div>
+                </div>                
+                <div class="splide splide--users-feedback row justify-content-center mb-0 mb-xxl-3" aria-labelledby="carousel-heading">                    
+                    <div class="splide__track col-12 col-xxl-10">
+                        <div class="splide__list">
+                            <a href="" class="splide__slide user-feedback">
+                                <div class="user-feedback__header row">
+                                    <div class="col-8 mb-2">
+                                        <div class="user-feedback__name">Дарья И.</div>
+                                        <div class="user-feedback__date">22.08.2022</div>
+                                        <div class="rating rating-sm">
+                                            <div class="rating__body">
+                                                <div class="rating__active" style="width: 25%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 text-end">
+                                        <div class="user-feedback__avatar"><img src="../img/test-gallery-slide-4.jpg" alt=""></div> 
+                                    </div>
+                                    <div class="col-12 ">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod te...    </p>
+                                    </div>
+                                    <ul class="col-12 user-feedback__photos mb-1">
+                                        <li class="user-feedback__photo"><img src="../img/test-product.png" alt=""></li>
+                                        <li class="user-feedback__photo"><img src="../img/test-product-2.png" alt=""></li>
+                                        <li class="user-feedback__photo"><img src="../img/test-product.png" alt=""></li>
+                                    </ul>
+                                    <div class="col-8 mb-2">
+                                        <div class="user-feedback__name text-uppercase">Icon Skin</div>
+                                        <div class="user-feedback__date">22.08.2022</div>
+                                        <div class="rating rating-sm">
+                                            <div class="rating__body">
+                                                <div class="rating__active" style="width: 25%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 text-end">
+                                        <div class="user-feedback__avatar"><img src="../img/icon-skin-short.png" alt=""></div> 
+                                    </div>
+                                    <div class="col-12 ">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod te...    </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="" class="splide__slide user-feedback">
+                                <div class="user-feedback__header row">
+                                    <div class="col-8 mb-2">
+                                        <div class="user-feedback__name">Дарья И.</div>
+                                        <div class="user-feedback__date">22.08.2022</div>
+                                        <div class="rating rating-sm">
+                                            <div class="rating__body">
+                                                <div class="rating__active" style="width: 25%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 text-end">
+                                        <div class="user-feedback__avatar"><img src="../img/test-gallery-slide-4.jpg" alt=""></div> 
+                                    </div>
+                                    <div class="col-12 ">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod te...    </p>
+                                    </div>
+                                    <ul class="col-12 user-feedback__photos mb-2 mb-xxl-1">
+                                        <li class="user-feedback__photo"><img src="../img/test-product.png" alt=""></li>
+                                        <li class="user-feedback__photo"><img src="../img/test-product-2.png" alt=""></li>
+                                        <li class="user-feedback__num">+3</li>
+                                    </ul>
+                                    <div class="col-8 mb-2">
+                                        <div class="user-feedback__name text-uppercase">Icon Skin</div>
+                                        <div class="user-feedback__date">22.08.2022</div>
+                                        <div class="rating rating-sm">
+                                            <div class="rating__body">
+                                                <div class="rating__active" style="width: 25%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 text-end">
+                                        <div class="user-feedback__avatar"><img src="../img/icon-skin-short.png" alt=""></div> 
+                                    </div>
+                                    <div class="col-12 ">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod te...    </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="" class="splide__slide user-feedback user-feedback--photo">
+                                <div class="user-feedback__header row">
+                                    <div class="col-8 mb-2">
+                                        <div class="user-feedback__name">Алёна К.</div>
+                                        <div class="user-feedback__date">23.08.2022</div>
+                                        <div class="rating rating-sm">
+                                            <div class="rating__body">
+                                                <div class="rating__active" style="width: 25%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 text-end">
+                                        <div class="user-feedback__avatar"><img src="../img/test-gallery-slide-4.jpg" alt=""></div> 
+                                    </div>
+                                    <div class="col-12 ">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod te...    </p>
+                                    </div>
+                                    <ul class="col-12 user-feedback__photos mb-2 mb-xxl-1">
+                                        <li class="user-feedback__photo"><img src="../img/test-product.png" alt=""></li>
+                                        <li class="user-feedback__photo"><img src="../img/test-product-2.png" alt=""></li>
+                                    </ul>
+                                    <div class="col-8 mb-2">
+                                        <div class="user-feedback__name text-uppercase">Icon Skin</div>
+                                        <div class="user-feedback__date">24.08.2022</div>
+                                        <div class="rating rating-sm">
+                                            <div class="rating__body">
+                                                <div class="rating__active" style="width: 25%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 text-end">
+                                        <div class="user-feedback__avatar"><img src="../img/icon-skin-short.png" alt=""></div> 
+                                    </div>
+                                    <div class="col-12 ">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod te...    </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="" class="splide__slide user-feedback">
+                                <div class="user-feedback__header row">
+                                    <div class="col-8 mb-2">
+                                        <div class="user-feedback__name">Дарья И.</div>
+                                        <div class="user-feedback__date">22.08.2022</div>
+                                        <div class="rating rating-sm">
+                                            <div class="rating__body">
+                                                <div class="rating__active" style="width: 25%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 text-end">
+                                        <div class="user-feedback__avatar"><img src="../img/test-gallery-slide-4.jpg" alt=""></div> 
+                                    </div>
+                                    <div class="col-12 ">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod te...    </p>
+                                    </div>
+                                    <ul class="col-12 user-feedback__photos mb-2 mb-xxl-1">
+                                    </ul>
+                                    <div class="col-8 mb-2">
+                                        <div class="user-feedback__name text-uppercase">Icon Skin</div>
+                                        <div class="user-feedback__date">22.08.2022</div>
+                                        <div class="rating rating-sm">
+                                            <div class="rating__body">
+                                                <div class="rating__active" style="width: 25%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 text-end d-flex">
+                                        <div class="user-feedback__avatar"><img src="../img/icon-skin-short.png" alt=""></div> 
+                                    </div>
+                                    <div class="col-12 d-flex align-self-end">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod te...    </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-feedback__footer row justify-content-center">
+                    <div class="col-12 col-xxl-10">
+                        <button type="button" class="btn-string" data-bs-toggle="modal" data-bs-target="#openReview" data-bs-whatever="Icon Skin Stop Acne Сыворотка Multi-Acid Serum"><img src="../img/pen-notice.svg" class="me-1" alt="">Отправить отзыв</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="users-feedback">
+            <div class="container container--bc mb-3 mb-xxl-4">
+                <div class="row justify-content-center mb-2 mb-xxl-3 users-feedback__header">
+                    <div class="col-6 col-xxl-5">
+                        Вопросы (12)
+                    </div>
+                    <div class="col-6 col-xxl-5 text-end">
+                        <a href="">Все вопросы</a>
+                    </div>
+                </div>                
+                <div class="splide splide--users-feedback row justify-content-center mb-0 mb-xxl-3" aria-labelledby="carousel-heading">                    
+                    <div class="splide__track col-12 col-xxl-10">
+                        <div class="splide__list">
+                            <a href="" class="splide__slide user-feedback user-feedback--questions">
+                                <div class="user-feedback__header row">
+                                    <div class="col-8 mb-2">
+                                        <div class="user-feedback__name">Дарья И.</div>
+                                        <div class="user-feedback__date">22.08.2022</div>
+                                        <div class="rating rating-sm">
+                                            <div class="rating__body">
+                                                <div class="rating__active" style="width: 25%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 text-end">
+                                        <div class="user-feedback__avatar"><img src="../img/test-gallery-slide-4.jpg" alt=""></div> 
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod te...    </p>
+                                    </div>
+                                    <div class="col-8 mb-2">
+                                        <div class="user-feedback__name text-uppercase">Icon Skin</div>
+                                        <div class="user-feedback__date">22.08.2022</div>
+                                        <div class="rating rating-sm">
+                                            <div class="rating__body">
+                                                <div class="rating__active" style="width: 25%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 text-end">
+                                        <div class="user-feedback__avatar"><img src="../img/icon-skin-short.png" alt=""></div> 
+                                    </div>
+                                    <div class="col-12 ">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod te...    </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-feedback__footer row justify-content-center">
+                    <div class="col-12 col-xxl-10">
+                        <button type="button" class="btn-string" data-bs-toggle="modal" data-bs-target="#openQuestion" data-bs-whatever="Icon Skin Stop Acne Сыворотка Multi-Acid Serum"><img src="../img/message-question.svg" class="me-1" alt="">Задать вопрос</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer py-5">
+        <div class="container footer__container">
+            <div class="row justify-content-center footer__nav">
+                <div class="col-12 col-md-4 col-xxl-3">
+                    <div class="footer__title">О нас</div>
+                    <ul class="footer__list">
+                        <li><a href="">О проекте</a></li>
+                        <li><a href="">Отзывы и предложения</a></li>
+                        <li><a href="">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-4 col-xxl-4 text-start text-md-center">
+                    <div class="footer__title">Пользователям</div>
+                    <ul class="footer__list">
+                        <li><a href="">Подбор косметики</a></li>
+                        <li><a href="">Избранное</a></li>
+                        <li><a href="">Авторизация</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-4 col-xxl-3 text-start text-md-end">
+                    <div class="footer__title">Брендам</div>
+                    <ul class="footer__list">
+                        <li><a href="">Сотрудничество</a></li>
+                        <li><a href="">Отправить заявку</a></li>
+                        <li><a href="">Авторизация</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row justify-content-center order-1 order-xxl-2">
+                <div class="col-10 col-xxl-12 text-center footer__logo">
+                    <img src="/img/logo.svg" alt="">
+                </div>
+            </div>
+            <div class="row justify-content-center order-3 order-xxl-3">
+                <div class="col-3 col-xxl-1"><a href="" class="footer__social footer__social--email" target="_blank"></a></div>
+                <div class="col-3 col-xxl-1"><a href="" class="footer__social footer__social--telegram" target="_blank"></a></div>
+                <div class="col-3 col-xxl-1"><a href="" class="footer__social footer__social--vk" target="_blank"></a></div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="headerAutorisation" aria-hidden="true" aria-labelledby="headerAutorisationLabel" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="container">
+                <div class="modal-content auth__content">
+                    <div class="modal-header py-2 px-0">
+                        <h5 class="modal-title auth__title" id="authToggleLabel">Авторизация</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form class="needs-validation auth__form" novalidate>
+                            <div class="row mb-2 d-flex auth__group">
+                                <label for="headerAuthEmail" class="form-label col-3 my-0 p-0 auth__label">E-mail</label>
+                                <input type="email" name="mail" class="form-control order-2" id="headerAuthEmail" required>              
+                                <div id="headerAuthEmailFeedback" class="invalid-feedback col-9 order-1 my-0 auth__invalid">Неверный E-mail</div>                
+                            </div>
+                            <div class="row mb-3 mb-md-5 d-flex auth__group">
+                                <label for="authInputPassword" class="form-label col-3 my-0 p-0 auth__label">Пароль</label>
+                                <input type="password" name="pass" class="form-control order-2" id="authInputPassword" required>
+                                <div id="headerAuthPassFeedback" class="invalid-feedback col-9 order-1 my-0 auth__invalid">Неверный пароль</div>
+                            </div>
+                            <div class="auth__sub-title">Забыли пароль?</div>
+                            <div class="row d-flex justify-content-around">
+                                <input type="submit" value="Регистрация" class="btn auth__btn col-7 col-xxl-4" data-bs-target="#headerRegistration" data-bs-toggle="modal" data-bs-dismiss="modal">
+                                <input type="submit" value="Войти" class="btn btn-primary col-7 col-xxl-4 auth__btn auth__btn--primary">
+                            </div>
+                        </form>
+                    </div>
+                </div> 
+                <!--authorized-->
+                <div class="modal-content auth__content auth__content--authorized">
+                    <div class="modal-body">
+                        <div class="row d-flex justify-content-center align-items-center">
+                            <div class="auth__avatar"><img src="/img/image 221.png" alt=""></div>
+                            <div class="auth__user">
+                                <div class="auth__name">Маня Иванова</div>
+                                <input type="submit" value="Выйти" class="btn btn-primary auth__btn auth__btn--primary">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="headerRegistration" aria-hidden="true" aria-labelledby="headerRegistrationLabel" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="container">
+                <div class="modal-content auth__content">
+                    <div class="modal-header py-2 px-0">
+                        <h5 class="modal-title auth__title" id="authToggleLabel">Регистрация</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form class="needs-validation" novalidate>
+                            <div class="row mb-2 d-flex auth__group">
+                                <label for="headerReisterFirstName" class="form-label col-3 my-0 p-0 auth__label">Имя</label>
+                                <input type="text" class="form-control order-2" id="headerReisterFirstName" required>              
+                                <div id="headerRegisterFirstNameFeedback" class="invalid-feedback col-9 order-1 my-0 auth__invalid">Неверное имя</div>                
+                            </div>
+                            <div class="row mb-2 d-flex auth__group">
+                                <label for="headerReisterLastName" class="form-label col-3 my-0 p-0 auth__label">Фамилия</label>
+                                <input type="text" class="form-control order-2" id="headerReisterLastName" required>              
+                                <div id="headerRegisterLastNameFeedback" class="invalid-feedback col-9 order-1 my-0 auth__invalid">Неверная фамилия</div>                
+                            </div>
+                            <div class="row mb-2 d-flex auth__group">
+                                <label for="headerReisterNickName" class="form-label col-3 my-0 p-0 auth__label">Ник</label>
+                                <input type="text" class="form-control order-2" id="headerReisterNickName" required>              
+                                <div id="headerRegisterNickNameFeedback" class="invalid-feedback col-9 order-1 my-0 auth__invalid">Неверный ник</div>                
+                            </div>
+                            <div class="row mb-2 d-flex auth__group">
+                                <label for="headerReisterPhone" class="form-label col-3 my-0 p-0 auth__label">Телефон</label>
+                                <input type="tel" class="form-control order-2" id="headerReisterPhone" required>              
+                                <div id="headerRegisterPhoneFeedback" class="invalid-feedback col-9 order-1 my-0 auth__invalid">Неверный телефон</div>                
+                            </div>
+                            <div class="row mb-2 d-flex auth__group">
+                                <label for="headerRegisterEmail" class="form-label col-3 my-0 p-0 auth__label">E-mail</label>
+                                <input type="email" class="form-control order-2" id="headerRegisterEmail" required>              
+                                <div id="headerRegisterEmailFeedback" class="invalid-feedback col-9 order-1 my-0 auth__invalid">Неверный E-mail</div>                
+                            </div>
+                            <div class="row mb-2 d-flex auth__group">
+                                <label for="registerInputPassword1" class="form-label col-3 my-0 p-0 auth__label">Пароль</label>
+                                <input type="password" class="form-control order-2" id="registerInputPassword1" required>
+                                <div id="headerRegisterPassFeedback1" class="invalid-feedback col-9 order-1 my-0 auth__invalid">Введите пароль</div>
+                                <div id="headerRegisterPassCheck1" class="auth__invalid">Пароли не совпадают</div>
+                            </div>
+                            <div class="row mb-3 d-flex auth__group">
+                                <label for="registerInputPassword2" class="form-label col-3 my-0 p-0 auth__label">Подтвердите пароль</label>
+                                <input type="password" class="form-control order-2" id="registerInputPassword2" onkeyup="valid(event)" required>
+                                <div id="headerRegisterPassFeedback2" class="invalid-feedback col-9 order-1 my-0 auth__invalid">Введите пароль</div>
+                                <div id="headerRegisterPassCheck2" class="auth__invalid">Пароли не совпадают</div>
+                            </div>
+                            <div class="form-check mb-5 ps-2">
+                                <input class="form-check-input" type="checkbox" value="" id="registerCheck" required>
+                                <label class="form-check-label" for="registerCheck">
+                                  Я ознакомлен(а) с <a href="#" class="auth__conf" target="_blank">политикой конфиденциальности</a>
+                                </label>
+                                <div class="invalid-feedback auth__invalid  ">
+                                  Необходимо подтверждение
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-around">
+                                <input type="submit" value="Регистрация" class="btn btn-primary col-7 col-xxl-4 auth__btn auth__btn--primary">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="headerFavorites" aria-hidden="true" aria-labelledby="headerFavoritesLabel" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="container">
+
+                <div class="modal-content auth__content">
+                    <div class="modal-header py-2 px-0">
+                        <h5 class="modal-title text-center auth__title" id="authToggleLabel">Функция доступна зарегистрированным пользователям</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row d-flex justify-content-around">
+                            <input type="submit" value="Регистрация" class="btn auth__btn col-7 col-xxl-4" data-bs-target="#headerRegistration" data-bs-toggle="modal" data-bs-dismiss="modal">
+                        </div>
+                    </div>
+                </div>
+                
+                <!--authorized-->
+                <div class="modal-content auth__content auth__content--authorized">
+                    <div class="modal-body">
+                        <div class="row">
+                            <a href="#" class="auth__link">Сатьи</a>
+                            <a href="#" class="auth__link">Бренды</a>
+                            <a href="#" class="auth__link">Средства</a> 
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--Оставить отзыв-->
+    <div class="modal fade" id="openQuestion" tabindex="-1" role="dialog" aria-labelledby="openReviewLabel" aria-hidden="true" style="display: block !important; opacity: 1 !important;">
+        <div class="modal-dialog modal-lg" role="document" style="transform: translate(0) !important">
+        <div class="modal-content leave-feed__modal-content p-0 p-xxl-4">
+            <div class="row modal-header">
+                <h5 class="col-12 leave-feed__title text-center text-xxl-start">Отзыв о средстве</h5>
+                <div class="col-12 modal-name leave-feed__name text-center text-xxl-start" id="openReviewLabel"></div>
+            </div>
+            <div class="modal-body">
+                <div class="row mb-4">
+                    <div class="text--15-30 text-start col-6">Оцените средство</div>
+                    <div class="col-6 ">                                        
+                        <div class="rating rating--xl rating--set float-end">
+                            <div class="rating__body">
+                                <div class="rating__active"></div>
+                                <div class="rating__items">
+                                    <input type="radio" class="rating__item" value="1" name="rating">
+                                    <input type="radio" class="rating__item" value="2" name="rating">
+                                    <input type="radio" class="rating__item" value="3" name="rating">
+                                    <input type="radio" class="rating__item" value="4" name="rating">
+                                    <input type="radio" class="rating__item" value="5" name="rating">
+                                </div>
+                            </div>
+                            <div class="rating__value" style="display: none;">0</div><!--Пока значение хранится здесь-->
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="text--15-30 text-start col-12 mb-3">Расскажите о средстве</div>
+                    <div class="col-12 position-relative leave-feed__textarea  input--dark">      
+                        <textarea class="form-control" id="feedFormControlTextarea" maxlength="1400"></textarea>
+                        <div class="leave-feed__count">
+                            <span class="leave-feed__num">0</span>
+                            <span class="leave-feed__maximum">/ 1400</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="text--15-30 text-start col-12 mb-3">Загрузите до 5 фотографий</div>
+                    <div class="col-3 col-xxl-4"> 
+                        <div class="input input--modal input--image profile__input profile__image" type="button">
+                            <img src="../img/gallery-add.svg" alt="add photos" class="position-absolute top-50 start-50 translate-middle"/>
+                            <input type="file" name="brand__file-input" id="img-multiple" class="file-input profile__file-input" accept="image/png, image/jpg" multiple/>
+                        </div>
+                        <div class="leave-feed__img-list"></div>
+                    </div>
+                    <div class="col-9 col-xxl-8 d-flex justify-content-center flex-column">
+                        <p class="mb-1 leave-feed__comment">Нажмите на область с иконкой</p>
+                        <p class="leave-feed__comment leave-feed__comment--light mb-1">Фото до 10 МБ. Формат JPG, JPEG, BMP, GIF</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 d-flex justify-content-start justify-content-md-around flex-column flex-md-row flex-column-reverse">
+                        <button type="button" class="btn-string pre-color" data-bs-dismiss="modal"><img src="../img/cansel-icon.svg" class="me-1" alt="">Отменить</button>
+                        <button type="button" class="btn-string mb-3 mb-md-0" ><img src="../img/pen-notice.svg" class="me-1" alt="">Отправить отзыв</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!--Задать вопрос-->
+    <div class="modal fade" id="openQuestion" tabindex="-1" role="dialog" aria-labelledby="openQuestionLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="row modal-header">
+                <h5 class="col-12 leave-feed__title text-center text-xxl-center">Задать вопрос о средстве</h5>
+                <div class="col-12 modal-name leave-feed__name text-center text-xxl-center" id="openQuestionLabel"></div>
+            </div>
+            <div class="modal-body">
+                <div class="row mb-4">
+                    <div class="col-12 position-relative leave-feed__textarea  input--dark">      
+                        <textarea class="form-control" id="feedFormControlTextarea" maxlength="500"></textarea>
+                        <div class="leave-feed__count">
+                            <span class="leave-feed__num">0</span>
+                            <span class="leave-feed__maximum">/ 500</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 d-flex justify-content-start justify-content-md-around flex-column flex-md-row flex-column-reverse">
+                        <button type="button" class="btn-string pre-color" data-bs-dismiss="modal"><img src="../img/cansel-icon.svg" class="me-1" alt="">Отменить</button>
+                        <button type="button" class="btn-string mb-3 mb-md-0" ><img src="../img/pen-notice.svg" class="me-1" alt="">Отправить вопрос</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+    <!--Увеличение изображения-->
+    <div class="modal fade" id="openFullImg" tabindex="-1" role="dialog" aria-labelledby="openFullImgLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog--img" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-img" data-bs-dismiss="modal" aria-label="Close"><img src="" alt=""></div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/splide.min.js"></script><!--For product slider-->
+    <script src="/js/script.js"></script>
+</body>
+</html>

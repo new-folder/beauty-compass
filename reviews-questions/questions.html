@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вопросы</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="">
+    <nav class="navbar navbar-expand-xxl top-bar">
+      <div
+        class="container justify-content-start position-relative p-xxl-0 container--header"
+      >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand col-1 d-xxl-none top-bar__short-logo" href="#"
+          ><img src="../img/short-logo.svg" alt=""
+        /></a>
+        <div
+          class="collapse navbar-collapse justify-content-center top-bar__collapse"
+          id="navbarTogglerDemo01"
+        >
+          <a
+            class="navbar-brand col-11 col-xxl-4 offset-md-1 top-bar__logo"
+            href="#"
+            ><img src="../img/logo.svg" alt=""
+          /></a>
+          <form class="d-flex col-6 me-auto search-form">
+            <input
+              class="form-control me-2 search-form__input"
+              type="search"
+              placeholder="Поиск"
+              aria-label="Search"
+            />
+            <button class="btn search-form__submit" type="submit"></button>
+          </form>
+          <ul class="navbar-nav col-12 top-bar__list">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">О нас</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Подбор косметики</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                >Обзоры авторов
+                <img
+                  src="../img/logo-micro.svg"
+                  class="align-baseline px-1"
+                  alt=""
+              /></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Статьи брендов</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Бренды</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Каталог</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Беседка</a>
+            </li>
+          </ul>
+          <div class="row justify-content-center my-3 d-flex d-xxl-none">
+            <div class="col-3">
+              <a
+                href=""
+                class="footer__social footer__social--email"
+                target="_blank"
+              ></a>
+            </div>
+            <div class="col-3">
+              <a
+                href=""
+                class="footer__social footer__social--telegram"
+                target="_blank"
+              ></a>
+            </div>
+            <div class="col-3">
+              <a
+                href=""
+                class="footer__social footer__social--vk"
+                target="_blank"
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-1 ms-md-1 position-absolute top-0 end-0 d-flex justify-content-end top-bar__links"
+        >
+          <a
+            class="top-bar__link"
+            data-bs-toggle="modal"
+            href="#headerAutorisation"
+            role="button"
+            ><img src="../img/login.svg" alt=""
+          /></a>
+          <a
+            class="top-bar__link"
+            data-bs-toggle="modal"
+            href="#headerFavorites"
+            role="button"
+            ><img src="../img/favorites.svg" alt=""
+          /></a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="questions">
+        <div class="container container--bc questions__sticker">
+          <div class="row justify-content-center mb-4">
+            <a
+              href=""
+              class="col-12 col-xxl-10 mb-2 mb-md-4 text-center title--h1 questions__heading-link--h1-link"
+            >
+              Icon Skin Stop Acne Сыворотка Multi-Acid Serum
+            </a>
+            <div class="col-12">
+              <a
+                href="#"
+                class="questions__heading-link title--sub_blue d-flex justify-content-center align-items-center text-center"
+              >
+                Мультикислотная сыворотка от акне
+              </a>
+            </div>
+          </div>
+          <div class="questions__body offset-xxl-1 col-xxl-10">
+            <button
+              id="question-form-btn"
+              class="input--wrapper questions__form-open-btn mb-3"
+              type="button"
+            >
+              Задать вопрос
+            </button>
+            <form id="question-form" class="questions__form mb-4" hidden>
+              <div class="textarea--wrapper position-relative col-12 mb-2">
+                <textarea
+                  id="question-input"
+                  class="textarea--regular w-100 h-100 border-0"
+                  placeholder="Задайте вопрос"
+                  maxlength="500"
+                  minlength="10"
+                  rows="5"
+                  required
+                ></textarea>
+                <div id="char-count" class="textarea--char-count">0/500</div>
+              </div>
+              <button
+                type="button"
+                data-bs-toggle="modal"
+                href="#questionApply"
+                class="btn btn--base"
+              >
+                Задать вопрос
+              </button>
+            </form>
+            <h3 class="title--h4 mb-4">Вопросы пользователей (23)</h3>
+            <div class="feed d-flex flex-column mb-5">
+              <div class="feed__row">
+                <div class="feed__user">
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 221.png" alt="avatar" />
+                  </a>
+                  <div class="feed__info">
+                    <a href="#" class="feed__name">Дарья С.</a>
+                    <div class="feed__date">22.08.2022</div>
+                  </div>
+                </div>
+                <p class="feed__text mb-4">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea...Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                  ea?
+                </p>
+
+                <div class="feed__user">
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 222.png" alt="avatar" />
+                  </a>
+                  <div class="feed__info">
+                    <a href="#" class="feed__name">НАЗВАНИЕ КОМПАНИИ</a>
+                    <div class="feed__date">25.08.2022</div>
+                  </div>
+                </div>
+                <p class="feed__text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                </p>
+              </div>
+              <div class="feed__row">
+                <div class="feed__user">
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 221.png" alt="avatar" />
+                  </a>
+                  <div class="feed__info">
+                    <a href="#" class="feed__name">Дарья С.</a>
+                    <div class="feed__date">22.08.2022</div>
+                  </div>
+                </div>
+                <p class="feed__text mb-4">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea...Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                  ea?
+                </p>
+
+                <div class="feed__user">
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 222.png" alt="avatar" />
+                  </a>
+                  <div class="feed__info">
+                    <a href="#" class="feed__name">НАЗВАНИЕ КОМПАНИИ</a>
+                    <div class="feed__date">25.08.2022</div>
+                  </div>
+                </div>
+                <p class="feed__text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                </p>
+              </div>
+              <div class="feed__row">
+                <div class="feed__user">
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 221.png" alt="avatar" />
+                  </a>
+                  <div class="feed__info">
+                    <a href="#" class="feed__name">Дарья С.</a>
+                    <div class="feed__date">22.08.2022</div>
+                  </div>
+                </div>
+                <p class="feed__text mb-4">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea...Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                  ea?
+                </p>
+
+                <div class="feed__user">
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 222.png" alt="avatar" />
+                  </a>
+                  <div class="feed__info">
+                    <a href="#" class="feed__name">НАЗВАНИЕ КОМПАНИИ</a>
+                    <div class="feed__date">25.08.2022</div>
+                  </div>
+                </div>
+                <p class="feed__text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                </p>
+              </div>
+              <div class="feed__row">
+                <div class="feed__user">
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 221.png" alt="avatar" />
+                  </a>
+                  <div class="feed__info">
+                    <a href="#" class="feed__name">Дарья С.</a>
+                    <div class="feed__date">22.08.2022</div>
+                  </div>
+                </div>
+                <p class="feed__text mb-4">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea...Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                  ea?
+                </p>
+
+                <div class="feed__user">
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 222.png" alt="avatar" />
+                  </a>
+                  <div class="feed__info">
+                    <a href="#" class="feed__name">НАЗВАНИЕ КОМПАНИИ</a>
+                    <div class="feed__date">25.08.2022</div>
+                  </div>
+                </div>
+                <p class="feed__text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                </p>
+              </div>
+              <div class="feed__row">
+                <div class="feed__user">
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 221.png" alt="avatar" />
+                  </a>
+                  <div class="feed__info">
+                    <a href="#" class="feed__name">Дарья С.</a>
+                    <div class="feed__date">22.08.2022</div>
+                  </div>
+                </div>
+                <p class="feed__text mb-4">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea...Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                  ea?
+                </p>
+
+                <div class="feed__user">
+                  <a href="#" class="feed__avatar">
+                    <img src="../img/image 222.png" alt="avatar" />
+                  </a>
+                  <div class="feed__info">
+                    <a href="#" class="feed__name">НАЗВАНИЕ КОМПАНИИ</a>
+                    <div class="feed__date">25.08.2022</div>
+                  </div>
+                </div>
+                <p class="feed__text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                </p>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center">
+              <ul class="pagination">
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">〈</span>
+                  </a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">〉</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer py-5 mt-auto">
+      <div class="container footer__container">
+        <div class="row justify-content-center footer__nav">
+          <div class="col-12 col-md-4 col-xxl-3">
+            <div class="footer__title">О нас</div>
+            <ul class="footer__list">
+              <li><a href="">О проекте</a></li>
+              <li><a href="">Отзывы и предложения</a></li>
+              <li><a href="">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-4 col-xxl-4 text-start text-md-center">
+            <div class="footer__title">Пользователям</div>
+            <ul class="footer__list">
+              <li><a href="">Подбор косметики</a></li>
+              <li><a href="">Избранное</a></li>
+              <li><a href="">Авторизация</a></li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-4 col-xxl-3 text-start text-md-end">
+            <div class="footer__title">Брендам</div>
+            <ul class="footer__list">
+              <li><a href="">Сотрудничество</a></li>
+              <li><a href="">Отправить заявку</a></li>
+              <li><a href="">Авторизация</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row justify-content-center order-1 order-xxl-2">
+          <div class="col-10 col-xxl-12 text-center footer__logo">
+            <img src="../img/logo.svg" alt="" />
+          </div>
+        </div>
+        <div class="row justify-content-center order-3 order-xxl-3">
+          <div class="col-3 col-xxl-1">
+            <a
+              href=""
+              class="footer__social footer__social--email"
+              target="_blank"
+            ></a>
+          </div>
+          <div class="col-3 col-xxl-1">
+            <a
+              href=""
+              class="footer__social footer__social--telegram"
+              target="_blank"
+            ></a>
+          </div>
+          <div class="col-3 col-xxl-1">
+            <a
+              href=""
+              class="footer__social footer__social--vk"
+              target="_blank"
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      class="modal fade"
+      id="headerAutorisation"
+      aria-hidden="true"
+      aria-labelledby="headerAutorisationLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="container">
+          <div class="modal-content auth__content">
+            <div class="modal-header py-2 px-0">
+              <h5 class="modal-title auth__title" id="authToggleLabel">
+                Авторизация
+              </h5>
+            </div>
+            <div class="modal-body">
+              <form class="needs-validation auth__form" novalidate>
+                <div class="row mb-2 d-flex auth__group">
+                  <label
+                    for="headerAuthEmail"
+                    class="form-label col-3 my-0 p-0 auth__label"
+                    >E-mail</label
+                  >
+                  <input
+                    type="email"
+                    name="mail"
+                    class="form-control order-2"
+                    id="headerAuthEmail"
+                    required
+                  />
+                  <div
+                    id="headerAuthEmailFeedback"
+                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                  >
+                    Неверный E-mail
+                  </div>
+                </div>
+                <div class="row mb-3 mb-md-5 d-flex auth__group">
+                  <label
+                    for="authInputPassword"
+                    class="form-label col-3 my-0 p-0 auth__label"
+                    >Пароль</label
+                  >
+                  <input
+                    type="password"
+                    name="pass"
+                    class="form-control order-2"
+                    id="authInputPassword"
+                    required
+                  />
+                  <div
+                    id="headerAuthPassFeedback"
+                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                  >
+                    Неверный пароль
+                  </div>
+                </div>
+                <div class="auth__sub-title">Забыли пароль?</div>
+                <div class="row d-flex justify-content-around">
+                  <input
+                    type="submit"
+                    value="Регистрация"
+                    class="btn auth__btn col-7 col-xxl-4"
+                    data-bs-target="#headerRegistration"
+                    data-bs-toggle="modal"
+                    data-bs-dismiss="modal"
+                  />
+                  <input
+                    type="submit"
+                    value="Войти"
+                    class="btn btn-primary col-7 col-xxl-4 auth__btn auth__btn--primary"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+          <!--authorized-->
+          <div class="modal-content auth__content auth__content--authorized">
+            <div class="modal-body">
+              <div class="row d-flex justify-content-center align-items-center">
+                <div class="auth__avatar">
+                  <img src="/img/image 221.png" alt="" />
+                </div>
+                <div class="auth__user">
+                  <div class="auth__name">Маня Иванова</div>
+                  <input
+                    type="submit"
+                    value="Выйти"
+                    class="btn btn-primary auth__btn auth__btn--primary"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="headerRegistration"
+      aria-hidden="true"
+      aria-labelledby="headerRegistrationLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="container">
+          <div class="modal-content auth__content">
+            <div class="modal-header py-2 px-0">
+              <h5 class="modal-title auth__title" id="authToggleLabel">
+                Регистрация
+              </h5>
+            </div>
+            <div class="modal-body">
+              <form class="needs-validation" novalidate>
+                <div class="row mb-2 d-flex auth__group">
+                  <label
+                    for="headerReisterFirstName"
+                    class="form-label col-3 my-0 p-0 auth__label"
+                    >Имя</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control order-2"
+                    id="headerReisterFirstName"
+                    required
+                  />
+                  <div
+                    id="headerRegisterFirstNameFeedback"
+                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                  >
+                    Неверное имя
+                  </div>
+                </div>
+                <div class="row mb-2 d-flex auth__group">
+                  <label
+                    for="headerReisterLastName"
+                    class="form-label col-3 my-0 p-0 auth__label"
+                    >Фамилия</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control order-2"
+                    id="headerReisterLastName"
+                    required
+                  />
+                  <div
+                    id="headerRegisterLastNameFeedback"
+                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                  >
+                    Неверная фамилия
+                  </div>
+                </div>
+                <div class="row mb-2 d-flex auth__group">
+                  <label
+                    for="headerReisterNickName"
+                    class="form-label col-3 my-0 p-0 auth__label"
+                    >Ник</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control order-2"
+                    id="headerReisterNickName"
+                    required
+                  />
+                  <div
+                    id="headerRegisterNickNameFeedback"
+                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                  >
+                    Неверный ник
+                  </div>
+                </div>
+                <div class="row mb-2 d-flex auth__group">
+                  <label
+                    for="headerReisterPhone"
+                    class="form-label col-3 my-0 p-0 auth__label"
+                    >Телефон</label
+                  >
+                  <input
+                    type="tel"
+                    class="form-control order-2"
+                    id="headerReisterPhone"
+                    required
+                  />
+                  <div
+                    id="headerRegisterPhoneFeedback"
+                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                  >
+                    Неверный телефон
+                  </div>
+                </div>
+                <div class="row mb-2 d-flex auth__group">
+                  <label
+                    for="headerRegisterEmail"
+                    class="form-label col-3 my-0 p-0 auth__label"
+                    >E-mail</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control order-2"
+                    id="headerRegisterEmail"
+                    required
+                  />
+                  <div
+                    id="headerRegisterEmailFeedback"
+                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                  >
+                    Неверный E-mail
+                  </div>
+                </div>
+                <div class="row mb-2 d-flex auth__group">
+                  <label
+                    for="registerInputPassword1"
+                    class="form-label col-3 my-0 p-0 auth__label"
+                    >Пароль</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control order-2"
+                    id="registerInputPassword1"
+                    required
+                  />
+                  <div
+                    id="headerRegisterPassFeedback1"
+                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                  >
+                    Введите пароль
+                  </div>
+                  <div id="headerRegisterPassCheck1" class="auth__invalid">
+                    Пароли не совпадают
+                  </div>
+                </div>
+                <div class="row mb-3 d-flex auth__group">
+                  <label
+                    for="registerInputPassword2"
+                    class="form-label col-3 my-0 p-0 auth__label"
+                    >Подтвердите пароль</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control order-2"
+                    id="registerInputPassword2"
+                    onkeyup="valid(event)"
+                    required
+                  />
+                  <div
+                    id="headerRegisterPassFeedback2"
+                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                  >
+                    Введите пароль
+                  </div>
+                  <div id="headerRegisterPassCheck2" class="auth__invalid">
+                    Пароли не совпадают
+                  </div>
+                </div>
+                <div class="form-check mb-5 ps-2">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="registerCheck"
+                    required
+                  />
+                  <label class="form-check-label" for="registerCheck">
+                    Я ознакомлен(а) с
+                    <a href="#" class="auth__conf" target="_blank"
+                      >политикой конфиденциальности</a
+                    >
+                  </label>
+                  <div class="invalid-feedback auth__invalid">
+                    Необходимо подтверждение
+                  </div>
+                </div>
+                <div class="row d-flex justify-content-around">
+                  <input
+                    type="submit"
+                    value="Регистрация"
+                    class="btn btn-primary col-7 col-xxl-4 auth__btn auth__btn--primary"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="headerFavorites"
+      aria-hidden="true"
+      aria-labelledby="headerFavoritesLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="container">
+          <div class="modal-content auth__content">
+            <div class="modal-header py-2 px-0">
+              <h5
+                class="modal-title text-center auth__title"
+                id="authToggleLabel"
+              >
+                Функция доступна зарегистрированным пользователям
+              </h5>
+            </div>
+            <div class="modal-body">
+              <div class="row d-flex justify-content-around">
+                <input
+                  type="submit"
+                  value="Регистрация"
+                  class="btn auth__btn col-7 col-xxl-4"
+                  data-bs-target="#headerRegistration"
+                  data-bs-toggle="modal"
+                  data-bs-dismiss="modal"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!--authorized-->
+          <div class="modal-content auth__content auth__content--authorized">
+            <div class="modal-body">
+              <div class="row">
+                <a href="#" class="auth__link">Сатьи</a>
+                <a href="#" class="auth__link">Бренды</a>
+                <a href="#" class="auth__link">Средства</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="questionApply"
+      aria-hidden="true"
+      aria-labelledby="questionApplyLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="container">
+          <div class="modal-content auth__content">
+            <div class="modal-header py-2 px-0">
+              <h5
+                class="modal-title text-center auth__title"
+                id="questionToggleLabel"
+              >
+                Ваш вопрос принят в обработку, уведомление об ответе появится в
+                Личном кабинете
+              </h5>
+            </div>
+            <div class="modal-body">
+              <div class="row d-flex justify-content-around">
+                <form class="w-100">
+                  <button type="submit" class="btn btn--base w-100">ok</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/questions.js"></script>
+  </body>
+</html>

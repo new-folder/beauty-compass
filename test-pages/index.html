@@ -138,44 +138,44 @@
       </section>
       <section>
         <form action="rezultTest.html" class="container container--bc">
-          <div class="quest-b">
-            <div class="questText">
+          <div class="quest">
+            <div class="quest__text">
               <p class="text-uppercase">Вы:</p>
               <small>Укажите пол</small>
             </div>
-            <div class="respOpt radioInp adapt">
+            <div class="quest__resp radio__inpt quest__adapt">
               <input type="radio" name="gender" id="gender1" value="male"><label for="gender1">мужчина</label>
               <input type="radio" name="gender" id="gender2" value="female"><label for="gender2">женщина</label>
             </div>
           </div>
-          <div class="quest-b">
-            <div class="questText">
+          <div class="quest">
+            <div class="quest__text">
               <p class="text-uppercase">Вам:</p>
               <small>Укажите возраст</small>
             </div>
-            <div class="respOpt radioInp adapt">
+            <div class="quest__resp radio__inpt quest__adapt">
               <input type="radio" name="age" id="age20" value="age25"><label for="age20">до 25</label>
               <input type="radio" name="age" id="age25" value="age30"><label for="age25">25-35</label>
               <input type="radio" name="age" id="age35" value="age40"><label for="age35">35-45</label>
               <input type="radio" name="age" id="age45" value="age45"><label for="age45">больше 45</label>
             </div>
           </div>
-          <div class="quest-b">
-            <div class="questText adaptQuest">
+          <div class="quest">
+            <div class="quest__text quest__adapt__quest">
               <p class="text-uppercase ">Ваши ощущения после умывани водой:</p>
             </div>
-            <div class="respOpt radioInp skinType">
+            <div class="quest__resp radio__inpt skinType">
               <input type="radio" name="skinSens" value="1" id="tightening"><label for="tightening">Кожу стягивает</label>
               <input type="radio" name="skinSens" value="2" id="purity"><label for="purity">Есть ощущение чистоты и свежести</label>
               <input type="radio" name="skinSens" value="3" id="oily"><label for="oily">спустя некоторое время появляется жирный блеск</label>
               <input type="radio" name="skinSens" value="4" id="dirty"><label for="dirty">есть ощущение недостаточного очищения кожи</label>
             </div>
           </div>
-          <div class="quest-b">
-            <div class="questText">
+          <div class="quest">
+            <div class="quest__text">
               <p class="text-uppercase">Поры на вашем лице:</p>
             </div>
-            <div class="respOpt radioInp skinType">
+            <div class="quest__resp radio__inpt skinType">
               <input type="radio" name="pore" id="poreHid" value="1">
               <label for="poreHid">
                 незаметны
@@ -194,11 +194,11 @@
               </label>
             </div>
           </div>
-          <div class="quest-b">
-            <div class="questText">
+          <div class="quest">
+            <div class="quest__text">
               <p class="text-uppercase">Бывают ли воспаления:</p>
             </div>
-            <div class="radioInp respOpt skinType">
+            <div class="radio__inpt quest__resp skinType">
               <input type="radio" name="poreInflam" id="poreHidflam" value="1">
               <label for="poreHidflam">
                 нет
@@ -217,18 +217,18 @@
               </label>
             </div>
           </div>
-          <div class="quest-b">
-            <div class="questText text-uppercase adaptQuest">
+          <div class="quest">
+            <div class="quest__text text-uppercase quest__adapt__quest">
               <p> Спасибо за ответы! ваш тип кожи - <b id="anserText">комбинированная</b></p>
               </p>
             </div>
           </div>
-          <div class="quest-b">
-            <div class="questText d-flex">
+          <div class="quest">
+            <div class="quest__text d-flex">
               <p class="text-uppercase">какой у вас тип старения</p>
             </div>
-            <div class="respOpt radioInp">
-              <div class="option">
+            <div class="quest__resp radio__inpt">
+              <div class="radio__option">
                 <input type="radio" name="typeAging" id="tired_type" value="tired_type">
                 <label for="tired_type">
                   усталый тип
@@ -238,7 +238,7 @@
                 </p>
                 <img src="../img\tired_type.jpg" alt="Пример усталого типа кожи">
               </div>
-              <div class="option">
+              <div class="radio__option">
                 <input type="radio" name="typeAging" id="small_wrinkled" value="small_wrinkled">
                 <label for="small_wrinkled">
                   Мелкоморщинистый тип
@@ -248,7 +248,7 @@
                 </p>
                 <img src="../img\small_wrinkled.jpg" alt="Пример мелкоморщинистого тип кожи">
               </div>
-              <div class="option">
+              <div class="radio__option">
                 <input type="radio" name="typeAging" id="gravity_type" value="gravity_type">
                 <label for="gravity_type">
                   Гравитационный тип
@@ -258,7 +258,7 @@
                 </p>
                 <img src="../img\gravity_type.jpg" alt="Пример гравитационного тип кожи">
               </div>
-              <div class="option">
+              <div class="radio__option">
                 <input type="radio" name="typeAging" id="muscular_type" value="muscular_type">
                 <label for="muscular_type">
                   Мускульный тип
@@ -270,78 +270,78 @@
               </div>
             </div>
           </div>
-          <div class="quest-b">
-            <div class="questText">
+          <div class="quest">
+            <div class="quest__text">
               <p class="text-uppercase">что вы отмечаете  прямо сейчас:</p>
               <small>Можно выбрать несколько вариантов</small>
             </div>
-            <div class="respOpt checkInp">
-              <div class="checkWrap">
+            <div class="quest__resp check-right">
+              <div class="check__wrap">
                 <input type="checkbox" name="skinProp" value="dehydration" id="dehydration"><label for="dehydration">обезвоженность</label>
               </div>
-              <div class="checkWrap">
+              <div class="check__wrap">
                 <input type="checkbox" name="skinProp" value="pigmented" id="pigmented"><label for="pigmented">пигментные пятна</label>
               </div>
-              <div class="checkWrap">
+              <div class="check__wrap">
                 <input type="checkbox" name="skinProp" value="uneven" id="uneven"><label for="uneven">неровный тон и текстура кожи</label>
               </div>
-              <div class="checkWrap">
+              <div class="check__wrap">
                 <input type="checkbox" name="skinProp" value="red_irritat" id="red_irritat"><label for="red_irritat">покраснения и раздражения</label>
               </div>
-              <div class="checkWrap">
+              <div class="check__wrap">
                 <input type="checkbox" name="skinProp" value="inflamRash" id="inflamRash"><label for="inflamRash">воспаления и высыпания</label>
               </div>
-              <div class="checkWrap">
+              <div class="check__wrap">
                 <input type="checkbox" name="skinProp" value="enlar_black_dots" id="enlar_black_dots"><label for="enlar_black_dots">расширенные поры и черные точки</label>
               </div>
-              <div class="checkWrap">
+              <div class="check__wrap">
                 <input type="checkbox" name="skinProp" value="wrinkles" id="wrinkles"><label for="wrinkles">потеря упругости и эластичности, морщины</label>
               </div>
-              <div class="checkWrap">
+              <div class="check__wrap">
                 <input type="checkbox" name="skinProp" value="rosacea" id="rosacea"><label for="rosacea">купероз и розацеа</label>
               </div>
             </div>
           </div>
-          <div class="quest-b">
-            <div class="questText">
+          <div class="quest">
+            <div class="quest__text">
               <p class="text-uppercase">кожа вокруг глаз:</p>
               <small>Можно выбрать несколько вариантов</small>
             </div>
-            <div class="respOpt checkInp">
-              <div class="checkWrap">
+            <div class="quest__resp check-right">
+              <div class="check__wrap">
                 <input type="checkbox" name="skinEyes" value="wrinklesElast" id="wrinklesElast"><label for="wrinklesElast">морщины и потеря упругости</label>
               </div>
-              <div class="checkWrap">
+              <div class="check__wrap">
                 <input type="checkbox" name="skinEyes" value="darkCircl" id="darkCircl"><label for="darkCircl">темные круги</label>
               </div>
-              <div class="checkWrap">
+              <div class="check__wrap">
                 <input type="checkbox" name="skinEyes" value="edema" id="edema"><label for="edema">отеки</label>
               </div>
-              <div class="checkWrap">
+              <div class="check__wrap">
                 <input type="checkbox" name="skinEyes" value="dryness" id="dryness"><label for="dryness">сухость и обезвоженность</label>
               </div>
             </div>
           </div>
-          <div class="quest-b">
-            <div class="questText">
+          <div class="quest">
+            <div class="quest__text">
               <p class="text-uppercase">Часто ли уходовая косметика вызывает раздражение, покраснение, жжение?</p>
             </div>
-            <div class="respOpt radioInp">
+            <div class="quest__resp radio__inpt">
               <input type="radio" name="often" id="yes" value="yes"><label for="yes">да</label>
               <input type="radio" name="often" id="no" value="no"><label for="no">нет</label>
             </div>
           </div>
-          <div class="quest-b">
-            <div class="questText">
+          <div class="quest">
+            <div class="quest__text">
               <p class="text-uppercase">В данный момент вы беременны, кормите грудью или планируете беременность в течение ближайших 6 месяцев?</p>
             </div>
-            <div class="respOpt radioInp">
+            <div class="quest__resp radio__inpt">
               <input type="radio" name="oftenPreg" id="yesPreg" value="yesPreg"><label for="yesPreg">да</label>
               <input type="radio" name="oftenPreg" id="noPreg" value="noPreg"><label for="noPreg">нет</label>
             </div>
           </div>
-          <div class="quest-b d-flex align-items-center">
-              <input class="showResult text-uppercase" type="submit" value="Показать результаты">
+          <div class="quest d-flex align-items-center">
+              <input class="quest__show_result text-uppercase" type="submit" value="Показать результаты">
           </div>
         </form>
       </section>
@@ -405,7 +405,337 @@
         </div>
       </div>
     </footer>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/test.js"></script>
+    <div
+      class="modal fade"
+      id="headerAutorisation"
+      aria-hidden="true"
+      aria-labelledby="headerAutorisationLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="container">
+          <div class="modal-content auth__content">
+            <div class="modal-header py-2 px-0">
+              <h5 class="modal-title auth__title" id="authToggleLabel">
+                Авторизация
+              </h5>
+            </div>
+            <div class="modal-body">
+              <form class="needs-validation" novalidate>
+                <div class="row mb-2 d-flex auth__group">
+                  <label
+                    for="headerAuthEmail"
+                    class="col-3 my-0 p-0 auth__label"
+                    >E-mail</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control order-2"
+                    id="headerAuthEmail"
+                    required
+                  />
+                  <div
+                    id="headerAuthEmailFeedback"
+                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                  >
+                    Неверный E-mail
+                  </div>
+                </div>
+                <div class="row mb-3 mb-md-5 d-flex auth__group">
+                  <label
+                    for="authInputPassword"
+                    class="col-3 my-0 p-0 auth__label"
+                    >Пароль</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control order-2"
+                    id="authInputPassword"
+                    required
+                  />
+                  <div
+                    id="headerAuthPassFeedback"
+                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                  >
+                    Неверный пароль
+                  </div>
+                </div>
+                <div class="auth__sub-title">Забыли пароль?</div>
+                <div class="row d-flex justify-content-around">
+                  <input
+                    type="submit"
+                    value="Регистрация"
+                    class="btn auth__btn col-7 col-xxl-4"
+                    data-bs-target="#headerRegistration"
+                    data-bs-toggle="modal"
+                    data-bs-dismiss="modal"
+                  />
+                  <input
+                    type="submit"
+                    value="Войти"
+                    class="btn btn-primary col-7 col-xxl-4 auth__btn auth__btn--primary"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+          <!--authorized-->
+          <div class="modal-content auth__content auth__content--authorized">
+            <div class="modal-body">
+              <div class="row d-flex justify-content-center align-items-center">
+                <div class="auth__avatar">
+                  <img src="../img/image 221.png" alt="" />
+                </div>
+                <div class="auth__user">
+                  <div class="auth__name">Маня Иванова</div>
+                  <input
+                    type="submit"
+                    value="Выйти"
+                    class="btn btn-primary auth__btn auth__btn--primary"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="headerRegistration"
+      aria-hidden="true"
+      aria-labelledby="headerRegistrationLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="container">
+          <div class="modal-content auth__content">
+            <div class="modal-header py-2 px-0">
+              <h5 class="modal-title auth__title" id="authToggleLabel">
+                Регистрация
+              </h5>
+            </div>
+            <div class="modal-body">
+              <form class="needs-validation" novalidate>
+                <div class="row mb-2 d-flex auth__group">
+                  <label
+                    for="headerReisterFirstName"
+                    class="col-3 my-0 p-0 auth__label"
+                    >Имя</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control order-2"
+                    id="headerReisterFirstName"
+                    required
+                  />
+                  <div
+                    id="headerRegisterFirstNameFeedback"
+                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                  >
+                    Неверное имя
+                  </div>
+                </div>
+                <div class="row mb-2 d-flex auth__group">
+                  <label
+                    for="headerReisterLastName"
+                    class="col-3 my-0 p-0 auth__label"
+                    >Фамилия</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control order-2"
+                    id="headerReisterLastName"
+                    required
+                  />
+                  <div
+                    id="headerRegisterLastNameFeedback"
+                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                  >
+                    Неверная фамилия
+                  </div>
+                </div>
+                <div class="row mb-2 d-flex auth__group">
+                  <label
+                    for="headerReisterNickName"
+                    class="col-3 my-0 p-0 auth__label"
+                    >Ник</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control order-2"
+                    id="headerReisterNickName"
+                    required
+                  />
+                  <div
+                    id="headerRegisterNickNameFeedback"
+                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                  >
+                    Неверный ник
+                  </div>
+                </div>
+                <div class="row mb-2 d-flex auth__group">
+                  <label
+                    for="headerReisterPhone"
+                    class="col-3 my-0 p-0 auth__label"
+                    >Телефон</label
+                  >
+                  <input
+                    type="tel"
+                    class="form-control order-2"
+                    id="headerReisterPhone"
+                    required
+                  />
+                  <div
+                    id="headerRegisterPhoneFeedback"
+                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                  >
+                    Неверный телефон
+                  </div>
+                </div>
+                <div class="row mb-2 d-flex auth__group">
+                  <label
+                    for="headerRegisterEmail"
+                    class="col-3 my-0 p-0 auth__label"
+                    >E-mail</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control order-2"
+                    id="headerRegisterEmail"
+                    required
+                  />
+                  <div
+                    id="headerRegisterEmailFeedback"
+                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                  >
+                    Неверный E-mail
+                  </div>
+                </div>
+                <div class="row mb-2 d-flex auth__group">
+                  <label
+                    for="registerInputPassword1"
+                    class="col-3 my-0 p-0 auth__label"
+                    >Пароль</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control order-2"
+                    id="registerInputPassword1"
+                    required
+                  />
+                  <div
+                    id="headerRegisterPassFeedback1"
+                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                  >
+                    Введите пароль
+                  </div>
+                  <div id="headerRegisterPassCheck1" class="auth__invalid">
+                    Пароли не совпадают
+                  </div>
+                </div>
+                <div class="row mb-3 d-flex auth__group">
+                  <label
+                    for="registerInputPassword2"
+                    class="col-3 my-0 p-0 auth__label"
+                    >Подтвердите пароль</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control order-2"
+                    id="registerInputPassword2"
+                    onkeyup="valid(event)"
+                    required
+                  />
+                  <div
+                    id="headerRegisterPassFeedback2"
+                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                  >
+                    Введите пароль
+                  </div>
+                  <div id="headerRegisterPassCheck2" class="auth__invalid">
+                    Пароли не совпадают
+                  </div>
+                </div>
+                <div class="form-check mb-5 ps-2">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="registerCheck"
+                    required
+                  />
+                  <label class="form-check-label" for="registerCheck">
+                    Я ознакомлен(а) с
+                    <a href="#" class="auth__conf" target="_blank"
+                      >политикой конфиденциальности</a
+                    >
+                  </label>
+                  <div class="invalid-feedback auth__invalid">
+                    Необходимо подтверждение
+                  </div>
+                </div>
+                <div class="row d-flex justify-content-around">
+                  <input
+                    type="submit"
+                    value="Регистрация"
+                    class="btn btn-primary col-7 col-xxl-4 auth__btn auth__btn--primary"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="headerFavorites"
+      aria-hidden="true"
+      aria-labelledby="headerFavoritesLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="container">
+          <div class="modal-content auth__content">
+            <div class="modal-header py-2 px-0">
+              <h5
+                class="modal-title text-center auth__title"
+                id="authToggleLabel"
+              >
+                Функция доступна зарегистрированным пользователям
+              </h5>
+            </div>
+            <div class="modal-body">
+              <div class="row d-flex justify-content-around">
+                <input
+                  type="submit"
+                  value="Регистрация"
+                  class="btn auth__btn col-7 col-xxl-4"
+                  data-bs-target="#headerRegistration"
+                  data-bs-toggle="modal"
+                  data-bs-dismiss="modal"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!--authorized-->
+          <div class="modal-content auth__content auth__content--authorized">
+            <div class="modal-body">
+              <div class="row">
+                <a href="#" class="auth__link">Сатьи</a>
+                <a href="#" class="auth__link">Бренды</a>
+                <a href="#" class="auth__link">Средства</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jq.js"></script>
+    <script defer src="../js/test.js"></script>
   </body>
 </html>
