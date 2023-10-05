@@ -260,7 +260,7 @@ function outputInfo(outpBlock, arraysData, objLabAddBut, classNexPag, collectBD,
               +'  <details class="details">'
               +'    <summary class="details__summary '
 
-              if(lastTrig || i>=trigNextClass && trigNextClass!=-1) html+='details__summary--last-item '
+              if( lastTrig || i>=trigNextClass && trigNextClass!=-1 ) html+='details__summary--last-item '
               html+='">'
               html+='<p class="title--h5">'+element.name+'</p>'
               +'<div class="details-button">    '
@@ -270,13 +270,15 @@ function outputInfo(outpBlock, arraysData, objLabAddBut, classNexPag, collectBD,
               else
                 html+=collectChange[0]
               
-              html+='?name">'
+              //get параметры, не знаю какие параметры нужны, поэтому пока id передам 
 
-              +'<img src="../img/btn_pen.svg" alt="">    '
+              html+='?id='+element.idDB+'">'
+
+              +'<img src="../img/btn_pen.svg" alt="Изменить">    '
               
               html+='</a>    '
               +'<a class="details-button__del btn rem_item">      '
-              +'<img src="../img/destr.svg" alt="">    '
+              +'<img src="../img/destr.svg" alt="Удаление">    '
               +'<input type="hidden" name="'+element.name+'" value="'+element.idDB+'">'
               if(i<trigNextClass){
                 html+='<input type="hidden" name="path_DB" value="'+collectBD[1]+'">'
