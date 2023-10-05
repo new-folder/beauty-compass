@@ -195,6 +195,38 @@ var globalPageSize=4
 
 //функция вывода данных
 
+$('#remItm').on('show.bs.modal', function (event) {
+
+  const buttonPar =  event.relatedTarget
+
+  let butRem= event.currentTarget.children[0].children[0].children[2].children[0]
+
+  const pathDB=buttonPar.getAttribute('data-bs-pathDB')
+
+  const idItm=buttonPar.getAttribute('data-bs-idItm')
+
+  $(butRem).click(function (e) { 
+    
+    //обработка данных с сервера
+
+    // $.ajax({
+    //   type: "post",
+    //   url: "url",
+    //   data: [pathDB, idItm],
+    //   dataType: "json",
+    //   success: function (response) {
+
+    //     $('#remItm').modal('toggle');
+    //   }
+    // });
+
+    console.log('удаление прошло');
+
+    $('#remItm').modal('hide')
+  });
+
+})
+
 function outputInfo(outpBlock, arraysData, objLabAddBut, classNexPag, collectBD,collectChange,lastTrig=false, selectPage=1, elStart=0 ,pageItemCount=globalPageSize) {
 
   // outpBlock, блок для вывода
@@ -257,8 +289,8 @@ function outputInfo(outpBlock, arraysData, objLabAddBut, classNexPag, collectBD,
           else html+='">'
     
               html+='<input type="text" value="'+element.place_display+'" class="details__view-place">'
-              +'  <details class="details">'
-              +'    <summary class="details__summary '
+              +'<details class="details">'
+              +'<summary class="details__summary '
 
               if( lastTrig || i>=trigNextClass && trigNextClass!=-1 ) html+='details__summary--last-item '
               html+='">'
@@ -274,30 +306,33 @@ function outputInfo(outpBlock, arraysData, objLabAddBut, classNexPag, collectBD,
 
               html+='?id='+element.idDB+'">'
 
-              +'<img src="../img/btn_pen.svg" alt="Изменить">    '
+              +'<img src="../img/btn_pen.svg" alt="Изменить"></a>'
+              +'<a data-bs-toggle="modal" '
+              +'data-bs-pathDB="' 
               
-              html+='</a>    '
-              +'<a class="details-button__del btn rem_item">      '
-              +'<img src="../img/destr.svg" alt="Удаление">    '
-              +'<input type="hidden" name="'+element.name+'" value="'+element.idDB+'">'
-              if(i<trigNextClass){
-                html+='<input type="hidden" name="path_DB" value="'+collectBD[1]+'">'
-              }
+              if(i<trigNextClass)
+                html+=collectBD[1]
               else
-                html+='<input type="hidden" name="path_DB" value="'+collectBD[0]+'">'
+                html+=collectBD[0]
 
-              html+='</a>  '
+              html+='"'
+              +'data-bs-idItm="' +element.idDB+'"'
+
+              html+=' data-bs-target="#remItm" class="details-button__del btn rem_item">'
+              +'<img src="../img/destr.svg" alt="Удаление">'
+
+              html+='</a>'
               +'</div>'
               +'</summary>'
               if(classNexPag!=''){
                 html+='<div class="content">'
-                +'      <div class="pagin__output-info">  '
-                +'        <div class="pagin__output-info" id="view-all-'+classNexPag+'-'+element.idDB+'">  '
-                +'        </div>'
-                +'      </div>'
-                +'    </div>'
+                +'<div class="pagin__output-info">  '
+                +'<div class="pagin__output-info" id="view-all-'+classNexPag+'-'+element.idDB+'">'
+                +'</div>'
+                +'</div>'
+                +'</div>'
               }
-              html+='  </details>'    
+              html+='</details>'    
             
           
           html+='</div>'
@@ -626,7 +661,6 @@ else{
   paginBlock.classList.remove('d-block')
 }
 
-
 }
 
 //анимация details
@@ -882,10 +916,6 @@ function outputInfBrands(){
       {
         labelSearch:'Поиск  средства',
         buttons:[
-          {
-            link:'',
-            text:'Добавить серии',
-          },
           {
             link:'',
             text:'Добавить средство',
