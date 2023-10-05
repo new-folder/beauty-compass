@@ -173,19 +173,11 @@ modalPricesCells.forEach((cell) => {
 
 var outputInfoDetails=''
 
-// Сортировка по столбцу "очередь показа"
-// $.ajax({
-//   type: "post",
-//   url: "url",
-//   dataType: "json",
-//   success: function (response) {
-//     outputInfoDetails=response
-//   }
-// });
-
 //предпологаемый и желаемый JSON данные в manufacter-lk/profile.json
 
 function fetchJSONFile(path, callback) {
+  //path ссыллка на ресурс получения
+  //callback что делать с полученными данными
   var httpRequest = new XMLHttpRequest();
   httpRequest.onreadystatechange = function() {
       if (httpRequest.readyState === 4) {
@@ -203,97 +195,153 @@ var globalPageSize=4
 
 //функция вывода данных
 
-function outputInfo(outpBlock, arrayData, labelSearch, textAddBut, classNexPag,searchText,lastTrig=false, selectPage=1, elStart=0 ,pageItemCount=globalPageSize) {
-if(searchText==''){ 
+function outputInfo(outpBlock, arraysData, objLabAddBut, classNexPag, collectBD,collectChange,lastTrig=false, selectPage=1, elStart=0 ,pageItemCount=globalPageSize) {
+
+  // outpBlock, блок для вывода
+  // arraysData, набор массивов для вывода
+  // objLabAddBut, объект с данными о надписи на поиске, и данных кнопок 
+  // classNexPag, класс для последующих вложений
+
+  // collectBD набор бд для запросов, 
+  // collectChange набор бд для пересылки на изменяющую страницу, 
+
+  // lastTrig=false, если последний в иерархии, то true
+  // selectPage=1, выбранная страница, как правило не меняется, но всякое может быть 
+  // elStart=0 , с какого элемента начинать вывод
+  // pageItemCount=globalPageSize кол-во выводимых элементов
+
   html='<div class="outputInf">'
-  +'<div class="details__search_wrap">'
-  +'<div class="input input--general">'
-  +'  <label for="search" class="details__search label label--light label--profile">'
-  +labelSearch
-  +'</label>'
-  +'  <input id="search" value="" type="text" class="details__search-input ">'
-  +'</div>'
-  +'  <a href="" class="details__btn btn btn--blue"> '
-  +'    <p class="text--15-25">'
-  +textAddBut
-  +'</p>'
-  +'  </a>'
-  +'</div>'
 
-  html+='<ul class="all-object">'
-  
-  for (let i = 0; i < arrayData.length; i++) {
-    const element = arrayData[i];
-    
-    html+='<div class="details__view '
-
-    if(i<elStart || i>elStart+pageItemCount) html+='d-none">'
-    else html+='">'
-
-        html+='<input type="text" value="'+element.place_display+'" class="details__view-place">'
-        +'  <details class="details">'
-        +'    <summary class="details__summary '
-    
-        if(lastTrig) html+='details__summary--last-item '
-        html+='">'
-        html+='      <p class="title--h5">'+element.name+'</p>   '
-        +'      <div class="details-button">    '
-        +'        <a class="details-button__edit btn" href="#">      '
-        +'          <img src="../img/btn_pen.svg" alt="">    '
-        +'        </a>    '
-        +'        <a class="details-button__del btn" href="#">      '
-        +'          <img src="../img/destr.svg" alt="">    '
-        +'        </a>  '
-        +'      </div>'
-        +'    </summary>'
-        if(classNexPag!=''){
-          html+='<div class="content">'
-          +'      <div class="pagin__output-info">  '
-          +'        <div class="pagin__output-info" id="view-all-'+classNexPag+'-'+element.idDB+'">  '
-          +'        </div>'
-          +'      </div>'
-          +'    </div>'
-        }
-        html+='  </details>'    
-      
-    
+    html+='<div class="details__search_wrap">'
+    +'<div class="input input--general">'
+    +'  <label for="search" class="details__search label label--light label--profile">'
+    +objLabAddBut.labelSearch
+    +'</label>'
+    +'  <input id="search" value="" type="text" class="details__search-input ">'
+    +'</div>'
+    objLabAddBut.buttons.forEach(button=>{
+      html+='  <a href="'+button.link+'" class="details__btn btn btn--blue"> '
+      +'    <p class="text--15-25">'
+      +button.text
+      +'</p>'
+      +'  </a>'
+    })
     html+='</div>'
-  }
-  html+='</ul>'
+    
+    let arrayData=[]
 
-  html+='<div class="paginationjs">'
-  +'            <div class="paginationjs-pages">'
-  +'              <ul>'
-  +'                <li class="paginationjs-prev ">'
-  +'                  <a></a>'
-  +'                </li>'
+    let trigNextClass=-1
 
-  for (let i = 1; i < Math.ceil(arrayData.length/pageItemCount); i++) {
-    html+='<li class="paginationjs-page J-paginationjs-page'
-    if (i==selectPage) {
-      html+=' active'
-    }
-    html+='" data-num="'+i+'">'
-    +'<a>'+i+'</a>'
-    +'</li>'
-  }
+    arraysData.forEach(el=>{
+      if (el!=undefined) {
+        el.forEach(e=>{
+          arrayData.push(e)
+        })
+        if(collectBD.length>1 && trigNextClass==-1){
+          trigNextClass=arrayData.length
+        }
+      }
+      
+    })
 
-  html+='                <li class="paginationjs-next ">'
-  +'                  <a></a>'
-  +'                </li>'
-  +'              </ul>'
-  +'            </div>'
-  +'          </div>'
-  html+='</div>'
-}
-  $(outpBlock).html(html)
+    if (arrayData[0]!=undefined) {
+
+        html+='<ul class="all-object">'
+
+        for (let i = 0; i < arrayData.length; i++) {
+          const element = arrayData[i];
+          
+          html+='<div class="details__view '
+    
+          if(i<elStart || i>elStart+pageItemCount) html+='d-none">'
+          else html+='">'
+    
+              html+='<input type="text" value="'+element.place_display+'" class="details__view-place">'
+              +'  <details class="details">'
+              +'    <summary class="details__summary '
+
+              if(lastTrig || i>=trigNextClass && trigNextClass!=-1) html+='details__summary--last-item '
+              html+='">'
+              html+='<p class="title--h5">'+element.name+'</p>'
+              +'<div class="details-button">    '
+              +'<a class="details-button__edit btn change_item" href="'
+              if(i<trigNextClass)
+                html+=collectChange[1]
+              else
+                html+=collectChange[0]
+              
+              html+='?name">'
+
+              +'<img src="../img/btn_pen.svg" alt="">    '
+              
+              html+='</a>    '
+              +'<a class="details-button__del btn rem_item">      '
+              +'<img src="../img/destr.svg" alt="">    '
+              +'<input type="hidden" name="'+element.name+'" value="'+element.idDB+'">'
+              if(i<trigNextClass){
+                html+='<input type="hidden" name="path_DB" value="'+collectBD[1]+'">'
+              }
+              else
+                html+='<input type="hidden" name="path_DB" value="'+collectBD[0]+'">'
+
+              html+='</a>  '
+              +'</div>'
+              +'</summary>'
+              if(classNexPag!=''){
+                html+='<div class="content">'
+                +'      <div class="pagin__output-info">  '
+                +'        <div class="pagin__output-info" id="view-all-'+classNexPag+'-'+element.idDB+'">  '
+                +'        </div>'
+                +'      </div>'
+                +'    </div>'
+              }
+              html+='  </details>'    
+            
+          
+          html+='</div>'
+        }
+  
+        html+='</ul>'
+
+        if (arrayData.length>pageItemCount) {
+          
+          html+='<div class="paginationjs">'
+          +'            <div class="paginationjs-pages">'
+          +'              <ul>'
+          +'                <li class="paginationjs-prev ">'
+          +'                  <a></a>'
+          +'                </li>'
+      
+          for (let i = 1; i < Math.ceil(arrayData.length/pageItemCount); i++) {
+            html+='<li class="paginationjs-page J-paginationjs-page'
+            if (i==selectPage) {
+              html+=' active'
+            }
+            html+='" data-num="'+i+'">'
+            +'<a>'+i+'</a>'
+            +'</li>'
+          }
+      
+          html+='                <li class="paginationjs-next ">'
+          +'                  <a></a>'
+          +'                </li>'
+          +'              </ul>'
+          +'            </div>'
+          +'          </div>'
+          html+='</div>'
+        }
+      }
+
+      $(outpBlock).html(html)
 }
 
 function changePage(params) {
 
+  //самодельная пагинация
+
+  //объекты для сортировки
   collectSort=params.data.pageSelect.parentElement.parentElement.parentElement.parentElement.children[1].children
 
-  //сортировка того, что отобразилось
   for (let i = 0; i < collectSort.length; i++) {
     const element = collectSort[i];
     //скрытие всех элементов
@@ -663,138 +711,254 @@ document.querySelectorAll('.add-info__schemes details').forEach((el) => {
 //вывод информации с помощью пагинации
 //производитель
 
-var prompt = new Promise((resolve, reject) => {
+var adressDB={
+  tabels:[
+    "link_to_brands",
+    "link_to_serie",
+    "link_to_cosmetic",
+  ]
+}
 
-  fetchJSONFile('profile.json', function(data){
-    outputInfoDetails=data
-    resolve(outputInfoDetails)
-  });
+var adressChages={
+  links:[
+    'page-brand-info.html',
+    'page-series-info.html',
+    'page-product-info.html',
+  ]
+}
 
-});
+function outputInfBrands(){
 
-prompt.then(data=>{
-
-  return new Promise((resolve, reject)=>{
-    
-    var classPg='brand'
-    outputInfo($('#view-all-item'), data.brands,'Поиск бренда', 'Добавить бренд',classPg,'' )
-    
-    params=[{
-      brands:data.brands,
-      class:classPg
-    }]
-    resolve(params)
-  })
-}).then(params=>{
-
-  return new Promise((resolve, reject)=>{
-    brandWithSer=[];
-
-    var nxtClassPg='serie'
-
-    params[0].brands.forEach(brand => {
-    
-      if (brand.series != undefined) {
-          brandWithSer.push(brand)
-      } else {
-        outputInfo($('#view-all-'+params[0].class+'-'+brand.idDB), brand.cosmetics,'Поиск  средства', 'Добавить средство','','',true  )
-      }
-      
+  var prompt = new Promise((resolve, reject) => {
+  
+    fetchJSONFile('profile.json', function(data){
+      outputInfoDetails=data
+      resolve(outputInfoDetails)
     });
-    
-    resolve({brands:brandWithSer,classPrev:params[0].class,class:nxtClassPg})
-
-  })
-}).then((brandWithSer)=>{
-
-  var outputCosmetic=[];
-
-  return new Promise((resolve, reject)=>{
-    brandWithSer.brands.forEach((brand)=>{
-
-        outputInfo($('#view-all-'+brandWithSer.classPrev+'-'+brand.idDB), brand.series,'Поиск  серии', 'Добавить серию',brandWithSer.class,'' )
-
-        outputCosmetic.push(brand.series)
-
-    })
-    resolve({series:outputCosmetic, class:brandWithSer.class})
-  })
-
-}).then((serWithClass)=>{
   
-  return new Promise((resolve, reject)=>{
-
-    outputItem=[]
-    serWithClass.series.forEach(cosmetics => {
-      cosmetics.forEach(element => {
-        outputItem.push(element)
-      });
-    })
-
-    resolve({outputItem:outputItem, class:serWithClass.class})
-  })
-})
-.then((outputInf)=>{
-
-  outputInf.outputItem.forEach(serie => {
-    outputInfo($('#view-all-'+outputInf.class+'-'+serie.idDB), serie.cosmetics,'Поиск  средства', 'Добавить средство','', '',true )
-});
-})
-.then(()=>{
-  for (let i = 0; i < $('li[class^="paginationjs"]').length; i++) {
-    const element = $('li[class^="paginationjs"]')[i];
+  });
   
-    triger=false
-    element.classList.forEach((classEl)=>{
-      if(classEl=='disabled'){
-        triger=true
-      }
-    })
-    if(!triger){
-      $(element).bind('click', {pageSelect: element}, changePage);
-      html=new DOMParser().parseFromString('<li class="paginationjs-page J-paginationjs-page disabled"><a>...</a></li>', "text/html").getElementsByTagName("li")[0]
+  prompt.then(data=>{
+  
+    return new Promise((resolve, reject)=>{
       
-
-      for (let k = 1; k < element.parentElement.children.length-1; k++) {
-        const pageSelector = element.parentElement.children[k];
+      var classPg='brand'
+  
+      outputInfo($('#view-all-item'), [data.brands],
+      {
+        labelSearch:'Поиск бренда',
+        buttons:[
+          {
+            link:'',
+            text:'Добавить бренд',
+          },
+        ]
+      }
+      ,classPg, [adressDB.tabels[0]],[adressChages.links[0]] )
+      
+      params=[{
+        brands:data.brands,
+        class:classPg
+      }]
+      resolve(params)
+    })
+  }).then(params=>{
+  
+    return new Promise((resolve, reject)=>{
+      brandWithSer=[];
+  
+      var nxtClassPg='serie'
+  
+      output: for (let k = 0; k < params[0].brands.length; k++) {
+        const brand = params[0].brands[k];
         
-        pageSelector.classList.add('d-none')
+        if(brand.series != undefined && brand.cosmetics != undefined){
+          outputInfo($('#view-all-'+params[0].class+'-'+brand.idDB), [brand.series,brand.cosmetics],
+          {
+            labelSearch:'Поиск  средства/серии',
+            buttons:[
+              {
+                link:'',
+                text:'Добавить серию',
+              },
+              {
+                link:'',
+                text:'Добавить средство',
+              },
+            ]
+          },nxtClassPg,[adressDB.tabels[1], adressDB.tabels[2] ],[adressChages.links[1], adressChages.links[2] ] ,false  )
+  
+          brand.series.forEach(serie=>{
+            outputInfo($('#view-all-'+nxtClassPg+'-'+serie.idDB), [serie.cosmetics],
+            {
+              labelSearch:'Поиск  средства',
+              buttons:[
+                {
+                  link:'',
+                  text:'Добавить средство',
+                },
+              ]
+            }
+            ,'',[adressDB.tabels[2]],[adressChages.links[2]],true )
+          })
         
-        if(!(k==1 || k==pageSelector.parentElement.children.length-2)){
+          continue output;
+        }
+  
+        if (brand.series != undefined) {
+          brandWithSer.push(brand)
+        } 
+  
+        outputInfo($('#view-all-'+params[0].class+'-'+brand.idDB), [brand.cosmetics],
+        {
+          labelSearch:'Поиск средства/серии',
+          buttons:[
+            {
+              link:'',
+              text:'Добавить серию',
+            },
+            {
+              link:'',
+              text:'Добавить средство',
+            },
+          ]
+        },'',[adressDB.tabels[2]],[adressChages.links[2]],true  )
+  
+      }
+      
+      resolve({brands:brandWithSer,classPrev:params[0].class,class:nxtClassPg})
+  
+    })
+  })
+  .then((brandWithSer)=>{
+  
+    var outputCosmetic=[];
+  
+    return new Promise((resolve, reject)=>{
+      brandWithSer.brands.forEach((brand)=>{
+  
+          outputInfo($('#view-all-'+brandWithSer.classPrev+'-'+brand.idDB), [brand.series],
+          {
+            labelSearch:'Поиск  средства/ серии',
+            buttons:[
+              {
+                link:'',
+                text:'Добавить серию',
+              },
+              {
+                link:'',
+                text:'Добавить средство',
+              },
+            ]
+          },
+          brandWithSer.class,[adressDB.tabels[1]],[adressChages.links[1]] )
+  
+          outputCosmetic.push(brand.series)
+  
+      })
+      resolve({series:outputCosmetic, class:brandWithSer.class})
+    })
+  
+  }).then((serWithClass)=>{
+    
+    return new Promise((resolve, reject)=>{
+  
+      outputItem=[]
+      serWithClass.series.forEach(cosmetics => {
+        cosmetics.forEach(element => {
+          outputItem.push(element)
+        });
+      })
+  
+      resolve({outputItem:outputItem, class:serWithClass.class})
+    })
+  })
+  .then((outputInf)=>{
+  
+    outputInf.outputItem.forEach(serie => {
+      outputInfo($('#view-all-'+outputInf.class+'-'+serie.idDB), [serie.cosmetics],
+      {
+        labelSearch:'Поиск  средства',
+        buttons:[
+          {
+            link:'',
+            text:'Добавить серии',
+          },
+          {
+            link:'',
+            text:'Добавить средство',
+          },
+        ]
+      }
+      ,'',[adressDB.tabels[2]],[adressChages.links[2]],true )
+  });
+  })
+  .then(()=>{
+    for (let i = 0; i < $('li[class^="paginationjs"]').length; i++) {
+      const element = $('li[class^="paginationjs"]')[i];
+    
+      triger=false
+      element.classList.forEach((classEl)=>{
+        if(classEl=='disabled'){
+          triger=true
+        }
+      })
+      if(!triger){
+        $(element).bind('click', {pageSelect: element}, changePage);
+        html=new DOMParser().parseFromString('<li class="paginationjs-page J-paginationjs-page disabled"><a>...</a></li>', "text/html").getElementsByTagName("li")[0]
+        
+  
+        for (let k = 1; k < element.parentElement.children.length-1; k++) {
+          const pageSelector = element.parentElement.children[k];
           
-          if(pageSelector.classList.contains('active')){
-    
-            pageSelector.classList.remove('d-none')
-    
-            if(k-1!=1){
+          pageSelector.classList.add('d-none')
+          
+          if(!(k==1 || k==pageSelector.parentElement.children.length-2)){
+            
+            if(pageSelector.classList.contains('active')){
+      
+              pageSelector.classList.remove('d-none')
+      
+              if(k-1!=1){
+                pageSelector.classList.remove('d-none')
+              }
+              if(k+1!=(pageSelector.parentElement.children.length-1)){
+                pageSelector.classList.remove('d-none')
+              }
+            }else{
+              if(pageSelector.parentElement.children[k-1].classList.contains('active') || pageSelector.parentElement.children[k+1].classList.contains('active'))
+              pageSelector.classList.remove('d-none')
+            } 
+            if(k==Math.ceil((element.parentElement.children.length-1)/2)){
               pageSelector.classList.remove('d-none')
             }
-            if(k+1!=(pageSelector.parentElement.children.length-1)){
-              pageSelector.classList.remove('d-none')
-            }
-          }else{
-            if(pageSelector.parentElement.children[k-1].classList.contains('active') || pageSelector.parentElement.children[k+1].classList.contains('active'))
-            pageSelector.classList.remove('d-none')
-          } 
-          if(k==Math.ceil((element.parentElement.children.length-1)/2)){
-            pageSelector.classList.remove('d-none')
           }
+          else{
+            pageSelector.classList.remove('d-none')
+  
+            if(pageSelector.classList.contains('active'))
+              k==1 ? element.parentElement.children[k+1].classList.remove('d-none') : element.parentElement.children[k-1].classList.remove('d-none')
+            
+          }
+  
         }
-        else{
-          pageSelector.classList.remove('d-none')
-
-          if(pageSelector.classList.contains('active'))
-            k==1 ? element.parentElement.children[k+1].classList.remove('d-none') : element.parentElement.children[k-1].classList.remove('d-none')
-          
-        }
-
       }
     }
-  }
-  
-  for(let i=0;i<$('input[id="search"]').length;i++){
-    const element = $('input[id="search"]')[i];
-    array=element.parentElement.parentElement.children[1].children
-    $(element).bind('keyup', {input: element, arraySearch:array}, search)
-  }
-})
+    
+    for(let i=0;i<$('input[id="search"]').length;i++){
+      const element = $('input[id="search"]')[i];
+      array=element.parentElement.parentElement.children[1].children
+      $(element).bind('keyup', {input: element, arraySearch:array}, search)
+    }
+  })
+}
+
+//присвоить кнопкам удаления функцию 
+function detais(){
+
+}
+
+$(document).ready(
+  outputInfBrands()
+)
+
