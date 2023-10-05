@@ -15,10 +15,11 @@
     text-transform: uppercase 
     transition: background .3s
     &:hover
-        background: $pre-color
+        background: $pre-color  
+        @media screen and (max-width: $first-breack-point) 
+            background: none
     &.active
-        background: $pre-color
-    
+        background: $pre-color  
     @media screen and (max-width: $first-breack-point) 
         background: none
 

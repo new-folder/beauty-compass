@@ -16,6 +16,11 @@
 .navbar-expand-xxl .navbar-nav .nav-link:hover {
   background: #E31E24;
 }
+@media screen and (max-width: 1400px) {
+  .navbar-expand-xxl .navbar-nav .nav-link:hover {
+    background: none;
+  }
+}
 .navbar-expand-xxl .navbar-nav .nav-link.active {
   background: #E31E24;
 }
