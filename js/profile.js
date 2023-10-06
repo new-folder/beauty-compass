@@ -785,7 +785,7 @@ function outputInfBrands(){
         labelSearch:'Поиск бренда',
         buttons:[
           {
-            link:'',
+            link:adressChages.links[0],
             text:'Добавить бренд',
           },
         ]
@@ -814,11 +814,11 @@ function outputInfBrands(){
             labelSearch:'Поиск  средства/серии',
             buttons:[
               {
-                link:'',
+                link:adressChages.links[1],
                 text:'Добавить серию',
               },
               {
-                link:'',
+                link:adressChages.links[2],
                 text:'Добавить средство',
               },
             ]
@@ -830,7 +830,7 @@ function outputInfBrands(){
               labelSearch:'Поиск  средства',
               buttons:[
                 {
-                  link:'',
+                  link:adressChages.links[2],
                   text:'Добавить средство',
                 },
               ]
@@ -850,11 +850,11 @@ function outputInfBrands(){
           labelSearch:'Поиск средства/серии',
           buttons:[
             {
-              link:'',
+              link:adressChages.links[1],
               text:'Добавить серию',
             },
             {
-              link:'',
+              link:adressChages.links[2],
               text:'Добавить средство',
             },
           ]
@@ -878,11 +878,11 @@ function outputInfBrands(){
             labelSearch:'Поиск  средства/ серии',
             buttons:[
               {
-                link:'',
+                link:adressChages.links[1],
                 text:'Добавить серию',
               },
               {
-                link:'',
+                link:adressChages.links[2],
                 text:'Добавить средство',
               },
             ]
@@ -917,7 +917,7 @@ function outputInfBrands(){
         labelSearch:'Поиск  средства',
         buttons:[
           {
-            link:'',
+            link:adressChages.links[2],
             text:'Добавить средство',
           },
         ]

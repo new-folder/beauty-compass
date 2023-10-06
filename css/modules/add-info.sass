@@ -1,8 +1,5 @@
 
 .add-info
-  a
-    &:hover
-      color: inherit
   &__wrapper
     border-radius: 10px
     background: $white-color
@@ -32,4 +29,11 @@
           flex-wrap: nowrap
           align-items: center
         &__title
+  &__button
+    svg
+      height: 24px
+      @media screen and (max-width: $first-breack-point)
+        height: 15px
+
+
 

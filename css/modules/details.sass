@@ -32,9 +32,10 @@ summary::before
     background-size: 80%
 
 .details[open=""]
-    width: 80%
-    .details__summary
-        width: 100%
+    @media screen and (max-width: $second-breack-point)
+        width: 80%
+        .details__summary
+            width: 100%
 .details
     width: 90%
     &__view
@@ -110,7 +111,6 @@ summary::before
                 flex-direction: column
             .input
                 width: 100%
-                margin-right: 18px
                 margin-bottom: 10px
                 @media screen and (max-width: $second-breack-point)
                     width: 100% !important
@@ -119,6 +119,7 @@ summary::before
 
 
     &__btn
+        transition: 0.3s
         height: 100%
         margin: 0 10px
         @media screen and (max-width: $second-breack-point)
