@@ -7,7 +7,7 @@
 	--ck-sample-sidebar-width: 350px
 	--ck-sample-editor-min-height: 400px
 	--ck-sample-editor-z-index: 10
-	--ck-spacing-large: calc(var(--ck-spacing-unit)*1)
+
 
 
 /* --------- EDITOR STYLES  ---------------------------------------------------------------------------------------- */
@@ -392,6 +392,8 @@ body[data-revision-history='true'] .ck.ck-pagination-view-line::after
 
 	@media screen and ( max-width: 1400px ) 
 		font-size: 12px !important
+	@media screen and ( max-width: 768px ) 
+		min-height: 75px !important
 
 .ck.ck-sticky-panel__content.ck-sticky-panel__content_sticky
 	border: none !important

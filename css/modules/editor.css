@@ -7,7 +7,6 @@
   --ck-sample-sidebar-width: 350px;
   --ck-sample-editor-min-height: 400px;
   --ck-sample-editor-z-index: 10;
-  --ck-spacing-large: calc(var(--ck-spacing-unit)*1);
 }
 
 /* --------- EDITOR STYLES  ---------------------------------------------------------------------------------------- */
@@ -392,6 +391,12 @@ body[data-revision-history=true] .ck.ck-pagination-view-line::after {
   .ck.ck-content.ck-editor__editable,
   .ck.editor__editable[role=textbox] {
     font-size: 12px !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .ck.ck-content.ck-editor__editable,
+  .ck.editor__editable[role=textbox] {
+    min-height: 75px !important;
   }
 }
 
