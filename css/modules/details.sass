@@ -33,7 +33,7 @@ summary::before
 
 .details[open=""]
     @media screen and (max-width: $second-breack-point)
-        width: 80%
+        width: 83%
         .details__summary
             width: 100%
 .details
@@ -55,7 +55,10 @@ summary::before
         height: 40px
         &--last-item
             &::before
-                background-image: none
+                display: none
+            p
+                @media screen and (max-width: $second-breack-point)
+                    width:  30% !important
         p
             width: 20%
             text-overflow: ellipsis !important
@@ -122,6 +125,7 @@ summary::before
         transition: 0.3s
         height: 100%
         margin: 0 10px
+        padding: 5px 20px
         @media screen and (max-width: $second-breack-point)
             width: 100%
             margin: 10px 0
@@ -135,7 +139,7 @@ summary::before
 
         @media screen and (max-width: $second-breack-point)
             width: 100%
-            margin-left: -25%
+            margin-left: -18%
             .pagin__output-info
                 width: 110%
 
