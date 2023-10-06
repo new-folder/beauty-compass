@@ -36,9 +36,23 @@
         color: $pre-color
 
     &__settng
+        p
+            @media screen and (max-width: $first-breack-point)
+                margin: 0
+                font-weight: 600
+                font-size: 12px
+                line-height: 0
+            @media screen and (max-width: $second-breack-point)
+                display: none
+        
         margin-bottom: 16px
+        margin-right: 0
         &:before
             background-image: url("../img/setting.svg") !important
+            @media screen and (max-width: $second-breack-point)
+                margin-right: 0 !important
+        @media screen and (max-width: $first-breack-point)
+            margin-bottom: 0
 .dls
     display: flex
     width: 100% 
