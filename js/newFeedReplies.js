@@ -24,23 +24,6 @@ function createReplies(parent) {
         <form action="" method="post">
             <textarea name="content" class="editor" placeholder="Оставить комментарий"></textarea>
             <input type="submit" value="Отправить комментарий" class="btn btn--base mt-3">
-
-            <div class="input image input--image profile__products-image">
-            <div class="profile__image-file_box profile__products-image_item">
-                <img
-                    src="../img/gallery-add.svg" alt="logo"
-                    class="profile__image-file profile__image-file_token profile__image-token profile__products-image_token"
-                    data-src="../img/gallery-add.svg"
-                />
-                <img
-                    class="profile__image-file profile__image-file_preview"
-                />
-                <input
-                    type="file"
-                    class="file-input profile__file-input"
-                />
-            </div>
-          </div>
         </form>
     `;
 
