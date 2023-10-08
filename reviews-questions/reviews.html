@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
   <head>
@@ -131,14 +132,24 @@
             <div class="col-12">
               <a
                 href="#"
-                class="questions__heading-link title--sub_blue d-flex justify-content-center align-items-center text-center"
+                class="questions__heading-link title__under d-flex justify-content-center align-items-center text-center"
               >
                 Мультикислотная сыворотка от акне
               </a>
             </div>
           </div>
           <div class="offset-xxl-1 col-xxl-10">
-            <h3 class="title--h4 mb-5">Отзывы покупателей (23)</h3>
+            <button
+              type="button"
+              class="btn-string mb-4"
+              data-bs-target="#openQuestion"
+              data-bs-toggle="modal"
+              data-bs-whatever="Icon Skin Stop Acne Сыворотка Multi-Acid Serum"
+            >
+              <img src="../img/pen-notice.svg" class="me-1" alt="" />Отправить
+              отзыв
+            </button>
+            <h3 class="title--h4 mb-3">Отзывы покупателей (23)</h3>
             <div class="feed d-flex flex-column mb-5">
               <div class="feed__row">
                 <div class="feed__user">
@@ -157,7 +168,7 @@
                     </div>
                   </div>
                 </div>
-                <p class="feed__text mb-4">
+                <p class="feed__text mb-3">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -170,23 +181,51 @@
                   ea?
                 </p>
 
-                <div class="feed__images">
-                  <figure class="feed__image">
-                    <img src="../img/image 224.jpg" alt="review-photo" />
-                  </figure>
-                  <figure class="feed__image">
-                    <img src="../img/image 196.png" alt="review-photo" />
-                  </figure>
-                  <figure class="feed__image">
-                    <img src="../img/image 224.jpg" alt="review-photo" />
-                  </figure>
-                  <figure class="feed__image">
-                    <img src="../img/image 196.png" alt="review-photo" />
-                  </figure>
-                  <figure class="feed__image">
-                    <img src="../img/image 224.jpg" alt="review-photo" />
-                  </figure>
-                </div>
+                <section
+                  id="feed-image-slider"
+                  class="feed__splide splide mb-3"
+                  aria-label="Feed slides"
+                >
+                  <div class="splide__track">
+                    <div class="splide__list">
+                      <div class="splide__slide">
+                        <img
+                          src="../img/image 224.jpg"
+                          alt="review-photo"
+                          data-modal-image
+                        />
+                      </div>
+                      <div class="splide__slide">
+                        <img
+                          src="../img/image 196.png"
+                          alt="review-photo"
+                          data-modal-image
+                        />
+                      </div>
+                      <div class="splide__slide">
+                        <img
+                          src="../img/image 192.png"
+                          alt="review-photo"
+                          data-modal-image
+                        />
+                      </div>
+                      <div class="splide__slide">
+                        <img
+                          src="../img/image 193.png"
+                          alt="review-photo"
+                          data-modal-image
+                        />
+                      </div>
+                      <div class="splide__slide">
+                        <img
+                          src="../img/image 196.png"
+                          alt="review-photo"
+                          data-modal-image
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </section>
 
                 <div class="feed__user">
                   <a href="#" class="feed__avatar">
@@ -455,14 +494,30 @@
                   ea?
                 </p>
 
-                <div class="feed__images">
-                  <figure class="feed__image">
-                    <img src="../img/image 224.jpg" alt="review-photo" />
-                  </figure>
-                  <figure class="feed__image">
-                    <img src="../img/image 196.png" alt="review-photo" />
-                  </figure>
-                </div>
+                <section
+                  id="feed-image-slider1"
+                  class="feed__splide splide mb-3"
+                  aria-label="Feed slides"
+                >
+                  <div class="splide__track">
+                    <div class="splide__list">
+                      <div class="splide__slide">
+                        <img
+                          src="../img/image 224.jpg"
+                          alt="review-photo"
+                          data-modal-image
+                        />
+                      </div>
+                      <div class="splide__slide">
+                        <img
+                          src="../img/image 196.png"
+                          alt="review-photo"
+                          data-modal-image
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </section>
 
                 <div class="feed__user">
                   <a href="#" class="feed__avatar">
@@ -944,6 +999,231 @@
         </div>
       </div>
     </div>
+
+    <!-- Оставить отзыв -->
+    <div
+      class="modal fade"
+      id="openQuestion"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="openReviewLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-lg"
+        role="document"
+        style="transform: translate(0) !important"
+      >
+        <div class="modal-content leave-feed__modal-content p-0 p-xxl-4">
+          <div class="row modal-header">
+            <h5 class="col-12 leave-feed__title text-center text-xxl-start">
+              Отзыв о средстве
+            </h5>
+            <div
+              class="col-12 modal-name leave-feed__name text-center text-xxl-start"
+              id="openReviewLabel"
+            ></div>
+          </div>
+          <div class="modal-body">
+            <div class="row mb-4">
+              <div class="text--15-30 text-start col-6">Оцените средство</div>
+              <div class="col-6">
+                <div class="rating rating--xl rating--set float-end">
+                  <div class="rating__body">
+                    <div class="rating__active"></div>
+                    <div class="rating__items">
+                      <input
+                        type="radio"
+                        class="rating__item"
+                        value="1"
+                        name="rating"
+                      />
+                      <input
+                        type="radio"
+                        class="rating__item"
+                        value="2"
+                        name="rating"
+                      />
+                      <input
+                        type="radio"
+                        class="rating__item"
+                        value="3"
+                        name="rating"
+                      />
+                      <input
+                        type="radio"
+                        class="rating__item"
+                        value="4"
+                        name="rating"
+                      />
+                      <input
+                        type="radio"
+                        class="rating__item"
+                        value="5"
+                        name="rating"
+                      />
+                    </div>
+                  </div>
+                  <div class="rating__value" style="display: none">0</div>
+                  <!--Пока значение хранится здесь-->
+                </div>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="text--15-30 text-start col-12 mb-3">
+                Расскажите о средстве
+              </div>
+              <div
+                class="col-12 position-relative leave-feed__textarea input--dark"
+              >
+                <textarea
+                  class="form-control"
+                  id="feedFormControlTextarea"
+                  maxlength="1400"
+                ></textarea>
+                <div class="leave-feed__count">
+                  <span class="leave-feed__num">0</span>
+                  <span class="leave-feed__maximum">/ 1400</span>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="text--15-30 text-start col-12 mb-3">
+                Загрузите до 5 фотографий
+              </div>
+              <div class="col-3 col-xxl-4">
+                <div
+                  class="input input--modal input--image profile__input profile__image"
+                  type="button"
+                >
+                  <img
+                    src="../img/gallery-add.svg"
+                    alt="add photos"
+                    class="position-absolute top-50 start-50 translate-middle"
+                  />
+                  <input
+                    type="file"
+                    name="brand__file-input"
+                    id="img-multiple"
+                    class="file-input profile__file-input"
+                    accept="image/png, image/jpg"
+                    multiple
+                  />
+                </div>
+                <div class="leave-feed__img-list"></div>
+              </div>
+              <div
+                class="col-9 col-xxl-8 d-flex justify-content-center flex-column"
+              >
+                <p class="mb-1 leave-feed__comment">
+                  Нажмите на область с иконкой
+                </p>
+                <p class="leave-feed__comment leave-feed__comment--light mb-1">
+                  Фото до 10 МБ. Формат JPG, JPEG, BMP, GIF
+                </p>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div
+                class="col-12 col-md-10 d-flex justify-content-start justify-content-md-around flex-column flex-md-row flex-column-reverse"
+              >
+                <button
+                  type="button"
+                  class="btn-string pre-color"
+                  data-bs-dismiss="modal"
+                >
+                  <img
+                    src="../img/cansel-icon.svg"
+                    class="me-1"
+                    alt=""
+                  />Отменить
+                </button>
+                <button type="button" class="btn-string mb-3 mb-md-0">
+                  <img
+                    src="../img/pen-notice.svg"
+                    class="me-1"
+                    alt=""
+                  />Отправить отзыв
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="imageModal" class="image-modal">
+      <span class="image-modal__close">&times;</span>
+      <img class="image-modal__content" id="img01" />
+    </div>
+
+    <script src="../js/splide.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
-  </body>
+    <script src="../js/image-modal.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        Splide.defaults = {
+          perPage: 5,
+          gap: "1.5rem",
+          height: "219px",
+          pagination: false,
+          arrows: false,
+          breakpoints: {
+            1400: {
+              perPage: 4,
+              gap: "1rem",
+              height: "179px",
+              padding: { right: "1.5rem" },
+            },
+            768: {
+              perPage: 3,
+              gap: ".5rem",
+              height: "108px",
+              padding: { right: "1rem" },
+            },
+          },
+        };
+        new Splide("#feed-image-slider").mount();
+        new Splide("#feed-image-slider1").mount();
+      });
+    </script>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
 </html>
