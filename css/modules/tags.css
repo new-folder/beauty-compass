@@ -79,7 +79,6 @@
   box-sizing: border-box;
 }
 .tags__option {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   padding: 12px 20px;
@@ -193,7 +192,6 @@
 }
 
 .select-assignment__options .option {
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   padding: 12px 20px;
@@ -211,4 +209,4 @@
 }
 .select-assignment__options .option.active:active {
   color: #E31E24;
-}
+}/*# sourceMappingURL=tags.css.map */
