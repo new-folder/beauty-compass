@@ -1837,8 +1837,7 @@ textarea {
 .reviews__photo-link img {
   height: 100%;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .reviews__photo-link:hover {
   opacity: 0.7;
@@ -1866,8 +1865,7 @@ textarea {
   border-radius: 15px;
   height: 100%;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .reviews__splide-arrow {
   position: absolute;
@@ -4251,8 +4249,18 @@ textarea {
   width: 54px;
   height: auto;
 }
+.profile__label-image svg {
+  position: absolute;
+  top: -20px;
+  right: 5px;
+}
 @media screen and (min-width: 1400px) {
-  .profile__products-assignment, .profile__products-format, .profile__products-region, .profile__products-assignment2, .profile__products_price-category, .profile__products_age-recommendations, .profile__products_key-action, .profile__products-gender {
+  .profile__label-image svg {
+    top: -34px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .profile__label-assignment, .profile__label-format, .profile__label-region, .profile__label-assignment2, .profile__label_price-category, .profile__label_age-recommendations, .profile__label_key-action, .profile__label-gender {
     width: 31%;
   }
 }
