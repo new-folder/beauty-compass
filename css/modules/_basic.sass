@@ -63,9 +63,14 @@ textarea
         margin-bottom: 58px
 
 .question
+
+    position: absolute
+    top: -20px
+    right: 5px        
     width: 15px
     height: 15px
     @media screen and (min-width: $first-breack-point)
+        top: -34px
         width: 30px
         height: 30px
     &__cloud
@@ -109,10 +114,10 @@ textarea
     z-index: 5
 
 .preload-img
-    width: 100%
-    height: 100%
-    min-width: 100%
-    object-fit: fill
+    width: 100% !important
+    height: 100% !important
+    min-width: 100% !important
+    object-fit: fill !important
     border-radius: $border-radius
 
 
@@ -659,10 +664,11 @@ main
     &__custom
         position: relative
     &__header
+        width: 100%
         display: flex
         align-items: center
-        justify-content: space-between
-        cursor: pointer
+        justify-content: space-between 
+        cursor: pointer 
     &__options
         display: none
         position: absolute
@@ -741,8 +747,16 @@ main
         line-height: normal
         &:focus-visible
             outline: 1px solid $main-color
-            @media all and (min-width: $first-breack-point)
-                font-size: 18px 
+        @media all and (min-width: $first-breack-point)
+            font-size: 18px 
+    &--arrow
+        appearance: none
+        background: #fff
+        background-image: url(../img/dropdown-arr.svg) !important
+        background-repeat: no-repeat !important
+        background-position: calc(100% - 15px) center !important
+        background-size: 14px !important
+        cursor: pointer
     &--image
         border-radius: 15px
         box-shadow: $box-shadow-regular
@@ -2035,6 +2049,38 @@ main
             cursor: pointer
             font-size: 16px
             font-weight: 600
+
+.select-custom-item
+    width: 31%
+    @media screen and (max-width: $first-breack-point)
+        width: 100%
+    &__option
+        label
+            position: relative
+            width: max-content
+            padding: 12px 20px
+            cursor: pointer
+            transition: 0.3s
+
+        input:checked ~ label
+            color: #494949
+            background: #E8E8E8
+            border-radius: 15px
+
+        input
+            position: absolute
+            top: 0
+            left: 0
+            width: 0px
+      
+    .dropdown-menu
+        padding: 10px
+        min-width: 700px
+        border: none
+        &.show
+            display: flex
+        @media screen and (max-width: $first-breack-point)
+            min-width: 100%
 
 .products
     display: flex

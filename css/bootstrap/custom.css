@@ -117,6 +117,7 @@
   overflow: hidden;
 }
 .carousel--product .carousel-inner {
+  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
   overflow: initial;
@@ -160,6 +161,7 @@
 }
 
 .modal-dialog--img {
+  max-width: -webkit-max-content !important;
   max-width: -moz-max-content !important;
   max-width: max-content !important;
   padding: 0 !important;
@@ -298,4 +300,4 @@
 
 .page-item.disabled .page-link {
   color: #D9D9D9;
-}/*# sourceMappingURL=custom.css.map */
+}
