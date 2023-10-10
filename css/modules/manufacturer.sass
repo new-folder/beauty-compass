@@ -313,8 +313,48 @@
   @media screen and (max-width: $first-breack-point)
     margin-bottom: 75px
 
-
-
-
-
-
+.item
+  margin-top: 30px
+  &__inside
+    display: grid
+    grid-template: repeat(6, 60px) / ( 250px 1fr 500px)
+  &__image-view
+    grid-column: 1 / 2
+    grid-row: 1 / 5
+  &__title
+    grid-column: 2 / 3
+    grid-row: 1/3
+    p
+      height: 50%
+      text-overflow: ellipsis
+      overflow: hidden
+      text-align: start
+      white-space: nowrap
+      width: 50%
+  &__rating-value
+    grid-column: 2 / 3
+    grid-row: 3
+    &::before
+      width: 200px
+      height: auto
+      aspect-ratio: 1/1
+    .rating__active
+      width: 100%
+      &::before
+        width: 200px
+        height: auto
+        aspect-ratio: 1/1
+  &__statistic-number
+    grid-column: 2 / 3
+    grid-row: 4
+    &__element
+      margin-right: 20px  
+      img
+        height: 37px
+        aspect-ratio: 1/1
+      span
+        &:last-child
+          color: $dark-semi-light
+  &__btn
+    grid-column: 1 / 3
+    grid-row: 5

@@ -189,17 +189,61 @@
         <div class="output__statistic-wrap">
             <div class="container container--bc">
                 <div class="col-xxl-10 offset-xxl-1">
-                    <div class="item d-flex justify-content-start align-items-center">
+                    <div class="item item__inside">
                         <div class="item__image-view">
-                            <img src="" alt="Косметика №1">
+                            <img src="../img/cream.jpg" alt="Косметика №1">
                         </div>
-                        <div class="item__info-view w-50">
-                            <div class="text--15-24">
+                        <div class="item__title">
+                            <p class="text--15-30">
                                 Название товара очень и очень большое для проверки значений
+                            </p>
+                            <p class="text--15-24">
+                                Тоже название но другого цвета и оно гипер большое для такого макета чтоб его сюда поместить
+                            </p>
+                        </div>
+                        <div class="item__rating-value rating__body">
+                            <div class="rating__active" style="width: 92%;"></div>
+                        </div>
+                        <div class="item__statistic-number d-flex align-items-center">
+                            <div class="item__statistic-number__element">
+                                <img src="../img/favorite-heart.svg" alt="Добавленией в избранное">
+                                <span>number</span>
                             </div>
-                            
+                            <div class="item__statistic-number__element">
+                                <img src="../img/like-tag.svg" alt="Поставили нравиться">
+                                <span>number</span>
+                            </div>
+                            <div class="item__statistic-number__element">
+                                <img src="../img/message-question.svg" alt="Заданные вопросы">
+                                <span>number</span>
+                            </div>
+                            <div class="item__statistic-number__element">
+                                <img src="../img/gray_eye.svg" alt="Показатель просмотров">
+                                <span>number</span>
+                            </div>
+                        </div>
+                        <div class="item__btn">
+                            <a href="#" class="btn">
+                                <p class="text--15-30">
+                                    Название кнопки магазина 115
+                                </p>
+                            </a>
+                            <a href="#" class="btn">
+                                <p class="text--15-30">
+                                    Название кнопки 2 20
+                                </p>
+                            </a>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="item__chart">
+                <div class="open_chart">
+                    <p class="text--15-30" >График</p>
+                    <input type="hidden" name="id_item" value="1">
+                </div>
+                <div class="output_chart">
+                    <canvas></canvas>
                 </div>
             </div>
         </div>
@@ -594,13 +638,6 @@
 </div>
 
 <script src="../js/bootstrap.bundle.min.js"></script>
-<script src="../js/select-custom.js"></script>
-<script src="../js/shops.js"></script>
-<script src="../js/page-product-info__add-pic.js"></script>
-<script src="../js/tips.js"></script>
-<script src="../js/select-tags-custom.js"></script>
-<script src="../js/handleFileSelected.js"></script>
-
 
 </body>
 </html>
