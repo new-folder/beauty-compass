@@ -321,6 +321,9 @@
   &__image-view
     grid-column: 1 / 2
     grid-row: 1 / 5
+    img
+      height: 100%
+    
   &__title
     grid-column: 2 / 3
     grid-row: 1/3
@@ -356,5 +359,54 @@
         &:last-child
           color: $dark-semi-light
   &__btn
+
+    margin-top: 18px
+
+    width: 60%
+
     grid-column: 1 / 3
     grid-row: 5
+
+    display: flex
+
+    overflow-x: scroll
+    overflow-y: hidden
+
+    height: fit-content
+
+    padding-bottom: 15px
+
+    scrollbar-width: thin
+    scrollbar-color: $main-color transparent
+
+    &::-webkit-scrollbar 
+      width: 5px
+      background-color: $white-color
+      margin-top: 5px
+    
+    &::-webkit-scrollbar-thumb 
+      border-radius: 10px
+      -webkit-box-shadow: $box-shadow-sm
+      background-color: $main-color
+      
+
+    &::-webkit-scrollbar-track 
+      color: $main-color
+      -webkit-box-shadow: $box-shadow-sm
+      border-radius: $border-radius
+      background-color: $white-color
+
+    transition: color 0.3s
+    a
+      flex-shrink: 0
+      background: $main-color
+      margin-right: 30px
+      color: $sub-color
+      &:last-child
+        margin: 0
+      &:hover
+        color: $sub-color !important
+        background: $pre-color !important
+      &:visited
+        color: $sub-color
+        background: $main-color
