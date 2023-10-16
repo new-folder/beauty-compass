@@ -191,6 +191,7 @@
       background: #FFF
       box-shadow: 0 4px 20px 0 rgba(14, 14, 14, 0.07)
       @media screen and (min-width: $second-breack-point)
+        //width: 335px
         width: 100%
         height: 200px
       @media screen and (min-width: $first-breack-point)
@@ -314,6 +315,14 @@
 
 .item
   margin-top: 30px
+  &__chart
+    background: none
+    color: $dark-color
+    transition: .5s
+    &-open
+      background: linear-gradient(144.75deg, $main-color 31.52%, #194071 72.37%) 
+      color: $sub-color
+
   &__inside
     display: grid
     grid-template: repeat(6, 60px) / ( 250px 1fr 500px)
@@ -360,21 +369,14 @@
   &__btn
 
     margin-top: 18px
-
     width: 60%
-
     grid-column: 1 / 3
     grid-row: 5
-
     display: flex
-
     overflow-x: scroll
     overflow-y: hidden
-
     height: fit-content
-
     padding-bottom: 15px
-
     scrollbar-width: thin
     scrollbar-color: $main-color transparent
 
@@ -388,7 +390,6 @@
       -webkit-box-shadow: $box-shadow-sm
       background-color: $main-color
       
-
     &::-webkit-scrollbar-track 
       color: $main-color
       -webkit-box-shadow: $box-shadow-sm
@@ -411,7 +412,6 @@
         background: $main-color
 
 .open_chart
-  cursor: pointer
   p
     margin: auto
     width: fit-content
@@ -441,8 +441,3 @@
   &__statistic
     #rating,#view,#visit,#favarite,#new,#default
       cursor: pointer
-    .nav-link
-      background: $main-color !important
-      @media screen and (max-width: $first-breack-point)
-        margin-bottom: 20px
-      

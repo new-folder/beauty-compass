@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Статистика средств</title>
     <link rel="stylesheet" href="../css/style.css" />
+
+    <script src="../js/jq.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-xxl top-bar">
@@ -46,7 +49,7 @@
 
             <ul class="navbar-nav col-12 top-bar__list">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">О нас</a>
+                    <a class="nav-link" aria-current="page" href="#">О нас</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Подбор косметики</a>
@@ -157,127 +160,46 @@
                 <ul class="navbar-nav col-12 top-bar__list">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" 
-                        {# href="?ratingUp=true" #}
+                        id="rating"
                         >По рейтингу</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" 
-                        {# href="?viewUp=true" #}
+                        id="view"
                         >По просмотрам</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" 
-                        {# href="?transitUp=true" #}
+                        id="visit"
                         >По переходам</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" 
-                        {# href="?favouritUp=true" #}
+                        id="favarite"
                         >По добавлению в избранное</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" 
-                        {# href="?newUp=true" #}
+                        id="new"
                         >По новизне</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" 
+                        id="default"
+                        >По умолчанию</a>
                     </li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <section class="output__statistic-items">
-        <div class="output__statistic-wrap">
-            <div class="container container--bc">
-                <div class="col-xxl-10 offset-xxl-1">
-                    <div class="item item__inside">
-                        <div class="item__image-view">
-                            <img src="../img/cream.jpg" alt="Косметика №1">
-                        </div>
-                        <div class="item__title">
-                            <p class="text--15-30">
-                                Название товара очень и очень большое для проверки значений
-                            </p>
-                            <p class="text--15-24">
-                                Тоже название но другого цвета и оно гипер большое для такого макета чтоб его сюда поместить
-                            </p>
-                        </div>
-                        <div class="item__rating-value rating__body">
-                            <div class="rating__active" style="width: 92%;"></div>
-                        </div>
-                        <div class="item__statistic-number d-flex align-items-center">
-                            <div class="item__statistic-number__element">
-                                <img src="../img/favorite-heart.svg" alt="Добавленией в избранное">
-                                <span>number</span>
-                            </div>
-                            <div class="item__statistic-number__element">
-                                <img src="../img/like-tag.svg" alt="Поставили нравиться">
-                                <span>number</span>
-                            </div>
-                            <div class="item__statistic-number__element">
-                                <img src="../img/message-question.svg" alt="Заданные вопросы">
-                                <span>number</span>
-                            </div>
-                            <div class="item__statistic-number__element">
-                                <img src="../img/gray_eye.svg" alt="Показатель просмотров">
-                                <span>number</span>
-                            </div>
-                        </div>
-                        <div class="item__btn">
-                            <a href="#" class="btn">
-                                <p class="text--12-18">
-                                    Название кнопки магазина 115
-                                </p>
-                            </a>
-                            <a href="#" class="btn">
-                                <p class="text--12-18">
-                                    Название кнопки 2 20
-                                </p>
-                            </a>
-                            <a href="#" class="btn">
-                                <p class="text--12-18">
-                                    Название кнопки магазина 115
-                                </p>
-                            </a>
-                            <a href="#" class="btn">
-                                <p class="text--12-18">
-                                    Название кнопки 2 20
-                                </p>
-                            </a>
-                            <a href="#" class="btn">
-                                <p class="text--12-18">
-                                    Название кнопки магазина 115
-                                </p>
-                            </a>
-                            <a href="#" class="btn">
-                                <p class="text--12-18">
-                                    Название кнопки 2 20
-                                </p>
-                            </a>
-                            <a href="#" class="btn">
-                                <p class="text--12-18">
-                                    Название кнопки магазина 115
-                                </p>
-                            </a>
-                            <a href="#" class="btn">
-                                <p class="text--12-18">
-                                    Название кнопки 2 20
-                                </p>
-                            </a>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item__chart">
-                <div class="open_chart">
-                    <p class="text--15-30" >График</p>
-                    <input type="hidden" name="id_item" value="1">
-                </div>
-                <div class="output_chart">
-                    <canvas></canvas>
-                </div>
-            </div>
+    <section class="pagin output__statistic-items">
+    <div class="pagin__output-info">
+        <p></p>
+        <div class="pagin__output-info" id="viewCosmeticChart">
         </div>
+    </div>
+
     </section>
 </main>
 
@@ -669,6 +591,8 @@
 </div>
 
 <script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../js/pogination.js"></script>
 
+<script type="module" src="../js/manufacter_chart.js"></script>
 </body>
 </html>
