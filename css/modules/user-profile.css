@@ -58,6 +58,7 @@
   bottom: -50px;
   left: 0;
   display: none;
+  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   padding: 10px;
@@ -87,8 +88,7 @@
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .user-profile__details {
   padding: 10px 30px;
@@ -116,4 +116,4 @@
 }
 .user-profile__details__body {
   padding: 20px 0;
-}/*# sourceMappingURL=user-profile.css.map */
+}
