@@ -65,6 +65,9 @@ function templatingItem(data) {
         html+='    <div class="col-xxl-10 offset-xxl-1">'
         html+='        <div class="open_chart">'
         html+='            <p class="text--15-30" >График</p>'
+        html+='<svg viewBox="0 0 15 7"  >'
+        html+='<path d="M14.1304 0.80744C14.1304 0.957419 14.0734 1.1074 13.9511 1.2258L8.63719 6.37246C7.77327 7.20918 6.35513 7.20918 5.49121 6.37246L0.177267 1.2258C-0.059089 0.996887 -0.059089 0.617993 0.177267 0.389077C0.413623 0.160161 0.804834 0.160161 1.04119 0.389077L6.35513 5.53573C6.74634 5.91462 7.38206 5.91462 7.77327 5.53573L13.0872 0.389077C13.3236 0.160161 13.7148 0.160161 13.9511 0.389077C14.0652 0.507482 14.1304 0.657461 14.1304 0.80744Z" fill="#1560BD"/>'
+        html+='</svg>'
         html+='            <input type="hidden" name="id_item" value="'+element.id+'">'
         html+='        </div>'
         html+='        <div class="chart output_chart_id_item">'
@@ -149,33 +152,23 @@ function viewsItems(linkToBD, sort='') {
                 pageSize: 5,
                 pageNumber: 1,
                 pageRange: 1,
-                formatGoInput: 'go to <%= input %> st/rd/th',
                 callback: function(item, pagination) {
                     var html = templatingItem(item);
                     $('#viewCosmeticChart').prev().html(html);
-                    
+
                     $(".open_chart").click(function (elem) { 
 
                         $(elem.currentTarget.parentElement.parentElement.parentElement).toggleClass("item__chart-open");
 
                         $(elem.currentTarget.nextElementSibling).toggleClass("chart-open")
 
+                        let idElem=elem.currentTarget.children[2].value
 
-                        let idElem=elem.currentTarget.children[1].value
+                        console.log(idElem);
 
                         let charts = item[idElem].chart
                         
                         let canvas = document.createElement('canvas')
-
-                        var ctx = canvas.getContext('2d')
-
-                        const gradient = ctx.createLinearGradient(20, 0, 220, 0);
-
-                        // Add three color stops
-                        gradient.addColorStop(0, "green");
-                        gradient.addColorStop(0.5, "cyan");
-                        gradient.addColorStop(1, "green");
-
 
                         let dataOutpChart={
                             labels:charts[0].data.map(el=>el.x),
