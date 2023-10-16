@@ -191,7 +191,6 @@
       background: #FFF
       box-shadow: 0 4px 20px 0 rgba(14, 14, 14, 0.07)
       @media screen and (min-width: $second-breack-point)
-        //width: 335px
         width: 100%
         height: 200px
       @media screen and (min-width: $first-breack-point)
@@ -410,3 +409,40 @@
       &:visited
         color: $sub-color
         background: $main-color
+
+.open_chart
+  cursor: pointer
+  p
+    margin: auto
+    width: fit-content
+    &::before
+      width: 20px
+      height: 20px
+      background: url('../img/dropdown-arr.svg')
+.chart
+  transition: .5s
+  overflow: hidden
+  height: 0
+  margin-bottom: 30px
+  canvas
+    width: 100% !important
+    height: fit-content !important
+    box-shadow: $box-shadow-sm
+
+  &-open
+    height: fit-content !important
+
+.output__statistic-items
+  margin-bottom: 30px
+  ul
+    list-style: none
+
+.products
+  &__statistic
+    #rating,#view,#visit,#favarite,#new,#default
+      cursor: pointer
+    .nav-link
+      background: $main-color !important
+      @media screen and (max-width: $first-breack-point)
+        margin-bottom: 20px
+      
