@@ -3,7 +3,8 @@ function newFeedReplies() {
     const feeds = document.querySelectorAll('.feed')
 
     feeds.forEach( el => { 
-        el.querySelector('.js-newAnswerBtn').addEventListener('click', function(event) { 
+        const newRepliesBtn = el.querySelector('.js-newAnswerBtn')
+        newRepliesBtn?.addEventListener('click', function(event) { 
 
             event.preventDefault()
             this.classList.add('pe-none')
