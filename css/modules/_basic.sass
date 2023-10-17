@@ -63,9 +63,14 @@ textarea
         margin-bottom: 58px
 
 .question
+
+    position: absolute
+    top: -20px
+    right: 5px        
     width: 15px
     height: 15px
     @media screen and (min-width: $first-breack-point)
+        top: -34px
         width: 30px
         height: 30px
     &__cloud
@@ -109,10 +114,10 @@ textarea
     z-index: 5
 
 .preload-img
-    width: 100%
-    height: 100%
-    min-width: 100%
-    object-fit: fill
+    width: 100% !important
+    height: 100% !important
+    min-width: 100% !important
+    object-fit: fill !important
     border-radius: $border-radius
 
 .button-reset
@@ -335,15 +340,19 @@ textarea
         font-size: 30px
         line-height: 1.25
         color: $dark-semi-light
-        @media screen and (max-width: $first-breack-point) 
+        @media screen and (max-width: $first-breack-point)
             font-size: 20px
             font-weight: 600
             line-height: 1.25
     &__under
+        font-weight: 700
         font-size: 30px
         color: $main-color
-        @media screen and (max-width: $first-breack-point) 
+        line-height: 1.25
+        @media screen and (max-width: $first-breack-point)
             font-size: 15px
+            font-weight: 600
+            line-height: 1.25
     &--hover-gray:hover
         color: $dark-semi-light
         opacity: .7
@@ -381,6 +390,10 @@ textarea
             font-size: 15px
             font-weight: 600
             line-height: 1.25
+
+.first-bp
+    @media screen and (max-width: $first-breack-point)
+        display: none
 
 .btn
     height: 41px
@@ -503,7 +516,7 @@ textarea
     font-weight: 600
     text-decoration: none
     cursor: pointer
-    &.pre-color
+    &:hover
         color: $pre-color
     @media screen and (max-width: $first-breack-point)
         font-size: 15px
@@ -520,8 +533,9 @@ main
         padding: 0 10px
 .slider
     margin-bottom: 56px
-.selection
-    margin-bottom: 56px
+    @media screen and (max-width: $second-breack-point)
+        margin-bottom: 40px
+
 .card--button-blue
     position: relative
     padding: 16px 0
@@ -662,6 +676,41 @@ main
 .selection
     margin-bottom: 56px
 
+.select
+    &__custom
+        position: relative
+    &__header
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: space-between 
+        cursor: pointer 
+    &__options
+        display: none
+        position: absolute
+        top: 100%
+        left: 0
+        right: 0
+        background: $white-color
+        box-shadow: $box-shadow-regular
+        border-radius: 10px
+        overflow: hidden
+        z-index: 100
+        &.open
+            display: flex
+            flex-direction: column
+        .option
+
+            padding: 12px 20px
+            cursor: pointer
+            transition: 0.3s
+
+            &:hover
+                //color: $main-color
+                background-color: $bg-grey
+            &:active
+                color: $pre-color
+
 .input--wrapper, .select--wrapper
     height: 26px
     @media all and (min-width: $second-breack-point)
@@ -691,7 +740,15 @@ main
 
 .input
     position: relative
-    input, textarea, select, &.input--select
+    &--general
+        height: 26px
+        @media all and (min-width: $first-breack-point)
+            height: 42px
+    &--textarea
+        height: 52px
+        @media all and (min-width: $first-breack-point)
+            height: 108px
+    input, textarea, select, .input--select
         background: $white-color
         width: 100%
         height: 100%
@@ -707,7 +764,15 @@ main
         &:focus-visible
             outline: 1px solid $main-color
         @media all and (min-width: $first-breack-point)
-            font-size: 18px
+            font-size: 18px 
+    &--arrow
+        appearance: none
+        background: #fff
+        background-image: url(../img/dropdown-arr.svg) !important
+        background-repeat: no-repeat !important
+        background-position: calc(100% - 15px) center !important
+        background-size: 14px !important
+        cursor: pointer
     &--image
         border-radius: 15px
         box-shadow: $box-shadow-regular
@@ -719,8 +784,8 @@ main
             height: 100%
             opacity: 0
             cursor: pointer
-    &--modal   
-        &.input--image 
+    &--modal
+        &.input--image
             background: #F8F8F8
             box-shadow: none
         @media all and (max-width: $first-breack-point)
@@ -759,6 +824,79 @@ main
             font-size: 15px
         @media screen and (min-width: $first-breack-point)
             top: -20px
+    &--primary
+        color: $gray-light
+        font-size: 12px
+        font-style: normal
+        font-weight: 600
+        line-height: normal
+        height: 32px
+        top: -18px
+        left: 0
+        right: 0
+        @media screen and (min-width: $first-breack-point)
+            top: -24px
+            font-size: 18px
+    &--light
+        color: $gray-light
+        font-size: 10px
+        font-style: normal
+        font-weight: 600
+        line-height: normal
+        @media screen and (min-width: $first-breack-point)
+            font-size: 15px
+    &--profile
+        position: absolute
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        height: 32px
+        top: -32px
+        left: 0
+        right: 0
+        @media screen and (min-width: $first-breack-point)
+            top: -32px
+
+.row-g-2
+    row-gap: 0.5rem
+.row-g-3
+    row-gap: 1rem
+.row-g-4
+    row-gap: 1.5rem
+.row-g-5
+    row-gap: 2rem
+.column-g-2
+    column-gap: 0.5rem
+.column-g-3
+    column-gap: 1rem
+.column-g-4
+    column-gap: 1.5rem
+.column-g-5
+    column-gap: 2rem
+
+.cloudR--white
+    color: $dark-lighter
+    font-size: 15px
+    font-style: normal
+    font-weight: 600
+    line-height: normal
+    background: $sub-color
+    box-shadow: $box-shadow-sm
+
+
+.my
+    &__25-25
+        margin-top: 25px
+        margin-bottom: 25px
+    &__20-20
+        margin-top: 20px
+        margin-bottom: 20px
+    &__15-30
+        margin-top: 15px
+        margin-bottom: 22px
+        @media screen and (min-width: $first-breack-point)
+            margin-top: 30px
+            margin-bottom: 30px
 
 
 .section
@@ -954,6 +1092,53 @@ main
     &__splide-prev
         left: -50px
         transform: rotate(180deg)
+        &--reviews-photos
+            &:before
+                top: 760px
+    &__photo-link
+        display: block
+        height: 182px
+        border-radius: 15px
+        overflow: hidden
+        transition: all .3s ease
+        img
+            height: 100%
+            width: 100%
+            object-fit: cover
+        &:hover
+            opacity: .7
+    &__photo-grid
+        @media screen and (max-width: $first-breack-point)
+            display: none
+    &__splide
+        width: 85%
+        @media screen and (max-width: $second-breack-point)
+            width: 100%
+
+        .splide__slide
+            width: 100%
+            height: auto
+            overflow: hidden
+            border-radius: 15px
+            img
+                border-radius: 15px
+                height: 100%
+                width: 100%
+                object-fit: cover
+    &__splide-arrow
+        position: absolute
+        top: 50%
+        border: none
+        background: none
+        svg
+            width: 30px
+            path
+                fill: $main-color
+    &__splide-next
+        right: -50px
+    &__splide-prev
+        left: -50px
+        transform: rotate(180deg)
 .feed
     &__row
         position: relative
@@ -1027,6 +1212,11 @@ main
             &:hover
                 color: #494949
                 opacity: .7
+    &__images
+        display: flex
+        flex-wrap: wrap
+        gap: 16px
+
     &__image
         width: 100%
         height: 100%
@@ -1037,15 +1227,15 @@ main
         position: relative
         border-top: 1px solid $gray-light
         padding-top: 12px
-    &__actions
-        display: flex
-        align-items: center
-        gap: 16px
     &__footer-show-more
         position: absolute
         right: 0
         text-decoration: none
         transition: all .3s ease
+    &__actions
+        display: flex
+        align-items: center
+        gap: 16px
         &:hover
             color: $pre-color
     &__action
@@ -1061,7 +1251,8 @@ main
             line-height: 1
         &:hover
             svg
-                opacity: .7
+                path
+                    fill: $gray-light
         &--like
             svg
                 path
@@ -1092,6 +1283,10 @@ main
             svg 
                 width: 20px
                 height: 20px
+    &__answer
+        button
+            max-width: fit-content
+
     &--product-full
         width: fit-content
         border: none
@@ -1171,24 +1366,11 @@ main
         background-size: 47px
         @media screen and (max-width: $first-breack-point)
             padding-left: 40px
-            font-size: 15px 
+            font-size: 15px
             background-size: contain
 
 .product-header
     &--sticker
-.questions
-    &__heading-link
-        text-decoration: none
-        transition: all .3s ease
-        &:hover
-            color: $pre-color
-        &--h1-link
-            text-decoration: none
-            &:hover
-                color: #494949
-                opacity: .7
-
-    &__sticker
         position: relative
         &:before
             content: ""
@@ -1217,159 +1399,17 @@ main
         @media screen and (max-width: $first-breack-point)
             height: 65px
 
-.users-feedback    
-    &__header
-        font-weight: 600
-        font-size: 30px
-        color: #494949
-        @media screen and (max-width: $first-breack-point)
-            font-size: 15px
-        a
-            color: #494949
-            text-decoration: none
-            transition: opacity .3s
-            &:hover
-                opacity: .7
-
-.user-feedback 
-    height: 364px
-    justify-content: start    
-    padding: 20px
-    border-radius: $border-radius
-    box-shadow: $box-shadow-sm
-    font-size: 15px
-    font-weight: 600
-    line-height: 1.1
-    text-decoration: none
-    color: #210E22
-    transition: opacity .3s
-    @media screen and (max-width: $first-breack-point)
-        height: 301px
-        padding: 5px 20px
-        font-size: 12px
-    &:hover
-        color: #210E22
-        opacity: .7
-    &--questions
-        height: 274px
-        @media screen and (max-width: $first-breack-point)
-            height: 223px
-    &__name
-        font-size: 20px
-        line-height: 1.2
-        @media screen and (max-width: $first-breack-point)
-            font-size: 15px
-            margin-bottom: 6px
-    &__date
-        font-size: 12px
-    &__avatar
-        width: 60px
-        height: 60px
-        display: inline-flex
-        align-items: center
-        justify-content: center
-        border-radius: 50%
-        overflow: hidden
-        @media screen and (max-width: $first-breack-point)
-            width: 40px
-            height: 40px
-        img
-            max-width: 200%
-    &__photos
-        display: flex
-        justify-content: start    
-        &:has(.user-feedback__photo:nth-child(3))
-            justify-content: space-between 
-            .user-feedback__photo
-                margin-right: 0
-
-    &__photo
-        width: 90px
-        height: 120px
-        border-radius: $border-radius
-        box-shadow: 0px 3px 5px rgba(14, 14, 14, 0.1)
-        overflow: hidden
-        margin-right: 12px
-        @media screen and (max-width: $first-breack-point)
-            width: 66px
-            height: 88px
-        img
-            max-width: 200%
-            max-height: 200%
-    &__num
-        width: 90px
-        height: 120px
-        display: inline-flex
-        justify-content: center
-        align-items: center
-        color: $main-color
-        font-size: 30px
-        font-weight: 600
-        @media screen and (max-width: $first-breack-point)
-            width: 66px
-            height: 88px
-    p
-        margin-bottom: 10px
-    
-
-.about-product
-    &__item
-        background: $sub-color
-        border: 0
-    &__title
-        font-size: 30px
-        font-weight: 600
-        line-height: 1.25
-        color: #494949
-        background-color: $sub-color
-        padding: 0
-        @media screen and (max-width: $first-breack-point)
-            font-size: 15px
-            line-height: 1.25
-            text-transform: uppercase
-        &:focus
-            border-color: none
-            box-shadow: none
-        &::after
-            width: 28px
-            height: 11px
-            background-image: url(../img/arrow-text.svg)
-            margin-left: 10px
-            margin-right: 0
-            transform: rotate(180deg)
-            @media screen and (max-width: $first-breack-point)
-                width: 14px
-                height: 6px
-                background-size: 100%
-        &:not(.collapsed)
-            color: #494949  
-            background-color: inherit
-            box-shadow: none
-            &::after
-                background-image: url(../img/arrow-text.svg)
-                transform: rotate(0)
-                margin-left: 20px
-                margin-right: 0
-    &__information
-        padding-left: 0
-        padding-right: 0
-        @media screen and (max-width: $first-breack-point)
-            padding: 0
-
-
-.gallary
-    font-weight: 600
-    font-size: 30px
-    line-height: 1.25
-    color: #494949
-    @media screen and (max-width: $first-breack-point)
-        font-size: 15px
-    a
-        color: #494949
+.questions
+    &__heading-link
         text-decoration: none
-        transition: opacity .3s
+        transition: all .3s ease
         &:hover
-            opacity: .7
+            color: $pre-color
+        &--h1-link
+            text-decoration: none
+            &:hover
+                color: #494949
+                opacity: .7
 
 .leave-feed
     &__modal-dialog
@@ -1562,7 +1602,7 @@ main
             left: 30px
             width: 53px
             height: 500px
-            background: url(../img/product-sticker.svg) no-repeat     
+            background: url(../img/product-sticker.svg) no-repeat
             @media screen and (max-width: $first-breack-point)
                 display: none
     &__title
@@ -1582,7 +1622,7 @@ main
         @media screen and (max-width: $first-breack-point)
             height: 65px
 
-.users-feedback    
+.users-feedback
     &__header
         font-weight: 600
         font-size: 30px
@@ -1596,9 +1636,10 @@ main
             &:hover
                 opacity: .7
 
-.user-feedback 
+.user-feedback
     height: 364px
-    justify-content: start    
+    justify-content: start
+    justify-content: start
     padding: 20px
     border-radius: $border-radius
     box-shadow: $box-shadow-sm
@@ -1615,6 +1656,18 @@ main
     &:hover
         color: #210E22
         opacity: .7
+    &__header
+        font-weight: 600
+        font-size: 30px
+        color: #494949
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
+        a
+            color: #494949
+            text-decoration: none
+            transition: opacity .3s
+            &:hover
+                opacity: .7
     &--questions
         height: 274px
         @media screen and (max-width: $first-breack-point)
@@ -1642,9 +1695,9 @@ main
             max-width: 200%
     &__photos
         display: flex
-        justify-content: start    
+        justify-content: start
         &:has(.user-feedback__photo:nth-child(3))
-            justify-content: space-between 
+            justify-content: space-between
             .user-feedback__photo
                 margin-right: 0
 
@@ -1675,7 +1728,6 @@ main
             height: 88px
     p
         margin-bottom: 10px
-    
 
 .about-product
     &__item
@@ -1707,7 +1759,7 @@ main
                 height: 6px
                 background-size: 100%
         &:not(.collapsed)
-            color: #494949  
+            color: #494949
             background-color: inherit
             box-shadow: none
             &::after
@@ -1720,7 +1772,6 @@ main
         padding-right: 0
         @media screen and (max-width: $first-breack-point)
             padding: 0
-
 
 .gallary
     font-weight: 600
@@ -1763,14 +1814,16 @@ main
             border-radius: $border-radius
             resize: none
             @media screen and (max-width: $second-breack-point)
-                height: 61px    
-        input, textarea, select, &.input--select
+                height: 61px
+        input, textarea, select,
+        &.input--select
             background: #F8F8F8
             box-shadow: none
             border-radius: 15px
             &:focus
                 background: #F8F8F8
-                box-shadow: none     
+                box-shadow: none
+                box-shadow: none
     &__count
         position: absolute
         bottom: 8px
@@ -1788,6 +1841,20 @@ main
             color: #C9C9C9
         @media screen and (max-width: $first-breack-point)
             font-size: 10px
+
+    &__form-open-btn
+        width: 100%
+        border: none
+        border-radius: 15px
+        background: $white-color
+        box-shadow: 0px 4px 20px 0px rgba(14, 14, 14, 0.07)
+        font-size: 18px
+        color: $gray-light
+        text-align: left
+        padding-left: 16px
+        @media screen and (max-width: $first-breack-point)
+            font-size: 10px
+
 
 
 .mailing-form
@@ -1949,9 +2016,10 @@ main
         padding: 0
         margin: 0
         @media screen and (max-width: $first-breack-point)
-            width: 30px
-            svg 
-                width: 15px
+    .select            
+        width: 30px
+        svg 
+            width: 15px
     input
         padding-left: 50px 
         @media screen and (max-width: $first-breack-point)
@@ -2050,40 +2118,6 @@ main
                 height: 30px
                 font-size: 15px
                 
-.select
-    &__custom
-        position: relative
-    &__header
-        width: 100%
-        display: flex
-        align-items: center
-        justify-content: space-between 
-        cursor: pointer 
-    &__options
-        display: none
-        position: absolute
-        top: 100%
-        left: 0
-        right: 0
-        background: $white-color
-        box-shadow: $box-shadow-regular
-        border-radius: 10px
-        overflow: hidden
-        z-index: 100
-        &.open
-            display: flex
-            flex-direction: column
-        .option
-
-            padding: 12px 20px
-            cursor: pointer
-            transition: 0.3s
-
-            &:hover
-                //color: $main-color
-                background-color: $bg-grey
-            &:active
-                color: $pre-color
 
 .categories-item
     &__title
@@ -4528,299 +4562,3 @@ main
                 width: 30px
                 height: 30px
                 font-size: 15px
-                
-
-
-.categories-item
-    &__title
-        margin-bottom: 42px
-        a
-            font-size: 30px
-            font-weight: 600
-            text-decoration: none
-            color: $dark-color
-            transition: all .3s ease
-            &:hover
-                color: $pre-color
-            @media screen and (max-width: $second-breack-point)
-                font-size: 18px
-.categories-dop
-    &__title
-        margin-bottom: 42px
-        a
-            font-size: 18px
-            font-weight: 600
-            text-decoration: none
-            color: $dark-color
-            transition: all .3s ease
-            &:hover
-                color: $pre-color
-
-.categories-product
-    padding-left: 30px
-    &__title
-        margin-bottom: 20px
-        &:last-child
-            margin-bottom: 32px
-        a
-            font-size: 18px
-            font-weight: 500
-            text-decoration: none
-            color: $dark-color
-            transition: all .3s ease
-            &:hover
-                color: $pre-color
-
-.bread
-    margin-bottom: 30px
-    ul
-        list-style: none
-        margin: 0
-        padding: 0
-        display: flex
-        justify-content: center
-        li
-            position: relative
-            font-size: 18px
-            margin-right: 14px
-            &::before
-                content: '/'
-                position: absolute
-                top: 1px
-                right: -9px
-                width: 5px
-                height: 5px
-                color: #494949
-                border-bottom: none
-                border-left: none
-            &:last-child
-                &::before
-                    content: ''
-            @media (max-width: $second-breack-point)
-                font-size: 14px
-
-            a
-                text-decoration: none
-                transition: all .3s ease
-                &:hover
-                    color: $pre-color
-.category-page
-    &__container
-        width: 100%
-        padding-right: 16px
-        padding-left: 16px
-        margin-right: auto
-        margin-left: auto
-
-.filter
-    @media screen and ( max-width: $first-breack-point )
-        // display: none
-        // opacity: 0
-        max-height: 0
-        transition: max-height .4s ease-in-out
-        overflow: hidden
-        &--active
-            // opacity: 1
-            overflow: visible
-            max-height: 100000000000000px
-
-    &__mobile
-        display: none
-        position: relative
-
-        @media (max-width: $first-breack-point)
-            display: block
-
-    &__mobile-btn
-        position: absolute
-        width: 100%
-        height: 100%
-        top: 0
-        right: 0
-        cursor: pointer
-    &__item
-        margin-bottom: 40px
-    &__item-title
-        font-weight: 600
-        margin-bottom: 20px
-    &__item-wrap
-        display: flex
-        flex-direction: column
-        a
-            text-decoration: none
-            color: $dark-color
-            transition: all .3s ease
-            &:hover
-                color: $pre-color
-    &__item-check
-        margin-bottom: 12px
-
-.filter-form
-    &__wrap
-        font-size: 18px
-        @media screen and ( max-width: $second-breack-point)
-            font-size: 14px
-    &__tags-input
-        position: absolute
-        top: 0
-        left: 0
-        z-index: 100
-        padding: 10px
-
-.select-block
-    position: relative
-
-    input
-        width: 100%
-        height: 100%
-        border: none
-        outline: none
-        font: 18px 'Gilroy', sans-serif
-        font-weight: 600
-        border-radius: 15px
-
-    &__top
-        width: 100%
-        height: 42px
-        font-size: 18px
-        line-height: 42px
-        background: $white-color
-        box-shadow: 0 4px 20px rgba(14, 14, 14, 0.07)
-        border-radius: 10px
-        border: none
-        outline: none
-        padding-right: 40px
-        padding-left: 20px
-        position: relative
-        cursor: pointer
-        z-index: 990
-        white-space: nowrap
-        overflow: hidden
-        text-overflow: ellipsis
-    &__toggle
-        width: 100%
-        box-shadow: 0 4px 20px rgba(14, 14, 14, 0.07)
-        border-radius: 15px
-        padding: 20px
-        position: absolute
-        top: 65px
-        left: 0
-        z-index: 8000
-        background: #fff
-        display: none
-        overflow-y: auto
-        max-height: 300px
-        &--active
-            display: block
-
-    &__item
-        position: relative
-        cursor: pointer
-        border-bottom: 1px solid #D9D9D9
-        padding: 10px 0
-        padding-right: 30px
-        input
-            position: absolute
-            width: 100%
-            height: 100%
-            opacity: 0
-            top: 0
-            cursor: pointer
-        label
-            cursor: pointer
-            font-size: 16px
-            font-weight: 600
-
-.select-custom-item
-    width: 31%
-    @media screen and (max-width: $first-breack-point)
-        width: 100%
-    &__option
-        label
-            position: relative
-            width: max-content
-            padding: 12px 20px
-            cursor: pointer
-            transition: 0.3s
-
-        input:checked ~ label
-            color: #494949
-            background: #E8E8E8
-            border-radius: 15px
-
-        input
-            position: absolute
-            top: 0
-            left: 0
-            width: 0px
-      
-    .dropdown-menu
-        padding: 10px
-        min-width: 700px
-        border: none
-        &.show
-            display: flex
-        @media screen and (max-width: $first-breack-point)
-            min-width: 100%
-
-.products
-    display: flex
-    flex-wrap: wrap
-
-    &__item-wrapper
-        margin-bottom: 1rem
-        margin-right: 1rem
-        width: 22.3%
-        &:last-child
-            margin-right: 0
-        @media screen and ( max-width: $first-breack-point )
-            width: 31%
-        @media screen and ( max-width: $second-breack-point )
-            width: 44%
-    &__item
-        position: relative
-
-    &__favorite-btn
-        position: absolute
-        top: 10px
-        right: 10px
-        z-index: 100
-
-    &__img
-        border-radius: 15px
-        filter: drop-shadow(0px 10px 20px rgba(14, 14, 14, 0.1))
-        position: relative
-        margin-bottom: 10px
-        overflow: hidden
-        a
-            display: block
-
-            img
-                height: 100%
-                width: 100%
-                object-fit: cover
-    &__info
-        padding: 0 10px
-    &__text
-        a
-            font-size: 18px
-            font-weight: 600
-            line-height: 22px
-            letter-spacing: 0.5px
-            text-decoration: none
-            color: $dark-color
-            @media ( max-width: $second-breack-point )
-                font-size: 14px
-
-.favorite-btn
-    padding: 0
-    margin: 0
-    width: 32px
-    height: 32px
-    border: none
-    outline: none
-    background: url('../img/favorite.svg') no-repeat center
-    background-size: cover
-    &--active
-        background: url('../img/favorite-filled.svg') no-repeat center
-        background-size: cover
