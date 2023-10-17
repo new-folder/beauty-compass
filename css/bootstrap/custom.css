@@ -28,6 +28,9 @@
   .navbar-expand-xxl .navbar-nav .nav-link {
     background: none;
   }
+  .navbar-expand-xxl .navbar-nav .nav-link:hover {
+    background: none;
+  }
 }
 
 .navbar-toggler {
