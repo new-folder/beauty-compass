@@ -3332,6 +3332,26 @@ textarea {
   background-size: cover;
 }
 
+.brands-fav-list__item > img {
+  max-width: 90px;
+}
+@media screen and (max-width: 1400px) {
+  .brands-fav-list__item > img {
+    max-width: 55px;
+  }
+}
+.brands-fav-list__item > button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+@media screen and (max-width: 1400px) {
+  .brands-fav-list__item > button img {
+    max-width: 25px;
+  }
+}
+
 .top-bar {
   position: relative;
   padding-top: 126px;

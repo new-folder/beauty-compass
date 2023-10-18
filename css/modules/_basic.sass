@@ -2224,3 +2224,21 @@ main
     &--active
         background: url('../img/favorite-filled.svg') no-repeat center
         background-size: cover
+
+.brands-fav-list
+
+    &__item
+
+        > img
+            max-width: 90px
+            @media screen and (max-width: $first-breack-point)
+                max-width: 55px
+
+        > button 
+            margin: 0
+            padding: 0
+            border: none
+            background: none
+            @media screen and (max-width: $first-breack-point)
+                img
+                    max-width: 25px
