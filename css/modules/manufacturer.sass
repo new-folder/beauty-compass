@@ -302,7 +302,8 @@
       color: $main-color
 
 .statistics_cosmetic
-  max-width: fit-content
+  @media screen and (max-width: $first-breack-point)
+    max-width: fit-content
 
 .open_chart
   display: flex
@@ -321,13 +322,17 @@
   &-statistic
     width: fit-content
     position: absolute
-    transform: translate(297%, 142%)
+    transform: translate(297%, 95%)
     @media screen and (max-width: $first-breack-point)
       transform: translate(0%, 130%)
+  &-filter
+    background: url(../img/burger_main-color.svg) no-repeat
+#navbarFilterBtn
+  color: $main-color
 
 .title-custom
   @media screen and (max-width: $first-breack-point)
-    margin-bottom: 75px
+    margin-bottom: 50px
 
 .item
   margin-top: 30px
@@ -535,3 +540,13 @@
   &__statistic
     #rating,#view,#visit,#favarite,#new,#default
       cursor: pointer
+    .nav-link
+      background: $main-color !important
+      margin-bottom: 20px
+    @media screen and (max-width: $first-breack-point)
+      display: none
+    &-mobile
+      display: flex
+    @media screen and (max-width: $first-breack-point)
+      .top-bar__list
+        margin-bottom: 0
