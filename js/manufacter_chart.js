@@ -29,19 +29,19 @@ function templatingItem(data) {
         html+='            <div class="item__statistic-number d-flex align-items-center">'
         html+='                <div class="item__statistic-number__element">'
         html+='                    <img src="../img/favorite-heart.svg" alt="Добавленией в избранное">'
-        html+='                    <span>'+element.like+'</span>'
+        html+='                    <span class="text--15-24">'+element.like+'</span>'
         html+='                </div>'
         html+='                <div class="item__statistic-number__element">'
         html+='                    <img src="../img/like-tag.svg" alt="Поставили нравиться">'
-        html+='                    <span>'+element.positRevi+'</span>'
+        html+='                    <span class="text--15-24">'+element.positRevi+'</span>'
         html+='                </div>'
         html+='                <div class="item__statistic-number__element">'
         html+='                    <img src="../img/message-question.svg" alt="Заданные вопросы">'
-        html+='                    <span>'+element.question+'</span>'
+        html+='                    <span class="text--15-24">'+element.question+'</span>'
         html+='                </div>'
         html+='                <div class="item__statistic-number__element">'
         html+='                    <img src="../img/grey_eye.svg" alt="Показатель просмотров">'
-        html+='                    <span>'+element.views+'</span>'
+        html+='                    <span class="text--15-24">'+element.views+'</span>'
         html+='                </div>'
         html+='            </div>'
         html+='            <div class="item__btn">'
@@ -162,13 +162,17 @@ function viewsItems(linkToBD, sort='') {
 
                         $(elem.currentTarget.nextElementSibling).toggleClass("chart-open")
 
-                        let idElem=elem.currentTarget.children[2].value
+                        elem.currentTarget.nextElementSibling.classList[2] ?
+                            $(elem.currentTarget.children[0]).css('color','#FAFAFA') :
+                            $(elem.currentTarget.children[0]).css('color','#1560BD')
 
-                        console.log(idElem);
+                        let idElem=elem.currentTarget.children[2].value
 
                         let charts = item[idElem].chart
                         
                         let canvas = document.createElement('canvas')
+
+                        
 
                         let dataOutpChart={
                             labels:charts[0].data.map(el=>el.x),
@@ -202,7 +206,10 @@ function viewsItems(linkToBD, sort='') {
                                 type:'line',
                                 data:dataOutpChart,
                                 borderColor: '#fff',
-                                color:'#fff'
+                                color:'#fff',
+                                options: {
+                                    maintainAspectRatio: false,
+                                }
                             })
 
                             elem.currentTarget.nextElementSibling.firstElementChild.value=true

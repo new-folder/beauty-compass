@@ -301,6 +301,22 @@
     &-apply
       color: $main-color
 
+.statistics_cosmetic
+  max-width: fit-content
+
+.open_chart
+  display: flex
+  @media screen and (max-width: $first-breack-point)
+    margin-top: 20px
+  p
+    width: fit-content
+    color: $main-color
+  svg
+    margin: auto 20px
+    width: 25px
+    color: $main-color
+    transition: .6s
+
 .icon
   &-statistic
     width: fit-content
@@ -319,51 +335,118 @@
     background: none
     color: $dark-color
     transition: .5s
+    margin-left:0
     &-open
+      background: linear-gradient(144.75deg, #1560BD 31.52%, #194071 72.37%)
+      color: $sub-color
+      @media screen and (max-width: $first-breack-point)
+        width: 100vw
+      @media screen and (max-width: $second-breack-point)
+        width: 100vw
+        margin-left: -1.5vw
+      
+      div:first-child
+        @media screen and (max-width: $second-breack-point)
+          max-width: 87vw
+
       svg
+        color: $sub-color
         transform: rotate(180deg)
+      .open_chart
+        padding-top: 20px
 
   &__inside
     display: grid
-    grid-template: repeat(6, 60px) / ( 250px 1fr 500px)
+    grid-template: repeat(5, 60px) / ( 250px 1fr 500px)
+    @media screen and (max-width: $first-breack-point)
+      grid-template: 60px 20px 40px repeat(2, 50px) 30px / ( 1fr 3fr)
+      grid-gap: 5px
+    @media screen and (max-width: $second-breack-point)
+      grid-template: 60px 20px 50px repeat(2, 50px) 30px / ( 1fr 1fr)
+
   &__image-view
     grid-column: 1 / 2
     grid-row: 1 / 5
+    @media screen and (max-width: $first-breack-point)
+      grid-row: 2 / 7
+      min-width: 125px
+
     img
       height: 100%
+      @media screen and (max-width: $first-breack-point)
+        width: auto
+      @media screen and (max-width: $second-breack-point)
+        width: 90%
+        height: auto
+        max-height: 100%
     
   &__title
     grid-column: 2 / 3
     grid-row: 1/3
     width: 80%
+    @media screen and (max-width: $first-breack-point)
+      grid-column: 1 / 3
+      grid-row: 1/2
+      width: 100%
     p
       height: 50%
       text-overflow: ellipsis
       overflow: hidden
       text-align: start
       white-space: nowrap
+      @media screen and (max-width: $first-breack-point)
+        height: 25%
+        margin-bottom: 10px
   &__rating-value
     grid-column: 2 / 3
     grid-row: 3
+    @media screen and (max-width: $first-breack-point)
+      width: 19%
+      grid-row: 2
+    @media screen and (max-width: $second-breack-point)
+      width: 63%
+    
     &::before
       width: 200px
-      height: auto
       aspect-ratio: 1/1
+      @media screen and (min-width: $first-breack-point)
+        height: auto
+      @media screen and (max-width: $first-breack-point)
+        width: 100%
     .rating__active
       width: 100%
       &::before
         width: 200px
-        height: auto
         aspect-ratio: 1/1
+        @media screen and (min-width: $first-breack-point)
+          height: auto
+        
   &__statistic-number
     grid-column: 2 / 3
     grid-row: 4
+    @media screen and (max-width: $first-breack-point)
+      grid-row: 3
+      flex-wrap: wrap
+
     &__element
-      margin-right: 20px  
+      margin-right: 20px 
+      margin-bottom: 5px 
+      @media screen and (max-width: $first-breack-point)
+        margin-right: 0
+        overflow: hidden
+        text-overflow: ellipsis
+        display: flex
+        width: 45%
+        margin-right: 5%
       img
         height: 37px
         aspect-ratio: 1/1
+        margin-right: 10px
+        @media screen and (max-width: $first-breack-point)
+          height: 20px
       span
+        @media screen and (max-width: $first-breack-point)
+          display: block
         &:last-child
           color: $dark-semi-light
   &__btn
@@ -377,6 +460,16 @@
     padding-bottom: 15px
     scrollbar-width: thin
     scrollbar-color: $main-color transparent
+
+    @media screen and (max-width: $first-breack-point)
+      grid-column: 2/3
+      grid-row: 4/7
+      overflow-x: hidden
+      overflow-y: scroll
+      flex-wrap: wrap
+      height: 80%
+    @media screen and (max-width: $second-breack-point)
+      margin-top: 0
 
     &::-webkit-scrollbar 
       width: 5px
@@ -400,6 +493,9 @@
       background: $main-color
       margin-right: 30px
       color: $sub-color
+      @media screen and (max-width: $first-breack-point)
+        margin-bottom: 10px
+
       &:last-child
         margin: 0
       &:hover
@@ -408,16 +504,6 @@
       &:visited
         color: $sub-color
         background: $main-color
-
-.open_chart
-  display: flex
-  color: $main-color !important
-  p
-    width: fit-content
-  svg
-    margin: auto 20px
-    width: 25px
-    transition: .6s
 
 .chart
   transition: .5s
@@ -428,9 +514,17 @@
     width: 100% !important
     height: fit-content !important
     box-shadow: $box-shadow-sm
+    padding: 20px 0
+    @media screen and (max-width: $first-breack-point)
+      padding-top: 0 !important
 
   &-open
     height: fit-content !important
+    max-height: 20vh
+    padding-bottom: 25px
+    @media screen and (max-width: $second-breack-point)
+      width: 83vw
+      
 
 .output__statistic-items
   margin-bottom: 30px
