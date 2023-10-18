@@ -7626,6 +7626,14 @@ body[data-revision-history=true] .ck.ck-pagination-view-line::after {
 
 #navbarFilterBtn {
   color: #1560BD;
+  display: none !important;
+}
+@media screen and (max-width: 1400px) {
+  #navbarFilterBtn {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
 }
 
 @media screen and (max-width: 1400px) {
@@ -7742,7 +7750,6 @@ body[data-revision-history=true] .ck.ck-pagination-view-line::after {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1/2;
-    width: 100%;
   }
 }
 .item__title p {
@@ -7774,21 +7781,21 @@ body[data-revision-history=true] .ck.ck-pagination-view-line::after {
 }
 @media screen and (max-width: 768px) {
   .item__rating-value {
-    width: 63%;
+    width: 62%;
   }
 }
 .item__rating-value::before {
   width: 200px;
-  aspect-ratio: 1/1;
-}
-@media screen and (min-width: 1400px) {
-  .item__rating-value::before {
-    height: auto;
-  }
+  height: 37px;
 }
 @media screen and (max-width: 1400px) {
   .item__rating-value::before {
-    width: 100%;
+    height: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .item__rating-value::before {
+    width: 105px;
   }
 }
 .item__rating-value .rating__active {
@@ -7796,11 +7803,16 @@ body[data-revision-history=true] .ck.ck-pagination-view-line::after {
 }
 .item__rating-value .rating__active::before {
   width: 200px;
-  aspect-ratio: 1/1;
+  height: 37px;
 }
-@media screen and (min-width: 1400px) {
+@media screen and (max-width: 1400px) {
   .item__rating-value .rating__active::before {
-    height: auto;
+    height: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .item__rating-value .rating__active::before {
+    width: 105px;
   }
 }
 .item__statistic-number {
@@ -7816,6 +7828,11 @@ body[data-revision-history=true] .ck.ck-pagination-view-line::after {
     grid-row: 3;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 768px) {
+  .item__statistic-number {
+    width: 80%;
   }
 }
 .item__statistic-number__element {
@@ -7891,6 +7908,7 @@ body[data-revision-history=true] .ck.ck-pagination-view-line::after {
 @media screen and (max-width: 768px) {
   .item__btn {
     margin-top: 0;
+    width: 80%;
   }
 }
 .item__btn::-webkit-scrollbar {

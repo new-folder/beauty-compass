@@ -329,6 +329,10 @@
     background: url(../img/burger_main-color.svg) no-repeat
 #navbarFilterBtn
   color: $main-color
+  display: none !important
+  @media screen and (max-width: $first-breack-point)
+    display: flex !important
+
 
 .title-custom
   @media screen and (max-width: $first-breack-point)
@@ -392,7 +396,6 @@
     @media screen and (max-width: $first-breack-point)
       grid-column: 1 / 3
       grid-row: 1/2
-      width: 100%
     p
       height: 50%
       text-overflow: ellipsis
@@ -409,22 +412,25 @@
       width: 19%
       grid-row: 2
     @media screen and (max-width: $second-breack-point)
-      width: 63%
+      width: 62%
     
     &::before
       width: 200px
-      aspect-ratio: 1/1
-      @media screen and (min-width: $first-breack-point)
-        height: auto
+      height: 37px
       @media screen and (max-width: $first-breack-point)
-        width: 100%
+        height: 20px
+      @media screen and (max-width: $second-breack-point)
+        width: 105px
     .rating__active
       width: 100%
       &::before
         width: 200px
-        aspect-ratio: 1/1
-        @media screen and (min-width: $first-breack-point)
-          height: auto
+        height: 37px
+        @media screen and (max-width: $first-breack-point)
+          height: 20px
+        @media screen and (max-width: $second-breack-point)
+          width: 105px
+
         
   &__statistic-number
     grid-column: 2 / 3
@@ -432,6 +438,8 @@
     @media screen and (max-width: $first-breack-point)
       grid-row: 3
       flex-wrap: wrap
+    @media screen and (max-width: $second-breack-point)
+      width: 80%
 
     &__element
       margin-right: 20px 
@@ -475,6 +483,7 @@
       height: 80%
     @media screen and (max-width: $second-breack-point)
       margin-top: 0
+      width: 80%
 
     &::-webkit-scrollbar 
       width: 5px
