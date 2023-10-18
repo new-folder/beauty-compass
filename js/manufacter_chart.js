@@ -149,7 +149,7 @@ function viewsItems(linkToBD, sort='') {
         if($('#viewCosmeticChart').length){
             $('#viewCosmeticChart').pagination({
                 dataSource:answerJson,
-                pageSize: 5,
+                pageSize: 50,
                 pageNumber: 1,
                 pageRange: 1,
                 callback: function(item, pagination) {
