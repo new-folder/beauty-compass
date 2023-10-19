@@ -28,7 +28,7 @@ $(document).ready(() => {
                                 <div class="col-6 text-end articles__date">${formatDate(item.date)}</div>
                             </div>
                             <!--<img src="${item.thumbnail}" class="articles__img" alt="" />-->
-                            <img src="/img/image194.png" class="articles__img" alt="" />
+                            <img src="../img/image194.png" class="articles__img" alt="" />
                             <h5 class="articles__title">${item.title}</h5>
                             <p>${item.text}</p>
                         </a>
