@@ -4665,9 +4665,6 @@ textarea {
   line-height: normal;
   margin-right: 4px;
 }
-.tags__item:hover {
-  color: #1560BD;
-}
 .tags__item:active {
   color: #E31E24;
 }
