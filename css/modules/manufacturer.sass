@@ -375,7 +375,8 @@
         margin-left: -25px
       div
         width:  100vw
-        max-width: 900px
+        @media screen and (max-width: $second-breack-point)
+          max-width: 900px
         height: 100vh
         min-height: 500px
         max-height: 600px
@@ -559,8 +560,7 @@
 .output__statistic-items
   margin-bottom: 30px
   &-all
-    
-    width: 100vw
+    width: 99.1vw
     margin-bottom: 0
   ul
     list-style: none

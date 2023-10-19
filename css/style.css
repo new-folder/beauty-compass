@@ -7447,10 +7447,14 @@ body[data-revision-history=true] .ck.ck-pagination-view-line::after {
 }
 .item__chart-all div {
   width: 100vw;
-  max-width: 900px;
   height: 100vh;
   min-height: 500px;
   max-height: 600px;
+}
+@media screen and (max-width: 768px) {
+  .item__chart-all div {
+    max-width: 900px;
+  }
 }
 @media screen and (max-width: 768px) {
   .item__chart-all div canvas {
@@ -7765,7 +7769,7 @@ body[data-revision-history=true] .ck.ck-pagination-view-line::after {
   margin-bottom: 30px;
 }
 .output__statistic-items-all {
-  width: 100vw;
+  width: 99.1vw;
   margin-bottom: 0;
 }
 .output__statistic-items ul {
