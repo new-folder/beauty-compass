@@ -322,11 +322,12 @@
   &-statistic
     width: fit-content
     position: absolute
-    transform: translate(297%, 95%)
+    transform: translate(277%, 145%)
     @media screen and (max-width: $first-breack-point)
       transform: translate(0%, 130%)
   &-filter
     background: url(../img/burger_main-color.svg) no-repeat
+
 #navbarFilterBtn
   color: $main-color
   display: none !important
@@ -345,6 +346,7 @@
     color: $dark-color
     transition: .5s
     margin-left:0
+    margin-top: 30px
     &-open
       background: linear-gradient(144.75deg, #1560BD 31.52%, #194071 72.37%)
       color: $sub-color
@@ -363,7 +365,24 @@
         transform: rotate(180deg)
       .open_chart
         padding-top: 20px
-
+    &-all
+      background: linear-gradient(144.75deg, #1560BD 31.52%, #194071 72.37%)
+      color: $sub-color
+      padding-top: 40px
+      padding-bottom: 40px
+      margin: 0 auto
+      @media screen and (max-width: $second-breack-point)
+        margin-left: -25px
+      div
+        width:  100vw
+        max-width: 900px
+        height: 100vh
+        min-height: 500px
+        max-height: 600px
+        canvas
+          @media screen and (max-width: $second-breack-point)
+            width: 100%
+            height: 100%
   &__inside
     display: grid
     grid-template: repeat(5, 60px) / ( 250px 1fr 500px)
@@ -487,19 +506,15 @@
 
     &::-webkit-scrollbar 
       width: 5px
-      background-color: $white-color
       margin-top: 5px
     
     &::-webkit-scrollbar-thumb 
       border-radius: 10px
-      -webkit-box-shadow: $box-shadow-sm
       background-color: $main-color
       
     &::-webkit-scrollbar-track 
       color: $main-color
-      -webkit-box-shadow: $box-shadow-sm
       border-radius: $border-radius
-      background-color: $white-color
 
     transition: color 0.3s
     a
@@ -543,6 +558,10 @@
 
 .output__statistic-items
   margin-bottom: 30px
+  &-all
+    
+    width: 100vw
+    margin-bottom: 0
   ul
     list-style: none
 

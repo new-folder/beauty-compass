@@ -172,8 +172,6 @@ function viewsItems(linkToBD, sort='') {
                         
                         let canvas = document.createElement('canvas')
 
-                        
-
                         let dataOutpChart={
                             labels:charts[0].data.map(el=>el.x),
                             datasets:[
@@ -223,6 +221,62 @@ function viewsItems(linkToBD, sort='') {
         }
     });
 }
+
+fetchJSONFile("../manufacturer-lk__charts/all_cosmetics_manufacter.json", function(data){
+    let cosmetics=[]
+    data.cosmetics.forEach(cosmetic => {
+        if (cosmetics.length==0) {
+            cosmetic.chart.forEach(chart_el => {
+                cosmetics.push(chart_el)
+            });
+        }else{
+            for (let i = 0; i < cosmetic.chart.length; i++) {
+                const el = cosmetic.chart[i];
+                if (el.name==cosmetics[i].name) 
+                    for (let j = 0; j < cosmetics[i].data.length; j++) {
+                        try {
+                            cosmetics[i].data[j].y+=el.data[j].y
+                        } catch (error) {
+                            
+                        }
+                    }
+            }
+        }
+    });
+
+    let dataOutpChart={
+        labels:cosmetics[0].data.map(el=>el.x),
+        datasets:[
+            {
+                label: 'Просмотры',
+                data: cosmetics[0].data.map(el=>el.y),
+            },
+            {
+                label: 'Отзывы',
+                data: cosmetics[1].data.map(el=>el.y),
+            },
+            {
+                label: 'Избранное',
+                data: cosmetics[2].data.map(el=>el.y),
+            },
+            {
+                label: 'Переходы на маркетплейсы',
+                data: cosmetics[3].data.map(el=>el.y),
+            },
+            {
+                label: 'Переходы на страницу бренда',
+                data: cosmetics[4].data.map(el=>el.y),
+            },
+        ]
+    }
+    
+    const chart=new Chart($('#allItems'),{
+        type:'line',
+        data:dataOutpChart,
+        options: {
+            maintainAspectRatio: false,
+        }})
+})
 
 $('#rating').click(function(el) {
     el.preventDefault();
