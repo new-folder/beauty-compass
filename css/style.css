@@ -7417,7 +7417,7 @@ body[data-revision-history=true] .ck.ck-pagination-view-line::after {
 @media screen and (max-width: 768px) {
   .item__chart-open {
     width: 100vw;
-    margin-left: -1.5vw;
+    margin-left: -10px;
   }
 }
 @media screen and (max-width: 768px) {
