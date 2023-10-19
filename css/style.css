@@ -6387,10 +6387,6 @@ body[data-revision-history=true] .ck.ck-pagination-view-line::after {
   }
 }
 
-.title--20-36 {
-  margin-bottom: 30px;
-}
-
 .quest-b {
   margin-bottom: 15px;
 }
@@ -6804,10 +6800,6 @@ body[data-revision-history=true] .ck.ck-pagination-view-line::after {
   .btn__svg-confirm span {
     display: none;
   }
-}
-
-.title--20-36 {
-  margin-bottom: 30px;
 }
 
 .quest-b {
