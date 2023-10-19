@@ -4,7 +4,7 @@
     "title": "Title example",
     "thumbnail": "http://127.0.0.1:8000/media/articles/thumbnails/7b1d3fa33d94452dadb82a26613a78e4.jpg",
     "date": "2016-04-30T09:40:58 -03:00",
-    "text": "Text example",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium distinctio delectus dignissimos repellat quo ut iste, accusantium inventore nemo eaque veritatis molestias, soluta id reprehenderit officiis in voluptatem perspiciatis alias?",
     "slug": "slug-article"
   },
   {
@@ -20,7 +20,7 @@
     "title": "Title example",
     "thumbnail": "http://127.0.0.1:8000/media/articles/thumbnails/7b1d3fa33d94452dadb82a26613a78e4.jpg",
     "date": "2016-05-28T03:34:54 -03:00",
-    "text": "Text example",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium distinctio delectus dignissimos repellat quo ut iste, accusantium inventore nemo eaque veritatis molestias, soluta id reprehenderit officiis in voluptatem perspiciatis alias?",
     "slug": "slug-article"
   },
   {
@@ -44,7 +44,7 @@
     "title": "Title example",
     "thumbnail": "http://127.0.0.1:8000/media/articles/thumbnails/7b1d3fa33d94452dadb82a26613a78e4.jpg",
     "date": "2020-11-04T10:52:26 -03:00",
-    "text": "Text example",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium distinctio delectus dignissimos repellat quo ut iste, accusantium inventore nemo eaque veritatis molestias, soluta id reprehenderit officiis in voluptatem perspiciatis alias?",
     "slug": "slug-article"
   },
   {
