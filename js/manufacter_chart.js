@@ -99,6 +99,22 @@ function fetchJSONFile(path, callback) {
     httpRequest.send(); 
 }
 
+function getNameMount(number) {
+    let arrayMounth=[
+        'Январь',
+        'Февраль',
+        'Март',
+        'Апрель',
+        'Июнь',
+        'Июль',
+        'Август',
+        'Сентябрь',
+        'Октябрь',
+        'Ноябрь',
+        'Декабрь',
+    ]
+    return arrayMounth[number]
+}
 var countAtrrClick={
     rating:false,
     view:false,
@@ -110,7 +126,7 @@ var countAtrrClick={
 Chart.defaults.borderColor = '#fff';
 Chart.defaults.color = '#fff';
 
-function viewsItems(linkToBD, sort='') {
+function viewsItems(linkToBD, sort='', key='mounth') {
 
     var answerJson=[]
     
@@ -173,30 +189,84 @@ function viewsItems(linkToBD, sort='') {
                         let canvas = document.createElement('canvas')
 
                         let dataOutpChart={
-                            labels:charts[0].data.map(el=>el.x),
-                            datasets:[
-                                {
-                                    label: 'Просмотры',
-                                    data: charts[0].data.map(el=>el.y),
-                                },
-                                {
-                                    label: 'Отзывы',
-                                    data: charts[1].data.map(el=>el.y),
-                                },
-                                {
-                                    label: 'Избранное',
-                                    data: charts[2].data.map(el=>el.y),
-                                },
-                                {
-                                    label: 'Переходы на маркетплейсы',
-                                    data: charts[3].data.map(el=>el.y),
-                                },
-                                {
-                                    label: 'Переходы на страницу бренда',
-                                    data: charts[4].data.map(el=>el.y),
-                                },
-                            ]
+                            labels:[],
+                            datasets:[]
                         }
+
+                        switch (key) {
+                            case 'mounth':
+                                //Получение месяца
+                                let activeMount=-1
+                                charts[0].data.forEach(el => {
+
+                                    let arrayWithDate=[]
+                                    
+                                    for (let i = 0; i < el.x.split('.').length; i++) {
+                                        let element = Number(el.x.split('.')[i]);
+                                        if (i==1) 
+                                            arrayWithDate.push(element-1)
+                                        else
+                                            arrayWithDate.push(element)
+                                    }
+
+                                    if (activeMount==-1 || activeMount!=arrayWithDate[1]) {
+                                        activeMount=arrayWithDate[1]
+                                        dataOutpChart.labels.push( getNameMount(arrayWithDate[1])+ ' ' + arrayWithDate[2] )
+                                    }
+                                    
+                                });
+                                //получение данных на каждый месяц
+                                activeMount=-1
+                                charts.forEach(chart => {
+                                    let data=[]
+                                    chart.data.forEach(el => {
+                                        if (activeMount==-1 || activeMount!=Number(el.x.split('.')[1])) {
+                                            activeMount=Number(el.x.split('.')[1])
+                                            data.push(el.y)
+                                        }else
+                                            data[data.length-1] += el.y 
+                                        
+                                    });
+                                    
+                                    dataOutpChart.datasets.push({
+                                        label: chart.name,
+                                        data: data,
+                                    })
+                                });
+                                console.log(dataOutpChart);
+                                break;
+                            case 'week':
+                                
+                                break;
+                            case 'day':
+                                
+                                break;
+                        }
+
+                        // dataOutpChart={
+                        //     datasets:[
+                        //         {
+                        //             label: 'Просмотры',
+                        //             data: charts[0].data.map(el=>el.y),
+                        //         },
+                        //         {
+                        //             label: 'Отзывы',
+                        //             data: charts[1].data.map(el=>el.y),
+                        //         },
+                        //         {
+                        //             label: 'Избранное',
+                        //             data: charts[2].data.map(el=>el.y),
+                        //         },
+                        //         {
+                        //             label: 'Переходы на маркетплейсы',
+                        //             data: charts[3].data.map(el=>el.y),
+                        //         },
+                        //         {
+                        //             label: 'Переходы на страницу бренда',
+                        //             data: charts[4].data.map(el=>el.y),
+                        //         },
+                        //     ]
+                        // }
 
                         if (elem.currentTarget.nextElementSibling.firstElementChild.value=="false") {
                             elem.currentTarget.nextElementSibling.append(canvas);
@@ -222,83 +292,28 @@ function viewsItems(linkToBD, sort='') {
     });
 }
 
-fetchJSONFile("../manufacturer-lk__charts/all_cosmetics_manufacter.json", function(data){
-    let cosmetics=[]
-    data.cosmetics.forEach(cosmetic => {
-        if (cosmetics.length==0) {
-            cosmetic.chart.forEach(chart_el => {
-                cosmetics.push(chart_el)
-            });
-        }else{
-            for (let i = 0; i < cosmetic.chart.length; i++) {
-                const el = cosmetic.chart[i];
-                if (el.name==cosmetics[i].name) 
-                    for (let j = 0; j < cosmetics[i].data.length; j++) {
-                        try {
-                            cosmetics[i].data[j].y+=el.data[j].y
-                        } catch (error) {
-                            
-                        }
-                    }
-            }
-        }
-    });
-
-    let dataOutpChart={
-        labels:cosmetics[0].data.map(el=>el.x),
-        datasets:[
-            {
-                label: 'Просмотры',
-                data: cosmetics[0].data.map(el=>el.y),
-            },
-            {
-                label: 'Отзывы',
-                data: cosmetics[1].data.map(el=>el.y),
-            },
-            {
-                label: 'Избранное',
-                data: cosmetics[2].data.map(el=>el.y),
-            },
-            {
-                label: 'Переходы на маркетплейсы',
-                data: cosmetics[3].data.map(el=>el.y),
-            },
-            {
-                label: 'Переходы на страницу бренда',
-                data: cosmetics[4].data.map(el=>el.y),
-            },
-        ]
-    }
-    
-    const chart=new Chart($('#allItems'),{
-        type:'line',
-        data:dataOutpChart,
-        options: {
-            maintainAspectRatio: false,
-        }})
-})
-
-$('#rating').click(function(el) {
+$('.rating').click(function(el) {
     el.preventDefault();
     viewsItems("../manufacturer-lk__charts/all_cosmetics_manufacter.json",'rating')
 
 })
-$('#view').click(function(el) {
+$('.view').click(function(el) {
     el.preventDefault();
     viewsItems("../manufacturer-lk__charts/all_cosmetics_manufacter.json",'view')
 
 })
-$('#visit').click(function(el) {
+$('.visit').click(function(el) {
     el.preventDefault();
     viewsItems("../manufacturer-lk__charts/all_cosmetics_manufacter.json",'visit')
 
 })
-$('#favarite').click(function(el) {
+$('.favarite').click(function(el) {
     el.preventDefault();
     viewsItems("../manufacturer-lk__charts/all_cosmetics_manufacter.json",'favarite')
 
 })
-$('#new').click(function(el) {
+$('.new').click(function(el) {
+    
     el.preventDefault();
     viewsItems("../manufacturer-lk__charts/all_cosmetics_manufacter.json",'new')
 
@@ -308,5 +323,66 @@ $('#default').click(function(el) {
     viewsItems("../manufacturer-lk__charts/all_cosmetics_manufacter.json")
 
 })
+
+if ($('#allItems')=='') {
+    
+    fetchJSONFile("../manufacturer-lk__charts/all_cosmetics_manufacter.json", function(data){
+    
+        let cosmetics=[]
+        data.cosmetics.forEach(cosmetic => {
+            if (cosmetics.length==0) {
+                cosmetic.chart.forEach(chart_el => {
+                    cosmetics.push(chart_el)
+                });
+            }else{
+                for (let i = 0; i < cosmetic.chart.length; i++) {
+                    const el = cosmetic.chart[i];
+                    if (el.name==cosmetics[i].name) 
+                        for (let j = 0; j < cosmetics[i].data.length; j++) {
+                            try {
+                                cosmetics[i].data[j].y+=el.data[j].y
+                            } catch (error) {
+                                
+                            }
+                        }
+                }
+            }
+        });
+    
+        let dataOutpChart={
+            labels:cosmetics[0].data.map(el=>el.x),
+            datasets:[
+                {
+                    label: 'Просмотры',
+                    data: cosmetics[0].data.map(el=>el.y),
+                },
+                {
+                    label: 'Отзывы',
+                    data: cosmetics[1].data.map(el=>el.y),
+                },
+                {
+                    label: 'Избранное',
+                    data: cosmetics[2].data.map(el=>el.y),
+                },
+                {
+                    label: 'Переходы на маркетплейсы',
+                    data: cosmetics[3].data.map(el=>el.y),
+                },
+                {
+                    label: 'Переходы на страницу бренда',
+                    data: cosmetics[4].data.map(el=>el.y),
+                },
+            ]
+        }
+        
+        const chart=new Chart($('#allItems'),{
+            type:'line',
+            data:dataOutpChart,
+            options: {
+                maintainAspectRatio: false,
+            }})
+    })
+}
+
 
 viewsItems("../manufacturer-lk__charts/all_cosmetics_manufacter.json")
