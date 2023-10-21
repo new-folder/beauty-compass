@@ -369,7 +369,7 @@
       background: linear-gradient(144.75deg, #1560BD 31.52%, #194071 72.37%)
       color: $sub-color
       padding-top: 40px
-      padding-bottom: 40px
+      padding-bottom: 120px
       margin: 0 auto
       @media screen and (max-width: $second-breack-point)
         margin-left: -25px
@@ -551,12 +551,45 @@
       margin-left: -2px
 
   &-open
-    height: 430px
-    padding-bottom: 25px
+    height: 640px
+    padding-bottom: 130px
     @media screen and (max-width: $second-breack-point)
       width: 83vw
-      
+      height: 540px
 
+    &__btn-param
+      padding: 20px 0
+      height: auto !important
+      scrollbar-width: thin
+      scrollbar-color: $main-color transparent
+      &::-webkit-scrollbar 
+        width: 5px
+        margin-top: 5px
+    
+      &::-webkit-scrollbar-thumb 
+        border-radius: 10px
+        background-color: $main-color
+        
+      &::-webkit-scrollbar-track 
+        color: $main-color
+        border-radius: $border-radius
+      @media screen and (max-width: $second-breack-point)
+        overflow: scroll
+        height: 30%
+      .btn
+        background: $main-color
+        color: $sub-color
+        @media screen and (max-width: $second-breack-point)
+          margin-bottom:10px 
+        &:hover
+          color: $sub-color !important
+          background: $pre-color !important
+        &:visited
+          color: $sub-color
+          background: $main-color
+      &-all
+        width: auto !important
+        min-height: 110px !important
 .output__statistic-items
   margin-bottom: 30px
   &-all

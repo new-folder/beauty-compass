@@ -7437,7 +7437,7 @@ body[data-revision-history=true] .ck.ck-pagination-view-line::after {
   background: linear-gradient(144.75deg, #1560BD 31.52%, #194071 72.37%);
   color: #FAFAFA;
   padding-top: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 120px;
   margin: 0 auto;
 }
 @media screen and (max-width: 768px) {
@@ -7756,13 +7756,59 @@ body[data-revision-history=true] .ck.ck-pagination-view-line::after {
   }
 }
 .chart-open {
-  height: 430px;
-  padding-bottom: 25px;
+  height: 640px;
+  padding-bottom: 130px;
 }
 @media screen and (max-width: 768px) {
   .chart-open {
     width: 83vw;
+    height: 540px;
   }
+}
+.chart-open__btn-param {
+  padding: 20px 0;
+  height: auto !important;
+  scrollbar-width: thin;
+  scrollbar-color: #1560BD transparent;
+}
+.chart-open__btn-param::-webkit-scrollbar {
+  width: 5px;
+  margin-top: 5px;
+}
+.chart-open__btn-param::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #1560BD;
+}
+.chart-open__btn-param::-webkit-scrollbar-track {
+  color: #1560BD;
+  border-radius: 15px;
+}
+@media screen and (max-width: 768px) {
+  .chart-open__btn-param {
+    overflow: scroll;
+    height: 30%;
+  }
+}
+.chart-open__btn-param .btn {
+  background: #1560BD;
+  color: #FAFAFA;
+}
+@media screen and (max-width: 768px) {
+  .chart-open__btn-param .btn {
+    margin-bottom: 10px;
+  }
+}
+.chart-open__btn-param .btn:hover {
+  color: #FAFAFA !important;
+  background: #E31E24 !important;
+}
+.chart-open__btn-param .btn:visited {
+  color: #FAFAFA;
+  background: #1560BD;
+}
+.chart-open__btn-param-all {
+  width: auto !important;
+  min-height: 110px !important;
 }
 
 .output__statistic-items {
