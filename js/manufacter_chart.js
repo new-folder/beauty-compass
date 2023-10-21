@@ -561,8 +561,7 @@ $('#default').click(function(el) {
 
 })
 
-if ($('#allItems')) {
-    $('#allItems')
+if ($('#allItems').length!=0) {
     
     fetchJSONFile("../manufacturer-lk__charts/all_cosmetics_manufacter.json", function(data){
     

@@ -7437,12 +7437,13 @@ body[data-revision-history=true] .ck.ck-pagination-view-line::after {
   background: linear-gradient(144.75deg, #1560BD 31.52%, #194071 72.37%);
   color: #FAFAFA;
   padding-top: 40px;
-  padding-bottom: 120px;
+  padding-bottom: 140px;
   margin: 0 auto;
 }
 @media screen and (max-width: 768px) {
   .item__chart-all {
-    margin-left: -25px;
+    margin-left: -3.59%;
+    margin-right: -2.4%;
   }
 }
 .item__chart-all div {
@@ -7786,7 +7787,7 @@ body[data-revision-history=true] .ck.ck-pagination-view-line::after {
 @media screen and (max-width: 768px) {
   .chart-open__btn-param {
     overflow: scroll;
-    height: 30%;
+    height: 30% !important;
   }
 }
 .chart-open__btn-param .btn {
@@ -7810,13 +7811,26 @@ body[data-revision-history=true] .ck.ck-pagination-view-line::after {
   width: auto !important;
   min-height: 110px !important;
 }
+@media screen and (max-width: 768px) {
+  .chart-open__btn-param-all {
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+    height: 160px !important;
+  }
+}
 
 .output__statistic-items {
   margin-bottom: 30px;
 }
 .output__statistic-items-all {
-  width: 99.1vw;
+  width: 100vw;
   margin-bottom: 0;
+}
+@media screen and (max-width: 768px) {
+  .output__statistic-items-all {
+    width: 95vw;
+  }
 }
 .output__statistic-items ul {
   list-style: none;

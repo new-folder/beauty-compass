@@ -369,10 +369,11 @@
       background: linear-gradient(144.75deg, #1560BD 31.52%, #194071 72.37%)
       color: $sub-color
       padding-top: 40px
-      padding-bottom: 120px
+      padding-bottom: 140px
       margin: 0 auto
       @media screen and (max-width: $second-breack-point)
-        margin-left: -25px
+        margin-left: -3.59%
+        margin-right: -2.4%
       div
         width:  100vw
         @media screen and (max-width: $second-breack-point)
@@ -575,7 +576,7 @@
         border-radius: $border-radius
       @media screen and (max-width: $second-breack-point)
         overflow: scroll
-        height: 30%
+        height: 30% !important
       .btn
         background: $main-color
         color: $sub-color
@@ -590,11 +591,16 @@
       &-all
         width: auto !important
         min-height: 110px !important
+        @media screen  and (max-width: $second-breack-point)
+          max-height: fit-content
+          height: 160px !important
 .output__statistic-items
   margin-bottom: 30px
   &-all
-    width: 99.1vw
+    width: 100vw
     margin-bottom: 0
+    @media screen  and (max-width: $second-breack-point)
+      width: 95vw
   ul
     list-style: none
 
