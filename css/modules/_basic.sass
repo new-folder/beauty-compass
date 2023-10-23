@@ -1049,21 +1049,23 @@ main
                 opacity: .7
         &--like
             svg
-                path
-                    fill: $gray-light
+                color: #1560BD
         &--like_active
             svg
                 path
                     fill: $main-color
         &--dislike
             svg
+                color: #E31E24
                 transform: rotate(180deg)
-                path
-                    fill: $gray-light
         &--dislike_active
             svg
                 path
                     fill: $pre-color
+        &.active
+            > svg 
+                .icon-inner
+                    fill: currentColor
     &__mark
         position: absolute
         top: 20px

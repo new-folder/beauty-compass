@@ -1778,20 +1778,21 @@ textarea {
 .feed__action:hover svg {
   opacity: 0.7;
 }
-.feed__action--like svg path {
-  fill: #D9D9D9;
+.feed__action--like svg {
+  color: #1560BD;
 }
 .feed__action--like_active svg path {
   fill: #1560BD;
 }
 .feed__action--dislike svg {
+  color: #E31E24;
   transform: rotate(180deg);
-}
-.feed__action--dislike svg path {
-  fill: #D9D9D9;
 }
 .feed__action--dislike_active svg path {
   fill: #E31E24;
+}
+.feed__action.active > svg .icon-inner {
+  fill: currentColor;
 }
 .feed__mark {
   position: absolute;

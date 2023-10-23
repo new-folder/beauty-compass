@@ -46,8 +46,7 @@
   }
 }
 .splide--gallery .splide__slide img {
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   max-width: 220px;
   max-height: 195px;
 }
@@ -138,4 +137,4 @@
 }
 .splide--vertical .splide__arrows:has(.splide__arrow--prev[disabled] ~ .splide__arrow--next[disabled]) {
   display: none;
-}/*# sourceMappingURL=custom.css.map */
+}
