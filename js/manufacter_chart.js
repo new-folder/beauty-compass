@@ -611,16 +611,8 @@ if ($('#allItems').length!=0) {
                 },
             ]
         }
-        
-        generateChart(cosmetics,$('#allItems'),'all')
 
-        // const chart=new Chart($('#allItems'),{
-        //     type:'line',
-        //     data:dataOutpChart,
-        //     options: {
-        //         maintainAspectRatio: false,
-        //     }})
-        
+        generateChart(cosmetics,$('#allItems'),'all')
 
         let btnClick=[
             {
