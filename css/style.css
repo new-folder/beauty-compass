@@ -7699,6 +7699,12 @@ ul {
   justify-content: space-around;
   width: 75%;
   margin: auto;
+  list-style: none;
+}
+.articles .paginationjs-pages ul {
+  width: auto;
+  gap: 30px;
+  margin-bottom: 30px;
 }
 @media screen and (max-width: 1400px) {
   .paginationjs-pages ul {
@@ -7768,6 +7774,9 @@ ul {
     font-size: 15px;
     line-height: 18px;
   }
+}
+.paginationjs-pages ul li::marker {
+  display: none;
 }
 
 .image-modal {
