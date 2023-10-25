@@ -7,6 +7,8 @@
     <title>Редактирование статьи</title>
     <link rel="stylesheet" href="../css/style.css" />
     <script src="../js/jq.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
 </head>
 <body>
 <nav class="navbar navbar-expand-xxl top-bar">
@@ -120,8 +122,7 @@
     </div>
 </nav>
 
-<main class="statistics_cosmetic lk-user">
-
+<main class="editor_article lk-user">
     <section class="title title-custom">
         <div class="container container--bc">
             <div class="page-title page-title d-flex flex-wrap align-items-center col-xxl-10 offset-xxl-1">
@@ -144,17 +145,124 @@
             </div>
         </div>
     </section>
-    <section>
+    <section class="container container--bc">
         <div class="col-12 col-xxl-12">
-            <form action="" class="persData" id="" enctype="multipart/form-data">
-                <label id="ava" class="select-wrap visPrfile">
-                    <small class="redPrfile">
-                        Аватар
-                    </small>
-                    <div id="avatar">
-                        <input type="file" name="form__pic" id="form__pic" class="file-input "/>
+            <form action="" name="article_edit-form" class="persData article_edit-form flex-column" enctype="multipart/form-data">
+                <div class="article__edit-form__header">
+                    <label for="cover__pic" class="select-wrap article__img_cover">
+                        <small>
+                            Обложка
+                        </small>
+                        <div id="avatar">
+                            <input type="file" name="cover__pic" id="cover__pic" class="file-input "/>
+                        </div>
+                    </label>
+                    <label for="title_article" class="select-wrap article__title">
+                        <small>
+                            Название статьи
+                        </small>
+                        <input class="form-control" type="text" name="title_article" id="title_article">
+                    </label>
+                    <p class="text--15-20">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam officia eius a fugit cupiditate voluptatum facere, eos, recusandae laudantium ullam animi placeat voluptate laborum, qui accusantium maxime minima. Iste, non?
+                        Ab optio dolorem, sed natus possimus harum, qui placeat aut incidunt sequi cum quaerat voluptatem necessitatibus quas ad praesentium vel, nisi perspiciatis a explicabo veniam architecto. Aspernatur magni quaerat aliquid?
+                        Sapiente, earum autem ipsam nobis, doloribus nesciunt quos aut obcaecati et suscipit alias! Delectus, voluptatem autem? Ipsa, ducimus nostrum! Inventore molestias aut soluta provident in similique corporis, accusantium tempore eius?
+                    </p>
+                    <div class="d-flex justify-content-around align-items-center article__multisel">
+                        <label class="select-wrap ">
+                            <small>
+                                что-то из макета
+                            </small>
+                            <select multiple class="form-select" id="" name="" >
+                                <option value="Lorem">
+                                    Lorem
+                                </option>
+                            </select>
+                        </label>
+                        <label class="select-wrap ">
+                            <small>
+                                что-то из макета
+                            </small>
+                            <select multiple class="form-select" id="" name="" >
+                                <option value="Lorem">
+                                    Lorem
+                                </option>
+                            </select>
+                        </label>
+                        <label class="select-wrap ">
+                            <small>
+                                что-то из макета
+                            </small>
+                            <select multiple class="form-select" id="" name="" >
+                                <option value="Lorem">
+                                    Lorem
+                                </option>
+                            </select>
+                        </label>
                     </div>
-                </label>
+                </div>
+                <div class="article__edit-form__body">
+                    <div class="article__editor-text" id="editorjs">
+
+                    </div>
+                </div>
+                <div class="article__edit-form__footer">
+                    <p class="text-center text-uppercase">ссылки</p>
+                    <div class="article__edit-form__footer-link-wrap d-flex flex-wrap align-items-center justify-content-between">
+
+                        <label for="url_article-1" class="select-wrap article__url">
+                            <small>
+                                URL
+                            </small>
+                            <input class="form-control" type="text" name="url_article-1" id="url_article-1">
+                        </label>
+                        <label for="url_article-2" class="select-wrap article__url">
+                            <small>
+                                URL
+                            </small>
+                            <input class="form-control" type="text" name="url_article-2" id="url_article-2">
+                        </label>
+
+                        <label for="url_article-3" class="select-wrap article__url">
+                            <small>
+                                URL
+                            </small>
+                            <input class="form-control" type="text" name="url_article-3" id="url_article-3">
+                        </label>
+
+                        <label for="url_article-4" class="select-wrap article__url">
+                            <small>
+                                URL
+                            </small>
+                            <input class="form-control" type="text" name="url_article-4" id="url_article-4">
+                        </label>
+
+                        <label for="url_article-5" class="select-wrap article__url">
+                            <small>
+                                URL
+                            </small>
+                            <input class="form-control" type="text" name="url_article-5" id="url_article-5">
+                        </label>
+
+                    </div>
+                    <div class="article__edit-form__footer-fnc-btn">
+                        <div id="timer">
+                            <p class="text--15-20">
+                                Таймер публикации
+                            </p>
+                        </div>
+                        <div id="publish">
+                            <p class="text--15-20">
+                                Опубликовать
+                            </p>
+                        </div>
+                        <div id="draft">
+                            <p class="text--15-20">
+                                Сохранить черновик
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
     </section>
@@ -547,8 +655,9 @@
     </div>
 </div>
 
-<script src="../js/editor.js"></script>
-<script src="../js/bootstrap.bundle.min.js"></script>
+<script type="module" src="../js/editor.js"></script>
+<script src="../js/select2.js" defer=""></script>
+<script src="../js/article_edit.js"></script>
 
 </body>
 </html>
