@@ -25,7 +25,7 @@ $(document).ready(() => {
         });
     }
 
-    articlesPaginationInitialization('#pagination', 'generated.json', '', renderArticle)
+    articlesPaginationInitialization('#pagination', 'generated.json', 'data', renderArticle) //вместо generated.json указать рабочий
     // Функция для форматирования даты
     const formatDate = (dateString) => {
         // Обрезаем первые 8 символов и разбиваем на год, месяц и день
