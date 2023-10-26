@@ -1,9 +1,8 @@
 $(document).ready(() => {
 
-    const renderArticle = (data, pagination) => {
+    const renderArticle = (data) => {
         const articlesContainer = $('#articles-container');
         articlesContainer.empty();
-
         data.forEach((item) => {
             // Создание HTML для каждой статьи
             const articleHtml = `
@@ -22,10 +21,12 @@ $(document).ready(() => {
                     </a>
                 </div>
             `;
+            articlesContainer.append(articleHtml);
         });
     }
 
-    articlesPaginationInitialization('#pagination', 'generated.json', '', renderArticle)
+    articlesPaginationInitialization('#pagination', 'https://run.mocky.io/v3/bc9a273b-ef97-427f-865e-84963f1d4ebb', 'data', renderArticle)
+
     // Функция для форматирования даты
     const formatDate = (dateString) => {
         // Обрезаем первые 8 символов и разбиваем на год, месяц и день

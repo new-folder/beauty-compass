@@ -5,7 +5,7 @@ const articlesPaginationInitialization = (elSelector, dataUrl, locator = "", ren
         dataSource: dataUrl,
         pageSize: 10, // Количество статей на странице
         callback: renderCallback,
-        totalNumberLocator: (response) => response.total //total заменить на тот, который указан в json
+        totalNumberLocator: (response) => response.total 
     });
 
 }
