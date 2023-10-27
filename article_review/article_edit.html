@@ -126,19 +126,6 @@
     <section class="title title-custom">
         <div class="container container--bc">
             <div class="page-title page-title d-flex flex-wrap align-items-center col-xxl-10 offset-xxl-1">
-                <div class="col-1 col-xxl-12 order-xxl-1">
-                    <a href="#" class="btn__svg-confirm text--15-30 fw-600 main-color hover-red d-flex align-items-center justify-content-start justify-content-xxl-center m-auto">
-                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g id="vuesax/outline/arrow-left">
-                                <g id="arrow-left">
-                                    <path id="Vector" d="M11.9633 23.5254C11.7258 23.5254 11.4883 23.4379 11.3008 23.2504L3.71328 15.6629C3.35078 15.3004 3.35078 14.7004 3.71328 14.3379L11.3008 6.75039C11.6633 6.38789 12.2633 6.38789 12.6258 6.75039C12.9883 7.11289 12.9883 7.71289 12.6258 8.07539L5.70078 15.0004L12.6258 21.9254C12.9883 22.2879 12.9883 22.8879 12.6258 23.2504C12.4508 23.4379 12.2008 23.5254 11.9633 23.5254Z" fill="#1560BD"></path>
-                                    <path id="Vector_2" d="M25.6234 15.9375H4.58594C4.07344 15.9375 3.64844 15.5125 3.64844 15C3.64844 14.4875 4.07344 14.0625 4.58594 14.0625H25.6234C26.1359 14.0625 26.5609 14.4875 26.5609 15C26.5609 15.5125 26.1359 15.9375 25.6234 15.9375Z" fill="#1560BD"></path>
-                                </g>
-                            </g>
-                        </svg>
-                        <span class="text-decoration-none text-uppercase d-none d-xxl-block ms-2"> Вернуться в кабинет </span>
-                    </a>
-                </div>
                 <div class="col text-center col-xxl-12">
                     <h1 class="title--20-36 text-uppercase mb-0">статья</h1>
                 </div>
@@ -147,7 +134,7 @@
     </section>
     <section class="container container--bc">
         <div class="col-12 col-xxl-12">
-            <form action="" name="article_edit-form" class="persData article_edit-form flex-column" enctype="multipart/form-data">
+            <form action="" name="article_edit-form" class="persData article__edit-form flex-column" enctype="multipart/form-data">
                 <div class="article__edit-form__header">
                     <label for="cover__pic" class="select-wrap article__img_cover">
                         <small>
@@ -157,23 +144,42 @@
                             <input type="file" name="cover__pic" id="cover__pic" class="file-input "/>
                         </div>
                     </label>
+                    <div class="article__copyrate-wrap">
+                        <div class="check__wrap m-0 article__copyrate">
+                            <input type="checkbox" name="copyr_prev" id="copyr_prev" >
+                            <label class="text--15-20" for="copyr_prev">Поставить копирайт?</label>
+                            <abbr title="">
+                                <div class="article__copyrate-quest">
+                                    ?
+                                </div>
+                            </abbr>
+                        </div>
+                        <div class="check__wrap m-0 article__copyrate">
+                            <input type="checkbox" name="sponsor" id="sponsor" >
+                            <label class="text--15-20" for="sponsor">Предоставлено спонсором?</label>
+                            <abbr title="">
+                                <div class="article__copyrate-quest">
+                                    ?
+                                </div>
+                            </abbr>
+                        </div>
+                    </div>
                     <label for="title_article" class="select-wrap article__title">
                         <small>
                             Название статьи
                         </small>
                         <input class="form-control" type="text" name="title_article" id="title_article">
                     </label>
-                    <p class="text--15-20">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam officia eius a fugit cupiditate voluptatum facere, eos, recusandae laudantium ullam animi placeat voluptate laborum, qui accusantium maxime minima. Iste, non?
-                        Ab optio dolorem, sed natus possimus harum, qui placeat aut incidunt sequi cum quaerat voluptatem necessitatibus quas ad praesentium vel, nisi perspiciatis a explicabo veniam architecto. Aspernatur magni quaerat aliquid?
-                        Sapiente, earum autem ipsam nobis, doloribus nesciunt quos aut obcaecati et suscipit alias! Delectus, voluptatem autem? Ipsa, ducimus nostrum! Inventore molestias aut soluta provident in similique corporis, accusantium tempore eius?
+                    <p class="text--15-20 article__title-descript">
+                        Добавьте через запятую 5-7 тегов – название бренда, формат средства, основное действие, основные активы, тип кожи, сезон выпуска коллекции, возраст и пол и т.п.
+                        Например: «Клеона, крем для глаз, антиэйдж, пептиды, чувствительная кожа, 35+» или «Гельтек, гидрофильное масло, демакияж, очищение, новинка 2022»
                     </p>
-                    <div class="d-flex justify-content-around align-items-center article__multisel">
+                    <div class="d-flex justify-content-between align-items-center article__multisel">
                         <label class="select-wrap ">
                             <small>
-                                что-то из макета
+                                Бренд
                             </small>
-                            <select multiple class="form-select" id="" name="" >
+                            <select class="form-select" id="" name="" >
                                 <option value="Lorem">
                                     Lorem
                                 </option>
@@ -181,9 +187,9 @@
                         </label>
                         <label class="select-wrap ">
                             <small>
-                                что-то из макета
+                                Рубрика
                             </small>
-                            <select multiple class="form-select" id="" name="" >
+                            <select class="form-select" id="" name="" >
                                 <option value="Lorem">
                                     Lorem
                                 </option>
@@ -191,9 +197,9 @@
                         </label>
                         <label class="select-wrap ">
                             <small>
-                                что-то из макета
+                                теги
                             </small>
-                            <select multiple class="form-select" id="" name="" >
+                            <select multiple class="form-select" id="tag_for_article" name="" >
                                 <option value="Lorem">
                                     Lorem
                                 </option>
@@ -202,14 +208,24 @@
                     </div>
                 </div>
                 <div class="article__edit-form__body">
-                    <div class="article__editor-text" id="editorjs">
+                    <div class="article__editor-text" id="editor">
+
+                    </div>
+                    <div class="article__img-add" id="img-add">
 
                     </div>
                 </div>
                 <div class="article__edit-form__footer">
-                    <p class="text-center text-uppercase">ссылки</p>
+                    <div class="d-flex article__edit-form__footer-wrap-title">
+                        <p class="text-center text--15-30 text-uppercase">Сылки на страницы средств</p>
+                        <abbr title="">
+                            <div class="article__edit-form__footer-quest">
+                                ?
+                            </div>
+                        </abbr>
+                    </div>
+                    
                     <div class="article__edit-form__footer-link-wrap d-flex flex-wrap align-items-center justify-content-between">
-
                         <label for="url_article-1" class="select-wrap article__url">
                             <small>
                                 URL
@@ -244,23 +260,32 @@
                             <input class="form-control" type="text" name="url_article-5" id="url_article-5">
                         </label>
 
+                        <label for="url_article-5" class="select-wrap article__url">
+                        </label>
+
                     </div>
                     <div class="article__edit-form__footer-fnc-btn">
-                        <div id="timer">
-                            <p class="text--15-20">
-                                Таймер публикации
-                            </p>
-                        </div>
                         <div id="publish">
-                            <p class="text--15-20">
+                            <p class="text--15-30">
                                 Опубликовать
                             </p>
                         </div>
                         <div id="draft">
-                            <p class="text--15-20">
+                            <p class="text--15-30">
                                 Сохранить черновик
                             </p>
                         </div>
+                        <label class="select-wrap" id="timer">
+                            <p class="text--15-30">
+                                Таймер публикации
+                            </p>
+                            <input type="hidden" id="constrained" data-inline="true" data-multiple="false" data-open-on="today" data-time="true">
+                            <abbr title="">
+                                <div class="article__edit-form__footer-quest">
+                                    ?
+                                </div>
+                            </abbr>
+                        </label>
                     </div>
                 </div>
             </form>
@@ -655,7 +680,8 @@
     </div>
 </div>
 
-<script type="module" src="../js/editor.js"></script>
+<script src="../js/editor.js"></script>
+<script src="../js/datepicker.js"></script>
 <script src="../js/select2.js" defer=""></script>
 <script src="../js/article_edit.js"></script>
 

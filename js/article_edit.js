@@ -1,28 +1,35 @@
-import EditorJS from './editorjs';
+ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
 
-// const editor = new EditorJS({
-//     /**
-//      * Id of Element that should contain Editor instance
-//      */
-//     holder: 'editorjs'
+// var constrained = new Datepicker('#constrained', {
+
+//     // 10 days in the future
+//     max: (function(){
+//         var date = new Date();
+//         date.setDate(date.getDate() + 10);
+//         return date;
+//     })()
 // });
 
 $(document).ready(function() {
 
-    $('#saveProfile').on('click', function(){
-        const data=new FormData($('.persData')[0]);
-        file=data.get('cover__pic')
-        if (file) {
-            console.log("Загруженный файл:", file.name);
-        }
-    })
+    // $('#saveProfile').on('click', function(){
+    //     const data=new FormData($('.persData')[0]);
+    //     file=data.get('cover__pic')
+    //     if (file) {
+    //         console.log("Загруженный файл:", file.name);
+    //     }
+    // })
 
     $('#cover__pic').on("change", null, $('#cover__pic'), handleFileSelected)
 
-    // $('#activeIgnore').select2({
-    //     closeOnSelect: false,
-    //     placeholder:"Выберите из списка",
-    // })
+    $('#tag_for_article').select2({
+        closeOnSelect: false,
+        placeholder:"Выберите из списка",
+    })
 
 })
 
