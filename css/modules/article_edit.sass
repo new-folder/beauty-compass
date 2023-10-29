@@ -1,5 +1,7 @@
 @import vars
-
+.ck-editor__main
+    * 
+        width: auto
 .article
     &__edit-form
         .select-wrap
@@ -14,6 +16,8 @@
         &__body
             @media screen and (max-width: $first-breack-point)
                 margin-top: 40px
+            .ck
+
         &__footer
             margin-top: 40px
             &-link-wrap
@@ -33,11 +37,14 @@
                 grid-template: repeat(2,50px)/repeat(2, auto)
                 @media screen and (max-width: $second-breack-point)
                     grid-template: repeat(3,50px)/repeat(1, auto)
-
                 color: $gray-light
                 align-items: center
                 justify-content: stretch
                 margin-bottom: 20px
+
+                *.active
+                    p
+                        cursor: pointer
                 #publish
                     grid-area: 1/2/2/3
                     justify-self: end
@@ -64,7 +71,11 @@
                             background-repeat: no-repeat
                             background-size: 100%
                             margin-right: 20px
-                            
+                    .active
+                        color: $main-color
+                        &::before
+                            background-image: url('../img/tick-circle.svg')
+
                 #draft
                     grid-area: 2/2/3/3
                     @media screen and (max-width: $second-breack-point)
@@ -90,6 +101,10 @@
                             background-repeat: no-repeat
                             background-size: 100%
                             margin-right: 20px
+                    .active
+                        color: $main-color
+                        &::before
+                            background-image: url('../img/btn_paper.svg')
                 #timer
                     grid-area: 1/1/2/2
                     @media screen and (max-width: $second-breack-point)
@@ -99,7 +114,7 @@
                     width: 100% !important
                     align-items: center
                     p
-                        width: 60% !important
+                        width: 55% !important
                         display: flex
                         align-items: center
                         @media screen and (max-width: $second-breack-point)
@@ -115,17 +130,12 @@
                             margin-right: 20px
                             @media screen and (max-width: $first-breack-point)
                                 width: 20px
-                        &::after
-                            content: ''
-                            width: 30px
-                            aspect-ratio: 1
-                            background-image: url('../img/arrowDownGray.svg')
-                            background-position: center
-                            background-repeat: no-repeat
-                            background-size: 80%
-                            margin-left: 10px
-                            @media screen and (max-width: $first-breack-point)
-                                width: 20px
+                    .active
+                        color: $main-color
+                        &::before
+                            background-image: url('../img/calendar active.svg')
+                            
+
             &-quest
                 border: 2px solid $gray-light
                 border-radius: 50%
@@ -133,6 +143,8 @@
                 width: 28px !important
                 flex-shrink: 0
                 text-align: center
+            &-quest.active
+                border: 2px solid $main-color
             &-wrap-title
                 align-items: center
                 justify-content: center
@@ -146,10 +158,11 @@
                     margin-right: -58px
                     @media screen and (max-width: $second-breack-point)
                         margin-right: -28px
-
-
+                abbr.active
+                    color: $main-color
     &__img
         &_cover
+            width: 100% !important
             grid-area: 1/1/5/5
             @media screen and (max-width: $first-breack-point)
                 grid-area: 1/1/5/6
@@ -169,8 +182,10 @@
                 background-size: 60%
 
         &-add
-
+            height: 100px
+            background-color: $white-color
     &__title
+        width: 100% !important
         grid-area: 1/5/2/17
         @media screen and (max-width: $first-breack-point)
             grid-area: 1/6/2/17
@@ -201,7 +216,9 @@
             flex-wrap: wrap
         @media screen and (max-width: $xs-breack-point)
             grid-area: 2/8/5/15
-
+        .select2-selection__rendered
+            *
+                width: auto !important
         .select-wrap
             width: 30%
             @media screen and (max-width: $second-breack-point)
@@ -216,6 +233,7 @@
         padding: 0
         padding-top: 8px
         display: inline-flex
+        width: 100%
         @media screen and (max-width: $first-breack-point)
             width: 45% !important
         @media screen and (max-width: $second-breack-point)
@@ -223,6 +241,8 @@
         input
             width: auto !important
         label
+            width: 100%
+
             &::before
                 border: 2px solid $dark-lighter !important
                 width: 24px !important
