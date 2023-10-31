@@ -16,7 +16,8 @@
         &__body
             @media screen and (max-width: $first-breack-point)
                 margin-top: 40px
-            .ck
+            .ck.ck-content.ck-editor__editable, .ck.editor__editable[role="textbox"] 
+                border-radius: 15px 15px 0 0 !important
 
         &__footer
             margin-top: 40px
@@ -54,7 +55,6 @@
                     @media screen and (max-width: $second-breack-point)
                         grid-area: 1/1/2/2
                         justify-content: start
-
                     p
                         align-items: center
                         display: flex
@@ -107,13 +107,14 @@
                             background-image: url('../img/btn_paper.svg')
                 #timer
                     grid-area: 1/1/2/2
+                    height: 100%
                     @media screen and (max-width: $second-breack-point)
                         grid-area: 3/1/4/2
 
                     display: flex
                     width: 100% !important
                     align-items: center
-                    p
+                    p.main
                         width: 55% !important
                         display: flex
                         align-items: center
@@ -130,11 +131,21 @@
                             margin-right: 20px
                             @media screen and (max-width: $first-breack-point)
                                 width: 20px
-                    .active
+                    .active.main
                         color: $main-color
                         &::before
                             background-image: url('../img/calendar active.svg')
-                            
+                    abbr.active
+                        color: $main-color
+                    &-res
+                        display: flex
+                        color: $main-color
+                        &::before
+                            content: ''
+                            width: 40px
+                            aspect-ratio: 1
+                            margin-right: 20px
+                            display: block
 
             &-quest
                 border: 2px solid $gray-light
@@ -158,8 +169,7 @@
                     margin-right: -58px
                     @media screen and (max-width: $second-breack-point)
                         margin-right: -28px
-                abbr.active
-                    color: $main-color
+                
     &__img
         &_cover
             width: 100% !important
@@ -182,8 +192,13 @@
                 background-size: 60%
 
         &-add
-            height: 100px
+            padding: 20px 0
+            height: fit-content
             background-color: $white-color
+            border-radius: 0 0 30px 30px
+            &.active
+                border: 2px dashed $main-color
+                border-radius: 0 0 30px 30px
     &__title
         width: 100% !important
         grid-area: 1/5/2/17
@@ -274,3 +289,65 @@
 abbr
     text-decoration: none !important
     width: fit-content !important
+
+#upload
+    &-image
+        &-label
+            position: relative
+            background-color: $main-color
+            color: $white-color
+            text-align: center
+            width: fit-content
+            padding: 10px
+            border-radius: 0.3em
+            margin: 0 auto
+            cursor: pointer
+            transition: .3s ease-out
+            &:hover
+                transform: scale(1.1)
+                @media screen and (max-width: $second-breack-point)
+                    transform: scale(1)
+
+            
+    &-error
+        color: $pre-color
+        font-weight: bold
+        margin: 20px auto
+        width: fit-content
+    &-preview
+        max-width: 80%
+        margin: auto
+        justify-content: left
+        @media screen and (max-width: $second-breack-point)
+            justify-content: center
+
+        figure
+            max-width: 150px
+            max-height: 150px
+            margin: 5px
+            margin-bottom: 30px
+            transition: .3s
+            display: flex
+            align-items: center
+            justify-content: center
+            width: fit-content
+            flex-direction: column
+            &:hover
+                max-width: 300px
+                max-height: 300px
+                @media screen and (max-width: $second-breack-point)
+                    max-width: 150px
+                    max-height: 150px
+            img
+                max-width: 100%
+                max-height: 100%
+                object-fit: contain
+                
+.error-form .modal-dialog .modal-content
+    border-radius: 15px 
+
+.timer
+    &-visibl
+        display: block
+    &-hide
+        display: none

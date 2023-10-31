@@ -146,8 +146,8 @@
                     </label>
                     <div class="article__copyrate-wrap">
                         <div class="check__wrap m-0 article__copyrate">
-                            <input type="checkbox" name="copyr_prev" id="copyr_prev" >
-                            <label class="text--15-20" for="copyr_prev">Поставить копирайт?</label>
+                            <input type="checkbox" name="copyr_prev" id="copyr_prev"  >
+                            <label form="article_edit-form" class="text--15-20" for="copyr_prev">Поставить копирайт?</label>
                             <abbr title="">
                                 <div class="article__copyrate-quest">
                                     ?
@@ -175,23 +175,41 @@
                         Например: «Клеона, крем для глаз, антиэйдж, пептиды, чувствительная кожа, 35+» или «Гельтек, гидрофильное масло, демакияж, очищение, новинка 2022»
                     </p>
                     <div class="d-flex justify-content-between align-items-center article__multisel">
-                        <label class="select-wrap ">
+                        <label class="select-wrap" for="brandItem">
                             <small>
                                 Бренд
                             </small>
-                            <select class="form-select" id="" name="" >
+                            <select class="form-select" id="brandItem" name="brandItem" >
                                 <option value="Lorem">
                                     Lorem
                                 </option>
+                                <option value="Lorem21">
+                                    Lorem21
+                                </option>
+                                <option value="Lorem2">
+                                    Lorem2
+                                </option>
+                                <option value="Lorem1">
+                                    Lorem1
+                                </option>
                             </select>
                         </label>
-                        <label class="select-wrap ">
+                        <label class="select-wrap " for="categoryArticl">
                             <small>
                                 Рубрика
                             </small>
-                            <select class="form-select" id="" name="" >
+                            <select class="form-select" id="categoryArticl" name="categoryArticl" >
                                 <option value="Lorem">
                                     Lorem
+                                </option>
+                                <option value="Lorem21">
+                                    Lorem21
+                                </option>
+                                <option value="Lorem2">
+                                    Lorem2
+                                </option>
+                                <option value="Lorem1">
+                                    Lorem1
                                 </option>
                             </select>
                         </label>
@@ -199,9 +217,18 @@
                             <small>
                                 теги
                             </small>
-                            <select multiple class="form-select" id="tag_for_article" name="" >
+                            <select multiple class="form-select" id="tag_for_article" name="tagsArticl" >
                                 <option value="Lorem">
                                     Lorem
+                                </option>
+                                <option value="Lorem21">
+                                    Lorem21
+                                </option>
+                                <option value="Lorem2">
+                                    Lorem2
+                                </option>
+                                <option value="Lorem1">
+                                    Lorem1
                                 </option>
                             </select>
                         </label>
@@ -212,7 +239,15 @@
 
                     </div>
                     <div class="article__img-add" id="img-add">
-                        
+                        <input type="file" name="" class="d-none" accept="image/*" multiple id="upload-image">
+                        <label id="upload-image-label" class="d-block text--15-20" for="upload-image">
+                            Выберите или перетащите изображения
+                        </label>
+                        <div id="upload-error" class="d-block text--15-20">
+                        </div>
+                        <div id="upload-preview" class="d-flex align-content-center flex-wrap ">
+
+                        </div>
                     </div>
                 </div>
                 <div class="article__edit-form__footer">
@@ -275,8 +310,8 @@
                                 Сохранить черновик
                             </p>
                         </div>
-                        <label class="select-wrap" id="timer">
-                            <p class="text--15-30">
+                        <label id="timer">
+                            <p class="text--15-30 main">
                                 Таймер публикации
                             </p>
                             <input type="hidden" id="constrained" data-inline="true" data-multiple="false" data-open-on="today" data-time="true">
@@ -679,9 +714,31 @@
         </div>
     </div>
 </div>
-
+<div class="modal fade error-form" id="errorDateModal"  tabindex="-1" role="dialog" aria-labelledby="ошибка ввода даты постинга" aria-hidden="true">
+    <div class="modal-dialog text-center" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ошибка</h5>
+            </div>
+            <div class="modal-body">
+                Некорректно введена дата
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade error-form" id="errorFormFill"  tabindex="-1" role="dialog" aria-labelledby="ошибка ввода даты постинга" aria-hidden="true">
+    <div class="modal-dialog text-center" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ошибка</h5>
+            </div>
+            <div class="modal-body">
+                Не все поля заполнены
+            </div>
+        </div>
+    </div>
+</div>
 <script src="../js/editor.js"></script>
-<script src="../js/dropzone.min.js"></script>
 <script src="../js/datepicker.js"></script>
 <script src="../js/select2.js" defer=""></script>
 <script src="../js/article_edit.js"></script>
