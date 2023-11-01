@@ -310,6 +310,8 @@ $(document).ready(function() {
             } ))
     }).then((val)=>{
 
+        $('.ck-body-wrapper').remove()
+        
         editor=val
 
         $('.ck-blurred').click(function (e) {
