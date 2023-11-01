@@ -1,6 +1,13 @@
+//проверка активации кнопок
 let trigerActive=false
+//объект для содержимого текстового редактора
 let editor={}
-
+//обновление значений под файлы
+$('#upload-image')[0].value=''
+$('#cover__pic')[0].value=''
+//массив для файлов
+let ArrayFile={}
+//активация кнопок
 function activeButton() {
     if (trigerActive) {
         return 1;
@@ -20,10 +27,7 @@ function activeButton() {
 
     $(timer.children[0]).click(function (e) { 
         e.preventDefault();
-        $('.datepicker').removeClass('timer-hide')
-
-        $('.datepicker').addClass('timer-visibl')
-
+        $('.datepicker').toggle('timer-visibl')
     });
 
     let updateTime=''
@@ -59,11 +63,9 @@ function activeButton() {
 
                 $('.editor_article').click((e)=>{
                     e.preventDefault()
-                    if(e.target!=timer)
+                    if(e.target!=timer && $('.datepicker')[0].attributes[1].value.split(' ')[$('.datepicker')[0].attributes[1].value.split(' ').length-1]=='timer-visibl')
                     {
-                        $('.datepicker').addClass('timer-hide')
                         $('.datepicker').removeClass('timer-visibl')
-                        $(document).off('click', $('.editor_article'))
                     }
                 })
                 
@@ -75,59 +77,108 @@ function activeButton() {
 
     function sendFormData(formData,link=''){
         
-        let json=''
-        if (!editor.getData()) {
+        //проверка входных значений
+        if (!editor.getData() || 
+        $('#upload-image')[0].files.length==0 || 
+        $('#cover__pic')[0].files.length==0 || 
+        $('#title_article').value=='' || 
+        $('#brandItem')[0].value=='' ||
+        $('#categoryArticl')[0].value=='' ||
+        $('#tag_for_article')[0].value=='' 
+        ) {
             return undefined
         }
-
+        //передача данных формы
         const data=new FormData($(formData)[0]);
 
+        // выдача даты и времени
         if ($('#constrained')[0].value!=undefined && $('#constrained')[0].value) {
-
             let separateDate=$('#constrained')[0].value.split('@')
             separateDate=[...separateDate[0].split('.'),...separateDate[1].split(':')]
-
             data.append('articleDate',new Date(separateDate[2], --separateDate[1],separateDate[0],separateDate[4],separateDate[3]))
         }
         else    
             data.append('articleDate',new Date())
 
+        //выдача текста из редактора
         data.append('articleText', editor.getData())
 
-        for (let pair of data.entries()) {
-            if (pair[1]=="") {
-                console.log(pair[0] + ', ' + pair[1]);
-                data.delete(pair[0])
+        //добавление тригеров для водяного знака
+        for(let el of data.entries()){
+            if (el[0].indexOf('copy_')) {
+                data.append('watermarkImgId', el[0].split('_')[1])
             }
         }
-        for (let pair of data.entries()) {
-            if (pair[1]=="") {
-                console.log(pair[0] + ', ' + pair[1]);
-                data.delete(pair[0])
-            }
-        }
-        
-        // file=data.get('cover__pic')
-        // if (file) {
-        //     console.log("Загруженный файл:", file.name);
-        // }
 
-        console.log(data);
-        return json
+        //раскомментировать для рабоы с БД
+
+        // return $.ajax({
+        //     type: "post",
+        //     url: link,
+        //     data: data,
+        //     dataType: "dataType",
+        //     success: function (response) {
+        //         return 'good'
+        //     }
+        // });
+
+        return 'good'
     }
 
+    //в sendFormData добавить ссылку на обработчик для чистовиков на бэке
+
     $('#publish').on('click', function(){
-        console.log(sendFormData('.article__edit-form'));
         if (sendFormData('.article__edit-form')==undefined) {
             $('#errorFormFill').modal('show')
+        }else{
+            console.log("Отправка завершена");
         }
     })
 
+    //в sendFormData добавить ссылку на обработчик  для черновиков на бэке
+
+    $('#draft').on('click', function(){
+        if (sendFormData('.article__edit-form')==undefined) {
+            $('#errorFormFill').modal('show')
+        }else{
+            console.log("Отправка завершена");
+        }
+    })
+    
+
     trigerActive=!trigerActive
+}
+//загрузка изображения для обложки
+function handleFileSelected(input) {
+    
+    let file = input.data[0].files[0]
+    if(file){
+        let reader = new FileReader()
+        reader.readAsDataURL(file)
+        reader.onload = function () {
+            $('#avatar').css('background-image', 'url('+reader.result+')'  )
+            $('#avatar').css('background-size', '100%' )
+            activeButton()
+        }
+    }
+    
 }
 
 $(document).ready(function() {
 
+    let uploadButton = document.getElementById("upload-image");
+    let container = document.querySelector(".article__img-add");
+    let error = document.getElementById("upload-error");
+    let imageDisplay = document.getElementById("upload-preview");
+
+    // счетчик
+    var createCounter = function(n) {
+        return () => n++;
+    };
+
+    const counter = createCounter(0)
+    
+    //добавление изображения на обложку
     $('#cover__pic').on("change", null, $('#cover__pic'), handleFileSelected)
 
     $('#tag_for_article').select2({
@@ -135,19 +186,7 @@ $(document).ready(function() {
         placeholder:"Выберите из списка",
     })
 
-    let uploadButton = document.getElementById("upload-image");
-    let container = document.querySelector(".article__img-add");
-    let error = document.getElementById("upload-error");
-    let imageDisplay = document.getElementById("upload-preview");
-
-    var createCounter = function(n) {
-        return () => n++;
-    };
-
-    const counter = createCounter(0)
-
-    let ArrayFile={}
-
+    //добавление файлов к посту
     const fileHandler = (file, name, type) => {
         activeButton()
         if (type.split("/")[0] !== "image") {
@@ -169,7 +208,7 @@ $(document).ready(function() {
         let reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onloadend = () => {
-            //image and file name
+            //изображение и имя файла 
             let imageContainer = document.createElement("figure");
             let img = document.createElement("img");
             img.src = reader.result;
@@ -193,7 +232,6 @@ $(document).ready(function() {
         };
     };
 
-    //Upload Button
     uploadButton.addEventListener("change", () => {
     imageDisplay.innerHTML = "";
         if (uploadButton.files.length<=10) {
@@ -255,10 +293,8 @@ $(document).ready(function() {
         error.innerText = "";
     };
 
+    //создание элемента editor
     new Promise((resolve, reject) => {
-        
-
-        
         resolve(ClassicEditor
             .create( document.querySelector( '#editor' ), {
                 toolbar: {
@@ -300,20 +336,5 @@ $(document).ready(function() {
 
     })
 })
-
-function handleFileSelected(input) {
-    
-    let file = input.data[0].files[0]
-    if(file){
-        let reader = new FileReader()
-        reader.readAsDataURL(file)
-        reader.onload = function () {
-            $('#avatar').css('background-image', 'url('+reader.result+')'  )
-            $('#avatar').css('background-size', '100%' )
-            activeButton()
-        }
-    }
-    
-}
 
 

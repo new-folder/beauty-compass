@@ -8080,7 +8080,7 @@ abbr {
 }
 
 .timer-visibl {
-  display: block;
+  display: block !important;
 }
 .timer-hide {
   display: none;
@@ -8565,6 +8565,11 @@ body[data-revision-history=true] .ck.ck-pagination-view-line::after {
 .datepicker__header {
   width: 90% !important;
   margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+  .datepicker {
+    left: -220px;
+  }
 }
 
 .select-wrap {
