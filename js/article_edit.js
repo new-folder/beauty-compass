@@ -63,12 +63,12 @@ function activeButton() {
 
                 $('.editor_article').click((e)=>{
                     e.preventDefault()
-                    if(e.target!=timer && $('.datepicker')[0].attributes[1].value.split(' ')[$('.datepicker')[0].attributes[1].value.split(' ').length-1]=='timer-visibl')
+                    if(e.target!=timer)
                     {
                         $('.datepicker').removeClass('timer-visibl')
                     }
                 })
-                
+
             }
         }
     });
@@ -107,9 +107,10 @@ function activeButton() {
         for(let el of data.entries()){
             if (el[0].indexOf('copy_')) {
                 data.append('watermarkImgId', el[0].split('_')[1])
+                
             }
         }
-
+console.log(data);
         //раскомментировать для рабоы с БД
 
         // return $.ajax({
@@ -150,7 +151,7 @@ function activeButton() {
 }
 //загрузка изображения для обложки
 function handleFileSelected(input) {
-    
+    activeButton()
     let file = input.data[0].files[0]
     if(file){
         let reader = new FileReader()
@@ -178,9 +179,6 @@ $(document).ready(function() {
 
     const counter = createCounter(0)
     
-    //добавление изображения на обложку
-    $('#cover__pic').on("change", null, $('#cover__pic'), handleFileSelected)
-
     $('#tag_for_article').select2({
         closeOnSelect: false,
         placeholder:"Выберите из списка",
@@ -311,7 +309,7 @@ $(document).ready(function() {
     }).then((val)=>{
 
         $('.ck-body-wrapper').remove()
-        
+
         editor=val
 
         $('.ck-blurred').click(function (e) {
@@ -331,6 +329,9 @@ $(document).ready(function() {
         $('.select-wrap').click(function (e){
             activeButton()
         })
+
+        //добавление изображения на обложку
+        $('#cover__pic').on("change", null, $('#cover__pic'), handleFileSelected)
 
         $('.check__wrap').click(function (e){
             activeButton()
