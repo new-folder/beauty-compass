@@ -1,32 +1,6 @@
-@import "vars.sass"
-
-.recomend
-    font-weight: 600
-    font-style: normal
-
-    p
-        font-size: 18px
-        line-height: 22px
-        color: $dark-lighter
-        @media screen and (max-width: $second-breack-point)
-            font-size: 12px
-            line-height: 15px
-
-    .heading
-        font-size: 30px
-        line-height: 37px
-        color: $dark-semi-light
-        @media screen and (max-width: $second-breack-point)
-            font-size: 15px
-            line-height: 18px
-            letter-spacing: 0.5px
-
-    &:first-child
-        margin-top: 40px
-
-.downloadRezult
+@import vars
+.download_rezult
     margin-bottom: 30px
-
     form
         width: 100%
         display: flex
@@ -73,8 +47,6 @@
             @media screen and (max-width: $second-breack-point)
                 width: 100%
                 margin-top: 25px
-
-
             &:before
                 flex-shrink: 0
                 content: ''
@@ -92,7 +64,6 @@
                 @media screen and (max-width: $first-breack-point)
                     width: 20px !important
                     border: 1px solid $main-color
-
             &:hover
                 opacity: 0.7
             p
@@ -101,8 +72,25 @@
                 font-size: 30px
                 line-height: 37px
                 @media screen and (max-width: $first-breack-point)
+                    font-size: 24px
+                    line-height: 18px
+                @media screen and (max-width: $second-breack-point)
                     font-size: 15px
                     line-height: 18px
+        #paySelect
+            &:before
+                border: 1px #00000000
+                border-radius: 0
+                background-size: 100%
+                background-image: url("../img/receipt-item.svg")
+        #selectProgram
+            &:before
+                border: 1px #00000000
+                border-radius: 0
+                background-size: 100%
+                background-image: url("../img/wallet-money.svg")
+            
+        #butDownload
 
         #butChoice
             display: flex
@@ -119,3 +107,11 @@
                 background-position: center center
                 background-size: 100%
                 background-image: url("../img/settingDidg.svg")
+    &-saveing
+        margin-top: 20px
+        
+        form
+            label
+                width: 60%
+                @media screen and (max-width: $first-breack-point)
+                    width: 100%

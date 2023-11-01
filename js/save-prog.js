@@ -1,4 +1,4 @@
-$('.viewProgram .paginSaveProgram-d .paginSaveProgram').pagination({
+$('#viewProg').pagination({
     dataSource: [
         
         
@@ -18,9 +18,6 @@ $('.viewProgram .paginSaveProgram-d .paginSaveProgram').pagination({
             date:'22.08.2022',
             descriptProgram: 'Программа для сухой кожи на весну. Дополнительные решаемые задачи: потеря упругости, гиперпигментация'
         },
-        
-        
-        
         {
             nameUserProgram: 'Ник, весна 2026',
             date:'22.08.2022',
@@ -90,7 +87,7 @@ $('.viewProgram .paginSaveProgram-d .paginSaveProgram').pagination({
     pageRange: 0,
     callback: function(data, pagination) {
         var html = templatingItem(data);
-        $('.viewProgram .paginSaveProgram-d .paginSaveProgram').prev().html(html);
+        $('#viewProg').prev().html(html);
     }
 });
 $('#viewRez').pagination({
