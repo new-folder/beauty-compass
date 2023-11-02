@@ -6,158 +6,159 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beauty Compass</title>
     <link rel="stylesheet" href="../css/style.css" />
-</head>
+    <script src="../js/jq.js"></script>
+    <script src="../js/select2.js" defer></script>
+    <script src="../js/pogination.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-xxl top-bar">
-      <div
-        class="container justify-content-start position-relative p-xxl-0 container--header"
-      >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarTogglerDemo01"
-          aria-controls="navbarTogglerDemo01"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand col-1 d-xxl-none top-bar__short-logo" href="#"
+      <div class="container justify-content-start position-relative p-xxl-0 container--header">
+          <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarTogglerDemo01"
+                  aria-controls="navbarTogglerDemo01"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+          >
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand col-1 d-xxl-none top-bar__short-logo" href="#"
           ><img src="../img/short-logo.svg" alt=""
-        /></a>
-        <div
-          class="collapse navbar-collapse justify-content-center top-bar__collapse"
-          id="navbarTogglerDemo01"
-        >
-          <a
-            class="navbar-brand col-11 col-xxl-4 offset-md-1 top-bar__logo"
-            href="#"
-            ><img src="../img/logo.svg" alt=""
           /></a>
-
-          <form class="d-flex col-6 me-auto search-form">
-            <input
-              class="form-control me-2 search-form__input"
-              type="search"
-              placeholder="Поиск"
-              aria-label="Search"
-            />
-            <button class="btn search-form__submit" type="submit"></button>
-          </form>
-
-          <ul class="navbar-nav col-12 top-bar__list">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">О нас</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Подбор косметики</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"
-                >Обзоры авторов
-                <img
-                  src="../img/logo-micro.svg"
-                  class="align-baseline px-1"
-                  alt=""
+          <div
+                  class="collapse navbar-collapse justify-content-center top-bar__collapse"
+                  id="navbarTogglerDemo01"
+          >
+              <a
+                      class="navbar-brand col-11 col-xxl-4 offset-md-1 top-bar__logo"
+                      href="#"
+              ><img src="../img/logo.svg" alt=""
               /></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Статьи брендов</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Бренды</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Каталог</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Беседка</a>
-            </li>
-          </ul>
-
-          <div class="row justify-content-center my-3 d-flex d-xxl-none">
-            <div class="col-3">
-              <a
-                href=""
-                class="footer__social footer__social--email"
-                target="_blank"
-              ></a>
-            </div>
-            <div class="col-3">
-              <a
-                href=""
-                class="footer__social footer__social--telegram"
-                target="_blank"
-              ></a>
-            </div>
-            <div class="col-3">
-              <a
-                href=""
-                class="footer__social footer__social--vk"
-                target="_blank"
-              ></a>
-            </div>
+  
+              <form class="d-flex col-6 me-auto search-form">
+                  <input
+                          class="form-control me-2 search-form__input"
+                          type="search"
+                          placeholder="Поиск"
+                          aria-label="Search"
+                  />
+                  <button class="btn search-form__submit" type="submit"></button>
+              </form>
+  
+              <ul class="navbar-nav col-12 top-bar__list">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">О нас</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Подбор косметики</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#"
+                      >Обзоры авторов
+                          <img
+                                  src="../img/logo-micro.svg"
+                                  class="align-baseline px-1"
+                                  alt=""
+                          /></a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Статьи брендов</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Бренды</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Каталог</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Беседка</a>
+                  </li>
+              </ul>
+  
+              <div class="row justify-content-center my-3 d-flex d-xxl-none">
+                  <div class="col-3">
+                      <a
+                              href=""
+                              class="footer__social footer__social--email"
+                              target="_blank"
+                      ></a>
+                  </div>
+                  <div class="col-3">
+                      <a
+                              href=""
+                              class="footer__social footer__social--telegram"
+                              target="_blank"
+                      ></a>
+                  </div>
+                  <div class="col-3">
+                      <a
+                              href=""
+                              class="footer__social footer__social--vk"
+                              target="_blank"
+                      ></a>
+                  </div>
+              </div>
           </div>
-        </div>
-        <div
-          class="col-1 ms-md-1 position-absolute top-0 end-0 d-flex justify-content-end top-bar__links"
-        >
-          <a
-            class="top-bar__link"
-            data-bs-toggle="modal"
-            href="#headerAutorisation"
-            role="button"
-            ><img src="../img/login.svg" alt=""
-          /></a>
-          <a
-            class="top-bar__link"
-            data-bs-toggle="modal"
-            href="#headerFavorites"
-            role="button"
-            ><img src="../img/favorites.svg" alt=""
-          /></a>
-        </div>
+          <div
+                  class="col-1 ms-md-1 position-absolute top-0 end-0 d-flex justify-content-end top-bar__links"
+          >
+              <a
+                      class="top-bar__link"
+                      data-bs-toggle="modal"
+                      href="#headerAutorisation"
+                      role="button"
+              ><img src="../img/login.svg" alt=""
+              /></a>
+              <a
+                      class="top-bar__link"
+                      data-bs-toggle="modal"
+                      href="#headerFavorites"
+                      role="button"
+              ><img src="../img/favorites.svg" alt=""
+              /></a>
+          </div>
       </div>
-    </nav>
-    <main class="custom-main-program">
-      <section class="brand__title">
-        <div class="container container--bc">
-            <div class="page-title d-flex flex-wrap align-items-center col-xxl-10 offset-xxl-1">
-                <div class="col-1 col-xxl-12 order-xxl-1">
-                    <a href="" class="btn__svg-confirm text--15-30 fw-600 main-color hover-red d-flex align-items-center justify-content-start justify-content-xxl-center m-auto text-decoration-none">
-                        <img src="../img/arrow-left.svg" alt="Стрелка налево">
-                        <span class=" text-uppercase ms-2">Вернуться в кабинет</span>
-                    </a>
-                </div>
-                <div class="col text-center col-xxl-12">
-                    <h1 class="title--20-36 text-uppercase" >Сохраненные программы</h1>
+  </nav>
+    <main>
+      <section class="comments container container--bc">
+        <div class="col-xxl-10 m-auto">
+          <section class="brand__title">
+              <div class="page-title d-flex flex-wrap align-items-center col-xxl-10 offset-xxl-1">
+                  <div class="col-1 col-xxl-12 order-xxl-1">
+                      <a href="" class="btn__svg-confirm text--15-30 fw-600 main-color hover-red d-flex align-items-center justify-content-start justify-content-xxl-center m-auto text-decoration-none">
+                          <img src="../img/arrow-left.svg" alt="Стрелка налево">
+                          <span class=" text-uppercase ms-2">Вернуться в кабинет</span>
+                      </a>
+                  </div>
+                  <div class="col text-center col-xxl-12">
+                      <h1 class="title--20-36 text-uppercase">комментарии</h1>
+                  </div>
+              </div>
+          </section>
+          <section class="sysInf">
+              <h3 class="text--15-24 text-start dark-semi mb-2 mb-xl-2" id="numberMess">Комментарии (22)</h3>
+          </section>
+          <div class="discourse-comments__list position-relative mb-4">
+            <div class="discourse__item mb-4">
+                <div class="feed d-flex flex-column mb-2 mb-lg-3">
                 </div>
             </div>
-        </div>
-      </section>
-      <section class="view  container container--bc">
-        <p class="text-uppercase">
-          программы
-        </p>
-        <div class="pagin__output-info">
-          <p></p>
-          <div class="pagin__output-info" id="viewProg">
           </div>
-        </div>
-      </section>
-      <section class=" view view-rez container container--bc">
-        <p class="text-uppercase">
-          Результаты тестов
-        </p>
-        <div class="pagin__output-info">
-          <p></p>
-          <div class="pagin__output-info" id="viewRez">
-          </div>
+          <section class="discourse-comments__list position-relative mb-4">
+            <div class="discourse__item mb-4">
+              <div class="pagin__output-info feed d-flex flex-column mb-2 mb-lg-3">
+                <p></p>
+                <div class="pagin__output-info" id="view_comment">
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </section>
     </main>
+
     <footer class="footer py-5">
       <div class="container footer__container">
         <div class="row justify-content-center footer__nav">
@@ -295,7 +296,7 @@
             <div class="modal-body">
               <div class="row d-flex justify-content-center align-items-center">
                 <div class="auth__avatar">
-                  <img src="img/image 221.png" alt="" />
+                  <img src="../img/image 221.png" alt="" />
                 </div>
                 <div class="auth__user">
                   <div class="auth__name">Маня Иванова</div>
@@ -499,7 +500,6 @@
         </div>
       </div>
     </div>
-
     <div
       class="modal fade"
       id="headerFavorites"
@@ -545,9 +545,7 @@
         </div>
       </div>
     </div>
-    <script src="../js/jq.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
-    <script src="../js/pogination.js"></script>
-    <script src="../js/save-prog.js"></script>
-  </body>
+    <script defer src="../js/comment.js"></script>
+</body>
 </html>

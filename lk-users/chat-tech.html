@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beauty Compass</title>
     <link rel="stylesheet" href="../css/style.css" />
-</head>
   </head>
   <body>
     <nav class="navbar navbar-expand-xxl top-bar">
@@ -121,7 +120,7 @@
         </div>
       </div>
     </nav>
-    <main class="custom-main-program">
+    <main class="chat">
       <section class="brand__title">
         <div class="container container--bc">
             <div class="page-title d-flex flex-wrap align-items-center col-xxl-10 offset-xxl-1">
@@ -132,32 +131,26 @@
                     </a>
                 </div>
                 <div class="col text-center col-xxl-12">
-                    <h1 class="title--20-36 text-uppercase" >Сохраненные программы</h1>
+                    <h1 class="title--20-36 text-uppercase">чат с bc</h1>
                 </div>
             </div>
         </div>
       </section>
-      <section class="view  container container--bc">
-        <p class="text-uppercase">
-          программы
-        </p>
-        <div class="pagin__output-info">
-          <p></p>
-          <div class="pagin__output-info" id="viewProg">
-          </div>
+      <section class="sysInf">
+        <div class="container container--bc">
+          <button data-bs-toggle="modal" data-bs-target="#sendMess" id="createRev" class="feed-button text-uppercase"><p>написать сообщение</p></button>
+          <p id="numberMess">Все сообщения (22)</p>
         </div>
       </section>
-      <section class=" view view-rez container container--bc">
-        <p class="text-uppercase">
-          Результаты тестов
-        </p>
+      <section class="pagin container container--bc">
         <div class="pagin__output-info">
           <p></p>
-          <div class="pagin__output-info" id="viewRez">
+          <div class="pagin__output-info" id="viewChatBC">
           </div>
         </div>
       </section>
     </main>
+
     <footer class="footer py-5">
       <div class="container footer__container">
         <div class="row justify-content-center footer__nav">
@@ -295,7 +288,7 @@
             <div class="modal-body">
               <div class="row d-flex justify-content-center align-items-center">
                 <div class="auth__avatar">
-                  <img src="img/image 221.png" alt="" />
+                  <img src="../img/image 221.png" alt="" />
                 </div>
                 <div class="auth__user">
                   <div class="auth__name">Маня Иванова</div>
@@ -545,9 +538,73 @@
         </div>
       </div>
     </div>
-    <script src="../js/jq.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jq.js"></script>
+    <script src="../js/select2.js" defer></script>
     <script src="../js/pogination.js"></script>
-    <script src="../js/save-prog.js"></script>
-  </body>
+    <script defer src="../js/chats.js"></script>
+    <div class="modal modal-send-mess modal__create-rev fade" id="sendMess" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header chat text-center">
+            <h5 class="modal-title" id="deleteProfileLabel">Сообщение</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+          </div>
+          <div class="modal-body">
+            <form action="" class="send-mess-tech">
+              <div class="titleModal">
+                <label for="appeal" class="select-wrap" id="appeal">
+                  <small> 
+                    Заголовок обращения
+                  </small>
+                  <input class="form-control" type="text" name="appeal" id="appeal">
+                </label>
+                <div class="select-wrap">
+                  <small>Тема обращения</small>
+                  <select class="form-select" name="them" id="them">
+                    <option selected>
+                      Выберите один из вариантов
+                    </option>
+                    <option value="techSup">
+                      Техническая поддержка
+                    </option>
+                    <option value="generQuest">
+                      Общие вопросы и предложения
+                    </option>
+                    <option value="legalIss">
+                      Юридические и финансовые вопросы
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <label for="textApeal" class="select-wrap">
+                <small> 
+                  Текст обращения
+                </small>
+                <textarea class="form-control" name="textApeal" id="textApeal" rows="3"></textarea>
+              </label>
+              <label id="ava" class="select-wrap visPrfile">
+                <small>
+                  Загрузите до 5 фотографий
+                </small>
+                <div class="previewImage">
+                  <div id="avatar" class="addImage">
+                    <input multiple type="file" name="form__pic" id="form__pic" class="file-input file-input-modal"/>
+                  </div>
+                  <div class="previewImage_text">
+                    <p>Нажмите на область с иконкой</p>
+                    <small>Фото до 10 МБ. Формат JPG, JPEG, BMP, GIF</small>
+                  </div>
+                </div>
+              </label>
+            </form> 
+          </div>
+          <div class="modal-footer modal-footer-tech d-flex">
+            <button type="button" class="close text-uppercase" data-bs-dismiss="modal">отмена</button>
+            <button type="button" class="sendMess text-uppercase">отправить</button>
+          </div>
+        </div>
+      </div>
+    </div> 
+</body>
 </html>
