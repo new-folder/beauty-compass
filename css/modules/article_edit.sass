@@ -47,6 +47,11 @@
                     p
                         cursor: pointer
                 #publish
+                    opacity: 1
+                    &:hover
+                        opacity: 0.7
+                        transition: opacity 0.3s
+                    cursor: pointer
                     grid-area: 1/2/2/3
                     justify-self: end
                     display: flex
@@ -77,6 +82,11 @@
                             background-image: url('../img/tick-circle.svg')
 
                 #draft
+                    opacity: 1
+                    &:hover
+                        opacity: 0.7
+                        transition: opacity 0.3s
+                    cursor: pointer
                     grid-area: 2/2/3/3
                     @media screen and (max-width: $second-breack-point)
                         grid-area: 2/1/2/2
@@ -106,6 +116,11 @@
                         &::before
                             background-image: url('../img/btn_paper.svg')
                 #timer
+                    opacity: 1
+                    &:hover
+                        opacity: 0.7
+                        transition: opacity 0.3s
+                    cursor: pointer
                     grid-area: 1/1/2/2
                     height: 100%
                     @media screen and (max-width: $second-breack-point)
@@ -146,7 +161,22 @@
                             aspect-ratio: 1
                             margin-right: 20px
                             display: block
-
+                #timer-res-wrap
+                    width: 55%
+                    #btn-cansel
+                        border-radius: 50%
+                        background-color: $pre-color
+                        width: 25px
+                        text-align: center
+                        color: $white-color
+                        aspect-ratio: 1/1
+                        padding: 2px
+                        cursor: pointer
+                        opacity: 1
+                        &:hover
+                            opacity: 0.7
+                            transition: opacity 0.3s
+    
             &-quest
                 border: 2px solid $gray-light
                 border-radius: 50%
@@ -347,10 +377,25 @@ abbr
     border-radius: 15px 
 
 .timer
+    &-hide
+        display: none !important
     &-visibl
         display: block !important
-    &-hide
-        display: none
 
-.ck-body-wrapper
-    display: none
+
+
+#wallDatePicer
+    position: fixed
+    width: 100vw
+    height: 100vh
+    left: 0
+    top: 0
+.ck
+    &-color-selector
+        &__remove-color
+            display: none !important
+        &__color-picker
+            display: none !important
+            
+    &-body-wrapper
+        display: none

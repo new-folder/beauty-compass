@@ -27,7 +27,16 @@ function activeButton() {
 
     $(timer.children[0]).click(function (e) { 
         e.preventDefault();
-        $('.datepicker').toggle('timer-visibl')
+        $('.datepicker').addClass('timer-visibl')
+
+        let bcgDp=document.createElement('div')
+        bcgDp.id='wallDatePicer'
+        timer.appendChild(bcgDp)
+        $('#wallDatePicer').click(()=>{
+            $('.datepicker').removeClass('timer-visibl')
+            bcgDp.remove()
+        })
+
     });
 
     let updateTime=''
@@ -54,20 +63,43 @@ function activeButton() {
             }
             if (params!=undefined) {
                 $(updateTime).remove()
+
+                let wrapTime=document.createElement('div')
+
+                wrapTime.classList.add('d-flex','align-items-center','justify-content-between')
+                wrapTime.id='timer-res-wrap'
+
                 let timePublish=document.createElement('p')
+
                 timePublish.id="timer-res"
                 timePublish.classList.add('text--15-30')
                 timePublish.innerText=params.getDate()+'.'+(params.getMonth()+1)+'.'+params.getFullYear()+' '+params.getHours()+':'+params.getMinutes()
                 updateTime=timePublish
-                timer.parentElement.appendChild(timePublish)
 
-                $('.editor_article').click((e)=>{
-                    e.preventDefault()
-                    if(e.target!=timer)
-                    {
-                        $('.datepicker').removeClass('timer-visibl')
-                    }
-                })
+                wrapTime.appendChild(timePublish)
+
+                wrapTime.appendChild(
+                    (
+                        function() {
+                            let buttonCansel=document.createElement('div')
+                            buttonCansel.id='btn-cansel'
+                            buttonCansel.appendChild(
+                                (function(){
+                                    let p=document.createElement('p')
+                                    p.innerText='х'
+                                    p.classList.add('text--10-15')
+    
+                                    return p
+                                }
+                                )()
+                            )
+
+                            return buttonCansel
+                        }
+                    )()
+                )
+
+                timer.parentElement.appendChild(wrapTime)
 
             }
         }
@@ -77,6 +109,8 @@ function activeButton() {
 
     function sendFormData(formData,link=''){
         
+        console.log();
+
         //проверка входных значений
         if (!editor.getData() || 
         $('#upload-image')[0].files.length==0 || 
@@ -295,13 +329,6 @@ $(document).ready(function() {
     new Promise((resolve, reject) => {
         resolve(ClassicEditor
             .create( document.querySelector( '#editor' ), {
-                toolbar: {
-                    items: [ 
-                        'undo', 'redo',
-                        '|', 'bold', 'italic', 'strikethrough','fontColor',
-                        '|','alignment', 'bulletedList', 'numberedList'
-                    ],
-                }
                 } )
             .catch( error => {
                 console.error( error );
