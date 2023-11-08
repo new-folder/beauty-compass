@@ -17,7 +17,7 @@
             @media screen and (max-width: $first-breack-point)
                 margin-top: 40px
             .ck.ck-content.ck-editor__editable, .ck.editor__editable[role="textbox"] 
-                border-radius: 15px 15px 0 0 !important
+                border-radius: 15px !important
 
         &__footer
             margin-top: 40px
@@ -117,9 +117,6 @@
                             background-image: url('../img/btn_paper.svg')
                 #timer
                     opacity: 1
-                    &:hover
-                        opacity: 0.7
-                        transition: opacity 0.3s
                     cursor: pointer
                     grid-area: 1/1/2/2
                     height: 100%
@@ -161,8 +158,12 @@
                             aspect-ratio: 1
                             margin-right: 20px
                             display: block
+                            @media screen and (max-width: $second-breack-point)
+                                width: 0
                 #timer-res-wrap
                     width: 55%
+                    @media screen and (max-width: $second-breack-point)
+                        width: 70%
                     #btn-cansel
                         border-radius: 50%
                         background-color: $pre-color
@@ -173,6 +174,10 @@
                         padding: 2px
                         cursor: pointer
                         opacity: 1
+                        flex-shrink: 0
+                        @media screen and (max-width: $second-breack-point)
+                            p
+                                font-size: .9rem
                         &:hover
                             opacity: 0.7
                             transition: opacity 0.3s
@@ -337,8 +342,6 @@ abbr
                 transform: scale(1.1)
                 @media screen and (max-width: $second-breack-point)
                     transform: scale(1)
-
-            
     &-error
         color: $pre-color
         font-weight: bold
@@ -350,29 +353,33 @@ abbr
         justify-content: left
         @media screen and (max-width: $second-breack-point)
             justify-content: center
+            max-width: 100%
+        &.carousel
+            @media screen and ( max-width: $second-breack-point )
+                .item
+                    margin-bottom: 40px
+        &.calage
+            .item
+                overflow: visible
+                margin: 0 5px 50px 0
 
-        figure
-            max-width: 150px
-            max-height: 150px
-            margin: 5px
-            margin-bottom: 30px
-            transition: .3s
-            display: flex
-            align-items: center
-            justify-content: center
-            width: fit-content
-            flex-direction: column
+    &-func-btn
+        margin-left: 20px
+        margin-right: 20px
+        @media screen and (max-width: $second-breack-point)
+            flex-direction: column  
+            *
+                width: 100%
+        .btn
+            color: $white-color
+            background-color: $main-color
+            transition: .3s all
+            @media screen and (max-width: $second-breack-point)
+                height: 40px
+                margin-top: 20px
             &:hover
-                max-width: 300px
-                max-height: 300px
-                @media screen and (max-width: $second-breack-point)
-                    max-width: 150px
-                    max-height: 150px
-            img
-                max-width: 100%
-                max-height: 100%
-                object-fit: contain
-                
+                background-color: $pre-color
+
 .error-form .modal-dialog .modal-content
     border-radius: 15px 
 
@@ -381,8 +388,6 @@ abbr
         display: none !important
     &-visibl
         display: block !important
-
-
 
 #wallDatePicer
     position: fixed

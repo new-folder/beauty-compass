@@ -141,7 +141,7 @@
                             Обложка
                         </small>
                         <div id="avatar">
-                            <input type="file" name="cover__pic" id="cover__pic" class="file-input "/>
+                            <input type="file"  accept="image/*" name="cover__pic" id="cover__pic" class="file-input "/>
                         </div>
                     </label>
                     <div class="article__copyrate-wrap">
@@ -235,7 +235,7 @@
                     </div>
                 </div>
                 <div class="article__edit-form__body">
-                    <div class="article__editor-text" id="editor">
+                    <div class="article__editor-text" id="editor_0">
 
                     </div>
                     <div class="article__img-add" id="img-add">
@@ -245,8 +245,24 @@
                         </label>
                         <div id="upload-error" class="d-block text--15-20">
                         </div>
-                        <div id="upload-preview" class="d-flex align-content-center flex-wrap ">
+                        <div id="upload-preview" class="calage">
 
+                        </div>
+                        <div id="upload-func-btn" class="d-flex align-items-center justify-content-between d-none">
+                            
+                            <label class="select-wrap" for="brandItem">
+                                <small>
+                                    Вид отображения
+                                </small>
+                                <select class="form-select" id="display_img">
+                                    <option selected value="grid">Сетка</option>
+                                    <option value="carousel">Карусель</option>
+                                </select>
+                            </label>
+
+                            <button class="btn" id="upload-btn">
+                                Добавить к статье
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -327,7 +343,6 @@
         </div>
     </section>
 </main>
-
 <footer class="footer py-5 mt-auto">
     <div class="container footer__container">
         <div class="row justify-content-center footer__nav">
@@ -738,10 +753,34 @@
         </div>
     </div>
 </div>
+<div class="modal fade error-form" id="successFormFill"  tabindex="-1" role="dialog" aria-labelledby="ошибка ввода даты постинга" aria-hidden="true">
+    <div class="modal-dialog text-center" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Успех</h5>
+            </div>
+            <div class="modal-body">
+                Статья успешно отправлена на публикацию
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade error-form" id="successDraftFormFill"  tabindex="-1" role="dialog" aria-labelledby="ошибка ввода даты постинга" aria-hidden="true">
+    <div class="modal-dialog text-center" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Успех</h5>
+            </div>
+            <div class="modal-body">
+                Статья успешно отправлена в черновики
+            </div>
+        </div>
+    </div>
+</div>
 <script src="../js/editor.js"></script>
 <script src="../js/datepicker.js"></script>
 <script src="../js/select2.js" defer=""></script>
 <script src="../js/article_edit.js"></script>
-
+<script src="../js/article_uploded.js"></script>
 </body>
 </html>
