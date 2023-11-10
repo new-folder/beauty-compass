@@ -14,11 +14,10 @@
             @media screen and (max-width: $first-breack-point)
                 row-gap: 0 !important
         &__body
-            @media screen and (max-width: $first-breack-point)
-                margin-top: 40px
             .ck.ck-content.ck-editor__editable, .ck.editor__editable[role="textbox"] 
                 border-radius: 15px !important
-
+            .ck.ck-reset
+                margin-top: 40px
         &__footer
             margin-top: 40px
             &-link-wrap
@@ -249,9 +248,9 @@
             @media screen and (max-width: $first-breack-point)
                 grid-area: 2/6/4/17
             @media screen and (max-width: $second-breack-point)
-                grid-area: 5/1/6/17
+                grid-area: 6/1/7/17
             @media screen and (max-width: $xs-breack-point)
-                grid-area: 5/1/6/15
+                grid-area: 6/1/7/15
             
             text-overflow: ellipsis
             overflow: hidden
@@ -308,18 +307,52 @@
             grid-area: 5/1/7/5
             @media screen and (max-width: $first-breack-point)
                 margin-top: 20px
-                grid-area: 5/1/6/17
+                grid-area: 6/1/7/17
                 display: flex
                 justify-content: space-between
             @media screen and (max-width: $second-breack-point)
-                grid-area: 6/1/7/17
+                grid-area: 7/1/8/17
                 flex-wrap: wrap
             @media screen and (max-width: $xs-breack-point)
-                grid-area: 6/1/7/15
+                grid-area: 7/1/8/15
             
+    &__add-tag
+        grid-area: 5/5/7/17
+        width: 100% !important
+        @media screen and (max-width: $first-breack-point)
+            grid-area: 5/1/6/17
+        @media screen and (max-width: $second-breack-point)
+            grid-area: 5/1/6/15
+        #add_tag_article-error
+            color: $pre-color
+            margin: 5px
+            font-weight: bold
 
     &__editor-text
         height: 400px
+    &__rem-edit-photo
+        position: relative
+        left: 57%
+        width: 45px !important
+        margin: 0 !important
+        margin-top: -91px !important
+        background-color: $sub-color
+        padding: 5px 5px 5px 0
+        box-shadow: $box-shadow-sm
+        border-radius: 0 $border-radius $border-radius 0
+        display: block !important
+        hr
+            margin-top: 5px
+            margin-bottom: 5px
+        span
+            height: 40px
+            display: block
+            img
+                height: 100%
+        &.carousel
+            left: 100%
+        &.calage
+
 
 abbr
     text-decoration: none !important

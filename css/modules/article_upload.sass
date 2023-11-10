@@ -67,16 +67,20 @@
     display: flex
     flex-wrap: wrap
     justify-content: center
-    @media screen and (max-width: $first-breack-point)
+    @media screen and ( max-width: $first-breack-point )
+        width: 60%
+    @media screen and ( max-width: $second-breack-point )
         width: 100%
     .item
-        margin-top: 0
         background: linear-gradient(150deg, rgba(73,73,73,0.3085609243697479) 0%, rgba(227,30,36,0.4374124649859944) 29%, rgba(21,96,189,0.9248074229691877) 100%)
         aspect-ratio: 1
         box-shadow: inset $box-shadow-regular
-        width: 19%
-        @media screen and (max-width: $second-breack-point)
-            width: 45%
+        width: 32%
+        margin: 2% 2% 0 0
+        border-radius: 15px 
+        overflow: hidden
+        &:nth-child(3n)
+            margin-right: 0
         &.active
             position: fixed
             top: 0
@@ -87,11 +91,23 @@
             align-items: center
             justify-content: center
             z-index: 11
+            margin: 0
+            border-radius: 0
             img
                 flex-shrink: 0
-                height: 50%
+                height: 70%
             .article__copyrate
                 display: none
+            &.w-50-cust
+                width: 100%
+        &.w-100
+            aspect-ratio: 3.1
+            margin-right: 0
+        &.w-50-cust
+            width: 49%
+            aspect-ratio: 1.53
+            &:nth-last-child(2n)
+                margin-right: 0
         img
             display: block
             margin: auto

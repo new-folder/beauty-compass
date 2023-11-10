@@ -233,6 +233,13 @@
                             </select>
                         </label>
                     </div>
+                    <label for="add_tag_article" class="select-wrap article__add-tag">
+                        <small>
+                            Добавление тегов к посту
+                        </small>
+                        <input class="form-control" type="text" name="add_tag_article" id="add_tag_article">
+                        <span id="add_tag_article-error" class="text--15-20"></span>
+                    </label>
                 </div>
                 <div class="article__edit-form__body">
                     <div class="article__editor-text" id="editor_0">
@@ -243,7 +250,7 @@
                         <label id="upload-image-label" class="d-block text--15-20" for="upload-image">
                             Выберите или перетащите изображения
                         </label>
-                        <div id="upload-error" class="d-block text--15-20">
+                        <div id="upload-error" class="d-block text--15-20 text-center">
                         </div>
                         <div id="upload-preview" class="calage">
 
@@ -343,6 +350,17 @@
         </div>
     </section>
 </main>
+<template id="rem-edit-photo">
+    <div class="article__rem-edit-photo">
+        <span>
+            <img src="../img/cross-bg-red.svg" alt="Удалитьь блок">
+        </span>
+        <hr>
+        <span>
+            <img src="../img/btn_pen-gray.svg" alt="Изменение блока">
+        </span>
+    </div>
+</template> 
 <footer class="footer py-5 mt-auto">
     <div class="container footer__container">
         <div class="row justify-content-center footer__nav">
