@@ -1,6 +1,3 @@
-log=(el)=>{
-    console.log(el)
-}
 //ссылка на хранилище изображений(путь нужен для загрузки шаблона, чтоб его потом не переделывать)
 let linkForStorageImg=''
 //проверка активации кнопок
@@ -137,17 +134,27 @@ function activeButton() {
         }
 
         //проверка входных значений
-        if (
-        (!editor[0].getData() || (!seacrhId($('.carousel')) && !seacrhId($('.calage')))) || 
-        !validateTags||
-        $('#cover__pic')[0].files.length==0 || 
-        $('#title_article').value=='' || 
-        $('#brandItem')[0].value=='' ||
-        $('#categoryArticl')[0].value=='' ||
-        $('#tag_for_article')[0].value=='' 
-        ) {
-            return undefined    
+        let trigerFillEditor=false
+
+        for(let key in editor){
+            let element = editor[key]
+            if(element.getData()){
+                trigerFillEditor=true
+                break;
+            }
         }
+
+        // if (
+        // (!trigerFillEditor || (!seacrhId($('.carousel')) && !seacrhId($('.calage')))) || 
+        // !validateTags||
+        // $('#cover__pic')[0].files.length==0 || 
+        // $('#title_article').value=='' || 
+        // $('#brandItem')[0].value=='' ||
+        // $('#categoryArticl')[0].value=='' ||
+        // $('#tag_for_article')[0].value=='' 
+        // ) {
+        //     return undefined    
+        // }
         //передача данных формы
         const data=new FormData($(formData)[0]);
 
@@ -169,12 +176,12 @@ function activeButton() {
                 let divClone=document.createElement('div')
                 divClone.classList.add($($($('#editor_'+index)[0].nextElementSibling)[0].nextElementSibling)[0].classList[0])
                 let startEl=0
-                let endEl=0
+                let endEl=$($($('#editor_'+index)[0].nextElementSibling)[0].nextElementSibling)[0].children.length-1
+
                 if(divClone.classList[0]=='carousel'){
                     startEl=1
-                    endEl=$($($('#editor_'+index)[0].nextElementSibling)[0].nextElementSibling)[0].children.length-1
-                }else{
-                    endEl=$($($('#editor_'+index)[0].nextElementSibling)[0].nextElementSibling)[0].children.length
+                    endEl--
+                    divClone.appendChild($($($('#editor_'+index)[0].nextElementSibling)[0].nextElementSibling)[0].children[0].cloneNode())
                 }
 
                 let countFile=createCounter(0)
@@ -182,7 +189,6 @@ function activeButton() {
                 for (let j = startEl; j < endEl; j++) {
                     const element = $($($('#editor_'+index)[0].nextElementSibling)[0].nextElementSibling)[0].children[j];
                     const numberFile=countFile()
-
                     divClone.appendChild( (function (parent, name, link) {
                         let span=document.createElement('span')
                         let img=document.createElement('img')
@@ -200,6 +206,10 @@ function activeButton() {
                 
                 }
 
+                if(divClone.classList[0]=='carousel'){
+
+                    divClone.appendChild($($($('#editor_'+index)[0].nextElementSibling)[0].nextElementSibling)[0].children[endEl].cloneNode())
+                }
                 // добавка обработки ссылок на изображения
 
                 globalText+=divClone.outerHTML
@@ -209,6 +219,14 @@ function activeButton() {
 
         // смена путей для встроенного блока
         data.append('articleText', globalText)
+
+        //удаление пустых значений
+        
+        for (const [name, value] of data) {
+            if(value==""){
+                data.delete(name)
+            }            
+        }
 
         console.log(data);
         //раскомментировать для рабоы с БД
@@ -296,6 +314,44 @@ $(document).ready(function() {
     })
 
     //проверка тегов
+    if ($('#add_tag_article')[0].value.includes('#') 
+        || $('#add_tag_article')[0].value.includes('.') 
+        ||$('#add_tag_article')[0].value.includes('<') 
+        ||$('#add_tag_article')[0].value.includes('>') 
+        ||$('#add_tag_article')[0].value.includes('?') 
+        ||$('#add_tag_article')[0].value.includes('\'') 
+        ||$('#add_tag_article')[0].value.includes('"') 
+        ||$('#add_tag_article')[0].value.includes('@')
+        ||$('#add_tag_article')[0].value.includes('№')
+        ||$('#add_tag_article')[0].value.includes('!')
+        ||$('#add_tag_article')[0].value.includes('$')
+        ||$('#add_tag_article')[0].value.includes(';')
+        ||$('#add_tag_article')[0].value.includes('%')
+        ||$('#add_tag_article')[0].value.includes('^')
+        ||$('#add_tag_article')[0].value.includes(':')
+        ||$('#add_tag_article')[0].value.includes('&')
+        ||$('#add_tag_article')[0].value.includes('*')
+        ||$('#add_tag_article')[0].value.includes('\(')
+        ||$('#add_tag_article')[0].value.includes('\)')
+        ||$('#add_tag_article')[0].value.includes('-')
+        ||$('#add_tag_article')[0].value.includes('_')
+        ||$('#add_tag_article')[0].value.includes('+')
+        ||$('#add_tag_article')[0].value.includes('=')
+        ||$('#add_tag_article')[0].value.includes('\\')
+        ||$('#add_tag_article')[0].value.includes('/')
+        ||$('#add_tag_article')[0].value.includes('|')
+        ||$('#add_tag_article')[0].value.includes('\{')
+        ||$('#add_tag_article')[0].value.includes('\}')
+        ||$('#add_tag_article')[0].value.includes('\[')
+        ||$('#add_tag_article')[0].value.includes('\]')
+        ||$('#add_tag_article')[0].value.includes('`')
+        ) {
+            $('#add_tag_article-error')[0].innerText="Теги нужно записать через запятую, символы (#  \. < > ? ' \" @ №) и т.п запрещены"
+            validateTags=false
+        }else{
+            $('#add_tag_article-error')[0].innerText=""
+            validateTags=true
+        }
     $('#add_tag_article').keyup(function (e) { 
 
         if (e.target.value.includes('#') 
@@ -339,6 +395,7 @@ $(document).ready(function() {
     });
     //добавление файлов к посту
     const fileHandler = (file, name, type, numberFile) => {  
+
         //если загрузили не изображение
         if (type.split("/")[0] !== "image") {
             error.innerText = "Пожалуйста, выберите изображение";
@@ -702,9 +759,13 @@ $(document).ready(function() {
             error.innerText=""
             let div=document.createElement('div')
             div.classList.add(imageDisplay.classList[0])
-            
-            const counterFileServ = createCounter(0)
-    
+
+            let counterFileServ = 0
+
+            if(Object.keys(ArrayFileSendServ).length!=0){
+                counterFileServ=Object.keys(ArrayFileSendServ).length
+            }
+
             for(let spanPar of imageDisplay.children){
                 let span=document.createElement('span')
                 span.classList=spanPar.classList
@@ -731,8 +792,8 @@ $(document).ready(function() {
                             span.appendChild(file)
                             break;
                         case "div":
-                            let numFile=counterFileServ()
-
+                            let numFile=counterFileServ
+                            counterFileServ++
                             if($(file.children[0])[0].checked){
                                 ArrayFileSendServ[numFile]={
                                     'file':ArrayFile[$(file.children[0])[0].id.split('_')[1]],
@@ -782,11 +843,14 @@ $(document).ready(function() {
                 })
         
                 $(div.children[div.children.length-1]).click(()=>{
-                    if(indexActiv<div.children.length-2 && div.children.length!=4){
-                        $(div.children[indexActiv]).removeClass('active');
-        
-                        indexActiv++
-                        $(div.children[indexActiv]).addClass('active');
+                    if(indexActiv<div.children.length-2){
+                        if(!div.children[indexActiv+1].classList.contains('carousel-next')){
+
+                            $(div.children[indexActiv]).removeClass('active');
+            
+                            indexActiv++
+                            $(div.children[indexActiv]).addClass('active');
+                        }
                     }
     
                 })
@@ -831,7 +895,7 @@ $(document).ready(function() {
                     const element = div.children[index];
 
                     for(let key in ArrayFileSendServ){
-                        if(ArrayFileSendServ[key].file.name.includes(element.children[0].id)){
+                        if(ArrayFileSendServ[key].file.name.split('.')[0]==element.children[0].id){
                             delete(ArrayFileSendServ[key])
                         }
                     }
@@ -854,19 +918,55 @@ $(document).ready(function() {
             //изменение
             $(functBtn[0].children[2]).click((e)=>{
                 e.preventDefault()
-                log(e)
-                log(ArrayFile)
-                log(ArrayFileSendServ)
+                let countpPhotoEdit=div.children.length-1
 
                 let startEl=0
-                let endEl=0
+                let endEl=div.children.length-1
 
                 if (div.classList.contains('carousel')) {
                     startEl=1
-                    endEl=div.children.length-2
-                } else {
-                    endEl=div.children.length-1
+                    endEl--
+                    countpPhotoEdit=countpPhotoEdit-2
                 }
+                
+                if(imageDisplay.children.length+countpPhotoEdit>9){
+
+                    error.innerText="Фотографий больше чем 9 шт. удалите не нужные фото, прежде чем изменять блок"
+
+                }else{
+                    $(imageDisplay).removeClass('carousel')
+                    $(imageDisplay).addClass('calage')
+                    $('#display_img')[0].value="grid"
+
+                    
+                    for (let index = startEl; index < endEl; index++) {
+                        const element = div.children[index];
+                        for(let key in ArrayFileSendServ){
+                            if(ArrayFileSendServ[key].file.name.split('.')[0]==element.children[0].id){
+                                fileHandler(ArrayFileSendServ[key].file, ArrayFileSendServ[key].file.name,ArrayFileSendServ[key].file.type, key)
+
+                                ArrayFile[key]= ArrayFileSendServ[key].file
+                                
+                                delete(ArrayFileSendServ[key])
+                            }
+                        }
+                    }
+
+                    let numberEditor=divForEditor.id.split('_')[1]-1
+
+                    while(editor[numberEditor]==undefined){
+                        numberEditor--
+                    }
+
+                    editor[numberEditor].setData(editor[numberEditor].getData()+editor[divForEditor.id.split('_')[1]].getData())
+
+                    delete(editor[divForEditor.id.split('_')[1]])
+                    $('#'+divForEditor.id)[0].nextSibling.remove()
+                    $('#'+divForEditor.id).remove()
+
+                    div.remove()
+                }
+
             })
 
         }
