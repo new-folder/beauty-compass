@@ -8207,9 +8207,6 @@ abbr {
 .ck-color-selector__color-picker {
   display: none !important;
 }
-.ck-body-wrapper {
-  display: none;
-}
 
 :root {
   --ck-sample-base-spacing: 2em;

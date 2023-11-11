@@ -719,7 +719,7 @@ $(document).ready(function() {
             } ))
     }).then((val)=>{
 
-        $('.ck-body-wrapper').remove()
+        // $('.ck-body-wrapper').remove()
         
         editor[Object.keys(editor).length]=val
 
@@ -937,7 +937,6 @@ $(document).ready(function() {
                     $(imageDisplay).removeClass('carousel')
                     $(imageDisplay).addClass('calage')
                     $('#display_img')[0].value="grid"
-
                     
                     for (let index = startEl; index < endEl; index++) {
                         const element = div.children[index];
