@@ -49,6 +49,16 @@ function activeButton() {
 
     let updateTime=''
 
+    $('#infForTimer').click(()=>{
+
+        $('#questions').on('show.bs.modal', function(event){
+            var recipient='Это время, в которое опубликуется статья'
+            var modal =$(this)
+            modal.find('.modal-body').text(recipient)
+        })
+        $('#questions').modal('show')
+    })
+
     var constrained = new Datepicker('#constrained', {
         weekStart:1,
         time:true,
@@ -86,7 +96,6 @@ function activeButton() {
                 updateTime=timePublish
 
                 wrapTime.appendChild(timePublish)
-
 
                 wrapTime.appendChild(
                     (
@@ -144,17 +153,17 @@ function activeButton() {
             }
         }
 
-        // if (
-        // (!trigerFillEditor || (!seacrhId($('.carousel')) && !seacrhId($('.calage')))) || 
-        // !validateTags||
-        // $('#cover__pic')[0].files.length==0 || 
-        // $('#title_article').value=='' || 
-        // $('#brandItem')[0].value=='' ||
-        // $('#categoryArticl')[0].value=='' ||
-        // $('#tag_for_article')[0].value=='' 
-        // ) {
-        //     return undefined    
-        // }
+        if (
+        (!trigerFillEditor || (!seacrhId($('.carousel')) && !seacrhId($('.calage')))) || 
+        !validateTags||
+        $('#cover__pic')[0].files.length==0 || 
+        $('#title_article').value=='' || 
+        $('#brandItem')[0].value=='' ||
+        $('#categoryArticl')[0].value=='' ||
+        $('#tag_for_article')[0].value=='' 
+        ) {
+            return undefined    
+        }
         //передача данных формы
         const data=new FormData($(formData)[0]);
 
@@ -311,6 +320,44 @@ $(document).ready(function() {
     $('#tag_for_article').select2({
         closeOnSelect: false,
         placeholder:"Выберите из списка",
+    })
+
+    //
+    $('#infForCopy').click(()=>{
+
+        $('#questions').on('show.bs.modal', function(event){
+            var recipient='Копирайт позволяет предотвратить использование изображения в сторонних сервисах без вашего упоминания'
+            var modal =$(this)
+            modal.find('.modal-body').text(recipient)
+        })
+        $('#questions').modal('show')
+    })
+    $('#infForSponsor').click(()=>{
+
+        $('#questions').on('show.bs.modal', function(event){
+            var recipient='Укажет в статье, что товар в обзоре представлен спнсором'
+            var modal =$(this)
+            modal.find('.modal-body').text(recipient)
+        })
+        $('#questions').modal('show')
+    })
+    $('#infForURL').click(()=>{
+
+        $('#questions').on('show.bs.modal', function(event){
+            var recipient='Указанные ссылки помогут читателям быстрее найти товары в статье'
+            var modal =$(this)
+            modal.find('.modal-body').text(recipient)
+        })
+        $('#questions').modal('show')
+    })
+    $('#exampleModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var recipient = button.data('whatever') // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('.modal-title').text('New message to ' + recipient)
+        modal.find('.modal-body input').val(recipient)
     })
 
     //проверка тегов

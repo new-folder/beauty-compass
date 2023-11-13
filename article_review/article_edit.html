@@ -149,7 +149,7 @@
                             <input type="checkbox" name="copyr_prev" id="copyr_prev"  >
                             <label form="article_edit-form" class="text--15-20" for="copyr_prev">Поставить копирайт?</label>
                             <abbr title="">
-                                <div class="article__copyrate-quest">
+                                <div class="article__copyrate-quest" id="infForCopy" data-whatever="Копирайт позволяет предотвратить использование изображения в сторонних сервисах без вашего упоминания">
                                     ?
                                 </div>
                             </abbr>
@@ -158,7 +158,7 @@
                             <input type="checkbox" name="sponsor" id="sponsor" >
                             <label class="text--15-20" for="sponsor">Предоставлено спонсором?</label>
                             <abbr title="">
-                                <div class="article__copyrate-quest">
+                                <div class="article__copyrate-quest" id="infForSponsor" data-whatever="Укажет в статье, что товар в обзоре представлен спнсором">
                                     ?
                                 </div>
                             </abbr>
@@ -277,7 +277,7 @@
                     <div class="d-flex article__edit-form__footer-wrap-title">
                         <p class="text-center text--15-30 text-uppercase">Сылки на страницы средств</p>
                         <abbr title="">
-                            <div class="article__edit-form__footer-quest">
+                            <div class="article__edit-form__footer-quest" id="infForURL" data-whatever="Указанные ссылки помогут читателям быстрее найти товары в статье">
                                 ?
                             </div>
                         </abbr>
@@ -339,7 +339,7 @@
                             </p>
                             <input type="hidden" id="constrained" data-inline="true" data-multiple="false" data-open-on="today" data-time="true">
                             <abbr title="">
-                                <div class="article__edit-form__footer-quest">
+                                <div class="article__edit-form__footer-quest" id="infForTimer" data-whatever="Это время, в которое опубликуется статья">
                                     ?
                                 </div>
                             </abbr>
@@ -791,6 +791,16 @@
             </div>
             <div class="modal-body">
                 Статья успешно отправлена в черновики
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade error-form" id="questions"  tabindex="-1" role="dialog" aria-labelledby="ошибка ввода даты постинга" aria-hidden="true">
+    <div class="modal-dialog text-center" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                
             </div>
         </div>
     </div>
