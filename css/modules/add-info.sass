@@ -1,8 +1,5 @@
-
+@import vars.sass
 .add-info
-  a
-    &:hover
-      color: inherit
   &__wrapper
     border-radius: 10px
     background: $white-color
@@ -32,4 +29,23 @@
           flex-wrap: nowrap
           align-items: center
         &__title
+  &__button
+    line-height: 28px
+
+    color: $main-color
+
+    font-size: 24px
+    font-style: normal
+    font-weight: 600
+    line-height: normal
+
+    @media screen and (max-width: $first-breack-point)
+      font-size: 15px
+
+    svg
+      height: 30px
+      @media screen and (max-width: $first-breack-point)
+        height: 18px
+
+
 
