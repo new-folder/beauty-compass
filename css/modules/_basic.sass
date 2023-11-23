@@ -824,6 +824,54 @@ main
             background: url(../img/brand-sticker.svg) no-repeat
             @media screen and (max-width: $first-breack-point)
                 display: none
+    &__img-upload
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 30px
+        width: 100%
+        max-height: 375px
+        aspect-ratio: 1.1
+        background: #fff
+
+.added-imgs
+    &__header 
+            display: none
+            font-weight: bold
+    &__item
+          display: flex
+          align-items: center
+          margin-bottom: 10px
+    &__delete
+        width: 32.88px
+        height: 32.88px
+        border: 0
+        border-radius: 50%
+        background: url(../img/cansel-icon.svg)
+        background-size: cover
+    &__check
+        width: 26px
+        height: 26px
+        border: 1px solid $main-color
+        border-radius: 2px
+        position: relative
+        background-color: transparent
+        &:checked
+            background-color: transparent 
+        &:focus
+            outline: none
+        &:checked::after
+            content: ''
+            width: 27.83px
+            height: 20.87px
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            left: 5px
+            background-image: url('../img/checked-blue.svg')
+    &__question 
+        @media screen and (min-width: $first-breack-point)
+            display: none
 
 .producer
     &__sticker
