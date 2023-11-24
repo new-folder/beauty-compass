@@ -1,13 +1,3 @@
-css/modules/profile.css.map
-css/modules/profile.css
-css/modules/catalog.css.map
-css/modules/auth.css.map
-css/style.css.map
-css/bootstrap/custom.css.map
-css/modules/articles.css.map
-css/modules/auth.css.map
-css/modules/catalog.css.map
-css/style.css.map
 beauty-compass v4/css/bootstrap/custom.css
 beauty-compass v4/css/modules/articles.css
 beauty-compass v4/css/modules/auth.css
@@ -15,30 +5,8 @@ beauty-compass v4/css/modules/catalog.css
 beauty-compass v4/css/modules/footer.css
 beauty-compass v4/css/modules/search-form.css
 beauty-compass v4/css/modules/top-bar.css
-css/bootstrap/custom.css
-css/bootstrap/custom.css.map
-css/modules/articles.css
-css/modules/auth.css
-css/modules/catalog.css
-css/modules/controls.css
-css/modules/controls.css.map
-css/modules/footer.css
-css/modules/footer.css.map
-css/modules/profile.css
-css/modules/profile.css.map
-css/modules/rating.css
-css/modules/search-form.css
-css/modules/search-form.css.map
-css/modules/top-bar.css
-css/modules/top-bar.css.map
-css/modules/modals/modal-confirm.css
-css/modules/modals/modal-confirm.css.map
 beauty-compass v4/css/bootstrap/custom.css
 beauty-compass v4/css/style.css.map
-css/modules/modals/modal-prices.css
-css/modules/modals/modal-prices.css.map
-css/splidejs/custom.css
-css/splidejs/custom.css.map
 beauty-compass v4/css/style.css.map
 beauty-compass v4/css/bootstrap/custom.css
 beauty-compass v4/css/modules/articles.css
@@ -47,11 +15,6 @@ beauty-compass v4/css/modules/catalog.css
 beauty-compass v4/css/modules/footer.css
 beauty-compass v4/css/modules/search-form.css
 beauty-compass v4/css/modules/top-bar.css
-css/bootstrap/custom.css
-css/bootstrap/custom.css.map
-css/modules/profile.css
-css/modules/profile.css.map
-css/modules/rating.css
 beauty-compass v4/css/style.css.map
 beauty-compass v4/css/bootstrap/custom.css
 beauty-compass v4/css/modules/articles.css
@@ -60,98 +23,4 @@ beauty-compass v4/css/modules/catalog.css
 beauty-compass v4/css/modules/footer.css
 beauty-compass v4/css/modules/search-form.css
 beauty-compass v4/css/modules/top-bar.css
-css/bootstrap/custom.css
-css/bootstrap/custom.css.map
-css/modules/profile.css
-css/modules/profile.css.map
-css/modules/rating.css
 beauty-compass v4/css/modules/catalog.css
-css/splidejs/custom.css
-css/splidejs/custom.css.map
-css/bootstrap/custom.css
-css/bootstrap/custom.css
-css/bootstrap/custom.css.map
-css/splidejs/custom.css.map
-css/splidejs/custom.css
-css/modules/modals/modal.css
-css/modules/modals/modal-prices.css
-css/modules/modals/articles.min.css
-css/modules/modals/articles.min.css.map
-css/modules/modals/modal-confirm.css
-css/modules/test.css.map
-css/modules/profile.css
-css/modules/programmPage.css
-css/modules/programmPage.css.map
-css/modules/rating.css
-css/modules/rating.css.map
-css/modules/result_test.css
-css/modules/result_test.css.map
-css/modules/saveProgramm.css
-css/modules/saveProgramm.css.map
-css/modules/test.css
-css/modules/test.css.map
-css/modules/modals/modal-confirm.css
-css/bootstrap/custom.css
-css/bootstrap/custom.css.map
-css/modules/orderSelect.css
-css/modules/orderSelect.css.map
-css/modules/profile.css
-css/modules/programmPage.css
-css/modules/rating.css
-css/modules/rating.css.map
-css/modules/result_test.css
-css/modules/result_test.css.map
-css/modules/test.css
-css/modules/test.css.map
-css/modules/modals/modal-confirm.css
-css/modules/modals/modal-prices.css
-css/modules/modals/modal.css
-css/splidejs/custom.css
-css/splidejs/custom.css.map
-css/modules/articles.min.css
-css/modules/articles.min.css.map
-css/modules/auth.min.css
-css/modules/auth.min.css.map
-css/modules/catalog.min.css
-css/modules/catalog.min.css.map
-css/modules/footer.min.css
-css/modules/footer.min.css.map
-css/modules/orderSelect.css
-css/modules/profile.css
-css/modules/profile.css.map
-css/modules/profile.min.css
-css/modules/profile.min.css.map
-css/modules/programmPage.css
-css/modules/rating.css
-css/modules/rating.css.map
-css/modules/rating.min.css
-css/modules/rating.min.css.map
-css/modules/result_test.css
-css/modules/result_test.css.map
-css/modules/search-form.min.css
-css/modules/search-form.min.css.map
-css/modules/test.css
-css/modules/test.css.map
-css/modules/top-bar.min.css
-css/modules/top-bar.min.css.map
-css/modules/vars.css
-css/modules/vars.css.map
-css/modules/vars.min.css
-css/modules/vars.min.css.map
-css/select2.min.css
-css/style.css.map
-css/style.min.css
-css/style.min.css.map
-css/splidejs/custom.css
-css/splidejs/custom.css.map
-css/splidejs/custom.min.css
-css/splidejs/custom.min.css.map
-css/splidejs/splide-core.min.css
-css/splidejs/splide.min.css
-css/style.css
-css/bootstrap/custom.css
-css/modules/user-profile.css
-css/modules/user-profile.css.map
-css/modules/modals/modal-confirm.css
-css/modules/modals/modal-prices.css
-css/modules/modals/modal.css

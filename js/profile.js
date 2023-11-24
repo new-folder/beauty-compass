@@ -994,3 +994,127 @@ $(document).ready(
   outputInfBrands()
 )
 
+function handleFileSelected(event) {
+  const file = event.target.files[0];
+  if (file) {
+    // Обработка загруженного файла
+    let reader = new FileReader()
+    reader.readAsDataURL(file)
+    reader.onload = function () {
+      let img=$('.profile__body-photo')[0].children[1].children[0]
+      img.src=reader.result
+      img.classList.add('upload-img')
+      console.log(img)
+    }
+  
+    console.log("Загруженный файл:", file.name);
+  }
+}
+
+$('#visPassword').on('click',function(event){
+
+  event.preventDefault()
+  if(event.currentTarget.previousElementSibling.type=='password'){
+      $('#visPassword').css('background-image','url("../img/eye_hide.svg")');
+      event.currentTarget.previousElementSibling.type='text'
+  }
+  else{
+      event.currentTarget.previousElementSibling.type='password'
+      $('#visPassword').css('background-image','url("../img/eye_show.svg")');
+  } 
+})
+
+$('#visPasswordRep').on('click',function(event){
+
+  event.preventDefault()
+  if(event.currentTarget.previousElementSibling.type=='password'){
+      $('#visPasswordRep').css('background-image','url("../img/eye_hide.svg")');
+      event.currentTarget.previousElementSibling.type='text'
+  }
+  else{
+      $('#visPasswordRep').css('background-image','url("../img/eye_show.svg")');
+      event.currentTarget.previousElementSibling.type='password'
+  } 
+})
+
+$('.feed-button__settng').click((e)=>{
+  e.preventDefault()
+  $('.profile__body-modify')[0].classList.add('active')
+  $('.feed-button__settng')[0].classList.add('d-none')
+})
+
+$("#sendParam").click((e)=>{
+  e.preventDefault()
+
+  let nameProf=$('#name')[0].value
+  let phone=$('#phone')[0].value
+  let email=$('#email')[0].value
+  let passw=$('#pass')[0].value
+  let passwRep=$('#passRep')[0].value
+  let modal= $('#errorMess')
+  let modalHead= $('#errorMess').find('.modal-title')[0]
+  let modalBody= $('#errorMess').find('.modal-body')[0]
+
+  let triger=true
+  if(
+    nameProf=='' &
+    phone=='' &
+    email=='' &
+    passw=='' &
+    passwRep==''
+  ){
+    modalHead.innerText='Не все поля заполнены'
+    modalBody.innerText='Проверьте каждое поле'
+    modal.modal('show')
+
+    triger=false
+  }
+
+  if(!/([\+]?[7|8][\s-(]?[9][0-9]{2}[\s-)]?)?([\d]{3})[\s-]?([\d]{2})[\s-]?([\d]{2})/.test(phone)){
+    modalHead.innerText='Неверно введен номер телефона'
+    modalBody.innerText='Пример: +70000000000, 80000000000, +7 (000) 000 00 00'
+    triger=false
+    modal.modal('show')
+  }
+
+  if(!/^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я\.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/u.test(email)){
+    modalHead.innerText='Неверно введена почта'
+    modalBody.innerText='Пример: 123456@i.ru, 1login@ru.name.ru, логин-1@i.ru'
+    triger=false
+    modal.modal('show')
+  }
+
+  if(!/(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g.test(passw)){
+    modalHead.innerText='Ваш пароль не подходит'
+    modalBody.innerText='Ваш пароль должен содержать хотя бы одна число, хотя бы один спец. символ (!@#$%^&*), хотя бы одна буква в нижнем регистре и в верхнем и состоять из минимум 6 символов'
+    triger=false
+    modal.modal('show')
+  }
+
+  if(passw!=passwRep){
+    modalHead.innerText='Подтверждение пароля провалилось'
+    modalBody.innerText='Поля "Пароль" и "Повтор пароля" не совпадают'
+    triger=false
+    modal.modal('show')
+  }
+
+  if(triger){
+    let form=new FormData($('#profileInfo')[0])
+    $.ajax({
+      type: "POST",
+      url: "#",
+      processData: false,
+      contentType: false,
+      data: form,
+      success: function (response) {
+        console.log('Отправка на сервер')
+        $('.profile__body-modify')[0].classList.remove('active')
+        $('.feed-button__settng')[0].classList.remove('d-none')
+      }
+
+    });
+    $('.profile__body-modify')[0].classList.remove('active')
+    $('.feed-button__settng')[0].classList.remove('d-none')
+  }
+
+})

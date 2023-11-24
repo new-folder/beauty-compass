@@ -41,73 +41,143 @@
             fill: $pre-color
 
     &__body
-      grid-template-columns: 1fr 2fr 1fr
-      grid-template-rows: 26px auto auto auto repeat(3, auto)
-      grid-row-gap: 23px
-      grid-column-gap: 1rem
-      grid-template-areas: 'name name name' 'photo country country' 'photo town town' 'photo . .' 'tel tel tel' 'email email email' 'description description description' 'history history history' 'principles principles principles'
-      @media screen and (min-width: $second-breack-point)
-        grid-template-rows: repeat(3, 42px) repeat(3, auto)
-        grid-row-gap: 1.5rem
-        grid-column-gap: 1.5rem
-        grid-template-areas: 'photo name country' 'photo email town' 'photo tel .' 'description description description' 'history history history' 'principles principles principles'
+      &-modify
+        .upload-img
+          width: 90%
+          height: auto
+          max-height: 100%
+          object-fit: cover
+        .select-wrap
+          width: 100% !important
+          margin: 0
+        display: grid
+        grid-template: repeat(3, 70px)/repeat(5, 1fr)
+        @media screen and (max-width: $second-breack-point)
+          grid-template: repeat(1, 150px)/repeat(2, 1fr)
 
-      @media screen and (min-width: $first-breack-point)
-        grid-template-columns: 187px auto 258px
-        grid-column-gap: 37px
-        grid-row-gap: 30px
+        &.active
+          grid-template: repeat(6, 60px)/repeat(4,1fr) 
+          grid-gap: 10px
+          @media screen and (max-width: $second-breack-point)
+            grid-template: repeat(6,60px)/repeat(5,1fr) 
+          .profile__body
+            &-name
+              display: block
+              grid-area: 1/2/2/5
+              @media screen and (max-width: $second-breack-point)
+                grid-area: 1/1/2/6
+            &-photo
+              display: block
+              grid-area: 1/1/4/2
+              @media screen and (max-width: $second-breack-point)
+                grid-area: 2/1/4/3
+              .logo-text
+                display: contents
+            &-tel
+              display: block
+              grid-area: 2/2/3/5
+              @media screen and (max-width: $second-breack-point)
+                grid-area: 2/3/3/6
+            &-email
+              display: block
+              grid-area: 3/2/4/5
+              @media screen and (max-width: $second-breack-point)
+                grid-area: 3/3/4/6
+            &-passw
+              display: block
+              grid-area: 4/1/5/5
+              @media screen and (max-width: $second-breack-point)
+                grid-area: 4/1/5/6
+            &-passw-rep
+              display: block
+              grid-area: 5/1/6/5
+              @media screen and (max-width: $second-breack-point)
+                grid-area: 5/1/6/6
+            &-btn-save
+              display: block
+              grid-area: 6/1/7/5
+              @media screen and (max-width: $second-breack-point)
+                grid-area: 6/1/7/6
 
-      .name
-        grid-area: name
-      .photo
-        grid-area: photo
-      .country
-        grid-area: country
-      .town
-        grid-area: town
-      .tel
-        grid-area: tel
-        @media screen and (min-width: $first-breack-point)
-          max-width: 410px
-      .email
-        grid-area: email
-        @media screen and (min-width: $first-breack-point)
-          max-width: 410px
-      .description
-        grid-area: description
-      .history
-        grid-area: history
-      .principles
-        grid-area: principles
+              justify-self: center
+              align-self: center
+            &-inf
+              display: none !important
 
-      .tel, .email
+      &-btn-save
+        display: none
+      &-name
+        display: none
+      &-photo
+        grid-area: 1/1/4/2
+        height: 100%
+        margin-right: 20px
+        .logo-text
+          display: none
+        div
+          border-radius: 15px
+          background: $white-color
+          box-shadow: $box-shadow-regular
+          height: calc( 100% - 23px )
+
         img
-          width: 26px
-          height: 26px
-          @media screen and (min-width: $first-breack-point)
-            width: 42px
-            height: 42px
+          width: 54px
+          height: auto
+      &-inf
+        grid-area: 1/2/4/5
+        .row
+          height: fit-content
+      &-tel
+        display: none
+      &-email
+        display: none
+      &-passw
+        display: none
+        .passw
+          display: flex
+          width: 100%
+          .passw__vis  
+            display: block
+            margin-right: 0
+            margin-left: -30px
+            width: 30px
+            top: 9%
+            position: relative
+            left: -16px
+            background-image: url("../img/eye_show.svg")
+            background-repeat: no-repeat
+            background-size: 100%
+            background-position: center
+            @media screen and ( max-width: $first-breack-point )
+              background-size: 80%
+      &-passw-rep
+        display: none
+        .passw
+          display: flex
+          width: 100%
+          .passw__vis  
+            display: block
+            margin-right: 0
+            margin-left: -30px
+            width: 30px
+            top: 9%
+            position: relative
+            left: -16px
+            background-image: url("../img/eye_show.svg")
+            background-repeat: no-repeat
+            background-size: 100%
+            background-position: center
+            @media screen and ( max-width: $first-breack-point )
+              background-size: 80%
+      
+
     &__label
       top: -12px
       left: 0
       margin-bottom: -10px
       @media screen and (min-width: $first-breack-point)
         top: -18px
-    &__photo
-      width: 114px
-      height: 114px
-      border-radius: 15px
-      background: $white-color
-      box-shadow: $box-shadow-regular
-      @media screen and (min-width: $second-breack-point)
-        width: 175px
-        height: 175px
-      @media screen and (min-width: $first-breack-point)
-        width: 187px
-        height: 187px
-      img
-        width: 54px
-        height: auto
+
     &__card
       &--btn
         justify-self: center
@@ -116,9 +186,6 @@
       .small-brake
         @media (max-width: $xs-breack-point)
           width: 60%
-    &__static
-      display: grid !important
-      grid-template: repeat(4, 1fr) / repeat(3, 500px)
 
   .add-info
     &__button

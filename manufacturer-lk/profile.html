@@ -141,38 +141,94 @@
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section class="profile__body mb-3">
-        <div class="container container--bc">
-          <div class="col-xxl-10 offset-xxl-1 pb-3">
-            <div class="profile__static">
-              <div class="profile__photo position-relative" role="button">
-                <img
-                  src="../img/gallery-add.svg"
-                  alt="gallery-add logo"
-                  class="position-absolute top-50 start-50 translate-middle"
-                />
-                <input
-                  type="file"
-                  id="shop__file-input"
-                  onchange="handleFileSelected(event)"
-                  class="input--file"
-                />
+          <div class="container container--bc">
+            <form class="profile__body-modify col-xxl-10 offset-xxl-1" id="profileInfo">
+              <label for="shop__file-input" class="select-wrap profile__body-photo position-relative" >
+                <small class="logo-text"> 
+                  Логотип
+                </small>
+                
+                <div role="button" class="d-flex justify-content-center align-content-center overflow-hidden">
+                  <img
+                    src="../img/gallery-add.svg"
+                    alt="gallery-add logo"
+                    class=""
+                  />
+                  <input
+                    type="file"
+                    id="shop__file-input"
+                    onchange="handleFileSelected(event)"
+                    class="input--file"
+                  />
+                </div>
+                
+              </label>
+              <div class="profile__body-name">
+                <label for="name" class="select-wrap">
+                  <small> 
+                    Название компании
+                  </small>
+                  <input class="form-control" type="text" name="name" id="name">
+                </label>
               </div>
-              <div class="row row-g-3">
-                <div class="col-12">
-                  <div>
-                    <p class="title--h4">test@test.ru</p>
+              <div class="profile__body-tel">
+                <label for="phone" class="select-wrap">
+                  <small> 
+                    Телефон
+                  </small>
+                  <input class="form-control" type="tel" name="phone" id="phone">
+                </label>
+              </div>
+              <div class="profile__body-email">
+                <label for="email" class="select-wrap">
+                  <small> 
+                    E-mail
+                  </small>
+                  <input class="form-control" type="email" name="email" id="email">
+                </label>
+              </div>
+              <div class="profile__body-passw">
+                <label for="pass" class="select-wrap">
+                  <small> 
+                    Пароль
+                  </small>
+                  <div class="passw">
+                    <input class="form-control" type="password" name="pass" id="pass">
+                    <button id="visPassword" class="feed-button passw__vis"></button>
+                  </div>
+                </label>
+              </div>
+              <div class="profile__body-passw-rep">
+                <label for="passRep" class="select-wrap">
+                  <small> 
+                    Повтор пароля
+                  </small>
+                  <div class="passw">
+                    <input class="form-control" type="password" name="passRep" id="passRep">
+                    <button id="visPasswordRep" class="feed-button passw__vis"></button>
+                  </div>
+                </label>
+              </div>
+              <div class="profile__body-btn-save">
+                <button class="btn btn--blue text--15-24" id="sendParam">Сохранить</button>
+              </div>
+              <div
+                class="col-md-8 offset-md-1 col-xxl-10 offset-xxl-0 profile__body-inf d-flex align-items-center justify-content-center"
+              >
+                <div class="row row-g-3 ms-3">
+                  <div class="col-12">
+                    <div>
+                      <p class="title--h4">test@test.ru</p>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div>
+                      <p class="title--h4">+7(999)999-99-99</p>
+                    </div>
                   </div>
                 </div>
-                <div class="col-12">
-                  <div>
-                    <p class="title--h4">+7(999)999-99-99</p>
-                  </div>
-                </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </section>
@@ -1369,6 +1425,25 @@
         </div>
       </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="errorMess" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="errorMessLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="errorMessLabel">...</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Хорошо</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="../js/jq.js"></script>
     <script src="../js/pogination.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
