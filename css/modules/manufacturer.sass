@@ -229,7 +229,8 @@
       background: $main-color
     &__remove
       background: $pre-color
-
+ul
+  list-style: none
 .modal
   &__prices
     &-content
@@ -307,6 +308,7 @@
 
 .open_chart
   display: flex
+  width: fit-content
   @media screen and (max-width: $first-breack-point)
     margin-top: 20px
   p
@@ -317,6 +319,9 @@
     width: 25px
     color: $main-color
     transition: .6s
+  &.active
+    svg
+      transform: rotate(180deg)
 
 .icon
   &-statistic
@@ -365,6 +370,12 @@
         transform: rotate(180deg)
       .open_chart
         padding-top: 20px
+      &-brand
+        background: linear-gradient(144.75deg, #1560BD 31.52%, #194071 72.37%)
+        color: $sub-color
+        margin-top: 15px
+        .open_chart
+          padding-top: 0
     &-all
       background: linear-gradient(144.75deg, #1560BD 31.52%, #194071 72.37%)
       color: $sub-color
@@ -393,7 +404,21 @@
       grid-gap: 5px
     @media screen and (max-width: $second-breack-point)
       grid-template: 60px 20px 50px repeat(2, 50px) 30px / ( 1fr 1fr)
-
+    &-brand
+      display: grid
+      grid-template: repeat(3, 30px) / ( 20% 60% 20%)
+      .item
+        &__image-view
+          grid-row: 1 / 4
+        &__title
+          grid-row: 1/4
+          align-self: center
+          width: 90%
+        &__chart
+          margin-top: 0
+          grid-row: 1/4
+          align-self: center
+          justify-self: right
   &__image-view
     grid-column: 1 / 2
     grid-row: 1 / 5
@@ -594,7 +619,9 @@
         @media screen  and (max-width: $second-breack-point)
           max-height: fit-content
           height: 160px !important
-.output__statistic-items
+    
+
+  .output__statistic-items
   margin-bottom: 30px
   &-all
     width: 100vw
@@ -618,3 +645,6 @@
     @media screen and (max-width: $first-breack-point)
       .top-bar__list
         margin-bottom: 0
+
+#viewBrandChart
+  margin-bottom: 10px
