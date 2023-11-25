@@ -464,14 +464,10 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
                             let shopsOutput={}
 
                             charts.find((el)=>{
-                                console.log(el);
-                                console.log();
                                 if(el.name=="visit")
                                     return el
                             }).data.forEach((el)=>{
                                 for( let shopKey in el.shops){
-                                    console.log(shopsOutput);
-                                    console.log(shopKey);
                                     if(!shopsOutput[shopKey]){
                                         shopsOutput[shopKey]={
                                             name:shopKey,
@@ -580,9 +576,22 @@ if ($('#allItems').length!=0) {
                         }
                         if(el.name=='visit'){
                             for (let j = 0; j < brands[i].data.length; j++) {
-                                for( let shopKey in brands[i].data[j].shops){
-                                    brands[i].data[j].shops[shopKey]+=el.data[j].shops[shopKey]
-                                }
+
+                                if(Object.keys(el.data[j].shops).length!=Object.keys(brands[i].data[j].shops).length){
+
+                                    for(let brand in brands[i].data[j].shops){
+                                        if(!el.data[j].shops[brand]){
+                                            el.data[j].shops[brand]={
+                                                name:brand,
+                                                count:brand.count
+                                            }
+                                        }
+                                    }
+                                }else
+                                    for( let shopKey in brands[i].data[j].shops){
+                                        brands[i].data[j].shops[shopKey]+=el.data[j].shops[shopKey]
+
+                                    }
                             }
                         }
                     }
@@ -664,7 +673,6 @@ if ($('#allItems').length!=0) {
         Object.keys(shopsOutput).sort((a,b)=>{
             return a.count-b.count
         }).forEach((key)=>{
-            console.log(shopsOutput);
             
             shopsOutput[key]
 
