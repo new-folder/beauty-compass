@@ -309,6 +309,8 @@ ul
 .open_chart
   display: flex
   width: fit-content
+  transition: color 0.3s
+  cursor: pointer
   @media screen and (max-width: $first-breack-point)
     margin-top: 20px
   p
@@ -322,12 +324,17 @@ ul
   &.active
     svg
       transform: rotate(180deg)
+  &:hover
+    p, svg
+      color: $pre-color
 
 .icon
   &-statistic
     width: fit-content
     position: absolute
     transform: translate(277%, 145%)
+    &-brand
+      transform: translate(295%, 145%)
     @media screen and (max-width: $first-breack-point)
       transform: translate(0%, 130%)
   &-filter

@@ -7343,6 +7343,9 @@ ul {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  cursor: pointer;
 }
 @media screen and (max-width: 1400px) {
   .open_chart {
@@ -7366,6 +7369,9 @@ ul {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
+.open_chart:hover p, .open_chart:hover svg {
+  color: #E31E24;
+}
 
 .icon-statistic {
   width: -webkit-fit-content;
@@ -7374,6 +7380,10 @@ ul {
   position: absolute;
   -webkit-transform: translate(277%, 145%);
           transform: translate(277%, 145%);
+}
+.icon-statistic-brand {
+  -webkit-transform: translate(295%, 145%);
+          transform: translate(295%, 145%);
 }
 @media screen and (max-width: 1400px) {
   .icon-statistic {
