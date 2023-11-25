@@ -7456,7 +7456,7 @@ ul {
   background: linear-gradient(144.75deg, #1560BD 31.52%, #194071 72.37%);
   color: #FAFAFA;
   padding-top: 40px;
-  padding-bottom: 140px;
+  padding-bottom: 280px;
   margin: 0 auto;
 }
 @media screen and (max-width: 768px) {
@@ -7481,6 +7481,21 @@ ul {
     width: 100%;
     height: 100%;
   }
+}
+.item__chart-all div.chart-open__shops-info {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: auto !important;
+}
+.item__chart-all div.chart-open__shops .btn-shops {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-height: auto !important;
 }
 .item__inside {
   display: -ms-grid;
@@ -7511,15 +7526,26 @@ ul {
   -ms-grid-columns: 20% 60% 20%;
       grid-template: repeat(3, 30px)/20% 60% 20%;
 }
+@media screen and (max-width: 768px) {
+  .item__inside-brand {
+    -ms-grid-rows: (30px)[2];
+    -ms-grid-columns: 20% 55% 25%;
+        grid-template: repeat(2, 30px)/20% 55% 25%;
+  }
+}
 .item__inside-brand .item__image-view {
   -ms-grid-row: 1;
   -ms-grid-row-span: 3;
   grid-row: 1/4;
+  min-width: 0;
 }
 .item__inside-brand .item__title {
   -ms-grid-row: 1;
   -ms-grid-row-span: 3;
   grid-row: 1/4;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
   -ms-grid-row-align: center;
       align-self: center;
   width: 90%;
@@ -7533,6 +7559,12 @@ ul {
       align-self: center;
   -ms-grid-column-align: right;
       justify-self: right;
+}
+.item__inside-brand .item__chart .open_chart {
+  margin-top: 0;
+}
+.item__inside-brand .item__chart .open_chart svg {
+  margin: auto 5px;
 }
 .item__image-view {
   -ms-grid-column: 1;
@@ -7789,9 +7821,6 @@ ul {
 }
 .chart canvas {
   width: 100% !important;
-  height: -webkit-fit-content !important;
-  height: -moz-fit-content !important;
-  height: fit-content !important;
   -webkit-box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
           box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
   padding: 20px 0;
@@ -7807,62 +7836,75 @@ ul {
   }
 }
 .chart-open {
-  height: 640px;
-  padding-bottom: 130px;
+  height: 770px;
+  padding-bottom: 260px;
 }
 @media screen and (max-width: 768px) {
   .chart-open {
     width: 83vw;
-    height: 540px;
+    height: 670px;
   }
 }
-.chart-open__btn-param {
+.chart-open__btn-param, .chart-open__shops {
   padding: 20px 0;
   height: auto !important;
   scrollbar-width: thin;
   scrollbar-color: #1560BD transparent;
 }
-.chart-open__btn-param::-webkit-scrollbar {
+.chart-open__btn-param::-webkit-scrollbar, .chart-open__shops::-webkit-scrollbar {
   width: 5px;
   margin-top: 5px;
 }
-.chart-open__btn-param::-webkit-scrollbar-thumb {
+.chart-open__btn-param::-webkit-scrollbar-thumb, .chart-open__shops::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: #1560BD;
 }
-.chart-open__btn-param::-webkit-scrollbar-track {
+.chart-open__btn-param::-webkit-scrollbar-track, .chart-open__shops::-webkit-scrollbar-track {
   color: #1560BD;
   border-radius: 15px;
 }
 @media screen and (max-width: 768px) {
-  .chart-open__btn-param {
+  .chart-open__btn-param, .chart-open__shops {
     overflow: scroll;
     height: 30% !important;
   }
 }
-.chart-open__btn-param .btn {
+.chart-open__btn-param .btn, .chart-open__shops .btn {
   background: #1560BD;
   color: #FAFAFA;
 }
 @media screen and (max-width: 768px) {
-  .chart-open__btn-param .btn {
+  .chart-open__btn-param .btn, .chart-open__shops .btn {
     margin-bottom: 10px;
   }
 }
-.chart-open__btn-param .btn:hover {
+.chart-open__btn-param .btn:hover, .chart-open__shops .btn:hover {
   color: #FAFAFA !important;
   background: #E31E24 !important;
 }
-.chart-open__btn-param .btn:visited {
+.chart-open__btn-param .btn:visited, .chart-open__shops .btn:visited {
   color: #FAFAFA;
   background: #1560BD;
 }
-.chart-open__btn-param-all {
+.chart-open__btn-param .btn-shops, .chart-open__shops .btn-shops {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px;
+}
+.chart-open__btn-param .btn-shops img, .chart-open__shops .btn-shops img {
+  height: 36px;
+  margin-right: 10px;
+}
+.chart-open__btn-param-all, .chart-open__shops-all {
   width: auto !important;
   min-height: 110px !important;
 }
 @media screen and (max-width: 768px) {
-  .chart-open__btn-param-all {
+  .chart-open__btn-param-all, .chart-open__shops-all {
     max-height: -webkit-fit-content;
     max-height: -moz-fit-content;
     max-height: fit-content;

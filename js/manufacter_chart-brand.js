@@ -88,6 +88,31 @@ function getNameLabelProduct(name) {
     return arrayMounth[name]
 }
 
+function getInfShops(name){
+    let arrayShopsInf={
+        "wildberries":{
+            "logo":'Wildberries_Logo.png',
+            "alt":'wildberries'
+        }, 
+        "ozon":{
+            "logo":'Ozon_Logo.png',
+            "alt":'ozon'
+        },  
+        "yandex":{
+            "logo":'Yandexmarket-Logo.png',
+            "alt":'Яндекс.Маркет'
+        },  
+        "sber":{
+            "logo":'SberMegaMarket.svg',
+            "alt":'СберМегаМаркет'
+        }, 
+        "cdek":{
+            "logo":'CDEK_Logo.png',
+            "alt":'CDEK '
+        }, 
+    }
+    return arrayShopsInf[name]
+}
 function getNumberOfDays(start, end) {
     const date1 = new Date(start);
     const date2 = new Date(end);
@@ -443,19 +468,76 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
                                 });
 
                                 divWithParam.append(btnCreated)
-
-
                             });
-
+                            
                             elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0].children[0].append(divWithParam);
 
+                            let divWithShops=document.createElement('div')
+                            divWithShops.classList.add("chart-open__shops")
+                            divWithShops.classList.add("d-flex")
+                            divWithShops.classList.add("justify-content-around")
+                            divWithShops.classList.add("align-items-center")
+                            divWithShops.classList.add("flex-wrap")
 
+                            let divWithInfoShops=document.createElement('div')
+                            divWithInfoShops.classList.add("chart-open__shops-info")
+                            let text=document.createElement('p')
+                            text.classList.add('text--15-20')
+                            text.innerText="Количество переходов в каждом магазине"
+                            divWithInfoShops.append(text)
 
+                            let shopsOutput={}
+
+                            charts.find((el)=>{
+                                if(el.name=="visit")
+                                    return el
+                            }).data.forEach((el)=>{
+                                for( let shopKey in el.shops){
+                                    if(!shopsOutput[shopKey]){
+                                        shopsOutput[shopKey]=getInfShops(shopKey)
+                                        shopsOutput[shopKey].count=el.shops[shopKey]
+
+                                    }else{
+                                        shopsOutput[shopKey].count+=el.shops[shopKey]
+                                    }
+                                }
+                            })
+                            Object.keys(shopsOutput).sort((a,b)=>{
+                                return a.count-b.count
+                            }).forEach((key)=>{
+                                
+                                shopsOutput[key]
+
+                                let shopDiv=document.createElement('div')
+                                shopDiv.classList.add('btn-shops')
+                                let imgShop=document.createElement('img')
+                                imgShop.src='../img/'+ shopsOutput[key].logo
+                                imgShop.alt=shopsOutput[key].alt
+                                let textShop=document.createElement('p')
+                                textShop.classList.add("text--15-20")
+                                textShop.innerText=shopsOutput[key].count
+                                shopDiv.append(imgShop)
+                                shopDiv.append(textShop)
+
+                                divWithShops.append(shopDiv)
+                            })
+
+                            elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0].children[0].append(divWithInfoShops);
+                            elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0].children[0].append(divWithShops);
+                            
                             elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0].children[0].firstElementChild.value=true
                         } else {
+                            
+                            $(elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0].children[0].children[4]).remove();
+
+                            $(elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0].children[0].children[3]).remove();
+
+                            $(elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0].children[0].children[2]).remove();
+                            
                             $(elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0].children[0].children[1]).remove();
-                            $(elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0].children[0].children[1]).remove();
+                            
                             elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0].children[0].firstElementChild.value=false
+
                         }
                     });
                 }
@@ -498,30 +580,39 @@ $('#default').click(function(el) {
 
 if ($('#allItems').length!=0) {
     
-    fetchJSONFile("../manufacturer-lk__charts/all_cosmetics_manufacter.json", function(data){
+    fetchJSONFile("../manufacturer-lk__charts/all_brands_manufacter.json", function(data){
     
-        let cosmetics=[]
-        data.cosmetics.forEach(cosmetic => {
-            if (cosmetics.length==0) {
+        let brands=[]
+        data.brands.forEach(cosmetic => {
+            if (brands.length==0) {
                 cosmetic.chart.forEach(chart_el => {
-                    cosmetics.push(chart_el)
+                    brands.push(chart_el)
                 });
             }else{
                 for (let i = 0; i < cosmetic.chart.length; i++) {
                     const el = cosmetic.chart[i];
-                    if (el.name==cosmetics[i].name) 
-                        for (let j = 0; j < cosmetics[i].data.length; j++) {
+                    if (el.name==brands[i].name) {
+                        for (let j = 0; j < brands[i].data.length; j++) {
                             try {
-                                cosmetics[i].data[j].y+=el.data[j].y
+                                brands[i].data[j].y+=el.data[j].y
                             } catch (error) {
                                 
                             }
                         }
+                        if(el.name=='visit'){
+                            for (let j = 0; j < brands[i].data.length; j++) {
+                                for( let shopKey in brands[i].data[j].shops){
+                                    brands[i].data[j].shops[shopKey]+=el.data[j].shops[shopKey]
+                                }
+                            }
+                        }
+                    }
+                    
                 }
             }
         });
     
-        generateChart(cosmetics,$('#allItems'),'all')
+        generateChart(brands,$('#allItems'),'all')
 
         let btnClick=[
             {
@@ -553,10 +644,65 @@ if ($('#allItems').length!=0) {
                 
                 e.currentTarget.parentElement.parentElement.children[0].before(canvas)
 
-                generateChart(cosmetics, e.currentTarget.parentElement.parentElement.children[0], btn.param)
+                generateChart(brands, e.currentTarget.parentElement.parentElement.children[0], btn.param)
             });
         });
 
+        let divWithShops=document.createElement('div')
+        divWithShops.classList.add("chart-open__shops")
+        divWithShops.classList.add("chart-open__shops-all")
+        divWithShops.classList.add("d-flex")
+        divWithShops.classList.add("justify-content-around")
+        divWithShops.classList.add("align-items-center")
+        divWithShops.classList.add("flex-wrap")
+
+        let divWithInfoShops=document.createElement('div')
+        divWithInfoShops.classList.add("chart-open__shops-info")
+        divWithInfoShops.classList.add("chart-open__shops-all")
+        let text=document.createElement('p')
+        text.classList.add('text--15-20')
+        text.innerText="Количество переходов в каждом магазине"
+        divWithInfoShops.append(text)
+
+        let shopsOutput={}
+
+        brands.find((el)=>{
+            if(el.name=="visit")
+                return el
+        }).data.forEach((el)=>{
+            for( let shopKey in el.shops){
+                if(!shopsOutput[shopKey]){
+                    shopsOutput[shopKey]=getInfShops(shopKey)
+                    shopsOutput[shopKey].count=el.shops[shopKey]
+
+                }else{
+                    shopsOutput[shopKey].count+=el.shops[shopKey]
+                }
+            }
+        })
+        Object.keys(shopsOutput).sort((a,b)=>{
+            return a.count-b.count
+        }).forEach((key)=>{
+            console.log(shopsOutput);
+            
+            shopsOutput[key]
+
+            let shopDiv=document.createElement('div')
+            shopDiv.classList.add('btn-shops')
+            let imgShop=document.createElement('img')
+            imgShop.src='../img/'+ shopsOutput[key].logo
+            imgShop.alt=shopsOutput[key].alt
+            let textShop=document.createElement('p')
+            textShop.classList.add("text--15-20")
+            textShop.innerText=shopsOutput[key].count
+            shopDiv.append(imgShop)
+            shopDiv.append(textShop)
+
+            divWithShops.append(shopDiv)
+        })
+
+        $('.chart-open__btn-param-all').after(divWithShops);
+        $('.chart-open__btn-param-all').after(divWithInfoShops);
     })
 }
 

@@ -380,7 +380,7 @@ ul
       background: linear-gradient(144.75deg, #1560BD 31.52%, #194071 72.37%)
       color: $sub-color
       padding-top: 40px
-      padding-bottom: 140px
+      padding-bottom: 280px
       margin: 0 auto
       @media screen and (max-width: $second-breack-point)
         margin-left: -3.59%
@@ -396,6 +396,16 @@ ul
           @media screen and (max-width: $second-breack-point)
             width: 100%
             height: 100%
+      div.chart-open__shops-info
+        height: fit-content
+        min-height: auto !important
+      div.chart-open__shops
+        .btn-shops
+          height: fit-content
+          width: fit-content
+          min-height: auto !important
+
+
   &__inside
     display: grid
     grid-template: repeat(5, 60px) / ( 250px 1fr 500px)
@@ -407,11 +417,15 @@ ul
     &-brand
       display: grid
       grid-template: repeat(3, 30px) / ( 20% 60% 20%)
+      @media screen and ( max-width: $second-breack-point )
+        grid-template: repeat(2, 30px)/20% 55% 25%
       .item
         &__image-view
           grid-row: 1 / 4
+          min-width: 0
         &__title
           grid-row: 1/4
+          grid-column: 2/3
           align-self: center
           width: 90%
         &__chart
@@ -419,6 +433,10 @@ ul
           grid-row: 1/4
           align-self: center
           justify-self: right
+          .open_chart 
+            margin-top: 0
+            svg
+              margin: auto 5px
   &__image-view
     grid-column: 1 / 2
     grid-row: 1 / 5
@@ -568,7 +586,6 @@ ul
   margin-bottom: 30px
   canvas
     width: 100% !important
-    height: fit-content !important
     box-shadow: $box-shadow-sm
     padding: 20px 0
     @media screen and (max-width: $first-breack-point)
@@ -577,13 +594,15 @@ ul
       margin-left: -2px
 
   &-open
-    height: 640px
-    padding-bottom: 130px
+    height: 770px
+    padding-bottom: 260px
     @media screen and (max-width: $second-breack-point)
       width: 83vw
-      height: 540px
+      height: 670px
 
-    &__btn-param
+    &__shops
+
+    &__btn-param, &__shops
       padding: 20px 0
       height: auto !important
       scrollbar-width: thin
@@ -613,14 +632,22 @@ ul
         &:visited
           color: $sub-color
           background: $main-color
+        &-shops
+          display: flex
+          align-items: center
+          margin: 10px
+          
+          img
+            height: 36px
+            margin-right: 10px
+          &-info
+
       &-all
         width: auto !important
         min-height: 110px !important
         @media screen  and (max-width: $second-breack-point)
           max-height: fit-content
           height: 160px !important
-    
-
   .output__statistic-items
   margin-bottom: 30px
   &-all
