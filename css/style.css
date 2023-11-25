@@ -7380,7 +7380,7 @@ ul {
   position: absolute;
   -webkit-transform: translate(277%, 145%);
           transform: translate(277%, 145%);
-  cursor: pointer;
+  cursor: pointer !important;
 }
 .icon-statistic-brand {
   -webkit-transform: translate(295%, 145%);
