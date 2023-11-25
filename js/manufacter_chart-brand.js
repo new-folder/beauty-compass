@@ -576,22 +576,26 @@ if ($('#allItems').length!=0) {
                         }
                         if(el.name=='visit'){
                             for (let j = 0; j < brands[i].data.length; j++) {
+                        try {
+                            
+                            if(Object.keys(el.data[j].shops).length!=Object.keys(brands[i].data[j].shops).length){
 
-                                if(Object.keys(el.data[j].shops).length!=Object.keys(brands[i].data[j].shops).length){
-
-                                    for(let brand in brands[i].data[j].shops){
-                                        if(!el.data[j].shops[brand]){
-                                            el.data[j].shops[brand]={
-                                                name:brand,
-                                                count:brand.count
-                                            }
+                                for(let brand in brands[i].data[j].shops){
+                                    if(!el.data[j].shops[brand]){
+                                        el.data[j].shops[brand]={
+                                            name:brand,
+                                            count:brand.count
                                         }
                                     }
-                                }else
-                                    for( let shopKey in brands[i].data[j].shops){
-                                        brands[i].data[j].shops[shopKey]+=el.data[j].shops[shopKey]
+                                }
+                            }else
+                                for( let shopKey in brands[i].data[j].shops){
+                                    brands[i].data[j].shops[shopKey]+=el.data[j].shops[shopKey]
 
-                                    }
+                                }
+                        } catch (error) {
+                            
+                        }
                             }
                         }
                     }
