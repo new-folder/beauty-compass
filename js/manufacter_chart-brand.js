@@ -88,31 +88,6 @@ function getNameLabelProduct(name) {
     return arrayMounth[name]
 }
 
-function getInfShops(name){
-    let arrayShopsInf={
-        "wildberries":{
-            "logo":'Wildberries_Logo.png',
-            "alt":'wildberries'
-        }, 
-        "ozon":{
-            "logo":'Ozon_Logo.png',
-            "alt":'ozon'
-        },  
-        "yandex":{
-            "logo":'Yandexmarket-Logo.png',
-            "alt":'Яндекс.Маркет'
-        },  
-        "sber":{
-            "logo":'SberMegaMarket.svg',
-            "alt":'СберМегаМаркет'
-        }, 
-        "cdek":{
-            "logo":'CDEK_Logo.png',
-            "alt":'CDEK '
-        }, 
-    }
-    return arrayShopsInf[name]
-}
 function getNumberOfDays(start, end) {
     const date1 = new Date(start);
     const date2 = new Date(end);
@@ -489,13 +464,19 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
                             let shopsOutput={}
 
                             charts.find((el)=>{
+                                console.log(el);
+                                console.log();
                                 if(el.name=="visit")
                                     return el
                             }).data.forEach((el)=>{
                                 for( let shopKey in el.shops){
+                                    console.log(shopsOutput);
+                                    console.log(shopKey);
                                     if(!shopsOutput[shopKey]){
-                                        shopsOutput[shopKey]=getInfShops(shopKey)
-                                        shopsOutput[shopKey].count=el.shops[shopKey]
+                                        shopsOutput[shopKey]={
+                                            name:shopKey,
+                                            count:el.shops[shopKey]
+                                        }
 
                                     }else{
                                         shopsOutput[shopKey].count+=el.shops[shopKey]
@@ -509,14 +490,12 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
                                 shopsOutput[key]
 
                                 let shopDiv=document.createElement('div')
+                                shopDiv.classList.add('btn')
                                 shopDiv.classList.add('btn-shops')
-                                let imgShop=document.createElement('img')
-                                imgShop.src='../img/'+ shopsOutput[key].logo
-                                imgShop.alt=shopsOutput[key].alt
+                                
                                 let textShop=document.createElement('p')
                                 textShop.classList.add("text--15-20")
-                                textShop.innerText=shopsOutput[key].count
-                                shopDiv.append(imgShop)
+                                textShop.innerText=shopsOutput[key].name+": "+shopsOutput[key].count
                                 shopDiv.append(textShop)
 
                                 divWithShops.append(shopDiv)
@@ -672,8 +651,10 @@ if ($('#allItems').length!=0) {
         }).data.forEach((el)=>{
             for( let shopKey in el.shops){
                 if(!shopsOutput[shopKey]){
-                    shopsOutput[shopKey]=getInfShops(shopKey)
-                    shopsOutput[shopKey].count=el.shops[shopKey]
+                    shopsOutput[shopKey]={
+                        name:shopKey,
+                        count:el.shops[shopKey]
+                    }
 
                 }else{
                     shopsOutput[shopKey].count+=el.shops[shopKey]
@@ -688,14 +669,12 @@ if ($('#allItems').length!=0) {
             shopsOutput[key]
 
             let shopDiv=document.createElement('div')
+            shopDiv.classList.add('btn')
             shopDiv.classList.add('btn-shops')
-            let imgShop=document.createElement('img')
-            imgShop.src='../img/'+ shopsOutput[key].logo
-            imgShop.alt=shopsOutput[key].alt
+            
             let textShop=document.createElement('p')
             textShop.classList.add("text--15-20")
-            textShop.innerText=shopsOutput[key].count
-            shopDiv.append(imgShop)
+            textShop.innerText=shopsOutput[key].name+": "+shopsOutput[key].count
             shopDiv.append(textShop)
 
             divWithShops.append(shopDiv)
