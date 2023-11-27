@@ -1,4 +1,5 @@
 @import "vars.sass" 
+@import "vars.sass" 
 .profile
   display: grid
   &__body
@@ -112,15 +113,18 @@
         width: 54px
         height: auto
       @media screen and (min-width: $first-breack-point)
-        width: 187px
-        height: 187px
-    &-name
-      grid-area: name
-      padding-top: 10px
-    &-email
+        max-width: 410px
+    .email
       grid-area: email
-    &-phone
-      grid-area: phone
+      @media screen and (min-width: $first-breack-point) 
+        max-width: 410px
+    .description
+      grid-area: description
+    .history
+      grid-area: history
+    .principles
+      grid-area: principles
+
   &__manufacturer-info
     grid-auto-columns: 114px auto auto
     grid-column-gap: 11px
@@ -143,6 +147,19 @@
 
         img
           width: 54px
+          height: auto
+    .tel, .email
+      img
+        width: 26px
+        height: 26px
+        @media screen and (min-width: $first-breack-point)
+          width: 42px
+          height: 42px
+
+  &__label
+    top: -12px
+    left: 0
+    margin-bottom: -10px
           height: auto        
           @media screen and (min-width: $first-breack-point)
             width: 188px
@@ -292,9 +309,9 @@
           right: auto
           width: 440px
           padding: 14px 20px 10px
-      label
+      &_label
         top: -40px
-      img
+      &_token
         width: 54px
         height: auto
 
@@ -310,4 +327,27 @@
       @media screen and (min-width: $first-breack-point)
         width: 42px
         height: 42px
+      top: -18px
+  &__photo
+    width: 114px
+    height: 114px
+    border-radius: 15px
+    background: $white-color
+    box-shadow: $box-shadow-regular
+    @media screen and (min-width: $second-breack-point)
+      width: 175px
+      height: 175px
+    @media screen and (min-width: $first-breack-point)
+      width: 187px
+      height: 187px
+    img
+      width: 54px
+      height: auto
+  &__card
+    &--btn
+      justify-self: center
+      .confirm
         margin-left: 10px
+    .small-brake
+      @media (max-width: $xs-breack-point)
+        width: 60%

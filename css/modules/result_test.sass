@@ -1,9 +1,10 @@
-@import "vars.sass"
+@import vars
+@impost order_select
 
 .recomend
     font-weight: 600
     font-style: normal
-
+    margin-bottom: 20px
     p
         font-size: 18px
         line-height: 22px
@@ -73,8 +74,6 @@
             @media screen and (max-width: $second-breack-point)
                 width: 100%
                 margin-top: 25px
-
-
             &:before
                 flex-shrink: 0
                 content: ''
@@ -92,7 +91,6 @@
                 @media screen and (max-width: $first-breack-point)
                     width: 20px !important
                     border: 1px solid $main-color
-
             &:hover
                 opacity: 0.7
             p
@@ -101,8 +99,25 @@
                 font-size: 30px
                 line-height: 37px
                 @media screen and (max-width: $first-breack-point)
+                    font-size: 24px
+                    line-height: 18px
+                @media screen and (max-width: $second-breack-point)
                     font-size: 15px
                     line-height: 18px
+        #paySelect
+            &:before
+                border: 1px #00000000
+                border-radius: 0
+                background-size: 100%
+                background-image: url("../img/receipt-item.svg")
+        #selectProgram
+            &:before
+                border: 1px #00000000
+                border-radius: 0
+                background-size: 100%
+                background-image: url("../img/wallet-money.svg")
+            
+        #butDownload
 
         #butChoice
             display: flex
@@ -119,3 +134,24 @@
                 background-position: center center
                 background-size: 100%
                 background-image: url("../img/settingDidg.svg")
+.respOpt 
+    @media screen and (max-width: $first-breack-point)
+        width: 100%
+    .selectInpDls
+        flex-direction: row
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        @media screen and (max-width: $first-breack-point)
+            display: block
+        width: 100%
+        @media screen and (max-width: $first-breack-point)
+            .selectWrap
+                width: 100%
+        .selectWrap
+            &:last-child
+                width: 100%
+
+.alerg
+    width: 100%
+    margin: 0
