@@ -1,4 +1,4 @@
-const linkToBDMain="../manufacturer-lk__charts/all_articles_manufacter.json"
+const linkToBDMain="../manufacturer-lk__charts/all_baner_manufacter.json"
 function templatingItem(data) {
     let html=''
 
@@ -7,49 +7,32 @@ function templatingItem(data) {
         html+='<li class="output__statistic-wrap">'
         html+='    <div class="container container--bc"> '   
         html+='        <div class="col-xxl-10 offset-xxl-1">   '     
-        html+='            <div class="item item__inside-article">'            
+        html+='            <div class="item item__inside-baner">'            
         html+='                <div class="item__title">   '             
-        html+='                    <p class="text--15-30">'+element.mainTitle+'</p> '           
-        html+='                </div>'
-        html+='                <div class="item__logo-avtor">'        
-        html+='                    <div class="item__logo">'
-        html+='                        <img src="../img/logo-blue.svg" alt="beauty compas">'
-        html+='                    </div>        '
-        html+='                    <div class="item__avtor">'
-        html+='                        <p class="text--15-30">'+element.author+'</p>  '          
-        html+='                    </div>  '
-        html+='                </div> '
-        html+='                <div class="item__statistic-number d-flex align-items-center">'
-        html+='                    <div class="item__statistic-number__element">                    '
-        html+='                        <img src="../img/like.svg" alt="Сохранили в избранное">                    '
-        html+='                        <span class="text--15-24">'+element.viewsAll+'</span>                '
-        html+='                    </div>                '
-        html+='                    <div class="item__statistic-number__element">                    '
-        html+='                        <img src="../img/favorite-heart.svg" alt="Поставили нравиться">                    '
-        html+='                        <span class="text--15-24">'+element.commentsAll+'</span>                '
-        html+='                    </div>                '
-        html+='                    <div class="item__statistic-number__element">                    '
-        html+='                        <img src="../img/message-question.svg" alt="Комментарии">                    '
-        html+='                        <span class="text--15-24">'+element.favariteAll+'</span>                '
-        html+='                    </div>                '
-        html+='                    <div class="item__statistic-number__element">                    '
-        html+='                        <img src="../img/grey_eye.svg" alt="Показатель просмотров">                    '
-        html+='                        <span class="text--15-24">'+element.likeAll+'</span>                '
-        html+='                    </div>            '
-        html+='                </div>'
-        html+='    <div class="item__chart">'
-        html+='        <div class="open_chart">'
-        html+='            <p class="text--15-30" >График</p>'
+        html+='                    <p class="text--15-30 text-uppercase">Банер на <a href="'+element.link+'">'+element.textLink+'</a></p> '           
+        html+='                </div>'      
+        html+='                    <div class="item__baner">'
+        html+='                        <img src="../img/'+element.img+'" alt="'+element.altImg+'">'
+        html+='                    </div> '
+        html+='<div class="item-chart_inf d-flex align-items-center">'
+        html+='<div class="item__chart">'
+        html+='<div class="open_chart">'
+        html+='<p class="text--15-30" >График</p>'
         html+='<svg viewBox="0 0 15 7"  >'
         html+='<path d="M14.1304 0.80744C14.1304 0.957419 14.0734 1.1074 13.9511 1.2258L8.63719 6.37246C7.77327 7.20918 6.35513 7.20918 5.49121 6.37246L0.177267 1.2258C-0.059089 0.996887 -0.059089 0.617993 0.177267 0.389077C0.413623 0.160161 0.804834 0.160161 1.04119 0.389077L6.35513 5.53573C6.74634 5.91462 7.38206 5.91462 7.77327 5.53573L13.0872 0.389077C13.3236 0.160161 13.7148 0.160161 13.9511 0.389077C14.0652 0.507482 14.1304 0.657461 14.1304 0.80744Z" fill="#1560BD"/>'
         html+='</svg>'
-        html+='            <input type="hidden" name="id_item" value="'+element.id+'">'
-        html+='        </div>'
-        html+='    </div>'
+        html+='<input type="hidden" name="id_item" value="'+element.id+'">'
+        html+='</div>'
+        html+='</div>'
+        html+='<div class="item__statistic-number__element">'
+        html+='<img src="../img/transfer.svg" alt="Переход по баннеру">'
+        html+='<span class="text--15-24">'+element.commonTransfer+'</span>'
+        html+='</div>'
+        html+='</div>'        
         html+='</div>'        
         html+='</div>'
         html+='</div>'
-        html+='<div class="item__chart-open item__chart-open-brand">'
+        html+='<div class="item__chart-open item__chart-open-baner">'
             html+='<div class="container container--bc">'
             html+='<div class="col-xxl-10 offset-xxl-1">'
                 html+='<div class="chart output_chart_'+element.id+'">'
@@ -100,10 +83,7 @@ function getNameMount(number) {
 }
 function getNameLabelProduct(name) {
     let arrayMounth={
-        "views":'Просмотры',
-        "favarite":'Добавлено в избранное',
-        "comments":'Написано комментариев',
-        "like":'Поставлено оценок "Нравится"',
+        "transfer":'Переход по баннеру',
     }
     return arrayMounth[name]
 }
@@ -403,7 +383,7 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
 
                     break;
             }
-        }else answerJson=data.articles
+        }else answerJson=data.baner
     
         if($(outputBlock).length){
             $(outputBlock).pagination({
@@ -419,7 +399,9 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
 
                         $(elem.currentTarget).toggleClass('active')
 
-                        let blokForChart=elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.firstElementChild.firstElementChild.firstElementChild
+                        console.log(elem.currentTarget.parentElement.parentElement.parentElement.parentElement.parentElement);
+
+                        let blokForChart=elem.currentTarget.parentElement.parentElement.parentElement.parentElement.parentElement.nextElementSibling.firstElementChild.firstElementChild.firstElementChild
 
                         $(blokForChart).toggleClass("chart-open")
 
@@ -506,4 +488,4 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
     });
 }
 
-viewsItems(linkToBDMain,'','#viewArticleChart')
+viewsItems(linkToBDMain,'','#viewBanerChart')
