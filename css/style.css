@@ -7664,8 +7664,10 @@ ul {
     margin-right: 0;
   }
 }
-.item__inside-article .item__logo {
-  width: 100%;
+@media screen and (max-width: 768px) {
+  .item__inside-article .item__logo {
+    width: 100%;
+  }
 }
 .item__inside-article .item__logo img {
   width: 100%;
