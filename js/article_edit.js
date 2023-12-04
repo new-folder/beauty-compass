@@ -154,7 +154,7 @@ function activeButton() {
         }
 
         if (
-        (!trigerFillEditor || (!seacrhId($('.carousel')) && !seacrhId($('.calage')))) || 
+        (!trigerFillEditor || (!seacrhId($('.carousel-article')) && !seacrhId($('.calage-article')))) || 
         !validateTags||
         $('#cover__pic')[0].files.length==0 || 
         $('#title_article').value=='' || 
@@ -187,7 +187,7 @@ function activeButton() {
                 let startEl=0
                 let endEl=$($($('#editor_'+index)[0].nextElementSibling)[0].nextElementSibling)[0].children.length-1
 
-                if(divClone.classList[0]=='carousel'){
+                if(divClone.classList[0]=='carousel-article'){
                     startEl=1
                     endEl--
                     divClone.appendChild($($($('#editor_'+index)[0].nextElementSibling)[0].nextElementSibling)[0].children[0].cloneNode())
@@ -215,7 +215,7 @@ function activeButton() {
                 
                 }
 
-                if(divClone.classList[0]=='carousel'){
+                if(divClone.classList[0]=='carousel-article'){
 
                     divClone.appendChild($($($('#editor_'+index)[0].nextElementSibling)[0].nextElementSibling)[0].children[endEl].cloneNode())
                 }
@@ -475,8 +475,8 @@ $(document).ready(function() {
                             }
                         }
     
-                        $('#upload-preview').removeClass('calage')
-                        $('#upload-preview').addClass('carousel')
+                        $('#upload-preview').removeClass('calage-article')
+                        $('#upload-preview').addClass('carousel-article')
                         
                         $($('#upload-preview')[0].children[0]).addClass('active')
     
@@ -488,7 +488,7 @@ $(document).ready(function() {
                             span.appendChild(img)
                             span.classList.add(className)
                             return span
-                        })('carousel-prev'))
+                        })('carousel-article-prev'))
     
                         $('#upload-preview')[0].append((function(className){
                             let span=document.createElement('span')
@@ -498,9 +498,9 @@ $(document).ready(function() {
                             span.appendChild(img)
                             span.classList.add(className)
                             return span
-                        })('carousel-next'))
+                        })('carousel-article-next'))
     
-                        for (let car of $('.carousel')) {
+                        for (let car of $('.carousel-article')) {
     
                             let indexActiv=1
                             
@@ -543,10 +543,10 @@ $(document).ready(function() {
                             }
                         }
     
-                        $('#upload-preview').removeClass('carousel')
-                        $('#upload-preview').addClass('calage')
+                        $('#upload-preview').removeClass('carousel-article')
+                        $('#upload-preview').addClass('calage-article')
                         
-                        for(let cal of $('.calage')){
+                        for(let cal of $('.calage-article')){
     
                             for (let span of cal.children) {
                     
@@ -567,7 +567,7 @@ $(document).ready(function() {
         reader.readAsDataURL(file);
         reader.onloadend = () => {
             let outputImg=document.createElement('div')
-            outputImg.classList.add('calage')
+            outputImg.classList.add('calage-article')
 
             //элемент изображений с копирайтом и прочее 
             let imageContainer = document.createElement("span");
@@ -607,7 +607,7 @@ $(document).ready(function() {
                         $(item).click((e)=>{
                             let parent=e.delegateTarget.parentElement
 
-                            if(!parent.parentElement.classList.contains('carousel'))
+                            if(!parent.parentElement.classList.contains('carousel-article'))
                                 $(parent).toggleClass('active')
 
                         })
@@ -674,8 +674,8 @@ $(document).ready(function() {
             }
             $('#display_img')[0].value="grid"
 
-            $(imageDisplay).removeClass('carousel')
-            $(imageDisplay).addClass('calage')
+            $(imageDisplay).removeClass('carousel-article')
+            $(imageDisplay).addClass('calage-article')
         } else 
             error.innerText = "Пожалуйста, выберите не больше 9 изображений";
         
@@ -743,8 +743,8 @@ $(document).ready(function() {
 
             $('#display_img')[0].value="grid"
 
-            $(imageDisplay).removeClass('carousel')
-            $(imageDisplay).addClass('calage')
+            $(imageDisplay).removeClass('carousel-article')
+            $(imageDisplay).addClass('calage-article')
 
         } else 
             error.innerText = "Пожалуйста, выберите не больше 9 изображений";
@@ -819,7 +819,7 @@ $(document).ready(function() {
 
                 if(
                     (spanPar == imageDisplay.children[imageDisplay.children.length-1] || spanPar == imageDisplay.children[imageDisplay.children.length-2]) 
-                    && div.classList.contains('calage')
+                    && div.classList.contains('calage-article')
                     ){
                         switch (imageDisplay.children.length % 3) {
                             case 1 :
@@ -876,7 +876,7 @@ $(document).ready(function() {
                 $(div.children[index]).removeClass('active');
             }
             
-            if(div.classList.contains('carousel')){
+            if(div.classList.contains('carousel-article')){
 
                 $(div.children[indexActiv]).addClass('active');
                 $(div.children[0]).click(()=>{
@@ -891,7 +891,7 @@ $(document).ready(function() {
         
                 $(div.children[div.children.length-1]).click(()=>{
                     if(indexActiv<div.children.length-2){
-                        if(!div.children[indexActiv+1].classList.contains('carousel-next')){
+                        if(!div.children[indexActiv+1].classList.contains('carousel-article-next')){
 
                             $(div.children[indexActiv]).removeClass('active');
             
@@ -931,7 +931,7 @@ $(document).ready(function() {
                 let startEl=0
                 let endEl=0
 
-                if (div.classList.contains('carousel')) {
+                if (div.classList.contains('carousel-article')) {
                     startEl=1
                     endEl=div.children.length-2
                 } else {
@@ -970,7 +970,7 @@ $(document).ready(function() {
                 let startEl=0
                 let endEl=div.children.length-1
 
-                if (div.classList.contains('carousel')) {
+                if (div.classList.contains('carousel-article')) {
                     startEl=1
                     endEl--
                     countpPhotoEdit=countpPhotoEdit-2
@@ -981,8 +981,8 @@ $(document).ready(function() {
                     error.innerText="Фотографий больше чем 9 шт. удалите не нужные фото, прежде чем изменять блок"
 
                 }else{
-                    $(imageDisplay).removeClass('carousel')
-                    $(imageDisplay).addClass('calage')
+                    $(imageDisplay).removeClass('carousel-article')
+                    $(imageDisplay).addClass('calage-article')
                     $('#display_img')[0].value="grid"
                     
                     for (let index = startEl; index < endEl; index++) {

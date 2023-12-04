@@ -7,7 +7,7 @@ function templatingItem(data) {
         html+='<li class="output__statistic-wrap">'
         html+='<div class="container container--bc">'
         html+='    <div class="col-xxl-10 offset-xxl-1">'
-        html+='        <div class="item item__inside">'
+        html+='        <div class="item item__inside-brand">'
         html+='            <div class="item__image-view">'
         html+='                <img src="../img/'+element.image+'" alt="'+element.mainTitle+'">'
         html+='            </div>'
@@ -15,54 +15,8 @@ function templatingItem(data) {
         html+='                <p class="text--15-30">'
         html+=element.mainTitle
         html+='                </p>'
-        html+='                <p class="text--15-24">'
-        html+=element.subTitle
-        html+='                </p>'
         html+='            </div>'
-        html+='            <div class="item__rating-value rating__body">'
-        
-        //высчитывание рейтинга
-
-        html+='                <div class="rating__active" style="width: '+element.rating+'%;"></div>'
-
-        html+='            </div>'
-        html+='            <div class="item__statistic-number d-flex align-items-center">'
-        html+='                <div class="item__statistic-number__element">'
-        html+='                    <img src="../img/favorite-heart.svg" alt="Добавленией в избранное">'
-        html+='                    <span class="text--15-24">'+element.like+'</span>'
-        html+='                </div>'
-        html+='                <div class="item__statistic-number__element">'
-        html+='                    <img src="../img/like-tag.svg" alt="Поставили нравиться">'
-        html+='                    <span class="text--15-24">'+element.positRevi+'</span>'
-        html+='                </div>'
-        html+='                <div class="item__statistic-number__element">'
-        html+='                    <img src="../img/message-question.svg" alt="Заданные вопросы">'
-        html+='                    <span class="text--15-24">'+element.question+'</span>'
-        html+='                </div>'
-        html+='                <div class="item__statistic-number__element">'
-        html+='                    <img src="../img/grey_eye.svg" alt="Показатель просмотров">'
-        html+='                    <span class="text--15-24">'+element.views+'</span>'
-        html+='                </div>'
-        html+='            </div>'
-        html+='            <div class="item__btn">'
-
-        // вывод всех магазинов где расположен товар
-        element.linkShop.forEach(shop => {
-            
-            html+='                <a href="'+shop.link+'" class="btn">'
-            html+='                    <p class="text--12-18">'
-            html+=shop.name
-            html+='                    </p>'
-            html+='                </a>'
-        });
-
-        html+='            </div>'
-        html+='        </div>'
-        html+='    </div>'
-        html+='</div>'
         html+='    <div class="item__chart">'
-        html+='<div class="container container--bc">'
-        html+='    <div class="col-xxl-10 offset-xxl-1">'
         html+='        <div class="open_chart">'
         html+='            <p class="text--15-30" >График</p>'
         html+='<svg viewBox="0 0 15 7"  >'
@@ -70,12 +24,18 @@ function templatingItem(data) {
         html+='</svg>'
         html+='            <input type="hidden" name="id_item" value="'+element.id+'">'
         html+='        </div>'
-        html+='        <div class="chart output_chart_id_item">'
+        html+='    </div>'
+        html+='        </div>'
+        html+='    </div>'
+        html+='</div>'
+        html+='<div>'
+        html+='    <div class="container container--bc">'
+        html+='        <div class="col-xxl-10 offset-xxl-1 chart output_chart_'+element.id+'">'
         html+='            <input type="hidden" name="openTrig" value=false>'
         html+='        </div>'
-        html+='    </div>'
         html+='        </div>'
         html+='    </div>'
+        
         html+='</li>'
     });
     html += '</ul>';
@@ -116,13 +76,14 @@ function getNameMount(number) {
     ]
     return arrayMounth[number]
 }
+
 function getNameLabelProduct(name) {
     let arrayMounth={
-        "views":'Просмотры',
-        "review":'Отзывы',
-        "favarite":'Добавлено в избранное',
+        "views":'Просмотры статей бренда',
+        "visitItem":'Переходы на страницу средств',
         "visitShop":'Переходы на маркетплейсы',
-        "visitItem":'Переходы на страницу бренда',
+        "visit":'Посещения',
+        "favarite":'Добавлено в избранное',
     }
     return arrayMounth[name]
 }
@@ -267,7 +228,6 @@ function generateChart(charts, blockOutput, period) {
                     if (chart.data.indexOf(el)>(chart.data.indexOf(chart.data[chart.data.length-1])-183)) {
                         
                         if (activeMount==-1 || activeMount!=Number(el.x.split('.')[1])) {
-                            // console.log(el.x.split('.')[1]);
                             activeMount=Number(el.x.split('.')[1])
                             dataPush.push(el.y)
                         }else{
@@ -379,6 +339,7 @@ function generateChart(charts, blockOutput, period) {
         }
     })
 }
+
 var countAtrrClick={
     rating:false,
     view:false,
@@ -395,36 +356,8 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
     var answerJson=[]
     
     fetchJSONFile(linkToBD, function(data){
-    
-        if (sort!='') {
-            switch (sort) {
-                case 'rating':
-                    (countAtrrClick.rating ) ? answerJson=data.cosmetics.sort((x,y)=>x.rating-y.rating) : answerJson=data.cosmetics.sort((x,y)=>y.rating-x.rating)
-                    countAtrrClick.rating=!countAtrrClick.rating
-
-                    break;
-                case 'view':
-                    (countAtrrClick.view ) ? answerJson=data.cosmetics.sort((x,y)=>x.views-y.views) : answerJson=data.cosmetics.sort((x,y)=>y.views-x.views)
-                    countAtrrClick.view=!countAtrrClick.view
-
-                    break;
-                case 'visit':
-                    (countAtrrClick.visit ) ? answerJson=data.cosmetics.sort((x,y)=>x.visitAll-y.visitAll) : answerJson=data.cosmetics.sort((x,y)=>y.visitAll-x.visitAll)
-                    countAtrrClick.visit=!countAtrrClick.visit
-
-                    break;
-                case 'favarite':
-                    (countAtrrClick.favarite ) ? answerJson=data.cosmetics.sort((x,y)=>x.like-y.like) : answerJson=data.cosmetics.sort((x,y)=>y.like-x.like)
-                    countAtrrClick.favarite=!countAtrrClick.favarite
-
-                    break;
-                case 'new':
-                    (countAtrrClick.new ) ? answerJson=data.cosmetics.sort((x,y)=>new Date(x.dateCreate)-new Date(y.dateCreate)) : answerJson=data.cosmetics.sort((x,y)=>new Date(y.dateCreate)-new Date(x.dateCreate))
-                    countAtrrClick.new=!countAtrrClick.new
-
-                    break;
-            }
-        }else answerJson=data.cosmetics
+        
+        answerJson=data.brands
     
         if($(outputBlock).length){
             $(outputBlock).pagination({
@@ -438,13 +371,12 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
 
                     $(".open_chart").click(function (elem) { 
 
-                        $(elem.currentTarget.parentElement.parentElement.parentElement).toggleClass("item__chart-open");
+                        $(elem.currentTarget).toggleClass('active')
 
-                        $(elem.currentTarget.nextElementSibling).toggleClass("chart-open")
+                        $(elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling).toggleClass("item__chart-open");
+                        $(elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling).toggleClass("item__chart-open-brand");
 
-                        elem.currentTarget.nextElementSibling.classList[2] ?
-                            $(elem.currentTarget.children[0]).css('color','#FAFAFA') :
-                            $(elem.currentTarget.children[0]).css('color','#1560BD')
+                        $(elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0].children[0]).toggleClass("chart-open")
 
                         let idElem=elem.currentTarget.children[2].value
 
@@ -453,8 +385,8 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
                         let canvas = document.createElement('canvas')
 
                         
-                        if (elem.currentTarget.nextElementSibling.firstElementChild.value=="false") {
-                            elem.currentTarget.nextElementSibling.append(canvas);
+                        if (elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0].children[0].firstElementChild.value=="false") {
+                            elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0].children[0].append(canvas);
                             
                             generateChart(charts, canvas, 'all')
                             
@@ -511,19 +443,76 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
                                 });
 
                                 divWithParam.append(btnCreated)
-
-
                             });
+                            
+                            elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0].children[0].append(divWithParam);
 
-                            elem.currentTarget.nextElementSibling.append(divWithParam);
+                            let divWithShops=document.createElement('div')
+                            divWithShops.classList.add("chart-open__shops")
+                            divWithShops.classList.add("d-flex")
+                            divWithShops.classList.add("justify-content-around")
+                            divWithShops.classList.add("align-items-center")
+                            divWithShops.classList.add("flex-wrap")
 
+                            let divWithInfoShops=document.createElement('div')
+                            divWithInfoShops.classList.add("chart-open__shops-info")
+                            let text=document.createElement('p')
+                            text.classList.add('text--15-20')
+                            text.innerText="Количество переходов в каждом магазине"
+                            divWithInfoShops.append(text)
 
+                            let shopsOutput={}
 
-                            elem.currentTarget.nextElementSibling.firstElementChild.value=true
+                            charts.find((el)=>{
+                                if(el.name=="visit")
+                                    return el
+                            }).data.forEach((el)=>{
+                                for( let shopKey in el.shops){
+                                    if(!shopsOutput[shopKey]){
+                                        shopsOutput[shopKey]={
+                                            name:shopKey,
+                                            count:el.shops[shopKey]
+                                        }
+
+                                    }else{
+                                        shopsOutput[shopKey].count+=el.shops[shopKey]
+                                    }
+                                }
+                            })
+                            Object.keys(shopsOutput).sort((a,b)=>{
+                                return a.count-b.count
+                            }).forEach((key)=>{
+                                
+                                shopsOutput[key]
+
+                                let shopDiv=document.createElement('div')
+                                shopDiv.classList.add('btn')
+                                shopDiv.classList.add('btn-shops')
+                                
+                                let textShop=document.createElement('p')
+                                textShop.classList.add("text--15-20")
+                                textShop.innerText=shopsOutput[key].name+": "+shopsOutput[key].count
+                                shopDiv.append(textShop)
+
+                                divWithShops.append(shopDiv)
+                            })
+
+                            elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0].children[0].append(divWithInfoShops);
+                            elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0].children[0].append(divWithShops);
+                            
+                            elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0].children[0].firstElementChild.value=true
                         } else {
-                            $(elem.currentTarget.nextElementSibling.children[1]).remove();
-                            $(elem.currentTarget.nextElementSibling.children[1]).remove();
-                            elem.currentTarget.nextElementSibling.firstElementChild.value=false
+                            
+                            $(elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0].children[0].children[4]).remove();
+
+                            $(elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0].children[0].children[3]).remove();
+
+                            $(elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0].children[0].children[2]).remove();
+                            
+                            $(elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0].children[0].children[1]).remove();
+                            
+                            elem.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0].children[0].firstElementChild.value=false
+
                         }
                     });
                 }
@@ -566,30 +555,56 @@ $('#default').click(function(el) {
 
 if ($('#allItems').length!=0) {
     
-    fetchJSONFile("../manufacturer-lk__charts/all_cosmetics_manufacter.json", function(data){
+    fetchJSONFile("../manufacturer-lk__charts/all_brands_manufacter.json", function(data){
     
-        let cosmetics=[]
-        data.cosmetics.forEach(cosmetic => {
-            if (cosmetics.length==0) {
+        let brands=[]
+        data.brands.forEach(cosmetic => {
+            if (brands.length==0) {
                 cosmetic.chart.forEach(chart_el => {
-                    cosmetics.push(chart_el)
+                    brands.push(chart_el)
                 });
             }else{
                 for (let i = 0; i < cosmetic.chart.length; i++) {
                     const el = cosmetic.chart[i];
-                    if (el.name==cosmetics[i].name) 
-                        for (let j = 0; j < cosmetics[i].data.length; j++) {
+                    if (el.name==brands[i].name) {
+                        for (let j = 0; j < brands[i].data.length; j++) {
                             try {
-                                cosmetics[i].data[j].y+=el.data[j].y
+                                brands[i].data[j].y+=el.data[j].y
                             } catch (error) {
                                 
                             }
                         }
+                        if(el.name=='visit'){
+                            for (let j = 0; j < brands[i].data.length; j++) {
+                        try {
+                            
+                            if(Object.keys(el.data[j].shops).length!=Object.keys(brands[i].data[j].shops).length){
+
+                                for(let brand in brands[i].data[j].shops){
+                                    if(!el.data[j].shops[brand]){
+                                        el.data[j].shops[brand]={
+                                            name:brand,
+                                            count:brand.count
+                                        }
+                                    }
+                                }
+                            }else
+                                for( let shopKey in brands[i].data[j].shops){
+                                    brands[i].data[j].shops[shopKey]+=el.data[j].shops[shopKey]
+
+                                }
+                        } catch (error) {
+                            
+                        }
+                            }
+                        }
+                    }
+                    
                 }
             }
         });
-
-        generateChart(cosmetics,$('#allItems'),'all')
+    
+        generateChart(brands,$('#allItems'),'all')
 
         let btnClick=[
             {
@@ -621,11 +636,65 @@ if ($('#allItems').length!=0) {
                 
                 e.currentTarget.parentElement.parentElement.children[0].before(canvas)
 
-                generateChart(cosmetics, e.currentTarget.parentElement.parentElement.children[0], btn.param)
+                generateChart(brands, e.currentTarget.parentElement.parentElement.children[0], btn.param)
             });
         });
 
+        let divWithShops=document.createElement('div')
+        divWithShops.classList.add("chart-open__shops")
+        divWithShops.classList.add("chart-open__shops-all")
+        divWithShops.classList.add("d-flex")
+        divWithShops.classList.add("justify-content-around")
+        divWithShops.classList.add("align-items-center")
+        divWithShops.classList.add("flex-wrap")
+
+        let divWithInfoShops=document.createElement('div')
+        divWithInfoShops.classList.add("chart-open__shops-info")
+        divWithInfoShops.classList.add("chart-open__shops-all")
+        let text=document.createElement('p')
+        text.classList.add('text--15-20')
+        text.innerText="Количество переходов в каждом магазине"
+        divWithInfoShops.append(text)
+
+        let shopsOutput={}
+
+        brands.find((el)=>{
+            if(el.name=="visit")
+                return el
+        }).data.forEach((el)=>{
+            for( let shopKey in el.shops){
+                if(!shopsOutput[shopKey]){
+                    shopsOutput[shopKey]={
+                        name:shopKey,
+                        count:el.shops[shopKey]
+                    }
+
+                }else{
+                    shopsOutput[shopKey].count+=el.shops[shopKey]
+                }
+            }
+        })
+        Object.keys(shopsOutput).sort((a,b)=>{
+            return a.count-b.count
+        }).forEach((key)=>{
+            
+            shopsOutput[key]
+
+            let shopDiv=document.createElement('div')
+            shopDiv.classList.add('btn')
+            shopDiv.classList.add('btn-shops')
+            
+            let textShop=document.createElement('p')
+            textShop.classList.add("text--15-20")
+            textShop.innerText=shopsOutput[key].name+": "+shopsOutput[key].count
+            shopDiv.append(textShop)
+
+            divWithShops.append(shopDiv)
+        })
+
+        $('.chart-open__btn-param-all').after(divWithShops);
+        $('.chart-open__btn-param-all').after(divWithInfoShops);
     })
 }
 
-viewsItems("../manufacturer-lk__charts/all_cosmetics_manufacter.json",'','#viewCosmeticChart')
+viewsItems("../manufacturer-lk__charts/all_brands_manufacter.json",'','#viewBrandChart')

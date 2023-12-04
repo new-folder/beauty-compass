@@ -1,81 +1,46 @@
+const linkToBDMain="../manufacturer-lk__charts/all_baner_manufacter.json"
 function templatingItem(data) {
     let html=''
 
     html = '<ul>';
     data.forEach(element => {
-
         html+='<li class="output__statistic-wrap">'
-        html+='<div class="container container--bc">'
-        html+='    <div class="col-xxl-10 offset-xxl-1">'
-        html+='        <div class="item item__inside">'
-        html+='            <div class="item__image-view">'
-        html+='                <img src="../img/'+element.image+'" alt="'+element.mainTitle+'">'
-        html+='            </div>'
-        html+='            <div class="item__title">'
-        html+='                <p class="text--15-30">'
-        html+=element.mainTitle
-        html+='                </p>'
-        html+='                <p class="text--15-24">'
-        html+=element.subTitle
-        html+='                </p>'
-        html+='            </div>'
-        html+='            <div class="item__rating-value rating__body">'
-        
-        //высчитывание рейтинга
-
-        html+='                <div class="rating__active" style="width: '+element.rating+'%;"></div>'
-
-        html+='            </div>'
-        html+='            <div class="item__statistic-number d-flex align-items-center">'
-        html+='                <div class="item__statistic-number__element">'
-        html+='                    <img src="../img/favorite-heart.svg" alt="Добавленией в избранное">'
-        html+='                    <span class="text--15-24">'+element.like+'</span>'
-        html+='                </div>'
-        html+='                <div class="item__statistic-number__element">'
-        html+='                    <img src="../img/like-tag.svg" alt="Поставили нравиться">'
-        html+='                    <span class="text--15-24">'+element.positRevi+'</span>'
-        html+='                </div>'
-        html+='                <div class="item__statistic-number__element">'
-        html+='                    <img src="../img/message-question.svg" alt="Заданные вопросы">'
-        html+='                    <span class="text--15-24">'+element.question+'</span>'
-        html+='                </div>'
-        html+='                <div class="item__statistic-number__element">'
-        html+='                    <img src="../img/grey_eye.svg" alt="Показатель просмотров">'
-        html+='                    <span class="text--15-24">'+element.views+'</span>'
-        html+='                </div>'
-        html+='            </div>'
-        html+='            <div class="item__btn">'
-
-        // вывод всех магазинов где расположен товар
-        element.linkShop.forEach(shop => {
-            
-            html+='                <a href="'+shop.link+'" class="btn">'
-            html+='                    <p class="text--12-18">'
-            html+=shop.name
-            html+='                    </p>'
-            html+='                </a>'
-        });
-
-        html+='            </div>'
-        html+='        </div>'
-        html+='    </div>'
-        html+='</div>'
-        html+='    <div class="item__chart">'
-        html+='<div class="container container--bc">'
-        html+='    <div class="col-xxl-10 offset-xxl-1">'
-        html+='        <div class="open_chart">'
-        html+='            <p class="text--15-30" >График</p>'
+        html+='    <div class="container container--bc"> '   
+        html+='        <div class="col-xxl-10 offset-xxl-1">   '     
+        html+='            <div class="item item__inside-baner">'            
+        html+='                <div class="item__title">   '             
+        html+='                    <p class="text--15-30 text-uppercase">Банер на <a href="'+element.link+'">'+element.textLink+'</a></p> '           
+        html+='                </div>'      
+        html+='                    <div class="item__baner">'
+        html+='                        <img src="../img/'+element.img+'" alt="'+element.altImg+'">'
+        html+='                    </div> '
+        html+='<div class="item-chart_inf d-flex align-items-center">'
+        html+='<div class="item__chart">'
+        html+='<div class="open_chart">'
+        html+='<p class="text--15-30" >График</p>'
         html+='<svg viewBox="0 0 15 7"  >'
         html+='<path d="M14.1304 0.80744C14.1304 0.957419 14.0734 1.1074 13.9511 1.2258L8.63719 6.37246C7.77327 7.20918 6.35513 7.20918 5.49121 6.37246L0.177267 1.2258C-0.059089 0.996887 -0.059089 0.617993 0.177267 0.389077C0.413623 0.160161 0.804834 0.160161 1.04119 0.389077L6.35513 5.53573C6.74634 5.91462 7.38206 5.91462 7.77327 5.53573L13.0872 0.389077C13.3236 0.160161 13.7148 0.160161 13.9511 0.389077C14.0652 0.507482 14.1304 0.657461 14.1304 0.80744Z" fill="#1560BD"/>'
         html+='</svg>'
-        html+='            <input type="hidden" name="id_item" value="'+element.id+'">'
-        html+='        </div>'
-        html+='        <div class="chart output_chart_id_item">'
-        html+='            <input type="hidden" name="openTrig" value=false>'
-        html+='        </div>'
-        html+='    </div>'
-        html+='        </div>'
-        html+='    </div>'
+        html+='<input type="hidden" name="id_item" value="'+element.id+'">'
+        html+='</div>'
+        html+='</div>'
+        html+='<div class="item__statistic-number__element">'
+        html+='<img src="../img/transfer.svg" alt="Переход по баннеру">'
+        html+='<span class="text--15-24">'+element.commonTransfer+'</span>'
+        html+='</div>'
+        html+='</div>'        
+        html+='</div>'        
+        html+='</div>'
+        html+='</div>'
+        html+='<div class="item__chart-open item__chart-open-baner">'
+            html+='<div class="container container--bc">'
+            html+='<div class="col-xxl-10 offset-xxl-1">'
+                html+='<div class="chart output_chart_'+element.id+'">'
+                    html+='<input type="hidden" name="openTrig" value=false>'
+                html+='</div>'
+            html+='</div>'
+            html+='</div>'
+        html+='</div>'
         html+='</li>'
     });
     html += '</ul>';
@@ -118,11 +83,7 @@ function getNameMount(number) {
 }
 function getNameLabelProduct(name) {
     let arrayMounth={
-        "views":'Просмотры',
-        "review":'Отзывы',
-        "favarite":'Добавлено в избранное',
-        "visitShop":'Переходы на маркетплейсы',
-        "visitItem":'Переходы на страницу бренда',
+        "transfer":'Переход по баннеру',
     }
     return arrayMounth[name]
 }
@@ -267,7 +228,6 @@ function generateChart(charts, blockOutput, period) {
                     if (chart.data.indexOf(el)>(chart.data.indexOf(chart.data[chart.data.length-1])-183)) {
                         
                         if (activeMount==-1 || activeMount!=Number(el.x.split('.')[1])) {
-                            // console.log(el.x.split('.')[1]);
                             activeMount=Number(el.x.split('.')[1])
                             dataPush.push(el.y)
                         }else{
@@ -395,7 +355,6 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
     var answerJson=[]
     
     fetchJSONFile(linkToBD, function(data){
-    
         if (sort!='') {
             switch (sort) {
                 case 'rating':
@@ -424,7 +383,7 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
 
                     break;
             }
-        }else answerJson=data.cosmetics
+        }else answerJson=data.baner
     
         if($(outputBlock).length){
             $(outputBlock).pagination({
@@ -438,13 +397,13 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
 
                     $(".open_chart").click(function (elem) { 
 
-                        $(elem.currentTarget.parentElement.parentElement.parentElement).toggleClass("item__chart-open");
+                        $(elem.currentTarget).toggleClass('active')
 
-                        $(elem.currentTarget.nextElementSibling).toggleClass("chart-open")
+                        console.log(elem.currentTarget.parentElement.parentElement.parentElement.parentElement.parentElement);
 
-                        elem.currentTarget.nextElementSibling.classList[2] ?
-                            $(elem.currentTarget.children[0]).css('color','#FAFAFA') :
-                            $(elem.currentTarget.children[0]).css('color','#1560BD')
+                        let blokForChart=elem.currentTarget.parentElement.parentElement.parentElement.parentElement.parentElement.nextElementSibling.firstElementChild.firstElementChild.firstElementChild
+
+                        $(blokForChart).toggleClass("chart-open")
 
                         let idElem=elem.currentTarget.children[2].value
 
@@ -452,9 +411,8 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
                         
                         let canvas = document.createElement('canvas')
 
-                        
-                        if (elem.currentTarget.nextElementSibling.firstElementChild.value=="false") {
-                            elem.currentTarget.nextElementSibling.append(canvas);
+                        if (blokForChart.firstElementChild.value=="false") {
+                            blokForChart.append(canvas);
                             
                             generateChart(charts, canvas, 'all')
                             
@@ -515,15 +473,13 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
 
                             });
 
-                            elem.currentTarget.nextElementSibling.append(divWithParam);
+                            blokForChart.append(divWithParam);
 
-
-
-                            elem.currentTarget.nextElementSibling.firstElementChild.value=true
+                            blokForChart.firstElementChild.value=true
                         } else {
-                            $(elem.currentTarget.nextElementSibling.children[1]).remove();
-                            $(elem.currentTarget.nextElementSibling.children[1]).remove();
-                            elem.currentTarget.nextElementSibling.firstElementChild.value=false
+                            $(blokForChart.children[1]).remove();
+                            $(blokForChart.children[1]).remove();
+                            blokForChart.firstElementChild.value=false
                         }
                     });
                 }
@@ -532,100 +488,4 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
     });
 }
 
-$('.rating').click(function(el) {
-    el.preventDefault();
-    viewsItems("../manufacturer-lk__charts/all_cosmetics_manufacter.json",'rating', '#viewCosmeticChart')
-
-})
-$('.view').click(function(el) {
-    el.preventDefault();
-    viewsItems("../manufacturer-lk__charts/all_cosmetics_manufacter.json",'view','#viewCosmeticChart')
-
-})
-$('.visit').click(function(el) {
-    el.preventDefault();
-    viewsItems("../manufacturer-lk__charts/all_cosmetics_manufacter.json",'visit','#viewCosmeticChart')
-
-})
-$('.favarite').click(function(el) {
-    el.preventDefault();
-    viewsItems("../manufacturer-lk__charts/all_cosmetics_manufacter.json",'favarite','#viewCosmeticChart')
-
-})
-$('.new').click(function(el) {
-    
-    el.preventDefault();
-    viewsItems("../manufacturer-lk__charts/all_cosmetics_manufacter.json",'new','#viewCosmeticChart')
-
-})
-$('#default').click(function(el) {
-    el.preventDefault();
-    viewsItems("../manufacturer-lk__charts/all_cosmetics_manufacter.json",'','#viewCosmeticChart')
-
-})
-
-if ($('#allItems').length!=0) {
-    
-    fetchJSONFile("../manufacturer-lk__charts/all_cosmetics_manufacter.json", function(data){
-    
-        let cosmetics=[]
-        data.cosmetics.forEach(cosmetic => {
-            if (cosmetics.length==0) {
-                cosmetic.chart.forEach(chart_el => {
-                    cosmetics.push(chart_el)
-                });
-            }else{
-                for (let i = 0; i < cosmetic.chart.length; i++) {
-                    const el = cosmetic.chart[i];
-                    if (el.name==cosmetics[i].name) 
-                        for (let j = 0; j < cosmetics[i].data.length; j++) {
-                            try {
-                                cosmetics[i].data[j].y+=el.data[j].y
-                            } catch (error) {
-                                
-                            }
-                        }
-                }
-            }
-        });
-
-        generateChart(cosmetics,$('#allItems'),'all')
-
-        let btnClick=[
-            {
-                class:"all_btn",
-                param:'all'
-            },
-            {
-                class:"last_year_btn",
-                param:'last_year'
-            },{
-                class:"last_half_year_btn",
-                param:'last_half_year'
-            },{
-                class:"three_months_btn",
-                param:'three_months'
-            },{
-                class:"day_btn",
-                param:'day'
-            },
-        ]
-
-        btnClick.forEach(btn => {
-            
-            $("."+btn.class).click(function (e) { 
-                e.preventDefault();
-                e.currentTarget.parentElement.parentElement.children[0].remove()
-    
-                let canvas = document.createElement('canvas')
-                
-                e.currentTarget.parentElement.parentElement.children[0].before(canvas)
-
-                generateChart(cosmetics, e.currentTarget.parentElement.parentElement.children[0], btn.param)
-            });
-        });
-
-    })
-}
-
-viewsItems("../manufacturer-lk__charts/all_cosmetics_manufacter.json",'','#viewCosmeticChart')
+viewsItems(linkToBDMain,'','#viewBanerChart')
