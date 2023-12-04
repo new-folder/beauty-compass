@@ -29,19 +29,19 @@ function templatingItem(data) {
         html+='            <div class="item__statistic-number d-flex align-items-center">'
         html+='                <div class="item__statistic-number__element">'
         html+='                    <img src="../img/favorite-heart.svg" alt="Добавленией в избранное">'
-        html+='                    <span class="text--15-24">'+element.like+'</span>'
+        html+='                    <span>'+element.like+'</span>'
         html+='                </div>'
         html+='                <div class="item__statistic-number__element">'
         html+='                    <img src="../img/like-tag.svg" alt="Поставили нравиться">'
-        html+='                    <span class="text--15-24">'+element.positRevi+'</span>'
+        html+='                    <span>'+element.positRevi+'</span>'
         html+='                </div>'
         html+='                <div class="item__statistic-number__element">'
         html+='                    <img src="../img/message-question.svg" alt="Заданные вопросы">'
-        html+='                    <span class="text--15-24">'+element.question+'</span>'
+        html+='                    <span>'+element.question+'</span>'
         html+='                </div>'
         html+='                <div class="item__statistic-number__element">'
         html+='                    <img src="../img/grey_eye.svg" alt="Показатель просмотров">'
-        html+='                    <span class="text--15-24">'+element.views+'</span>'
+        html+='                    <span>'+element.views+'</span>'
         html+='                </div>'
         html+='            </div>'
         html+='            <div class="item__btn">'
@@ -65,9 +65,6 @@ function templatingItem(data) {
         html+='    <div class="col-xxl-10 offset-xxl-1">'
         html+='        <div class="open_chart">'
         html+='            <p class="text--15-30" >График</p>'
-        html+='<svg viewBox="0 0 15 7"  >'
-        html+='<path d="M14.1304 0.80744C14.1304 0.957419 14.0734 1.1074 13.9511 1.2258L8.63719 6.37246C7.77327 7.20918 6.35513 7.20918 5.49121 6.37246L0.177267 1.2258C-0.059089 0.996887 -0.059089 0.617993 0.177267 0.389077C0.413623 0.160161 0.804834 0.160161 1.04119 0.389077L6.35513 5.53573C6.74634 5.91462 7.38206 5.91462 7.77327 5.53573L13.0872 0.389077C13.3236 0.160161 13.7148 0.160161 13.9511 0.389077C14.0652 0.507482 14.1304 0.657461 14.1304 0.80744Z" fill="#1560BD"/>'
-        html+='</svg>'
         html+='            <input type="hidden" name="id_item" value="'+element.id+'">'
         html+='        </div>'
         html+='        <div class="chart output_chart_id_item">'
@@ -429,9 +426,10 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
         if($(outputBlock).length){
             $(outputBlock).pagination({
                 dataSource:answerJson,
-                pageSize: 50,
+                pageSize: 5,
                 pageNumber: 1,
                 pageRange: 1,
+                formatGoInput: 'go to <%= input %> st/rd/th',
                 callback: function(item, pagination) {
                     var html = templatingItem(item);
                     $(outputBlock).prev().html(html);
@@ -442,86 +440,60 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
 
                         $(elem.currentTarget.nextElementSibling).toggleClass("chart-open")
 
-                        elem.currentTarget.nextElementSibling.classList[2] ?
-                            $(elem.currentTarget.children[0]).css('color','#FAFAFA') :
-                            $(elem.currentTarget.children[0]).css('color','#1560BD')
 
-                        let idElem=elem.currentTarget.children[2].value
+                        let idElem=elem.currentTarget.children[1].value
 
                         let charts = item[idElem].chart
                         
                         let canvas = document.createElement('canvas')
 
-                        
-                        if (elem.currentTarget.nextElementSibling.firstElementChild.value=="false") {
-                            elem.currentTarget.nextElementSibling.append(canvas);
-                            
-                            generateChart(charts, canvas, 'all')
-                            
-                            let divWithParam=document.createElement('div')
-                            divWithParam.classList.add("chart-open__btn-param")
-                            divWithParam.classList.add("d-flex")
-                            divWithParam.classList.add("justify-content-around")
-                            divWithParam.classList.add("align-items-center")
-                            divWithParam.classList.add("flex-wrap")
+                        var ctx = canvas.getContext('2d')
 
-                            let buttons=[
+                        const gradient = ctx.createLinearGradient(20, 0, 220, 0);
+
+                        // Add three color stops
+                        gradient.addColorStop(0, "green");
+                        gradient.addColorStop(0.5, "cyan");
+                        gradient.addColorStop(1, "green");
+
+
+                        let dataOutpChart={
+                            labels:charts[0].data.map(el=>el.x),
+                            datasets:[
                                 {
-                                    class:"all_btn",
-                                    text:"Весь период",
-                                    param:'all'
+                                    label: 'Просмотры',
+                                    data: charts[0].data.map(el=>el.y),
                                 },
                                 {
-                                    class:"last_year_btn",
-                                    text:"За последний год",
-                                    param:'last_year'
-                                },{
-                                    class:"last_half_year_btn",
-                                    text:"За полгода",
-                                    param:'last_half_year'
-                                },{
-                                    class:"three_months_btn",
-                                    text:"За три меясца",
-                                    param:'three_months'
-                                },{
-                                    class:"day_btn",
-                                    text:"За месяц",
-                                    param:'day'
+                                    label: 'Отзывы',
+                                    data: charts[1].data.map(el=>el.y),
+                                },
+                                {
+                                    label: 'Избранное',
+                                    data: charts[2].data.map(el=>el.y),
+                                },
+                                {
+                                    label: 'Переходы на маркетплейсы',
+                                    data: charts[3].data.map(el=>el.y),
+                                },
+                                {
+                                    label: 'Переходы на страницу бренда',
+                                    data: charts[4].data.map(el=>el.y),
                                 },
                             ]
+                        }
 
-                            buttons.forEach(btn => {
-                                let btnCreated=document.createElement('a')
-                                btnCreated.classList.add('btn')
-                                btnCreated.classList.add(btn.class)
-                                let textInBtn=document.createElement('p')
-                                textInBtn.classList.add("text--12-18")
-                                textInBtn.innerText=btn.text
-                                btnCreated.append(textInBtn)
-
-                                $(btnCreated).click(function (e) { 
-                                    e.preventDefault();
-
-                                    e.currentTarget.parentElement.parentElement.children[1].remove()
-
-                                    let canvas = document.createElement('canvas')
-                                    
-                                    e.currentTarget.parentElement.parentElement.children[1].before(canvas)
-                                    generateChart(charts,e.currentTarget.parentElement.parentElement.children[1], btn.param)
-                                });
-
-                                divWithParam.append(btnCreated)
-
-
-                            });
-
-                            elem.currentTarget.nextElementSibling.append(divWithParam);
-
-
+                        if (elem.currentTarget.nextElementSibling.firstElementChild.value=="false") {
+                            elem.currentTarget.nextElementSibling.append(canvas);
+                            const chart=new Chart(canvas,{
+                                type:'line',
+                                data:dataOutpChart,
+                                borderColor: '#fff',
+                                color:'#fff'
+                            })
 
                             elem.currentTarget.nextElementSibling.firstElementChild.value=true
                         } else {
-                            $(elem.currentTarget.nextElementSibling.children[1]).remove();
                             $(elem.currentTarget.nextElementSibling.children[1]).remove();
                             elem.currentTarget.nextElementSibling.firstElementChild.value=false
                         }
@@ -532,28 +504,27 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
     });
 }
 
-$('.rating').click(function(el) {
+$('#rating').click(function(el) {
     el.preventDefault();
     viewsItems("../manufacturer-lk__charts/all_cosmetics_manufacter.json",'rating', '#viewCosmeticChart')
 
 })
-$('.view').click(function(el) {
+$('#view').click(function(el) {
     el.preventDefault();
     viewsItems("../manufacturer-lk__charts/all_cosmetics_manufacter.json",'view','#viewCosmeticChart')
 
 })
-$('.visit').click(function(el) {
+$('#visit').click(function(el) {
     el.preventDefault();
     viewsItems("../manufacturer-lk__charts/all_cosmetics_manufacter.json",'visit','#viewCosmeticChart')
 
 })
-$('.favarite').click(function(el) {
+$('#favarite').click(function(el) {
     el.preventDefault();
     viewsItems("../manufacturer-lk__charts/all_cosmetics_manufacter.json",'favarite','#viewCosmeticChart')
 
 })
-$('.new').click(function(el) {
-    
+$('#new').click(function(el) {
     el.preventDefault();
     viewsItems("../manufacturer-lk__charts/all_cosmetics_manufacter.json",'new','#viewCosmeticChart')
 
