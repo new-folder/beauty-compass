@@ -154,6 +154,8 @@ textarea
         color: inherit
         opacity: inherit
 
+
+
 .banners
     &__add
         &-btn
@@ -763,6 +765,7 @@ main
         background-size: 14px !important
         cursor: pointer
 
+
 .section
     &--carousel
         margin-bottom: 56px
@@ -1333,6 +1336,7 @@ main
             height: 88px
     p
         margin-bottom: 10px
+    
 
 .about-product
     &__item
@@ -1364,7 +1368,7 @@ main
                 height: 6px
                 background-size: 100%
         &:not(.collapsed)
-            color: #494949
+            color: #494949  
             background-color: inherit
             box-shadow: none
             &::after
@@ -1377,6 +1381,7 @@ main
         padding-right: 0
         @media screen and (max-width: $first-breack-point)
             padding: 0
+
 
 .gallary
     font-weight: 600
@@ -1419,14 +1424,14 @@ main
             border-radius: $border-radius
             resize: none
             @media screen and (max-width: $second-breack-point)
-                height: 61px
+                height: 61px    
         input, textarea, select, &.input--select
             background: #F8F8F8
             box-shadow: none
             border-radius: 15px
             &:focus
                 background: #F8F8F8
-                box-shadow: none
+                box-shadow: none     
     &__count
         position: absolute
         bottom: 8px
@@ -1771,9 +1776,11 @@ main
             display: flex
             flex-direction: column
         .option
+
             padding: 12px 20px
             cursor: pointer
             transition: 0.3s
+
             &:hover
                 //color: $main-color
                 background-color: $bg-grey
@@ -1793,6 +1800,7 @@ main
                 color: $pre-color
             @media screen and (max-width: $second-breack-point)
                 font-size: 18px
+
 .categories-dop
     &__title
         margin-bottom: 42px
@@ -1853,6 +1861,7 @@ main
                 transition: all .3s ease
                 &:hover
                     color: $pre-color
+
 .category-page
     &__container
         width: 100%
@@ -2002,7 +2011,7 @@ main
             top: 0
             left: 0
             width: 0px
-
+      
     .dropdown-menu
         padding: 10px
         min-width: 700px
@@ -2368,6 +2377,146 @@ main
         @media screen and (max-width: $first-breack-point)
             height: 65px
 
+.users-feedback    
+    &__header
+        font-weight: 600
+        font-size: 30px
+        color: #494949
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
+        a
+            color: #494949
+            text-decoration: none
+            transition: opacity .3s
+            &:hover
+                opacity: .7
+
+.user-feedback 
+    height: 364px
+    justify-content: start    
+    padding: 20px
+    border-radius: $border-radius
+    box-shadow: $box-shadow-sm
+    font-size: 15px
+    font-weight: 600
+    line-height: 1.1
+    text-decoration: none
+    color: #210E22
+    transition: opacity .3s
+    @media screen and (max-width: $first-breack-point)
+        height: 301px
+        padding: 5px 20px
+        font-size: 12px
+    &:hover
+        color: #210E22
+        opacity: .7
+    &--questions
+        height: 274px
+        @media screen and (max-width: $first-breack-point)
+            height: 223px
+    &__name
+        font-size: 20px
+        line-height: 1.2
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
+            margin-bottom: 6px
+    &__date
+        font-size: 12px
+    &__avatar
+        width: 60px
+        height: 60px
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        border-radius: 50%
+        overflow: hidden
+        @media screen and (max-width: $first-breack-point)
+            width: 40px
+            height: 40px
+        img
+            max-width: 200%
+    &__photos
+        display: flex
+        justify-content: start    
+        &:has(.user-feedback__photo:nth-child(3))
+            justify-content: space-between 
+            .user-feedback__photo
+                margin-right: 0
+
+    &__photo
+        width: 90px
+        height: 120px
+        border-radius: $border-radius
+        box-shadow: 0px 3px 5px rgba(14, 14, 14, 0.1)
+        overflow: hidden
+        margin-right: 12px
+        @media screen and (max-width: $first-breack-point)
+            width: 66px
+            height: 88px
+        img
+            max-width: 200%
+            max-height: 200%
+    &__num
+        width: 90px
+        height: 120px
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        color: $main-color
+        font-size: 30px
+        font-weight: 600
+        @media screen and (max-width: $first-breack-point)
+            width: 66px
+            height: 88px
+    p
+        margin-bottom: 10px
+    
+
+.about-product
+    &__item
+        background: $sub-color
+        border: 0
+    &__title
+        font-size: 30px
+        font-weight: 600
+        line-height: 1.25
+        color: #494949
+        background-color: $sub-color
+        padding: 0
+        @media screen and (max-width: $first-breack-point)
+            font-size: 15px
+            line-height: 1.25
+            text-transform: uppercase
+        &:focus
+            border-color: none
+            box-shadow: none
+        &::after
+            width: 28px
+            height: 11px
+            background-image: url(../img/arrow-text.svg)
+            margin-left: 10px
+            margin-right: 0
+            transform: rotate(180deg)
+            @media screen and (max-width: $first-breack-point)
+                width: 14px
+                height: 6px
+                background-size: 100%
+        &:not(.collapsed)
+            color: #494949  
+            background-color: inherit
+            box-shadow: none
+            &::after
+                background-image: url(../img/arrow-text.svg)
+                transform: rotate(0)
+                margin-left: 20px
+                margin-right: 0
+    &__information
+        padding-left: 0
+        padding-right: 0
+        @media screen and (max-width: $first-breack-point)
+            padding: 0
+
+
 .gallary
     font-weight: 600
     font-size: 30px
@@ -2579,6 +2728,70 @@ main
                 opacity: 0.7
                 transition: opacity 0.3s
 
+.inner-search
+    position: relative
+    button
+        position: absolute
+        top: 0
+        left: 0
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 50px
+        height: 100%
+        border: none
+        background: none
+        padding: 0
+        margin: 0
+        @media screen and (max-width: $first-breack-point)
+            width: 30px
+            svg 
+                width: 15px
+    input
+        padding-left: 50px 
+        @media screen and (max-width: $first-breack-point)
+            padding-left: 30px
+        &::-webkit-input-placeholder 
+            color: #000
+        &::-moz-placeholder 
+            color: #000
+        &:-ms-input-placeholder
+            color: #000
+        &::placeholder
+            color: #000
+
+.user-rating
+    &__filter
+        .select--wrapper
+            height: 42px !important
+            @media screen and (max-width: $first-breack-point)
+                height: 26px !important
+            @media screen and (max-width: $second-breack-point)
+                width: 100%
+        .select--regular
+            min-width: 260px
+            appearance: none
+            background-image: url(../img/dropdown-arr.svg)
+            background-repeat: no-repeat
+            background-position: calc(100% - 15px) center
+            @media screen and (max-width: $first-breack-point)
+                background-size: 12px
+            
+.user-rating-item
+    display: grid
+    grid-template-columns: 70px 95px 1fr
+    align-items: center
+    gap: 30px
+    @media screen and (max-width: $first-breack-point)
+        grid-template-columns: 30px 40px 1fr
+        gap: 15px
+
+    &__avatar img
+        width: 100%
+        aspect-ratio: 1
+        border-radius: 50%
+        object-fit: cover
+
 .btn__svg-confirm
     span
         font-style: normal
@@ -2629,7 +2842,173 @@ main
                 height: 26px
         *
             width: 100%
+    .profile
+        &__infOpen
+            display: grid
+            grid-template-rows: 3fr repeat(2,1fr)
+            grid-template-columns: repeat(4,1fr)
+            column-gap: 30px
+            *
+                width: 100%
+            @media screen and ( max-width: $second-breack-point )
+                display: flex
+                flex-direction: column
+                margin-bottom: 20px
+            .contry
+                grid-row: 2
+                grid-column: 1/2
+            .city
+                grid-row: 2
+                grid-column: 2/3
+            #emailOpen
+                grid-row: 2
+                grid-column: 3/5
+            #selecDerma
+                grid-row: 3
+                grid-column: 3/5
+            #selecHaier
+                grid-row: 3
+                grid-column: 1/3
+            .descrProf
+                grid-column: span 4
+                width: 100%
 
+            #descrProf
+                height: 230px
+                resize: none
+                border-radius: $border-radius
+                @media screen and ( max-width: $second-breack-point )
+                    height: 80px
+        &__confidInf, &__infOpen
+            .select-wrap
+                width: 100%
+                @media screen and ( max-width: $second-breack-point)
+                    margin: 0
+                textarea
+                    resize: none
+                    border-radius: $border-radius
+        &__confidInf
+            margin-bottom: 10px
+            #ava
+                width: 30%
+                grid-column-start: 1
+                grid-column-end: 3
+                margin: 0
+                margin-right: 20px
+                grid-row: span 5
+                @media screen and ( max-width: $first-breack-point )
+                    width: 30%
+                    grid-row: span 2
+                @media screen and ( max-width: $second-breack-point )
+                    width: 30%
+                    grid-column: 1
+                .visPrfile
+                    width: 25%
+                    @media screen and ( max-width: $second-breack-point )
+                        width: 50%
+            #avatar
+                cursor: pointer
+                border-radius: 50%
+                width: 70%
+                aspect-ratio: 1
+                background-image: url("../img/gallery-add.svg")
+                overflow: hidden
+                box-shadow: $box-shadow-sm
+                background-position: center
+                background-repeat: no-repeat
+                background-size: 60%
+                
+            #gender
+                grid-row-start: 1
+                grid-column-start: 7
+                grid-column-end: 9
+                @media screen and ( max-width: $first-breack-point )
+                    grid-column-start: 3
+                    grid-column-end: 9
+                
+                @media screen and ( max-width: $second-breack-point )
+                    grid-column-start: 2
+                    grid-column-end: 9
+                    .form-select
+                        font-weight: 700
+                        font-size: 10px
+                        line-height: 12px
+                        color: $dark-lighter
+
+                    select
+                        padding-top: 0
+                        padding-bottom: 0
+
+            #nikname
+                grid-row-start: 1
+                grid-column-start: 3
+                grid-column-end: 7
+                @media screen and ( max-width: $first-breack-point )
+                    grid-row: 4
+                    grid-column: 1/9
+
+            #realName
+                grid-row: 2
+                grid-column: 3/5
+                @media screen and ( max-width: $first-breack-point )
+                    grid-row: 5
+                    grid-column: 1/9
+            #partName
+                grid-row: 2
+                grid-column: 5/7
+                @media screen and ( max-width: $first-breack-point )
+                    grid-row: 6
+                    grid-column: 1/9
+
+            #phone
+                grid-row: 3
+                grid-column: 6/9
+                @media screen and ( max-width: $first-breack-point  )
+                    grid-row: 3
+                    grid-column-start: 3
+                    grid-column-end: 9
+                @media screen and (max-width: $second-breack-point)
+                    grid-column-start: 2
+            #login
+                grid-row: 3
+                grid-column: 3/6
+                @media screen and ( max-width: $first-breack-point )
+                    grid-row: 7
+                    grid-column: 1/9
+
+            #password
+                grid-row: 4
+                grid-column: 3/6
+                @media screen and ( max-width: $first-breack-point )
+                    grid-row: 8
+                    grid-column: 1/9
+            #password_repit
+                grid-row: 4
+                grid-column: 6/9
+                @media screen and ( max-width: $first-breack-point )
+                    grid-row: 9
+                    grid-column: 1/9
+            #email
+                grid-column: span 8
+                @media screen and ( max-width: $first-breack-point )
+                    grid-row: 10
+                    grid-column: 1/9
+
+            #dateBirth
+                grid-row: 2
+                grid-column: 7/9
+                @media screen and ( max-width: $first-breack-point  )
+                    grid-row: 2
+                    grid-column-start: 3
+                    grid-column-end: 9
+                    padding-top: 0
+                    padding-bottom: 0
+                @media screen and ( max-width: $second-breack-point  )
+                    grid-column-start: 2
+                    grid-column-end: 9
+            #selectGender
+                @media screen and ( max-width: $second-breack-point)
+                    height: 26px
     #saveProfile
         display: none
         margin-right: -115px
@@ -2826,6 +3205,31 @@ main
             max-width: 720px
             margin: 0 auto
 .lk-user
+    button
+        p
+            margin: 0 !important
+            font-size: 24px
+            @media screen and ( max-width: $first-breack-point)
+                font-size: 15px
+                line-height: 18px
+        @media screen and (max-width: $first-breack-point)
+            display: flex
+    .persData
+        display: flex
+        grid-template-columns: 2fr repeat(7,1fr)
+        column-gap: 30px
+        @media screen and ( max-width: $first-breack-point)
+            grid-template-columns: 149px repeat(3,1fr)
+            grid-template-rows: repeat(10,110px)
+            column-gap: 0
+        @media screen and ( max-width: $second-breack-point)
+            grid-template-rows: repeat(10, 48px)
+        input
+            height: 42px
+            @media screen and ( max-width: $second-breack-point)
+                height: 26px
+        *
+            width: 100%
     .profile
         &__infOpen
             display: grid
@@ -2922,6 +3326,230 @@ main
                     select
                         padding-top: 0
                         padding-bottom: 0
+
+            #nikname
+                grid-row-start: 1
+                grid-column-start: 3
+                grid-column-end: 7
+                @media screen and ( max-width: $first-breack-point )
+                    grid-row: 4
+                    grid-column: 1/9
+
+            #realName
+                grid-row: 2
+                grid-column: 3/5
+                @media screen and ( max-width: $first-breack-point )
+                    grid-row: 5
+                    grid-column: 1/9
+            #partName
+                grid-row: 2
+                grid-column: 5/7
+                @media screen and ( max-width: $first-breack-point )
+                    grid-row: 6
+                    grid-column: 1/9
+
+            #phone
+                grid-row: 3
+                grid-column: 6/9
+                @media screen and ( max-width: $first-breack-point  )
+                    grid-row: 3
+                    grid-column-start: 3
+                    grid-column-end: 9
+                @media screen and (max-width: $second-breack-point)
+                    grid-column-start: 2
+            #login
+                grid-row: 3
+                grid-column: 3/6
+                @media screen and ( max-width: $first-breack-point )
+                    grid-row: 7
+                    grid-column: 1/9
+
+            #password
+                grid-row: 4
+                grid-column: 3/6
+                @media screen and ( max-width: $first-breack-point )
+                    grid-row: 8
+                    grid-column: 1/9
+            #password_repit
+                grid-row: 4
+                grid-column: 6/9
+                @media screen and ( max-width: $first-breack-point )
+                    grid-row: 9
+                    grid-column: 1/9
+            #email
+                grid-column: span 8
+                @media screen and ( max-width: $first-breack-point )
+                    grid-row: 10
+                    grid-column: 1/9
+
+            #dateBirth
+                grid-row: 2
+                grid-column: 7/9
+                @media screen and ( max-width: $first-breack-point  )
+                    grid-row: 2
+                    grid-column-start: 3
+                    grid-column-end: 9
+                    padding-top: 0
+                    padding-bottom: 0
+                @media screen and ( max-width: $second-breack-point  )
+                    grid-column-start: 2
+                    grid-column-end: 9
+            #selectGender
+                @media screen and ( max-width: $second-breack-point)
+                    height: 26px
+    #saveProfile
+        display: none
+        margin-right: -115px
+        &:before
+            background-image: url("../img/tick-circle.svg")
+        @media screen and ( max-width: $first-breack-point)
+            margin-right: -4px
+        @media screen and ( max-width: $second-breack-point)
+            display: none !important
+    #changeProfile
+        margin-right: -115px
+        &:before
+            background-image: url("../img/setting.svg")
+        @media screen and ( max-width: $first-breack-point)
+            margin-right: 0
+
+        @media screen and ( max-width: $second-breack-point)
+            p
+                display: none
+            
+            &:before
+                margin-right: 0
+
+    .d
+        &-noneMinSec
+            display: none
+            @media screen and ( max-width: $first-breack-point )
+                display: block
+
+        &-noneMaxSec
+            display: block
+            @media screen and ( max-width: $first-breack-point )
+                display: none
+
+        &-progMin
+            display: none
+            @media screen and (max-width: $first-breack-point)
+                display: flex !important
+        &-progMax
+            display: flex
+            @media screen and (max-width: $first-breack-point)
+                display: none !important
+    .redPrfile
+        display: none
+
+    .visPrfile
+        p
+            font-size: 30px
+            line-height: 35px
+            color: $dark-lighter
+            font-weight: 500
+            @media screen and (max-width: $first-breack-point)
+                font-weight: 700
+                font-size: 15px
+                line-height: 12px  
+
+    .passw
+        display: flex
+        width: 100%
+        &__inp
+            flex-shrink: 0
+            &__rep
+                flex-shrink: 0
+        &__vis
+            margin-right: 0
+            margin-left: -30px
+            width: 30px
+            top: 9%
+            position: relative
+            left: -16px
+
+    #visPassword, #visPasswordRep
+        background-image: url('../img/eye_show.svg')  
+        background-repeat: no-repeat
+        background-size: 100%
+        background-position: center
+        @media screen and ( max-width: $first-breack-point )
+            background-size: 80%
+
+    .shell
+        display: flex
+        justify-content: space-between 
+        flex-wrap: wrap
+        button
+            &::before
+                border-radius: 0 !important
+        &__rev
+            @media screen and ( max-width: $second-breack-point)
+                flex-direction: column
+            *
+                margin: 30px 0
+                @media screen and ( max-width: $first-breack-point)
+                    margin: 7.5px 0
+                &::before
+                    margin: 0
+                    margin-right: 20px
+                    border-radius: 0
+            button
+                margin: 0
+            #createRev
+                
+                &::before
+                    background-image: url('../img/edit.svg')
+            #drafRev
+                &::before
+                    background-image: url('../img/document-copy.svg')
+            #publRev
+                &::before
+                    background-image: url('../img/document.svg')
+        &__select
+            @media screen and (max-width: $first-breack-point)
+                flex-wrap: wrap
+            *
+                margin: 30px 0
+                @media screen and ( max-width: $first-breack-point)
+                    margin: 7.5px 0
+                &::before
+                    margin: 0
+                    margin-right: 20px
+                    margin-top: -1px
+                    @media screen and ( max-width: $first-breack-point)
+                        margin-right: 5px
+            button 
+                box-shadow: $box-shadow-sm
+                border-radius: $border-radius
+                width: calc((100% / 3) - 8% )
+                height: 78px
+                @media screen and (max-width: $first-breack-point)
+                    height: 50px
+                    width: 48%
+                align-items: center
+                justify-content: center
+        .notice
+            background-color: $pre-color
+            border-radius: 50%
+            min-width: 30px
+            min-height: 30px
+            overflow: hidden
+            text-overflow: ellipsis
+            position: relative
+            top: -50%
+            margin: 0 !important
+            margin-left: -30px !important
+            display: none
+            p
+                margin: 0 !important
+                color: $sub-color
+                font-size: 10px !important
+                line-height: 31px !important
+
+    #dummy
+        display: none
+        box-shadow: none
 
     .select
         p
