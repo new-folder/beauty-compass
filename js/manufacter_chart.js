@@ -153,6 +153,7 @@ function generateChart(charts, blockOutput, period) {
             //Получение месяца
             activeMount=-1
             charts[0].data.forEach(el => {
+
                 let arrayWithDate=[]
                 
                 for (let i = 0; i < el.x.split('.').length; i++) {
@@ -264,7 +265,6 @@ function generateChart(charts, blockOutput, period) {
                     if (chart.data.indexOf(el)>(chart.data.indexOf(chart.data[chart.data.length-1])-183)) {
                         
                         if (activeMount==-1 || activeMount!=Number(el.x.split('.')[1])) {
-                            // console.log(el.x.split('.')[1]);
                             activeMount=Number(el.x.split('.')[1])
                             dataPush.push(el.y)
                         }else{
@@ -366,6 +366,7 @@ function generateChart(charts, blockOutput, period) {
             });
             break;
     }
+
     const chart=new Chart(blockOutput,{
         type:'line',
         data:dataOutpChart,
@@ -429,7 +430,6 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
                 pageSize: 5,
                 pageNumber: 1,
                 pageRange: 1,
-                formatGoInput: 'go to <%= input %> st/rd/th',
                 callback: function(item, pagination) {
                     var html = templatingItem(item);
                     $(outputBlock).prev().html(html);
@@ -439,7 +439,6 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
                         $(elem.currentTarget.parentElement.parentElement.parentElement).toggleClass("item__chart-open");
 
                         $(elem.currentTarget.nextElementSibling).toggleClass("chart-open")
-
 
                         let idElem=elem.currentTarget.children[1].value
 
@@ -456,44 +455,71 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
                         gradient.addColorStop(0.5, "cyan");
                         gradient.addColorStop(1, "green");
 
-
-                        let dataOutpChart={
-                            labels:charts[0].data.map(el=>el.x),
-                            datasets:[
-                                {
-                                    label: 'Просмотры',
-                                    data: charts[0].data.map(el=>el.y),
-                                },
-                                {
-                                    label: 'Отзывы',
-                                    data: charts[1].data.map(el=>el.y),
-                                },
-                                {
-                                    label: 'Избранное',
-                                    data: charts[2].data.map(el=>el.y),
-                                },
-                                {
-                                    label: 'Переходы на маркетплейсы',
-                                    data: charts[3].data.map(el=>el.y),
-                                },
-                                {
-                                    label: 'Переходы на страницу бренда',
-                                    data: charts[4].data.map(el=>el.y),
-                                },
-                            ]
-                        }
-
                         if (elem.currentTarget.nextElementSibling.firstElementChild.value=="false") {
                             elem.currentTarget.nextElementSibling.append(canvas);
-                            const chart=new Chart(canvas,{
-                                type:'line',
-                                data:dataOutpChart,
-                                borderColor: '#fff',
-                                color:'#fff'
-                            })
+                            generateChart(charts, elem.currentTarget.nextElementSibling.children[1],'all')
 
+                            //lsdkhfklsdhf
+                            let divWithParam=document.createElement('div')
+                            divWithParam.classList.add("chart-open__btn-param")
+                            divWithParam.classList.add("d-flex")
+                            divWithParam.classList.add("justify-content-around")
+                            divWithParam.classList.add("align-items-center")
+                            divWithParam.classList.add("flex-wrap")
+
+                            let buttons=[
+                                {
+                                    class:"all_btn",
+                                    text:"Весь период",
+                                    param:'all'
+                                },
+                                {
+                                    class:"last_year_btn",
+                                    text:"За последний год",
+                                    param:'last_year'
+                                },{
+                                    class:"last_half_year_btn",
+                                    text:"За полгода",
+                                    param:'last_half_year'
+                                },{
+                                    class:"three_months_btn",
+                                    text:"За три меясца",
+                                    param:'three_months'
+                                },{
+                                    class:"day_btn",
+                                    text:"За месяц",
+                                    param:'day'
+                                },
+                            ]
+
+                            buttons.forEach(btn => {
+                                let btnCreated=document.createElement('a')
+                                btnCreated.classList.add('btn')
+                                btnCreated.classList.add(btn.class)
+                                let textInBtn=document.createElement('p')
+                                textInBtn.classList.add("text--12-18")
+                                textInBtn.innerText=btn.text
+                                btnCreated.append(textInBtn)
+
+                                $(btnCreated).click(function (e) { 
+                                    e.preventDefault();
+
+                                    e.currentTarget.parentElement.parentElement.children[1].remove()
+
+                                    let canvas = document.createElement('canvas')
+                                    
+                                    e.currentTarget.parentElement.parentElement.children[1].before(canvas)
+                                    generateChart(charts,e.currentTarget.parentElement.parentElement.children[1], btn.param)
+                                });
+
+                                divWithParam.append(btnCreated)
+
+                            });
+
+                            elem.currentTarget.nextElementSibling.append(divWithParam);
                             elem.currentTarget.nextElementSibling.firstElementChild.value=true
                         } else {
+                            $(elem.currentTarget.nextElementSibling.children[1]).remove();
                             $(elem.currentTarget.nextElementSibling.children[1]).remove();
                             elem.currentTarget.nextElementSibling.firstElementChild.value=false
                         }
@@ -558,7 +584,7 @@ if ($('#allItems').length!=0) {
                         }
                 }
             }
-        });
+        }); 
 
         generateChart(cosmetics,$('#allItems'),'all')
 
