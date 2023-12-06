@@ -1,39 +1,8 @@
-@import "vars.sass" 
-
+@import "vars.sass"
 .profile
   display: grid
-  &__body
-    grid-template-columns: 1fr 2fr 1fr
-    grid-template-rows: 26px auto auto auto repeat(3, auto)
-    grid-row-gap: 23px
-    grid-column-gap: 1rem
-    grid-template-areas: 'name name name' 'photo country country' 'photo town town' 'photo . .' 'tel tel tel' 'email email email' 'description description description' 'history history history' 'principles principles principles'
-    @media screen and (min-width: $second-breack-point)
-      grid-template-rows: repeat(3, 42px) repeat(3, auto)
-      grid-row-gap: 1.5rem
-      grid-column-gap: 1.5rem
-      grid-template-areas: 'photo name country' 'photo email town' 'photo tel .' 'description description description' 'history history history' 'principles principles principles'
-  &__image-file
-    position: absolute
-    &_box
-      position: relative
-      width: 100%
-      height: 100%
-      border-radius: 15px
-      overflow: hidden
-    &_token
-      position: absolute
-      top: 50%
-      left: 50%
-      width: 54px
-      transform: translate(-50%, -50%)
-    &_preview
-      transform: translate(-50%, -50%)
-      top: 50%
-      left: 50%
-      width: 100%
-      //height: 100%
-  &__brand    
+
+  &__brand
     grid-auto-columns: 114px auto auto
     grid-column-gap: 11px
     grid-row-gap: 27px
@@ -44,10 +13,9 @@
       grid-template-areas: 'image name name' 'image description description' 'image description description'
       grid-auto-columns: 187px auto auto
       grid-column-gap: 38px
+      grid-row-gap: 38px
       margin-top: 58px
       margin-bottom: 37px
-      grid-template-columns: 187px auto 258px
-      grid-row-gap: 30px
     &-image
       position: relative
       width: 114px
@@ -71,28 +39,7 @@
       @media all and (min-width: $first-breack-point)
         height: 108px
 
-    .name
-      grid-area: name
-    .photo
-      grid-area: photo
-    .country
-      grid-area: country
-    .town
-      grid-area: town
-    .tel
-      grid-area: tel
-      @media screen and (min-width: $first-breack-point)
-        max-width: 410px
-    .email
-      grid-area: email
-      @media screen and (min-width: $first-breack-point) 
-        max-width: 410px
-    .description
-      grid-area: description
-    .history
-      grid-area: history
-    .principles
-      grid-area: principles
+
   &__manufacturer
     grid-template-columns: 114px auto auto
     grid-template-rows: repeat(4, 1fr)
@@ -110,17 +57,16 @@
         width: 54px
         height: auto
       @media screen and (min-width: $first-breack-point)
-        max-width: 410px
-    .email
+        width: 187px
+        height: 187px
+    &-name
+      grid-area: name
+      padding-top: 10px
+    &-email
       grid-area: email
-      @media screen and (min-width: $first-breack-point) 
-        max-width: 410px
-    .description
-      grid-area: description
-    .history
-      grid-area: history
-    .principles
-      grid-area: principles
+    &-phone
+      grid-area: phone
+
 
   &__manufacturer-info
     grid-auto-columns: 114px auto auto
@@ -141,26 +87,12 @@
         position: relative
         width: 114px
         height: 114px
-
         img
           width: 54px
           height: auto
-    .tel, .email
-      img
-        width: 26px
-        height: 26px
         @media screen and (min-width: $first-breack-point)
-          width: 42px
-          height: 42px
-
-  &__label
-    top: -12px
-    left: 0
-    margin-bottom: -10px
-    height: auto        
-    @media screen and (min-width: $first-breack-point)
-      width: 188px
-      height: 188px      
+          width: 188px
+          height: 188px
       &.country
         grid-area: country
       &.town
@@ -175,98 +107,7 @@
         grid-area: history
       &.principles
         grid-area: principles
-    .tel, .email
-      img
-        width: 26px
-        height: 26px
-        @media screen and (min-width: $first-breack-point)
-          width: 42px
-          height: 42px
 
-  &__label
-    top: -12px
-    left: 0
-    margin-bottom: -10px
-    @media screen and (min-width: $first-breack-point)
-      justify-content: flex-start
-      flex-direction: row
-      column-gap: 38px
-      row-gap: 38px
-    &-images
-      width: 100%
-      display: flex
-      align-items: center
-      flex-wrap: wrap
-      row-gap: 18px
-      column-gap: 12px
-      @media screen and (min-width: $first-breack-point)
-        column-gap: 40px
-        row-gap: 38px
-    &-image
-      grid-area: image
-      position: relative
-      width: 114px
-      height: 114px
-      @media screen and (min-width: $first-breack-point)
-        width: 187px
-        height: 187px
-      &_cloud
-        top: -65px
-        right: -115%
-        width: 150px
-        padding: 6px 8px
-        @media screen and (min-width: $first-breack-point)
-          top: -66%
-          right: auto
-          width: 440px
-          padding: 14px 20px 10px
-      &_label
-        top: -40px
-      &_token
-        width: 54px
-        height: auto
-      svg
-        position: absolute
-        top: -20px
-        right: 5px
-        @media screen and (min-width: $first-breack-point)
-          top: -34px
-    &-assignment, &-format, &-region, &-assignment2, &_price-category, &_age-recommendations, &_key-action, &-gender
-      @media screen and (min-width: $first-breack-point)
-        width: 31%
-    &_formal-name, &_explanatory-name, &-description, &-INCI, &-usage, &_catalog-section
-      width: 100%
-    &-plus
-      margin-left: 21px
-      width: 30px
-      height: 30px
-      @media screen and (min-width: $first-breack-point)
-        width: 42px
-        height: 42px
-      top: -18px
-  &__photo
-    width: 114px
-    height: 114px
-    border-radius: 15px
-    background: $white-color
-    box-shadow: $box-shadow-regular
-    @media screen and (min-width: $second-breack-point)
-      width: 175px
-      height: 175px
-    @media screen and (min-width: $first-breack-point)
-      width: 187px
-      height: 187px
-    img
-      width: 54px
-      height: auto
-  &__card
-    &--btn
-      justify-self: center
-      .confirm
-        margin-left: 10px
-    .small-brake
-      @media (max-width: $xs-breack-point)
-        width: 60%
   &__products
     display: flex
     flex-wrap: wrap
@@ -306,9 +147,9 @@
           right: auto
           width: 440px
           padding: 14px 20px 10px
-      &_label
+      label
         top: -40px
-      &_token
+      img
         width: 54px
         height: auto
 
@@ -324,27 +165,8 @@
       @media screen and (min-width: $first-breack-point)
         width: 42px
         height: 42px
-      top: -18px
-  &__photo
-    width: 114px
-    height: 114px
-    border-radius: 15px
-    background: $white-color
-    box-shadow: $box-shadow-regular
-    @media screen and (min-width: $second-breack-point)
-      width: 175px
-      height: 175px
-    @media screen and (min-width: $first-breack-point)
-      width: 187px
-      height: 187px
-    img
-      width: 54px
-      height: auto
-  &__card
-    &--btn
-      justify-self: center
-      .confirm
         margin-left: 10px
-    .small-brake
-      @media (max-width: $xs-breack-point)
-        width: 60%
+
+
+
+
