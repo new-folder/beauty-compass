@@ -22,12 +22,12 @@ fileInput.addEventListener('change', (e) => {
         }
 
         const containerNumber = document.createElement('div');
-        containerNumber.classList.add('col-3');
+        containerNumber.classList.add('col-3', 'text-center', 'text--20-30');
         containerNumber.textContent = `${containerCounter + 1} `;
         containerCounter++;
 
         const checkboxContainer = document.createElement('div');
-        checkboxContainer.classList.add('col-3');
+        checkboxContainer.classList.add('col-3', 'text-center');
 
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
@@ -45,7 +45,7 @@ fileInput.addEventListener('change', (e) => {
         deleteButton.classList.add('added-imgs__delete');
 
         const col3Wrapper = document.createElement('div');
-        col3Wrapper.classList.add('col-3');
+        col3Wrapper.classList.add('col-3', 'text-center');
         col3Wrapper.appendChild(deleteButton);
 
         deleteButton.addEventListener('click', () => {
@@ -55,7 +55,7 @@ fileInput.addEventListener('change', (e) => {
         });
 
         const imageWrapper = document.createElement('div');
-        imageWrapper.classList.add('col-3');
+        imageWrapper.classList.add('col-3', 'text-center');
         imageWrapper.appendChild(image);
 
         const imageContainerItem = document.createElement('div');

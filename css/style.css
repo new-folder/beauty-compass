@@ -691,18 +691,6 @@ textarea {
     font-size: 36px;
   }
 }
-.title--20-30, .text--20-30 {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 37px;
-}
-@media screen and (min-width: 1400px) {
-  .title--20-30, .text--20-30 {
-    font-size: 30px;
-    font-weight: 600;
-    line-height: 1.25;
-  }
-}
 .title--15-36, .text--15-36 {
   font-size: 15px;
   font-weight: 700;
@@ -1493,12 +1481,24 @@ textarea {
 
 .added-imgs__header {
   display: none;
-  font-weight: bold;
+}
+@media screen and (min-width: 1400px) {
+  .added-imgs__header {
+    display: none;
+  }
 }
 .added-imgs__item {
+  height: 200px;
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  box-shadow: 0px 4px 20px 0px rgba(14, 14, 14, 0.07);
+  border-radius: 15px;
+}
+.added-imgs__item img {
+  border-radius: 15px;
+  max-height: 186px;
+  max-width: 186px;
 }
 .added-imgs__delete {
   width: 32.88px;
@@ -1509,25 +1509,30 @@ textarea {
   background-size: cover;
 }
 .added-imgs__check {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   width: 26px;
   height: 26px;
+  position: relative;
+}
+.added-imgs__check::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
   border: 1px solid #1560BD;
   border-radius: 2px;
-  position: relative;
-  background-color: transparent;
 }
-.added-imgs__check:checked {
-  background-color: transparent;
-}
-.added-imgs__check:focus {
-  outline: none;
+.added-imgs__check:checked::before {
+  border-color: #1560BD;
 }
 .added-imgs__check:checked::after {
   content: "";
   width: 27.83px;
   height: 20.87px;
   position: absolute;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   left: 5px;
   background-image: url("../img/checked-blue.svg");

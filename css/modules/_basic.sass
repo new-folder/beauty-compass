@@ -259,14 +259,6 @@ textarea
         line-height: normal
         @media screen and (min-width: $first-breack-point)
             font-size: 36px
-    &--20-30
-        font-size: 20px
-        font-weight: 700
-        line-height: 37px
-        @media screen and (min-width: $first-breack-point)
-            font-size: 30px
-            font-weight: 600
-            line-height: 1.25
     &--15-36
         font-size: 15px
         font-weight: 700
@@ -837,11 +829,19 @@ main
 .added-imgs
     &__header 
             display: none
-            font-weight: bold
+            @media screen and (min-width: $first-breack-point) 
+                display: none
     &__item
-          display: flex
-          align-items: center
-          margin-bottom: 10px
+        height: 200px
+        display: flex
+        align-items: center
+        margin-bottom: 10px
+        box-shadow: 0px 4px 20px 0px rgba(14, 14, 14, 0.07)
+        border-radius: 15px
+        img
+            border-radius: 15px
+            max-height: 186px
+            max-width: 186px
     &__delete
         width: 32.88px
         height: 32.88px
@@ -871,12 +871,12 @@ main
             width: 27.83px
             height: 20.87px
             position: absolute
-            top: 50%
+            top: 40%
             transform: translateY(-50%)
-            right: 5px
+            left: 5px
             background-image: url('../img/checked-blue.svg')
     &__question 
-        @media screen and (min-width: $first-breack-point)
+        @media screen and (min-width: $first-breack-point) 
             display: none
 
 .producer
