@@ -1495,10 +1495,23 @@ textarea {
   box-shadow: 0px 4px 20px 0px rgba(14, 14, 14, 0.07);
   border-radius: 15px;
 }
+@media screen and (max-width: 1400px) {
+  .added-imgs__item {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    height: 134px;
+  }
+}
 .added-imgs__item img {
   border-radius: 15px;
   max-height: 186px;
   max-width: 186px;
+}
+@media screen and (max-width: 1400px) {
+  .added-imgs__item img {
+    max-height: 114px;
+    max-width: 114px;
+  }
 }
 .added-imgs__delete {
   width: 32.88px;
@@ -1508,6 +1521,13 @@ textarea {
   background: url(../img/cansel-icon.svg);
   background-size: cover;
 }
+.added-imgs__delete--mobile {
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
 .added-imgs__check {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -1515,6 +1535,12 @@ textarea {
   width: 26px;
   height: 26px;
   position: relative;
+}
+@media screen and (max-width: 1400px) {
+  .added-imgs__check {
+    width: 13px;
+    height: 13px;
+  }
 }
 .added-imgs__check::before {
   content: "";
@@ -1536,6 +1562,19 @@ textarea {
   transform: translateY(-50%);
   left: 5px;
   background-image: url("../img/checked-blue.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 1400px) {
+  .added-imgs__check:checked::after {
+    width: 16px;
+    height: 13px;
+    left: 2px;
+  }
+}
+.added-imgs__question {
+  font-size: 10px;
+  font-weight: 600;
 }
 @media screen and (min-width: 1400px) {
   .added-imgs__question {

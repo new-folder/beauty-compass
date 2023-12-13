@@ -22,30 +22,31 @@ fileInput.addEventListener('change', (e) => {
         }
 
         const containerNumber = document.createElement('div');
-        containerNumber.classList.add('col-3', 'text-center', 'text--20-30');
+        containerNumber.classList.add('col-1', 'col-xxl-3', 'text-center', 'text--15-30');
         containerNumber.textContent = `${containerCounter + 1} `;
         containerCounter++;
 
         const checkboxContainer = document.createElement('div');
-        checkboxContainer.classList.add('col-3', 'text-center');
+        checkboxContainer.classList.add('col-5', 'col-xxl-3', 'd-flex', 'align-items-center', 'justify-content-center', 'text-center');
 
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
-        checkbox.classList.add('added-imgs__check');
+        checkbox.classList.add('added-imgs__check', 'me-2', 'me-xxl-0');
         checkbox.id = `copyright-${i}`;
 
-        const question = document.createElement('span');
+        const question = document.createElement('div');
         question.classList.add('added-imgs__question');
         question.textContent = 'Поставить копирайт?';
         question.htmlFor = `copyright-${i}`;
 
         checkboxContainer.appendChild(checkbox);
+        checkboxContainer.appendChild(question);
 
         const deleteButton = document.createElement('button');
-        deleteButton.classList.add('added-imgs__delete');
+        deleteButton.classList.add('added-imgs__delete', 'd-none', 'd-xxl-block');
 
         const col3Wrapper = document.createElement('div');
-        col3Wrapper.classList.add('col-3', 'text-center');
+        col3Wrapper.classList.add('col-1', 'col-xxl-4', 'text-center');
         col3Wrapper.appendChild(deleteButton);
 
         deleteButton.addEventListener('click', () => {
@@ -54,15 +55,28 @@ fileInput.addEventListener('change', (e) => {
           updateContainerNumbers();
         });
 
+        const deleteButtonMobile = document.createElement('button'); // deleteButton для мобильной версии
+        deleteButtonMobile.classList.add('added-imgs__delete','added-imgs__delete--mobile', 'd-xxl-none');
+
+        const col3Wrapper2 = document.createElement('div');
+        col3Wrapper2.classList.add('col-1', 'col-xxl-4', 'text-center');
+        col3Wrapper2.appendChild(deleteButtonMobile);
+
+        deleteButtonMobile.addEventListener('click', () => {
+          const imageContainerItem = deleteButtonMobile.parentNode.parentNode;
+          imageContainer.removeChild(imageContainerItem);
+          updateContainerNumbers();
+        });
+
         const imageWrapper = document.createElement('div');
-        imageWrapper.classList.add('col-3', 'text-center');
+        imageWrapper.classList.add('col-4', 'col-xxl-3', 'text-center', 'position-relative');
         imageWrapper.appendChild(image);
+        imageWrapper.appendChild(deleteButtonMobile); // добавляем deleteButton в imageWrapper
 
         const imageContainerItem = document.createElement('div');
         imageContainerItem.classList.add('added-imgs__item');
         imageContainerItem.appendChild(containerNumber);
         imageContainerItem.appendChild(imageWrapper);
-        imageContainerItem.appendChild(question);
         imageContainerItem.appendChild(checkboxContainer);
         imageContainerItem.appendChild(col3Wrapper);
 

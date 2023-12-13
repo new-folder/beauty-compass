@@ -838,10 +838,17 @@ main
         margin-bottom: 10px
         box-shadow: 0px 4px 20px 0px rgba(14, 14, 14, 0.07)
         border-radius: 15px
+        @media screen and (max-width: $first-breack-point) 
+            margin-left: -1rem
+            margin-right: -1rem
+            height: 134px
         img
             border-radius: 15px
             max-height: 186px
             max-width: 186px
+            @media screen and (max-width: $first-breack-point) 
+                max-height: 114px
+                max-width: 114px 
     &__delete
         width: 32.88px
         height: 32.88px
@@ -849,11 +856,20 @@ main
         border-radius: 50%
         background: url(../img/cansel-icon.svg)
         background-size: cover
+        &--mobile
+            width: 14px
+            height: 14px
+            position: absolute
+            top: -5px
+            right: -5px
     &__check
         appearance: none
         width: 26px
         height: 26px
-        position: relative
+        position: relative      
+        @media screen and (max-width: $first-breack-point) 
+            width: 13px
+            height: 13px
 
         &::before
             content: ''
@@ -874,8 +890,16 @@ main
             top: 40%
             transform: translateY(-50%)
             left: 5px
-            background-image: url('../img/checked-blue.svg')
+            background-image: url('../img/checked-blue.svg')     
+            background-size: contain     
+            background-repeat: no-repeat
+            @media screen and (max-width: $first-breack-point) 
+                width: 16px
+                height: 13px    
+                left: 2px
     &__question 
+        font-size: 10px
+        font-weight: 600
         @media screen and (min-width: $first-breack-point) 
             display: none
 

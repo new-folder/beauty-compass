@@ -394,7 +394,6 @@
 }
 
 .icon-statistic {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   position: absolute;
@@ -486,7 +485,6 @@
   display: flex;
   overflow-x: scroll;
   overflow-y: hidden;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   padding-bottom: 15px;
@@ -530,7 +528,6 @@
 
 .open_chart p {
   margin: auto;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -548,13 +545,11 @@
 }
 .chart canvas {
   width: 100% !important;
-  height: -webkit-fit-content !important;
   height: -moz-fit-content !important;
   height: fit-content !important;
   box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
 }
 .chart-open {
-  height: -webkit-fit-content !important;
   height: -moz-fit-content !important;
   height: fit-content !important;
 }
@@ -568,4 +563,4 @@
 
 .products__statistic #rating, .products__statistic #view, .products__statistic #visit, .products__statistic #favarite, .products__statistic #new, .products__statistic #default {
   cursor: pointer;
-}
+}/*# sourceMappingURL=manufacturer.css.map */
