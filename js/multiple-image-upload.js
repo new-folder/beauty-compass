@@ -42,12 +42,15 @@ fileInput.addEventListener('change', (e) => {
         checkboxContainer.appendChild(checkbox);
         checkboxContainer.appendChild(question);
 
-        const deleteButton = document.createElement('button');
+        const deleteButton = document.createElement('button'); // deleteButton
         deleteButton.classList.add('added-imgs__delete', 'd-none', 'd-xxl-block');
 
-        const col3Wrapper = document.createElement('div');
-        col3Wrapper.classList.add('col-1', 'col-xxl-4', 'text-center');
-        col3Wrapper.appendChild(deleteButton);
+        const buttonPopupQuestion = document.createElement('div');
+        buttonPopupQuestion.classList.add('added-imgs__popup-question', 'd-xxl-none');
+
+        const colLastWrapper = document.createElement('div');
+        colLastWrapper.classList.add('col-1', 'col-xxl-4', 'text-center');
+        colLastWrapper.appendChild(deleteButton);
 
         deleteButton.addEventListener('click', () => {
           const imageContainerItem = deleteButton.parentNode.parentNode;
@@ -78,7 +81,7 @@ fileInput.addEventListener('change', (e) => {
         imageContainerItem.appendChild(containerNumber);
         imageContainerItem.appendChild(imageWrapper);
         imageContainerItem.appendChild(checkboxContainer);
-        imageContainerItem.appendChild(col3Wrapper);
+        imageContainerItem.appendChild(colLastWrapper);
 
         imageContainer.appendChild(imageContainerItem);
 
