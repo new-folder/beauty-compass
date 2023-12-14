@@ -1526,7 +1526,7 @@ textarea {
   position: absolute;
   top: -5px;
   right: -5px;
-  background-size: cover;
+  background-size: 100%;
 }
 .added-imgs__check {
   -webkit-appearance: none;
