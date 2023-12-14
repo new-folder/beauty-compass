@@ -903,7 +903,15 @@ main
         @media screen and (min-width: $first-breack-point) 
             display: none
     &__popup-question
-        
+        border: 2px solid #1560BD
+        border-radius: 50%
+        color: #1560BD
+        aspect-ratio: 1
+        width: 28px!important
+        text-align: center
+        &::after            
+            content: '?'
+            pointer-events: none
 
 .producer
     &__sticker

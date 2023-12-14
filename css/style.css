@@ -1581,6 +1581,19 @@ textarea {
     display: none;
   }
 }
+.added-imgs__popup-question {
+  border: 2px solid #1560BD;
+  border-radius: 50%;
+  color: #1560BD;
+  aspect-ratio: 1;
+  width: 28px !important;
+  text-align: center;
+}
+.added-imgs__popup-question::after {
+  content: "?";
+  pointer-events: none;
+}
+
 .producer__sticker {
   position: relative;
 }

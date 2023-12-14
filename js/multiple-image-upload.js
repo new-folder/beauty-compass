@@ -34,7 +34,7 @@ fileInput.addEventListener('change', (e) => {
         checkbox.classList.add('added-imgs__check', 'me-2', 'me-xxl-0');
         checkbox.id = `copyright-${i}`;
 
-        const question = document.createElement('div');
+        const question = document.createElement('div'); // добавление вопроса Поставить копирайт?
         question.classList.add('added-imgs__question');
         question.textContent = 'Поставить копирайт?';
         question.htmlFor = `copyright-${i}`;
@@ -47,10 +47,15 @@ fileInput.addEventListener('change', (e) => {
 
         const buttonPopupQuestion = document.createElement('div');
         buttonPopupQuestion.classList.add('added-imgs__popup-question', 'd-xxl-none');
+        buttonPopupQuestion.setAttribute('data-bs-whatever', 'Копирайт позволяет предотвратить использование изображения в сторонних сервисах без вашего упоминания');
+        buttonPopupQuestion.setAttribute('data-bs-target', '#openCopyComment');
+        buttonPopupQuestion.setAttribute('data-bs-toggle', 'modal');
+        buttonPopupQuestion.id = `infForCopy-${i}`;
 
         const colLastWrapper = document.createElement('div');
         colLastWrapper.classList.add('col-1', 'col-xxl-4', 'text-center');
         colLastWrapper.appendChild(deleteButton);
+        colLastWrapper.appendChild(buttonPopupQuestion);
 
         deleteButton.addEventListener('click', () => {
           const imageContainerItem = deleteButton.parentNode.parentNode;
@@ -109,3 +114,16 @@ function updateContainerNumbers() {
     containerNumber.textContent = `${index + 1}`;
   });
 }
+
+
+// Bootstrap для всплывающих комментариев 
+setTimeout(() => {
+  var copyModal = document.getElementById('openCopyComment')
+  copyModal.addEventListener('show.bs.modal', function (event) {
+    var button = event.relatedTarget
+    var info = button.getAttribute('data-bs-whatever')
+    var modalInfo = copyModal.querySelector('.modal-text')
+
+    modalInfo.textContent = info
+  })
+}, 1000)
