@@ -1323,7 +1323,8 @@ main
             height: 223px
 
 .user-feedback 
-    height: 364px
+    height: fit-content
+    min-height: 364px
     justify-content: start    
     padding: 20px
     border-radius: $border-radius
@@ -1335,7 +1336,7 @@ main
     color: #210E22
     transition: opacity .3s
     @media screen and (max-width: $first-breack-point)
-        height: 301px
+        min-height: 301px
         padding: 5px 20px
         font-size: 12px
     &:hover

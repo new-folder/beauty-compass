@@ -53,7 +53,7 @@ fileInput.addEventListener('change', (e) => {
         buttonPopupQuestion.id = `infForCopy-${i}`;
 
         const colLastWrapper = document.createElement('div');
-        colLastWrapper.classList.add('col-1', 'col-xxl-4', 'text-center');
+        colLastWrapper.classList.add('col-1', 'col-xxl-3', 'd-flex', 'justify-content-center');
         colLastWrapper.appendChild(deleteButton);
         colLastWrapper.appendChild(buttonPopupQuestion);
 

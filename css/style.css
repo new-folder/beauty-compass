@@ -2137,7 +2137,9 @@ textarea {
 }
 
 .user-feedback {
-  height: 364px;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 364px;
   justify-content: start;
   padding: 20px;
   border-radius: 15px;
@@ -2151,7 +2153,7 @@ textarea {
 }
 @media screen and (max-width: 1400px) {
   .user-feedback {
-    height: 301px;
+    min-height: 301px;
     padding: 5px 20px;
     font-size: 12px;
   }
