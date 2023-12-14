@@ -47,7 +47,7 @@ fileInput.addEventListener('change', (e) => {
 
         const buttonPopupQuestion = document.createElement('div');
         buttonPopupQuestion.classList.add('added-imgs__popup-question', 'd-xxl-none');
-        buttonPopupQuestion.setAttribute('data-bs-whatever', 'Копирайт позволяет предотвратить использование изображения в сторонних сервисах без вашего упоминания');
+        buttonPopupQuestion.setAttribute('data-bs-whatever', 'Поставьте копирайт, если вы автор этого фото.');
         buttonPopupQuestion.setAttribute('data-bs-target', '#openCopyComment');
         buttonPopupQuestion.setAttribute('data-bs-toggle', 'modal');
         buttonPopupQuestion.id = `infForCopy-${i}`;
