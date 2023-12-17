@@ -104,6 +104,12 @@ const sortable = new Sortable(imageContainer, {
   handle: '.added-imgs__item',
   draggable: '.added-imgs__item',
   onEnd: updateContainerNumbers,
+  onTouchStart: function (/** Event */evt) {
+    // Обработка начала касания
+  },
+  onTouchEnd: function (/** Event */evt) {
+    // Обработка окончания касания
+  },
 });
 
 // Функция для обновления порядковых номеров
