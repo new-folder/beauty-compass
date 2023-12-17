@@ -1519,7 +1519,7 @@ textarea {
   border: 0;
   border-radius: 50%;
   background: url(../img/cansel-icon.svg) no-repeat;
-  background-size: 100%;
+  background-size: cover;
 }
 .added-imgs__delete--mobile {
   width: 14px;
@@ -1528,7 +1528,7 @@ textarea {
   top: -5px;
   right: -5px;
   background: url(../img/cansel-icon.svg) no-repeat;
-  background-size: 100%;
+  background-size: 14px;
 }
 .added-imgs__check {
   -webkit-appearance: none;
