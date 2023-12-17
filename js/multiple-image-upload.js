@@ -103,7 +103,7 @@ const sortable = new Sortable(imageContainer, {
   animation: 150,
   handle: '.added-imgs__item',
   draggable: '.added-imgs__item',
-  filter: ".added-imgs__item input, .added-imgs__item button", // Отключение перемещения для дочерних элементов
+  filter: ".added-imgs__item input, .added-imgs__item button, .added-imgs__item .added-imgs__popup-question", // Отключение перемещения для дочерних элементов
   onEnd: updateContainerNumbers,
 });
 
