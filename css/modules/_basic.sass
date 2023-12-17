@@ -855,7 +855,8 @@ main
         border: 0
         border-radius: 50%
         background: url(../img/cansel-icon.svg) no-repeat
-        background-size: 100%
+        -webkit-background-size: cover
+        background-size: cover
         &--mobile
             width: 14px
             height: 14px
@@ -863,8 +864,8 @@ main
             top: -5px
             right: -5px            
             background: url(../img/cansel-icon.svg) no-repeat
-            -webkit-background-size: cover
-            background-size: cover
+            -webkit-background-size: 14px
+            background-size: 14px
     &__check
         appearance: none
         width: 26px
