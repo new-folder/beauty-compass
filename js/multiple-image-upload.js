@@ -103,13 +103,8 @@ const sortable = new Sortable(imageContainer, {
   animation: 150,
   handle: '.added-imgs__item',
   draggable: '.added-imgs__item',
+  filter: ".added-imgs__item input, .added-imgs__item button", // Отключение перемещения для дочерних элементов
   onEnd: updateContainerNumbers,
-  onTouchStart: function (/** Event */evt) {
-    // Обработка начала касания
-  },
-  onTouchEnd: function (/** Event */evt) {
-    // Обработка окончания касания
-  },
 });
 
 // Функция для обновления порядковых номеров
