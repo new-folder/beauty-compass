@@ -284,14 +284,6 @@ textarea
         line-height: normal
         @media screen and (min-width: $first-breack-point)
             font-size: 36px
-    &--20-30
-        font-size: 20px
-        font-weight: 700
-        line-height: 37px
-        @media screen and (min-width: $first-breack-point)
-            font-size: 30px
-            font-weight: 600
-            line-height: 1.25
     &--15-36
         font-size: 15px
         font-weight: 700
@@ -849,6 +841,107 @@ main
             background: url(../img/brand-sticker.svg) no-repeat
             @media screen and (max-width: $first-breack-point)
                 display: none
+    &__img-upload
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 30px
+        width: 100%
+        max-height: 375px
+        aspect-ratio: 1.1
+        background: #fff
+
+.added-imgs
+    &__header 
+            display: none
+            @media screen and (min-width: $first-breack-point) 
+                display: none
+    &__item
+        height: 200px
+        display: flex
+        align-items: center
+        margin-bottom: 10px
+        box-shadow: 0px 4px 20px 0px rgba(14, 14, 14, 0.07)
+        border-radius: 15px
+        @media screen and (max-width: $first-breack-point) 
+            margin-left: -1rem
+            margin-right: -1rem
+            height: 134px
+        img
+            border-radius: 15px
+            max-height: 186px
+            max-width: 186px
+            @media screen and (max-width: $first-breack-point) 
+                max-height: 114px
+                max-width: 114px 
+    &__delete
+        width: 32.88px
+        height: 32.88px
+        border: 0
+        border-radius: 50%
+        background: url(../img/cansel-icon.svg) no-repeat
+        -webkit-background-size: cover
+        background-size: cover
+        &--mobile
+            width: 14px
+            height: 14px
+            position: absolute
+            top: -5px
+            right: -5px            
+            background: url(../img/cansel-icon.svg) no-repeat
+            -webkit-background-size: 14px
+            background-size: 14px
+            background-position: center
+    &__check
+        appearance: none
+        width: 26px
+        height: 26px
+        position: relative      
+        @media screen and (max-width: $first-breack-point) 
+            width: 13px
+            height: 13px
+
+        &::before
+            content: ''
+            display: block
+            width: 100%
+            height: 100%
+            border: 1px solid $main-color
+            border-radius: 2px
+
+        &:checked::before
+            border-color: $main-color
+
+        &:checked::after
+            content: ''
+            width: 27.83px
+            height: 20.87px
+            position: absolute
+            top: 40%
+            transform: translateY(-50%)
+            left: 5px
+            background-image: url('../img/checked-blue.svg')     
+            background-size: contain     
+            background-repeat: no-repeat
+            @media screen and (max-width: $first-breack-point) 
+                width: 16px
+                height: 13px    
+                left: 2px
+    &__question 
+        font-size: 10px
+        font-weight: 600
+        @media screen and (min-width: $first-breack-point) 
+            display: none
+    &__popup-question
+        border: 2px solid #1560BD
+        border-radius: 50%
+        color: #1560BD
+        aspect-ratio: 1
+        width: 28px!important
+        text-align: center
+        &::after            
+            content: '?'
+            pointer-events: none
 
 .producer
     &__sticker
@@ -1258,7 +1351,8 @@ main
             height: 223px
 
 .user-feedback 
-    height: 364px
+    height: fit-content
+    min-height: 364px
     justify-content: start    
     padding: 20px
     border-radius: $border-radius
@@ -1270,7 +1364,7 @@ main
     color: #210E22
     transition: opacity .3s
     @media screen and (max-width: $first-breack-point)
-        height: 301px
+        min-height: 301px
         padding: 5px 20px
         font-size: 12px
     &:hover

@@ -1,6 +1,3 @@
-.add-info a:hover {
-  color: inherit;
-}
 .add-info__wrapper {
   border-radius: 10px;
   background: #FFFFFF;
@@ -29,3 +26,24 @@
   flex-wrap: nowrap;
   align-items: center;
 }
+.add-info__button {
+  line-height: 28px;
+  color: #1560BD;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+@media screen and (max-width: 1400px) {
+  .add-info__button {
+    font-size: 15px;
+  }
+}
+.add-info__button svg {
+  height: 30px;
+}
+@media screen and (max-width: 1400px) {
+  .add-info__button svg {
+    height: 18px;
+  }
+}/*# sourceMappingURL=add-info.css.map */
