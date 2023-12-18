@@ -297,8 +297,8 @@
       background: $main-color
     &__remove
       background: $pre-color
-
-
+ul
+  list-style: none
 .modal
   &__prices
     &-content
@@ -369,6 +369,74 @@
       color: $pre-color
     &-apply
       color: $main-color
+
+.statistics_cosmetic
+  .title
+    .title--20-36
+      margin: 0
+  @media screen and (max-width: $first-breack-point)
+    max-width: 100vw
+
+.open_chart
+  display: flex
+  width: fit-content
+  transition: color 0.3s
+  cursor: pointer
+  @media screen and (max-width: $first-breack-point)
+    margin-top: 20px
+  p
+    width: fit-content
+    color: $main-color
+    margin: 0
+  svg
+    margin: auto 20px
+    width: 25px
+    color: $main-color
+    transition: .6s
+  &.active
+    svg
+      transform: rotate(180deg)
+  &:hover
+    p, svg
+      color: $pre-color
+
+.icon
+  &-statistic
+    width: fit-content
+    position: absolute
+    transform: translate(277%, 145%)
+    cursor: pointer !important
+    &-brand
+      transform: translate(295%, 145%)
+    @media screen and (max-width: $first-breack-point)
+      transform: translate(0%, 130%)
+  &-filter
+    background: url(../img/burger_main-color.svg) no-repeat
+
+#navbarFilterBtn
+  color: $main-color
+  display: none !important
+  @media screen and (max-width: $first-breack-point)
+    display: flex !important
+
+
+.title-custom
+  @media screen and (max-width: $first-breack-point)
+    margin-bottom: 50px
+
+.item
+  margin-top: 30px
+  &__chart
+    background: none
+    color: $dark-color
+    transition: .5s
+    margin-left:0
+    margin-top: 30px
+    &-open
+      background: linear-gradient(144.75deg, #1560BD 31.52%, #194071 72.37%)
+      color: $sub-color
+      @media screen and (max-width: $first-breack-point)
+        width: 100vw
       @media screen and (max-width: $second-breack-point)
         width: 100vw
         margin-left: -10px

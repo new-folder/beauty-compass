@@ -470,6 +470,7 @@ function viewsItems(linkToBD, sort='',outputBlock='' ) {
 
                                 divWithParam.append(btnCreated)
 
+
                             });
 
                             blokForChart.append(divWithParam);

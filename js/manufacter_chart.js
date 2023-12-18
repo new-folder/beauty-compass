@@ -584,7 +584,7 @@ if ($('#allItems').length!=0) {
                         }
                 }
             }
-        }); 
+        });
 
         generateChart(cosmetics,$('#allItems'),'all')
 
