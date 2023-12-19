@@ -11,7 +11,7 @@
   width: fit-content;
   margin-bottom: 20px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .check__wrap {
     margin-bottom: 15px;
     padding: 11px;
@@ -48,7 +48,7 @@
   background-position: center center;
   background-size: 68%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .check__wrap input + label::before {
     width: 17px;
     border-radius: 5px;
@@ -69,7 +69,7 @@
   background-position: center center;
   background-size: 68%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .check__wrap input + label::after {
     width: 17px;
     border-radius: 5px;
@@ -124,7 +124,7 @@
   box-shadow: 0px 10px 20px rgba(14, 14, 14, 0.1);
   flex-shrink: 0;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .radio__inpt label::before {
     border: 5px solid #FFFFFF;
   }
@@ -141,12 +141,12 @@
   display: none;
   flex-shrink: 0;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .radio__inpt label::after {
     border: 5px solid #FFFFFF;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .radio__inpt label::after {
     display: inline-block;
   }
@@ -167,7 +167,7 @@
   text-transform: none;
   margin-left: 1.8em;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .radio__option img {
     width: 100%;
   }

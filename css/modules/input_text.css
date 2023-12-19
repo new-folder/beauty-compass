@@ -5,7 +5,7 @@
 .select-wrap-choseSave {
   width: 100% !important;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .select-wrap {
     width: 45%;
   }
@@ -16,7 +16,7 @@
   font-size: 18px;
   line-height: 16px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .select-wrap small {
     font-size: 10px;
     margin-top: -15px;

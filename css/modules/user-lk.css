@@ -19,7 +19,7 @@
   justify-content: space-between;
   flex-direction: row-reverse;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .dlsFunctButton {
     flex-direction: row;
     flex-wrap: wrap;
@@ -37,7 +37,7 @@
   line-height: 12px;
   color: #210E22;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .dlsFunctButton .checkWrap {
     width: 100%;
   }
@@ -105,7 +105,7 @@ section {
 #confidInfPerson .selectWrap, .infOpenProfile .selectWrap {
   width: auto;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #confidInfPerson .selectWrap, .infOpenProfile .selectWrap {
     margin: 0;
   }
@@ -127,7 +127,7 @@ section {
     margin-right: -4px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #saveProfile {
     display: none !important;
   }
@@ -144,7 +144,7 @@ section {
     margin-right: 0;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #changeProfile p {
     display: none;
   }
@@ -153,7 +153,7 @@ section {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #selectGender {
     height: 26px;
   }
@@ -173,7 +173,7 @@ section {
          column-gap: 0;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .persData {
     grid-template-rows: repeat(10, 48px);
   }
@@ -181,7 +181,7 @@ section {
 .persData input {
   height: 42px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .persData input {
     height: 26px;
   }
@@ -222,7 +222,7 @@ section {
     grid-row: span 2;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #ava {
     width: 94%;
     grid-column: 1;
@@ -250,7 +250,7 @@ section {
 #ava.visPrfile {
   width: 25%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #ava.visPrfile {
     width: 50%;
   }
@@ -281,7 +281,7 @@ section {
     grid-column-end: 9;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #gender {
     grid-column-start: 2;
     grid-column-end: 9;
@@ -343,7 +343,7 @@ section {
     grid-column-end: 9;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #phone {
     grid-column-start: 2;
   }
@@ -415,7 +415,7 @@ section {
     padding-bottom: 0;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #dateBirth {
     grid-column-start: 2;
     grid-column-end: 9;
@@ -491,7 +491,7 @@ section {
 .infOpenProfile * {
   width: 100%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .infOpenProfile {
     display: flex;
     flex-direction: column;
@@ -509,7 +509,7 @@ section {
   resize: none;
   border-radius: 15px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #descrProf {
     height: 80px;
   }
@@ -561,7 +561,7 @@ section {
   border-radius: 0 !important;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .review .shell {
     flex-direction: column;
   }
@@ -654,7 +654,7 @@ section {
     left: 43%;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #testSelect .notice {
     left: 37%;
   }
@@ -674,7 +674,7 @@ section {
     left: 39.5%;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #progSelect .notice {
     left: 25.5%;
   }
@@ -692,7 +692,7 @@ section {
     left: 32.3%;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #saveSelect .notice {
     left: 14.5%;
   }
@@ -747,7 +747,7 @@ section {
     left: 36%;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #quest .notice {
     left: 25.5%;
   }
@@ -764,7 +764,7 @@ section {
     left: 38.6%;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #feedback .notice {
     left: 28%;
   }
@@ -784,7 +784,7 @@ section {
     left: 41%;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #comment .notice {
     left: 33.6%;
   }
@@ -801,7 +801,7 @@ section {
     left: 38.5%;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #review .notice {
     left: 27.7%;
   }
@@ -818,7 +818,7 @@ section {
     left: 31%;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #monet .notice {
     left: 14%;
   }
@@ -835,7 +835,7 @@ section {
     left: 39%;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #brend .notice {
     left: 28.5%;
   }
@@ -852,7 +852,7 @@ section {
     left: 39.3%;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #articl .notice {
     left: 32.5%;
   }
@@ -872,7 +872,7 @@ section {
     left: 43.3%;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #tool .notice {
     left: 38%;
   }
@@ -889,7 +889,7 @@ section {
     left: 38%;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #techChat .notice {
     left: 26.5%;
   }
@@ -906,7 +906,7 @@ section {
     left: 41.4%;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #chat .notice {
     left: 38.5%;
   }

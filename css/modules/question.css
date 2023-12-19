@@ -17,7 +17,7 @@
   line-height: 37px;
   margin: 0;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .quest__text p {
     font-size: 15px;
     line-height: 18px;
@@ -29,7 +29,7 @@
   font-size: 14px;
   line-height: 16px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .quest__text small {
     font-size: 12px;
     margin-top: -15px;
@@ -53,7 +53,7 @@
     width: 100%;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .quest__resp {
     font-size: 15px;
     line-height: 17.85px;
@@ -68,7 +68,7 @@
   width: 100%;
   align-items: center;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .quest__resp__inp_dls {
     flex-direction: column;
   }
@@ -91,7 +91,7 @@
 .quest__resp__inp_dls .select-wrap:last-child {
   width: 100%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .quest__resp__inp_dls .select-wrap {
     width: 100%;
   }
@@ -107,7 +107,7 @@
   display: grid;
   grid-template-columns: repeat(4, 25%);
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .quest__adapt {
     grid-template-columns: repeat(2, 50%);
   }
@@ -116,7 +116,7 @@
   width: 183px;
   margin-right: 20px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .quest__adapt label {
     justify-content: end;
     width: auto;
@@ -134,7 +134,7 @@
 .quest__adapt__quest p b {
   font-weight: 600 !important;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .quest__adapt-right {
     grid-template-columns: repeat(1, 100%);
   }

@@ -52,7 +52,7 @@
     line-height: 0;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .feed-button__settng p {
     display: none;
   }
@@ -60,7 +60,7 @@
 .feed-button__settng:before {
   background-image: url("../img/setting.svg") !important;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .feed-button__settng:before {
     margin-right: 0 !important;
   }
@@ -77,7 +77,7 @@
   justify-content: space-between;
   flex-direction: row-reverse;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .dls {
     flex-direction: row;
     flex-wrap: wrap;
@@ -95,7 +95,7 @@
   line-height: 12px;
   color: #210E22;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .dls .check__wrap {
     width: 100%;
   }
@@ -176,7 +176,7 @@
     margin-right: -4px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .dls #saveProfile {
     display: none !important;
   }
@@ -192,7 +192,7 @@
     margin-right: 0;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .dls #changeProfile p {
     display: none;
   }

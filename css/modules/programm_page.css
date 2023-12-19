@@ -56,7 +56,7 @@
 .recomendProduct .product:last-child {
   margin-right: 0;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .recomendProduct .product {
     width: 140px;
   }
@@ -95,7 +95,7 @@
 .saveRezult form label {
   width: 60%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .saveRezult form label {
     width: 100%;
   }

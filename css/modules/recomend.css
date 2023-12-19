@@ -8,7 +8,7 @@
   line-height: 22px;
   color: #210E22;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .recomend p {
     font-size: 12px;
     line-height: 15px;
@@ -20,7 +20,7 @@
   color: #494949 !important;
   margin-bottom: 27px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .recomend__heading {
     font-size: 15px !important;
     line-height: 18px !important;
@@ -64,7 +64,7 @@
 .recomend__product__item:last-child {
   margin-right: 0;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .recomend__product__item {
     width: 140px;
   }

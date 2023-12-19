@@ -16,7 +16,7 @@
     gap: 20px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .social-count__group {
     gap: 12px;
   }
@@ -26,7 +26,7 @@
   align-items: center;
   gap: 10px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .social-count__item {
     gap: 5px;
   }
@@ -54,7 +54,7 @@
     height: 25px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .social-count__icon svg {
     width: 20px;
     height: 20px;
@@ -81,7 +81,7 @@
     font-size: 6px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .social-count__label {
     top: -5px;
     right: -5px;

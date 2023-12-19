@@ -37,7 +37,7 @@ summary::before {
   background-size: 80%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .details[open=""] {
     width: 83%;
   }
@@ -70,7 +70,7 @@ summary::before {
 .details__summary--last-item::before, .details__view-place--last-item::before {
   display: none;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .details__summary--last-item p, .details__view-place--last-item p {
     width: 30% !important;
   }
@@ -81,7 +81,7 @@ summary::before {
   overflow: hidden !important;
   flex-shrink: 0 !important;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .details__summary p, .details__view-place p {
     width: 45px;
   }
@@ -105,7 +105,7 @@ summary::before {
   justify-content: end;
   margin: 0 20px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .details-button {
     width: auto;
     margin: 0;
@@ -117,7 +117,7 @@ summary::before {
   aspect-ratio: 1/1;
   padding: 0;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .details-button__edit, .details-button__del {
     margin: 0 6px;
   }
@@ -146,7 +146,7 @@ summary::before {
   justify-content: end;
   flex-wrap: wrap;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .details__search_wrap {
     flex-direction: column;
   }
@@ -155,7 +155,7 @@ summary::before {
   width: 100%;
   margin-bottom: 10px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .details__search_wrap .input {
     width: 100% !important;
     margin-right: -15px;
@@ -168,7 +168,7 @@ summary::before {
   margin: 0 10px;
   padding: 5px 20px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .details__btn {
     width: 100%;
     margin: 10px 0;
@@ -179,12 +179,12 @@ summary::before {
   margin: 10px 0;
   width: 50%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .details__btn-void {
     width: 100%;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .details .content {
     width: 100%;
     margin-left: -18%;

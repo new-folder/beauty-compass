@@ -106,7 +106,7 @@
     left: 41.6%;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   #createRev .notice {
     left: 38.5%;
   }
@@ -123,7 +123,7 @@
   border-radius: 15px;
 }
 .send-mess-tech #ava {
-  width: 100% !important;
+  width: 100%;
 }
 .send-mess-tech #ava .previewImage {
   display: flex;
@@ -162,10 +162,6 @@
   border-radius: 15px;
   width: 181px;
   aspect-ratio: 1;
-}
-.send-mess-tech #ava .previewImage .addImage input {
-  width: 1px;
-  height: 1px;
 }
 .send-mess-tech #ava .previewImage_text {
   margin: auto;
