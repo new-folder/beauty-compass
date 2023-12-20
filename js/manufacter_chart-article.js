@@ -11,7 +11,7 @@ function templatingItem(data) {
         html+='                <div class="item__title">   '             
         html+='                    <p class="text--15-30">'+element.mainTitle+'</p> '           
         html+='                </div>'
-        html+='                <div class="item__logo-avtor">'        
+        html+='                <div class="item__logo-avtor mb-2">'        
         html+='                    <div class="item__logo">'
         html+='                        <img src="../img/logo-blue.svg" alt="beauty compas">'
         html+='                    </div>        '

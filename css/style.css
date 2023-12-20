@@ -7273,7 +7273,6 @@ ul {
   font-size: 30px;
   line-height: 37px;
   letter-spacing: 0.5px;
-  color: #494949;
   margin-bottom: 30px;
   font-weight: 600;
   color: #494949;
@@ -7380,6 +7379,10 @@ ul {
 }
 .pagin__output-info .feed__name {
   flex-shrink: 0;
+}
+.pagin--chart p {
+  margin-bottom: 0;
+  color: inherit;
 }
 
 .paginationjs-pages .paginationjs-page, .paginationjs-pages .paginationjs-ellipsis {
