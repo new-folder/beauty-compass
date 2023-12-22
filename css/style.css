@@ -3276,7 +3276,7 @@ textarea {
   margin-top: 1.5rem;
 }
 .articles-inner-body__collage ul img {
-  width: 100%;
+  max-width: 100%;
   aspect-ratio: 1;
   -o-object-fit: cover;
      object-fit: cover;
