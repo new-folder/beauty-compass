@@ -125,6 +125,38 @@ ul {
   margin-bottom: 0;
   color: inherit;
 }
+.pagin--chart p.text--15-30 {
+  font-size: 15px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+}
+@media screen and (min-width: 1400px) {
+  .pagin--chart p.text--15-30 {
+    font-size: 30px;
+  }
+}
+.pagin--chart p.text--12-18 {
+  font-size: 12px;
+  font-style: normal;
+  line-height: normal;
+}
+@media screen and (min-width: 1400px) {
+  .pagin--chart p.text--12-18 {
+    font-size: 18px;
+  }
+}
+.pagin--chart p.text--15-20 {
+  font-size: 15px;
+  font-style: normal;
+  line-height: normal;
+}
+@media screen and (min-width: 1400px) {
+  .pagin--chart p.text--15-20 {
+    font-size: 20px;
+  }
+}
 
 .paginationjs-pages .paginationjs-page, .paginationjs-pages .paginationjs-ellipsis {
   background-color: #D9D9D9;
