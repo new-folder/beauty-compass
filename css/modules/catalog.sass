@@ -7,8 +7,16 @@
         display: flex
         flex-wrap: wrap
         justify-content: center
+        row-gap: 15px
         &--full
             justify-content: start
+    
+    &__grid
+        display: grid
+        grid-template-columns: repeat(5, 1fr)
+        gap: 30px 25px
+        @media screen and (max-width: $second-breack-point)
+            grid-template-columns: repeat(2, 1fr)
 
     &__item
         position: relative 
@@ -35,10 +43,13 @@
                 display: block
             
     &__img
+        width: 100%
         max-width: 100%
         box-shadow: $box-shadow-sm
         border-radius: $border-radius
-        margin-bottom: 10px        
+        margin-bottom: 10px     
+        aspect-ratio: 1 / 1.35
+        object-fit: cover
         @media screen and (max-width: $first-breack-point) 
             border-radius: $border-radius-mobile
     &__contacts
