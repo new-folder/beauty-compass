@@ -3897,9 +3897,6 @@ main
         @media screen and ( max-width: $first-breack-point )
             width: 120px
 
-        @media screen and ( max-width: $second-breack-point )
-            width: 90px
-
     &__name
         position: sticky
         position: -webkit-sticky
@@ -3933,8 +3930,8 @@ main
             grid-template-columns: repeat(2, 1fr)
             gap: 5px
         @media screen and ( max-width: $second-breack-point )
-            grid-template-columns: 1fr
-
+            display: flex
+            flex-direction: column
         a 
             display: flex
             width: fit-content

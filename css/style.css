@@ -5649,11 +5649,6 @@ textarea {
     width: 120px;
   }
 }
-@media screen and (max-width: 769px) {
-  .catalog-brands-item__aside {
-    width: 90px;
-  }
-}
 .catalog-brands-item__name {
   position: sticky;
   position: -webkit-sticky;
@@ -5692,7 +5687,8 @@ textarea {
 }
 @media screen and (max-width: 769px) {
   .catalog-brands-item__content {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
 }
 .catalog-brands-item__content a {
