@@ -3878,17 +3878,13 @@ main
 
 .catalog-brands-item
 
-    display: grid
+    display: flex
     grid-template-columns: 160px 1fr
     gap: 25px
     padding: 35px 0
     border-bottom: 1px solid $dark-semi-light
-    
-    @media screen and ( max-width: $first-breack-point )
-        grid-template-columns: 120px 1fr
 
     @media screen and ( max-width: $second-breack-point )
-        grid-template-columns: 90px 1fr
         gap: 15px
 
     &__aside
@@ -3896,8 +3892,13 @@ main
         display: flex
         flex-direction: column
         justify-content: space-between
-        width: 100%
-        height: 100%
+        width: 160px
+
+        @media screen and ( max-width: $first-breack-point )
+            width: 120px
+
+        @media screen and ( max-width: $second-breack-point )
+            width: 90px
 
     &__name
         position: sticky
