@@ -5693,6 +5693,7 @@ textarea {
   }
 }
 .catalog-brands-item__content a {
+  display: flex;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
