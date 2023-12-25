@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Страница производителя</title>
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<nav class="navbar navbar-expand-xxl top-bar">
+    <div class="container justify-content-start position-relative p-xxl-0 container--header">
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand col-1 d-xxl-none top-bar__short-logo" href="#"
+        ><img src="../img/short-logo.svg" alt=""
+        /></a>
+        <div
+                class="collapse navbar-collapse justify-content-center top-bar__collapse"
+                id="navbarTogglerDemo01"
+        >
+            <a
+                    class="navbar-brand col-11 col-xxl-4 offset-md-1 top-bar__logo"
+                    href="#"
+            ><img src="../img/logo.svg" alt=""
+            /></a>
+
+            <form class="d-flex col-6 me-auto search-form">
+                <input
+                        class="form-control me-2 search-form__input"
+                        type="search"
+                        placeholder="Поиск"
+                        aria-label="Search"
+                />
+                <button class="btn search-form__submit" type="submit"></button>
+            </form>
+
+            <ul class="navbar-nav col-12 top-bar__list">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">О нас</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Подбор косметики</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"
+                    >Обзоры авторов
+                        <img
+                                src="../img/logo-micro.svg"
+                                class="align-baseline px-1"
+                                alt=""
+                        /></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Статьи брендов</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Бренды</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Каталог</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Беседка</a>
+                </li>
+            </ul>
+
+            <div class="row justify-content-center my-3 d-flex d-xxl-none">
+                <div class="col-3">
+                    <a
+                            href=""
+                            class="footer__social footer__social--email"
+                            target="_blank"
+                    ></a>
+                </div>
+                <div class="col-3">
+                    <a
+                            href=""
+                            class="footer__social footer__social--telegram"
+                            target="_blank"
+                    ></a>
+                </div>
+                <div class="col-3">
+                    <a
+                            href=""
+                            class="footer__social footer__social--vk"
+                            target="_blank"
+                    ></a>
+                </div>
+            </div>
+        </div>
+        <div
+                class="col-1 ms-md-1 position-absolute top-0 end-0 d-flex justify-content-end top-bar__links"
+        >
+            <a
+                    class="top-bar__link"
+                    data-bs-toggle="modal"
+                    href="#headerAutorisation"
+                    role="button"
+            ><img src="../img/login.svg" alt=""
+            /></a>
+            <a
+                    class="top-bar__link"
+                    data-bs-toggle="modal"
+                    href="#headerFavorites"
+                    role="button"
+            ><img src="../img/favorites.svg" alt=""
+            /></a>
+        </div>
+    </div>
+</nav>
+
+<main>
+
+    <section>
+        <div class="container container--bc">
+            <div class="col-xxl-10 offset-xxl-1">
+                <div class="d-flex flex-wrap align-items-center">
+                    <div class="col text-center col-xxl-12">
+                        <h1 class="title--20-36 text-uppercase">БРЕНДЫ</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="catalog-brands">
+        <div class="container container--bc">
+            <div class="col-xxl-10 offset-xxl-1">
+
+                <div class="d-flex flex-column gap-3">
+
+                    <ul class="catalog-brands__filter">
+                        <li><a href="#">A</a></li>
+                        <li><a href="#">B</a></li>
+                        <li><a href="#">C</a></li>
+                        <li><a href="#">D</a></li>
+                        <li><a href="#">E</a></li>
+                        <li><a href="#">F</a></li>
+                        <li><a href="#">G</a></li>
+                        <li><a href="#">H</a></li>
+                        <li><a href="#">I</a></li>
+                        <li><a href="#">J</a></li>
+                        <li><a href="#">K</a></li>
+                        <li><a href="#">L</a></li>
+                        <li><a href="#">M</a></li>
+                        <li><a href="#">N</a></li>
+                        <li><a href="#">O</a></li>
+                        <li><a href="#">P</a></li>
+                        <li><a href="#">Q</a></li>
+                        <li><a href="#">R</a></li>
+                        <li><a href="#">S</a></li>
+                        <li><a href="#">T</a></li>
+                        <li><a href="#">U</a></li>
+                        <li><a href="#">V</a></li>
+                        <li><a href="#">W</a></li>
+                        <li><a href="#">X</a></li>
+                        <li><a href="#">Y</a></li>
+                        <li><a href="#">Z</a></li>
+                    </ul>
+
+                    <ul class="catalog-brands__filter">
+                        <li><a href="#">А</a></li>
+                        <li><a href="#">Б</a></li>
+                        <li><a href="#">В</a></li>
+                        <li><a href="#">Г</a></li>
+                        <li><a href="#">Д</a></li>
+                        <li><a href="#">Е</a></li>
+                        <li><a href="#">Ж</a></li>
+                        <li><a href="#">З</a></li>
+                        <li><a href="#">И</a></li>
+                        <li><a href="#">К</a></li>
+                        <li><a href="#">Л</a></li>
+                        <li><a href="#">М</a></li>
+                        <li><a href="#">Н</a></li>
+                        <li><a href="#">О</a></li>
+                        <li><a href="#">П</a></li>
+                        <li><a href="#">Р</a></li>
+                        <li><a href="#">С</a></li>
+                        <li><a href="#">Т</a></li>
+                        <li><a href="#">У</a></li>
+                        <li><a href="#">Ф</a></li>
+                        <li><a href="#">Х</a></li>
+                        <li><a href="#">Ч</a></li>
+                        <li><a href="#">Ш</a></li>
+                        <li><a href="#">Щ</a></li>
+                        <li><a href="#">Ю</a></li>
+                        <li><a href="#">Я</a></li>
+                    </ul>
+
+                    <ul class="catalog-brands__filter">
+                        <li><a href="#">А-Я</a></li>
+                        <li><a href="#">A-Z</a></li>
+                        <li><a href="#">0-9</a></li>
+                        <li><a href="#" class="active">ВСЕ</a></li>
+                    </ul>
+
+                </div>
+
+                <div class="catalog-brands__list">
+
+                    <div class="catalog-brands-item">
+                        <div class="catalog-brands-item__aside">
+                            <div class="catalog-brands-item__name">A</div>
+                            <a href="#" class="catalog-brands-item__no-brands">Нет нужного бренда?</a>
+                        </div>
+
+                        <ul class="catalog-brands-item__content">
+                            <li><a href="#">A'PIEU</a></li> 
+                            <li><a href="#">A-DERMA</a></li> 
+                            <li><a href="#">Aasha Herbals</a></li> 
+                            <li><a href="#">Abdul Samad Al Qurashi</a></li> 
+                            <li><a href="#">Abercrombie & Fitch</a></li> 
+                            <li><a href="#">ABSOLUTE New York</a></li> 
+                            <li><a href="#">Acca Kappa</a></li> 
+                            <li><a href="#">Accendis</a></li> 
+                            <li><a href="#">ACCOJE</a></li> 
+                            <li><a href="#">Acorelle</a></li> 
+                            <li><a href="#" class="bold">Acqua di Bergamo</a></li> 
+                            <li><a href="#">Acqua Di Biella</a></li> 
+                            <li><a href="#">Acqua di Monaco</a></li> 
+                            <li><a href="#">Acqua di Parma</a></li> 
+                            <li><a href="#">Acqua Di Portofino</a></li> 
+                            <li><a href="#">Acqua Di Sardegna</a></li> 
+                            <li><a href="#">Acqua Di Stresa</a></li> 
+                            <li><a href="#">ACURE</a></li> 
+                            <li><a href="#">Acuvue</a></li> 
+                            <li><a href="#">Adam Levine</a></li> 
+                            <li><a href="#">Adarisa</a></li> 
+                            <li><a href="#">Adidas</a></li> 
+                            <li><a href="#">Adnan B.</a></li> 
+                            <li><a href="#">Adrienne Vittadini</a></li> 
+                            <li><a href="#">Advanced Natural</a></li> 
+                            <li><a href="#">Aedes de Venustas</a></li> 
+                            <li><a href="#">Aerin</a></li> 
+                            <li><a href="#">Aesop</a></li> 
+                            <li><a href="#">Afnan</a></li> 
+                            <li><a href="#">Agatha Paris</a></li> 
+                            <li><a href="#">Agatha Ruiz De La Prada</a></li> 
+                            <li><a href="#">Agatho Parfum</a></li> 
+                            <li><a href="#" class="bold">Agent Provocateur</a></li> 
+                            <li><a href="#" class="bold">Agonist</a></li> 
+                            <li><a href="#" class="bold">AHAVA</a></li> 
+                            <li><a href="#" class="bold">AHC</a></li> 
+                            <li><a href="#">Ahjaar</a></li> 
+                            <li><a href="#">Ajne Carmel</a></li> 
+                            <li><a href="#">Akro</a></li> 
+                            <li><a href="#">Al Halal Perfumes</a></li> 
+                            <li><a href="#">Al Hamatt</a></li> 
+                            <li><a href="#">Al Haramain Perfumes</a></li> 
+                            <li><a href="#">Al Jazeera Perfumes</a></li> 
+                            <li><a href="#">Al-Rehab</a></li> 
+                            <li><a href="#">Alaia Paris</a></li> 
+                            <li><a href="#" class="bold">Alain Delon</a></li> 
+                            <li><a href="#" class="bold">Alan Hadash</a></li> 
+                            <li><a href="#">Alcon</a></li> 
+                            <li><a href="#">ALERANA</a></li> 
+                            <li><a href="#">Alex Simone</a></li> 
+                            <li><a href="#">Alexa Lixfeld</a></li> 
+                            <li><a href="#">Alexander MC Queen</a></li> 
+                            <li><a href="#">Alexandre J.</a></li> 
+                            <li><a href="#">Alfaparf Milano</a></li> 
+                            <li><a href="#">Alfred Dunhill</a></li> 
+                            <li><a href="#">Alfred Ritchy</a></li> 
+                            <li><a href="#">Alfred Sung</a></li> 
+                            <li><a href="#">Allegra Jewels</a></li> 
+                            <li><a href="#">Aloins</a></li> 
+                            <li><a href="#">Alsayad</a></li> 
+                            <li><a href="#">Altaia</a></li> 
+                            <li><a href="#">Alterna</a></li> 
+                            <li><a href="#">Alviero Martini</a></li> 
+                            <li><a href="#">Alyson Oldoini</a></li> 
+                            <li><a href="#">Alyssa Ashley</a></li> 
+                            <li><a href="#">Amend</a></li> 
+                            <li><a href="#">American Crew</a></li> 
+                            <li><a href="#">American Eagle</a></li> 
+                            <li><a href="#">Amirius</a></li> 
+                            <li><a href="#">Amoreface</a></li> 
+                            <li><a href="#">Amorino</a></li> 
+                            <li><a href="#">Amouage</a></li> 
+                            <li><a href="#">Amouroud</a></li> 
+                            <li><a href="#">Amzan</a></li> 
+                            <li><a href="#">Anastasia Beverly Hills</a></li> 
+                            <li><a href="#">Andalou Naturals</a></li> 
+                            <li><a href="#">ANDIS</a></li> 
+                            <li><a href="#">Andrea</a></li> 
+                            <li><a href="#">Andrea Maack</a></li> 
+                            <li><a href="#">Andree Putman</a></li> 
+                            <li><a href="#" class="bold">Andy Warhol</a></li> 
+                            <li><a href="#">Anfas</a></li> 
+                            <li><a href="#">Angel Key</a></li> 
+                            <li><a href="#">Angel Schlesser</a></li> 
+                            <li><a href="#">Angela Ciampagna</a></li> 
+                            <li><a href="#">Angeline</a></li> 
+                            <li><a href="#">Anima Mundi</a></li> 
+                            <li><a href="#">Animale</a></li> 
+                            <li><a href="#">Anna Paghera</a></li> 
+                            <li><a href="#">Anna Sui</a></li> 
+                            <li><a href="#">Annayake</a></li> 
+                            <li><a href="#">Anne Fontaine</a></li> 
+                            <li><a href="#">Anne Klein</a></li> 
+                            <li><a href="#">ANNY</a></li> 
+                            <li><a href="#">Anskin</a></li> 
+                            <li><a href="#">AntidotPro</a></li> 
+                            <li><a href="#" class="bold">Antonio Banderas</a></li> 
+                            <li><a href="#">Antonio Croce</a></li> 
+                            <li><a href="#">Antonio Dmetri</a></li> 
+                            <li><a href="#">Antonio Maretti</a></li> 
+                            <li><a href="#">Antonio Puig</a></li> 
+                        </ul>
+                    </div>
+
+                    <div class="catalog-brands-item">
+                        <div class="catalog-brands-item__aside">
+                            <div class="catalog-brands-item__name">C</div>
+                            <a href="#" class="catalog-brands-item__no-brands">Нет нужного бренда?</a>
+                        </div>
+
+                        <ul class="catalog-brands-item__content">
+                            <li><a href="#">A'PIEU</a></li> 
+                            <li><a href="#">A-DERMA</a></li> 
+                        </ul>
+                    </div>
+
+                    <div class="catalog-brands-item">
+                        <div class="catalog-brands-item__aside">
+                            <div class="catalog-brands-item__name">D</div>
+                            <a href="#" class="catalog-brands-item__no-brands">Нет нужного бренда?</a>
+                        </div>
+
+                        <ul class="catalog-brands-item__content">
+                            <li><a href="#">A'PIEU</a></li> 
+                            <li><a href="#">A-DERMA</a></li> 
+                            <li><a href="#" class="bold">A-DERMA</a></li> 
+                            <li><a href="#">A-DERMA</a></li> 
+                            <li><a href="#">A-DERMA</a></li> 
+                        </ul>
+                    </div>
+
+                    <div class="catalog-brands-item">
+                        <div class="catalog-brands-item__aside">
+                            <div class="catalog-brands-item__name">B</div>
+                            <a href="#" class="catalog-brands-item__no-brands">Нет нужного бренда?</a>
+                        </div>
+
+                        <ul class="catalog-brands-item__content">
+                            <li><a href="#">A'PIEU</a></li> 
+                            <li><a href="#">A-DERMA</a></li> 
+                            <li><a href="#">Aasha Herbals</a></li> 
+                            <li><a href="#">Abdul Samad Al Qurashi</a></li> 
+                            <li><a href="#">Abercrombie & Fitch</a></li> 
+                            <li><a href="#">ABSOLUTE New York</a></li> 
+                            <li><a href="#">Acca Kappa</a></li> 
+                            <li><a href="#">Accendis</a></li> 
+                            <li><a href="#">ACCOJE</a></li> 
+                            <li><a href="#">Acorelle</a></li> 
+                            <li><a href="#" class="bold">Acqua di Bergamo</a></li> 
+                            <li><a href="#">Acqua Di Biella</a></li> 
+                            <li><a href="#">Acqua di Monaco</a></li> 
+                            <li><a href="#">Acqua di Parma</a></li> 
+                            <li><a href="#">Acqua Di Portofino</a></li> 
+                            <li><a href="#">Acqua Di Sardegna</a></li> 
+                            <li><a href="#">Acqua Di Stresa</a></li> 
+                            <li><a href="#">ACURE</a></li> 
+                            <li><a href="#">Acuvue</a></li> 
+                            <li><a href="#">Adam Levine</a></li> 
+                            <li><a href="#">Adarisa</a></li> 
+                            <li><a href="#">Adidas</a></li> 
+                            <li><a href="#">Adnan B.</a></li> 
+                            <li><a href="#">Adrienne Vittadini</a></li> 
+                            <li><a href="#">Advanced Natural</a></li> 
+                            <li><a href="#">Aedes de Venustas</a></li> 
+                            <li><a href="#">Aerin</a></li> 
+                            <li><a href="#">Aesop</a></li> 
+                            <li><a href="#">Afnan</a></li> 
+                            <li><a href="#">Agatha Paris</a></li> 
+                            <li><a href="#">Agatha Ruiz De La Prada</a></li> 
+                            <li><a href="#">Agatho Parfum</a></li> 
+                            <li><a href="#" class="bold">Agent Provocateur</a></li> 
+                            <li><a href="#" class="bold">Agonist</a></li> 
+                            <li><a href="#" class="bold">AHAVA</a></li> 
+                            <li><a href="#" class="bold">AHC</a></li> 
+                            <li><a href="#">Ahjaar</a></li> 
+                            <li><a href="#">Ajne Carmel</a></li> 
+                            <li><a href="#">Akro</a></li> 
+                            <li><a href="#">Al Halal Perfumes</a></li> 
+                            <li><a href="#">Al Hamatt</a></li> 
+                            <li><a href="#">Al Haramain Perfumes</a></li> 
+                            <li><a href="#">Al Jazeera Perfumes</a></li> 
+                            <li><a href="#">Al-Rehab</a></li> 
+                            <li><a href="#">Alaia Paris</a></li> 
+                            <li><a href="#" class="bold">Alain Delon</a></li> 
+                            <li><a href="#" class="bold">Alan Hadash</a></li> 
+                            <li><a href="#">Alcon</a></li> 
+                            <li><a href="#">ALERANA</a></li> 
+                            <li><a href="#">Alex Simone</a></li> 
+                            <li><a href="#">Alexa Lixfeld</a></li> 
+                            <li><a href="#">Alexander MC Queen</a></li> 
+                            <li><a href="#">Alexandre J.</a></li> 
+                            <li><a href="#">Alfaparf Milano</a></li> 
+                            <li><a href="#">Alfred Dunhill</a></li> 
+                            <li><a href="#">Alfred Ritchy</a></li> 
+                            <li><a href="#">Alfred Sung</a></li> 
+                            <li><a href="#">Allegra Jewels</a></li> 
+                            <li><a href="#">Aloins</a></li> 
+                            <li><a href="#">Alsayad</a></li> 
+                            <li><a href="#">Altaia</a></li> 
+                            <li><a href="#">Alterna</a></li> 
+                            <li><a href="#">Alviero Martini</a></li> 
+                            <li><a href="#">Alyson Oldoini</a></li> 
+                            <li><a href="#">Alyssa Ashley</a></li> 
+                            <li><a href="#">Amend</a></li> 
+                            <li><a href="#">American Crew</a></li> 
+                            <li><a href="#">American Eagle</a></li> 
+                            <li><a href="#">Amirius</a></li> 
+                            <li><a href="#">Amoreface</a></li> 
+                            <li><a href="#">Amorino</a></li> 
+                            <li><a href="#">Amouage</a></li> 
+                            <li><a href="#">Amouroud</a></li> 
+                            <li><a href="#">Amzan</a></li> 
+                            <li><a href="#">Anastasia Beverly Hills</a></li> 
+                            <li><a href="#">Andalou Naturals</a></li> 
+                            <li><a href="#">ANDIS</a></li> 
+                            <li><a href="#">Andrea</a></li> 
+                            <li><a href="#">Andrea Maack</a></li> 
+                            <li><a href="#">Andree Putman</a></li> 
+                            <li><a href="#" class="bold">Andy Warhol</a></li> 
+                            <li><a href="#">Anfas</a></li> 
+                            <li><a href="#">Angel Key</a></li> 
+                            <li><a href="#">Angel Schlesser</a></li> 
+                            <li><a href="#">Angela Ciampagna</a></li> 
+                            <li><a href="#">Angeline</a></li> 
+                            <li><a href="#">Anima Mundi</a></li> 
+                            <li><a href="#">Animale</a></li> 
+                            <li><a href="#">Anna Paghera</a></li> 
+                            <li><a href="#">Anna Sui</a></li> 
+                            <li><a href="#">Annayake</a></li> 
+                            <li><a href="#">Anne Fontaine</a></li> 
+                            <li><a href="#">Anne Klein</a></li> 
+                            <li><a href="#">ANNY</a></li> 
+                            <li><a href="#">Anskin</a></li> 
+                            <li><a href="#">AntidotPro</a></li> 
+                            <li><a href="#" class="bold">Antonio Banderas</a></li> 
+                            <li><a href="#">Antonio Croce</a></li> 
+                            <li><a href="#">Antonio Dmetri</a></li> 
+                            <li><a href="#">Antonio Maretti</a></li> 
+                            <li><a href="#">Antonio Puig</a></li> 
+                        </ul>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+
+</main>
+
+<footer class="footer py-5 mt-auto">
+    <div class="container footer__container">
+        <div class="row justify-content-center footer__nav">
+            <div class="col-12 col-md-4 col-xxl-3">
+                <div class="footer__title">О нас</div>
+                <ul class="footer__list">
+                    <li><a href="">О проекте</a></li>
+                    <li><a href="">Отзывы и предложения</a></li>
+                    <li><a href="">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-4 col-xxl-4 text-start text-md-center">
+                <div class="footer__title">Пользователям</div>
+                <ul class="footer__list">
+                    <li><a href="">Подбор косметики</a></li>
+                    <li><a href="">Избранное</a></li>
+                    <li><a href="">Авторизация</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-4 col-xxl-3 text-start text-md-end">
+                <div class="footer__title">Брендам</div>
+                <ul class="footer__list">
+                    <li><a href="">Сотрудничество</a></li>
+                    <li><a href="">Отправить заявку</a></li>
+                    <li><a href="">Авторизация</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row justify-content-center order-1 order-xxl-2">
+            <div class="col-10 col-xxl-12 text-center footer__logo">
+                <img src="../img/logo.svg" alt="" />
+            </div>
+        </div>
+        <div class="row justify-content-center order-3 order-xxl-3">
+            <div class="col-3 col-xxl-1">
+                <a
+                        href=""
+                        class="footer__social footer__social--email"
+                        target="_blank"
+                ></a>
+            </div>
+            <div class="col-3 col-xxl-1">
+                <a
+                        href=""
+                        class="footer__social footer__social--telegram"
+                        target="_blank"
+                ></a>
+            </div>
+            <div class="col-3 col-xxl-1">
+                <a
+                        href=""
+                        class="footer__social footer__social--vk"
+                        target="_blank"
+                ></a>
+            </div>
+        </div>
+    </div>
+</footer>
+<div
+        class="modal fade"
+        id="headerAutorisation"
+        aria-hidden="true"
+        aria-labelledby="headerAutorisationLabel"
+        tabindex="-1"
+>
+    <div class="modal-dialog modal-xl">
+        <div class="container">
+            <div class="modal-content auth__content">
+                <div class="modal-header py-2 px-0">
+                    <h5 class="modal-title auth__title" id="authToggleLabel">
+                        Авторизация
+                    </h5>
+                </div>
+                <div class="modal-body">
+                    <form class="needs-validation" novalidate>
+                        <div class="row mb-2 d-flex auth__group">
+                            <label
+                                    for="headerAuthEmail"
+                                    class="form-label col-3 my-0 p-0 auth__label"
+                            >E-mail</label
+                            >
+                            <input
+                                    type="email"
+                                    class="form-control order-2"
+                                    id="headerAuthEmail"
+                                    required
+                            />
+                            <div
+                                    id="headerAuthEmailFeedback"
+                                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                            >
+                                Неверный E-mail
+                            </div>
+                        </div>
+                        <div class="row mb-3 mb-md-5 d-flex auth__group">
+                            <label
+                                    for="authInputPassword"
+                                    class="form-label col-3 my-0 p-0 auth__label"
+                            >Пароль</label
+                            >
+                            <input
+                                    type="password"
+                                    class="form-control order-2"
+                                    id="authInputPassword"
+                                    required
+                            />
+                            <div
+                                    id="headerAuthPassFeedback"
+                                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                            >
+                                Неверный пароль
+                            </div>
+                        </div>
+                        <div class="auth__sub-title">Забыли пароль?</div>
+                        <div class="row d-flex justify-content-around">
+                            <input
+                                    type="submit"
+                                    value="Регистрация"
+                                    class="btn auth__btn col-7 col-xxl-4"
+                                    data-bs-target="#headerRegistration"
+                                    data-bs-toggle="modal"
+                                    data-bs-dismiss="modal"
+                            />
+                            <input
+                                    type="submit"
+                                    value="Войти"
+                                    class="btn btn-primary col-7 col-xxl-4 auth__btn auth__btn--primary"
+                            />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--authorized-->
+            <div class="modal-content auth__content auth__content--authorized">
+                <div class="modal-body">
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <div class="auth__avatar">
+                            <img src="../img/image%20221.png" alt="" />
+                        </div>
+                        <div class="auth__user">
+                            <div class="auth__name">Маня Иванова</div>
+                            <input
+                                    type="submit"
+                                    value="Выйти"
+                                    class="btn btn-primary auth__btn auth__btn--primary"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div
+        class="modal fade"
+        id="headerRegistration"
+        aria-hidden="true"
+        aria-labelledby="headerRegistrationLabel"
+        tabindex="-1"
+>
+    <div class="modal-dialog modal-xl">
+        <div class="container">
+            <div class="modal-content auth__content">
+                <div class="modal-header py-2 px-0">
+                    <h5 class="modal-title auth__title" id="authToggleLabel">
+                        Регистрация
+                    </h5>
+                </div>
+                <div class="modal-body">
+                    <form class="needs-validation" novalidate>
+                        <div class="row mb-2 d-flex auth__group">
+                            <label
+                                    for="headerReisterFirstName"
+                                    class="form-label col-3 my-0 p-0 auth__label"
+                            >Имя</label
+                            >
+                            <input
+                                    type="text"
+                                    class="form-control order-2"
+                                    id="headerReisterFirstName"
+                                    required
+                            />
+                            <div
+                                    id="headerRegisterFirstNameFeedback"
+                                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                            >
+                                Неверное имя
+                            </div>
+                        </div>
+                        <div class="row mb-2 d-flex auth__group">
+                            <label
+                                    for="headerReisterLastName"
+                                    class="form-label col-3 my-0 p-0 auth__label"
+                            >Фамилия</label
+                            >
+                            <input
+                                    type="text"
+                                    class="form-control order-2"
+                                    id="headerReisterLastName"
+                                    required
+                            />
+                            <div
+                                    id="headerRegisterLastNameFeedback"
+                                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                            >
+                                Неверная фамилия
+                            </div>
+                        </div>
+                        <div class="row mb-2 d-flex auth__group">
+                            <label
+                                    for="headerReisterNickName"
+                                    class="form-label col-3 my-0 p-0 auth__label"
+                            >Ник</label
+                            >
+                            <input
+                                    type="text"
+                                    class="form-control order-2"
+                                    id="headerReisterNickName"
+                                    required
+                            />
+                            <div
+                                    id="headerRegisterNickNameFeedback"
+                                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                            >
+                                Неверный ник
+                            </div>
+                        </div>
+                        <div class="row mb-2 d-flex auth__group">
+                            <label
+                                    for="headerReisterPhone"
+                                    class="form-label col-3 my-0 p-0 auth__label"
+                            >Телефон</label
+                            >
+                            <input
+                                    type="tel"
+                                    class="form-control order-2"
+                                    id="headerReisterPhone"
+                                    required
+                            />
+                            <div
+                                    id="headerRegisterPhoneFeedback"
+                                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                            >
+                                Неверный телефон
+                            </div>
+                        </div>
+                        <div class="row mb-2 d-flex auth__group">
+                            <label
+                                    for="headerRegisterEmail"
+                                    class="form-label col-3 my-0 p-0 auth__label"
+                            >E-mail</label
+                            >
+                            <input
+                                    type="email"
+                                    class="form-control order-2"
+                                    id="headerRegisterEmail"
+                                    required
+                            />
+                            <div
+                                    id="headerRegisterEmailFeedback"
+                                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                            >
+                                Неверный E-mail
+                            </div>
+                        </div>
+                        <div class="row mb-2 d-flex auth__group">
+                            <label
+                                    for="registerInputPassword1"
+                                    class="form-label col-3 my-0 p-0 auth__label"
+                            >Пароль</label
+                            >
+                            <input
+                                    type="password"
+                                    class="form-control order-2"
+                                    id="registerInputPassword1"
+                                    required
+                            />
+                            <div
+                                    id="headerRegisterPassFeedback1"
+                                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                            >
+                                Введите пароль
+                            </div>
+                            <div id="headerRegisterPassCheck1" class="auth__invalid">
+                                Пароли не совпадают
+                            </div>
+                        </div>
+                        <div class="row mb-3 d-flex auth__group">
+                            <label
+                                    for="registerInputPassword2"
+                                    class="form-label col-3 my-0 p-0 auth__label"
+                            >Подтвердите пароль</label
+                            >
+                            <input
+                                    type="password"
+                                    class="form-control order-2"
+                                    id="registerInputPassword2"
+                                    onkeyup="valid(event)"
+                                    required
+                            />
+                            <div
+                                    id="headerRegisterPassFeedback2"
+                                    class="invalid-feedback col-9 order-1 my-0 auth__invalid"
+                            >
+                                Введите пароль
+                            </div>
+                            <div id="headerRegisterPassCheck2" class="auth__invalid">
+                                Пароли не совпадают
+                            </div>
+                        </div>
+                        <div class="form-check mb-5 ps-2">
+                            <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    value=""
+                                    id="registerCheck"
+                                    required
+                            />
+                            <label class="form-check-label title--h4" for="registerCheck">
+                                Я ознакомлен(а) с
+                                <a href="#" class="auth__conf" target="_blank"
+                                >политикой конфиденциальности</a
+                                >
+                            </label>
+                            <div class="invalid-feedback auth__invalid">
+                                Необходимо подтверждение
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-around">
+                            <input
+                                    type="submit"
+                                    value="Регистрация"
+                                    class="btn btn-primary col-7 col-xxl-4 auth__btn auth__btn--primary"
+                            />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div
+        class="modal fade"
+        id="headerFavorites"
+        aria-hidden="true"
+        aria-labelledby="headerFavoritesLabel"
+        tabindex="-1"
+>
+    <div class="modal-dialog modal-xl">
+        <div class="container">
+            <div class="modal-content auth__content">
+                <div class="modal-header py-2 px-0">
+                    <h5
+                            class="modal-title text-center auth__title"
+                            id="authToggleLabel"
+                    >
+                        Функция доступна зарегистрированным пользователям
+                    </h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row d-flex justify-content-around">
+                        <input
+                                type="submit"
+                                value="Регистрация"
+                                class="btn auth__btn col-7 col-xxl-4"
+                                data-bs-target="#headerRegistration"
+                                data-bs-toggle="modal"
+                                data-bs-dismiss="modal"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <!--authorized-->
+            <div class="modal-content auth__content auth__content--authorized">
+                <div class="modal-body">
+                    <div class="row">
+                        <a href="#" class="auth__link">Сатьи</a>
+                        <a href="#" class="auth__link">Бренды</a>
+                        <a href="#" class="auth__link">Средства</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../js/onClickActive.js"></script>
+
+
+</body>
+</html>

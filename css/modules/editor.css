@@ -59,6 +59,7 @@ body[data-editor=DecoupledEditor] .row-editor .editor {
   width: 21.0529166667cm;
   min-height: 29.7529166667cm;
   /* To avoid having extra scrolls inside the editor container. */
+  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   padding: 2cm 1.2cm;
@@ -357,6 +358,7 @@ body[data-revision-history=true] .ck.ck-pagination-view-line::after {
 }
 /* --------- CUSTOM STYLE ------------------------------------------------------------------------------------------- */
 .ck.ck-toolbar.ck-toolbar_grouping {
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 20px 0 auto;
@@ -410,4 +412,4 @@ body[data-revision-history=true] .ck.ck-pagination-view-line::after {
 
 .ck.ck-toolbar.ck-toolbar_grouping > .ck-toolbar__items {
   flex-wrap: wrap !important;
-}/*# sourceMappingURL=editor.css.map */
+}
