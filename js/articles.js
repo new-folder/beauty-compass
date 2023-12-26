@@ -10,7 +10,7 @@ $(document).ready(() => {
                     <a href="${item.slug}" class="shadow articles__item">
                         <div class="row articles__info">
                             <div class="col-6">
-                                <img src="/img/logo-min.png" alt="" />
+                                <img src="../img/test-logo.png" alt="" />
                             </div>
                             <div class="col-6 text-end articles__date">${formatDate(item.date)}</div>
                         </div>

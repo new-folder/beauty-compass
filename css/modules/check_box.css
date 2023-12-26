@@ -2,7 +2,6 @@
   border-radius: 15px;
   box-shadow: 0px 4px 20px 0 rgba(14, 14, 14, 0.07);
   padding: 15px;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin-bottom: 20px;
@@ -72,4 +71,4 @@
     border: 1px solid #292D32;
     margin-right: 10px;
   }
-}
+}/*# sourceMappingURL=check_box.css.map */

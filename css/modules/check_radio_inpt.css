@@ -7,7 +7,6 @@
   border-radius: 15px;
   box-shadow: 0px 4px 20px 0 rgba(14, 14, 14, 0.07);
   padding: 15px;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin-bottom: 20px;
@@ -172,4 +171,4 @@
   .radio__option img {
     width: 100%;
   }
-}
+}/*# sourceMappingURL=check_radio_inpt.css.map */
