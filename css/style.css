@@ -877,6 +877,10 @@ textarea {
   color: #210E22;
 }
 
+.gray-second {
+  color: #949494;
+}
+
 .fw-600 {
   font-weight: 600;
 }
@@ -1074,6 +1078,17 @@ textarea {
   .btn-string img {
     width: 35px;
     height: 35px;
+  }
+}
+
+.svg-icon--20-40 {
+  width: 40px;
+  height: 40px;
+}
+@media screen and (max-width: 768px) {
+  .svg-icon--20-40 {
+    width: 20px;
+    height: 20px;
   }
 }
 
