@@ -2201,8 +2201,9 @@ main
         line-height: 145%
         &::placeholder 
             color: $darker
-            font-size: 10px
-            line-height: 160%
+            @media screen and ( max-width: $first-breack-point )
+                font-size: 10px
+                line-height: 160%
 
 
 .articles-inner-title
