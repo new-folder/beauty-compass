@@ -143,14 +143,22 @@
 
                 <div class="articles-filter__row d-flex flex-column flex-lg-row gap-4 mb-3">
 
-                    <div class="articles-filter__item input flex-shrink-0">
+                    <div class="articles-filter__item articles-filter__item--rubric input flex-shrink-0">
                         <label class="label--light label--general">Рубрика</label>
-                        <select class="input--select" aria-label="Default select example">
-                            <option selected>Сначала новые</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
+                            <select multiple class="form-select" id="tag_for_article" name="tagsArticl" >
+                                <option value="Lorem">
+                                    Lorem
+                                </option>
+                                <option value="Lorem21">
+                                    Lorem21
+                                </option>
+                                <option value="Lorem2">
+                                    Lorem2
+                                </option>
+                                <option value="Lorem1">
+                                    Lorem1
+                                </option>
+                            </select>
                     </div>
 
                     <div class="input input--select select--regular tags__select brand__tags-select order-last order-lg-0" id="brand__tags-select">
@@ -1066,5 +1074,14 @@
     <script src="../js/pagination-init.js"></script>
     <script src="../js/articles.js"></script>
     <script src="../js/tags.js"></script>
+    <script src="../js/select2.js" defer=""></script>
+    <script>    
+    $(document).ready(function() {
+      $('#tag_for_article').select2({
+        closeOnSelect: false,
+        placeholder:"Выберите из списка",
+      })
+    })
+</script>
   </body>
 </html>

@@ -1,7 +1,7 @@
 @import "bootstrap/bootstrap.min.css";
 @import "splidejs/splide-core.min.css";
 @import "splidejs/custom.css";
-@import "modules/select2.min.css";
+@import "select2.min.css";
 @import "modules/datepicker.minimal.css";
 @font-face {
   font-family: "Gilroy";
@@ -3263,6 +3263,14 @@ textarea {
   }
 }
 
+.articles-filter__item--rubric {
+  width: 208px;
+}
+@media screen and (max-width: 769px) {
+  .articles-filter__item--rubric {
+    width: 100%;
+  }
+}
 .articles-filter__item select {
   min-width: 200px;
   -webkit-appearance: none;
@@ -3273,6 +3281,35 @@ textarea {
   background-position: calc(100% - 15px) center;
   background-size: 14px;
   cursor: pointer;
+}
+.articles-filter__item .select2 {
+  height: 36px !important;
+  box-shadow: 0px 4px 20px 0 rgba(14, 14, 14, 0.07);
+}
+@media screen and (max-width: 1400px) {
+  .articles-filter__item .select2 {
+    height: 28px !important;
+    border-radius: 10px;
+    font-size: 12px !important;
+  }
+}
+@media screen and (max-width: 769px) {
+  .articles-filter__item .select2 {
+    height: 26px !important;
+  }
+}
+.articles-filter__item .select2-search__field {
+  line-height: 145%;
+}
+.articles-filter__item .select2-search__field::-moz-placeholder {
+  color: #0E0E0E;
+  font-size: 10px;
+  line-height: 160%;
+}
+.articles-filter__item .select2-search__field::placeholder {
+  color: #0E0E0E;
+  font-size: 10px;
+  line-height: 160%;
 }
 
 .articles-inner-title__brand img {
@@ -6278,7 +6315,7 @@ textarea {
 }
 .articles__info img {
   max-width: 30px;
-  max-height: 18px;
+  max-height: 25px;
 }
 .articles__title {
   font-weight: 600;
