@@ -119,10 +119,15 @@
   }
 }
 .modal-petition__form button {
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   align-self: center;
   padding: 10px 25px;
   border-width: 3px;
   border-radius: 15px;
+<<<<<<< HEAD
 }/*# sourceMappingURL=modal.css.map */
+=======
+}
+>>>>>>> origin/lk-users__review-draft
