@@ -3974,3 +3974,48 @@ main
                 text-decoration: underline .5px
                 text-underline-offset: 4px
                 text-decoration-color: $main-color
+
+.tech-chat
+
+    display: flex
+    flex-direction: column
+    gap: 15px
+
+    &__mess
+        display: flex
+        flex-direction: column
+        gap: 2px
+        max-width: 70%
+        padding: 8px 16px
+        font-size: 18px
+        font-weight: 600
+        border-radius: $border-radius
+        box-shadow: $box-shadow-regular
+        @media screen and ( max-width: $second-breack-point )
+            max-width: 90%
+            padding: 5px 10px
+            font-size: 14px
+        &--in 
+            align-self: flex-start
+            background: #fff
+        &--out
+            align-self: flex-end
+            color: #fff
+            background: $main-color
+
+    &__topic 
+        margin: 40px 0
+        color: $dark-semi-light
+        font-size: 30px
+        font-weight: 600
+        text-align: center
+        @media screen and ( max-width: $second-breack-point )
+            margin: 15px 0
+            font-size: 15px
+
+    &__time
+        align-self: flex-end
+        font-size: 14px
+        font-weight: normal
+        @media screen and ( max-width: $second-breack-point )
+            font-size: 10px
