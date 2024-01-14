@@ -1032,6 +1032,30 @@
                         </div>
                     </div>
                 </div>
+                <div class="row mb-4">
+                    <div class="text--15-30 text-start col-12 mb-3">Загрузите до 5 фотографий</div>
+                    <div class="col-3 col-xxl-4"> 
+                        <div class="input image input--image brand__img-upload" type="button">
+                            <img src="../img/gallery-add.svg" alt="add photos" class="position-absolute top-50 start-50 translate-middle"/>
+                            <input type="file" name="brand__file-input" id="img-multiple" class="file-input profile__file-input" accept="image/png, image/jpg" multiple/>
+                        </div>
+                        <div class="leave-feed__img-list"></div>
+                    </div>
+                    <div class="col-9 col-xxl-8 d-flex justify-content-center flex-column">
+                        <p class="mb-1 leave-feed__comment">Нажмите на область с иконкой</p>
+                        <p class="leave-feed__comment leave-feed__comment--light mb-1">Фото до 10 МБ. Формат JPG, JPEG, BMP, GIF</p>
+                    </div>  
+                </div>
+                    <div class="row added-imgs__header mb-4">
+                        <div class="col-12 mb-0 mb-xxl-4 text--12-18">Вы можете задать порядок отображения фото в коллаже, перемещая их</div>
+                        <div class="col-3 d-none d-xxl-block fw-bold text--12-18">№ фото в коллаже</div>
+                        <div class="col-3 d-none d-xxl-block fw-bold text-center text--12-18">Выбрать превью</div>
+                        <div class="col-3 d-none d-xxl-block fw-bold text-center text--12-18">Нужен копирайт?</div>
+                        <div class="col-3 d-none d-xxl-block fw-bold text-center text--12-18">Удалить</div>
+                    </div>
+                    <div class="added-imgs__container">
+                        <!-- Здесь будут отображаться выбранные изображения -->
+                      </div>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-10 mb-1 d-flex justify-content-start justify-content-md-around flex-column flex-md-row flex-column-reverse">
@@ -1039,6 +1063,8 @@
                         <button type="button" class="btn-string mb-3 mb-md-0" ><img src="../img/pen-notice.svg" class="me-1" alt="">Опубликовать</button>
                     </div>
                 </div>
+                
+            </div>
             </div>
         </div>
         </div>
@@ -1046,6 +1072,8 @@
 <script src="../js/bootstrap.bundle.min.js"></script>
 <script src="../js/onClickActive.js"></script>
 <script src="../js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+<script src="../js/multiple-image-upload.js"></script>
 
 
 </body>
