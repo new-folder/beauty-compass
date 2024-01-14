@@ -145,7 +145,7 @@
                         </svg>
                     </button>
                 </form>
-                <a class="btn btn--base mt-3" href="#">Написать пост</a>
+                <button class="btn btn--base mt-3"  type="button" data-bs-toggle="modal" data-bs-target="#createPost">Написать пост</button>
             </div>
         </div>
     </section>
@@ -999,6 +999,49 @@
         </div>
     </div>
 </div>
+
+    <!--Оставить отзыв-->
+    <div class="modal fade" id="createPost" tabindex="-1" role="dialog" aria-labelledby="openReviewLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content leave-feed__modal-content p-0 p-xxl-4">
+            <div class="row modal-header">
+                <h5 class="col-12 leave-feed__title text-center text-xxl-start">Написать пост</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <label for="appeal" class="select-wrap" id="appeal">
+                            <small> 
+                                Тема поста
+                            </small>
+                        </label>
+                        <input class="form-control" type="text" name="appeal" id="appeal">
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-12 position-relative leave-feed__textarea  input--dark">     
+                        <label for="appeal" class="select-wrap" id="appeal">
+                            <small> 
+                                Текст поста
+                            </small>
+                        </label> 
+                        <textarea class="form-control form-control--light" id="feedFormControlTextarea" maxlength="1400"></textarea>
+                        <div class="leave-feed__count">
+                            <span class="leave-feed__num">0</span>
+                            <span class="leave-feed__maximum">/ 1400</span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 mb-1 d-flex justify-content-start justify-content-md-around flex-column flex-md-row flex-column-reverse">
+                        <button type="button" class="btn-string pre-color" data-bs-dismiss="modal"><img src="../img/cansel-icon.svg" class="me-1" alt="">Отменить</button>
+                        <button type="button" class="btn-string mb-3 mb-md-0" ><img src="../img/pen-notice.svg" class="me-1" alt="">Опубликовать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
 
 <script src="../js/bootstrap.bundle.min.js"></script>
 <script src="../js/onClickActive.js"></script>
