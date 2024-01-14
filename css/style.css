@@ -3961,6 +3961,10 @@ textarea {
   background: #FFFFFF;
   box-shadow: 0px 4px 20px 0 rgba(14, 14, 14, 0.07);
 }
+.leave-feed__textarea .form-control--light:focus {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 20px 0 rgba(14, 14, 14, 0.07);
+}
 .leave-feed__textarea input, .leave-feed__textarea textarea, .leave-feed__textarea select, .leave-feed__textarea.input--select {
   background: #F8F8F8;
   box-shadow: none;
