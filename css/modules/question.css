@@ -5,6 +5,7 @@
   border-radius: 15px;
   background: #1560BD;
   padding: 15px;
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   color: #FFFFFF;
@@ -123,6 +124,7 @@
   }
 }
 .quest__adapt__quest {
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -143,6 +145,7 @@
   border-radius: 15px;
   color: #1560BD;
   border: 3px solid #1560BD;
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
@@ -151,4 +154,4 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
-}/*# sourceMappingURL=question.css.map */
+}

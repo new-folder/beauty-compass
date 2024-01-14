@@ -170,6 +170,7 @@
   }
 }
 .select2-results__option::before .adaptQuest {
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   width: 100%;
@@ -429,4 +430,4 @@
   .quest-b .selectWrapchoseSave {
     display: none !important;
   }
-}/*# sourceMappingURL=order_select.css.map */
+}

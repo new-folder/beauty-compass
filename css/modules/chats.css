@@ -165,6 +165,7 @@
 }
 .send-mess-tech #ava .previewImage_text {
   margin: auto;
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   font-weight: 600;
@@ -236,6 +237,7 @@
 }
 .modal-content {
   padding: 10px 20px;
+  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   border-radius: 15px;
@@ -376,4 +378,4 @@
   font-size: 18px;
   line-height: 29px;
   color: #E31E24;
-}/*# sourceMappingURL=chats.css.map */
+}
