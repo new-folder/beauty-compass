@@ -90,6 +90,20 @@
                 .near-active
                     width: 6px
                     height: 6px
+    &--lg 
+        img
+            height: 673px
+            @media screen and (max-width: $first-breack-point) 
+                height: 442px
+            @media screen and (max-width: $second-breack-point) 
+                height: 194px
+    &--sm 
+        img
+            height: 281px
+            @media screen and (max-width: $first-breack-point) 
+                height: 184px
+            @media screen and (max-width: $second-breack-point) 
+                height: 81px
     &--product
         height: 568px
         @media screen and (max-width: $first-breack-point) 
@@ -103,7 +117,7 @@
             width: min-content
             overflow: initial
         .carousel-indicators [data-bs-target]
-            width: auto
+            width: 102px
             background-color: $sub-color
             img
                 height: 100%
@@ -122,6 +136,7 @@
                 img
                     box-shadow: $box-shadow-sm
                     border-radius: $border-radius
+                    max-height: 100%
 // modal
 
 .modal-header 
