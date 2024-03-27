@@ -174,7 +174,6 @@
 }
 .carousel--product .carousel-inner {
   width: -webkit-min-content;
-  width: -moz-min-content;
   width: min-content;
   overflow: initial;
 }
@@ -218,7 +217,6 @@
 
 .modal-dialog--img {
   max-width: -webkit-max-content !important;
-  max-width: -moz-max-content !important;
   max-width: max-content !important;
   padding: 0 !important;
   margin: 0 auto;
@@ -2828,7 +2826,6 @@ textarea {
   }
 }
 .discourse-comments__controls {
-  position: -webkit-sticky;
   position: sticky;
   z-index: 1050;
   bottom: 40px;
@@ -2914,7 +2911,10 @@ textarea {
   color: #E31E24;
 }
 
-.categories-item__title {
+.categories-item {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   margin-bottom: 42px;
 }
 .categories-item__title a {
@@ -2927,34 +2927,44 @@ textarea {
 .categories-item__title a:hover {
   color: #E31E24;
 }
-@media screen and (max-width: 769px) {
-  .categories-item__title a {
-    font-size: 18px;
-  }
-}
 
 .categories-dop__title {
-  margin-bottom: 42px;
-}
-.categories-dop__title a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 18px;
   font-weight: 600;
   text-decoration: none;
   color: #000000;
   transition: all 0.3s ease;
 }
-.categories-dop__title a:hover {
+.categories-dop__title:hover {
   color: #E31E24;
+}
+.categories-dop__title[data-bs-toggle=collapse]::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  border: none;
+  background: url(../img/category-collapse.svg) no-repeat;
+  background-size: contain;
+  background-position: center;
+  transform: rotate(180deg);
+  transition: all 0.3s ease;
+}
+.categories-dop__title.collapsed::after {
+  transform: rotate(0deg);
 }
 
 .categories-product {
-  padding-left: 30px;
-}
-.categories-product__title {
-  margin-bottom: 20px;
-}
-.categories-product__title:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   margin-bottom: 32px;
+  padding-top: 15px;
+  padding-left: 20px;
 }
 .categories-product__title a {
   font-size: 18px;
@@ -3164,7 +3174,6 @@ textarea {
 .select-custom-item__option label {
   position: relative;
   width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   padding: 12px 20px;
   cursor: pointer;
@@ -9598,7 +9607,6 @@ ul {
 
 .select-assignment__options .option {
   width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   padding: 12px 20px;
   cursor: pointer;
@@ -11050,7 +11058,6 @@ ul {
   left: 0;
   display: none;
   width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   padding: 10px;
   background: #fff;
