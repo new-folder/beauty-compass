@@ -2936,6 +2936,7 @@ textarea {
   font-weight: 600;
   text-decoration: none;
   color: #000000;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 .categories-dop__title:hover {
